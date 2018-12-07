@@ -1,0 +1,622 @@
+#######################################
+#  highway
+#######################################
+
+create_malfunctioning_guards_country = {
+	create_country = {
+		name = "NAME_Malfunctioning_Guards_country"
+		type = nep_malfunctioning_guards
+		auto_delete = no
+		flag = {
+			icon = {
+				category = "zoological"
+				file = "flag_zoological_1.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"red"
+				"red"
+				"null"
+				"null"
+			}
+		}
+	}
+	last_created_country = {
+		set_country_flag = malfunctioning_guards
+		save_global_event_target_as = malfunctioning_guards_country
+	}
+	set_global_flag = malfunctioning_guards_created
+}
+
+malfunctioning_guards_spawn = {
+	create_fleet = {
+		name = "NAME_Malfunctioning_Guards"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {		
+			set_owner = event_target:malfunctioning_guards_country
+			while = {
+				count = 15
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Xeoh"
+				}
+			}
+			while = {
+				count = 30
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Tes"
+				}
+			}
+			while = {
+				count = 60
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Sekae"
+				}
+			}
+			while = {
+				count = 140
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Deek"
+				}
+			}
+			
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			add_modifier = {
+				modifier = fleet_force_disparity_effect
+				days = -1
+			}
+			
+			queue_actions = {	
+				repeat = {
+					find_closest_planet = {
+						trigger = {
+							id = "nep_Malfunctioning_Guards_temppoi.1"
+							is_star = no
+						}
+						found_planet = {
+							orbit_planet = THIS
+						}
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "nep_Malfunctioning_Guards_temppoi.2"
+							is_star = yes
+						}
+						found_planet = {
+							orbit_planet = THIS
+						}
+					}
+				}
+			}						
+		}
+	}
+}
+
+#######################################
+#  seal
+#######################################
+malfunctioning_guards_spawn_static = {
+	create_fleet = {
+		name = "NAME_Malfunctioning_Guards"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {		
+			set_owner = event_target:malfunctioning_guards_country
+			while = {
+				count = 9
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Xeoh"
+				}
+			}
+			while = {
+				count = 18
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Tes"
+				}
+			}
+			while = {
+				count = 24
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Sekae"
+				}
+			}
+			while = {
+				count = 56
+				create_ship = {
+					name = "NAME_Malfunctioning_Guards"
+					design = "NAME_Deek"
+				}
+			}
+			
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			add_modifier = {
+				modifier = nep_malfunctioning_guards_buff
+				days = -1
+			}
+			
+			queue_actions = {	
+				find_closest_planet = {
+					trigger = {
+						id = "nep_Malfunctioning_Guards_temppoi.3"
+						is_star = yes
+					}
+					found_planet = {
+						orbit_planet = THIS
+					}
+				}
+			}						
+		}
+	}
+}
+
+create_seal_evil_country = {
+	create_country = {
+		name = "NAME_nep_Seal_Evil_country"
+		type = nep_seal_evil_country
+		auto_delete = no
+		flag = {
+			icon = {
+				category = "spherical"
+				file = "flag_spherical_11.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+	}
+	last_created_country = {
+		set_country_flag = seal_evil_country
+		save_global_event_target_as = seal_evil_country
+	}
+	set_global_flag = seal_evil_country_created
+}
+
+seal_boss_spawn = {
+	create_fleet = {
+		name = "NAME_nep_Seal_Evil"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {			
+			set_owner = event_target:seal_evil_country
+			create_ship = {
+				name = "NAME_nep_Seal_Evil"
+				design = "NAME_nep_Seal_evil"
+			}	
+			set_location = {
+				target = event_target:nep_grand_seal_planet
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+
+			add_modifier = {
+				modifier = nep_seal_evil_buff
+				days = -1
+			}
+		}
+	}
+}
+
+#######################################
+#  dragon
+#######################################
+create_dragon_babys = {
+	create_fleet = {
+		name = "NAME_Summoned_Babys"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {			
+			set_owner = prev.owner
+			while = {
+				count = 20
+				create_ship = {
+					name = "NAME_Summoned_Babys"
+					design = "NAME_Summoned_Babys_design"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 10
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self	
+			
+		}
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+		}
+	}
+	last_created_fleet = {
+		fleet_event = { id = nep_dragon.999 days = 45 }
+	}
+}
+
+#######################################
+#  invasion
+#######################################
+create_Krahen_defender = {
+	event_target:nep_Krahen_country = {
+		create_leader = {
+			type = admiral
+			species = event_target:nep_Krahen_country
+			name = random
+			skill = 10
+			traits = {
+				trait = leader_trait_Krahen_admiral
+				trait = leader_trait_aggressive
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Krahen_Defender"
+		effect = {		
+			set_owner = event_target:nep_Krahen_country
+			while = {
+				count = 40
+				create_ship = {
+					name = "NAME_Krahen_Defender"
+					design = "NAME_Krahen_Battleship_defender"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			set_fleet_flag = nep_Krahen_defender
+			
+			queue_actions = {
+				repeat = {
+					wait = {
+						duration = 500
+					}
+				}
+			}
+		}
+		settings = {
+			garrison = yes
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+	}
+}
+
+create_Krahen_invader = {
+	event_target:nep_Krahen_country = {
+		create_leader = {
+			type = admiral
+			species = event_target:nep_Krahen_country
+			name = random
+			skill = 10
+			traits = {
+				trait = leader_trait_Krahen_admiral
+				trait = leader_trait_aggressive
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Krahen_Invader"
+		effect = {
+			set_owner = event_target:nep_Krahen_country
+			while = {
+				count = 30
+				create_ship = {
+					name = "NAME_Krahen_Invader"
+					design = "NAME_Krahen_Battleship"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			set_fleet_bombardment_stance = armageddon
+			set_fleet_flag = nep_inva_fleet
+			
+			queue_actions = {
+				find_random_system = {
+					trigger = {
+						id = "nep_Krahen.trigger.0.0"
+						has_star_flag = nep_inva_system
+					}
+					found_system = {
+						move_to = this
+					}
+				}
+			}
+		}
+		settings = {
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+	}
+}
+
+create_Krahen_follower = {
+	event_target:nep_Krahen_country = {
+		create_leader = {
+			type = admiral
+			species = event_target:nep_Krahen_country
+			name = random
+			skill = 10
+			traits = {
+				trait = leader_trait_Krahen_admiral
+				trait = leader_trait_aggressive
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Krahen_Defender"
+		effect = {		
+			set_owner = event_target:nep_Krahen_country
+			while = {
+				count = 30
+				create_ship = {
+					name = "NAME_Krahen_Defender"
+					design = "NAME_Krahen_Battleship_follower"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			set_fleet_flag = nep_Krahen_follower
+			
+			fleet_event = { id = nep_kai.1210 days = 3 random = 5 }
+		}
+		settings = {
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+	}
+}
+
+create_Krahen_buildings = {
+	if = {
+		limit = { NOT = { has_building = nep_adv_tank_factory } } 
+		random_tile = {
+			limit = {
+				has_blocker = no
+				has_building = no
+				has_grown_pop = no
+			}
+			set_building = nep_adv_tank_factory
+			create_pop = {
+				species = owner
+			}
+		}
+	}
+	if = {
+		limit = { NOT = { has_building = nep_heavy_fortress } } 
+		random_tile = {
+			limit = {
+				has_blocker = no
+				has_building = no
+				has_grown_pop = no
+			}
+			set_building = nep_heavy_fortress
+			create_pop = {
+				species = owner
+			}
+		}
+	}
+	if = {
+		limit = { NOT = { has_building = nep_heavy_fortress_2 } } 
+		random_tile = {
+			limit = {
+				has_blocker = no
+				has_building = no
+				has_grown_pop = no
+			}
+			set_building = nep_heavy_fortress_2
+			create_pop = {
+				species = owner
+			}
+		}
+	}
+	if = {
+		limit = { NOT = { has_building = nep_planetary_gun } } 
+		random_tile = {
+			limit = {
+				has_blocker = no
+				has_building = no
+				has_grown_pop = no
+			}
+			set_building = "nep_planetary_gun"
+			create_pop = {
+				species = owner
+			}
+		}
+	}
+}
+
+create_Krahen_constructor = {
+	create_fleet = {
+		effect = {
+			create_ship = {
+				name = random
+				design = "NAME_nep_Krahen_Constructor"
+			}
+			set_owner = event_target:nep_Krahen_country
+			set_fleet_stance = passive
+			set_location = {
+				target = PREV
+				distance = 20
+				angle = random 
+			}			
+			
+			queue_actions = {
+				find_random_system = {
+					trigger = {
+						id = "nep_Krahen.trigger.0.0.0"
+						has_star_flag = nep_inva_system
+					}
+					found_system = {
+						move_to = this
+					}
+				}
+			}
+		}
+	}
+}
+
+create_Krahen_colonizer = {
+	create_fleet = {
+		effect = {
+			set_owner = event_target:nep_Krahen_country
+			create_ship = {
+				name = random
+				design = "NAME_nep_Krahen_Colonizer"
+				colonizer_species = owner_main_species
+			}
+			set_fleet_stance = evasive
+			set_location = {
+				target = PREV
+				distance = 20
+				angle = random 
+			}
+		}
+	}
+}
+
+#######################################
+#  finalweapon
+#######################################
+
+create_finalweapon_fleet = {
+	event_target:nep_finalweapon_country = {
+		create_leader = {
+			type = admiral
+			species = prev.owner_species
+			name = random
+			skill = 10
+			traits = {
+				trait = leader_trait_aggressive
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_nep_corrupted_finalweapons"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = event_target:nep_finalweapon_country
+			while = {
+				count = 3
+				create_ship = {
+					name = "NAME_nep_corrupted_finalweapons"
+					design = "NAME_nep_finalweapon_design"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = event_target:nep_grand_seal_planet
+				distance = 30
+				angle = random
+			}
+			
+			add_modifier = {
+				modifier = fleet_force_disparity_effect
+				days = -1
+			}
+			
+			set_formation_scale = 1.6
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			set_fleet_flag = nep_corrupted_finalweapons
+		}
+	}
+}
+
+create_finalweapon_bomb_fleet = {
+	create_fleet = {
+		name = "NAME_nep_star_bomb"
+		settings = {
+			spawn_debris = no
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = event_target:nep_finalweapon_country
+			create_ship = {
+				name = "NAME_nep_star_bomb"
+				design = "NAME_nep_star_bomb_design"
+			}
+			set_location = {
+				target = prev
+				distance = 1
+				angle = random
+			}
+			set_fleet_flag = nep_star_bomb
+			set_event_locked = yes
+		}
+	}
+}

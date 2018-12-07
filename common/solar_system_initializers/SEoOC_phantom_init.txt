@@ -1,0 +1,153 @@
+#up
+nep_Gacrus_init = {
+	prevent_anomalies = yes
+	name = "NAME_Gacrus"
+
+	class = "sc_m_giant"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { 
+		nep_Scrus_cluster
+	}
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+	
+	init_effect = {
+		random_system_planet = {
+			limit = { is_star = yes }
+			create_ambient_object = {
+				type = large_debris_object
+			}
+		}
+	}
+}
+
+#down
+nep_Gacrus_init = {
+	prevent_anomalies = yes
+	name = "NAME_Acrus"
+
+	class = "nep_sc_trinary_B"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { 
+		nep_Scrus_cluster
+	}
+	
+	planet = {
+        count = 3
+        class = star
+        orbit_distance = { min = 25 max = 30 }
+        orbit_angle = { min = -125 max = 230 }
+        size = { min = 25 max = 30 }
+        has_ring = no
+    }
+	
+	init_effect = {
+		random_system_planet = {
+			limit = { is_star = yes }
+			create_ambient_object = {
+				type = large_debris_object
+			}
+		}
+	}
+}
+
+#left
+nep_Mimosa_init = {
+	prevent_anomalies = yes
+	name = "NAME_Mimosa"
+
+	class = "nep_sc_trinary_B"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { 
+		nep_Scrus_cluster
+	}
+	
+	planet = {
+        count = 3
+        class = star
+        orbit_distance = { min = 25 max = 30 }
+        orbit_angle = { min = -125 max = 230 }
+        size = { min = 25 max = 30 }
+        has_ring = no
+    }
+	
+	init_effect = {
+		random_system_planet = {
+			limit = { is_star = yes }
+			create_ambient_object = {
+				type = large_debris_object
+			}
+		}
+	}
+}
+
+#up
+nep_Gacrus_init = {
+	prevent_anomalies = yes
+	name = "NAME_Gacrus"
+
+	class = "sc_b"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { 
+		nep_Scrus_cluster
+	}
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+	
+	init_effect = {
+		random_system_planet = {
+			limit = { is_star = yes }
+			create_ambient_object = {
+				type = large_debris_object
+			}
+		}
+	}
+}
+
+#middle
+nep_Ginan_init = {
+	prevent_anomalies = yes
+	name = "NAME_Ginan"
+
+	class = "sc_m_giant"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { 
+		nep_Scrus_cluster
+		nep_Ginan_system
+	}
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+	
+	init_effect = {
+		random_system_planet = {
+			limit = { is_star = yes }
+			create_ambient_object = {
+				type = large_debris_object
+			}
+		}
+	}
+}

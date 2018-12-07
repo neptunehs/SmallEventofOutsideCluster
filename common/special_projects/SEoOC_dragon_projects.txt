@@ -1,0 +1,184 @@
+special_project = {
+	key = "nep_dragon_shielded_planet"
+	event_chain = "nep_heptagram_chain"
+	days_to_research = 720
+	tech_department = physics_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 5
+	}
+	
+	on_success = {
+		ship_event = { id = nep_dragon.3 }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_Legnahcras_research"
+	event_chain = "nep_dragon_chain"
+	days_to_research = 1080
+	tech_department = physics_technology
+	picture = GFX_evt_victorious_army
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		OWNER = { country_event = { id = nep_dragon.6 } }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_dragon_summon"
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_evt_space_dragon
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		if = {
+			limit = {
+				AND = {
+					event_target:nep_Auriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Auriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Gabriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Gabriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Sabriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Sabriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Samuel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Samuel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Michael_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Michael_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Jauiel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Jauiel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Anael_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Anael_modifier
+						has_building = nep_dragon_temple
+					}
+				}
+			}
+			random_country = {
+				limit = { has_country_flag = nep_dragon_summoner } 
+				country_event = { id = nep_dragon.9 }
+			}
+		}
+		else = {
+			random_country = {
+				limit = { has_country_flag = nep_dragon_summoner } 
+				country_event = { id = nep_dragon.91 }
+			}
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_dragon_kaier"
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_evt_space_dragon
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	on_success = {
+		if = {
+			limit = {
+				AND = {
+					event_target:nep_Auriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Auriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Gabriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Gabriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Sabriel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Sabriel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Samuel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Samuel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Michael_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Michael_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Jauiel_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Jauiel_modifier
+						has_building = nep_dragon_temple
+					}
+					event_target:nep_Anael_planet = {
+						owner = { has_country_flag = nep_dragon_summoner }
+						has_modifier = nep_Anael_modifier
+						has_building = nep_dragon_temple
+					}
+					solar_system = {
+						any_ship_in_system = {
+							is_ship_size = nep_dragon_reward
+						}
+					}
+				}
+			}
+			random_country = {
+				limit = { has_country_flag = nep_dragon_kaier } 
+				country_event = { id = nep_dragon.94 }
+			}
+		}
+		else = {
+			random_country = {
+				limit = { has_country_flag = nep_dragon_kaier } 
+				country_event = { id = nep_dragon.941 }
+			}		
+		}
+	}
+	
+	on_fail = {
+
+	}
+}

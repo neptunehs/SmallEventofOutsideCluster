@@ -1,0 +1,73 @@
+namespace = nep_mia
+
+fleet_event = {
+	id = nep_mia.1
+	title = "nep_mia.1.name"
+	desc = "nep_mia.1.desc"
+	picture = GFX_evt_unknown_ships
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_not_pass_sealportal
+		solar_system = {
+			has_star_flag = nep_heptagram_cluster
+		}
+	}
+	
+	immediate = {
+		order_forced_return = yes
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+fleet_event = {
+	id = nep_mia.2
+	title = "nep_mia.1.name"
+	desc = "nep_mia.1.desc"
+	picture = GFX_evt_unknown_ships
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_not_pass_Aemethms
+		solar_system  = {
+			has_star_flag = nep_dragon_system
+		}
+	}
+	
+	immediate = {
+		order_forced_return = yes
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+fleet_event = {
+	id = nep_mia.3
+	title = "nep_mia.1.name"
+	desc = "nep_mia.1.desc"
+	picture = GFX_evt_unknown_ships
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_sealgate_appeared
+		solar_system = {
+			has_star_flag = nep_Krahen_system
+		}
+	}
+	
+	immediate = {
+		order_forced_return = yes
+	}
+	
+	option = {
+		name = OK
+	}
+}

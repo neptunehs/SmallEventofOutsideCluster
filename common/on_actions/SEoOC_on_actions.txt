@@ -1,0 +1,156 @@
+on_entering_system = {
+	events = {
+		nep_highway.5 #first enter station
+		nep_seal.2 #first enter ambient place
+		nep_dragon.64 #first enter dragon system
+		nep_inva.474
+	}
+}
+
+on_entering_system_fleet = {
+	events = {
+		nep_mia.1
+		nep_mia.2
+		nep_mia.3
+	}
+}
+
+on_system_survey_ship = {
+	events = {
+		nep_seal.7 #Grand seal proje
+	}
+}
+
+on_monthly_pulse = {
+	events = {
+		nep_inva.473
+		nep_inva.475
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		nep_dragon.83
+		nep_inva.46
+		nep_inva.511
+	}
+}
+
+#boss buffs
+on_entering_battle = {
+	events = {
+		nep_seal.90
+		nep_dragon.60
+		nep_dragon.62
+		nep_dragon.910
+		nep_dragon.9400
+		nep_dragon.9402
+		nep_finalweapon.71
+		nep_finalweapon.711
+		nep_finalweapon.72
+	}
+}
+
+on_ship_destroyed_victim = {
+	events = {
+		nep_inva.43
+		nep_inva.51
+		nep_dragon.82
+	}
+}
+
+on_ship_destroyed_perp = {
+	events = {
+		nep_finalweapon.81
+		nep_seal.10
+	}
+}
+
+on_planet_attackers_win = {
+	events = {
+		nep_dragon.997
+		nep_dragon.996
+		nep_dragon.995
+		nep_dragon.994
+		nep_dragon.993
+		nep_dragon.992
+		nep_dragon.991
+		nep_inva.41
+		nep_inva.42
+		nep_inva.471
+	}
+}
+
+on_colonized = {
+	events = {
+		nep_inva.45
+	}
+}
+on_system_first_visited = {
+	events = {
+	}
+}
+
+on_custom_diplomacy = {
+	events = {
+		nep_inva.32
+		nep_inva.33
+	}
+}
+
+on_ship_destroyed_perp = {
+	events = {
+		nep_inva.44
+	}
+}
+
+on_space_battle_won = {
+	events = {
+		nep_inva.210
+		nep_finalweapon.714
+	}
+}
+
+on_fleet_destroyed_perp = {
+	events = {
+		nep_inva.47
+		nep_finalweapon.65
+	}
+}
+
+on_planet_zero_pops = {
+	events = {
+		nep_inva.472
+	}
+}
+
+on_entering_nepsealportal = {
+	events = {
+		nep_dragon.2
+	}
+}
+
+on_entering_nepsealgate = {
+	events = {
+		nep_inva.2
+	}
+}
+
+
+on_building_upgraded = {
+	events = {
+		nep_dragon.4000
+	}
+}
+
+on_megastructure_upgraded = {
+	events = {
+		nep_inva.1002
+	}
+}
+
+on_first_contact = {
+	events = {
+		nep_inva.72
+	}
+}

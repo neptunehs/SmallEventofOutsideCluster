@@ -1,0 +1,725 @@
+namespace = nep_test
+
+country_event = {
+	id = nep_test.1
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+	capital_scope = {
+	create_fleet = {
+		name = "Malfunctioning Guards"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {		
+			set_owner = ROOT
+			while = {
+				count = 15
+				create_ship = {
+					name = "Malfunctioning Guard"
+					design = "NAME_Xeoh"
+				}
+			}
+			while = {
+				count = 30
+				create_ship = {
+					name = "Malfunctioning Guards"
+					design = "NAME_Tes"
+				}
+			}
+			while = {
+				count = 60
+				create_ship = {
+					name = "Malfunctioning Guards"
+					design = "NAME_Sekae"
+				}
+			}
+			while = {
+				count = 140
+				create_ship = {
+					name = "Malfunctioning Guards"
+					design = "NAME_Deek"
+				}
+			}
+			
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	}
+    }
+}
+
+country_event = {
+	id = nep_test.2
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		create_seal_evil_country = yes
+		capital_scope = {
+		create_fleet = {
+		name = "Seal Evil"
+		settings = {
+			spawn_debris = no 
+		}
+		effect = {			
+			set_owner = event_target:seal_evil_country
+			create_ship = {
+				name = "Seal Evil"
+				design = "NAME_nep_Seal_evil"
+				effect = {
+					#set_disabled = yes
+				}
+			}	
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self	
+			
+			#set_event_locked = yes
+			fleet_event = { id = nep_test.21 days = 3 }
+		}
+	}
+		}
+		}
+}
+
+fleet_event = {
+	id = nep_test.21
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+	
+	immediate = {
+		set_event_locked = yes
+	}	
+}
+country_event = {
+	id = nep_test.3
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+		
+	immediate = {
+		capital_scope = {
+			set_variable = { which = "vari1" value = 1 }
+			random_system = {
+				set_variable = { which = "vari1" value = 2 }
+				random_rim_system = {
+					set_variable = { which = "vari1" value = 3 }
+					if = {
+						limit = {
+							check_variable = { which = "vari1" value = 1 }
+						}
+						log = "[This.GetName] = 1"
+					}
+					if = {
+						limit = {
+							check_variable = { which = "vari1" value = 2 }
+						}
+						log = "[This.GetName] = 2"
+					}
+					if = {
+						limit = {
+							check_variable = { which = "vari1" value = 3 }
+						}
+						log = "[This.GetName] = 3"
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { which = "vari1" value = 1 }
+					}
+					log = "[This.GetName] = 1"
+				}
+				if = {
+					limit = {
+						check_variable = { which = "vari1" value = 2 }
+					}
+					log = "[This.GetName] = 2"
+				}
+				if = {
+					limit = {
+						check_variable = { which = "vari1" value = 3 }
+					}
+					log = "[This.GetName] = 3"
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { which = "vari1" value = 1 }
+				}
+				log = "[This.GetName] = 1"
+			}
+			if = {
+				limit = {
+					check_variable = { which = "vari1" value = 2 }
+				}
+				log = "[This.GetName] = 2"
+			}
+			if = {
+				limit = {
+					check_variable = { which = "vari1" value = 3 }
+				}
+				log = "[This.GetName] = 3"
+			}	
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.4
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+		capital_scope = {
+			solar_system = {
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						use_bypasses = no
+						min_jumps = 2
+						max_jumps = 6
+					}
+				}
+				if = {
+					limit = { has_hyperlane_to = prev }
+					log = "2~6:[This.GetName] = yes"
+				}
+				else = {
+					log = "2~6:[This.GetName] = no"
+				}
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 1
+					}
+				}
+				if = {
+					limit = { has_hyperlane_to = prev }
+					log = "1:[This.GetName] = yes"
+				}
+				else = {
+					log = "1:[This.GetName] = no"
+				}
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						use_bypasses = no
+						min_jumps = 0
+						max_jumps = 0
+					}
+				}
+				if = {
+					limit = { exists = this }
+					log = "0:[This.GetName] = yes"
+				}
+				else = {
+					log = "0: = no"
+				}
+			}
+		}}
+	}
+}
+
+country_event = {
+	id = nep_test.5
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+		#cluster
+		set_spawn_system_batch = begin
+		no_scope = {
+			spawn_system = {
+				min_distance >= 565
+				max_distance <= 575
+				min_orientation_angle = 314
+				max_orientation_angle = 316
+				hyperlane = no
+				initializer = nep_Central_init
+			}
+		}
+		random_system = { 
+			limit = { has_star_flag = nep_Central_system }
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 35
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Centaury_init
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 35
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Magellan_init
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 35
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Orion_init
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 40
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Aurora_init
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 40
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Tra_init
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 35
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Andromeda_init
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 40
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Persei_init
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 40
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Trantor_init
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 50
+				min_orientation_angle = 0
+				max_orientation_angle = 360
+				hyperlane = no
+				initializer = nep_Exterior_init
+			}
+		}
+		while = {
+			limit = {
+				any_system = {
+					has_star_flag = nep_Krahen_cluster
+					check_variable = { which = hyperlane_num value < 3 }
+				}
+			}
+			random_system = {
+				limit = {
+					has_star_flag = nep_Krahen_cluster
+					check_variable = { which = hyperlane_num value < 3 }
+				}
+				random_system = {
+					limit = {
+						NOT = { 
+							is_same_value = prev 
+							has_hyperlane_to = prev
+						}
+						has_star_flag = nep_Krahen_cluster
+						check_variable = { which = hyperlane_num value < 3 }
+					}
+					add_hyperlane = {
+						from = this
+						to = prev
+					}
+					change_variable = { which = hyperlane_num value = 1 }
+				}
+				change_variable = { which = hyperlane_num value = 1 }
+			}
+		}
+		set_spawn_system_batch = end
+	}
+}
+
+country_event = {
+	id = nep_test.6
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = nep_Krahen_cluster }
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						use_bypasses = no
+						min_jumps = 9
+						max_jumps = 9
+					}
+					has_star_flag = nep_Krahen_cluster
+				}
+				if = {
+					limit = { exists = this }
+					log = "[This.GetName] - [Prev.GetName]"
+				}
+				else = {
+					log = "Nope."				
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_test.7
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+	
+	immediate = {
+		add_modifier = {
+			modifier = fleet_force_disparity_effect
+			days = -1
+		}
+	}
+}
+
+planet_event = {
+	id = nep_test.8
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+	
+	immediate = {
+		solar_system = {
+			every_system_planet = {
+				remove_planet = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.9
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+		create_fleet = {
+			name = "Krah'en Invader"
+			effect = {		
+				set_owner = root
+				while = {
+					count = 60
+					create_ship = {
+						name = "Krah'en Invader"
+						design = "NAME_Krahen_Battleship"
+					}
+				}
+				set_location = {
+					target = root.capital_scope
+					distance = 150
+					angle = random
+				}
+				set_formation_scale = 2.0
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+				set_fleet_bombardment_stance = armageddon
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.10
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+
+		create_fleet = {
+			name = "NAME_nep_corrupted_finalweapons"
+			settings = {
+				spawn_debris = no 
+				can_change_leader = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = root
+				while = {
+					count = 3
+					create_ship = {
+						name = "NAME_nep_Corrupted_Finalweapon"
+						design = "NAME_nep_finalweapon_design"
+					}
+				}
+				
+				set_location = {
+					target = root.capital_scope
+					distance = 30
+					angle = random
+				}
+				
+				add_modifier = {
+					modifier = fleet_force_disparity_effect
+					days = -1
+				}
+				
+				set_formation_scale = 1.6
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+				set_fleet_bombardment_stance = armageddon
+				
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.11
+    hide_window = yes
+	is_triggered_only = yes
+#	fire_only_once = yes
+	location = root
+#	is_triggered_only = yes
+	
+	trigger = { always = no }
+
+	immediate = {
+		create_species = {
+			name = random
+			class = ROBOT
+			portrait = default_robot
+			namelist = "AI"
+			traits = {
+				trait = trait_mechanical
+			}
+		}
+		create_country = {
+			name = "NAME_finalweapon_country"
+			type = nep_finalweapon_country
+			species = last_created
+			flag = {
+			    icon = {
+    		        category = "special"
+    		        file = "unknown.dds"
+    		    }
+    		    background = {
+    		        category = "backgrounds"
+    		        file = "00_solid.dds"
+    		    }
+    		    colors = {
+    		        "black"
+    		        "null"
+    		        "null"
+    		        "null"
+    		    }
+			}
+		}
+			create_leader = {
+				type = admiral
+				species = prev.owner_species
+				name = random
+				skill = 10
+				traits = {
+					trait = leader_trait_aggressive
+				}
+			}
+			create_fleet = {
+				name = "NAME_nep_corrupted_finalweapons"
+				settings = {
+					spawn_debris = no 
+					can_change_leader = no
+					uses_naval_capacity = no
+				}
+				effect = {
+					set_owner = last_created_country
+					while = {
+						count = 3
+						create_ship = {
+							name = "NAME_nep_Corrupted_Finalweapon"
+							design = "NAME_nep_finalweapon_design"
+						}
+					}
+					assign_leader = last_created_leader
+					set_location = {
+						target = root.capital_scope
+						distance = 30
+						angle = random
+					}
+					
+					add_modifier = {
+						modifier = fleet_force_disparity_effect
+						days = -1
+					}
+					
+					set_formation_scale = 1.6
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+					set_fleet_bombardment_stance = armageddon
+					
+					set_fleet_flag = nep_corrupted_finalweapons
+				}
+			}
+	}
+}
+
+# fleet_event = {
+	# id = nep_test.12
+    # hide_window = yes
+	# is_triggered_only = yes
+
+
+	# trigger = { always = no }
+
+	# immediate = {
+		# queue_actions = {
+			# land_armies_on_planet = from
+			# jump_drive = from
+		# }
+	# }
+# }
+
+planet_event = {
+	id = nep_test.13
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { always = no }
+	
+	immediate = {
+		random_tile = {
+			limit = {
+				has_building = no
+				num_adjacent_tiles = 2
+			}
+			if = {
+				limit = { has_blocker = yes }
+				remove_blocker = yes				
+			}
+			set_building = "nep_ruin_temple"
+			save_global_event_target_as = nep_Anael_temple
+		}
+	}
+}
+
+planet_event = {
+	id = nep_test.14
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { always = no }
+	
+	immediate = {
+		create_species = {
+			name = Krah'en
+			class = random_non_machine
+			portrait = mol4
+			traits = {
+				trait = trait_Krahen
+			}
+		}
+		create_country = {
+			name = "Krah'en Empire"
+			species = last_created
+			type = nep_Krahen_country
+			auto_delete = no
+			# authority = auth_imperial
+			# ethos = {
+				# ethic = ethic_militarist
+				# ethic = ethic_fanatic_xenophobe
+			# }
+			# civics = {
+				# civic = civic_fanatic_purifiers
+				# civic = civic_cutthroat_politics
+			# }
+			flag = {
+				icon = {
+					category = "domination"
+					file = "domination_12.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "new_dawn.dds"
+				}
+				colors={
+					"red"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		create_colony = {
+			owner = last_created_country
+			species = last_created
+			ethos = owner
+		}
+		last_created_country = {
+			set_country_flag = nep_Krahen_country
+			save_global_event_target_as = nep_Krahen_country
+		}
+		create_Krahen_invader = yes
+	}
+}

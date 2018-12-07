@@ -1,0 +1,83 @@
+nep_Legnahcras_defensive_army = {
+	defensive = yes
+	damage = 8.0
+	health = 16.0
+	has_morale = no
+	morale_damage = 15.0
+	collateral_damage = 4.0
+	time = 500
+	maintenance = 0
+	icon_frame = 4
+	has_species = no
+	
+	potential = {
+		always = no
+	}
+}
+
+nep_Legnahcras_assault_army = {
+	damage = 8.0
+	health = 16.0
+	has_morale = no
+	morale_damage = 15.0
+	collateral_damage = 4.0
+	time = 500
+	maintenance = 0
+	icon_frame = 4
+	has_species = no
+	
+	potential = {
+		always = no
+	}
+}
+
+nep_Krahen_anti_grav = {
+	defensive = yes #To prevent a bug
+	damage = 1.5
+	health = 1.5
+	has_morale = no
+	morale_damage = 1
+	collateral_damage = 1.0
+	time = 500
+	maintenance = 0
+	icon_frame = 4
+	has_species = no
+	
+	potential = {
+		always = no
+	}
+}
+
+nep_Krahen_heavy_fortress = {
+	defensive = yes
+	damage = 8.0
+	health = 17.0
+	has_morale = no
+	morale_damage = 4.0
+	collateral_damage = 0.1
+	time = 500
+	maintenance = 0
+	icon_frame = 4
+	has_species = no
+	
+	potential = {
+		always = no
+	}
+}
+
+nep_Krahen_heavy_fortress_2 = {
+	defensive = yes
+	damage = 8.0
+	health = 17.0
+	has_morale = no
+	morale_damage = 4.0
+	collateral_damage = 0.1
+	time = 500
+	maintenance = 0
+	icon_frame = 4
+	has_species = no
+	
+	potential = {
+		always = no
+	}
+}
