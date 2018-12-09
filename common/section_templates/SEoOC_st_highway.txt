@@ -28,7 +28,12 @@ ship_section_template = {
 	small_utility_slots = 3
 	aux_utility_slots = 1
 	
-	cost = 60
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 30
+		}
+	}
 }
 
 ship_section_template = {
@@ -68,7 +73,12 @@ ship_section_template = {
 	
 	small_utility_slots = 6
 	
-	cost = 60
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 30
+		}
+	}
 }
 
 ship_section_template = {
@@ -108,7 +118,12 @@ ship_section_template = {
 	
 	aux_utility_slots = 1
 	
-	cost = 60
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 30
+		}
+	}
 }
 
 ship_section_template = {
@@ -148,7 +163,12 @@ ship_section_template = {
 	
 	medium_utility_slots = 4
 	
-	cost = 100
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 40
+		}
+	}
 }
 
 ship_section_template = {
@@ -195,7 +215,12 @@ ship_section_template = {
 	
 	medium_utility_slots = 4
 	
-	cost = 100
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 40
+		}
+	}
 }
 
 ship_section_template = {
@@ -227,7 +252,12 @@ ship_section_template = {
 	
 	aux_utility_slots = 2
 	
-	cost = 100
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 40
+		}
+	}
 }
 
 
@@ -261,7 +291,12 @@ ship_section_template = {
 
 	large_utility_slots = 3
 	
-	cost = 150
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 80
+		}
+	}
 }
 
 ship_section_template = {
@@ -322,7 +357,12 @@ ship_section_template = {
 	
 	large_utility_slots = 3
 	
-	cost = 150
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 80
+		}
+	}
 }
 
 ship_section_template = {
@@ -357,5 +397,10 @@ ship_section_template = {
 	
 	aux_utility_slots = 2
 	
-	cost = 150
+	resources = {
+		category = ship_sections		
+		cost = {
+			alloys = 80
+		}
+	}
 }

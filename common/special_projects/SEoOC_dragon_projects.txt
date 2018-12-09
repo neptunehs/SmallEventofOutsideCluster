@@ -58,37 +58,37 @@ special_project = {
 					event_target:nep_Auriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Auriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Gabriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Gabriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Sabriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Sabriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Samuel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Samuel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Michael_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Michael_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Jauiel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Jauiel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Anael_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Anael_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 				}
 			}
@@ -126,37 +126,37 @@ special_project = {
 					event_target:nep_Auriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Auriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Gabriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Gabriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Sabriel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Sabriel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Samuel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Samuel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Michael_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Michael_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Jauiel_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Jauiel_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Anael_planet = {
 						owner = { has_country_flag = nep_dragon_summoner }
 						has_modifier = nep_Anael_modifier
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					solar_system = {
 						any_ship_in_system = {

@@ -495,18 +495,7 @@ ship_event = {
 					modifier = "nep_Auriel_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Auriel_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Gabriel_planet = {
 				change_pc = pc_gaia
@@ -518,18 +507,7 @@ ship_event = {
 					modifier = "nep_Gabriel_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Gabriel_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Sabriel_planet = {
 				change_pc = pc_gaia
@@ -541,18 +519,7 @@ ship_event = {
 					modifier = "nep_Sabriel_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Sabriel_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Samuel_planet = {
 				change_pc = pc_gaia
@@ -564,18 +531,7 @@ ship_event = {
 					modifier = "nep_Samuel_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Samuel_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Michael_planet = {
 				change_pc = pc_gaia
@@ -587,18 +543,7 @@ ship_event = {
 					modifier = "nep_Michael_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Michael_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Jauiel_planet = {
 				change_pc = pc_gaia
@@ -610,18 +555,7 @@ ship_event = {
 					modifier = "nep_Jauiel_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Jauiel_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 			event_target:nep_Anael_planet = {
 				change_pc = pc_gaia
@@ -633,18 +567,7 @@ ship_event = {
 					modifier = "nep_Anael_modifier"
 					days = -1
 				}
-				random_tile = {
-					limit = {
-						has_building = no
-						num_adjacent_tiles = 2
-					}
-					if = {
-						limit = { has_blocker = yes }
-						remove_blocker = yes				
-					}
-					set_building = "nep_ruin_temple"
-					save_global_event_target_as = nep_Anael_temple
-				}
+				add_deposit = "d_nep_unknown_vortex"
 			}
 		}
 	}
@@ -683,12 +606,7 @@ planet_event = {
 			has_planet_flag = nep_Jauiel_planet
 			has_planet_flag = nep_Anael_planet
 		}
-		from = {
-			OR = {
-				has_building = nep_ruin_temple
-				has_building = nep_dragon_temple
-			}
-		}
+		has_deposit = d_nep_dragon_temple
 	}
 	
 	immediate = {
@@ -698,37 +616,37 @@ planet_event = {
 					event_target:nep_Auriel_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Gabriel_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Sabriel_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Samuel_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Michael_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Jauiel_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 					event_target:nep_Anael_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_dragon_founder }
-						has_building = nep_dragon_temple
+						has_deposit = d_nep_dragon_temple
 					}
 				}
 			}
@@ -1252,11 +1170,13 @@ country_event = {
 		name = nep_dragon.8.a
 		custom_tooltip = nep_dragon.8.a.tooltip
 		trigger = {
-			minerals >= 5000
-			energy >= 40000
+			has_country_resource = { type = minerals amount >= 5000 }
+			has_country_resource = { type = energy amount >= 40000 }
 		}
-		add_minerals = -5000
-		add_energy = -40000
+		add_resource = {
+			alloys = -5000
+			energy = -40000
+		}
 		enable_special_project = {
 			name = "nep_dragon_summon"
 			location = event_target:nep_dragon_star
@@ -1962,178 +1882,26 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Auriel_planet
-			NOT = { has_building = nep_dragon_temple }
+		has_global_flag = nep_dragon_begin
+		from = {
+			OR = {
+				has_planet_flag = nep_Auriel_planet
+				has_planet_flag = nep_Gabriel_planet
+				has_planet_flag = nep_Sabriel_planet
+				has_planet_flag = nep_Samuel_planet
+				has_planet_flag = nep_Michael_planet
+				has_planet_flag = nep_Jauiel_planet
+				has_planet_flag = nep_Anael_planet
+			}
+			NOR = {
+				has_deposit = d_nep_dragon_temple
+				has_deposit = d_nep_unknown_vortex
+			}
 		}
 	}
 	
 	immediate = {
-		event_target:nep_Auriel_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.992
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Gabriel_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Gabriel_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.993
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Sabriel_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Sabriel_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.994
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Samuel_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Samuel_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.995
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Michael_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Michael_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.996
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Jauiel_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Jauiel_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
-	}
-}
-
-country_event = {
-	id = nep_dragon.997
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		fromfrom = {
-			has_planet_flag = nep_Anael_planet
-			NOT = { has_building = nep_dragon_temple }
-		}
-	}
-	
-	immediate = {
-		event_target:nep_Anael_temple = {
-			if = {
-				limit = {
-					has_blocker = yes
-				}
-				remove_blocker = yes
-				set_building = nep_ruin_temple
-			}
-		}
+		from = { add_deposit = d_nep_unknown_vortex }
 	}
 }
 

@@ -3,7 +3,8 @@
 ##########################################################################
 
 nep_highway_fee = {
-	tile_resource_energy_mult = 0.05
+	country_energy_produces_mult = 0.05
+	country_trade_fee = -0.05	
 }
 
 ##########################################################################
@@ -32,143 +33,183 @@ nep_dragon_boss_buff = {
 }
 
 nep_Auriel_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 1
+	planet_jobs_society_research_produces_mult = 1
+	planet_jobs_engineering_research_produces_mult = 1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Gabriel_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Sabriel_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Samuel_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Michael_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Jauiel_modifier = {
-	pop_happiness = 0.1
-	pop_growth_speed = 1
-	planet_building_cost_mult = -0.1
+	planet_amenities_mult = 0.1
+	pop_growth_speed = 0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 0.1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 0.1
+	planet_jobs_volatile_motes_produces_mult = 1
+	planet_jobs_exotic_gases_produces_mult = 1
+	planet_jobs_rare_crystals_produces_mult = 1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Anael_modifier = {
-	pop_happiness = 0.1
+	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1
-	planet_building_cost_mult = -0.1
+	planet_buildings_cost_mult = -0.1
 	planet_building_build_speed_mult = 0.1
-	tile_resource_food_mult = 0.1
-	tile_resource_minerals_mult = 0.1
-	tile_resource_energy_mult = 0.1
-	tile_resource_unity_mult = 0.1
-	tile_resource_physics_research_mult = 0.1
-	tile_resource_society_research_mult = 0.1
-	tile_resource_engineering_research_mult = 1
+	planet_jobs_food_produces_mult = 0.1
+	planet_jobs_minerals_produces_mult = 0.1
+	planet_jobs_energy_produces_mult = 0.1
+	planet_jobs_unity_produces_mult = 0.1
+	planet_jobs_alloys_cost_mult = 0.1
+	planet_jobs_consumer_goods_produces_mult = 1
+	planet_jobs_volatile_motes_produces_mult = 0.1
+	planet_jobs_exotic_gases_produces_mult = 0.1
+	planet_jobs_rare_crystals_produces_mult = 0.1
+	planet_jobs_physics_research_produces_mult = 0.1
+	planet_jobs_society_research_produces_mult = 0.1
+	planet_jobs_engineering_research_produces_mult = 0.1
 	planet_orbital_bombardment_damage = -0.75
 
-	icon = "gfx/interface/icons/planet_modifiers/pm_holy_planet.dds"
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 1
 }
 
 nep_Auriel_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.5
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.5
+	planet_jobs_society_research_produces_mult = -0.5
+	planet_jobs_engineering_research_produces_mult = -0.5
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -176,17 +217,22 @@ nep_Auriel_debuff = {
 }
 
 nep_Gabriel_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.5
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.5
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -194,17 +240,22 @@ nep_Gabriel_debuff = {
 }
 
 nep_Sabriel_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.5
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.5
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -212,17 +263,22 @@ nep_Sabriel_debuff = {
 }
 
 nep_Samuel_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.5
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.5
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -230,17 +286,22 @@ nep_Samuel_debuff = {
 }
 
 nep_Michael_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.5
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.5
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -248,17 +309,22 @@ nep_Michael_debuff = {
 }
 
 nep_Jauiel_debuff = {
-	pop_happiness = -0.05
-	pop_growth_speed = -0.5
-	planet_building_cost_mult = 0.05
+	planet_amenities_mult = -0.05
+	pop_growth_speed = -0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.05
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.05
+	planet_jobs_volatile_motes_produces_mult = -0.5
+	planet_jobs_exotic_gases_produces_mult = -0.5
+	planet_jobs_rare_crystals_produces_mult = -0.5
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
 	planet_orbital_bombardment_damage = 0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -266,18 +332,23 @@ nep_Jauiel_debuff = {
 }
 
 nep_Anael_debuff = {
-	pop_happiness = -0.05
+	planet_amenities_mult = -0.05
 	pop_growth_speed = -0.05
-	planet_building_cost_mult = 0.05
+	planet_buildings_cost_mult = 0.05
 	planet_building_build_speed_mult = -0.05
-	tile_resource_food_mult = -0.05
-	tile_resource_minerals_mult = -0.05
-	tile_resource_energy_mult = -0.05
-	tile_resource_unity_mult = -0.05
-	tile_resource_physics_research_mult = -0.05
-	tile_resource_society_research_mult = -0.05
-	tile_resource_engineering_research_mult = -0.5
-	planet_orbital_bombardment_damage = 0.75
+	planet_jobs_food_produces_mult = -0.05
+	planet_jobs_minerals_produces_mult = -0.05
+	planet_jobs_energy_produces_mult = -0.05
+	planet_jobs_unity_produces_mult = -0.05
+	planet_jobs_alloys_cost_mult = -0.05
+	planet_jobs_consumer_goods_produces_mult = -0.5
+	planet_jobs_volatile_motes_produces_mult = -0.05
+	planet_jobs_exotic_gases_produces_mult = -0.05
+	planet_jobs_rare_crystals_produces_mult = -0.05
+	planet_jobs_physics_research_produces_mult = -0.05
+	planet_jobs_society_research_produces_mult = -0.05
+	planet_jobs_engineering_research_produces_mult = -0.05
+	planet_orbital_bombardment_damage = -0.75
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 7

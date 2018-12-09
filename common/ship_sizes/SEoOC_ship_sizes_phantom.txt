@@ -38,7 +38,7 @@ nep_battleship_phantom = {
 		ship_armor_add = 36000
 		ship_shield_add = 36000
 		ship_evasion_add = 90
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 	}
 	size_multiplier = 8
 	fleet_slot_size = 4
@@ -56,7 +56,6 @@ nep_battleship_phantom = {
 	
 	combat_disengage_chance = 1.00
 	
-	has_mineral_upkeep = no
 	class = shipclass_military
 	construction_type = starbase_shipyard	
 	is_designable = no

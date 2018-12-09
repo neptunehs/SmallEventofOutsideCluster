@@ -283,7 +283,7 @@ create_dragon_babys = {
 create_Krahen_defender = {
 	event_target:nep_Krahen_country = {
 		create_leader = {
-			type = admiral
+			class = admiral
 			species = event_target:nep_Krahen_country
 			name = random
 			skill = 10
@@ -336,7 +336,7 @@ create_Krahen_defender = {
 create_Krahen_invader = {
 	event_target:nep_Krahen_country = {
 		create_leader = {
-			type = admiral
+			class = admiral
 			species = event_target:nep_Krahen_country
 			name = random
 			skill = 10
@@ -392,7 +392,7 @@ create_Krahen_invader = {
 create_Krahen_follower = {
 	event_target:nep_Krahen_country = {
 		create_leader = {
-			type = admiral
+			class = admiral
 			species = event_target:nep_Krahen_country
 			name = random
 			skill = 10
@@ -436,61 +436,27 @@ create_Krahen_follower = {
 }
 
 create_Krahen_buildings = {
+	while = {
+		count = 5 
+		create_pop = {
+			species = owner
+		}
+	}
 	if = {
 		limit = { NOT = { has_building = nep_adv_tank_factory } } 
-		random_tile = {
-			limit = {
-				has_blocker = no
-				has_building = no
-				has_grown_pop = no
-			}
-			set_building = nep_adv_tank_factory
-			create_pop = {
-				species = owner
-			}
-		}
+		add_building = nep_adv_tank_factory
 	}
 	if = {
 		limit = { NOT = { has_building = nep_heavy_fortress } } 
-		random_tile = {
-			limit = {
-				has_blocker = no
-				has_building = no
-				has_grown_pop = no
-			}
-			set_building = nep_heavy_fortress
-			create_pop = {
-				species = owner
-			}
-		}
+		add_building = nep_heavy_fortress
 	}
 	if = {
 		limit = { NOT = { has_building = nep_heavy_fortress_2 } } 
-		random_tile = {
-			limit = {
-				has_blocker = no
-				has_building = no
-				has_grown_pop = no
-			}
-			set_building = nep_heavy_fortress_2
-			create_pop = {
-				species = owner
-			}
-		}
+		add_building = nep_heavy_fortress_2
 	}
 	if = {
-		limit = { NOT = { has_building = nep_planetary_gun } } 
-		random_tile = {
-			limit = {
-				has_blocker = no
-				has_building = no
-				has_grown_pop = no
-			}
-			set_building = "nep_planetary_gun"
-			create_pop = {
-				species = owner
-			}
-		}
+		limit = { NOT = { has_building = nep_planetary_gun } }
+		add_building = "nep_planetary_gun"
 	}
 }
 
@@ -550,7 +516,7 @@ create_Krahen_colonizer = {
 create_finalweapon_fleet = {
 	event_target:nep_finalweapon_country = {
 		create_leader = {
-			type = admiral
+			class = admiral
 			species = prev.owner_species
 			name = random
 			skill = 10

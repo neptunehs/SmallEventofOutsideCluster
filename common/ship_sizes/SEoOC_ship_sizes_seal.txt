@@ -35,7 +35,7 @@ nep_seal_evil = {
 	collision_radius = 15
 	modifier = {
 		ship_evasion_mult = -1
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 		ship_armor_add = 500000
 		ship_armor_regen_add_static = 100000
 	}

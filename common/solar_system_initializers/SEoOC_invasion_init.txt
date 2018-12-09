@@ -18,9 +18,7 @@ nep_Central_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -56,9 +54,7 @@ nep_Centaury_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -94,9 +90,7 @@ nep_Magellan_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -132,9 +126,7 @@ nep_Orion_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -170,9 +162,7 @@ nep_Tra_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -208,9 +198,7 @@ nep_Aurora_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -246,9 +234,7 @@ nep_Andromeda_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -285,9 +271,7 @@ nep_Persei_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	
@@ -324,9 +308,7 @@ nep_Exterior_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-				clear_deposits = yes
-			}
+			clear_deposits = yes
 		}
 	}
 	

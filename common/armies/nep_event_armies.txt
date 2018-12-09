@@ -1,12 +1,12 @@
 nep_Legnahcras_defensive_army = {
 	defensive = yes
+	is_pop_spawned = no
 	damage = 8.0
 	health = 16.0
 	has_morale = no
 	morale_damage = 15.0
 	collateral_damage = 4.0
 	time = 500
-	maintenance = 0
 	icon_frame = 4
 	has_species = no
 	
@@ -22,10 +22,14 @@ nep_Legnahcras_assault_army = {
 	morale_damage = 15.0
 	collateral_damage = 4.0
 	time = 500
-	maintenance = 0
 	icon_frame = 4
 	has_species = no
-	
+	resources = {
+		category = armies
+		upkeep = {
+			energy = 4
+		}
+	}
 	potential = {
 		always = no
 	}
@@ -33,13 +37,13 @@ nep_Legnahcras_assault_army = {
 
 nep_Krahen_anti_grav = {
 	defensive = yes #To prevent a bug
+	is_pop_spawned = no
 	damage = 1.5
 	health = 1.5
 	has_morale = no
 	morale_damage = 1
 	collateral_damage = 1.0
 	time = 500
-	maintenance = 0
 	icon_frame = 4
 	has_species = no
 	
@@ -50,13 +54,13 @@ nep_Krahen_anti_grav = {
 
 nep_Krahen_heavy_fortress = {
 	defensive = yes
+	is_pop_spawned = no
 	damage = 8.0
 	health = 17.0
 	has_morale = no
 	morale_damage = 4.0
 	collateral_damage = 0.1
 	time = 500
-	maintenance = 0
 	icon_frame = 4
 	has_species = no
 	
@@ -67,13 +71,13 @@ nep_Krahen_heavy_fortress = {
 
 nep_Krahen_heavy_fortress_2 = {
 	defensive = yes
+	is_pop_spawned = no
 	damage = 8.0
 	health = 17.0
 	has_morale = no
 	morale_damage = 4.0
 	collateral_damage = 0.1
 	time = 500
-	maintenance = 0
 	icon_frame = 4
 	has_species = no
 	

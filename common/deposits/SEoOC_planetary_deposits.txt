@@ -1,0 +1,54 @@
+d_nep_unknown_vortex = {	
+	time = 440
+	
+	is_for_colonizeable = yes
+	category = deposit_cat_blockers
+	icon = unused/d_great_vortex
+	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 2000
+		}
+	}
+		
+	planet_modifier = { 
+		planet_max_districts_add = -1
+	}
+
+
+	use_weights_for_blocker_swap_types = no
+	blocker_swap_types = {
+		d_nep_dragon_temple
+	}
+
+	drop_weight = {
+		weight = 0	
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+d_nep_dragon_temple = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	icon = d_monument
+
+	resources = {
+		category = deposit_blockers
+		produces = {
+			unity = 12
+		}
+	}
+
+	planet_modifier = { 
+		job_clerk_add = 2
+		job_nep_dragon_administrator_add = 1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+} 

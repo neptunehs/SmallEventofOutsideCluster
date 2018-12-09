@@ -35,7 +35,7 @@ nep_ancient_corvette = {
 	modifier = {
 		ship_armor_add = 250
 		ship_evasion_add = 70
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 	}
 	max_hitpoints = 600
 	size_multiplier = 1
@@ -51,8 +51,6 @@ nep_ancient_corvette = {
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start	
 	default_behavior = swarm
 	
-
-	has_mineral_upkeep = yes
 	class = shipclass_military
 	construction_type = starbase_shipyard
 	is_designable = no
@@ -68,7 +66,7 @@ nep_ancient_destroyer = {
 	modifier = {
 		ship_armor_add = 500
 		ship_evasion_add = 40
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 	 	ship_weapon_range_mult = 0.1
 	}
 	size_multiplier = 2
@@ -85,7 +83,6 @@ nep_ancient_destroyer = {
 	
 	combat_disengage_chance = 1.50
 	
-	has_mineral_upkeep = yes
 	class = shipclass_military
 	construction_type = starbase_shipyard
 	is_designable = no
@@ -101,7 +98,7 @@ nep_ancient_cruiser = {
 	modifier = {
 		ship_armor_add = 1000
 		ship_evasion_add = 20
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 		ship_weapon_range_mult = 0.5
 	}
 	size_multiplier = 4
@@ -120,7 +117,6 @@ nep_ancient_cruiser = {
 	
 	combat_disengage_chance = 1.25
 	
-	has_mineral_upkeep = yes
 	class = shipclass_military
 	construction_type = starbase_shipyard
 	is_designable = no
@@ -136,7 +132,7 @@ nep_ancient_battleship = {
 	modifier = {
 		ship_armor_add = 2000
 		ship_evasion_add = 10
-		ship_upkeep_mult = -1
+		ships_upkeep_mult = -1
 		ship_weapon_range_mult = 1
 	}
 	size_multiplier = 8
@@ -155,7 +151,6 @@ nep_ancient_battleship = {
 	
 	combat_disengage_chance = 1.00
 	
-	has_mineral_upkeep = yes
 	class = shipclass_military
 	construction_type = starbase_shipyard	
 	is_designable = no

@@ -8,7 +8,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 7040.0 max = 10580.0 }
 	windup = { min = 12.0 max = 24.0 }
@@ -52,7 +52,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 1600.0 max = 2800.0 }
 	windup = { min = 21.0 max = 33.0 }
@@ -95,7 +95,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 500.0 max = 750.0 }
 	windup = { min = 3.0 max = 15.5 }
@@ -138,7 +138,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 240.0 max = 380.0 }
 	windup = { min = 1.0 max = 12.5 }
@@ -181,7 +181,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 60.0 max = 90.0 }
 	windup = { min = 0 max = 0 }

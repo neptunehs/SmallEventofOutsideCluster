@@ -1,125 +1,71 @@
-nep_ruin_temple = {
-	is_listed = no
-	icon = "building_old_ruins"
-
-	allow = {
-		always = no
-	}
-	
-	upgrades = {
-		nep_dragon_temple
-	}
-	
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-	
-	prerequisites = {
-	}
-}
-
-nep_dragon_temple = {
-	is_listed = no
-	base_buildtime = 180
-	icon = "building_nep_dragon_temple"
-
-
-	cost = {
-		minerals = 1000
-		energy = 1000
-	}
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-
-	produced_resources = {
-		unity = 14
-	}
-
-	required_resources = {
-		energy = 5
-	}
-	
-	prerequisites = {
-	}
-}
-
 nep_adv_tank_factory = {
-	is_listed = no
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	can_be_disabled = no
 	base_buildtime = 180
 	icon = "building_nep_heavy_fortress"
-	
-	cost = {
-		minerals = 1000
-		energy = 1000
-	}
-	
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-	
-	destroy_if = {
-		exists = owner
-		NOT = { owner = { has_country_flag = nep_Krahen_country } }
+	category = army
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			energy = 1000
+		}
 	}
 }
 
 nep_heavy_fortress = {
-	is_listed = no
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	can_be_disabled = no
 	base_buildtime = 180
 	icon = "building_nep_heavy_fortress"
+	category = army
 	
-	cost = {
-		minerals = 1000
-		energy = 1000
-	}
-	
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-	
-	destroy_if = {
-		exists = owner
-		NOT = { owner = { has_country_flag = nep_Krahen_country } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			energy = 1000
+		}
 	}
 }
 
 nep_heavy_fortress_2 = {
-	is_listed = no
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	can_be_disabled = no
 	base_buildtime = 180
 	icon = "building_nep_heavy_fortress"
+	category = army
 	
-	cost = {
-		minerals = 1000
-		energy = 1000
-	}
-	
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-	
-	destroy_if = {
-		exists = owner
-		NOT = { owner = { has_country_flag = nep_Krahen_country } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			energy = 1000
+		}
 	}
 }
 
 nep_planetary_gun = {
-	is_listed = no
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	can_be_disabled = no
 	base_buildtime = 180
 	icon = "building_nep_planetary_gun"
+	category = army
 	
-	cost = {
-		minerals = 1000
-		energy = 1000
-	}
-	
-	ai_replace = no
-	event_building = yes
-	immune_to_bombardment = yes
-	
-	destroy_if = {
-		exists = owner
-		NOT = { owner = { has_country_flag = nep_Krahen_country } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			energy = 1000
+		}
 	}
 }

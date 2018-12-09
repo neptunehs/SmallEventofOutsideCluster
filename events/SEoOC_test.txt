@@ -577,7 +577,7 @@ country_event = {
 			}
 		}
 			create_leader = {
-				type = admiral
+				class = admiral
 				species = prev.owner_species
 				name = random
 				skill = 10
@@ -649,18 +649,7 @@ planet_event = {
 	trigger = { always = no }
 	
 	immediate = {
-		random_tile = {
-			limit = {
-				has_building = no
-				num_adjacent_tiles = 2
-			}
-			if = {
-				limit = { has_blocker = yes }
-				remove_blocker = yes				
-			}
-			set_building = "nep_ruin_temple"
-			save_global_event_target_as = nep_Anael_temple
-		}
+		add_deposit = "d_nep_unknown_vortex"
 	}
 }
 

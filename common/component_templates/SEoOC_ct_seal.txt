@@ -8,7 +8,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	power = 0
-	cost = 0
+	
 	
 	damage = { min = 7040.0 max = 10580.0 }
 	windup = { min = 12.0 max = 24.0 }

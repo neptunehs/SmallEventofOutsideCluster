@@ -28,7 +28,7 @@ nep_Gacrus_init = {
 }
 
 #down
-nep_Gacrus_init = {
+nep_Acrus_init = {
 	prevent_anomalies = yes
 	name = "NAME_Acrus"
 
@@ -94,9 +94,9 @@ nep_Mimosa_init = {
 }
 
 #up
-nep_Gacrus_init = {
+nep_Decrus_init = {
 	prevent_anomalies = yes
-	name = "NAME_Gacrus"
+	name = "NAME_Decrus"
 
 	class = "sc_b"
 

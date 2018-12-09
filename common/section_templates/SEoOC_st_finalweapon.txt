@@ -432,8 +432,6 @@ ship_section_template = {
 	}
 	
 	aux_utility_slots = 10
-	
-	cost = 0
 }
 
 ship_section_template = {

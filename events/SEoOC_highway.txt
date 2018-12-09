@@ -90,7 +90,9 @@ country_event = {
 		name = nep_highway.21.b
 		custom_tooltip = nep_highway.21.b.tooltip
 		owner = { 
-			add_minerals = 3000
+			add_resource = {
+				minerals = 3000
+			}
 		}
 	}
 	
@@ -102,9 +104,11 @@ country_event = {
 			has_ethic = "ethic_fanatic_xenophobe"
 		}
 		owner = {
-			add_energy = 3000		
-			add_unity = 9999
-			add_influence = 100
+			add_resource = {
+				energy = 3000
+				unity = 9999
+				influence = 100
+			}
 		}
 	}
 }
@@ -146,8 +150,10 @@ country_event = {
 	option = {
 		name = nep_highway.22.b
 		custom_tooltip = nep_highway.22.b.tooltip
-		owner = { 
-			add_minerals = 3000
+		owner = {
+			add_resource = {
+				minerals = 3000
+			}
 		}
 	}
 	
@@ -159,9 +165,11 @@ country_event = {
 			has_ethic = "ethic_fanatic_xenophobe"
 		}
 		owner = {
-			add_energy = 3000	
-			add_unity = 9999
-			add_influence = 100
+			add_resource = {
+				energy = 3000
+				unity = 9999
+				influence = 100
+			}
 		}
 	}
 }
@@ -203,8 +211,10 @@ country_event = {
 	option = {
 		name = nep_highway.23.b
 		custom_tooltip = nep_highway.23.b.tooltip
-		owner = { 
-			add_minerals = 3000
+		owner = {
+			add_resource = {
+				minerals = 3000
+			}
 		}
 	}
 	
@@ -216,9 +226,11 @@ country_event = {
 			has_ethic = "ethic_fanatic_xenophobe"
 		}
 		owner = {
-			add_energy = 3000		
-			add_unity = 9999
-			add_influence = 100
+			add_resource = {
+				energy = 3000
+				unity = 9999
+				influence = 100
+			}
 		}
 	}
 }
@@ -261,7 +273,9 @@ country_event = {
 		name = nep_highway.24.b
 		custom_tooltip = nep_highway.24.b.tooltip
 		owner = { 
-			add_minerals = 3000
+			add_resource = {
+				minerals = 3000
+			}
 		}
 	}
 	
@@ -273,9 +287,11 @@ country_event = {
 			has_ethic = "ethic_fanatic_xenophobe"
 		}
 		owner = {
-			add_energy = 3000	
-			add_unity = 9999
-			add_influence = 100
+			add_resource = {
+				energy = 3000
+				unity = 9999
+				influence = 100
+			}
 		}
 	}
 }
@@ -319,7 +335,9 @@ country_event = {
 		name = nep_highway.25.b
 		custom_tooltip = nep_highway.25.b.tooltip
 		owner = { 
-			add_minerals = 3000
+			add_resource = {
+				minerals = 3000
+			}
 		}
 	}
 	
@@ -331,9 +349,11 @@ country_event = {
 			has_ethic = "ethic_fanatic_xenophobe"
 		}
 		owner = {
-			add_energy = 3000	
-			add_unity = 9999
-			add_influence = 100
+			add_resource = {
+				energy = 3000
+				unity = 9999
+				influence = 100
+			}
 		}
 	}
 }
@@ -362,9 +382,11 @@ ship_event = {
 	option = {
 		name = nep_highway.31.b
 		owner = {
-			add_physics_research = 50
-			add_society_research = 50
-			add_engineering_research = 50
+			add_resource = {
+				physics_research = 50
+				society_research = 50
+				engineering_research = 50
+			}
 		}
 	}
 }
@@ -393,9 +415,11 @@ ship_event = {
 	option = {
 		name = nep_highway.32.b
 		owner = {
-			add_physics_research = 50
-			add_society_research = 50
-			add_engineering_research = 50
+			add_resource = {
+				physics_research = 50
+				society_research = 50
+				engineering_research = 50
+			}
 		}
 	}
 }
@@ -424,9 +448,11 @@ ship_event = {
 	option = {
 		name = nep_highway.33.b
 		owner = {
-			add_physics_research = 50
-			add_society_research = 50
-			add_engineering_research = 50
+			add_resource = {
+				physics_research = 50
+				society_research = 50
+				engineering_research = 50
+			}
 		}
 	}
 }
@@ -455,9 +481,11 @@ ship_event = {
 	option = {
 		name = nep_highway.34.b
 		owner = {
-			add_physics_research = 50
-			add_society_research = 50
-			add_engineering_research = 50
+			add_resource = {
+				physics_research = 50
+				society_research = 50
+				engineering_research = 50
+			}
 		}
 	}
 }
@@ -486,9 +514,11 @@ ship_event = {
 	option = {
 		name = nep_highway.35.b
 		owner = {
-			add_physics_research = 50
-			add_society_research = 50
-			add_engineering_research = 50
+			add_resource = {
+				physics_research = 50
+				society_research = 50
+				engineering_research = 50
+			}
 		}
 	}
 }

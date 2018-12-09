@@ -611,9 +611,7 @@ nep_highway_note_N = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -639,9 +637,7 @@ nep_highway_note_NNE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -667,9 +663,7 @@ nep_highway_note_NE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -695,9 +689,7 @@ nep_highway_note_ENE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -723,9 +715,7 @@ nep_highway_note_E = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -751,9 +741,7 @@ nep_highway_note_ESE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -779,9 +767,7 @@ nep_highway_note_SE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -807,9 +793,7 @@ nep_highway_note_SSE = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -835,9 +819,7 @@ nep_highway_note_S = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -863,9 +845,7 @@ nep_highway_note_SSW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -891,9 +871,7 @@ nep_highway_note_SW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -919,9 +897,7 @@ nep_highway_note_WSW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -947,9 +923,7 @@ nep_highway_note_W = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -975,9 +949,7 @@ nep_highway_note_WNW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -1003,9 +975,7 @@ nep_highway_note_NW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }
@@ -1031,9 +1001,7 @@ nep_highway_note_NNW = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
     }
 }

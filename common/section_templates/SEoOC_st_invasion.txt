@@ -268,7 +268,6 @@ ship_section_template = {
 
 	large_utility_slots = 1
 	
-	cost = 0
 }
 
 ship_section_template = {
@@ -423,7 +422,6 @@ ship_section_template = {
 		locatorname = "medium_gun_05"
 	}
 	
-	cost = 0
 }
 
 ship_section_template = {
@@ -506,7 +504,6 @@ ship_section_template = {
 	
 	aux_utility_slots = 2
 	
-	cost = 0
 }
 
 ship_section_template = {
@@ -590,7 +587,6 @@ ship_section_template = {
 	large_utility_slots = 1
 	aux_utility_slots = 1
 	
-	cost = 0
 }
 
 ship_section_template = {

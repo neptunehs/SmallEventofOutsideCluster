@@ -93,9 +93,7 @@ nep_seal_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 		
@@ -111,9 +109,7 @@ nep_seal_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 	
@@ -131,9 +127,7 @@ nep_seal_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 	
@@ -152,9 +146,7 @@ nep_seal_init = {
 		
 		# init_effect = {
 			# prevent_anomaly = yes
-			# orbital_deposit_tile = {
-                # clear_deposits = yes
-            # }
+			# clear_deposits = yes
 		# }
 	# }
 }
@@ -177,9 +169,7 @@ nep_step_1 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -202,9 +192,7 @@ nep_step_2 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -227,9 +215,7 @@ nep_step_3 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -252,9 +238,7 @@ nep_step_4 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -277,9 +261,7 @@ nep_step_5 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -302,9 +284,7 @@ nep_step_6 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -327,9 +307,7 @@ nep_step_7 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -352,9 +330,7 @@ nep_step_8 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -377,9 +353,7 @@ nep_step_9 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }
@@ -402,9 +376,7 @@ nep_step_10 = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			orbital_deposit_tile = {
-                clear_deposits = yes
-            }
+			clear_deposits = yes
 		}
 	}
 }

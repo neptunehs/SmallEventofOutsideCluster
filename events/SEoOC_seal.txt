@@ -75,7 +75,11 @@ ship_event = {
 	
 	option = {
 		name = nep_seal.2.b
-		OWNER = { add_energy = -100 }
+		OWNER = { 
+			add_resource = {
+				energy = -100
+			}
+		}
 		event_target:nep_seal_ambient = {
 			clear_global_event_target = nep_seal_ambient
 			destroy_ambient_object = this

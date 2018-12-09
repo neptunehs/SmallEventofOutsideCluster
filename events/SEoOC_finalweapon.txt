@@ -951,7 +951,9 @@ country_event = {
 			has_country_flag = nep_dragon_summoner
 			NOT = { has_country_flag = nep_corrupted_finalweapons_defeater }
 		}
-		add_influence = -1000
+		add_resource = {
+			influence = -1000
+		}
 		add_modifier = {
 			modifier = nep_finalweapon_antigov
 			days = 7200
@@ -990,26 +992,20 @@ country_event = {
 				}
 				random_system_planet = {
 					change_pc = pc_asteroid
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_broken_seal_1
-					}
+					clear_deposits = yes
+					add_deposit = d_nep_broken_seal_1
 				}
 				random_system_planet = {
 					limit = { NOT = { is_planet_class = pc_asteroid } }
 					change_pc = pc_asteroid
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_broken_seal_2
-					}
+					clear_deposits = yes
+					add_deposit = d_nep_broken_seal_2
 				}
 				random_system_planet = {
 					limit = { NOT = { is_planet_class = pc_asteroid } }
 					change_pc = pc_asteroid
-					orbital_deposit_tile = {
-						clear_deposits = yes
-						add_deposit = d_broken_seal_3
-					}
+					clear_deposits = yes
+					add_deposit = d_nep_broken_seal_3
 				}
 				every_system_megastructure = { remove_megastructure = this }
 				every_fleet_in_system = { destroy_fleet = this }
