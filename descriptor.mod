@@ -1,0 +1,10 @@
+﻿name="SmallEventofOutsideCluster"
+archive="SEoOC.zip"
+tags={
+	"Graphics"
+	"Spaceships"
+	"Gameplay"
+	"Events"
+}
+picture="SEoOC.jpg"
+supported_version="2.1.*"
