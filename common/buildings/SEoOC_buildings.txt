@@ -1,6 +1,6 @@
 nep_adv_tank_factory = {
 	can_build = no
-	can_demolish = yes
+	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
 	base_buildtime = 180
@@ -18,7 +18,7 @@ nep_adv_tank_factory = {
 
 nep_heavy_fortress = {
 	can_build = no
-	can_demolish = yes
+	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
 	base_buildtime = 180
@@ -36,7 +36,7 @@ nep_heavy_fortress = {
 
 nep_heavy_fortress_2 = {
 	can_build = no
-	can_demolish = yes
+	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
 	base_buildtime = 180
@@ -54,7 +54,7 @@ nep_heavy_fortress_2 = {
 
 nep_planetary_gun = {
 	can_build = no
-	can_demolish = yes
+	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
 	base_buildtime = 180

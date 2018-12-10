@@ -1875,7 +1875,7 @@ ship_event = {
 }
 
 #restore temples
-country_event = {
+planet_event = {
 	id = nep_dragon.991
 	hide_window = yes
 	
@@ -1883,25 +1883,23 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = nep_dragon_begin
-		from = {
-			OR = {
-				has_planet_flag = nep_Auriel_planet
-				has_planet_flag = nep_Gabriel_planet
-				has_planet_flag = nep_Sabriel_planet
-				has_planet_flag = nep_Samuel_planet
-				has_planet_flag = nep_Michael_planet
-				has_planet_flag = nep_Jauiel_planet
-				has_planet_flag = nep_Anael_planet
-			}
-			NOR = {
-				has_deposit = d_nep_dragon_temple
-				has_deposit = d_nep_unknown_vortex
-			}
+		OR = {
+			has_planet_flag = nep_Auriel_planet
+			has_planet_flag = nep_Gabriel_planet
+			has_planet_flag = nep_Sabriel_planet
+			has_planet_flag = nep_Samuel_planet
+			has_planet_flag = nep_Michael_planet
+			has_planet_flag = nep_Jauiel_planet
+			has_planet_flag = nep_Anael_planet
+		}
+		NOR = {
+			has_deposit = d_nep_dragon_temple
+			has_deposit = d_nep_unknown_vortex
 		}
 	}
 	
 	immediate = {
-		from = { add_deposit = d_nep_unknown_vortex }
+		add_deposit = d_nep_unknown_vortex
 	}
 }
 
