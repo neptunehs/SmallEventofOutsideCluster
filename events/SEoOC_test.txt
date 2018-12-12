@@ -712,3 +712,16 @@ planet_event = {
 		create_Krahen_invader = yes
 	}
 }
+
+country_event = {
+	id = nep_test.15
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { always = no }
+	
+	immediate = {
+		set_global_flag = nep_SEoOC_easy
+	}
+}
+	

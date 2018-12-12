@@ -4,3 +4,10 @@
  nep_mia.1.desc:0 "我们前往[From.GetName]的船因为星况不明而失踪。"
 
  effect_every_combatant_fleet:0 "Every Combatant"
+ 
+ policy_nep_SEoOC_diff_policy:0 "SEoOC难度调整"
+ policy_nep_SEoOC_diff_policy_desc:0 "\n调整SEoOC(SomeEventofOutsideCluster)这个mod的剧情难度。"
+ SEoOC_diff_diff_policy_easy:0 "简单"
+ SEoOC_diff_diff_policy_easy_desc:0 "如果你没有使用其他任何的非人设mod，选择这个。"
+ SEoOC_diff_diff_policy_default:0 "标准"
+ SEoOC_diff_diff_policy_default_desc:0 "本mod的标准数据。需要NSC或者其他的战力mod来保证你不会被挡住或被淹没。"

@@ -21,7 +21,7 @@
  nep_dragon.3.name:0 "Inside the Shield"
  nep_dragon.3.desc:0 "This shield does not seem to be particularly complicated, and our scientists have found a way to unlock it. There should be some Gaia planets in the shield, maybe it would be a good place to be our new colony. In addition, each planet has a strange, never-stop vortex that the radar cannot detect inside."
  nep_dragon.3.a:0 "Unlock the shield,gaia planet should not be wasted."
- nep_dragon.3.b:0 "Everything happens for a reason, for example for something in vortex. Leave them."
+ nep_dragon.3.b:0 "Everything happens for a reason. Leave them."
  
  nep_dragon.4.name:0 "Unknown Ground Force"
  nep_dragon.4.desc:0 "A group of unknown forces suddenly launched attacks in our seven new colonies. They are huge and powerful, and no one knows their origins. Please send a reinforcement immediately - if we don't act quickly, the colony will be destroyed!"
@@ -155,3 +155,5 @@
  
  nep_Legnahcras_assault_army:0 "Legnahcras"
  nep_Legnahcras_defensive_army:0 "Legnahcras Defensive Army"
+ 
+ mod_job_nep_dragon_administrator:0 "Dragon Temple Administrator job"

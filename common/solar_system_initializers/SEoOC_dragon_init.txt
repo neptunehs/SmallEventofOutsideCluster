@@ -198,6 +198,7 @@ nep_Gabriel_init = {
 		init_effect = {
 			save_global_event_target_as = nep_Gabriel_planet
 			prevent_anomaly = yes
+			add_deposit = d_rich_mountain
 		}
 		
 		moon = {
@@ -279,6 +280,7 @@ nep_Sabriel_init = {
 		init_effect = {
 			save_global_event_target_as = nep_Sabriel_planet
 			prevent_anomaly = yes
+			add_deposit = d_underwater_vent
 		}
 		
 		moon = {

@@ -27,6 +27,7 @@ create_malfunctioning_guards_country = {
 	last_created_country = {
 		set_country_flag = malfunctioning_guards
 		save_global_event_target_as = malfunctioning_guards_country
+		nep_easy_mod = yes
 	}
 	set_global_flag = malfunctioning_guards_created
 }
@@ -159,9 +160,12 @@ malfunctioning_guards_spawn_static = {
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 			
-			add_modifier = {
-				modifier = nep_malfunctioning_guards_buff
-				days = -1
+			if = {
+				limit = { NOT = { has_global_flag = nep_SEoOC_easy } }
+				add_modifier = {
+					modifier = nep_malfunctioning_guards_buff
+					days = -1
+				}
 			}
 			
 			queue_actions = {	
@@ -204,6 +208,7 @@ create_seal_evil_country = {
 	last_created_country = {
 		set_country_flag = seal_evil_country
 		save_global_event_target_as = seal_evil_country
+		nep_easy_mod = yes
 	}
 	set_global_flag = seal_evil_country_created
 }
@@ -230,9 +235,12 @@ seal_boss_spawn = {
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 
-			add_modifier = {
-				modifier = nep_seal_evil_buff
-				days = -1
+			if = {
+				limit = { NOT = { has_global_flag = nep_SEoOC_easy } }
+				add_modifier = {
+					modifier = nep_seal_evil_buff
+					days = -1
+				}
 			}
 		}
 	}
@@ -273,6 +281,16 @@ create_dragon_babys = {
 		}
 	}
 	last_created_fleet = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						is_country_type = nep_dragon_country
+					}
+				}
+			}
+			nep_easy_mod_reward = yes
+		}
 		fleet_event = { id = nep_dragon.999 days = 45 }
 	}
 }
@@ -583,6 +601,112 @@ create_finalweapon_bomb_fleet = {
 			}
 			set_fleet_flag = nep_star_bomb
 			set_event_locked = yes
+		}
+	}
+}
+
+#######################################
+#  Easy Mode
+#######################################
+
+nep_easy_mod = {
+	if = {
+		limit = {
+			has_global_flag = nep_SEoOC_easy
+		}
+		if = {
+			limit = {
+				is_country_type = nep_malfunctioning_guards
+			}
+			add_modifier = {
+				modifier = nep_malfunctioning_guards_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_seal_evil_country
+			}
+			add_modifier = {
+				modifier = nep_seal_evil_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_dragon_country
+			}
+			add_modifier = {
+				modifier = nep_dragon_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_Krahen_country
+			}
+			add_modifier = {
+				modifier = nep_Krahen_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_finalweapon_country
+			}
+			add_modifier = {
+				modifier = nep_finalweapon_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_Legnahcras_country
+			}
+			add_modifier = {
+				modifier = nep_Legnahcras_easy
+				days = -1
+			}
+		}
+	}
+}
+
+nep_easy_mod_reward = {
+	if = {
+		limit = {
+			has_global_flag = nep_SEoOC_easy
+		}
+		if = {
+			limit = {
+				is_ship_size = nep_dragon_reward
+				is_ship_size = nep_dragon_reward_kai
+				is_ship_size = nep_dragon_baby
+			}
+			add_modifier = {
+				modifier = nep_dragon_easy
+				days = -1
+			}			
+		}
+		if = {
+			limit = {
+				is_ship_size = nep_finalweapon
+			}
+			add_modifier = {
+				modifier = nep_finalweapon_easy
+				days = -1
+			}
+		}
+	}
+}
+
+nep_easy_mod_reward_2 = {
+	if = {
+		limit = {
+			has_global_flag = nep_SEoOC_easy
+		}
+		add_modifier = {
+			modifier = nep_Legnahcras_easy
+			days = -1
 		}
 	}
 }

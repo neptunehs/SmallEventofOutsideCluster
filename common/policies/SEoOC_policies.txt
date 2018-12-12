@@ -1,0 +1,65 @@
+nep_SEoOC_diff_policy = {
+
+	potential = {
+		is_ai = no
+		days_passed > 5
+		NOT = { has_global_flag = nep_highway_begin }
+	}
+	
+	option = {
+		name = "SEoOC_diff_diff_policy_easy"
+
+		potential = { }
+
+		policy_flags = {
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = nep_SEoOC_easy }
+					}
+					set_global_flag = nep_SEoOC_easy
+				}
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 1
+			}
+		}
+	}
+	
+	
+	option = {
+		name = "SEoOC_diff_diff_policy_default"
+
+		potential = { }
+
+		policy_flags = {
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = nep_SEoOC_easy
+					}
+					remove_global_flag = nep_SEoOC_easy
+				}
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}
+			modifier = {
+				factor = 10
+				has_global_flag = has_nsc_active
+			}
+		}
+	}
+}

@@ -676,6 +676,7 @@ country_event = {
 		}
 		last_created_country = {
 			save_global_event_target_as = Legnahcras_country
+			nep_easy_mod = yes
 		}
 		event_target:nep_Auriel_planet = {
 			while = {
@@ -830,6 +831,7 @@ country_event = {
 		}
 		last_created_country = {
 			save_global_event_target_as = nep_dragon_country
+			nep_easy_mod = yes
 		}
 		create_fleet = {
 			name = "NAME_Pentacle"
@@ -854,9 +856,12 @@ country_event = {
 				set_fleet_stance = aggressive
 				set_aggro_range = 500
 				set_aggro_range_measure_from = self
-				add_modifier = {
-					modifier = nep_dragon_boss_buff
-					days = -1
+				if = {
+					limit = { has_global_flag = nep_SEoOC_easy }
+					add_modifier = {
+						modifier = nep_dragon_boss_buff
+						days = -1
+					}
 				}
 			}
 		}
@@ -932,6 +937,12 @@ country_event = {
 					type = nep_Legnahcras_assault_army
 				}
 			}
+		}
+		every_owned_army = {
+			limit = {
+				army_type = nep_Legnahcras_assault_army
+			}
+			nep_easy_mod_reward_2 = yes
 		}
 	}
 	
@@ -1306,6 +1317,9 @@ country_event = {
 				create_ship = {
 					name = "NAME_Heptagram_Dragon"
 					design = "Heptagram Dragon Rebirth"
+					effect = {
+						nep_easy_mod_reward = yes
+					}
 				}
 				set_location = {
 					target = event_target:nep_dragon_star
@@ -1638,6 +1652,9 @@ country_event = {
 				create_ship = {
 					name = "NAME_Heptagram_Dragon"
 					design = "Heptagram Dragon Kai"
+					effect = {
+						nep_easy_mod_reward = yes
+					}
 				}
 				set_location = {
 					target = event_target:nep_dragon_star

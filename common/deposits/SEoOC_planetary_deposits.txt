@@ -35,7 +35,7 @@ d_nep_dragon_temple = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
 	icon = d_monument
-
+	should_swap_deposit_on_terraforming = no
 	resources = {
 		category = deposit_blockers
 		produces = {

@@ -268,7 +268,7 @@ planet_event = {
     		        "null"
     		    }
 			}
-		}		
+		}
 		every_playable_country = {
 			limit = { NOT = { has_event_chain = nep_finalweapon_chain } }
 			begin_event_chain = {
@@ -278,6 +278,7 @@ planet_event = {
 		}
 		last_created_country = {
 			save_global_event_target_as = nep_finalweapon_country
+			nep_easy_mod = yes
 			create_finalweapon_fleet = yes
 			last_created_fleet = {
 				every_country = {

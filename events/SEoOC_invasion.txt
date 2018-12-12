@@ -311,9 +311,12 @@ fleet_event = {
 			}
 			set_country_flag = nep_Krahen_country
 			save_global_event_target_as = nep_Krahen_country
-			add_modifier = {
-				modifier = nep_Krahen_buff
-				days = -1
+			if = {
+				limit = { NOT = { has_global_flag = nep_SEoOC_easy } }
+				add_modifier = {
+					modifier = nep_Krahen_buff
+					days = -1
+				}
 			}
 			if = {
 				limit = {
@@ -330,6 +333,7 @@ fleet_event = {
 					days = -1
 				}
 			}
+			nep_easy_mod = yes
 		}
 		set_global_flag = nep_Krahen_begin
 		remove_global_flag = nep_sealgate_appeared

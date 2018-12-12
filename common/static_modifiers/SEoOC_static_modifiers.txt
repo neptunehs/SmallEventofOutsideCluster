@@ -384,3 +384,56 @@ nep_finalweapon_debuff = {
 nep_finalweapon_antigov = {
 	pop_government_ethic_attraction = -2
 }
+
+##########################################################################
+# Easy Mode
+##########################################################################
+nep_malfunctioning_guards_easy = {
+	ship_weapon_damage = -0.7
+	ship_hull_mult = -0.7
+	ship_armor_mult = -0.7
+	ship_shield_mult = -0.7
+}
+
+nep_seal_evil_easy = {
+	ship_weapon_damage = -0.75
+	ship_hull_mult = -0.75
+	ship_armor_mult = -0.75
+	ship_shield_mult = -0.75
+	ship_weapon_range_mult = -0.5
+}
+
+nep_Legnahcras_easy = {
+	army_health = -0.5
+	army_morale = -0.5
+	army_damage_mult = -0.5
+	army_morale_damage_mult = -0.5
+}
+
+nep_dragon_easy = {
+	ship_weapon_damage = -0.5
+	ship_hull_mult = -0.5
+	ship_armor_mult = -0.5
+	ship_shield_mult = -0.5
+	ship_weapon_range_mult = -0.5
+}
+
+nep_Krahen_easy = {
+	ship_weapon_damage = -1
+	ship_hull_mult = -1.5
+	ship_armor_mult = -1
+	ship_shield_mult = -1
+	ship_weapon_range_mult = -0.5
+	army_health = -0.5
+	army_morale = -0.5
+	army_damage_mult = -0.5
+	army_morale_damage_mult = -0.5
+}
+
+nep_finalweapon_easy = {
+	ship_weapon_damage = -0.5
+	ship_hull_mult = -0.5
+	ship_armor_mult = -0.5
+	ship_shield_mult = -0.5
+	ship_weapon_range_mult = -0.5
+}
