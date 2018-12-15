@@ -1,0 +1,23 @@
+#Tooltips will be generated from these rules when they fail. Use of custom_tooltip is recommended
+#There are still multiple hard-coded rules that apply in addition to these.
+#If rules here evaluate to true, there might still be other rules that make the action unavailable.
+#If a rule here evaluates to false the action will become unavailable
+
+# No scope
+can_win_timed_victory = {
+	custom_tooltip = {
+		fail_text = VICTORY_CONDITION_CRISIS_IN_PROGRESS
+		NOR = { 
+			any_country = { 
+				is_crisis_faction = yes 
+				NOT = { is_country_type = awakened_marauders }
+			} 
+			has_global_flag = nep_Krahen_crisis
+			has_global_flag = nep_corrupted_finalweapons_begin
+		}
+	}
+	custom_tooltip = {
+		fail_text = VICTORY_CONDITION_WAR_IN_HEAVEN_IN_PROGRESS
+		NOT = { has_global_flag = war_in_heaven_ongoing }
+	}	
+}

@@ -371,7 +371,7 @@ country_event = {
 	}
 }
 
-#Krah'en crisis begin (HIDDEN)
+#Krah'en crisis begin (Warning,to debug using nep_test.16)
 country_event = {
 	id = nep_inva.21
 	hide_window = yes
@@ -1463,10 +1463,17 @@ country_event = {
 				category = nep_Krahen_doors_cat
 				location = event_target:nep_Krahen_doors_4
 			}
-			add_event_chain_counter = {
-				event_chain = "nep_Krahen_invasion_chain"
-				counter = "occupied_worlds"
-				amount = 27				
+			event_target:nep_Krahen_country = {
+				every_owned_planet = {
+					limit = { is_colony = yes }
+					root = {
+						add_event_chain_counter = {
+							event_chain = "nep_Krahen_invasion_chain"
+							counter = "occupied_worlds"
+							amount = 1			
+						}
+					}
+				}
 			}
 			add_event_chain_counter = {
 				event_chain = "nep_Krahen_invasion_chain"
