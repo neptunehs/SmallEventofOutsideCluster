@@ -15,7 +15,7 @@ event = {
 		random_country = {
 			limit = { is_ai = no }
 			country_event = { id = nep_game_start.2 days = 3 }
-			country_event = { id = nep_game_start.3 days = 6 }
+			country_event = { id = nep_game_start.3 days = 5 }
 		}
 	}
 }
