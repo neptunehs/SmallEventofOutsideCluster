@@ -827,4 +827,90 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nep_test.17
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { 
+			any_system = {
+				is_fe_cluster = NO
+				any_system_planet = {
+					AND = {
+						OR = {
+							is_colony = yes
+							is_under_colonization = yes
+							is_colonizable = yes
+						}
+						OR = {
+							is_capital = no
+							AND = {
+								is_capital = yes
+								exists = owner
+								owner = {
+									if = {
+										limit = {
+											count_system = {
+												limit = {
+													any_system_planet = {
+														is_colony = yes
+													}
+													owner = { is_same_value = prev }
+												}
+												count > 1
+											}
+										}
+										always = no
+									}
+									else = { 
+										always = yes
+									}
+								}
+							}
+						}
+					}
+				}		
+			}
+	}
+	
+	immediate = {
+	
+	}
+}
+
+country_event = {
+	id = nep_test.18
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				OR = {
+					is_colony = yes
+					is_under_colonization = yes
+					is_colonizable = yes
+				}
+			}
+			root = {
+				change_variable = { which = 1_num value = 1 }
+			}
+		}
+		every_planet = {
+			limit = {
+				colonizeable_planet = yes
+			}
+			root = {
+				change_variable = { which = 2_num value = 1 }
+			}
+		}
+		log = "[This.1_num]"
+		log = "[This.2_num]"
+	}
+}
 	

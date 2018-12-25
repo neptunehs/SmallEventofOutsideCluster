@@ -2207,7 +2207,7 @@ country_event = {
 				has_star_flag = nep_Krahen_portal_system
 				NOR = { 
 					has_star_flag = nep_Krahen_portal_system_unlocked
-					any_planet = {
+					any_system_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_Krahen_country }
 						is_colony = yes
@@ -2278,7 +2278,7 @@ country_event = {
 					any_ship_in_system = {
 						is_ship_size = nep_Krahen_battleship
 					}
-					any_planet = {
+					any_system_planet = {
 						NOT = { is_same_value = root.fromfrom }
 						exists = owner
 						owner = { has_country_flag = nep_Krahen_country }
@@ -2325,7 +2325,7 @@ planet_event = {
 				any_ship_in_system = {
 					is_ship_size = nep_Krahen_battleship
 				}
-				any_planet = {
+				any_system_planet = {
 					NOT = { is_same_value = root }
 					exists = owner
 					owner = { has_country_flag = nep_Krahen_country }
@@ -2373,7 +2373,7 @@ event = {
 					any_ship_in_system = {
 						is_ship_size = nep_Krahen_battleship
 					}
-					any_planet = {
+					any_system_planet = {
 						exists = owner
 						owner = { has_country_flag = nep_Krahen_country }
 						is_colony = yes
@@ -2450,7 +2450,7 @@ event = {
 					is_ship_size = nep_Krahen_battleship
 					is_in_combat = no
 				}
-				any_planet = {
+				any_system_planet = {
 					exists = owner
 					owner = { has_country_flag = nep_Krahen_country }
 					is_colony = yes
