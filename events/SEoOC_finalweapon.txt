@@ -389,14 +389,13 @@ fleet_event = {
 									owner = {
 										if = {
 											limit = {
-												exists = capital_scope
-												any_owned_planet = {
-													is_colony = yes
-													solar_system = { 
-														NOT = {
-															is_same_value = prev.prev.capital_scope.solar_system
+												count_system_within_border = {
+													limit = {
+														any_system_planet = {
+															is_colony = yes
 														}
 													}
+													count > 1
 												}
 											}
 											always = no
@@ -409,6 +408,10 @@ fleet_event = {
 							}
 						}
 					}		
+				}
+				root = {
+					set_event_locked = yes
+					fleet_event = { id = nep_finalweapon.611 days = 15 }
 				}
 				random_system_planet = {
 					limit = { is_star = yes }
@@ -426,6 +429,18 @@ fleet_event = {
 		else = {
 			fleet_event = { id = nep_finalweapon.61 days = 200 }		
 		}
+	}
+}
+
+#Give time to escape
+fleet_event = {
+	id = nep_finalweapon.611
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_event_locked = no
 	}
 }
 

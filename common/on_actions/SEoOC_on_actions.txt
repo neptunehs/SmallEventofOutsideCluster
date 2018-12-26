@@ -69,6 +69,7 @@ on_ship_destroyed_perp = {
 	events = {
 		nep_finalweapon.81
 		nep_seal.10
+		nep_inva.44
 	}
 }
 
@@ -94,12 +95,6 @@ on_custom_diplomacy = {
 	events = {
 		nep_inva.32
 		nep_inva.33
-	}
-}
-
-on_ship_destroyed_perp = {
-	events = {
-		nep_inva.44
 	}
 }
 

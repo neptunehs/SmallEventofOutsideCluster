@@ -80,6 +80,7 @@ nep_seal_init = {
 	
 	flags = {
 		nep_seal_system
+		guardian
 	}
 	
 	planet = {

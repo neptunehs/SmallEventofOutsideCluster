@@ -45,7 +45,8 @@ nep_Aemethms_init = {
 	
 	flags = {
 		nep_dragon_system
-		#nep_heptagram_cluster
+		guardian
+		hostile_system
 	}
 	
 	planet = {

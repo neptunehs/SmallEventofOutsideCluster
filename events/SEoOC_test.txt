@@ -914,3 +914,80 @@ country_event = {
 	}
 }
 	
+country_event = {
+	id = nep_test.19
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { 
+		always = no
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				count_system_within_border = {
+					limit = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+					count >= 1
+				}
+			}
+			log = "test_19:1"
+		}
+		if = {
+			limit = {
+				count_system_within_border = {
+					limit = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+					count >= 2
+				}
+			}
+			log = "test_19:2"
+		}
+		if = {
+			limit = {
+				count_system_within_border = {
+					limit = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+					count >= 3
+				}
+			}
+			log = "test_19:3"
+		}
+		if = {
+			limit = {
+				count_system_within_border = {
+					limit = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+					count >= 4
+				}
+			}
+			log = "test_19:4"
+		}
+		if = {
+			limit = {
+				count_system_within_border = {
+					limit = {
+						any_system_planet = {
+							is_colony = yes
+						}
+					}
+					count >= 5
+				}
+			}
+			log = "test_19:5"
+		}
+	}
+}
