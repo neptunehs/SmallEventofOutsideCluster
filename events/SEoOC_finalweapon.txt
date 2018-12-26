@@ -372,7 +372,17 @@ fleet_event = {
 			clear_fleet_actions = this
 			random_system = {
 				limit = {
-					is_fe_cluster = NO
+					if = {
+						limit = {
+							exists = owner
+						}
+						owner = {
+							NOR = { 
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+							}
+						}
+					}
 					any_system_planet = {
 						AND = {
 							OR = {
@@ -411,7 +421,7 @@ fleet_event = {
 				}
 				root = {
 					set_event_locked = yes
-					fleet_event = { id = nep_finalweapon.611 days = 15 }
+					fleet_event = { id = nep_finalweapon.611 days = 25 }
 				}
 				random_system_planet = {
 					limit = { is_star = yes }
