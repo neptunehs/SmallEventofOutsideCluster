@@ -33,6 +33,14 @@
  nep_finalweapon.631.desc:0 "§Y[From.Solar_System.GetName]§!星系从宇宙中彻底消失了。看起来那些失控的兵器们拥有完全消灭星系的能力。"
  nep_finalweapon.631.a:0 "这太可怕了。必须迅速行动！" 
  
+ nep_finalweapon.633.name:0 "亡羊补牢"
+ nep_finalweapon.633.desc:0 "这些星爆弹威力实在太过巨大，即使那些兵器在我们的星系中使用了我们也不能贸然击破它，否则我们会受到更严重的损失。科学家们提出了研究计划，希望能找到在不引爆它的情况下清掉它。"
+ nep_finalweapon.633.a:0 "就像那些古典的娱乐内容那样么，"要剪红线还是蓝线？""
+ 
+ nep_finalweapon.634.name:0 "研究结束"
+ nep_finalweapon.634.desc:0 "科学家们发现星爆弹跟那些暴走的兵器们之间有能量联系，并且认为只要将其干扰就能无风险的将其拆掉。科学家们完成了一种干扰器，以后只要我们的舰队在这个星系之中，就能在不引爆的前提下击破他。但是，干扰器的移动版只能装在足够大的舰上，比如护卫舰、驱逐舰还有巡洋舰都不行，而且至少需要20艘以上同时启动或者在星球上使用地面版才能发挥作用。另外就算不依靠干扰器只要将在同一星系内的暴走兵器击毁也能防止爆炸。"
+ nep_finalweapon.634.a:0 "我们总算有一点与其对抗的曙光了。"
+ 
  nep_finalweapon.713.name:0 "防护罩"
  nep_finalweapon.713.desc:0 "这些失控的兵器在我们跟他们作战开始的时候立刻张开了防护罩，这种防护罩以我们的技术根本无法分析，我们任何攻击都没有效果。我们唯一能做的是等待它消失————就这能量反应来看，这防护罩不可能永远持续。"
  nep_finalweapon.713.a:0 "这还真是硬骨头。" 
@@ -63,6 +71,8 @@
  nep_grand_seal_final_answer_2_DESC:0 "我们不知道封印最深的地方到底有些什么样的“最终兵器”，最好做好准备再解开。另外请注意，解开封印会导致我们失去龙————虽然我们可以立刻召唤一只新的。"
  nep_finalweapon_reward_project:0 "启动最后的兵器"
  nep_finalweapon_reward_project_DESC:0 "将所有的危险排除后，将它启动起来一定能作为我们的战力。"
+ nep_research_project_starbomb:"星爆弹研究"
+ nep_research_project_starbomb_DESC:"我们必须找到一种在不引爆的前提下清理星爆弹的办法。"
  
  nep_FINALWEAPON_LANCE:0 "最终兵器-光枪"
  nep_FINALWEAPON_LANCE_DESC:0 "详细完全不明。" 

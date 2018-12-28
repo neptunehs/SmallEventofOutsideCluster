@@ -39,6 +39,31 @@ special_project = {
 }
 
 special_project = {
+	key = "nep_research_project_starbomb"
+	event_chain = "nep_finalweapon_chain"
+	cost = 2500
+	tech_department = engineering_technology
+	picture = GFX_evt_exploding_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = planet_event
+	
+	requirements = {
+	}
+	
+	on_success = {
+		owner = {
+			set_country_flag = nep_can_disarm_bomb
+			country_event = { id = nep_finalweapon.634 }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
 	key = "nep_finalweapon_reward_project"
 	days_to_research = 1200
 	tech_department = society_technology

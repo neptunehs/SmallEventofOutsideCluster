@@ -22,7 +22,7 @@
  nep_finalweapon.3.a:0 "Acknowledged."
  
  nep_finalweapon.4.name:0 "Seal Unlock"
- nep_finalweapon.4.desc:0 "The seal has unlocked, and from there was a group of small fleets -- and began to attack us. These small fleets have very strong fire power, which should be the so-called finalweapons"
+ nep_finalweapon.4.desc:0 "The seal has unlocked, and from there was a group of small fleets -- and began to attack us. These small fleets have very strong fire power, which should be the so-called finalweapons."
  nep_finalweapon.4.a:0 "As predicted. Ready to fight!" 
  
  nep_finalweapon.4002.name:0 "Disaster Fall"
@@ -32,6 +32,14 @@
  nep_finalweapon.631.name:0 "Star Bomb"
  nep_finalweapon.631.desc:0 "§Y[From.Solar_System.GetName]§! system is completely disappeared from the universe. It seems that those weapons have the ability to completely destroy a system. "
  nep_finalweapon.631.a:0 "It's horrible.We must move quickly!" 
+ 
+ nep_finalweapon.633.name:0 "Lock the barn door after the horse has bolted"
+ nep_finalweapon.633.desc:0 "The power of these star bomb is too great. Even if those corrupted weapons are used in our system, we can't smash the bomb, or we will suffer more serious losses. The scientists proposed a research plan, hoping to find a way to clear it without detonating it."
+ nep_finalweapon.633.a:0 "Just like the classical entertainment content? "Blue or red wire?""
+ 
+ nep_finalweapon.634.name:0 "Research complete"
+ nep_finalweapon.634.desc:0 "The scientists found that the star bombs had energy connections with the corrupted weapons, and thought that they could be removed without risk by interfering with them. The scientists completed a jammer, and as long as our fleet is in the system, we can break the bombs without detonating. However, the mobile version of the jammer can only be installed on a large ship, such as corvettes, destroyers, and cruisers are not available, and at least 20 or more ships must be started at the same time or start the ground version on the planet can function normally.In addition, even if you do not rely on the jammer, we can do the same thing by destroying the corrupted weapons in the same system."
+ nep_finalweapon.634.a:0 "We finally have a little hope."
  
  nep_finalweapon.713.name:0 "Barrier"
  nep_finalweapon.713.desc:0 "These out-of-control weapons opened the shield immediately when we started fighting with them. This kind of shield could not be analyzed by our technology, and any of our attacks had no effect. The only thing we can do is wait for it to disappear -- in terms of this energy response, this shield cannot last forever. "
@@ -63,6 +71,8 @@
  nep_grand_seal_final_answer_2_DESC:0 "We don't know what kind of "final weapon" there is in the deepest place in the seal. It is best to be prepared and unravel. Also note that unlocking the seal will cause us to lose the dragon -- although we can summon a new one at any time."
  nep_finalweapon_reward_project:0 "Start the last weapon"
  nep_finalweapon_reward_project_DESC:0 "After all the dangers have been eliminated, starting it will definitely be our strength."
+ nep_research_project_starbomb:"Star bomb research"
+ nep_research_project_starbomb_DESC:"We must find a way to clean up the star bombs without detonating."
  
  nep_FINALWEAPON_LANCE:0 "Finalweapon Lance"
  nep_FINALWEAPON_LANCE_DESC:0 "Unknown." 

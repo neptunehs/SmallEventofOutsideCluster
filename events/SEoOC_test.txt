@@ -991,3 +991,50 @@ country_event = {
 		}
 	}
 }
+
+fleet_event = {
+	id = nep_test.20
+    hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { 
+		solar_system = {
+			any_ship_in_system = { fleet = { has_fleet_flag = nep_star_bomb } }
+			OR = {
+				any_system_planet = {
+					is_colony = yes
+					exists = owner
+					owner = { has_country_flag = nep_can_disarm_bomb }
+				}
+				any_ship_in_system = {
+						owner = { has_country_flag = nep_can_disarm_bomb }
+						is_ship_class = shipclass_military
+						OR = {
+							AND = {
+								is_designable = yes
+								NOR = {
+									is_ship_size = corvette
+									is_ship_size = destroyer
+									is_ship_size = cruiser
+									OR = {
+										always = no
+										is_ship_size = StrikeCruiser
+									}
+								}
+							}
+							is_ship_size = massive_ship_fallen_empire
+							is_ship_size = large_ship_fallen_empire 
+							OR = {
+								always = no
+								is_ship_size = titan_ship_fallen_empire
+							}
+						}
+					}
+			}
+		}
+	}
+	
+	immediate = {
+	
+	}
+}
