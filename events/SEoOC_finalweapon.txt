@@ -1228,6 +1228,7 @@ country_event = {
 			has_country_flag = nep_corrupted_finalweapons_defeater
 		}
 		hidden_effect = {
+			set_country_flag = nep_grand_seal_burst_country
 			event_target:nep_seal_system = {
 				random_system_planet = {
 					limit = {
@@ -1319,6 +1320,11 @@ country_event = {
 					radius = 110
 				}
 			}
+			country_event = { id = nep_finalweapon.8001 }
+			every_country = {
+				limit = { NOT = { has_country_flag = nep_grand_seal_burst_country } }
+				country_event = { id = nep_finalweapon.8002 }
+			}
 		}
 	}
 	
@@ -1329,6 +1335,138 @@ country_event = {
 			has_country_flag = nep_dragon_summoner
 			has_country_flag = nep_corrupted_finalweapons_defeater
 		}
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8001
+	title = "nep_finalweapon.8001.name"
+	desc = "nep_finalweapon.8001.desc"
+	picture = GFX_evt_large_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_5
+			days = -1
+		}
+		country_event = { id = nep_finalweapon.8003 days = 50 }
+	}
+	
+	option = {
+		name = nep_finalweapon.8001.a
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8002
+	title = "nep_finalweapon.8002.name"
+	desc = "nep_finalweapon.8002.desc"
+	picture = GFX_evt_large_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_5
+			days = -1
+		}
+		random_country = {
+			limit = { has_country_flag = nep_grand_seal_burst_country }
+			save_event_target_as = nep_8002_temp
+		}
+		country_event = { id = nep_finalweapon.8003 days = 50 }
+	}
+	
+	option = {
+		name = nep_finalweapon.8002.a
+		add_opinion_modifier = {
+			modifier = opinion_nep_grand_seal_burst
+			who = event_target:nep_8002_temp
+			
+		}
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8003
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = nep_grand_seal_burst_debuff_5
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_4
+			days = -1
+		}
+		country_event = { id = nep_finalweapon.8004 days = 150 }
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8004
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = nep_grand_seal_burst_debuff_4
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_3
+			days = -1
+		}
+		country_event = { id = nep_finalweapon.8005 days = 450 }
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8005
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = nep_grand_seal_burst_debuff_3
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_2
+			days = -1
+		}
+		country_event = { id = nep_finalweapon.8006 days = 900 }
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8006
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = nep_grand_seal_burst_debuff_2
+		add_modifier = {
+			modifier = nep_grand_seal_burst_debuff_1
+			days = -1
+		}
+		country_event = { id = nep_finalweapon.8007 days = 1800 }
+	}
+}
+
+country_event = {
+	id = nep_finalweapon.8007
+	title = "nep_finalweapon.8007.name"
+	desc = "nep_finalweapon.8007.desc"
+	picture = GFX_evt_large_explosion
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = nep_grand_seal_burst_debuff_1
+	}
+	
+	option = {
+		name = nep_finalweapon.8007.a
 	}
 }
 

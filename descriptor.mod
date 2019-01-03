@@ -1,10 +1,9 @@
-﻿name="SmallEventofOutsideCluster"
+﻿name="SmallEventofOutsideCluster for 2.2.3(beta)"
 archive="SEoOC.zip"
 tags={
 	"Graphics"
-	"Spaceships"
-	"Gameplay"
 	"Events"
 }
 picture="SEoOC.jpg"
-supported_version="2.1.*"
+remote_file_id="1562501671"
+supported_version="2.2.3"

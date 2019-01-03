@@ -1,0 +1,5 @@
+opinion_nep_grand_seal_burst = {
+	opinion = {
+		base = -25
+	}
+}
