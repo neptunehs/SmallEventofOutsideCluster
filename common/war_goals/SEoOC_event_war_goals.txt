@@ -1,6 +1,6 @@
 wg_nep_Krahen_invasion_war = {
 	casus_belli = cb_event
-
+	
 	total_war = yes
 	
 	surrender_acceptance = -5000

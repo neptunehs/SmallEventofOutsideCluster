@@ -1,0 +1,11 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_wg_nep_Krahen_invasion_war"
+		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_mod_planet_orbital_bombardment_damage"
+		texturefile = "gfx/interface/icons/modifiers/mod_ship_fire_rate_mult.dds"
+	}
+}
