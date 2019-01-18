@@ -1916,7 +1916,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		add_deposit = d_nep_unknown_vortex
+		add_deposit = d_nep_dragon_temple
 	}
 }
 

@@ -1,0 +1,376 @@
+name_space = nep_phantom
+
+####################################
+# scenario
+####################################
+country_event = {
+	id = nep_phantom.1
+	hide_window = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		is_ai = no
+		has_global_flag = nep_Krahen_end
+		has_country_flag = nep_Krahen_orb_get
+		NOT = { has_global_flag = nep_corrupted_finalweapons_begin }
+	}
+	
+	mean_time_to_happen = {
+		days = 540
+	}
+	
+	immediate = {
+		set_global_flag = nep_phantom_begin
+		create_phantom_country = yes
+		random_system = {
+			limit = { 
+				is_neighbor_of = root
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						uses_bypass = no
+						min_jumps = 2
+						max_jumps = 4
+					}
+				}
+				create_fleet = {
+					name = "NAME_phantom_fleet_krahen_unknown"
+					settings = {
+						spawn_debris = no 
+						can_change_leader = no
+						uses_naval_capacity = no
+					}
+					effect = {		
+						set_owner = last_created
+						while = {
+							count = 10
+							create_ship = {
+								name = "NAME_Krahen_invader_phantom"
+								design = "NAME_Krahen_Battleship_phantom"
+							}
+						}
+						set_location = {
+							target = prev
+							distance = 150
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range = 500
+						set_aggro_range_measure_from = self
+					}
+				}
+				last_created_fleet = {
+					set_fleet_flag = nep_phantom_krahen
+					set_fleet_flag = nep_phantom_fleet_passive
+					closest_system = {
+						limit = {
+							any_system_planet = {
+								is_colony = yes
+								owner = { is_same_value = ROOT }
+							}
+						}
+						random_system_planet = {
+							limit = {
+								is_colony = yes
+								if = {
+									limit = {
+										root = {
+											count_system_within_border = {
+												limit = {
+													any_system_planet = {
+														is_colony = yes
+													}
+												}
+												count > 1
+											}
+										}
+									}
+									is_capital = no
+								}
+								owner = { is_same_value = ROOT }
+							}
+							PREVPREV = {
+								auto_move_to_planet = {
+									target = PREV
+									clear_auto_move_on_arrival = yes
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+####################################
+# fleet_actions
+####################################
+#on_fleet_auto_move_arrival
+country_event = {
+	id = nep_phantom.1001
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_begin
+		is_country_type = nep_phantom_passive
+	}
+	
+	immediate = {
+		if = {
+			limit = { exists = fromfrom }
+			from = {
+				queue_action = {
+					orbit_planet = fromfrom
+				}
+			}
+			fromfrom = {
+				planet_event = { id = nep_phantom.2001 } #begin energy syphen
+			}
+		}
+		else = {
+			from = { fleet_event = { id = nep_phantom.1002 } } #comes to other planet
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_phantom.1002
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_begin
+	}
+	
+	immediate = {
+		random_system = {
+			limit = {
+				distance = {
+					source = root
+					min = 80
+					max = 100
+				}
+			}
+			root = {
+				set_location = {
+					target = PREV
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		random_list = {
+			90 = {
+				random_system_planet = {
+					limit = {
+						is_colony = yes
+						if = {
+							limit = {
+								root = {
+									count_system_within_border = {
+										limit = {
+											any_system_planet = {
+												is_colony = yes
+											}
+										}
+										count > 1
+									}
+								}
+							}
+							is_capital = no
+						}
+					}
+					PREVPREV = {
+						auto_move_to_planet = {
+							target = PREV
+							clear_auto_move_on_arrival = yes
+						}
+					}
+				}
+			}
+			10 = {
+				random_system_planet = {
+					limit = {
+						is_colony = yes
+						if = {
+							limit = {
+								root = {
+									count_system_within_border = {
+										limit = {
+											any_system_planet = {
+												is_colony = yes
+											}
+										}
+										count > 1
+									}
+								}
+							}
+							is_capital = no
+						}
+						owner = { has_country_flag = nep_Krahen_orb_get }
+					}
+					PREVPREV = {
+						auto_move_to_planet = {
+							target = PREV
+							clear_auto_move_on_arrival = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###################################
+# planet_actions
+###################################
+
+planet_event = {
+	id = nep_phantom.2001
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	immediate = {
+		set_planet_flag = nep_phantom_orbit
+		owner = { country_event = { id = nep_phantom.3201 } } #notification
+		add_modifier = {
+			modifier = nep_phantom_orbit_stage1
+			days = 180
+		}
+		planet_event = { id = nep_phantom.2002 days = 180 } #stage2
+	}
+}
+
+planet_event = {
+	id = nep_phantom.2002
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = { has_planet_flag = nep_phantom_orbit }
+	
+	immediate = {
+		owner = { country_event = { id = nep_phantom.3202 } } #notification
+		add_modifier = {
+			modifier = nep_phantom_orbit_stage2
+			days = 180
+		}
+		planet_event = { id = nep_phantom.2100 days = 90 } #death
+		planet_event = { id = nep_phantom.2100 days = 180 }	#death
+		planet_event = { id = nep_phantom.2003 days = 180 } #stage3
+	}
+}
+
+planet_event = {
+	id = nep_phantom.2003
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = { has_planet_flag = nep_phantom_orbit }
+	
+	immediate = {
+		owner = { country_event = { id = nep_phantom.3203 } } #notification
+		add_modifier = {
+			modifier = nep_phantom_orbit_stage3
+			days = 360
+		}
+		planet_event = { id = nep_phantom.2100 days = 45 }  #death
+		planet_event = { id = nep_phantom.2100 days = 90 }	#death
+		planet_event = { id = nep_phantom.2100 days = 135 }	#death
+		planet_event = { id = nep_phantom.2100 days = 180 }	#death
+		planet_event = { id = nep_phantom.2100 days = 215 }	#death
+		planet_event = { id = nep_phantom.2100 days = 240 }	#death
+		planet_event = { id = nep_phantom.2100 days = 275 }	#death
+		planet_event = { id = nep_phantom.2100 days = 310 }	#death
+		planet_event = { id = nep_phantom.2100 days = 335 }	#death
+		planet_event = { id = nep_phantom.2100 days = 360 }	#death
+		planet_event = { id = nep_phantom.2004 days = 360 } #stage3
+	}
+}
+
+planet_event = {
+	id = nep_phantom.2004
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = { has_planet_flag = nep_phantom_orbit }
+	
+	immediate = {
+		owner = { country_event = { id = nep_phantom.3204 } } #notification
+		add_modifier = {
+			modifier = nep_phantom_orbit_stage4
+			days = 360
+		}
+		planet_event = { id = nep_phantom.2101 days = 23 }  #death loop
+	}
+}
+
+#death
+planet_event = {
+	id = nep_phantom.2100
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	immediate = {
+		random_owned_pop = {
+			kill_pop = yes
+		}
+		owner = { country_event = { id = nep_phantom.3210 } } #notification
+	}
+}
+
+#death loop
+planet_event = {
+	id = nep_phantom.2101
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	immediate = {
+		random_owned_pop = {
+			kill_pop = yes
+		}
+		owner = { country_event = { id = nep_phantom.3210 } } #notification
+		planet_event = { id = nep_phantom.2102 days = 22 }  #death loop
+	}
+}
+###################################
+# notification
+###################################
+#first encount,on_enforce_borders
+country_event = {
+	id = nep_phantom.3001
+	title = "nep_phantom.3001.name"
+	desc = "nep_phantom.3001.desc"
+	picture = GFX_evt_fleet_evil
+	location = FromFromFrom
+	
+	is_trigger_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_begin
+		has_country_flag = nep_Krahen_orb_get
+		from = { is_country_type = nep_phantom_passive }
+		FromFrom = { has_fleet_flag = nep_phantom_krahen }
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_phantom.3001.a
+	}
+}

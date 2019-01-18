@@ -110,6 +110,8 @@
  NEP_DRAGON_SMALL_GUN_DESC:0 "Heptagram Dragon's Acid Blast"
  NEP_DRAGON_TERTIARY_GUN:0 "Heptagram Dragon's Lightning"
  NEP_DRAGON_TERTIARY_GUN_DESC:0 "Heptagram Dragon's Lightning"
+ NEP_COMBAT_COMPUTER_DRAGON_PRECOG:0 "$COMBAT_COMPUTER_DEFAULT$"
+ NEP_COMBAT_COMPUTER_DRAGON_BABY_PRECOG:0 "$COMBAT_COMPUTER_DEFAULT$"
  
  nep_Auriel_modifier:0 "Star Force"
  nep_Auriel_modifier_desc:0 "The star force is making the planet work great in all aspects."

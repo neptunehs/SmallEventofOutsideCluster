@@ -13,11 +13,14 @@ on_entering_system = {
 	}
 }
 
+# A fleet has entered a system
+# Scope = Fleet
+# From = System
 on_entering_system_fleet = {
 	events = {
-		nep_mia.1
-		nep_mia.2
-		nep_mia.3
+		# nep_mia.1
+		# nep_mia.2
+		# nep_mia.3
 		nep_finalweapon.66
 	}
 }
@@ -153,5 +156,25 @@ on_first_contact = {
 on_terraforming_complete = {
 	events = {
 		nep_dragon.991
+	}
+}
+
+# This = owner of fleet
+# From = fleet
+# FromFrom = planet (if any)
+on_fleet_auto_move_arrival = {
+	events = {
+		nep_phantom.1001
+	}
+}
+
+# Triggered when an Empire has fleets within another Empire's borders.
+# This = receiver
+# From = sender
+# FromFrom = fleet
+# FromFromFrom = system
+on_enforce_borders = {
+	events = {
+		nep_phantom.3001
 	}
 }

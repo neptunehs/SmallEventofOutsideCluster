@@ -36,7 +36,7 @@ malfunctioning_guards_spawn = {
 	create_fleet = {
 		name = "NAME_Malfunctioning_Guards"
 		settings = {
-			spawn_debris = no 
+			spawn_debris = no
 		}
 		effect = {		
 			set_owner = event_target:malfunctioning_guards_country
@@ -252,9 +252,6 @@ seal_boss_spawn = {
 create_dragon_babys = {
 	create_fleet = {
 		name = "NAME_Summoned_Babys"
-		settings = {
-			spawn_debris = no 
-		}
 		effect = {			
 			set_owner = prev.owner
 			while = {
@@ -276,7 +273,9 @@ create_dragon_babys = {
 			
 		}
 		settings = {
+			spawn_debris = no
 			can_upgrade = no
+			uses_naval_capacity = no
 			can_change_composition = no
 		}
 	}
@@ -528,6 +527,41 @@ create_Krahen_colonizer = {
 }
 
 #######################################
+#  phantom
+#######################################
+create_phantom_fleet_krahen = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_country_passive
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_Krahen_invader"
+					design = "NAME_Krahen_Battleship_follower"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+}
+
+
+#######################################
 #  finalweapon
 #######################################
 
@@ -605,6 +639,41 @@ create_finalweapon_bomb_fleet = {
 	}
 }
 
+#######################################
+#  phantom
+#######################################
+create_phantom_country = {
+	create_country = {
+		name = "NAME_nep_phantom_country"
+		type = nep_phantom_passive
+		species = random
+		auto_delete = yes
+		flag = {
+			icon = {
+				category = "zoological"
+				file = "flag_zoological_17.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "stripes.dds"
+			}
+			colors = {
+				"black"
+				"white"
+				"null"
+				"null"
+			}
+		}
+	}
+	last_created_country = {
+		every_country = {
+			limit = {
+				has_country_flag = nep_phantom_repellent
+			}
+			establish_communications_no_message = prev
+		}
+	}
+}
 #######################################
 #  Easy Mode
 #######################################

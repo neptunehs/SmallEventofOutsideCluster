@@ -320,6 +320,6 @@ ship_design = {
 			template = "AUTO_REPAIR"
 		}
 	}
-	required_component="COMBAT_COMPUTER_ARTILLERY_PRECOG"
+	required_component="STELLARITE_COMBAT_COMPUTER"
 	required_component="GUARDIAN_SENSORS"
 }

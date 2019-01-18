@@ -210,3 +210,51 @@ weapon_component_template = {
 
 	projectile_gfx = "arc_emitter"
 }
+
+utility_component_template = {
+	key = "NEP_COMBAT_COMPUTER_DRAGON_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	
+	hidden = yes
+	class_restriction = { shipclass_military }
+	size_restriction = { nep_dragon nep_dragon_reward nep_dragon_reward_kai }
+	component_set = "combat_computers"
+	ship_behavior = "nep_dragon_behavior"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+utility_component_template = {
+	key = "NEP_COMBAT_COMPUTER_DRAGON_BABY_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_precog"
+	icon_frame = 1
+	
+	hidden = yes
+	class_restriction = { shipclass_military }
+	size_restriction = { nep_dragon_baby }
+	component_set = "combat_computers"
+	ship_behavior = "nep_dragon_baby_behavior"
+	prerequisites = { "tech_precognition_interface" }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}

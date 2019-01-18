@@ -15,7 +15,7 @@ weapon_component_template = {
 
 	total_fire_time = 35
 
-	range = 140.0
+	range = 120.0
 	accuracy = 0.9
 	tracking = 0.35
 	
@@ -174,45 +174,45 @@ utility_component_template = {
 	prerequisites = { "tech_nep_Krahen_tech" }
 }
 
-utility_component_template = {
-	key = "nep_BATTLE_COMPUTER_SWARM"
-	size = small
-	icon = "GFX_ship_part_computer_default"
-	icon_frame = 1
-	power = 0
+# utility_component_template = {
+	# key = "nep_BATTLE_COMPUTER_SWARM"
+	# size = small
+	# icon = "GFX_ship_part_computer_default"
+	# icon_frame = 1
+	# power = 0
 	
-	hidden = yes
-	ship_behavior = "swarm"
+	# hidden = yes
+	# ship_behavior = "swarm"
 	
-	class_restriction = { shipclass_military }
-	size_restriction = { corvette }
-	component_set = "combat_computers"
-	prerequisites = { "tech_nep_Krahen_tech" }
+	# class_restriction = { shipclass_military }
+	# size_restriction = { corvette }
+	# component_set = "combat_computers"
+	# prerequisites = { "tech_nep_Krahen_tech" }
 	
-	ai_weight = {
-		weight = 0
-	}
-}
+	# ai_weight = {
+		# weight = 0
+	# }
+# }
 
-utility_component_template = {
-	key = "nep_BATTLE_COMPUTER_PICKET"
-	size = small
-	icon = "GFX_ship_part_computer_default"
-	icon_frame = 1
-	power = 0
+# utility_component_template = {
+	# key = "nep_BATTLE_COMPUTER_PICKET"
+	# size = small
+	# icon = "GFX_ship_part_computer_default"
+	# icon_frame = 1
+	# power = 0
 	
-	hidden = yes
-	ship_behavior = "picket"
+	# hidden = yes
+	# ship_behavior = "picket"
 
-	class_restriction = { shipclass_military }
-	size_restriction = { destroyer }
-	component_set = "combat_computers"
-	prerequisites = { "tech_nep_Krahen_tech" }
+	# class_restriction = { shipclass_military }
+	# size_restriction = { destroyer }
+	# component_set = "combat_computers"
+	# prerequisites = { "tech_nep_Krahen_tech" }
 	
-	ai_weight = {
-		weight = 0
-	}
-}
+	# ai_weight = {
+		# weight = 0
+	# }
+# }
 
 utility_component_template = {
 	key = "nep_BATTLE_COMPUTER_LINE"
@@ -222,7 +222,7 @@ utility_component_template = {
 	power = 0
 	
 	hidden = yes
-	ship_behavior = "line"
+	ship_behavior = "nep_krahen_behavior"
 	
 	modifier = {
 		ship_evasion_mult = 0.10
@@ -491,7 +491,7 @@ strike_craft_component_template = {
 	size = LARGE
 	entity = "fighter_entity"
 	
-	weapon_type = point_defence
+	weapon_type = instant
 	projectile_gfx = "scout_laser_1"
 	power = 0
 	
@@ -512,14 +512,14 @@ strike_craft_component_template = {
 	evasion = 0.85
 	
 	speed = 400
-	rotation_speed = 0.2
+	rotation_speed = 0.3
 	acceleration = 0.6
 	
 	shield_penetration = 1
 	armor_damage = 1.50
 	
 	hidden = yes
-	ship_behavior = "bombers_behavior"
+	ship_behavior = "nep_interceptor_behavior"
 
 	prerequisites = { "tech_nep_Krahen_tech" }
 	

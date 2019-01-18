@@ -2,3 +2,5 @@
 
  nep_battleship_phantom:0 "Battleship?"
  nep_battleship_phantom_plural:0 "Battleship?"
+ 
+ CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM:0 "无法攻击位于不确定相中的存在。"

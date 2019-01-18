@@ -445,7 +445,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	
-	ship_behavior = "swarm"
+	ship_behavior = "nep_finalweapon_behavior"
 	hidden = yes
 
 	modifier = {

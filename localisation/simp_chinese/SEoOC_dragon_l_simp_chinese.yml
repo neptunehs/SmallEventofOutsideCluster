@@ -110,6 +110,8 @@
  NEP_DRAGON_SMALL_GUN_DESC:0 "Heptagram Dragon's Acid Blast"
  NEP_DRAGON_TERTIARY_GUN:0 "Heptagram Dragon's Lightning"
  NEP_DRAGON_TERTIARY_GUN_DESC:0 "Heptagram Dragon's Lightning"
+ NEP_COMBAT_COMPUTER_DRAGON_PRECOG:0 "$COMBAT_COMPUTER_DEFAULT$"
+ NEP_COMBAT_COMPUTER_DRAGON_BABY_PRECOG:0 "$COMBAT_COMPUTER_DEFAULT$"
  
  nep_Auriel_modifier:0 "星之力"
  nep_Auriel_modifier_desc:0 "满溢的星之力让这个星球在多个领域有更好的表现。"

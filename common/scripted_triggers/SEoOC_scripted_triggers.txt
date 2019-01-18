@@ -21,6 +21,7 @@ nep_st_is_not_outer_or_fe_system = {
 		has_star_flag = nep_Step_to_the_Void_10
 		has_star_flag = lex_garden_cluster
 		has_star_flag = mem_sadrell_extant_cluster
+		has_star_flag = extragalactic_cluster
 	}
 }
 
@@ -46,5 +47,6 @@ nep_st_is_not_outer_system = {
 		has_star_flag = nep_Step_to_the_Void_10
 		has_star_flag = lex_garden_cluster
 		has_star_flag = mem_sadrell_extant_cluster
+		has_star_flag = extragalactic_cluster
 	}
 }
