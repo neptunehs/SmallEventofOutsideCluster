@@ -120,11 +120,11 @@ entity = {
 		event = { time = 0	id = "beam_start" }	
 	}
 	
-	scale = 1.0
+	scale = 1.2
 	
 	game_data = {
-		size = @battleship_scale
-		emissive_recolor_crunch = 10.0
+		size = 14
+		emissive_recolor_crunch = 12.0
 	}
 }
 

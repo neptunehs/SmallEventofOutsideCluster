@@ -113,7 +113,7 @@ malfunctioning_guards_spawn = {
 #######################################
 #  seal
 #######################################
-malfunctioning_guards_spawn_static = {
+malfunctioning_guards_spawn_2 = {
 	create_fleet = {
 		name = "NAME_Malfunctioning_Guards"
 		settings = {
@@ -126,6 +126,7 @@ malfunctioning_guards_spawn_static = {
 				create_ship = {
 					name = "NAME_Malfunctioning_Guards"
 					design = "NAME_Xeoh"
+					
 				}
 			}
 			while = {
@@ -152,7 +153,7 @@ malfunctioning_guards_spawn_static = {
 			
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 1
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -167,18 +168,223 @@ malfunctioning_guards_spawn_static = {
 					days = -1
 				}
 			}
-			
-			queue_actions = {	
-				find_closest_planet = {
-					trigger = {
-						id = "nep_Malfunctioning_Guards_temppoi.3"
-						is_star = yes
-					}
-					found_planet = {
-						orbit_planet = THIS
-					}
-				}
-			}						
+		}
+	}
+	last_created_fleet = {
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_NNE } }
+			queue_actions = {
+				move_to = event_target:highway_note_NE
+				move_to = event_target:highway_note_ENE
+				move_to = event_target:highway_note_E
+				move_to = event_target:highway_note_ESE
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_NE } }
+			queue_actions = {
+				move_to = event_target:highway_note_ENE
+				move_to = event_target:highway_note_E
+				move_to = event_target:highway_note_ESE
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_ENE } }
+			queue_actions = {
+				move_to = event_target:highway_note_E
+				move_to = event_target:highway_note_ESE
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_E } }
+			queue_actions = {
+				move_to = event_target:highway_note_ESE
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_ESE } }
+			queue_actions = {
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_SE } }
+			queue_actions = {
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_SSE } }
+			queue_actions = {
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_S } }
+			queue_actions = {
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_SSW } }
+			queue_actions = {
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_SW } }
+			queue_actions = {
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_WSW } }
+			queue_actions = {
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_W } }
+			queue_actions = {
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_WNW } }
+			queue_actions = {
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_NW } }
+			queue_actions = {
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N
+			}
+		}
+		if = {
+			limit = { solar_system = { is_same_value = event_target:highway_note_NNW } }
+			queue_actions = {
+				move_to = event_target:highway_note_N
+			}
+		}
+		queue_actions = {
+			repeat = {
+				move_to = event_target:highway_note_NNE
+				move_to = event_target:highway_note_NE
+				move_to = event_target:highway_note_ENE
+				move_to = event_target:highway_note_E
+				move_to = event_target:highway_note_ESE
+				move_to = event_target:highway_note_SE
+				move_to = event_target:highway_note_SSE
+				move_to = event_target:highway_note_S
+				move_to = event_target:highway_note_SSW
+				move_to = event_target:highway_note_SW
+				move_to = event_target:highway_note_WSW
+				move_to = event_target:highway_note_W
+				move_to = event_target:highway_note_WNW
+				move_to = event_target:highway_note_NW
+				move_to = event_target:highway_note_NNW
+				move_to = event_target:highway_note_N			
+			}
 		}
 	}
 }
@@ -529,7 +735,7 @@ create_Krahen_colonizer = {
 #######################################
 #  phantom
 #######################################
-create_phantom_fleet_krahen = {
+create_phantom_fleet_passive_Krahen = {
 	create_fleet = {
 		name = "NAME_phantom_fleet_passive"
 		settings = {
@@ -538,15 +744,338 @@ create_phantom_fleet_krahen = {
 			uses_naval_capacity = no
 		}
 		effect = {		
-			set_owner = event_target:nep_phantom_country_passive
+			set_owner = last_created
 			while = {
 				count = 10
 				create_ship = {
-					name = "NAME_Krahen_invader"
-					design = "NAME_Krahen_Battleship_follower"
+					name = "NAME_phantom_fleet"
+					design = "NAME_Krahen_Battleship_phantom"
 				}
 			}
-			assign_leader = last_created_leader
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_fallen_empire_01 = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "fallen_empire_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_fallen_empire_02 = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "fallen_empire_02"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_humanoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "humanoid_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_mammalian = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "mammalian_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_molluscoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "molluscoid_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_reptilian = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "reptilian_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+create_phantom_fleet_passive_arthropoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "arthropoid_01"
+				}
+			}
+			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		target = prev
+		distance = 150
+		angle = random
+	}
+}
+
+# create_phantom_fleet_passive_plantoid = {
+	# create_fleet = {
+		# name = "NAME_phantom_fleet_passive"
+		# settings = {
+			# spawn_debris = no 
+			# can_change_leader = no
+			# uses_naval_capacity = no
+		# }
+		# effect = {		
+			# set_owner = last_created
+			# while = {
+				# count = 10
+				# create_ship = {
+					# name = "NAME_phantom_fleet"
+					# design = "NAME_Battleship_phantom"
+					# graphical_culture = "plantoid_01"
+				# }
+			# }
+			# set_location = {
+				# target = event_target:nep_sub_seal_3
+				# distance = 0
+				# angle = random
+			# }
+			# set_formation_scale = 2.0
+			# set_fleet_stance = aggressive
+			# set_aggro_range = 500
+			# set_aggro_range_measure_from = self
+		# }
+	# }
+	# last_created_fleet = {
+		# target = prev
+		# distance = 150
+		# angle = random
+	# }
+# }
+
+create_phantom_fleet_passive_pirate = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_passive"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = last_created
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "pirate_01"
+				}
+			}
 			set_location = {
 				target = prev
 				distance = 150
@@ -559,7 +1088,6 @@ create_phantom_fleet_krahen = {
 		}
 	}
 }
-
 
 #######################################
 #  finalweapon

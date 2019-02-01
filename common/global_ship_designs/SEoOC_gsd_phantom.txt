@@ -11,7 +11,7 @@ ship_design = {
 			slot = "EXTRA_LARGE_01"
 			template = "NEP_PHANTOM_PRIMARY_WEAPON"
 		}
-	}	
+	}
 	
 	section = {
 		template = "NEP_KRAHEN_BATTLESHIP_MID_P"
@@ -79,7 +79,7 @@ ship_design = {
 		
 	required_component="BIO_SENSORS"
 	required_component="BIO_DRIVE"
-	required_component="COMBAT_COMPUTER_LINE_PRECOG"
+	required_component="NEP_PHANTOM_ROLE_FLEE"
 	required_component="BIO_PROPULSION"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
@@ -100,7 +100,7 @@ ship_design = {
 			slot = "EXTRA_LARGE_01"
 			template = "NEP_PHANTOM_PRIMARY_WEAPON"
 		}
-	}	
+	}
 	
 	section = {
 		template = "NEP_BATTLESHIP_PHANTOM_MID_L3"
@@ -125,50 +125,18 @@ ship_design = {
 		slot = "stern"
 	
 		component = {
-			slot = "SMALL_GUN_01"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
+			slot = "MEDIUM_GUN_01"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "SMALL_GUN_02"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_03"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_04"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_05"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_06"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_07"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_08"
-			template = "NEP_PHANTOM_SMALL_WEAPON"
-		}
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR"
-		}
-		component = {
-			slot = "AUX_UTILITY_2"
-			template = "AUTO_REPAIR"
+			slot = "MEDIUM_GUN_02"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 	}
-		
+	
 	required_component="BIO_SENSORS"
 	required_component="BIO_DRIVE"
-	required_component="COMBAT_COMPUTER_LINE_PRECOG"
+	required_component="NEP_PHANTOM_ROLE_FLEE"
 	required_component="BIO_PROPULSION"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"

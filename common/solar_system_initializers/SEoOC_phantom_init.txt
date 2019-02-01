@@ -94,9 +94,9 @@ nep_Mimosa_init = {
 }
 
 #up
-nep_Decrus_init = {
+nep_Imai_init = {
 	prevent_anomalies = yes
-	name = "NAME_Decrus"
+	name = "NAME_Imai"
 
 	class = "sc_b"
 
@@ -134,7 +134,6 @@ nep_Ginan_init = {
 	
 	flags = { 
 		nep_Scrus_cluster
-		nep_Ginan_system
 	}
 	
 	planet = {
@@ -149,5 +148,6 @@ nep_Ginan_init = {
 				type = large_debris_object
 			}
 		}
+		save_global_event_target_as = nep_Ginan_system
 	}
 }

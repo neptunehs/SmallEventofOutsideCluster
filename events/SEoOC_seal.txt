@@ -126,14 +126,192 @@ country_event = {
 	is_triggered_only = yes	
 
 	immediate = {
-		every_system = {
+		if = {
 			limit = {
-				has_star_flag = nep_highway_note_system
+				OR = {
+					event_target:highway_note_N = {
+						any_ship_in_system = {
+							exists = this
+						}
+					}
+					event_target:highway_note_E = {
+						any_ship_in_system = {
+							exists = this
+						}
+					}
+					event_target:highway_note_W = {
+						any_ship_in_system = {
+							exists = this
+						}
+					}
+					event_target:highway_note_S = {
+						any_ship_in_system = {
+							exists = this
+						}
+					}
+				}
 			}
-			random_system_planet = {
+			if = {
+				limit = {
+					OR = {
+						event_target:highway_note_NNE = {
+							any_ship_in_system = {
+								exists = this
+							}
+						}
+						event_target:highway_note_ESE = {
+							any_ship_in_system = {
+								exists = this
+							}
+						}
+						event_target:highway_note_SSW = {
+							any_ship_in_system = {
+								exists = this
+							}
+						}
+						event_target:highway_note_WNW = {
+							any_ship_in_system = {
+								exists = this
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							event_target:highway_note_NE = {
+								any_ship_in_system = {
+									exists = this
+								}
+							}
+							event_target:highway_note_SE = {
+								any_ship_in_system = {
+									exists = this
+								}					
+							}
+							event_target:highway_note_SW = {
+								any_ship_in_system = {
+									exists = this
+								}
+							}
+							event_target:highway_note_NW = {
+								any_ship_in_system = {
+									exists = this
+								}
+							}
+						}
+					}
+					event_target:highway_note_ENE = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_SSE = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_WSW = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_NNW = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+				}
+				else = {
+					event_target:highway_note_NE = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_SE = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_SW = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+					event_target:highway_note_NW = {
+						random_system_planet = {
+							limit = { is_star = yes }
+							malfunctioning_guards_spawn_2 = yes
+							malfunctioning_guards_spawn_2 = yes
+						}
+					}
+				}
+			}
+			else = {
+				event_target:highway_note_NNE = {
+					random_system_planet = {
+						limit = { is_star = yes }
+						malfunctioning_guards_spawn_2 = yes
+						malfunctioning_guards_spawn_2 = yes
+					}
+				}
+				event_target:highway_note_ESE = {
+					random_system_planet = {
+						limit = { is_star = yes }
+						malfunctioning_guards_spawn_2 = yes
+						malfunctioning_guards_spawn_2 = yes
+					}
+				}
+				event_target:highway_note_SSW = {
+					random_system_planet = {
+						limit = { is_star = yes }
+						malfunctioning_guards_spawn_2 = yes
+						malfunctioning_guards_spawn_2 = yes
+					}
+				}
+				event_target:highway_note_WNW = {
+					random_system_planet = {
+						limit = { is_star = yes }
+						malfunctioning_guards_spawn_2 = yes
+						malfunctioning_guards_spawn_2 = yes
+					}
+				}
+			}
+		}
+		else = {
+			event_target:highway_note_N = {
 				limit = { is_star = yes }
-				malfunctioning_guards_spawn_static = yes
-				malfunctioning_guards_spawn_static = yes
+				malfunctioning_guards_spawn_2 = yes
+				malfunctioning_guards_spawn_2 = yes
+			}
+			event_target:highway_note_E = {
+				limit = { is_star = yes }
+				malfunctioning_guards_spawn_2 = yes
+				malfunctioning_guards_spawn_2 = yes
+			}
+			event_target:highway_note_W = {
+				limit = { is_star = yes }
+				malfunctioning_guards_spawn_2 = yes
+				malfunctioning_guards_spawn_2 = yes
+			}
+			event_target:highway_note_S = {
+				limit = { is_star = yes }
+				malfunctioning_guards_spawn_2 = yes
+				malfunctioning_guards_spawn_2 = yes
 			}
 		}
 		set_global_flag = malfunctioning_guards_again

@@ -309,6 +309,7 @@ nep_phantom_passive = {
 		generate_borders = no
 		needs_colony = no
 		hostile_when_attacked = yes
+		auto_delete = yes
 	}
 	modules = {
 		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.

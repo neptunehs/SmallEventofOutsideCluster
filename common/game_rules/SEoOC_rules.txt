@@ -139,10 +139,10 @@ can_take_hostile_actions = {
 		}
 	}
 	else_if = {
-		#attacking primitives with non-interference
+		#SEoOC
 		limit = {
 			ROOT = {
-				NOT = { has_country_flag = nep_phantom_tech_gain }
+				NOT = { has_technology = tech_nep_phantom_phase_shift }
 			}
 			is_country_type = nep_phantom_passive
 		}

@@ -1,0 +1,67 @@
+##########################################################################
+# Decisions
+##########################################################################
+
+decision_nep_repeller = {
+	owned_planets_only = yes
+
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+			minerals = 500
+		}
+	}
+	
+	potential = {
+		has_global_flag = nep_phantom_begin
+		has_planet_flag = nep_phantom_orbit
+		NOT = { has_planet_flag = nep_phantom_repeller_build }
+	}
+	
+	effect = {
+		custom_tooltip = decision_nep_repeller_effects_short
+		hidden_effect = {
+			planet_event = { id = nep_phantom.2200 days = 180 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_nep_repeller_function = {
+	owned_planets_only = yes
+
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+			minerals = 500
+		}
+	}
+	
+	potential = {
+		has_global_flag = nep_phantom_begin
+		has_planet_flag = nep_phantom_orbit
+		has_planet_flag = nep_phantom_repeller_build
+	}
+	
+	effect = {
+		custom_tooltip = decision_nep_repeller_function_effects_short
+		hidden_effect = {
+			planet_event = { id = nep_phantom.2201 days = 45 }
+			add_modifier = {
+				modifier = nep_phantom_repeller_function
+				days = 90
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}

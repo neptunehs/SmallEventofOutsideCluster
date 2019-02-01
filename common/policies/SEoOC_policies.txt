@@ -22,11 +22,19 @@ nep_SEoOC_diff_policy = {
 					}
 					set_global_flag = nep_SEoOC_easy
 				}
+				every_country = {
+					limit = { can_change_policy = nep_SEoOC_diff_policy }
+					set_policy = {
+						policy = nep_SEoOC_diff_policy
+						option = SEoOC_diff_diff_policy_easy
+						cooldown = no
+					}
+				}
 			}
 		}
 
 		AI_weight = {
-			factor = 1
+			factor = 0
 		}
 	}
 	
@@ -47,15 +55,19 @@ nep_SEoOC_diff_policy = {
 					}
 					remove_global_flag = nep_SEoOC_easy
 				}
+				every_country = {
+					limit = { can_change_policy = nep_SEoOC_diff_policy }
+					set_policy = {
+						policy = nep_SEoOC_diff_policy
+						option = SEoOC_diff_diff_policy_normal
+						cooldown = no
+					}
+				}
 			}
 		}
 
 		AI_weight = {
 			factor = 0
-			modifier = {
-				factor = 2
-				has_global_flag = has_nsc_active
-			}
 		}
 	}
 }

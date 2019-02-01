@@ -24,6 +24,31 @@ special_project = {
 }
 
 special_project = {
+	key = "nep_Legnahcras_HQ_assault"
+	days_to_research = 25
+	tech_department = physics_technology
+	picture = GFX_evt_shielded_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = planet_event
+	
+	requirements = {
+		assault_armies = 10
+		leader = general
+		skill = 5
+	}
+	
+	on_success = {
+		add_modifier = { modifier = nep_Legnahcras_debuff days = -1 }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+
+special_project = {
 	key = "nep_Legnahcras_research"
 	event_chain = "nep_dragon_chain"
 	days_to_research = 1080

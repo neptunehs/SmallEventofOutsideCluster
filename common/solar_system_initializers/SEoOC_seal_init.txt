@@ -132,24 +132,24 @@ nep_seal_init = {
 		}
 	}
 	
-	# Will open again after I thought some events for this
-	# change_orbit = -120
+	change_orbit = -120
 	
-	# planet = {
-		# class = "pc_black_hole"
-		# name = "NAME_Sub_Seal_3"
-		# orbit_distance = 120
-		# orbit_angle = -45
-		# size = 20
-		# has_ring = no
+	planet = {
+		class = "pc_black_hole"
+		name = "NAME_Sub_Seal_3"
+		orbit_distance = 120
+		orbit_angle = -45
+		size = 20
+		has_ring = no
 		
-		# flags = { nep_seal_3 } 
+		flags = { nep_seal_3 } 
 		
-		# init_effect = {
-			# prevent_anomaly = yes
-			# clear_deposits = yes
-		# }
-	# }
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_sub_seal_3
+		}
+	}
 }
 
 nep_step_1 = {

@@ -11,8 +11,6 @@ tech_sealportal_dive = {
 		NOT = { has_global_flag = nep_sealportal_can_dive }
 	}
 
-	feature_flags = { sealportal_dive }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_sealportal_dive_title
@@ -58,6 +56,45 @@ tech_nep_destructor_ray = {
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
+
+tech_nep_phantom_phase_shift = {
+	cost = @repeatableTechBaseCost
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	weight = 0
+
+	potential = {
+		has_country_flag = nep_phantom_repeller_function_3
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_sealportal_dive_title
+			desc = tech_sealportal_dive_desc
+		}
+	}
+	
+	modifier = {
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOR = {
+				has_technology = tech_jump_drive_1
+				has_technology = tech_repeatable_improved_tile_energy_output
+				has_technology = tech_repeatable_improved_shield_output
+				has_technology = tech_repeatable_weapon_type_energy_damage
+				has_technology = tech_repeatable_weapon_type_energy_fire_rate
+				has_technology = tech_repeatable_reduced_building_cost
 			}
 		}
 	}
@@ -115,6 +152,23 @@ tech_nep_Krahen_tech = {
 }
 
 tech_nep_finalweapon_tech = {
+	area = physics
+	cost = 120000
+	tier = 5
+	category = { particles }
+	is_reverse_engineerable = no
+	ai_update_type = military	
+	weight = 0
+	icon = tech_nep_destructor_ray
+
+	potential = { always = no }
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_nep_phantom_tech = {
 	area = physics
 	cost = 120000
 	tier = 5
