@@ -1,13 +1,6 @@
 name_space = nep_phantom
 
 ####################################
-####################################
-# First Part
-####################################
-####################################
-
-
-####################################
 # scenario
 ####################################
 country_event = {
@@ -489,6 +482,7 @@ fleet_event = {
 	}
 }
 
+#on_fleet_destroyed_victim
 fleet_event = {
 	id = nep_phantom.63
 	hide_window = yes
@@ -504,6 +498,14 @@ fleet_event = {
 	}
 	
 	immediate = {
+		every_fleet = {
+			limit = { owner = { is_same_value = root.from }
+			delete_ship = this
+		}
+		random_system = {
+			limit = { has_star_flag = nep_in_phantom_war }
+			remove_star_flag = nep_in_phantom_war
+		}
 	}
 	
 	after = {
@@ -527,12 +529,59 @@ fleet_event = {
 			has_star_flag = nep_Scrus_cluster
 			NOR = { 
 				has_star_flag = nep_Ginan_system 
-				has_star_flag = nep_Scrus_cleared
+				has_star_flag = nep_phantom_war_end
 			}
 		}
 	}
 	
 	immediate = {
+		if = {
+			limit = { NOT = { any_country = { is_country_type = nep_phantom_active } } }
+			create_country = {
+				name = "NAME_nep_phantom_country"
+				type = nep_phantom_active
+				species = random
+				auto_delete = no
+				flag = {
+					icon = {
+						category = "zoological"
+						file = "flag_zoological_17.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "stripes.dds"
+					}
+					colors = {
+						"black"
+						"white"
+						"null"
+						"null"
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_fleet_flag = nep_in_phantom_war }
+			}
+			set_fleet_flag = nep_in_phantom_war
+			add_modifier = {
+				modifier = nep_phantom_no_retreat
+				days = -1
+			}
+		}
+		solar_system = {
+			if = {
+				limit = {
+					NOR = { 
+						has_star_flag = nep_in_phantom_war
+						has_star_flag = nep_phantom_war_end		
+					}
+				}
+				set_star_flag = nep_in_phantom_war
+				remove_hyperlane = { from = this to = event_target:nep_Ginan_system }
+			}
+		}
 		if = { 
 			limit = {
 				owner = {
@@ -544,6 +593,7 @@ fleet_event = {
 				}
 			}
 			fleet_event = { id = nep_phantom.71 }
+			fleet_event = { id = nep_phantom.75 days = 100 }
 			owner = {
 				country_event = { id = nep_phantom.30071 }
 			}
@@ -555,6 +605,7 @@ fleet_event = {
 				}
 			}
 			fleet_event = { id = nep_phantom.72 }
+			fleet_event = { id = nep_phantom.75 days = 110 }
 			owner = {
 				country_event = { id = nep_phantom.30072 }
 			}
@@ -566,6 +617,7 @@ fleet_event = {
 				}
 			}
 			fleet_event = { id = nep_phantom.73 }
+			fleet_event = { id = nep_phantom.75 days = 120 }
 			owner = {
 				country_event = { id = nep_phantom.30073 }
 			}
@@ -577,6 +629,7 @@ fleet_event = {
 				}
 			}
 			fleet_event = { id = nep_phantom.74 }
+			fleet_event = { id = nep_phantom.75 days = 125 }
 			owner = {
 				country_event = { id = nep_phantom.30074 }
 			}
@@ -584,7 +637,179 @@ fleet_event = {
 	}
 }
 
+fleet_event = {
+	id = nep_phantom.71
+	hide_window = yes
+	
+	is_trigger_only = yes
 
+	trigger = {
+		NOT = { has_star_flag = nep_phantom_war_end }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				count_system_ships = {
+					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+					count < 100
+				}
+			}
+			create_phantom_fleet_active_random = yes
+		}
+		fleet_event = { id = nep_phantom.71 days = 17 }
+	}
+}
+
+fleet_event = {
+	id = nep_phantom.72
+	hide_window = yes
+	
+	is_trigger_only = yes
+
+	trigger = {
+		NOT = { has_star_flag = nep_phantom_war_end }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				count_system_ships = {
+					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+					count < 130
+				}
+			}
+			create_phantom_fleet_active_random = yes
+		}
+		fleet_event = { id = nep_phantom.72 days = 15 }
+	}
+}
+
+fleet_event = {
+	id = nep_phantom.73
+	hide_window = yes
+	
+	is_trigger_only = yes
+
+	trigger = {
+		NOT = { has_star_flag = nep_phantom_war_end }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				count_system_ships = {
+					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+					count < 160
+				}
+			}
+			create_phantom_fleet_active_random = yes
+			create_phantom_fleet_active_random = yes
+		}
+		fleet_event = { id = nep_phantom.73 days = 15 }
+	}
+}
+
+
+fleet_event = {
+	id = nep_phantom.74
+	hide_window = yes
+	
+	is_trigger_only = yes
+
+	trigger = {
+		NOT = { has_star_flag = nep_phantom_war_end }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				count_system_ships = {
+					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+					count < 200
+				}
+			}
+			create_phantom_fleet_active_random = yes
+			create_phantom_fleet_active_random = yes
+		}
+		fleet_event = { id = nep_phantom.74 days = 14 }
+	}
+}
+
+
+fleet_event = {
+	id = nep_phantom.75
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	immediate = {
+		leader = {
+			if = { 
+				limit = { NOT = { has_trait = leader_trait_hero_of_mac } } 
+				add_trait = leader_trait_hero_of_mac
+			}
+		}
+		remove_fleet_flag = nep_in_phantom_war
+		remove_modifier = nep_phantom_no_retreat
+		solar_system = {
+			remove_star_flag = nep_in_phantom_war
+			set_star_flag = nep_phantom_war_end	
+			every_fleet_in_system = {
+				limit = { 
+					owner = { is_country_type = nep_phantom_active }
+				}
+				destroy_fleet = this
+			}
+		}
+		owner = {
+			country_event = { id = nep_phantom.30075 }
+		}
+		if = {
+			limit = { count_system = { count > 3 trigger = { has_star_flag = nep_phantom_war_end } } }
+			event_target:nep_phantom_global = {
+				country_event = { id = nep_phantom.8 }
+			}
+		}
+	}
+}
+
+#on_yearly_pulse
+event = {
+	id = nep_phantom.76
+	hide_window = yes
+	
+	is_trigger_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_active_begin
+		NOT = { has_global_flag = nep_phantom_active_end }
+	}
+	
+	immediate = {
+		every_fleet = {
+			limit = {
+				owner = { is_country_type = nep_phantom_active }
+				is_in_combat = no
+				solar_system = {
+					count_system_ships = {
+						limit = { owner = { NOT = { is_country_type = nep_phantom_active } } }
+						count < 1
+					}
+				}
+			}
+			delete_fleet = this
+		}
+		every_fleet = {
+			limit = { 
+				has_fleet_flag = nep_in_phantom_war
+				solar_system = { NOT = { has_star_flag = nep_in_phantom_war } }
+			}
+			remove_fleet_flag = nep_in_phantom_war
+			remove_modifier = nep_phantom_no_retreat
+		}
+	}
+}
 ####################################
 # fleet_actions
 ####################################
@@ -1387,10 +1612,3 @@ country_event = {
 		}
 	}
 }
-
-####################################
-####################################
-# Second Part
-####################################
-####################################
-

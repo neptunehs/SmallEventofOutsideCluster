@@ -735,6 +735,39 @@ create_Krahen_colonizer = {
 #######################################
 #  phantom
 #######################################
+create_phantom_country = {
+	create_country = {
+		name = "NAME_nep_phantom_country"
+		type = nep_phantom_passive
+		species = random
+		auto_delete = yes
+		flag = {
+			icon = {
+				category = "zoological"
+				file = "flag_zoological_17.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "stripes.dds"
+			}
+			colors = {
+				"black"
+				"white"
+				"null"
+				"null"
+			}
+		}
+	}
+	last_created_country = {
+		every_country = {
+			limit = {
+				has_country_flag = nep_phantom_repellent
+			}
+			establish_communications_no_message = prev
+		}
+	}
+}
+
 create_phantom_fleet_passive_Krahen = {
 	create_fleet = {
 		name = "NAME_phantom_fleet_passive"
@@ -743,7 +776,7 @@ create_phantom_fleet_passive_Krahen = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
+		effect = {
 			set_owner = last_created
 			while = {
 				count = 10
@@ -764,9 +797,11 @@ create_phantom_fleet_passive_Krahen = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -778,7 +813,7 @@ create_phantom_fleet_passive_fallen_empire_01 = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
+		effect = {
 			set_owner = last_created
 			while = {
 				count = 10
@@ -800,9 +835,11 @@ create_phantom_fleet_passive_fallen_empire_01 = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -836,9 +873,11 @@ create_phantom_fleet_passive_fallen_empire_02 = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -872,9 +911,11 @@ create_phantom_fleet_passive_humanoid = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -908,9 +949,11 @@ create_phantom_fleet_passive_mammalian = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -944,9 +987,11 @@ create_phantom_fleet_passive_molluscoid = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -980,9 +1025,11 @@ create_phantom_fleet_passive_reptilian = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -1016,9 +1063,11 @@ create_phantom_fleet_passive_arthropoid = {
 		}
 	}
 	last_created_fleet = {
-		target = prev
-		distance = 150
-		angle = random
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
 	}
 }
 
@@ -1077,6 +1126,43 @@ create_phantom_fleet_passive_pirate = {
 				}
 			}
 			set_location = {
+				target = event_target:nep_sub_seal_3
+				distance = 0
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		set_location = {
+			target = prev
+			distance = 150
+			angle = random
+		}
+	}
+}
+
+create_phantom_fleet_active_Krahen = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Krahen_Battleship_phantom"
+				}
+			}
+			set_location = {
 				target = prev
 				distance = 150
 				angle = random
@@ -1087,8 +1173,331 @@ create_phantom_fleet_passive_pirate = {
 			set_aggro_range_measure_from = self
 		}
 	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
 }
 
+create_phantom_fleet_active_fallen_empire_01 = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "fallen_empire_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_fallen_empire_02 = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "fallen_empire_02"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_humanoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "humanoid_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_mammalian = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "mammalian_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_molluscoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "molluscoid_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_reptilian = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "reptilian_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_arthropoid = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "arthropoid_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+# create_phantom_fleet_active_plantoid = {
+	# create_fleet = {
+		# name = "NAME_phantom_fleet_active"
+		# settings = {
+			# spawn_debris = no 
+			# can_change_leader = no
+			# uses_naval_capacity = no
+		# }
+		# effect = {		
+			# set_owner = event_target:nep_phantom_active
+			# while = {
+				# count = 10
+				# create_ship = {
+					# name = "NAME_phantom_fleet"
+					# design = "NAME_Battleship_phantom"
+					# graphical_culture = "plantoid_01"
+				# }
+			# }
+			# set_location = {
+				# target = event_target:prev
+				# distance = 0
+				# angle = random
+			# }
+			# set_formation_scale = 2.0
+			# set_fleet_stance = aggressive
+			# set_aggro_range = 500
+			# set_aggro_range_measure_from = self
+		# }
+	# }
+	# last_created_fleet = {
+		# auto_follow_fleet = { target = prev attack_fleet = yes }
+	# }
+# }
+
+create_phantom_fleet_active_pirate = {
+	create_fleet = {
+		name = "NAME_phantom_fleet_active"
+		settings = {
+			spawn_debris = no 
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {		
+			set_owner = event_target:nep_phantom_active
+			while = {
+				count = 10
+				create_ship = {
+					name = "NAME_phantom_fleet"
+					design = "NAME_Battleship_phantom"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+		}
+	}
+	last_created_fleet = {
+		auto_follow_fleet = { target = prev attack_fleet = yes }
+	}
+}
+
+create_phantom_fleet_active_random = {
+	random_list = {
+		3 = { create_phantom_fleet_active_Krahen = yes }
+		5 = { create_phantom_fleet_active_fallen_empire_01 = yes }
+		5 = { create_phantom_fleet_active_fallen_empire_02 = yes }
+		10 = { create_phantom_fleet_active_humanoid = yes }
+		10 = { create_phantom_fleet_active_mammalian = yes }
+		10 = { create_phantom_fleet_active_molluscoid = yes }
+		10 = { create_phantom_fleet_active_reptilian = yes }
+		10 = { create_phantom_fleet_active_arthropoid = yes }
+		#10 = { create_phantom_fleet_active_plantoid = yes } #To prevent DLC needed,rem it
+		3 = { create_phantom_fleet_active_pirate = yes }
+	}
+}
 #######################################
 #  finalweapon
 #######################################
@@ -1167,41 +1576,6 @@ create_finalweapon_bomb_fleet = {
 	}
 }
 
-#######################################
-#  phantom
-#######################################
-create_phantom_country = {
-	create_country = {
-		name = "NAME_nep_phantom_country"
-		type = nep_phantom_passive
-		species = random
-		auto_delete = yes
-		flag = {
-			icon = {
-				category = "zoological"
-				file = "flag_zoological_17.dds"
-			}
-			background = {
-				category = "backgrounds"
-				file = "stripes.dds"
-			}
-			colors = {
-				"black"
-				"white"
-				"null"
-				"null"
-			}
-		}
-	}
-	last_created_country = {
-		every_country = {
-			limit = {
-				has_country_flag = nep_phantom_repellent
-			}
-			establish_communications_no_message = prev
-		}
-	}
-}
 #######################################
 #  Easy Mode
 #######################################

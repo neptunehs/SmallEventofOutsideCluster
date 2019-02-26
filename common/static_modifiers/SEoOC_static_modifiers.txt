@@ -424,6 +424,11 @@ nep_phantom_planet_debuff_death = {
 	icon_frame = 3
 }
 
+nep_phantom_no_retreat = {
+	ship_disengage_chance_reduction = 1
+	ship_emergency_ftl_min_days_mult = 10
+}
+
 ##########################################################################
 # Finalweapon
 ##########################################################################

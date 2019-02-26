@@ -155,3 +155,8 @@ can_take_hostile_actions = {
 		always = yes
 	}
 }
+
+# THIS = Fleet
+can_jump_drive = {
+	solar_system = { NOT = { has_star_flag = nep_Scrus_cluster } }
+}
