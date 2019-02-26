@@ -134,6 +134,7 @@ nep_Ginan_init = {
 	
 	flags = { 
 		nep_Scrus_cluster
+		nep_Ginan_system
 	}
 	
 	planet = {

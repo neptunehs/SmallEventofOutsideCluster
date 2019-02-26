@@ -381,6 +381,50 @@ nep_inva_fleet_jumped_debuff = {
 }
 
 ##########################################################################
+# Phantom
+##########################################################################
+nep_phantom_orbit_stage1 = {
+	planet_stability_add = -5
+	trade_value_mult = -0.05
+	pop_happiness = -0.05
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+}
+
+nep_phantom_orbit_stage2 = {
+	planet_stability_add = -10
+	trade_value_mult = -0.1
+	pop_happiness = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+}
+
+nep_phantom_orbit_stage3 = {
+	planet_stability_add = -30
+	trade_value_mult = -0.3
+	pop_happiness = -0.3
+	planet_emigration_push_add = -50
+	icon = "gfx/interface/icons/planet_modifiers/pm_starvation.dds"
+	icon_frame = 3
+}
+
+nep_phantom_orbit_stage4 = {
+	planet_stability_add = -60
+	trade_value_mult = -0.5
+	pop_happiness = -0.5
+	planet_emigration_push_add = -130
+	icon = "gfx/interface/icons/planet_modifiers/pm_starvation.dds"
+	icon_frame = 3
+}
+
+nep_phantom_planet_debuff_death = {
+	pop_government_ethic_attraction = -0.5
+	planet_emigration_push_add = 50
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+}
+
+##########################################################################
 # Finalweapon
 ##########################################################################
 

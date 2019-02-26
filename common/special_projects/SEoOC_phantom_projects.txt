@@ -42,6 +42,28 @@ special_project = {
 }
 
 special_project = {
+	key = "nep_phantom_research_repeller"
+	cost = 2000
+	tech_department = society_technology
+	picture = GFX_evt_fleet_evil
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = country_event
+	
+	requirements = {
+		
+	}
+	
+	on_success = {
+		country_event = { id = nep_phantom.3211 }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
 	key = "nep_phantom_Ginan"
 	days_to_research = 15
 	tech_department = society_technology
@@ -56,6 +78,50 @@ special_project = {
 	
 	on_success = {
 		fleet = { fleet_event = nep_phantom.6 }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_phantom_Ginan_2"
+	days_to_research = 15
+	tech_department = society_technology
+	picture = GFX_evt_fleet_good
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		leader = admiral
+	}
+	
+	on_success = {
+		fleet = { fleet_event = nep_phantom.61 }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_phantom_Ginan_3"
+	days_to_research = 15
+	tech_department = society_technology
+	picture = GFX_evt_fleet_good
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		leader = admiral
+	}
+	
+	on_success = {
+		fleet = { fleet_event = nep_phantom.62 }
 	}
 	
 	on_fail = {

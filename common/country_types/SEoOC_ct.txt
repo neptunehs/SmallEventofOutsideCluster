@@ -341,3 +341,26 @@ nep_phantom_active = {
 		standard_event_module = {} # For bouncing events
 	}
 }
+
+nep_phantom_global_event = {
+	share_communications = no
+	default_ships = no
+	government = no
+	observable = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		standard_event_module = {} # Needed for events
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}
