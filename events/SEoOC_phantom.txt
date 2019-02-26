@@ -1,4 +1,4 @@
-name_space = nep_phantom
+namespace = nep_phantom
 
 ####################################
 # scenario
@@ -11,6 +11,7 @@ country_event = {
 
 	trigger = {
 		is_ai = no
+		has_global_flag = nep_phantom_available
 		has_global_flag = nep_Krahen_end
 		has_country_flag = nep_Krahen_orb_get
 		NOT = { has_global_flag = nep_corrupted_finalweapons_begin }
@@ -38,7 +39,6 @@ country_event = {
 				limit = {
 					distance = {
 						source = prev
-						uses_bypass = no
 						min_jumps = 2
 						max_jumps = 4
 					}
@@ -50,8 +50,8 @@ country_event = {
 						can_change_leader = no
 						uses_naval_capacity = no
 					}
-					effect = {		
-						set_owner = last_created
+					effect = {
+						set_owner = last_created_country
 						while = {
 							count = 10
 							create_ship = {
@@ -118,7 +118,7 @@ country_event = {
 	id = nep_phantom.101
 	hide_window = yes
 
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage1
@@ -130,7 +130,7 @@ country_event = {
 	id = nep_phantom.102
 	hide_window = yes
 
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage2
@@ -142,7 +142,7 @@ country_event = {
 	id = nep_phantom.103
 	hide_window = yes
 
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage3
@@ -154,7 +154,7 @@ country_event = {
 	id = nep_phantom.104
 	hide_window = yes
 
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage4
@@ -168,7 +168,7 @@ country_event = {
 
 	trigger = {
 		has_global_flag = nep_phantom_has_found
-		NOT = { has_global_flag = nep_phantom_end }
+		NOT = { has_global_flag = nep_phantom_active_end }
 		is_country_type = global_event
 	}
 	
@@ -184,7 +184,7 @@ country_event = {
 						has_global_flag = nep_phantom_passive_stage1
 					}
 					count_country = {
-						is_country_type = nep_phantom_passive
+						limit = { is_country_type = nep_phantom_passive }
 						count < 10
 					}
 				}
@@ -193,7 +193,7 @@ country_event = {
 						has_global_flag = nep_phantom_passive_stage2
 					}
 					count_country = {
-						is_country_type = nep_phantom_passive
+						limit = { is_country_type = nep_phantom_passive }
 						count < 15
 					}
 				}
@@ -202,7 +202,7 @@ country_event = {
 						has_global_flag = nep_phantom_passive_stage3
 					}
 					count_country = {
-						is_country_type = nep_phantom_passive
+						limit = { is_country_type = nep_phantom_passive }
 						count < 20
 					}
 				}
@@ -211,7 +211,7 @@ country_event = {
 						has_global_flag = nep_phantom_passive_stage4
 					}
 					count_country = {
-						is_country_type = nep_phantom_passive
+						limit = { is_country_type = nep_phantom_passive }
 						count < 25
 					}
 				}
@@ -220,7 +220,7 @@ country_event = {
 						has_global_flag = nep_phantom_passive_stage5
 					}
 					count_country = {
-						is_country_type = nep_phantom_passive
+						limit = { is_country_type = nep_phantom_passive }
 						count < 30
 					}
 				}
@@ -244,11 +244,11 @@ country_event = {
 					limit = {
 						any_system_planet = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									root = {
-										num_owned_planets > 1
-									}
+									owner = { num_owned_planets > 1	}
 								}
 								is_capital = no
 							}
@@ -257,11 +257,11 @@ country_event = {
 					random_system_planet = {
 						limit = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									root = {
-										num_owned_planets > 1
-									}
+									owner = { num_owned_planets > 1	}
 								}
 								is_capital = no
 							}
@@ -283,7 +283,7 @@ country_event = {
 	id = nep_phantom.3
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		country_event = { id = nep_phantom.3003 } #notification
@@ -296,7 +296,7 @@ country_event = {
 	id = nep_phantom.4
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_begin
@@ -342,7 +342,7 @@ country_event = {
 	id = nep_phantom.5
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	fire_only_once = yes
 	
@@ -411,7 +411,7 @@ fleet_event = {
 	id = nep_phantom.6
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		set_global_flag = nep_phantom_active_begin
@@ -442,7 +442,7 @@ fleet_event = {
 	id = nep_phantom.61
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		set_location = {
@@ -464,7 +464,7 @@ fleet_event = {
 	id = nep_phantom.62
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		set_location = {
@@ -483,23 +483,21 @@ fleet_event = {
 }
 
 #on_fleet_destroyed_victim
-fleet_event = {
+country_event = {
 	id = nep_phantom.63
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_active_begin
 		has_country_flag = nep_Krahen_orb_get
-		From = {
-			is_country_type = nep_phantom_active
-		}
+		From = { is_country_type = nep_phantom_active }
 	}
 	
 	immediate = {
-		every_fleet = {
-			limit = { owner = { is_same_value = root.from }
+		every_ship = {
+			limit = { owner = { is_same_value = root.from } }
 			delete_ship = this
 		}
 		random_system = {
@@ -520,7 +518,7 @@ fleet_event = {
 	id = nep_phantom.7
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_active_begin
@@ -553,10 +551,13 @@ fleet_event = {
 					}
 					colors = {
 						"black"
-						"white"
+						"dark_grey"
 						"null"
 						"null"
 					}
+				}
+				effect = {
+					establish_communications_no_message = root.owner
 				}
 			}
 		}
@@ -641,21 +642,23 @@ fleet_event = {
 	id = nep_phantom.71
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_star_flag = nep_phantom_war_end }
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				count_system_ships = {
-					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-					count < 100
+		solar_system = {
+			if = {
+				limit = {
+					count_system_ships = {
+						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+						count < 100
+					}
 				}
+				root = { create_phantom_fleet_active_random = yes }
 			}
-			create_phantom_fleet_active_random = yes
 		}
 		fleet_event = { id = nep_phantom.71 days = 17 }
 	}
@@ -665,21 +668,23 @@ fleet_event = {
 	id = nep_phantom.72
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_star_flag = nep_phantom_war_end }
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				count_system_ships = {
-					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-					count < 130
+		solar_system = {
+			if = {
+				limit = {
+					count_system_ships = {
+						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+						count < 130
+					}
 				}
+				root = { create_phantom_fleet_active_random = yes }
 			}
-			create_phantom_fleet_active_random = yes
 		}
 		fleet_event = { id = nep_phantom.72 days = 15 }
 	}
@@ -689,22 +694,24 @@ fleet_event = {
 	id = nep_phantom.73
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_star_flag = nep_phantom_war_end }
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				count_system_ships = {
-					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-					count < 160
+		solar_system = {
+			if = {
+				limit = {
+					count_system_ships = {
+						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+						count < 160
+					}
 				}
+				root = { create_phantom_fleet_active_random = yes
+					create_phantom_fleet_active_random = yes }
 			}
-			create_phantom_fleet_active_random = yes
-			create_phantom_fleet_active_random = yes
 		}
 		fleet_event = { id = nep_phantom.73 days = 15 }
 	}
@@ -715,22 +722,24 @@ fleet_event = {
 	id = nep_phantom.74
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_star_flag = nep_phantom_war_end }
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				count_system_ships = {
-					limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-					count < 200
+		solar_system = {
+			if = {
+				limit = {
+					count_system_ships = {
+						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+						count < 200
+					}
 				}
+				root = { create_phantom_fleet_active_random = yes
+					create_phantom_fleet_active_random = yes }
 			}
-			create_phantom_fleet_active_random = yes
-			create_phantom_fleet_active_random = yes
 		}
 		fleet_event = { id = nep_phantom.74 days = 14 }
 	}
@@ -741,7 +750,7 @@ fleet_event = {
 	id = nep_phantom.75
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		leader = {
@@ -761,12 +770,13 @@ fleet_event = {
 				}
 				destroy_fleet = this
 			}
+			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
 		}
 		owner = {
 			country_event = { id = nep_phantom.30075 }
 		}
 		if = {
-			limit = { count_system = { count > 3 trigger = { has_star_flag = nep_phantom_war_end } } }
+			limit = { count_system = { count > 3 limit = { has_star_flag = nep_phantom_war_end } } }
 			event_target:nep_phantom_global = {
 				country_event = { id = nep_phantom.8 }
 			}
@@ -779,7 +789,7 @@ event = {
 	id = nep_phantom.76
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_active_begin
@@ -787,29 +797,68 @@ event = {
 	}
 	
 	immediate = {
-		every_fleet = {
-			limit = {
-				owner = { is_country_type = nep_phantom_active }
-				is_in_combat = no
-				solar_system = {
-					count_system_ships = {
-						limit = { owner = { NOT = { is_country_type = nep_phantom_active } } }
-						count < 1
+		every_system = {
+			limit = { has_star_flag = nep_Scrus_cluster }
+			every_fleet_in_system = {
+				limit = {
+					owner = { is_country_type = nep_phantom_active }
+					is_in_combat = no
+					solar_system = {
+						count_system_ships = {
+							limit = { owner = { NOT = { is_country_type = nep_phantom_active } } }
+							count < 1
+						}
 					}
 				}
+				delete_fleet = this
 			}
-			delete_fleet = this
 		}
-		every_fleet = {
-			limit = { 
-				has_fleet_flag = nep_in_phantom_war
-				solar_system = { NOT = { has_star_flag = nep_in_phantom_war } }
+		random_system = {
+			limit = {
+				NOT = { has_star_flag = nep_in_phantom_war }
+				any_ship_in_system = { fleet = { has_fleet_flag = nep_in_phantom_war } }
 			}
-			remove_fleet_flag = nep_in_phantom_war
-			remove_modifier = nep_phantom_no_retreat
+			random_fleet_in_system = {
+				limit = { has_fleet_flag = nep_in_phantom_war }
+				remove_fleet_flag = nep_in_phantom_war
+				remove_modifier = nep_phantom_no_retreat
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = nep_Scrus_cluster
+				NOT = { has_hyperlane_to = event_target:nep_Ginan_system }
+			}			
+			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
 		}
 	}
 }
+
+country_event = {
+	id = nep_phantom.8
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		country_event = { id = nep_phantom.3008 } #Noti
+		country_event = { id = nep_phantom.81 days = 30 random = 15 } #Noti
+	}
+}
+
+country_event = {
+	id = nep_phantom.81
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = nep_phantom_active_end
+		set_country_flag = nep_phantom_orb_get
+		country_event = { id = nep_phantom.30081 } #Noti
+	}
+}
+
 ####################################
 # fleet_actions
 ####################################
@@ -818,7 +867,7 @@ country_event = {
 	id = nep_phantom.1001
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_begin
@@ -831,22 +880,12 @@ country_event = {
 				exists = fromfrom
 			}
 			from = {
-				queue_action = {
+				queue_actions = {
 					orbit_planet = root.fromfrom
 				}
 			}
-			if = {
-				limit = {
-					is_primitive = no
-				}
-				fromfrom = {
-					planet_event = { id = nep_phantom.2001 } #begin energy syphen
-				}
-			}
-			else = {
-				fromfrom = {
-					planet_event = { id = nep_phantom.2301 } #begin energy syphen/primitive
-				}				
+			fromfrom = {
+				planet_event = { id = nep_phantom.2001 } #begin energy syphen
 			}
 		}
 		else = {
@@ -859,7 +898,7 @@ fleet_event = {
 	id = nep_phantom.1002
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		has_global_flag = nep_phantom_begin
@@ -870,8 +909,8 @@ fleet_event = {
 			limit = {
 				distance = {
 					source = root
-					min = 50
-					max = 100
+					min_distance > 50
+					max_distance < 101
 				}
 			}
 			root = {
@@ -888,9 +927,11 @@ fleet_event = {
 					limit = {
 						any_system_planet = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									num_owned_planets > 1
+									owner = { num_owned_planets > 1 }
 								}
 								is_capital = no
 							}
@@ -899,11 +940,11 @@ fleet_event = {
 					random_system_planet = {
 						limit = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									owner = {
-										num_owned_planets > 1
-									}
+									owner = { num_owned_planets > 1	}
 								}								
 								is_capital = no
 							}
@@ -922,9 +963,11 @@ fleet_event = {
 					limit = {
 						any_system_planet = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									num_owned_planets > 1
+									owner = { num_owned_planets > 1	}
 								}
 								is_capital = no
 							}
@@ -934,11 +977,11 @@ fleet_event = {
 					random_system_planet = {
 						limit = {
 							is_colony = yes
+							exists = owner
+							owner = { is_primitive = no }
 							if = {
 								limit = {
-									owner = {
-										num_owned_planets > 1
-									}
+									owner = { num_owned_planets > 1	}
 								}
 								is_capital = no
 							}
@@ -965,7 +1008,7 @@ planet_event = {
 	id = nep_phantom.2001
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		set_planet_flag = nep_phantom_orbit
@@ -983,7 +1026,7 @@ planet_event = {
 	id = nep_phantom.2002
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = { has_planet_flag = nep_phantom_orbit }
 	
@@ -1004,7 +1047,7 @@ planet_event = {
 	id = nep_phantom.2003
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = { has_planet_flag = nep_phantom_orbit }
 	
@@ -1033,7 +1076,7 @@ planet_event = {
 	id = nep_phantom.2004
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = { has_planet_flag = nep_phantom_orbit }
 	
@@ -1052,7 +1095,7 @@ planet_event = {
 	id = nep_phantom.2100
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		random_owned_pop = {
@@ -1067,14 +1110,14 @@ planet_event = {
 	id = nep_phantom.2101
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		random_owned_pop = {
 			kill_pop = yes
 		}
 		owner = { country_event = { id = nep_phantom.3210 } } #notification
-		planet_event = { id = nep_phantom.2102 days = 22 }  #death loop
+		planet_event = { id = nep_phantom.2101 days = 22 }  #death loop
 	}
 }
 
@@ -1083,7 +1126,7 @@ planet_event = {
 	id = nep_phantom.2200
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		owner = { country_event = { id = nep_phantom.3220 } } #notification
@@ -1095,7 +1138,7 @@ planet_event = {
 	id = nep_phantom.2201
 	hide_window = yes
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 		if = {
@@ -1153,7 +1196,7 @@ country_event = {
 	picture = GFX_evt_news_room
 	location = FromFromFrom
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	fire_only_once = yes
 	
 	trigger = {
@@ -1178,7 +1221,7 @@ country_event = {
 	desc = "nep_phantom.3003.desc"
 	picture = GFX_evt_engineering_research
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1194,7 +1237,7 @@ country_event = {
 	desc = "nep_phantom.3003.desc"
 	picture = GFX_evt_engineering_research
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1204,7 +1247,7 @@ country_event = {
 		enable_special_project = {
 			name = nep_phantom_research_2
 			owner = this
-			location = this
+			location = capital_scope
 		}
 	}
 }
@@ -1216,7 +1259,7 @@ country_event = {
 	desc = "nep_phantom.3005.desc"
 	picture = GFX_evt_engineering_research
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1258,7 +1301,7 @@ country_event = {
 	picture = GFX_evt_black_hole
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 	}
@@ -1285,7 +1328,7 @@ country_event = {
 	picture = GFX_evt_black_hole
 	location = event_target:nep_Ginan_system
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 	}
@@ -1307,7 +1350,7 @@ country_event = {
 	picture = GFX_evt_black_hole
 	location = event_target:nep_seal_3
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	immediate = {
 	}
@@ -1319,6 +1362,119 @@ country_event = {
 			owner = this
 			location = event_target:nep_seal_3
 		}
+	}
+}
+
+country_event = {
+	id = nep_phantom.30071
+	title = "nep_phantom.30071.name"
+	desc = "nep_phantom.30071.desc"
+	picture = GFX_evt_ruined_system
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30071.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30072
+	title = "nep_phantom.30072.name"
+	desc = "nep_phantom.30072.desc"
+	picture = GFX_evt_ruined_system
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30072.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30073
+	title = "nep_phantom.30073.name"
+	desc = "nep_phantom.30073.desc"
+	picture = GFX_evt_ruined_system
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30073.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30074
+	title = "nep_phantom.30074.name"
+	desc = "nep_phantom.30074.desc"
+	picture = GFX_evt_ruined_system
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30074.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30075
+	title = "nep_phantom.30075.name"
+	desc = "nep_phantom.30075.desc"
+	picture = GFX_evt_pirates_attacking_cargo
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30075.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.3008
+	title = "nep_phantom.3008.name"
+	desc = "nep_phantom.3008.desc"
+	picture = GFX_evt_towel
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.3008.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30081
+	title = "nep_phantom.30081.name"
+	desc = "nep_phantom.30081.desc"
+	picture = GFX_evt_space_walk
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.30081.a
+		add_research_option = tech_nep_phantom_aux
 	}
 }
 
@@ -1340,7 +1496,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1429,7 +1585,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1446,7 +1602,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1463,7 +1619,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1491,7 +1647,7 @@ country_event = {
 	picture = GFX_evt_disease_outbreak
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		from = { has_planet_flag = nep_phantom_planet_no_more_noti }
@@ -1535,7 +1691,7 @@ country_event = {
 		enable_special_project = {
 			name = nep_phantom_research_repeller
 			owner = this
-			location = this
+			location = capital_scope
 		}
 	}
 	
@@ -1558,7 +1714,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 		set_country_flag = nep_can_build_repeller
@@ -1577,7 +1733,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 		
 	immediate = {
 	}
@@ -1594,7 +1750,7 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	location = from
 	
-	is_trigger_only = yes
+	is_triggered_only = yes
 			
 	immediate = { }
 	
@@ -1608,7 +1764,7 @@ country_event = {
 		enable_special_project = {
 			name = nep_phantom_research
 			owner = this
-			location = this
+			location = capital_scope
 		}
 	}
 }

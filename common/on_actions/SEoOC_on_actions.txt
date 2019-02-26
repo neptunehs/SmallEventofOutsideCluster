@@ -1,6 +1,7 @@
 on_press_begin = {
 	events = {
 		nep_SEoOC_init.1
+		nep_SEoOC_init.2
 	}
 }
 

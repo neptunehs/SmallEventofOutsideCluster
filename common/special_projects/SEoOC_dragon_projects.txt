@@ -39,7 +39,15 @@ special_project = {
 	}
 	
 	on_success = {
-		add_modifier = { modifier = nep_Legnahcras_debuff days = -1 }
+		controller = {
+			if = {
+				limit = {
+					is_country_type = nep_Legnahcras_country
+					NOT = { has_modifier = nep_Legnahcras_debuff }
+				}
+				add_modifier = { modifier = nep_Legnahcras_debuff days = -1 }
+			}
+		}
 	}
 	
 	on_fail = {

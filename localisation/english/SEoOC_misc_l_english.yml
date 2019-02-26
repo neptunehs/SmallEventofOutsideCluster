@@ -1,8 +1,5 @@
 ﻿l_english:
 
- nep_mia.1.name:0 "Our fleets got MIA"
- nep_mia.1.desc:0 "Our ship to [From.GetName] was getting lost because of the unknown star condition."
- 
  effect_every_combatant_fleet:0 "Every Combatant"
  
  policy_nep_SEoOC_diff_policy:0 "SEoOC - Difficulty"

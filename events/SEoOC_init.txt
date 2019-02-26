@@ -1,5 +1,6 @@
 namespace = nep_SEoOC_init
 
+#Diff
 country_event = {
 	id = nep_SEoOC_init.1
 	hide_window = yes
@@ -37,5 +38,19 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+#Version
+country_event = {
+	id = nep_SEoOC_init.2
+	hide_window = yes
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = nep_phantom_available
 	}
 }

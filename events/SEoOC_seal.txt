@@ -294,24 +294,32 @@ country_event = {
 		}
 		else = {
 			event_target:highway_note_N = {
-				limit = { is_star = yes }
-				malfunctioning_guards_spawn_2 = yes
-				malfunctioning_guards_spawn_2 = yes
+				random_system_planet = {
+					limit = { is_star = yes }
+					malfunctioning_guards_spawn_2 = yes
+					malfunctioning_guards_spawn_2 = yes
+				}
 			}
 			event_target:highway_note_E = {
-				limit = { is_star = yes }
-				malfunctioning_guards_spawn_2 = yes
-				malfunctioning_guards_spawn_2 = yes
+				random_system_planet = {
+					limit = { is_star = yes }
+					malfunctioning_guards_spawn_2 = yes
+					malfunctioning_guards_spawn_2 = yes
+				}
 			}
 			event_target:highway_note_W = {
-				limit = { is_star = yes }
-				malfunctioning_guards_spawn_2 = yes
-				malfunctioning_guards_spawn_2 = yes
+				random_system_planet = {
+					limit = { is_star = yes }
+					malfunctioning_guards_spawn_2 = yes
+					malfunctioning_guards_spawn_2 = yes
+				}
 			}
 			event_target:highway_note_S = {
-				limit = { is_star = yes }
-				malfunctioning_guards_spawn_2 = yes
-				malfunctioning_guards_spawn_2 = yes
+				random_system_planet = {
+					limit = { is_star = yes }
+					malfunctioning_guards_spawn_2 = yes
+					malfunctioning_guards_spawn_2 = yes
+				}
 			}
 		}
 		set_global_flag = malfunctioning_guards_again

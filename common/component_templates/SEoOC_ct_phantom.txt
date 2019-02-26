@@ -171,3 +171,56 @@ utility_component_template = {
 		weight = 0
 	}
 }
+
+utility_component_template = {
+	key = "NEP_PHANTOM_ROLE_ATTACK"
+	size = small
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	power = 0
+	
+	ship_behavior = "nep_phantom_behavior_attack"
+	hidden = yes
+
+	modifier = {
+		ship_evasion_mult = 0.2
+		ship_fire_rate_mult = 0.1
+		ship_speed_mult = 0.1
+	}
+
+	class_restriction = { shipclass_military }
+	size_restriction = { nep_battleship_phantom }
+	component_set = "combat_computers"
+	prerequisites = { "tech_nep_phantom_tech" }
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "NEP_PHANTOM_AUX"
+	size = aux
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+	}
+
+	ship_modifier = {
+		ship_evasion_mult = 0.15
+		ship_disengage_chance_mult = 0.15
+		ship_emergency_ftl_mult = -0.15
+	}
+	
+	prerequisites = { tech_nep_phantom_aux }
+	component_set = "NEP_PHANTOM_AUX"
+	
+	ai_weight = {
+		weight = 5
+	}
+}

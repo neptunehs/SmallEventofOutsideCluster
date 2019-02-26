@@ -59,7 +59,7 @@ nep_SEoOC_diff_policy = {
 					limit = { can_change_policy = nep_SEoOC_diff_policy }
 					set_policy = {
 						policy = nep_SEoOC_diff_policy
-						option = SEoOC_diff_diff_policy_normal
+						option = SEoOC_diff_diff_policy_default
 						cooldown = no
 					}
 				}

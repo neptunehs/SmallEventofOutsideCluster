@@ -4,3 +4,10 @@ component_set = {
 	icon = "GFX_ship_part_nep_destructor_ray"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "NEP_PHANTOM_AUX"
+	
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1	
+}

@@ -660,90 +660,138 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		create_country = {
-			name = "NAME_Legnahcras"
-			type = nep_Legnahcras_country
-			auto_delete = no
-			effect = {
-				establish_communications_no_message = root.owner
-			}
-		}
-		last_created_country = {
-			save_global_event_target_as = Legnahcras_country
-			nep_easy_mod = yes
-		}
 		event_target:nep_Auriel_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
 				}
 			}
-		}		
-		event_target:nep_Gabriel_planet = {
 			while = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
-				}
-			}
-		}		
-		event_target:nep_Sabriel_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
-				}
-			}
-		}		
-		event_target:nep_Samuel_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
-				}
-			}
-		}		
-		event_target:nep_Michael_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
-				}
-			}
-		}		
-		event_target:nep_Jauiel_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
-					type = nep_Legnahcras_defensive_army
-				}
-			}
-		}		
-		event_target:nep_Anael_planet = {
-			while = {
-				count = 13
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = event_target:Legnahcras_country
+					owner = last_created
 					type = nep_Legnahcras_defensive_army
 				}
 			}
 		}
-		event_target:Legnahcras_country = {
-			set_country_flag = Legnahcras_country
+		event_target:nep_Gabriel_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+		event_target:nep_Sabriel_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+		event_target:nep_Samuel_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+		event_target:nep_Michael_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+		event_target:nep_Jauiel_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+		event_target:nep_Anael_planet = {
+			create_country = {
+				name = "NAME_Legnahcras"
+				type = nep_Legnahcras_country
+				auto_delete = yes
+				effect = {
+					establish_communications_no_message = root
+					nep_easy_mod = yes
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Legnahcras_existences"
+					owner = last_created
+					type = nep_Legnahcras_defensive_army
+				}
+			}
 		}
 	}
 	option = {
@@ -751,6 +799,7 @@ country_event = {
 	}
 }
 
+#on_planet_attackers_win
 country_event = {
 	id = nep_dragon.4001
 	title = "nep_dragon.4001.name"
@@ -759,8 +808,37 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	fire_only_once = yes
+	
+	trigger = {
+		from = { is_country_type = nep_Legnahcras_country }
+	}
+	
 	immediate = {
 		
+	}
+	
+	option = {
+		name = nep_dragon.4001.a
+		every_planet = {
+			limit = { 
+				NOT = { is_same_value = root.fromfrom }
+				OR = {
+					has_planet_flag = nep_Auriel_planet
+					has_planet_flag = nep_Gabriel_planet
+					has_planet_flag = nep_Sabriel_planet
+					has_planet_flag = nep_Samuel_planet
+					has_planet_flag = nep_Michael_planet
+					has_planet_flag = nep_Jauiel_planet
+					has_planet_flag = nep_Anael_planet					
+				}
+			}
+			enable_special_project = {
+				name = "nep_Legnahcras_HQ_assault"
+				owner = root
+				location = this
+			}
+		}
 	}
 }
 
@@ -777,10 +855,7 @@ country_event = {
 		is_ai = no
 		has_global_flag = nep_dragon_begin
 		has_country_flag = nep_dragon_founder
-		any_country = {
-			has_country_flag = Legnahcras_country
-			num_armies < 1
-		}
+		NOT = { any_country = { is_country_type = nep_Legnahcras_country } }
 	}
 	
 	immediate = {
@@ -841,7 +916,7 @@ country_event = {
 			nep_easy_mod = yes
 		}
 		create_fleet = {
-			name = "NAME_Pentacle"
+			name = "NAME_Astaroth"
 			settings = {
 				spawn_debris = no 
 			}
@@ -1318,7 +1393,7 @@ country_event = {
 
 	immediate = {
 		create_fleet = {
-			name = "NAME_Pentacle"
+			name = "NAME_Astaroth"
 			settings = {
 				spawn_debris = no
 			}
@@ -1653,7 +1728,7 @@ country_event = {
 			}
 		}
 		create_fleet = {
-			name = "NAME_Pentacle"
+			name = "NAME_Astaroth"
 			settings = {
 				spawn_debris = no
 			}

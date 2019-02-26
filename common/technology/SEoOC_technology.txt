@@ -69,6 +69,7 @@ tech_nep_phantom_phase_shift = {
 	is_reverse_engineerable = no
 	category = { particles }
 	weight = 0
+	icon = old_tech_icons/antimatter_power_tech
 
 	potential = {
 		has_country_flag = nep_phantom_repeller_function_3
@@ -76,8 +77,48 @@ tech_nep_phantom_phase_shift = {
 
 	prereqfor_desc = {
 		custom = {
-			title = tech_sealportal_dive_title
-			desc = tech_sealportal_dive_desc
+			title = tech_nep_phantom_phase_shift_title
+			desc = tech_nep_phantom_phase_shift_desc
+		}
+	}
+	
+	modifier = {
+	}
+
+	weight_modifier = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOR = {
+				has_technology = tech_jump_drive_1
+				has_technology = tech_repeatable_improved_tile_energy_output
+				has_technology = tech_repeatable_improved_shield_output
+				has_technology = tech_repeatable_weapon_type_energy_damage
+				has_technology = tech_repeatable_weapon_type_energy_fire_rate
+				has_technology = tech_repeatable_reduced_building_cost
+			}
+		}
+	}
+}
+
+tech_nep_phantom_aux = {
+	cost = @repeatableTechBaseCost
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	weight = 0
+	icon = tech_auxiliary_fire_control
+
+	potential = {
+		always = no
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_nep_phantom_aux_title
+			desc = tech_nep_phantom_aux_desc
 		}
 	}
 	

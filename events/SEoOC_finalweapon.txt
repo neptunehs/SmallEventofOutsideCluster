@@ -13,7 +13,10 @@ country_event = {
 		has_country_flag = nep_Krahen_orb_get
 		has_country_flag = nep_first_orb_get
 		has_country_flag = nep_dragon_summoner
-		#has_country_flag = nep_graveyard_orb_get
+		if = {
+			limit = { has_global_flag = nep_phantom_available } 
+			has_country_flag = nep_phantom_orb_get
+		}
 	}
 	
 	immediate = {

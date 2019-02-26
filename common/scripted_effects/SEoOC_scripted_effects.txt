@@ -752,7 +752,7 @@ create_phantom_country = {
 			}
 			colors = {
 				"black"
-				"white"
+				"dark_grey"
 				"null"
 				"null"
 			}
@@ -777,7 +777,7 @@ create_phantom_fleet_passive_Krahen = {
 			uses_naval_capacity = no
 		}
 		effect = {
-			set_owner = last_created
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -814,7 +814,7 @@ create_phantom_fleet_passive_fallen_empire_01 = {
 			uses_naval_capacity = no
 		}
 		effect = {
-			set_owner = last_created
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -851,8 +851,8 @@ create_phantom_fleet_passive_fallen_empire_02 = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -889,8 +889,8 @@ create_phantom_fleet_passive_humanoid = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -927,8 +927,8 @@ create_phantom_fleet_passive_mammalian = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -965,8 +965,8 @@ create_phantom_fleet_passive_molluscoid = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -1003,8 +1003,8 @@ create_phantom_fleet_passive_reptilian = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -1041,8 +1041,8 @@ create_phantom_fleet_passive_arthropoid = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {
@@ -1115,8 +1115,8 @@ create_phantom_fleet_passive_pirate = {
 			can_change_leader = no
 			uses_naval_capacity = no
 		}
-		effect = {		
-			set_owner = last_created
+		effect = {
+			set_owner = last_created_country
 			while = {
 				count = 10
 				create_ship = {

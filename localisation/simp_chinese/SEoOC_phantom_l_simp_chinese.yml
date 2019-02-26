@@ -33,6 +33,22 @@
  nep_phantom.30062.desc:0 "[event_target:nep_seal_3.GetName]的传送已可使用。"
  nep_phantom.30062.a:0 "好。"
  
+ nep_phantom.30071.name:0 "暴风雨来临"
+ nep_phantom.30071.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后遭到了[event_target:nep_phantom_global.GetName]的伏击。根据[From.GetName]发来的画面，[From.Solar_System.GetName]布满了"
+ nep_phantom.30071.a:0 "好。"
+ 
+ nep_phantom.30072.name:0 "nep_phantom.30072.name"
+ nep_phantom.30072.desc:0 "nep_phantom.30072.desc"
+ nep_phantom.30072.a:0 "好。"
+ 
+ nep_phantom.30073.name:0 "nep_phantom.30073.name"
+ nep_phantom.30073.desc:0 "nep_phantom.30073.desc"
+ nep_phantom.30073.a:0 "好。"
+ 
+ nep_phantom.30074.name:0 "nep_phantom.30074.name"
+ nep_phantom.30074.desc:0 " nep_phantom.30074.desc"
+ nep_phantom.30074.a:0 "好。"
+  
  nep_phantom.3201.name:0 "头上的威胁"
  nep_phantom.3201.desc.a:0 "之前被误认为卡恩帝国残部的舰队到达了[From.GetName]。它们停泊在[From.GetName],尚不清楚他们想做什么。之前我们的军方试过各种方式进行拦截，但我们的攻击完全无效，同时也不接受任何沟通。他们看起来若隐若现，就像是存在不稳定一样，有人甚至认为这是卡恩帝国的鬼魂来复仇了————当然这是不可能的。另外军方以及民间给他们取了很多称号：鬼魂（Ghost），幻象（Illusion）、模糊者（Blurs）、以及幻影（Phantom）。您最好给他们取个名字？"
  nep_phantom.3201.desc.b:0 "又一队代号:[event_target:nep_phantom_global.GetName]的舰队到达了[From.GetName]。当地人民开始了恐慌，我们必须尽快处理。"
@@ -77,3 +93,6 @@
  nep_phantom.3221.b:0 "我们不能继续满足于现状。动员科学家们找个彻底的解决办法。"
  
  CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM:0 "无法攻击位于不确定相中的存在。"
+ 
+ leader_trait_hero_of_mac:0 "孤胆英雄"
+ leader_trait_hero_of_mac_desc:0 "对[event_target:nep_phantom_global.GetName]的伏击战中，在没有后援的情况下率领唯一的舰队完成了犹如英雄史诗一般的漂亮战绩。"
