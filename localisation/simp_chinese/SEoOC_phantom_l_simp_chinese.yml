@@ -94,5 +94,7 @@
  
  CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM:0 "无法攻击位于不确定相中的存在。"
  
+ CAN_NOT_JUMP_WHEN_IN_SCRUS:0 "$TRIGGER_FAIL$ 这个星系的亚空间极为不稳定，无法进行跃迁。"
+ 
  leader_trait_hero_of_mac:0 "孤胆英雄"
  leader_trait_hero_of_mac_desc:0 "对[event_target:nep_phantom_global.GetName]的伏击战中，在没有后援的情况下率领唯一的舰队完成了犹如英雄史诗一般的漂亮战绩。"

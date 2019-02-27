@@ -80,6 +80,7 @@ on_ship_destroyed_perp = {
 on_planet_attackers_win = {
 	events = {
 		nep_dragon.4001
+		nep_dragon.4002
 		nep_inva.41
 		nep_inva.42
 		nep_inva.471

@@ -35,7 +35,7 @@ ship_design = {
 	}
 
 	required_component="SENSOR_4"
-	required_component="EMPTY_DRIVE"
+	required_component="HYPER_DRIVE_3"
 	required_component="COMBAT_COMPUTER_SWARM_AUTONOMOUS"
 	required_component="SHIP_THRUSTER_5"
 	required_component="CORVETTE_DARK_MATTER_REACTOR"	
@@ -113,7 +113,7 @@ ship_design = {
 	}
 	
 	required_component="SENSOR_4"
-	required_component="EMPTY_DRIVE"
+	required_component="HYPER_DRIVE_3"
 	required_component="COMBAT_COMPUTER_PICKET_AUTONOMOUS"
 	required_component="SHIP_THRUSTER_5"
 	required_component="DESTROYER_DARK_MATTER_REACTOR"
@@ -220,7 +220,7 @@ ship_design = {
 	}
 		
 	required_component="SENSOR_4"
-	required_component="EMPTY_DRIVE"
+	required_component="HYPER_DRIVE_3"
 	required_component="COMBAT_COMPUTER_PICKET_AUTONOMOUS"
 	required_component="SHIP_THRUSTER_5"
 	required_component="CRUISER_DARK_MATTER_REACTOR"
@@ -327,7 +327,7 @@ ship_design = {
 	}
 		
 	required_component="SENSOR_4"
-	required_component="EMPTY_DRIVE"
+	required_component="HYPER_DRIVE_3"
 	required_component="COMBAT_COMPUTER_PICKET_AUTONOMOUS"
 	required_component="SHIP_THRUSTER_5"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"

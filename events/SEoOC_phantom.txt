@@ -355,42 +355,42 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 490
-				max_distance <= 495
-				min_orientation_angle = -45
-				max_orientation_angle = -45
+				min_distance >= 469
+				max_distance <= 469
+				min_orientation_angle = -90
+				max_orientation_angle = -90
 				hyperlane = no
 				initializer = nep_Gacrus_init
 			}
 			spawn_system = {
-				min_distance >= 490
-				max_distance <= 495
-				min_orientation_angle = -45
-				max_orientation_angle = -45
+				min_distance >= 492
+				max_distance <= 492
+				min_orientation_angle = -90
+				max_orientation_angle = -90
 				hyperlane = no
 				initializer = nep_Acrus_init
 			}
 			spawn_system = {
-				min_distance >= 490
-				max_distance <= 495
-				min_orientation_angle = -45
-				max_orientation_angle = -45
+				min_distance >= 476
+				max_distance <= 476
+				min_orientation_angle = -89
+				max_orientation_angle = -89
+				hyperlane = no
+				initializer = nep_Imai_init
+			}
+			spawn_system = {
+				min_distance >= 476
+				max_distance <= 476
+				min_orientation_angle = -91
+				max_orientation_angle = -91
 				hyperlane = no
 				initializer = nep_Mimosa_init
 			}
 			spawn_system = {
-				min_distance >= 490
-				max_distance <= 495
-				min_orientation_angle = -45
-				max_orientation_angle = -45
-				hyperlane = no
-				initializer = nep_Decrus_init
-			}
-			spawn_system = {
-				min_distance >= 490
-				max_distance <= 495
-				min_orientation_angle = -45
-				max_orientation_angle = -45
+				min_distance >= 479
+				max_distance <= 479
+				min_orientation_angle = -90
+				max_orientation_angle = -90
 				hyperlane = no
 				initializer = nep_Ginan_init
 			}

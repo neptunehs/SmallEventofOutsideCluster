@@ -4,3 +4,6 @@
  nep_battleship_phantom_plural:0 "Battleship?"
  
  CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM:0 "无法攻击位于不确定相中的存在。"
+ 
+ CAN_NOT_JUMP_WHEN_IN_SCRUS:0 "$TRIGGER_FAIL$ Due to roiling subspace tides we can not use jump drive in this system."
+ 

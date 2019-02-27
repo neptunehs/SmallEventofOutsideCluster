@@ -2,7 +2,6 @@ nep_SEoOC_diff_policy = {
 
 	potential = {
 		is_ai = no
-		days_passed > 5
 		NOT = { has_global_flag = nep_highway_begin }
 	}
 	
