@@ -34,21 +34,33 @@
  nep_phantom.30062.a:0 "好。"
  
  nep_phantom.30071.name:0 "暴风雨来临"
- nep_phantom.30071.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后遭到了[event_target:nep_phantom_global.GetName]的伏击。根据[From.GetName]发来的画面，[From.Solar_System.GetName]布满了"
- nep_phantom.30071.a:0 "好。"
+ nep_phantom.30071.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后遭到了[event_target:nep_phantom_global.GetName]的伏击。根据[From.GetName]发来的画面，[From.Solar_System.GetName]布满了残骸，然后[event_target:nep_phantom_global.GetName]残骸中间没有任何预兆的出现，科学家们怀疑这些残骸就是[event_target:nep_phantom_global.GetName]本身。我们现在无法支援他们，只能祈祷他们能打赢。"
+ nep_phantom.30071.a:0 "见鬼！"
  
- nep_phantom.30072.name:0 "nep_phantom.30072.name"
- nep_phantom.30072.desc:0 "nep_phantom.30072.desc"
- nep_phantom.30072.a:0 "好。"
+ nep_phantom.30072.name:0 "暴风雨来临"
+ nep_phantom.30072.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后遭到了[event_target:nep_phantom_global.GetName]的伏击。这次的数量貌似比上次更多。"
+ nep_phantom.30072.a:0 "至少这次我们知道他们不是无穷无尽的。"
  
- nep_phantom.30073.name:0 "nep_phantom.30073.name"
- nep_phantom.30073.desc:0 "nep_phantom.30073.desc"
- nep_phantom.30073.a:0 "好。"
+ nep_phantom.30073.name:0 "暴风雨来临"
+ nep_phantom.30073.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后并不意外的遭到了[event_target:nep_phantom_global.GetName]的伏击。"
+ nep_phantom.30073.a:0 "果然。"
  
- nep_phantom.30074.name:0 "nep_phantom.30074.name"
- nep_phantom.30074.desc:0 " nep_phantom.30074.desc"
- nep_phantom.30074.a:0 "好。"
+ nep_phantom.30074.name:0 "暴风雨来临"
+ nep_phantom.30074.desc:0 "[From.GetName]进入了[From.Solar_System.GetName],然后并不意外的遭到了[event_target:nep_phantom_global.GetName]的伏击。这个星系应该是南十字星系的最后一个访问的星系了，说不定我们能在这里解决整件事情，也说不定反抗会很激烈。"
+ nep_phantom.30074.a:0 "做好准备。"
+ 
+ nep_phantom.30075.name:0 "暴风雨过去"
+ nep_phantom.30075.desc:0 "[From.Solar_System.GetName]再次回归静寂，估计是在这里的能量用完了。"
+ nep_phantom.30075.a:0 "好。"
+ 
+ nep_phantom.3008.name:0 "暴风雨过去"
+ nep_phantom.3008.desc:0 "全部的南十字星系已经重归静寂。我们的舰队的探测器开始工作，看看能否找到什么。"
+ nep_phantom.3008.a:0 "好。"
   
+ nep_phantom.30081.name:0 "驱逐"
+ nep_phantom.30081.desc:0 "我们在混在废墟中间的一个神秘装置找到了宝玉。在我们取下宝玉的一瞬间，全宇宙的所有[event_target:nep_phantom_global.GetName]均消失了，看来这就是元凶无误了。虽然我们永远也无法知道这件事的前因后果，但我们解决了它们，也找到了宝玉。科学家还从探测器发回的数据中找到了能让我们的舰队临时超短时间进入不定相以躲避敌方攻击的方法，如果实用化了可能可以带来一些用处。"
+ nep_phantom.30081.a:0 "很好！"
+ 
  nep_phantom.3201.name:0 "头上的威胁"
  nep_phantom.3201.desc.a:0 "之前被误认为卡恩帝国残部的舰队到达了[From.GetName]。它们停泊在[From.GetName],尚不清楚他们想做什么。之前我们的军方试过各种方式进行拦截，但我们的攻击完全无效，同时也不接受任何沟通。他们看起来若隐若现，就像是存在不稳定一样，有人甚至认为这是卡恩帝国的鬼魂来复仇了————当然这是不可能的。另外军方以及民间给他们取了很多称号：鬼魂（Ghost），幻象（Illusion）、模糊者（Blurs）、以及幻影（Phantom）。您最好给他们取个名字？"
  nep_phantom.3201.desc.b:0 "又一队代号:[event_target:nep_phantom_global.GetName]的舰队到达了[From.GetName]。当地人民开始了恐慌，我们必须尽快处理。"

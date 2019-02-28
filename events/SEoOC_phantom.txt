@@ -855,6 +855,64 @@ country_event = {
 	immediate = {
 		set_global_flag = nep_phantom_active_end
 		set_country_flag = nep_phantom_orb_get
+		every_country = {
+			limit = { 
+				OR = {
+					is_country_type = nep_phantom_active
+					is_country_type = nep_phantom_passive
+				}
+			}
+			every_owned_fleet = {
+				destroy_fleet = this
+			}
+			destroy_country = yes
+		}
+		remove_global_flag = nep_phantom_passive_stage1
+		remove_global_flag = nep_phantom_passive_stage2
+		remove_global_flag = nep_phantom_passive_stage3
+		remove_global_flag = nep_phantom_passive_stage4
+		remove_global_flag = nep_phantom_passive_stage5
+		remove_global_flag = nep_phantom_has_found
+		remove_global_flag = nep_code_phantom
+		remove_global_flag = nep_code_ghost
+		remove_global_flag = nep_code_illusion
+		remove_global_flag = nep_code_blurs
+		every_country = {
+			limit = {
+				OR = {
+					has_country_flag = nep_phantom_passive_defeated_1
+					has_country_flag = nep_phantom_passive_defeated_2
+					has_country_flag = nep_phantom_passive_defeated_3
+					has_country_flag = nep_phantom_repeller_function_1
+					has_country_flag = nep_phantom_repeller_function_2
+					has_country_flag = nep_phantom_repeller_function_3
+					has_country_flag = nep_phantom_3006_not_first
+					has_country_flag = nep_phantom_has_death
+					has_country_flag = nep_can_build_repeller
+				}
+			}
+			remove_country_flag = nep_phantom_passive_defeated_1
+			remove_country_flag = nep_phantom_passive_defeated_2
+			remove_country_flag = nep_phantom_passive_defeated_3
+			remove_country_flag = nep_phantom_repeller_function_1
+			remove_country_flag = nep_phantom_repeller_function_2
+			remove_country_flag = nep_phantom_repeller_function_3
+			remove_country_flag = nep_phantom_3006_not_first
+			remove_country_flag = nep_phantom_has_death
+			remove_country_flag = nep_can_build_repeller
+			every_owned_fleet = {
+				limit = {
+					has_fleet_flag = nep_in_phantom_war
+				}
+				remove_fleet_flag = nep_in_phantom_war
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = nep_in_phantom_war
+			}
+			remove_star_flag = nep_in_phantom_war
+		}
 		country_event = { id = nep_phantom.30081 } #Noti
 	}
 }

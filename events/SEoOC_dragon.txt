@@ -793,6 +793,7 @@ country_event = {
 				}
 			}
 		}
+		set_global_flag = nep_Legnahcras_begin
 	}
 	option = {
 		name = nep_dragon.4.a
@@ -874,13 +875,13 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		has_global_flag = nep_dragon_begin
+		has_global_flag = nep_Legnahcras_begin
 		has_country_flag = nep_dragon_founder
 		NOT = { any_country = { is_country_type = nep_Legnahcras_country } }
 	}
 	
 	immediate = {
-	
+		remove_global_flag = nep_Legnahcras_begin
 	}
 	
 	option = {

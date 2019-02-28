@@ -159,14 +159,10 @@ can_take_hostile_actions = {
 # THIS = Fleet
 can_jump_drive = {
 	if = {
-		limit = { NOT = { exists = solar_system } }
-		custom_tooltip = {
-			text = "CAN_NOT_JUMP_WHEN_IN_HYPERLANE"
-			always = no
+		limit = { 
+			exists = solar_system
+			solar_system = { has_star_flag = nep_Scrus_cluster } 
 		}
-	}
-	else_if = {
-		limit = { solar_system = { has_star_flag = nep_Scrus_cluster } }
 		custom_tooltip = {
 			text = "CAN_NOT_JUMP_WHEN_IN_SCRUS"
 			always = no
