@@ -41,7 +41,15 @@ can_enter_system_by_jump = {
 		
 		#SEoOC
 		NOT = { has_star_flag = nep_Krahen_cluster }
-		NOT = { has_star_flag = nep_heptagram_cluster }
+		NOT = { 
+			AND = {
+				has_global_flag = nep_not_pass_Aemethms 
+				OR = {
+					has_star_flag = nep_dragon_system
+					has_star_flag = nep_heptagram_cluster
+				}
+			}
+		}
 	}
 }
 

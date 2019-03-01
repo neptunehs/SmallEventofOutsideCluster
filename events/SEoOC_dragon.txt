@@ -410,173 +410,171 @@ ship_event = {
 	}
 }
 
-country_event = {
-	id = nep_dragon.3000
-	hide_window = yes
+# country_event = {
+	# id = nep_dragon.3000
+	# hide_window = yes
 	
-	is_triggered_only = yes
-	
-	fire_only_once = yes
-	
-	immediate = {
-		if = {
-			limit = {
-				OR = {
-					event_target:nep_Auriel_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-					event_target:nep_Gabriel_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-					event_target:nep_Sabriel_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-					event_target:nep_Samuel_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-					event_target:nep_Jauiel_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-					event_target:nep_Anael_planet = {
-						exists = owner
-						owner = { is_same_value = root }
-					}
-				}
-			}
-			random_list = {
-				10 = { 
-					event_target:nep_Auriel_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-				10 = { 
-					event_target:nep_Gabriel_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-				10 = { 
-					event_target:nep_Sabriel_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-				10 = { 
-					event_target:nep_Samuel_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-				#No Michael
-				10 = { 
-					event_target:nep_Jauiel_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-				10 = { 
-					event_target:nep_Anael_planet = { 
-						if = {
-							limit = {
-								exists = owner
-								owner = { is_same_value = root }
-							}
-							planet_event = { id = nep_dragon.3001 }
-						}
-						else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
-					}
-				}
-			}
-		}
-		else = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } }
-	}
-}
+	# is_triggered_only = yes
 
-planet_event = {
-	id = nep_dragon.3001
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		owner = { country_event = { id = nep_dragon.3002 } }
-		solar_system = {
-			spawn_natural_wormhole = {
-				bypass_type = wormhole
-				random_pos = yes
-			}
-		}
-		owner = {
-			capital_scope = {
-				solar_system = {
-					closest_system = {
-						limit = {
-							is_star_class = sc_black_hole
-						}
-						spawn_natural_wormhole = {
-							bypass_type = wormhole
-							orbit_distance = 0
-							orbit_angle = 0
-						}
-						link_wormholes = root.solar_system
-					}
-				}
-			}
-		}
-	}
-}
+	# immediate = {
+		# if = {
+			# limit = {
+				# OR = {
+					# event_target:nep_Auriel_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+					# event_target:nep_Gabriel_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+					# event_target:nep_Sabriel_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+					# event_target:nep_Samuel_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+					# event_target:nep_Jauiel_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+					# event_target:nep_Anael_planet = {
+						# exists = owner
+						# owner = { is_same_value = root }
+					# }
+				# }
+			# }
+			# random_list = {
+				# 10 = { 
+					# event_target:nep_Auriel_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+				# 10 = { 
+					# event_target:nep_Gabriel_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+				# 10 = { 
+					# event_target:nep_Sabriel_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+				# 10 = { 
+					# event_target:nep_Samuel_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+				No Michael
+				# 10 = { 
+					# event_target:nep_Jauiel_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+				# 10 = { 
+					# event_target:nep_Anael_planet = { 
+						# if = {
+							# limit = {
+								# exists = owner
+								# owner = { is_same_value = root }
+							# }
+							# planet_event = { id = nep_dragon.3001 }
+						# }
+						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
+					# }
+				# }
+			# }
+		# }
+		# else = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } }
+	# }
+# }
 
-country_event = {
-	id = nep_dragon.3002
-	title = "nep_dragon.3002.name"
-	desc = "nep_dragon.3002.desc"	
-	picture = GFX_evt_black_hole
-	location = from
-	is_triggered_only = yes
+# planet_event = {
+	# id = nep_dragon.3001
+	# hide_window = yes
+	# is_triggered_only = yes
 	
-	immediate = {
+	# immediate = {
+		# owner = { country_event = { id = nep_dragon.3002 } }
+		# solar_system = {
+			# spawn_natural_wormhole = {
+				# bypass_type = wormhole
+				# random_pos = yes
+			# }
+		# }
+		# owner = {
+			# capital_scope = {
+				# solar_system = {
+					# closest_system = {
+						# limit = {
+							# is_star_class = sc_black_hole
+						# }
+						# spawn_natural_wormhole = {
+							# bypass_type = wormhole
+							# orbit_distance = 0
+							# orbit_angle = 0
+						# }
+						# link_wormholes = root.solar_system
+					# }
+				# }
+			# }
+		# }
+	# }
+# }
+
+# country_event = {
+	# id = nep_dragon.3002
+	# title = "nep_dragon.3002.name"
+	# desc = "nep_dragon.3002.desc"	
+	# picture = GFX_evt_black_hole
+	# location = from
+	# is_triggered_only = yes
+	
+	# immediate = {
 		
-	}
+	# }
 	
-	option = {
-		name = nep_dragon.3002.a
-	}
-}
+	# option = {
+		# name = nep_dragon.3002.a
+	# }
+# }
 
 #Legnahcras appears
 planet_event = {
@@ -874,8 +872,8 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
 		has_global_flag = nep_Legnahcras_begin
+		is_ai = no
 		has_country_flag = nep_dragon_founder
 		NOT = { any_country = { is_country_type = nep_Legnahcras_country } }
 	}
@@ -886,10 +884,6 @@ country_event = {
 	
 	option = {
 		name = nep_dragon.5.a
-		begin_event_chain = {
-			event_chain = "nep_dragon_chain"
-			target = ROOT
-		}
 		enable_special_project = {
 			name = "nep_Legnahcras_research"
 			location = ROOT.capital_scope
@@ -1056,7 +1050,6 @@ country_event = {
 			id = nep_dragon_system_poi.1
 			name = "nep_dragon_system_poi_name"
 			desc = "nep_dragon_system_poi_desc"
-			event_chain = nep_dragon_chain
 			location = event_target:nep_dragon_star
 		}
 	}
@@ -1223,20 +1216,13 @@ country_event = {
 		set_country_flag = nep_dragon_summoner
 		remove_global_flag = nep_dragon_begin
 		remove_country_flag = nep_dragon_founder
-		every_country = {
-			if = {
-				limit = {
-					has_event_chain = "nep_dragon_chain"
-				}
-			end_event_chain = "nep_dragon_chain"
-			}
-		}
 		event_target:nep_dragon_country = {
 			every_owned_fleet = {
 				delete_fleet = this
 			}
 			destroy_country = yes
 		}
+		remove_point_of_interest = nep_dragon_system_poi.1
 		country_event = { id = nep_dragon.8 }
 		country_event = { id = nep_inva.1 days = 180 random = 180 }
 	}

@@ -13,10 +13,10 @@ nep_heptagram_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
 }
 
-nep_dragon_chain = {
-	picture = GFX_evt_space_dragon
-	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
-}
+#nep_dragon_chain = {
+#	picture = GFX_evt_space_dragon
+#	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+#}
 
 nep_Krahen_invasion_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"

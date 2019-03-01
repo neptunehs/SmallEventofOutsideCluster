@@ -355,11 +355,19 @@ nep_Anael_debuff = {
 }
 
 nep_Legnahcras_debuff = {
-	army_health = -0.2
-	army_morale = -0.5
+	army_health = -0.4
+	army_morale = -0.4
 	army_damage_mult = -0.4
-	army_morale_damage_mult = -0.5
+	army_morale_damage_mult = -0.4
 }
+
+nep_Legnahcras_debuff_easy = {
+	army_health = -0.12
+	army_morale = -0.12
+	army_damage_mult = -0.12
+	army_morale_damage_mult = -0.12
+}
+
 
 ##########################################################################
 # Krahen
