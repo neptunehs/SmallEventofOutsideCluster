@@ -483,6 +483,7 @@ create_dragon_babys = {
 			can_upgrade = no
 			uses_naval_capacity = no
 			can_change_composition = no
+			can_change_leader = no
 		}
 	}
 	last_created_fleet = {
@@ -552,6 +553,61 @@ create_Krahen_defender = {
 			garrison = yes
 			can_change_leader = no
 			uses_naval_capacity = no
+			spawn_debris = no
+		}
+	}
+}
+
+create_Krahen_defender_gate = {
+	event_target:nep_Krahen_country = {
+		create_leader = {
+			class = admiral
+			species = event_target:nep_Krahen_country
+			name = random
+			skill = 10
+			traits = {
+				trait = leader_trait_Krahen_admiral
+				trait = leader_trait_aggressive
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Krahen_Defender"
+		effect = {		
+			set_owner = event_target:nep_Krahen_country
+			while = {
+				count = 25
+				create_ship = {
+					name = "NAME_Krahen_Defender"
+					design = "NAME_Krahen_Battleship_defender"
+				}
+			}
+			assign_leader = last_created_leader
+			set_location = {
+				target = prev
+				distance = 150
+				angle = random
+			}
+			set_formation_scale = 2.0
+			set_fleet_stance = aggressive
+			set_aggro_range = 500
+			set_aggro_range_measure_from = self
+			
+			set_fleet_flag = nep_Krahen_defender
+			
+			queue_actions = {
+				repeat = {
+					wait = {
+						duration = 500
+					}
+				}
+			}
+		}
+		settings = {
+			garrison = yes
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
 		}
 	}
 }
@@ -608,6 +664,7 @@ create_Krahen_invader = {
 		settings = {
 			can_change_leader = no
 			uses_naval_capacity = no
+			spawn_debris = no
 		}
 	}
 }
@@ -627,7 +684,7 @@ create_Krahen_follower = {
 	}
 	create_fleet = {
 		name = "NAME_Krahen_Defender"
-		effect = {		
+		effect = {
 			set_owner = event_target:nep_Krahen_country
 			while = {
 				count = 30
@@ -654,6 +711,7 @@ create_Krahen_follower = {
 		settings = {
 			can_change_leader = no
 			uses_naval_capacity = no
+			spawn_debris = no
 		}
 	}
 }
@@ -727,6 +785,25 @@ create_Krahen_colonizer = {
 				target = PREV
 				distance = 20
 				angle = random 
+			}
+		}
+	}
+	last_created_fleet = {
+		if = {
+			limit = {
+				any_planet_within_border = {
+					can_colonize = { who = event_target:nep_Krahen_country status = yes }
+				}
+			}
+			random_planet_within_border = {
+				limit = {
+					can_colonize = { who = event_target:nep_Krahen_country status = yes }
+				}
+				save_event_target_as = nep_create_temp_poi_colonize
+			}
+			auto_move_to_planet = {
+				target = event_target:nep_create_temp_poi_colonize
+				clear_auto_move_on_arrival = yes
 			}
 		}
 	}

@@ -1962,6 +1962,11 @@ event = {
 						random_system = {
 							limit = {
 								has_star_flag = nep_Krahen_portal_system
+								NOT = {
+									any_ship_in_system = {
+										is_in_combat = yes
+									}
+								}
 							}
 							random_fleet_in_system = {
 								limit = {
@@ -1987,19 +1992,38 @@ event = {
 				limit = {
 					count_system_ships = {
 						limit = { is_ship_size = nep_Krahen_battleship }
-						count < 90
+						count < 60
 					}
 				}
 				random_fleet_in_system = {
 					limit = {
 						OR = {
-							has_fleet_flag = nep_Krahen_portal_1
 							has_fleet_flag = nep_Krahen_portal_2
 							has_fleet_flag = nep_Krahen_portal_3
 							has_fleet_flag = nep_Krahen_portal_4
 						}
 					}
-					create_Krahen_defender = yes
+					if = { 
+						limit = { exists = this } 
+						create_Krahen_defender = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					count_system_ships = {
+						limit = { is_ship_size = nep_Krahen_battleship }
+						count < 90
+					}
+				}
+				random_fleet_in_system = {
+					limit = {
+						has_fleet_flag = nep_Krahen_portal_1
+					}
+					if = { 
+						limit = { exists = this } 
+						create_Krahen_defender = yes
+					}
 				}
 			}
 			random_fleet_in_system = {
@@ -2037,7 +2061,7 @@ event = {
 					}
 				}
 			}
-			starbase = { create_Krahen_defender = yes }
+			starbase = { create_Krahen_defender_gate = yes }
 		}
 		
 		event_target:nep_Krahen_country = {
@@ -2142,6 +2166,7 @@ event = {
 					solar_system = {
 						NOT = {
 							any_ship_in_system = {
+								exists = owner
 								owner = { NOT = { has_country_flag = nep_Krahen_country } }
 							}
 						}
@@ -2160,6 +2185,7 @@ event = {
 					solar_system = {
 						NOT = {
 							any_ship_in_system = {
+								exists = owner
 								owner = { NOT = { has_country_flag = nep_Krahen_country } }
 							}
 						}
@@ -2676,7 +2702,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 720
+		days = 360
 	}
 	
 	immediate = {

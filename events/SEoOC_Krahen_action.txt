@@ -646,6 +646,7 @@ planet_event = {
 	trigger = {
 		has_global_flag = nep_Krahen_crisis
 		NOT = { has_planet_flag = nep_Krahen_invading_planet }
+		planet_devastation >= 100
 		from = { 
 			has_country_flag = nep_Krahen_country
 		}
@@ -2062,9 +2063,12 @@ country_event = {
 								species = event_target:nep_Krahen_country
 								ethos = owner
 							}
-							delete_ship = root.from
 						}
 					}
+				}
+				effect = {
+					id = nep_Krahen_colonizer.2
+					delete_fleet = this
 				}
 			}
 		}
@@ -2179,6 +2183,35 @@ event = {
 						}
 						set_fleet_flag = nep_Krahen_following_target_constructor
 						prevprev = { auto_follow_fleet = { target = prev attack_fleet = no } }
+					}
+				}
+			}
+			while = {
+				limit = {
+					any_owned_fleet = {
+						is_ship_size = colonizer
+						is_fleet_idle = yes
+					}
+					any_planet_within_border = {
+						can_colonize = { who = event_target:nep_Krahen_country status = yes }
+					}
+				}
+				random_planet_within_border = {
+					limit = {
+						can_colonize = { who = event_target:nep_Krahen_country status = yes }
+					}
+					save_event_target_as = nep_4001_temp_poi_colonize
+				}
+				event_target:nep_Krahen_country = {
+					random_owned_ship = {
+						limit = { 
+							is_ship_size = colonizer
+							is_fleet_idle = yes
+						}
+						auto_move_to_planet = {
+							target = event_target:nep_4001_temp_poi_colonize
+							clear_auto_move_on_arrival = yes
+						}
 					}
 				}
 			}

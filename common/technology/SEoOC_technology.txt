@@ -30,7 +30,7 @@ tech_sealportal_dive = {
 
 tech_nep_destructor_ray = {
 	area = physics
-	cost = 120000
+	cost = 200000
 	tier = 5
 	category = { particles }
 	ai_update_type = all

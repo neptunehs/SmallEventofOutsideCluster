@@ -1898,6 +1898,7 @@ country_event = {
 		random_owned_ship = {
 			limit = {
 				is_ship_size = nep_dragon_reward_kai
+				is_in_combat = yes
 			}
 			set_global_flag = nep_dragon_rk_in_battle
 			ship_event = { id = nep_dragon.9401 days = 3 }
@@ -1915,6 +1916,7 @@ ship_event = {
 		if = {
 			limit = {
 				has_hp_percentage > 0
+				is_in_combat = yes
 			}
 			repair_percentage = 0.25
 		}
@@ -1949,6 +1951,7 @@ country_event = {
 		random_owned_ship = {
 			limit = {
 				is_ship_size = nep_dragon_reward_kai
+				is_in_combat = yes
 			}
 			set_global_flag = nep_dragon_rk_in_battle_2
 			ship_event = { id = nep_dragon.9403 days = 10 }
@@ -1966,6 +1969,7 @@ ship_event = {
 		if = {
 			limit = {
 				has_hp_percentage > 0
+				is_in_combat = yes
 			}
 			create_dragon_babys = yes
 		}
