@@ -1024,3 +1024,33 @@ fleet_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nep_test.22
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { 
+		always = no
+	}
+	
+	immediate = {
+		random_system = {
+			limit = { 
+				is_neighbor_of = root
+			}
+			log = "1.[This.GetName]"			
+			random_system = {
+				limit = {
+					log = "2.[Prev.GetName]"
+					distance = {
+						source = prev
+						min_jumps = 2
+						max_jumps = 4
+					}
+				}
+				log = "3.[This.GetName]"
+			}
+		}
+	}
+}

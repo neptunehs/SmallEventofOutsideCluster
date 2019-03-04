@@ -82,7 +82,7 @@
  Krahen_portals_num:0 "Portals left"
  
  nep_Krahen_explore:0 "Explore the remnants of the Krah'en Empire"
- nep_Krahen_explore_desc:0 "The threat of the Krah'en Empire is over. Now is the time for us to learn more from this matter."
+ nep_Krahen_explore_DESC:0 "The threat of the Krah'en Empire is over. Now is the time for us to learn more from this matter."
  
  nep_adv_tank_factory:0 "Adv.tank Factory"
  nep_adv_tank_factory_desc:0 "An improved Tank factroy that increases the manufacturing capacity whilst requiring less workers."

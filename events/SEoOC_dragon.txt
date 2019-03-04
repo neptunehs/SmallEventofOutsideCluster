@@ -392,9 +392,9 @@ ship_event = {
 				}
 				add_deposit = "d_nep_unknown_vortex"
 			}
-			owner = {
-				country_event = { id = nep_dragon.3000 days = 360 random = 720 }
-			}
+			#owner = {
+			#	country_event = { id = nep_dragon.3000 days = 360 random = 720 }
+			#}
 		}
 	}
 	option = {
@@ -402,7 +402,7 @@ ship_event = {
 		owner = {
 			end_event_chain = "nep_heptagram_chain"
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			event_target:nep_grand_seal_planet = {
 				planet_event = { id = nep_finalweapon.4001 days = 18000 random = 1800 }
 			}
@@ -495,7 +495,7 @@ ship_event = {
 						# else = { root = { country_event = { id = nep_dragon.3000 days = 180 random = 180 } } }
 					# }
 				# }
-				No Michael
+				##No Michael
 				# 10 = { 
 					# event_target:nep_Jauiel_planet = { 
 						# if = {

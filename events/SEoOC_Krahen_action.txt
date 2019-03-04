@@ -2067,7 +2067,7 @@ country_event = {
 					}
 				}
 				effect = {
-					id = nep_Krahen_colonizer.2
+					id = nep_Krahen_colonizer.4
 					delete_fleet = this
 				}
 			}

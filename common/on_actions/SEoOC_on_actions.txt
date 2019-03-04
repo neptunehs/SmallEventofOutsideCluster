@@ -172,13 +172,12 @@ on_fleet_auto_move_arrival = {
 }
 
 # Triggered when an Empire has fleets within another Empire's borders.
-# This = receiver
-# From = sender
-# FromFrom = fleet
-# FromFromFrom = system
-on_enforce_borders = {
+# Scope = Fleet
+# From = Origin System
+# FromFrom = Destination System
+on_crossing_border = {
 	events = {
-		nep_phantom.3001
+		nep_phantom.1000
 	}
 }
 
