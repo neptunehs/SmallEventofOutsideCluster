@@ -1042,7 +1042,6 @@ country_event = {
 			log = "1.[This.GetName]"			
 			random_system = {
 				limit = {
-					log = "2.[Prev.GetName]"
 					distance = {
 						source = prev
 						min_jumps = 2
@@ -1052,5 +1051,38 @@ country_event = {
 				log = "3.[This.GetName]"
 			}
 		}
+	}
+}
+
+fleet_event = {
+	id = nep_test.23
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		set_fleet_flag = nep_test_23
+		auto_move_to_planet = {
+			target = owner.capital_scope
+			clear_auto_move_on_arrival = yes
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.231
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from = { has_fleet_flag = nep_test_23 }
+	}
+	
+	immediate = {
+		log = "test231fire"
+		from = { clear_fleet_actions = this }
 	}
 }

@@ -346,7 +346,7 @@ nep_phantom_global_event = {
 	share_communications = no
 	default_ships = no
 	government = no
-	observable = no
+	show_in_contacts_list = yes
 	ai = {
 		enabled = no
 	}

@@ -70,8 +70,8 @@
  nep_phantom.3201.desc.b:0 "又一队代号:[event_target:nep_phantom_global.GetName]的舰队到达了[From.GetName]。当地人民开始了恐慌，我们必须尽快处理。"
  nep_phantom.3201.aa:0 "它们的代号就用幻影吧。密切关注它们的行动。"
  nep_phantom.3201.ab:0 "它们的代号就用鬼魂吧。密切关注它们的行动。"
- nep_phantom.3201.ab:0 "它们的代号就用幻象吧。密切关注它们的行动。"
- nep_phantom.3201.ab:0 "它们的代号就用模糊者吧。密切关注它们的行动。"
+ nep_phantom.3201.ac:0 "它们的代号就用幻象吧。密切关注它们的行动。"
+ nep_phantom.3201.ad:0 "它们的代号就用模糊者吧。密切关注它们的行动。"
  nep_phantom.3201.b:0 "真讨厌！"
  
  nep_phantom.3202.name:0 "头上的威胁"
@@ -111,6 +111,27 @@
  CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM:0 "无法攻击位于不确定相中的存在。"
  
  CAN_NOT_JUMP_WHEN_IN_SCRUS:0 "$TRIGGER_FAIL$ 这个星系的亚空间极为不稳定，无法进行跃迁。"
+ 
+ nep_phantom_orbit_stage1:0 "担忧"
+ nep_phantom_orbit_stage1_desc:0 "星球的人们对于头上的舰队感到忧心忡忡。"
+ nep_phantom_orbit_stage2:0 "衰弱症"
+ nep_phantom_orbit_stage2_desc:0 "这个星球的不明衰弱症开始蔓延，开始影响星球的秩序。"
+ nep_phantom_orbit_stage3:0 "衰弱症大蔓延"
+ nep_phantom_orbit_stage3_desc:0 "这个星球的不明衰弱症开始大蔓延，死人渐渐增多，开始有人试图逃离这个星球。"
+ nep_phantom_orbit_stage4:0 "秩序崩坏"
+ nep_phantom_orbit_stage4_desc:0 "这个星球的不明衰弱症已经感染了几乎所有人，星球的秩序难以坚守。"
+ 
+ NAME_phantom_fleet_krahen_unknown:0 "卡恩帝国残部？"
+ NAME_Krahen_invader_phantom:0 "卡恩帝国残部？"
+
+ NAME_nep_phantom_fleet_passive:0 "幻影"
+ NAME_nep_ghost_fleet_passive:0 "鬼魂"
+ NAME_nep_illusion_fleet_passive:0 "幻象"
+ NAME_nep_blurs_fleet_passive:0 "模糊者"
+ NAME_nep_phantom_fleet:0 "幻影"
+ NAME_nep_ghost_fleet:0 "鬼魂"
+ NAME_nep_illusion_fleet:0 "幻象"
+ NAME_nep_blurs_fleet:0 "模糊者"
  
  leader_trait_hero_of_mac:0 "孤胆英雄"
  leader_trait_hero_of_mac_desc:0 "对[event_target:nep_phantom_global.GetName]的伏击战中，在没有后援的情况下率领唯一的舰队完成了犹如英雄史诗一般的漂亮战绩。"

@@ -791,15 +791,19 @@ create_Krahen_colonizer = {
 	last_created_fleet = {
 		if = {
 			limit = {
-				any_planet_within_border = {
-					can_colonize = { who = event_target:nep_Krahen_country status = yes }
+				event_target:nep_Krahen_country = {
+					any_planet_within_border = {
+						can_colonize = { who = event_target:nep_Krahen_country status = yes }
+					}
 				}
 			}
-			random_planet_within_border = {
-				limit = {
-					can_colonize = { who = event_target:nep_Krahen_country status = yes }
+			event_target:nep_Krahen_country = {
+				random_planet_within_border = {
+					limit = {
+						can_colonize = { who = event_target:nep_Krahen_country status = yes }
+					}
+					save_event_target_as = nep_create_temp_poi_colonize
 				}
-				save_event_target_as = nep_create_temp_poi_colonize
 			}
 			auto_move_to_planet = {
 				target = event_target:nep_create_temp_poi_colonize
@@ -838,9 +842,21 @@ create_phantom_country = {
 	last_created_country = {
 		every_country = {
 			limit = {
-				has_country_flag = nep_phantom_repellent
+				has_country_flag = nep_can_build_repeller
 			}
 			establish_communications_no_message = prev
+		}
+		if = {
+			limit = { has_global_flag = nep_code_ghost }
+			set_name = "NAME_nep_ghost_country"
+		}
+		if = {
+			limit = { has_global_flag = nep_code_illusion }
+			set_name = "NAME_nep_illusion_country"
+		}
+		if = {
+			limit = { has_global_flag = nep_code_blurs }
+			set_name = "NAME_nep_blurs_country"
 		}
 	}
 }
@@ -879,6 +895,35 @@ create_phantom_fleet_passive_Krahen = {
 			distance = 150
 			angle = random
 		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 	}
 }
 
@@ -916,6 +961,35 @@ create_phantom_fleet_passive_fallen_empire_01 = {
 			target = prev
 			distance = 150
 			angle = random
+		}		
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
 		}
 	}
 }
@@ -955,6 +1029,35 @@ create_phantom_fleet_passive_fallen_empire_02 = {
 			distance = 150
 			angle = random
 		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 	}
 }
 
@@ -992,6 +1095,35 @@ create_phantom_fleet_passive_humanoid = {
 			target = prev
 			distance = 150
 			angle = random
+		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
 		}
 	}
 }
@@ -1031,6 +1163,35 @@ create_phantom_fleet_passive_mammalian = {
 			distance = 150
 			angle = random
 		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 	}
 }
 
@@ -1068,6 +1229,35 @@ create_phantom_fleet_passive_molluscoid = {
 			target = prev
 			distance = 150
 			angle = random
+		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
 		}
 	}
 }
@@ -1107,6 +1297,35 @@ create_phantom_fleet_passive_reptilian = {
 			distance = 150
 			angle = random
 		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 	}
 }
 
@@ -1144,6 +1363,35 @@ create_phantom_fleet_passive_arthropoid = {
 			target = prev
 			distance = 150
 			angle = random
+		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
 		}
 	}
 }
@@ -1219,6 +1467,35 @@ create_phantom_fleet_passive_pirate = {
 			distance = 150
 			angle = random
 		}
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 	}
 }
 
@@ -1251,6 +1528,35 @@ create_phantom_fleet_active_Krahen = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1285,6 +1591,35 @@ create_phantom_fleet_active_fallen_empire_01 = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1319,6 +1654,35 @@ create_phantom_fleet_active_fallen_empire_02 = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1353,6 +1717,35 @@ create_phantom_fleet_active_humanoid = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1387,6 +1780,35 @@ create_phantom_fleet_active_mammalian = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1421,6 +1843,35 @@ create_phantom_fleet_active_molluscoid = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1455,6 +1906,35 @@ create_phantom_fleet_active_reptilian = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1489,6 +1969,35 @@ create_phantom_fleet_active_arthropoid = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }
@@ -1557,6 +2066,35 @@ create_phantom_fleet_active_pirate = {
 		}
 	}
 	last_created_fleet = {
+		owner = {
+			if = {
+				limit = { has_global_flag = nep_code_ghost }
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_illusion }
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
+				}
+			}
+			if = {
+				limit = { has_global_flag = nep_code_blurs }
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
+				}
+			}
+		}
 		auto_follow_fleet = { target = prev attack_fleet = yes }
 	}
 }

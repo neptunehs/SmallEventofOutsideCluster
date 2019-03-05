@@ -11,7 +11,16 @@
  NAME_nep_Krahen:0 "卡恩"
  NAME_nep_Krahen_Empire:0 "卡恩帝国"
  NAME_nep_Imperator:0 "执政官"
-
+ 
+ NAME_nep_phantom_country:0 "幻影"
+ NAME_nep_ghost_country:0 "鬼魂"
+ NAME_nep_illusion_country:0 "幻象"
+ NAME_nep_blurs_country:0 "模糊者"
+ NAME_nep_phantom:0 "幻影"
+ NAME_nep_ghost:0 "鬼魂"
+ NAME_nep_illusion:0 "幻象"
+ NAME_nep_blurs:0 "模糊者"
+ 
  NAME_nep_finalweapon_country:0 "暴走的最终兵器"
 
  #############################

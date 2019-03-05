@@ -244,7 +244,8 @@ country_event = {
 			}
 			create_phantom_country = yes
 			random_system = {
-				limit = { nep_st_is_not_outer_or_fe_system = yes }			
+				limit = { nep_st_is_not_outer_or_fe_system = yes }
+				log = "This.GetName"
 				random_system_planet = {
 					random_list = {
 						3 = { create_phantom_fleet_passive_Krahen = yes }
@@ -591,6 +592,18 @@ fleet_event = {
 					}
 				}
 				effect = {
+					if = {
+						limit = { has_global_flag = nep_code_ghost }
+						set_name = "NAME_nep_ghost_country"
+					}
+					if = {
+						limit = { has_global_flag = nep_code_illusion }
+						set_name = "NAME_nep_illusion_country"
+					}
+					if = {
+						limit = { has_global_flag = nep_code_blurs }
+						set_name = "NAME_nep_blurs_country"
+					}
 					establish_communications_no_message = root.owner
 				}
 			}
@@ -1021,6 +1034,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "1001fired"
 		if = {
 			limit = { 
 				exists = fromfrom
@@ -1052,6 +1066,7 @@ fleet_event = {
 	}
 	
 	immediate = {
+		log = "1002fired"
 		random_system = {
 			limit = {
 				distance = {
@@ -1172,7 +1187,10 @@ planet_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = { NOT = { has_planet_flag = nep_phantom_orbit } } #To prevent bugs
+	
 	immediate = {
+		log = "2001fired"
 		set_planet_flag = nep_phantom_orbit
 		owner = { country_event = { id = nep_phantom.3201 } } #notification
 		add_modifier = {
@@ -1692,13 +1710,16 @@ country_event = {
 		name = nep_phantom.3201.aa
 		trigger = { NOT = { exists = event_target:nep_phantom_global } }
 		hidden_effect = {
-			#set_global_flag = nep_code_phantom
+			set_global_flag = nep_code_phantom
 			create_country = {
 				name = "NAME_nep_phantom"
 				type = nep_phantom_global_event
 				effect = {
 					save_global_event_target_as = nep_phantom_global
 				}
+			}
+			last_created_country = {
+				establish_communications_no_message = root
 			}
 		}
 	}
@@ -1707,12 +1728,25 @@ country_event = {
 		name = nep_phantom.3201.ab
 		trigger = { NOT = { exists = event_target:nep_phantom_global } }
 		hidden_effect = {
-			#set_global_flag = nep_code_ghost
+			set_global_flag = nep_code_ghost
 			create_country = {
 				name = "NAME_nep_ghost"
 				type = nep_phantom_global_event
 				effect = {
 					save_global_event_target_as = nep_phantom_global
+				}
+			}
+			last_created_country = {
+				establish_communications_no_message = root
+			}
+			every_country = {
+				limit = { is_country_type = nep_phantom_passive }
+				set_name = "NAME_nep_ghost_country"
+				every_owned_fleet = {
+					set_name = "NAME_nep_ghost_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_ghost_fleet"
 				}
 			}
 		}
@@ -1722,12 +1756,25 @@ country_event = {
 		name = nep_phantom.3201.ac
 		trigger = { NOT = { exists = event_target:nep_phantom_global } }
 		hidden_effect = {
-			#set_global_flag = nep_code_illusion
+			set_global_flag = nep_code_illusion
 			create_country = {
 				name = "NAME_nep_illusion"
 				type = nep_phantom_global_event
 				effect = {
 					save_global_event_target_as = nep_phantom_global
+				}
+			}
+			last_created_country = {
+				establish_communications_no_message = root
+			}
+			every_country = {
+				limit = { is_country_type = nep_phantom_passive }
+				set_name = "NAME_nep_illusion_country"
+				every_owned_fleet = {
+					set_name = "NAME_nep_illusion_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_illusion_fleet"
 				}
 			}
 		}
@@ -1737,12 +1784,25 @@ country_event = {
 		name = nep_phantom.3201.ad
 		trigger = { NOT = { exists = event_target:nep_phantom_global } }
 		hidden_effect = {
-			#set_global_flag = nep_code_blurs
+			set_global_flag = nep_code_blurs
 			create_country = {
 				name = "NAME_nep_blurs"
 				type = nep_phantom_global_event
 				effect = {
 					save_global_event_target_as = nep_phantom_global
+				}
+			}
+			last_created_country = {
+				establish_communications_no_message = root
+			}
+			every_country = {
+				limit = { is_country_type = nep_phantom_passive }
+				set_name = "NAME_nep_blurs_country"
+				every_owned_fleet = {
+					set_name = "NAME_nep_blurs_fleet_passive"
+				}
+				every_owned_ship = {
+					set_name = "NAME_nep_blurs_fleet"
 				}
 			}
 		}
@@ -1865,9 +1925,6 @@ country_event = {
 	}
 	
 	option = {
-		name = nep_phantom.3210.a
-	}
-	option = {
 		name = nep_phantom.3210.aa
 		trigger = {
 			NOR = { 
@@ -1880,6 +1937,10 @@ country_event = {
 			owner = this
 			location = capital_scope
 		}
+	}
+	
+	option = {
+		name = nep_phantom.3210.a
 	}
 	
 	option = {
@@ -1905,6 +1966,10 @@ country_event = {
 		
 	immediate = {
 		set_country_flag = nep_can_build_repeller
+		every_country = {
+			limit = { is_country_type = nep_phantom_passive }
+			establish_communications_no_message = root
+		}
 	}
 	
 	option = {
@@ -1964,7 +2029,6 @@ country_event = {
 	picture = GFX_evt_in_the_dark
 	
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	immediate = {
 	
