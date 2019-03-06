@@ -10,7 +10,7 @@ weapon_component_template = {
 	power = 0
 	
 	
-	damage = { min = 1000.0 max = 1500.0 }
+	damage = { min = 250.0 max = 1000.0 }
 	windup = { min = 1.0 max = 1.0 }
 	
 	total_fire_time = 0
@@ -19,8 +19,9 @@ weapon_component_template = {
 	accuracy = 1
 	tracking = 0.2
 	
-	shield_penetration = 1.5
-	armor_penetration = 1.5
+	shield_damage = 2.0
+	armor_penetration = 0.5
+	hull_damage = 0.5
 	
 	hidden = yes
 	prerequisites = { "tech_nep_dragon_tech" }
@@ -29,7 +30,6 @@ weapon_component_template = {
 	
 
 	ai_tags = {
-		weapon_role_anti_armor
 		weapon_role_anti_shield
 	}
 
@@ -42,13 +42,13 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	icon = "GFX_ship_part_energy_lance_2"
+	icon = "GFX_ship_part_space_whale_weapon_1"
 	icon_frame = 1
 
 	power = 0
 	
 	
-	damage = { min = 500.0 max = 650.0 }
+	damage = { min = 100.0 max = 350.0 }
 	windup = { min = 1.0 max = 1.0 }
 	
 	total_fire_time = 0
@@ -56,9 +56,10 @@ weapon_component_template = {
 	range = 300.0
 	accuracy = 0.85
 	tracking = 0.3
-	
-	armor_penetration = 0.50
-	shield_penetration = 0.50
+
+	shield_damage = 2.0
+	armor_penetration = 0.5
+	hull_damage = 0.5
 		
 	hidden = yes
 	prerequisites = { "tech_nep_dragon_tech" }
@@ -67,7 +68,6 @@ weapon_component_template = {
 	
 
 	ai_tags = {
-		weapon_role_anti_armor 
 		weapon_role_anti_shield 
 	}
 
@@ -80,13 +80,13 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	icon = "GFX_ship_part_energy_lance_2"
+	icon = "GFX_ship_part_space_whale_weapon_1"
 	icon_frame = 1
 
 	power = 0
 	
 	
-	damage = { min = 300.0 max = 400.0 }
+	damage = { min = 50.0 max = 210.0 }
 	windup = { min = 1.0 max = 1.0 }
 	
 	total_fire_time = 0
@@ -95,8 +95,9 @@ weapon_component_template = {
 	accuracy = 0.9
 	tracking = 0.7
 	
-	armor_penetration = 0.50
-	shield_penetration = 0.50
+	shield_damage = 2.0
+	armor_penetration = 0.5
+	hull_damage = 0.5
 	
 	hidden = yes
 	prerequisites = { "tech_nep_dragon_tech" }
@@ -105,7 +106,7 @@ weapon_component_template = {
 	
 
 	ai_tags = {
-		weapon_role_point_defense
+		weapon_role_anti_shield 
 	}
 
 	projectile_gfx = "space_whale_weapon"
@@ -117,13 +118,13 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	icon = "GFX_ship_part_energy_lance_2"
+	icon = "GFX_ship_part_space_whale_weapon_1"
 	icon_frame = 1
 
 	power = 0
 	
 	
-	damage = { min = 120.0 max = 180.0 }
+	damage = { min = 30.0 max = 80.0 }
 	windup = { min = 1.0 max = 1.0 }
 	
 	total_fire_time = 0
@@ -132,8 +133,9 @@ weapon_component_template = {
 	accuracy = 0.9
 	tracking = 0.7
 	
-	armor_penetration = 0.50
-	shield_penetration = 0.50
+	shield_damage = 2.0
+	armor_penetration = 0.5
+	hull_damage = 0.5
 		
 	hidden = yes
 	prerequisites = { "tech_nep_dragon_tech" }

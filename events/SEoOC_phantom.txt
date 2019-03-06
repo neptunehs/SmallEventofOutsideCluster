@@ -187,13 +187,6 @@ country_event = {
 	}
 	
 	immediate = {
-		#for test
-		random_country = {
-			limit = {
-				is_ai = no
-			}
-			country_event = { id = nep_phantom.31111 }
-		}
 		if = {
 			limit = {
 				if = {
@@ -241,6 +234,13 @@ country_event = {
 						count < 30
 					}
 				}
+			}
+			#for test
+			random_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = nep_phantom.31111 }
 			}
 			create_phantom_country = yes
 			random_system = {
@@ -333,10 +333,46 @@ country_event = {
 	}
 	
 	immediate = {
-		solar_system = {
-			random_system_planet = {
+		fromfrom.solar_system = {
+			every_system_planet = {
 				limit = { has_planet_flag = nep_phantom_orbit }
 				remove_planet_flag = nep_phantom_orbit
+				if = {
+					limit = {
+						has_planet_flag = nep_phantom_planet_no_more_noti
+					}
+					remove_planet_flag = nep_phantom_planet_no_more_noti
+				}
+				if = {
+					limit = {
+						has_modifier = nep_phantom_orbit_stage1
+					}
+					remove_modifier = nep_phantom_orbit_stage1
+				}
+				if = {
+					limit = {
+						has_modifier = nep_phantom_orbit_stage2
+					}
+					remove_modifier = nep_phantom_orbit_stage2
+				}
+				if = {
+					limit = {
+						has_modifier = nep_phantom_orbit_stage3
+					}
+					remove_modifier = nep_phantom_orbit_stage3
+				}
+				if = {
+					limit = {
+						has_modifier = nep_phantom_orbit_stage4
+					}
+					remove_modifier = nep_phantom_orbit_stage4
+				}
+				if = {
+					limit = {
+						has_modifier = nep_phantom_planet_debuff_death
+					}
+					remove_modifier = nep_phantom_planet_debuff_death
+				}
 			}
 		}
 		if = {
@@ -1067,19 +1103,22 @@ fleet_event = {
 	
 	immediate = {
 		log = "1002fired"
+		solar_system = { save_event_target_as = nep_1002_temp_solar_system }
 		random_system = {
 			limit = {
 				distance = {
 					source = root
-					min_distance > 50
-					max_distance < 101
+					min_distance >= 100
+					max_distance <= 200
 				}
 			}
-			root = {
-				set_location = {
-					target = PREV
-					distance = 50
-					angle = random
+			random_system_planet = {
+				root = {
+					set_location = {
+						target = PREV
+						distance = 50
+						angle = random
+					}
 				}
 			}
 		}
@@ -1087,6 +1126,8 @@ fleet_event = {
 			90 = {
 				closest_system = {
 					limit = {
+						NOT = { is_same_value = event_target:nep_1002_temp_solar_system }
+						NOT = { any_ship_in_system = { owner =  { is_country_type = nep_phantom_passive } } }
 						any_system_planet = {
 							is_colony = yes
 							exists = owner
@@ -1329,22 +1370,53 @@ planet_event = {
 	trigger = { has_planet_flag = nep_phantom_orbit }
 		
 	immediate = {
-		remove_planet_flag = nep_phantom_orbit
 		if = {
 			limit = {
 				has_planet_flag = nep_phantom_planet_no_more_noti
 			}
 			remove_planet_flag = nep_phantom_planet_no_more_noti
 		}
+		if = {
+			limit = {
+				has_modifier = nep_phantom_orbit_stage1
+			}
+			remove_modifier = nep_phantom_orbit_stage1
+		}
+		if = {
+			limit = {
+				has_modifier = nep_phantom_orbit_stage2
+			}
+			remove_modifier = nep_phantom_orbit_stage2
+		}
+		if = {
+			limit = {
+				has_modifier = nep_phantom_orbit_stage3
+			}
+			remove_modifier = nep_phantom_orbit_stage3
+		}
+		if = {
+			limit = {
+				has_modifier = nep_phantom_orbit_stage4
+			}
+			remove_modifier = nep_phantom_orbit_stage4
+		}
+		if = {
+			limit = {
+				has_modifier = nep_phantom_planet_debuff_death
+			}
+			remove_modifier = nep_phantom_planet_debuff_death
+		}
 		solar_system = {
-			random_fleet_in_system = {
+			every_fleet_in_system = {
 				limit = {
-					owner = { has_country_flag = nep_phantom_passive }
+					owner = { is_country_type = nep_phantom_passive }
 				}
 				clear_fleet_actions = this
 				fleet_event = { id = nep_phantom.1002 }
 			}
 		}
+		remove_planet_flag = nep_phantom_orbit
+		remove_planet_flag = nep_phantom_repeller_functioning
 		owner = {
 			if = {
 				limit = {
@@ -1438,8 +1510,8 @@ country_event = {
 
 country_event = {
 	id = nep_phantom.3004
-	title = "nep_phantom.3003.name"
-	desc = "nep_phantom.3003.desc"
+	title = "nep_phantom.3004.name"
+	desc = "nep_phantom.3004.desc"
 	picture = GFX_evt_engineering_research
 	
 	is_triggered_only = yes
@@ -1819,13 +1891,13 @@ country_event = {
 	title = "nep_phantom.3202.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = nep_phantom_has_death }
+			NOT = { has_country_flag = nep_can_build_repeller }
 		}
 		text = "nep_phantom.3202.desc.a"
 	}
 	desc = {
 		trigger = {
-			has_country_flag = nep_phantom_3202_has_death
+			has_country_flag = nep_can_build_repeller
 		}
 		text = "nep_phantom.3202.desc.b"
 	}
@@ -1881,13 +1953,13 @@ country_event = {
 	title = "nep_phantom.3210.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = nep_phantom_has_death }
+			NOT = { has_country_flag = nep_can_build_repeller }
 		}
 		text = "nep_phantom.3210.desc.a"
 	}
 	desc = {
 		trigger = {
-			has_country_flag = nep_phantom_has_death
+			has_country_flag = nep_can_build_repeller
 		}
 		text = "nep_phantom.3210.desc.b"
 	}
@@ -1897,7 +1969,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		from = { has_planet_flag = nep_phantom_planet_no_more_noti }
+		from = { NOT = { has_planet_flag = nep_phantom_planet_no_more_noti } }
 	}
 		
 	immediate = {
@@ -1941,6 +2013,9 @@ country_event = {
 	
 	option = {
 		name = nep_phantom.3210.a
+		trigger = {
+			is_ai = no
+		}
 	}
 	
 	option = {
@@ -2012,7 +2087,10 @@ country_event = {
 	
 	option = {
 		name = nep_phantom.3221.b
-		trigger = { has_country_flag = nep_phantom_repeller_function_3 }
+		trigger = { 
+			has_country_flag = nep_phantom_repeller_function_3 
+			NOT = { has_special_project = nep_phantom_research }
+		}
 		enable_special_project = {
 			name = nep_phantom_research
 			owner = this
@@ -2035,4 +2113,59 @@ country_event = {
 	}
 	
 	option = { name = OK }
+}
+
+####################################
+# For AI Empire
+####################################
+event = {
+	id = nep_phantom.4000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_has_found
+		NOT = { has_global_flag = nep_phantom_active_end }
+	}
+	
+	immediate = {
+		every_country = {
+			if = {
+				limit = { 
+					has_special_project = nep_phantom_research_repeller 
+					NOT = { is_researching_special_project = nep_phantom_research_repeller }
+				}
+				add_resource = {
+					society_research = -2000
+				}
+				set_country_flag = nep_can_build_repeller
+			}
+		}
+		every_planet = {
+			limit = {
+				owner = { is_ai = yes }
+				has_country_flag = nep_can_build_repeller
+				has_planet_flag = nep_phantom_orbit
+			}
+			planet_event = { id = nep_phantom.4001 days = 180 }
+		}
+	}
+}
+
+planet_event = {
+	id = nep_phantom.4001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_planet_flag = nep_phantom_repeller_build
+		set_planet_flag = nep_phantom_repeller_functioning
+		planet_event = { id = nep_phantom.2201 days = 45 }
+		add_modifier = {
+			modifier = nep_phantom_repeller_function
+			days = 90
+		}
+	}	
 }

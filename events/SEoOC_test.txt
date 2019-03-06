@@ -1086,3 +1086,22 @@ country_event = {
 		from = { clear_fleet_actions = this }
 	}
 }
+
+
+planet_event = {
+	id = nep_test.24
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		set_planet_flag = nep_test@root
+		set_planet_flag = nep_test2@root.space_owner
+		set_planet_flag = nep_test3@root.owner.GetName
+		set_planet_flag = nep_test4[root.owner.GetName]
+		set_planet_flag = nep_test5[@root.owner.GetName]
+	}
+}

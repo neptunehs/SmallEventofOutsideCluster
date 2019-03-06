@@ -46,6 +46,15 @@
  NAME_nep_corrupted_finalweapons:0 "暴走的最终兵器"
  NAME_nep_star_bomb:0 "星爆弹"
 
+ NAME_nep_phantom_fleet_passive:0 "幻影"
+ NAME_nep_ghost_fleet_passive:0 "鬼魂"
+ NAME_nep_illusion_fleet_passive:0 "幻象"
+ NAME_nep_blurs_fleet_passive:0 "模糊者"
+ NAME_nep_phantom_fleet:0 "幻影"
+ NAME_nep_ghost_fleet:0 "鬼魂"
+ NAME_nep_illusion_fleet:0 "幻象"
+ NAME_nep_blurs_fleet:0 "模糊者"
+ 
  ###########################
  #design
  ###########################

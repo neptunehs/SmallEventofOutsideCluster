@@ -97,7 +97,7 @@
  nep_phantom.3211.name:0 "解决方案"
  nep_phantom.3211.desc:0 "科学家们已经发现了代号:[event_target:nep_phantom_global.GetName]在干什么了：它们在使劲吸收整个星球的生物能量，所有生物及机器人都因此而陷入衰弱。它们无法被攻击，因此我们没有办法消灭它们。但我们有办法驱离它们：对所有的相都释放一种它们厌恶的信息素就能做到。这也证明了，它们是一种生物，既不是什么妖魔鬼怪，也不是什么超级机械。但对所有相进行大量的信息素释放，需要建设一个专门的驱赶器。"
  nep_phantom.3211.a:0 "立刻拿出建造方案！"
- nep_phantom.3211.a.tooltip:0 "注意：驱赶器并不需要专门的建筑，只需要您决定就可以制造在目标星球的现有建筑内，而且该建筑全自动不需要人进行操作，且不会占用太多地方。"
+ nep_phantom.3211.a.tooltip:0 "注意：驱赶器并不需要专门的建筑，只需要您进行决策就可以制造在目标星球的现有建筑内，而且该建筑全自动不需要人进行操作，且不会占用太多地方。"
  
  nep_phantom.3220.name:0 "驱赶器建造完毕"
  nep_phantom.3220.desc:0 "[From.GetName]的驱赶器建造完毕，就等着您一声令下将其发动。发动需要一定的能源跟用来生产信息素的产品，但在资源足够的情况下请务必立刻发动。"
@@ -120,18 +120,39 @@
  nep_phantom_orbit_stage3_desc:0 "这个星球的不明衰弱症开始大蔓延，死人渐渐增多，开始有人试图逃离这个星球。"
  nep_phantom_orbit_stage4:0 "秩序崩坏"
  nep_phantom_orbit_stage4_desc:0 "这个星球的不明衰弱症已经感染了几乎所有人，星球的秩序难以坚守。"
+ nep_phantom_planet_debuff_death:0 "对死亡的恐惧"
+ nep_phantom_planet_debuff_death_desc:0 "衰弱症造成了死亡，但政府并没有去解决，人民恐惧并有点儿愤怒。"
  
  NAME_phantom_fleet_krahen_unknown:0 "卡恩帝国残部？"
  NAME_Krahen_invader_phantom:0 "卡恩帝国残部？"
-
- NAME_nep_phantom_fleet_passive:0 "幻影"
- NAME_nep_ghost_fleet_passive:0 "鬼魂"
- NAME_nep_illusion_fleet_passive:0 "幻象"
- NAME_nep_blurs_fleet_passive:0 "模糊者"
- NAME_nep_phantom_fleet:0 "幻影"
- NAME_nep_ghost_fleet:0 "鬼魂"
- NAME_nep_illusion_fleet:0 "幻象"
- NAME_nep_blurs_fleet:0 "模糊者"
+ NAME_nep_phantom_country:0 "幻影"
+ NAME_nep_ghost_country:0 "鬼魂"
+ NAME_nep_illusion_country:0 "幻象"
+ NAME_nep_blurs_country:0 "模糊者"
+ 
+ nep_phantom_research:0 "[event_target:nep_phantom_global.GetName]研究"
+ nep_phantom_research_DESC:0 "我们必须对[event_target:nep_phantom_global.GetName]的不断侵扰找到一个徹底的解决方案。"
+ nep_phantom_research:0 "[event_target:nep_phantom_global.GetName]起源研究"
+ nep_phantom_research_DESC:0 "我们必须找到[event_target:nep_phantom_global.GetName]是打哪来的，然后斩草除根。"
+ 
+ nep_phantom_research_repeller:0 "衰弱症研究"
+ nep_phantom_research_repeller_DESC:0 "我们必须对侵蚀我们星球的衰弱症找到一个解决方案。"
+ 
+ decision_nep_repeller:0 "建造驱赶器"
+ decision_nep_repeller_effects_short:0 "建造一个驱赶器。"
+ decision_nep_repeller_desc:0 "为了将头上的威胁驱离，我们需要建造一个特殊的驱赶器。"
+ 
+ decision_nep_repeller_function:0 "发动驱赶器"
+ decision_nep_repeller_function_effects_short:0 "将头上的威胁驱离，可能需要一点时间。"
+ decision_nep_repeller_function_desc:0 "需要一段时间跟一点点资源来让这玩意发动。另外驱赶器需要很厉害的本地能源供给，可能会对星球的生产造成影响。"
+ 
+ tech_nep_phantom_phase_shift:0 "相固定科技"
+ tech_nep_phantom_phase_shift_title:0 "将不确定相的敌人固定下来的科技。"
+ tech_nep_phantom_phase_shift_desc:0 "将不确定相的敌人固定下来的科技。"
+ tech_nep_phantom_aux:0 "相转移科技"
+ tech_nep_phantom_aux_title:0 "解开:相转移发生器"
+ tech_nep_phantom_aux_desc:0 "相转移发生器能够短时间将我们的舰队相转移,增加回避几率。"
+ NEP_PHANTOM_AUX:0 "相转移发生器"
  
  leader_trait_hero_of_mac:0 "孤胆英雄"
  leader_trait_hero_of_mac_desc:0 "对[event_target:nep_phantom_global.GetName]的伏击战中，在没有后援的情况下率领唯一的舰队完成了犹如英雄史诗一般的漂亮战绩。"

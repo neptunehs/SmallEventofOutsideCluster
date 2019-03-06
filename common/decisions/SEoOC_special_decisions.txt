@@ -24,19 +24,18 @@ decision_nep_repeller = {
 	effect = {
 		custom_tooltip = decision_nep_repeller_effects_short
 		hidden_effect = {
-			planet_event = { id = nep_phantom.2200 days = 180 }
+			planet_event = { id = nep_phantom.2200 }
 		}
 	}
 	
 	ai_weight = {
-		weight = 1
+		weight = 1000
 	}
 }
 
 decision_nep_repeller_function = {
 	owned_planets_only = yes
 
-	enactment_time = 180
 	resources = {
 		category = decisions
 		cost = {
@@ -49,11 +48,13 @@ decision_nep_repeller_function = {
 		has_global_flag = nep_phantom_begin
 		has_planet_flag = nep_phantom_orbit
 		has_planet_flag = nep_phantom_repeller_build
+		NOT = { has_planet_flag = nep_phantom_repeller_functioning }
 	}
 	
 	effect = {
 		custom_tooltip = decision_nep_repeller_function_effects_short
 		hidden_effect = {
+			set_planet_flag = nep_phantom_repeller_functioning
 			planet_event = { id = nep_phantom.2201 days = 45 }
 			add_modifier = {
 				modifier = nep_phantom_repeller_function
@@ -63,6 +64,6 @@ decision_nep_repeller_function = {
 	}
 	
 	ai_weight = {
-		weight = 1
+		weight = 1000
 	}
 }

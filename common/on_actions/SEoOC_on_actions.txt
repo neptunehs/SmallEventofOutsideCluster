@@ -43,6 +43,7 @@ on_yearly_pulse = {
 		nep_inva.46
 		nep_inva.511
 		nep_phantom.76
+		nep_phantom.4000
 	}
 }
 

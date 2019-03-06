@@ -692,7 +692,7 @@ country_event = {
 	
 	immediate = {
 		log = "[Root.GetName]:1031"
-		fromfrom = { 
+		fromfrom = {
 			remove_planet_flag = nep_Krahen_invading_planet
 			every_planet_army = {
 				limit = { army_type = nep_Krahen_anti_grav }
@@ -749,7 +749,6 @@ country_event = {
 				every_fleet_in_system = {
 					limit = { orbit = { has_planet_flag = nep_Krahen_invading_planet } }
 					set_fleet_flag = nep_Krahen_fleet_no_tanks
-					orbit = { remove_planet_flag = nep_Krahen_invading_planet }
 					closest_system = {
 						limit = {
 							any_system_planet = {
@@ -775,6 +774,7 @@ country_event = {
 					}
 				}
 			}
+			remove_planet_flag = nep_Krahen_invading_planet
 		}
 	}
 	
