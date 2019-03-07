@@ -2070,7 +2070,7 @@ create_phantom_fleet_active_pirate = {
 			if = {
 				limit = { has_global_flag = nep_code_ghost }
 				every_owned_fleet = {
-					set_name = "NAME_nep_ghost_fleet_passive"
+					set_name = "NAME_nep_ghost_fleet"
 				}
 				every_owned_ship = {
 					set_name = "NAME_nep_ghost_fleet"
@@ -2079,7 +2079,7 @@ create_phantom_fleet_active_pirate = {
 			if = {
 				limit = { has_global_flag = nep_code_illusion }
 				every_owned_fleet = {
-					set_name = "NAME_nep_illusion_fleet_passive"
+					set_name = "NAME_nep_illusion_fleet"
 				}
 				every_owned_ship = {
 					set_name = "NAME_nep_illusion_fleet"
@@ -2088,7 +2088,7 @@ create_phantom_fleet_active_pirate = {
 			if = {
 				limit = { has_global_flag = nep_code_blurs }
 				every_owned_fleet = {
-					set_name = "NAME_nep_blurs_fleet_passive"
+					set_name = "NAME_nep_blurs_fleet"
 				}
 				every_owned_ship = {
 					set_name = "NAME_nep_blurs_fleet"

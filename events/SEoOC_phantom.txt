@@ -426,42 +426,42 @@ country_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 469
-				max_distance <= 469
-				min_orientation_angle = -90
-				max_orientation_angle = -90
+				min_distance >= 499
+				max_distance <= 499
+				min_orientation_angle = -64
+				max_orientation_angle = -64
 				hyperlane = no
 				initializer = nep_Gacrus_init
 			}
 			spawn_system = {
-				min_distance >= 492
-				max_distance <= 492
-				min_orientation_angle = -90
-				max_orientation_angle = -90
+				min_distance >= 522
+				max_distance <= 522
+				min_orientation_angle = -64
+				max_orientation_angle = -64
 				hyperlane = no
 				initializer = nep_Acrus_init
 			}
 			spawn_system = {
-				min_distance >= 476
-				max_distance <= 476
-				min_orientation_angle = -89
-				max_orientation_angle = -89
+				min_distance >= 508
+				max_distance <= 508
+				min_orientation_angle = -63
+				max_orientation_angle = -63
 				hyperlane = no
 				initializer = nep_Imai_init
 			}
 			spawn_system = {
-				min_distance >= 476
-				max_distance <= 476
-				min_orientation_angle = -91
-				max_orientation_angle = -91
+				min_distance >= 508
+				max_distance <= 508
+				min_orientation_angle = -65
+				max_orientation_angle = -65
 				hyperlane = no
 				initializer = nep_Mimosa_init
 			}
 			spawn_system = {
-				min_distance >= 479
-				max_distance <= 479
-				min_orientation_angle = -90
-				max_orientation_angle = -90
+				min_distance >= 509
+				max_distance <= 509
+				min_orientation_angle = -64
+				max_orientation_angle = -64
 				hyperlane = no
 				initializer = nep_Ginan_init
 			}
@@ -487,8 +487,8 @@ fleet_event = {
 	immediate = {
 		set_global_flag = nep_phantom_active_begin
 		event_target:nep_Ginan_system = {
-			random_system_ambient_object = {
-				save_global_event_target_as = nep_Ginan_debris
+			random_system_planet = {
+				save_global_event_target_as = nep_Ginan_star
 				root = {
 					set_location = {
 						target = prev
@@ -539,7 +539,7 @@ fleet_event = {
 	
 	immediate = {
 		set_location = {
-			target = event_target:nep_Ginan_debris
+			target = event_target:nep_Ginan_star
 			distance = 0
 			angle = random
 		}
@@ -641,6 +641,7 @@ fleet_event = {
 						set_name = "NAME_nep_blurs_country"
 					}
 					establish_communications_no_message = root.owner
+					save_global_event_target_as = nep_phantom_active
 				}
 			}
 		}
@@ -659,7 +660,7 @@ fleet_event = {
 				limit = {
 					NOR = { 
 						has_star_flag = nep_in_phantom_war
-						has_star_flag = nep_phantom_war_end		
+						has_star_flag = nep_phantom_war_end
 					}
 				}
 				set_star_flag = nep_in_phantom_war
@@ -882,18 +883,16 @@ event = {
 	immediate = {
 		every_system = {
 			limit = { has_star_flag = nep_Scrus_cluster }
-			every_fleet_in_system = {
+			if = {
 				limit = {
-					owner = { is_country_type = nep_phantom_active }
-					is_in_combat = no
-					solar_system = {
-						count_system_ships = {
-							limit = { owner = { NOT = { is_country_type = nep_phantom_active } } }
-							count < 1
-						}
-					}
+					any_ship = { owner = { is_country_type = default } }
 				}
-				delete_fleet = this
+			}
+			else = {
+				every_fleet_in_system = {
+					delete_fleet = this
+				}
+				remove_star_flag = nep_in_phantom_war
 			}
 		}
 		random_system = {
@@ -913,6 +912,30 @@ event = {
 				NOT = { has_hyperlane_to = event_target:nep_Ginan_system }
 			}			
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
+		}
+	}
+}
+
+#on_fleet_destroyed_perp
+country_event = {
+	id = nep_phantom.77
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = nep_phantom_active
+		from = { is_country_type = default }
+	}
+	
+	immediate = {
+		from = { country_event = { id = nep_phantom.30077 } }
+		every_system = {
+			limit = { has_star_flag = nep_in_phantom_war }
+			every_fleet_in_system = {
+				delete_fleet = this
+			}
+			remove_star_flag = nep_in_phantom_war
 		}
 	}
 }
@@ -1305,7 +1328,7 @@ planet_event = {
 		owner = { country_event = { id = nep_phantom.3204 } } #notification
 		add_modifier = {
 			modifier = nep_phantom_orbit_stage4
-			days = 360
+			days = -1
 		}
 		planet_event = { id = nep_phantom.2101 days = 23 }  #death loop
 	}
@@ -1548,7 +1571,7 @@ country_event = {
 				limit = {
 					has_planet_flag = nep_seal_3
 				}
-				save_event_target_as = nep_seal_3
+				save_global_event_target_as = nep_seal_3
 			}
 		}
 		enable_special_project = {
@@ -1615,7 +1638,7 @@ country_event = {
 		enable_special_project = {
 			name = nep_phantom_Ginan_2
 			owner = this
-			location = event_target:nep_Ginan_debris
+			location = event_target:nep_Ginan_star
 		}
 	}
 }
@@ -1719,6 +1742,28 @@ country_event = {
 	
 	option = {
 		name = nep_phantom.30075.a
+	}
+}
+
+country_event = {
+	id = nep_phantom.30077
+	title = "nep_phantom.30077.name"
+	desc = "nep_phantom.30077.desc"
+	picture = GFX_evt_exploding_ship
+	
+	is_triggered_only = yes
+		
+	immediate = {
+		print_scope_effect = yes
+	}
+	
+	option = {
+		name = nep_phantom.30077.a
+		enable_special_project = {
+			name = nep_phantom_Ginan_3
+			owner = this
+			location = event_target:nep_seal_3
+		}
 	}
 }
 
@@ -2118,54 +2163,55 @@ country_event = {
 ####################################
 # For AI Empire
 ####################################
-event = {
-	id = nep_phantom.4000
-	hide_window = yes
+# event = {
+	# id = nep_phantom.4000
+	# hide_window = yes
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	trigger = {
-		has_global_flag = nep_phantom_has_found
-		NOT = { has_global_flag = nep_phantom_active_end }
-	}
+	# trigger = {
+		# has_global_flag = nep_phantom_has_found
+		# NOT = { has_global_flag = nep_phantom_active_end }
+	# }
 	
-	immediate = {
-		every_country = {
-			if = {
-				limit = { 
-					has_special_project = nep_phantom_research_repeller 
-					NOT = { is_researching_special_project = nep_phantom_research_repeller }
-				}
-				add_resource = {
-					society_research = -2000
-				}
-				set_country_flag = nep_can_build_repeller
-			}
-		}
-		every_planet = {
-			limit = {
-				owner = { is_ai = yes }
-				has_country_flag = nep_can_build_repeller
-				has_planet_flag = nep_phantom_orbit
-			}
-			planet_event = { id = nep_phantom.4001 days = 180 }
-		}
-	}
-}
+	# immediate = {
+		# every_country = {
+			# if = {
+				# limit = { 
+					# is_ai = yes
+					# has_special_project = nep_phantom_research_repeller 
+				# }
+				# add_resource = {
+					# society_research = -2000
+				# }
+				# abort_special_project = nep_phantom_research_repeller 
+				# set_country_flag = nep_can_build_repeller
+			# }
+		# }
+		# every_planet = {
+			# limit = {
+				# owner = { is_ai = yes }
+				# has_country_flag = nep_can_build_repeller
+				# has_planet_flag = nep_phantom_orbit
+			# }
+			# planet_event = { id = nep_phantom.4001 days = 180 }
+		# }
+	# }
+# }
 
-planet_event = {
-	id = nep_phantom.4001
-	hide_window = yes
+# planet_event = {
+	# id = nep_phantom.4001
+	# hide_window = yes
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	immediate = {
-		set_planet_flag = nep_phantom_repeller_build
-		set_planet_flag = nep_phantom_repeller_functioning
-		planet_event = { id = nep_phantom.2201 days = 45 }
-		add_modifier = {
-			modifier = nep_phantom_repeller_function
-			days = 90
-		}
-	}	
-}
+	# immediate = {
+		# set_planet_flag = nep_phantom_repeller_build
+		# set_planet_flag = nep_phantom_repeller_functioning
+		# planet_event = { id = nep_phantom.2201 days = 45 }
+		# add_modifier = {
+			# modifier = nep_phantom_repeller_function
+			# days = 90
+		# }
+	# }	
+# }

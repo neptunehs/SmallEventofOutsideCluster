@@ -18,10 +18,32 @@ nep_Gacrus_init = {
 	}
 	
 	init_effect = {
-		random_system_planet = {
-			limit = { is_star = yes }
+		while = {
+			count = 100
 			create_ambient_object = {
-				type = large_debris_object
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_02_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 400
+			create_ambient_object = {
+				type = "small_debris_object"
+				location = solar_system
 			}
 		}
 	}
@@ -51,10 +73,32 @@ nep_Acrus_init = {
     }
 	
 	init_effect = {
-		random_system_planet = {
-			limit = { is_star = yes }
+		while = {
+			count = 100
 			create_ambient_object = {
-				type = large_debris_object
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_02_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 400
+			create_ambient_object = {
+				type = "small_debris_object"
+				location = solar_system
 			}
 		}
 	}
@@ -84,10 +128,32 @@ nep_Mimosa_init = {
     }
 	
 	init_effect = {
-		random_system_planet = {
-			limit = { is_star = yes }
+		while = {
+			count = 100
 			create_ambient_object = {
-				type = large_debris_object
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_02_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 400
+			create_ambient_object = {
+				type = "small_debris_object"
+				location = solar_system
 			}
 		}
 	}
@@ -113,10 +179,32 @@ nep_Imai_init = {
 	}
 	
 	init_effect = {
-		random_system_planet = {
-			limit = { is_star = yes }
+		while = {
+			count = 100
 			create_ambient_object = {
-				type = large_debris_object
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_02_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 400
+			create_ambient_object = {
+				type = "small_debris_object"
+				location = solar_system
 			}
 		}
 	}
@@ -143,10 +231,32 @@ nep_Ginan_init = {
 	}
 	
 	init_effect = {
-		random_system_planet = {
-			limit = { is_star = yes }
+		while = {
+			count = 100
 			create_ambient_object = {
-				type = large_debris_object
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 200
+			create_ambient_object = {
+				type = "medium_debris_02_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 400
+			create_ambient_object = {
+				type = "small_debris_object"
+				location = solar_system
 			}
 		}
 		save_global_event_target_as = nep_Ginan_system

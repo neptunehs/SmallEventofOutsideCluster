@@ -117,6 +117,7 @@ on_fleet_destroyed_perp = {
 		nep_inva.47
 		nep_phantom.4
 		nep_finalweapon.65
+		nep_phantom.77
 	}
 }
 

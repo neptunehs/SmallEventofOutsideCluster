@@ -50,6 +50,7 @@ can_enter_system_by_jump = {
 				}
 			}
 		}
+		NOT = { has_star_flag = nep_Scrus_cluster }
 	}
 }
 
