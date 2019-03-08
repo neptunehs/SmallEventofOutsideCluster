@@ -858,6 +858,7 @@ create_phantom_country = {
 			limit = { has_global_flag = nep_code_blurs }
 			set_name = "NAME_nep_blurs_country"
 		}
+		nep_easy_mod = yes
 	}
 }
 
@@ -2251,6 +2252,16 @@ nep_easy_mod = {
 			}
 			add_modifier = {
 				modifier = nep_Legnahcras_easy
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_phantom_active
+				is_country_type = nep_phantom_passive
+			}
+			add_modifier = {
+				modifier = nep_phantom_easy
 				days = -1
 			}
 		}

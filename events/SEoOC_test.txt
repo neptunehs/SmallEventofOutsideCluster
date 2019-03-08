@@ -1105,3 +1105,40 @@ planet_event = {
 		set_planet_flag = nep_test5[@root.owner.GetName]
 	}
 }
+
+fleet_event = {
+	id = nep_test.25
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = nep_energy_syphon_stage1
+			days = -1
+		}
+		add_modifier = {
+			modifier = nep_energy_syphon_stage1
+			days = -1
+		}
+		add_modifier = {
+			modifier = nep_energy_syphon_stage1
+			days = -1
+		}
+		add_modifier = {
+			modifier = nep_energy_syphon_stage1
+			days = -1
+		}
+		if = {
+			limit = {
+				any_owned_ship = {
+					has_modifier = nep_energy_syphon_stage1
+				}
+			}
+			log = test25.yes
+		}
+	}
+}

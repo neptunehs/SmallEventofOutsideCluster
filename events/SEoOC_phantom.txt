@@ -236,12 +236,12 @@ country_event = {
 				}
 			}
 			#for test
-			random_country = {
-				limit = {
-					is_ai = no
-				}
-				country_event = { id = nep_phantom.31111 }
-			}
+			# random_country = {
+				# limit = {
+					# is_ai = no
+				# }
+				# country_event = { id = nep_phantom.31111 }
+			# }
 			create_phantom_country = yes
 			random_system = {
 				limit = { nep_st_is_not_outer_or_fe_system = yes }
@@ -553,38 +553,6 @@ fleet_event = {
 	}
 }
 
-#on_fleet_destroyed_victim
-country_event = {
-	id = nep_phantom.63
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		has_global_flag = nep_phantom_active_begin
-		has_country_flag = nep_Krahen_orb_get
-		From = { is_country_type = nep_phantom_active }
-	}
-	
-	immediate = {
-		every_ship = {
-			limit = { owner = { is_same_value = root.from } }
-			delete_ship = this
-		}
-		random_system = {
-			limit = { has_star_flag = nep_in_phantom_war }
-			remove_star_flag = nep_in_phantom_war
-		}
-	}
-	
-	after = {
-		#notifaction
-		owner = {
-			country_event = { id = nep_phantom.30061 days = 30 }
-		}
-	}
-}
-
 fleet_event = {
 	id = nep_phantom.7
 	hide_window = yes
@@ -642,6 +610,7 @@ fleet_event = {
 					}
 					establish_communications_no_message = root.owner
 					save_global_event_target_as = nep_phantom_active
+					nep_easy_mod = yes
 				}
 			}
 		}
@@ -670,7 +639,7 @@ fleet_event = {
 		if = { 
 			limit = {
 				owner = {
-					NOR = { 
+					NOR = {
 						has_country_flag = nep_phantom_active_stage_1
 						has_country_flag = nep_phantom_active_stage_2
 						has_country_flag = nep_phantom_active_stage_3
@@ -679,6 +648,7 @@ fleet_event = {
 			}
 			fleet_event = { id = nep_phantom.71 }
 			fleet_event = { id = nep_phantom.75 days = 100 }
+			fleet_event = { id = nep_phantom.78 days = 25 }
 			owner = {
 				country_event = { id = nep_phantom.30071 }
 			}
@@ -691,6 +661,7 @@ fleet_event = {
 			}
 			fleet_event = { id = nep_phantom.72 }
 			fleet_event = { id = nep_phantom.75 days = 110 }
+			fleet_event = { id = nep_phantom.78 days = 25 }
 			owner = {
 				country_event = { id = nep_phantom.30072 }
 			}
@@ -703,6 +674,7 @@ fleet_event = {
 			}
 			fleet_event = { id = nep_phantom.73 }
 			fleet_event = { id = nep_phantom.75 days = 120 }
+			fleet_event = { id = nep_phantom.78 days = 15 }
 			owner = {
 				country_event = { id = nep_phantom.30073 }
 			}
@@ -715,6 +687,7 @@ fleet_event = {
 			}
 			fleet_event = { id = nep_phantom.74 }
 			fleet_event = { id = nep_phantom.75 days = 125 }
+			fleet_event = { id = nep_phantom.78 days = 15 }
 			owner = {
 				country_event = { id = nep_phantom.30074 }
 			}
@@ -729,6 +702,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_fleet_flag = nep_in_phantom_war
 		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
@@ -738,13 +712,13 @@ fleet_event = {
 				limit = {
 					count_system_ships = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-						count < 100
+						count < 15
 					}
 				}
 				root = { create_phantom_fleet_active_random = yes }
 			}
 		}
-		fleet_event = { id = nep_phantom.71 days = 17 }
+		fleet_event = { id = nep_phantom.71 days = 14 }
 	}
 }
 
@@ -755,6 +729,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_fleet_flag = nep_in_phantom_war
 		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
@@ -764,13 +739,13 @@ fleet_event = {
 				limit = {
 					count_system_ships = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-						count < 130
+						count < 20
 					}
 				}
 				root = { create_phantom_fleet_active_random = yes }
 			}
 		}
-		fleet_event = { id = nep_phantom.72 days = 15 }
+		fleet_event = { id = nep_phantom.72 days = 12 }
 	}
 }
 
@@ -781,6 +756,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		has_fleet_flag = nep_in_phantom_war
 		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
@@ -790,11 +766,16 @@ fleet_event = {
 				limit = {
 					count_system_ships = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-						count < 160
+						count < 25
 					}
 				}
-				root = { create_phantom_fleet_active_random = yes
-					create_phantom_fleet_active_random = yes }
+				root = { 
+					create_phantom_fleet_active_random = yes
+					random_list = {
+						30 = { create_phantom_fleet_active_random = yes }
+						70 = { }
+					}
+				}
 			}
 		}
 		fleet_event = { id = nep_phantom.73 days = 15 }
@@ -809,7 +790,10 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
+		has_fleet_flag = nep_in_phantom_war
+		solar_system = { 
+			NOT = { has_star_flag = nep_phantom_war_end } 
+		}
 	}
 	
 	immediate = {
@@ -818,14 +802,19 @@ fleet_event = {
 				limit = {
 					count_system_ships = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
-						count < 200
+						count < 30
 					}
 				}
-				root = { create_phantom_fleet_active_random = yes
-					create_phantom_fleet_active_random = yes }
+				root = { 
+					create_phantom_fleet_active_random = yes
+					random_list = {
+						50 = { create_phantom_fleet_active_random = yes }
+						50 = { }
+					}
+				}
 			}
 		}
-		fleet_event = { id = nep_phantom.74 days = 14 }
+		fleet_event = { id = nep_phantom.74 days = 13 }
 	}
 }
 
@@ -845,6 +834,11 @@ fleet_event = {
 		}
 		remove_fleet_flag = nep_in_phantom_war
 		remove_modifier = nep_phantom_no_retreat
+		remove_modifier = nep_energy_syphon_stage5
+		remove_modifier = nep_energy_syphon_stage4
+		remove_modifier = nep_energy_syphon_stage3
+		remove_modifier = nep_energy_syphon_stage2
+		remove_modifier = nep_energy_syphon_stage1
 		solar_system = {
 			remove_star_flag = nep_in_phantom_war
 			set_star_flag = nep_phantom_war_end	
@@ -858,13 +852,24 @@ fleet_event = {
 		}
 		owner = {
 			country_event = { id = nep_phantom.30075 }
-		}
-		if = {
-			limit = { count_system = { count > 3 limit = { has_star_flag = nep_phantom_war_end } } }
-			event_target:nep_phantom_global = {
+			if = {
+				limit = { has_country_flag = nep_phantom_active_stage_3 }
 				country_event = { id = nep_phantom.8 }
 			}
-		}
+			else_if = {
+				limit = { has_country_flag = nep_phantom_active_stage_2 }
+				remove_country_flag = nep_phantom_active_stage_2
+				set_country_flag = nep_phantom_active_stage_3
+			}
+			else_if = {
+				limit = { has_country_flag = nep_phantom_active_stage_1 }
+				remove_country_flag = nep_phantom_active_stage_1
+				set_country_flag = nep_phantom_active_stage_2
+			}
+			else = {
+				set_country_flag = nep_phantom_active_stage_1
+			}
+		}	
 	}
 }
 
@@ -909,6 +914,7 @@ event = {
 		every_system = {
 			limit = {
 				has_star_flag = nep_Scrus_cluster
+				NOT = { has_star_flag = nep_in_phantom_war }
 				NOT = { has_hyperlane_to = event_target:nep_Ginan_system }
 			}			
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
@@ -936,7 +942,113 @@ country_event = {
 				delete_fleet = this
 			}
 			remove_star_flag = nep_in_phantom_war
+			if = { 
+				limit = { exists = fromfromfrom }
+				fromfromfrom = { remove_fleet_flag = nep_in_phantom_war }
+			}			
+			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
 		}
+	}
+}
+
+#debuff
+fleet_event = {
+	id = nep_phantom.78
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_fleet_flag = nep_in_phantom_war
+		solar_system = { 
+			NOT = { has_star_flag = nep_phantom_war_end } 
+		}
+	}
+	
+	immediate = {
+		owner = { country_event = { id = nep_phantom.30078 } }
+		if = {
+			limit = { NOT = { any_owned_ship = { has_modifier = nep_energy_syphon_stage1 } } }
+			add_modifier = {
+				modifier = nep_energy_syphon_stage1
+				days = 125
+			}
+			fleet_event = { id = nep_phantom.78 days = 25 }
+		}
+		else_if = {
+			limit = { 
+				any_owned_ship = { 
+					has_modifier = nep_energy_syphon_stage1
+					NOT = { has_modifier = nep_energy_syphon_stage2 }
+				} 
+			}
+			add_modifier = {
+				modifier = nep_energy_syphon_stage2
+				days = 100
+			}
+			fleet_event = { id = nep_phantom.78 days = 25 }
+		}
+		else_if = {
+			limit = { 
+				any_owned_ship = { 
+					has_modifier = nep_energy_syphon_stage2
+					NOT = { has_modifier = nep_energy_syphon_stage3 }
+				}
+			}
+			add_modifier = {
+				modifier = nep_energy_syphon_stage3
+				days = 75
+			}
+			fleet_event = { id = nep_phantom.78 days = 25 }
+		}
+		else_if = {
+			limit = { 
+				any_owned_ship = { 
+					has_modifier = nep_energy_syphon_stage3
+					NOT = { has_modifier = nep_energy_syphon_stage4 }
+				}
+			}
+			add_modifier = {
+				modifier = nep_energy_syphon_stage4
+				days = 50
+			}
+			fleet_event = { id = nep_phantom.78 days = 25 }
+		}
+		else = {
+			IF = {
+				limit = { 
+					any_owned_ship = { 
+						has_modifier = nep_energy_syphon_stage5
+					} 
+				}
+			}
+			else = {
+				limit = {
+					any_owned_ship = { 
+						has_modifier = nep_energy_syphon_stage4
+					} 
+				}
+				add_modifier = {
+					modifier = nep_energy_syphon_stage5
+					days = 25
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_phantom.79
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		from = { is_country_type = nep_phantom_active }
+	}
+	
+	immediate = {
+		delete_ship = fromfrom
 	}
 }
 
@@ -995,6 +1107,9 @@ country_event = {
 					has_country_flag = nep_phantom_3006_not_first
 					has_country_flag = nep_phantom_has_death
 					has_country_flag = nep_can_build_repeller
+					has_country_flag = nep_phantom_active_stage_1
+					has_country_flag = nep_phantom_active_stage_2
+					has_country_flag = nep_phantom_active_stage_3
 				}
 			}
 			remove_country_flag = nep_phantom_passive_defeated_1
@@ -1006,6 +1121,9 @@ country_event = {
 			remove_country_flag = nep_phantom_3006_not_first
 			remove_country_flag = nep_phantom_has_death
 			remove_country_flag = nep_can_build_repeller
+			remove_country_flag = nep_phantom_active_stage_1
+			remove_country_flag = nep_phantom_active_stage_2
+			remove_country_flag = nep_phantom_active_stage_3
 			every_owned_fleet = {
 				limit = {
 					has_fleet_flag = nep_in_phantom_war
@@ -1768,6 +1886,22 @@ country_event = {
 }
 
 country_event = {
+	id = nep_phantom.30078
+	title = "nep_phantom.30078.name"
+	desc = "nep_phantom.30078.desc"
+	picture = GFX_evt_pirates_attacking_cargo
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	
+	}
+	
+	option = { name = OK }
+}
+
+country_event = {
 	id = nep_phantom.3008
 	title = "nep_phantom.3008.name"
 	desc = "nep_phantom.3008.desc"
@@ -2144,21 +2278,20 @@ country_event = {
 	}
 }
 
-
-country_event = {
-	id = nep_phantom.31111
-	title = "nep_phantom.31111.name"
-	desc = "nep_phantom.31111.desc"
-	picture = GFX_evt_in_the_dark
+# country_event = {
+	# id = nep_phantom.31111
+	# title = "nep_phantom.31111.name"
+	# desc = "nep_phantom.31111.desc"
+	# picture = GFX_evt_in_the_dark
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	immediate = {
+	# immediate = {
 	
-	}
+	# }
 	
-	option = { name = OK }
-}
+	# option = { name = OK }
+# }
 
 ####################################
 # For AI Empire

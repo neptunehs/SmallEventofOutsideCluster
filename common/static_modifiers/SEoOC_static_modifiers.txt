@@ -437,8 +437,39 @@ nep_phantom_repeller_function = {
 }
 
 nep_phantom_no_retreat = {
-	ship_disengage_chance_reduction = 1
+	ship_disengage_chance_mult = -1
+	ship_disengage_chance_reduction = 10
 	ship_emergency_ftl_min_days_mult = 10
+}
+
+nep_energy_syphon_stage1 = {
+	ship_shield_mult = -0.1
+	damage_vs_country_type_nep_phantom_active_mult = -0.05
+	ship_speed_mult = -0.05
+}
+
+nep_energy_syphon_stage2 = {
+	ship_shield_mult = -0.1
+	damage_vs_country_type_nep_phantom_active_mult = -0.05
+	ship_speed_mult = -0.05
+}
+
+nep_energy_syphon_stage3 = {
+	ship_shield_mult = -0.1
+	damage_vs_country_type_nep_phantom_active_mult = -0.05
+	ship_speed_mult = -0.05
+}
+
+nep_energy_syphon_stage4 = {
+	ship_shield_mult = -0.1
+	damage_vs_country_type_nep_phantom_active_mult = -0.05
+	ship_speed_mult = -0.05
+}
+
+nep_energy_syphon_stage5 = {
+	ship_shield_mult = -0.1
+	damage_vs_country_type_nep_phantom_active_mult = -0.05
+	ship_speed_mult = -0.05
 }
 
 ##########################################################################
@@ -603,10 +634,10 @@ nep_dragon_easy = {
 }
 
 nep_Krahen_easy = {
-	ship_weapon_damage = -0.8
-	ship_hull_mult = -0.7
-	ship_armor_mult = -0.7
-	ship_shield_mult = -0.7
+	ship_weapon_damage = -0.85
+	ship_hull_mult = -0.75
+	ship_armor_mult = -0.75
+	ship_shield_mult = -0.75
 	ship_weapon_range_mult = -0.5
 	army_health = -0.7
 	army_morale = -0.7
@@ -615,9 +646,17 @@ nep_Krahen_easy = {
 }
 
 nep_finalweapon_easy = {
+	ship_weapon_damage = -0.9
+	ship_hull_mult = -0.9
+	ship_armor_mult = -0.9
+	ship_shield_mult = -0.9
+	ship_weapon_range_mult = -0.7
+}
+
+nep_finalweapon_easy = {
 	ship_weapon_damage = -0.85
 	ship_hull_mult = -0.85
 	ship_armor_mult = -0.85
 	ship_shield_mult = -0.85
-	ship_weapon_range_mult = -0.7
+	ship_weapon_range_mult = -0.5
 }

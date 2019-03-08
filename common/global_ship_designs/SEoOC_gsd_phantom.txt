@@ -8,8 +8,12 @@ ship_design = {
 		slot = "bow"	
 	
 		component = {
-			slot = "EXTRA_LARGE_01"
-			template = "NEP_PHANTOM_PRIMARY_WEAPON"
+			slot = "LARGE_GUN_01"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
 		}
 	}
 	
@@ -18,16 +22,16 @@ ship_design = {
 		slot = "mid"	
 	
 		component = {
-			slot = "LARGE_GUN_01"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_01"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_02"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_02"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_03"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_03"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 	}
 	
@@ -97,8 +101,12 @@ ship_design = {
 		slot = "bow"
 	
 		component = {
-			slot = "EXTRA_LARGE_01"
-			template = "NEP_PHANTOM_PRIMARY_WEAPON"
+			slot = "LARGE_GUN_01"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
 		}
 	}
 	
@@ -107,16 +115,16 @@ ship_design = {
 		slot = "mid"	
 	
 		component = {
-			slot = "LARGE_GUN_01"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_01"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_02"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_02"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_03"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_03"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 	}
 	
@@ -125,12 +133,36 @@ ship_design = {
 		slot = "stern"
 	
 		component = {
-			slot = "MEDIUM_GUN_01"
-			template = "NEP_PHANTOM_MEDIUM_WEAPON"
+			slot = "SMALL_GUN_01"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
 		}
 		component = {
-			slot = "MEDIUM_GUN_02"
-			template = "NEP_PHANTOM_MEDIUM_WEAPON"
+			slot = "SMALL_GUN_02"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_07"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_08"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
 		}
 	}
 	
@@ -152,17 +184,7 @@ ship_design = {
 	section = {
 		template = "NEP_BATTLESHIP_PHANTOM_BOW_XL1"
 		slot = "bow"
-	
-		component = {
-			slot = "EXTRA_LARGE_01"
-			template = "NEP_PHANTOM_PRIMARY_WEAPON"
-		}
-	}
-	
-	section = {
-		template = "NEP_BATTLESHIP_PHANTOM_MID_L3"
-		slot = "mid"	
-	
+		
 		component = {
 			slot = "LARGE_GUN_01"
 			template = "NEP_PHANTOM_LARGE_WEAPON"
@@ -171,15 +193,11 @@ ship_design = {
 			slot = "LARGE_GUN_02"
 			template = "NEP_PHANTOM_LARGE_WEAPON"
 		}
-		component = {
-			slot = "LARGE_GUN_03"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
-		}
 	}
 	
 	section = {
-		template = "NEP_BATTLESHIP_PHANTOM_STERN_M2"
-		slot = "stern"
+		template = "NEP_BATTLESHIP_PHANTOM_MID_L3"
+		slot = "mid"	
 	
 		component = {
 			slot = "MEDIUM_GUN_01"
@@ -188,6 +206,48 @@ ship_design = {
 		component = {
 			slot = "MEDIUM_GUN_02"
 			template = "NEP_PHANTOM_MEDIUM_WEAPON"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
+		}
+	}
+	
+	section = {
+		template = "NEP_BATTLESHIP_PHANTOM_STERN_M2"
+		slot = "stern"
+	
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_07"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_08"
+			template = "NEP_PHANTOM_SMALL_WEAPON"
 		}
 	}
 	
@@ -209,8 +269,12 @@ ship_design = {
 		slot = "bow"	
 	
 		component = {
-			slot = "EXTRA_LARGE_01"
-			template = "NEP_PHANTOM_PRIMARY_WEAPON"
+			slot = "LARGE_GUN_01"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "NEP_PHANTOM_LARGE_WEAPON"
 		}
 	}
 	
@@ -219,16 +283,16 @@ ship_design = {
 		slot = "mid"	
 	
 		component = {
-			slot = "LARGE_GUN_01"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_01"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_02"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_02"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 		component = {
-			slot = "LARGE_GUN_03"
-			template = "NEP_PHANTOM_LARGE_WEAPON"
+			slot = "MEDIUM_GUN_03"
+			template = "NEP_PHANTOM_MEDIUM_WEAPON"
 		}
 	}
 	

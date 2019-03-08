@@ -61,6 +61,11 @@
  nep_phantom.30077.desc:0 "我们战败了，第三子封印的传送装置又启动了。"
  nep_phantom.30077.a:0 "可恶。"
  
+ nep_phantom.30078.name:0 "能量吸收"
+ nep_phantom.30078.desc:0 "在[This.Solar_System.GetName]战斗的[This.GetName]发来了异常报告，貌似在[event_target:nep_phantom_global.GetName]的能量吸收攻击之下，舰队的护盾、推进器、武器都不同程度的运行不良。"
+ nep_phantom.30078.a:0 "花样真多！"
+ 
+ 
  nep_phantom.3008.name:0 "暴风雨过去"
  nep_phantom.3008.desc:0 "全部的南十字星系已经重归静寂。我们的舰队的探测器开始工作，看看能否找到什么。"
  nep_phantom.3008.a:0 "好。"
