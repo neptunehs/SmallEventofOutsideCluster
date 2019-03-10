@@ -653,7 +653,7 @@ nep_finalweapon_easy = {
 	ship_weapon_range_mult = -0.7
 }
 
-nep_finalweapon_easy = {
+nep_phantom_easy = {
 	ship_weapon_damage = -0.85
 	ship_hull_mult = -0.85
 	ship_armor_mult = -0.85

@@ -1519,7 +1519,7 @@ create_phantom_fleet_active_Krahen = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1582,7 +1582,7 @@ create_phantom_fleet_active_fallen_empire_01 = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1645,7 +1645,7 @@ create_phantom_fleet_active_fallen_empire_02 = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1713,7 +1713,7 @@ create_phantom_fleet_active_humanoid = {
 			}
 			set_formation_scale = 2.0
 			set_fleet_stance = aggressive
-			set_aggro_range = 500
+			set_aggro_range = 30
 			set_aggro_range_measure_from = self
 		}
 	}
@@ -1771,7 +1771,7 @@ create_phantom_fleet_active_mammalian = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1834,7 +1834,7 @@ create_phantom_fleet_active_molluscoid = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1897,7 +1897,7 @@ create_phantom_fleet_active_reptilian = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -1960,7 +1960,7 @@ create_phantom_fleet_active_arthropoid = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0
@@ -2057,7 +2057,7 @@ create_phantom_fleet_active_pirate = {
 			}
 			set_location = {
 				target = prev
-				distance = 150
+				distance = 30
 				angle = random
 			}
 			set_formation_scale = 2.0

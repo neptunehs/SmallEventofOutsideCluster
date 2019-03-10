@@ -46,7 +46,7 @@
  nep_phantom.30072.a:0 "At least this time we know that they are not endless."
  
  nep_phantom.30073.name:0 "The Tempest"
- nep_phantom.30073.desc:0 "[From.GetName] entered [From.Solar_System.GetName] and was not accidentally ambushed by [event_target:nep_phantom_global.GetName]. 
+ nep_phantom.30073.desc:0 "[From.GetName] entered [From.Solar_System.GetName] and was not accidentally ambushed by [event_target:nep_phantom_global.GetName]."
  nep_phantom.30073.a:0 "As expected."
  
  nep_phantom.30074.name:0 "The Tempest"
@@ -58,14 +58,14 @@
  nep_phantom.30075.a:0 "Good."
  
  nep_phantom.30077.name:0 "Defeated"
- nep_phantom.30077.desc:0 "We were defeated and the third sub seal warp point was activated."
+ nep_phantom.30077.desc:0 "We were defeated and the third sub seal warp point was activated.In addition, the energy response of this system has weakened."
  nep_phantom.30077.a:0 "Damn."
  
  nep_phantom.30078.name:0 "Energy Siphon"
  nep_phantom.30078.desc:0 "An exception report was sent by [This.GetName] which in the battle of [This.Solar_System.GetName]. It seems that under the energy siphon attack of [event_target:nep_phantom_global.GetName], the fleet's shields, propulsions, and weapons are all in Poor operation."
  nep_phantom.30078.a:0 "So many tricks!"
  
- nep_phantom.3008.name:0 ""The Tempest Past"
+ nep_phantom.3008.name:0 "The Tempest Past"
  nep_phantom.3008.desc:0 "All system of Scrus Cluster have returned to silence. Our sensors started working to see if we could find anything."
  nep_phantom.3008.a:0 "OK."
   
@@ -92,7 +92,7 @@
  nep_phantom.3203.a:0 "Stay tuned."
 
  nep_phantom.3204.name:0 "Threat from Above"
- nep_phantom.3204.desc:0 Almost all of the population of "[From.GetName] has become a debilitating patient, and almost all populations are at risk of death."
+ nep_phantom.3204.desc:0 "Almost all of the population of [From.GetName] has become a debilitating patient, and almost all populations are at risk of death."
  nep_phantom.3204.a:0 "We need a solution as soon as possible!"
  
  nep_phantom.3210.name:0 "Victim appeared"

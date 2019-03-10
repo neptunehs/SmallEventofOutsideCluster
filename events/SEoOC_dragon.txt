@@ -934,7 +934,11 @@ country_event = {
 		create_fleet = {
 			name = "NAME_Astaroth"
 			settings = {
-				spawn_debris = no 
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				can_change_leader = no
 			}
 			effect = {
 				set_owner = event_target:nep_dragon_country
@@ -1404,6 +1408,10 @@ country_event = {
 			name = "NAME_Astaroth"
 			settings = {
 				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				can_change_leader = no
 			}
 			effect = {
 				set_owner = root
@@ -1742,6 +1750,10 @@ country_event = {
 			name = "NAME_Astaroth"
 			settings = {
 				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				can_change_leader = no
 			}
 			effect = {
 				set_owner = root
