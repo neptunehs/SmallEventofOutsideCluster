@@ -20,18 +20,20 @@ country_event = {
 	
 	immediate = {
 		set_global_flag = nep_seal_ambient_created
-		random_system = {
-			limit = {
-				has_star_flag = nep_highway_note_system
+		capital_scope = {
+			closest_system = {
+				limit = {
+					has_star_flag = nep_highway_note_system
+				}
+				create_ambient_object = {
+					type = "small_debris_object"
+					location = solar_system
+				}
+				last_created_ambient_object = {
+					save_global_event_target_as = nep_seal_ambient
+				}
+				set_star_flag = nep_seal_ambient_poi
 			}
-			create_ambient_object = {
-				type = "small_debris_object"
-				location = solar_system
-			}
-			last_created_ambient_object = {
-				save_global_event_target_as = nep_seal_ambient
-			}
-			set_star_flag = nep_seal_ambient_poi
 		}
 	}
 }
@@ -717,7 +719,7 @@ ship_event = {
 	desc = "nep_seal.9.desc"	
 	picture = GFX_evt_dimensional_horror
 	
-	fire_only_once = yes
+	#fire_only_once = yes
 	
 	is_triggered_only = yes	
 

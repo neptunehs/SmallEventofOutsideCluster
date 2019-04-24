@@ -3,3 +3,15 @@ opinion_nep_grand_seal_burst = {
 		base = -25
 	}
 }
+
+nep_you_are_our_Savior = {
+	opinion = {
+		base = 100
+	}
+}
+
+nep_you_are_very_strong = {
+	opinion = {
+		base = 50
+	}
+}

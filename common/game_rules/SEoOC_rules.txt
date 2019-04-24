@@ -148,7 +148,7 @@ can_take_hostile_actions = {
 		}
 	}
 	else_if = {
-		#SEoOC
+		#SEoOC_phantom
 		limit = {
 			ROOT = {
 				NOT = { has_technology = tech_nep_phantom_phase_shift }
@@ -157,6 +157,34 @@ can_take_hostile_actions = {
 		}
 		custom_tooltip = {
 			text = "CAN_TAKE_HOSTILE_ACTION_NEP_PHANTOM"
+			always = no
+		}
+	}
+	else_if = {
+		#SEoOC_side_story
+		limit = {
+			root = { is_ai = no }
+			OR = {
+				AND = {
+					root = { has_country_flag = nep_gaia_assist_war }
+					has_country_flag = nep_gaia_country
+				}
+				AND = {
+					has_country_flag = nep_gaia_assist_war
+					root = { has_country_flag = nep_gaia_country }
+				}
+				AND = {
+					root = { has_country_flag = nep_highlander_assist_war }
+					has_country_flag = nep_highlander_country
+				}
+				AND = {
+					has_country_flag = nep_highlander_assist_war
+					root = { has_country_flag = nep_highlander_country }
+				}
+			}
+		}
+		custom_tooltip = {
+			text = "CAN_TAKE_HOSTILE_ACTION_NEP_GAIA"
 			always = no
 		}
 	}

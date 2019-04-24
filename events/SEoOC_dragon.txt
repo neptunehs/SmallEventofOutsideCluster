@@ -852,7 +852,10 @@ country_event = {
 	is_triggered_only = yes
 		
 	trigger = {
-		fromfrom = { controller = { is_country_type = nep_Legnahcras_country } }
+		fromfrom = { 
+			exists = controller
+			controller = { is_country_type = nep_Legnahcras_country } 
+		}
 	}
 	
 	immediate = {

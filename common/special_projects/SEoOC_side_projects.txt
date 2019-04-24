@@ -1,0 +1,92 @@
+special_project = {
+	key = "nep_gaia_assist_project"
+	days_to_research = 90
+	tech_department = society_technology
+	picture = GFX_evt_interior_battle
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 5
+		leader = general
+		skill = 5
+	}
+	
+	on_success = {
+		set_global_flag = nep_gaia_assist_1
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_gaia_assist_project_2"
+	days_to_research = 5
+	tech_department = society_technology
+	picture = GFX_evt_interior_battle
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 5
+		leader = general
+	}
+	
+	on_success = {
+		owner = { country_event = { id = nep_wohp.44 } }
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_highlander_conquer_project"
+	days_to_research = 90
+	tech_department = society_technology
+	picture = GFX_evt_ship_in_orbit_2
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		set_global_flag = nep_highlander_assist_1
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_highlander_conquer_project_2"
+	days_to_research = 5
+	tech_department = society_technology
+	picture = GFX_evt_interior_battle
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 5
+		leader = general
+	}
+	
+	on_success = {
+		owner = { country_event = { id = nep_wohp.54 } }
+	}
+	
+	on_fail = {
+
+	}
+}

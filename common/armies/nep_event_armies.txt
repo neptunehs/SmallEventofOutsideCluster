@@ -85,3 +85,80 @@ nep_Krahen_heavy_fortress_2 = {
 		always = no
 	}
 }
+
+#Gaia
+nep_gaia_super_army = {
+	damage = 2.0
+	morale_damage = 1.5
+	health = 2.0
+	morale = 2.5
+	collateral_damage = 0.75
+	war_exhaustion = 3.0
+	time = 100
+	icon_frame = 9
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 300
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	prerequisites = { "tech_gaia_super_weapon" }
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+		owner = {
+			NOT = { has_authority = auth_machine_intelligence }
+		}
+	}
+}
+
+#Highlander
+nep_gene_slave_army = {
+	damage = 2.0
+	health = 2.5
+	morale = 0.75
+	morale_damage = 0.75
+	collateral_damage = 1.5
+	war_exhaustion = 0.5
+	time = 120
+	icon_frame = 6
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 100
+		}
+
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	allow = {
+		any_owned_pop = { is_pop_category = slave }
+	}
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+		owner = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_country_flag = nep_can_use_gene_slave
+		}
+	}
+}

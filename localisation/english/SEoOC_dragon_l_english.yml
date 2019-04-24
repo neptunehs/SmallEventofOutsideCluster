@@ -27,6 +27,10 @@
  nep_dragon.4.desc:0 "A group of unknown forces suddenly launched attacks in our seven new colonies. They are huge and powerful, and no one knows their origins. Please send a reinforcement immediately - if we don't act quickly, the colony will be destroyed!"
  nep_dragon.4.a:0 "Battlestation!" 
  
+ nep_dragon.4001.name:0 "Unexpected discovery"
+ nep_dragon.4001.desc:0 "The battle in [FromFrom.GetName] triumphed, and then we unexpectedly discovered the weaknesses of these unidentified forces: it seems that they are all commanded by a HQ, and in the future planet battles, if we first attack the HQ, we are more likely to win."
+ nep_dragon.4001.a:0 "OK,get ready for it."
+ 
  nep_dragon.5.name:0 "Victory!"
  nep_dragon.5.desc:0 ""Take the blessings of our great and heroic warriors, and win the battle of unknown forces! Look at their heroic battle scene!" After turning off the TV, there is a research plan for unidentified forces in front of you.Is it that the curiosity of our scientists is too heavy?"
  nep_dragon.5.a:0 "Agreed." 

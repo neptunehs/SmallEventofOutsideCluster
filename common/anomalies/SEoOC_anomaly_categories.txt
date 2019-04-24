@@ -1,0 +1,28 @@
+nep_SEoOC_whop_category = {
+	desc = nep_SEoOC_side_story_category_desc
+	picture = GFX_evt_wormhole
+	level = 10
+	#risk = 30
+	
+	should_ai_use = no	
+	max_once = yes
+	max_once_global = yes
+	
+	spawn_chance = {
+		modifier = {
+			add = 1
+			OR = {
+				is_star = yes
+				is_planet_class = pc_gas_giant
+				planet_size > 35
+			}
+			solar_system = {
+				NOT = { has_natural_wormhole = no }
+			}
+		}
+	}
+
+	on_success = {
+		anomaly_event = nep_wohp.1
+	}
+}

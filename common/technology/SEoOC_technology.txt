@@ -225,3 +225,25 @@ tech_nep_phantom_tech = {
 		factor = 0
 	}
 }
+
+tech_gaia_super_weapon = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { biology }
+	is_rare = yes
+	weight = @tier3weight3
+	is_reverse_engineerable = no
+	
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}

@@ -430,7 +430,11 @@ seal_boss_spawn = {
 			create_ship = {
 				name = "NAME_nep_Seal_Evil"
 				design = "NAME_nep_Seal_evil"
-			}	
+			}
+			create_ship = {
+				name = "NAME_nep_Seal_Evil"
+				design = "NAME_nep_Seal_evil"
+			}
 			set_location = {
 				target = event_target:nep_grand_seal_planet
 				distance = 150

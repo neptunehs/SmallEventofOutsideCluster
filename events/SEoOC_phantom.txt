@@ -646,6 +646,7 @@ fleet_event = {
 					}
 				}
 			}
+			fleet_event = { id = nep_phantom.70 days = 25}
 			fleet_event = { id = nep_phantom.71 }
 			solar_system = {
 				switch = {
@@ -669,6 +670,7 @@ fleet_event = {
 					has_country_flag = nep_phantom_active_stage_1
 				}
 			}
+			fleet_event = { id = nep_phantom.70 days = 25}
 			fleet_event = { id = nep_phantom.72 }
 			solar_system = {
 				switch = {
@@ -692,6 +694,7 @@ fleet_event = {
 					has_country_flag = nep_phantom_active_stage_2
 				}
 			}
+			fleet_event = { id = nep_phantom.70 days = 25}
 			fleet_event = { id = nep_phantom.73 }
 			solar_system = {
 				switch = {
@@ -715,6 +718,7 @@ fleet_event = {
 					has_country_flag = nep_phantom_active_stage_3
 				}
 			}
+			fleet_event = { id = nep_phantom.70 days = 25 }
 			fleet_event = { id = nep_phantom.74 }
 			solar_system = {
 				switch = {
@@ -736,6 +740,44 @@ fleet_event = {
 }
 
 fleet_event = {
+	id = nep_phantom.70
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_fleet_flag = nep_in_phantom_war
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
+	}
+
+	immediate = {
+		solar_system = {
+			switch = {
+				trigger = has_star_flag
+				nep_phantom_energy_consume_4 = { 
+					set_star_flag = nep_phantom_energy_consume_5
+					remove_star_flag = nep_phantom_energy_consume_4
+				}
+				nep_phantom_energy_consume_3 = { 
+					set_star_flag = nep_phantom_energy_consume_4
+					remove_star_flag = nep_phantom_energy_consume_3
+				}
+				nep_phantom_energy_consume_2 = { 
+					set_star_flag = nep_phantom_energy_consume_3
+					remove_star_flag = nep_phantom_energy_consume_2
+				}
+				nep_phantom_energy_consume_1 = { 
+					set_star_flag = nep_phantom_energy_consume_2
+					remove_star_flag = nep_phantom_energy_consume_1
+				}
+				default = { set_star_flag = nep_phantom_energy_consume_1 }
+			}
+		}
+		fleet_event = { id = nep_phantom.70 days = 25 }
+	}
+}
+
+fleet_event = {
 	id = nep_phantom.71
 	hide_window = yes
 	
@@ -751,7 +793,7 @@ fleet_event = {
 			if = {
 				limit = {
 					count_system_ships = {
-						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
+						limit = { owner = { is_same_value = event_target:nep_phantom_active } }
 						count < 15
 					}
 				}
@@ -831,9 +873,7 @@ fleet_event = {
 
 	trigger = {
 		has_fleet_flag = nep_in_phantom_war
-		solar_system = { 
-			NOT = { has_star_flag = nep_phantom_war_end } 
-		}
+		solar_system = { NOT = { has_star_flag = nep_phantom_war_end } }
 	}
 	
 	immediate = {
@@ -887,11 +927,6 @@ fleet_event = {
 		remove_modifier = nep_energy_syphon_stage1
 		solar_system = {
 			remove_star_flag = nep_in_phantom_war
-			remove_star_flag = nep_phantom_energy_consume_1
-			remove_star_flag = nep_phantom_energy_consume_2
-			remove_star_flag = nep_phantom_energy_consume_3
-			remove_star_flag = nep_phantom_energy_consume_4
-			remove_star_flag = nep_phantom_energy_consume_5
 			set_star_flag = nep_phantom_war_end	
 			every_fleet_in_system = {
 				limit = { 
@@ -900,6 +935,26 @@ fleet_event = {
 				destroy_fleet = this
 			}
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_1 }
+			remove_star_flag = nep_phantom_energy_consume_1
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_2 }
+			remove_star_flag = nep_phantom_energy_consume_2
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_3 }
+			remove_star_flag = nep_phantom_energy_consume_3
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_4 }
+			remove_star_flag = nep_phantom_energy_consume_4
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_5 }
+			remove_star_flag = nep_phantom_energy_consume_5
 		}
 		owner = {
 			if = {
@@ -1005,26 +1060,6 @@ country_event = {
 				fromfromfrom = { remove_fleet_flag = nep_in_phantom_war }
 			}			
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
-			switch = {
-				trigger = has_star_flag
-				nep_phantom_energy_consume_4 = { 
-					set_star_flag = nep_phantom_energy_consume_5
-					remove_star_flag = nep_phantom_energy_consume_4
-				}
-				nep_phantom_energy_consume_3 = { 
-					set_star_flag = nep_phantom_energy_consume_4
-					remove_star_flag = nep_phantom_energy_consume_3
-				}
-				nep_phantom_energy_consume_2 = { 
-					set_star_flag = nep_phantom_energy_consume_3
-					remove_star_flag = nep_phantom_energy_consume_2
-				}
-				nep_phantom_energy_consume_1 = { 
-					set_star_flag = nep_phantom_energy_consume_2
-					remove_star_flag = nep_phantom_energy_consume_1
-				}
-				default = { set_star_flag = nep_phantom_energy_consume_1 }
-			}
 		}
 	}
 }

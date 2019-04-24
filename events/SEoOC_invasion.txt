@@ -1586,7 +1586,10 @@ country_event = {
 			set_owner = event_target:nep_Krahen_country
 			every_owned_pop = {
 				limit = { NOT = { is_same_species = event_target:nep_Krahen_country } }
-				kill_pop = yes
+				random_list = {
+					97 = { kill_pop = yes }
+					3 = { pop_event = { id = nep_refugees.4 } }
+				}
 			}
 			create_Krahen_buildings = yes
 			every_country = {

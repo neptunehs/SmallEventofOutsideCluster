@@ -538,6 +538,20 @@ country_event = {
 		random_list = {
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = 85
+							max_orientation_angle = 94
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -547,10 +561,23 @@ country_event = {
 						initializer = nep_highway_station_N
 					}
 				}
-			}	
-			
+			}			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = 62.5
+							max_orientation_angle = 71.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -564,6 +591,20 @@ country_event = {
 			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = 40
+							max_orientation_angle = 50
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -577,6 +618,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = 17.5
+							max_orientation_angle = 26.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -590,6 +645,20 @@ country_event = {
 			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -5
+							max_orientation_angle = 4
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -603,6 +672,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -27.5
+							max_orientation_angle = -17.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -616,6 +699,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -50
+							max_orientation_angle = -40
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -629,6 +726,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -72.5
+							max_orientation_angle = -62.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -642,6 +753,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -85
+							max_orientation_angle = -95
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -655,6 +780,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -117.5
+							max_orientation_angle = -107.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -668,6 +807,20 @@ country_event = {
 			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -140
+							max_orientation_angle = -131
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -681,6 +834,20 @@ country_event = {
 			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -162.5
+							max_orientation_angle = -152.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -694,6 +861,20 @@ country_event = {
 			
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -185
+							max_orientation_angle = -175
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -707,6 +888,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -207.5
+							max_orientation_angle = -198.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -720,6 +915,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -230
+							max_orientation_angle = -221
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485
@@ -733,6 +942,20 @@ country_event = {
 
 			10 = { 
 				no_scope = {
+					if = {
+						limit = {
+							count_system = {
+								count < 430
+							}
+						}
+						spawn_system = {
+							min_distance >= 397
+							max_distance <= 445
+							min_orientation_angle = -252.5
+							max_orientation_angle = -243.5
+							hyperlane = yes
+						}
+					}
 					spawn_system = {
 						min_distance >= 480
 						max_distance <= 485

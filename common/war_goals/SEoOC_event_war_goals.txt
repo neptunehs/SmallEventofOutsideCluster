@@ -29,3 +29,31 @@ wg_nep_Krahen_invasion_war = {
 		weight = 0
 	}
 }
+
+wg_war_in_heaven_primitive = {
+	casus_belli = cb_event
+
+	total_war = yes
+	
+	surrender_acceptance = -5000
+	war_exhaustion = 0
+	
+	set_defender_wargoal = wg_war_in_heaven_primitive
+
+	potential = {
+		always = no # event only
+	}
+	possible = {
+		always = yes
+	}
+	
+	on_accept  = {
+	}	
+	
+	on_status_quo = {
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

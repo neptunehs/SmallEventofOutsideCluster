@@ -54,3 +54,17 @@ country_event = {
 		set_global_flag = nep_phantom_available
 	}
 }
+
+#Side Story init
+event = {
+	id = nep_SEoOC_init.3
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+}

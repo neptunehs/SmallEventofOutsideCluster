@@ -660,3 +660,28 @@ nep_phantom_easy = {
 	ship_shield_mult = -0.85
 	ship_weapon_range_mult = -0.5
 }
+
+##########################################################################
+# Side Story
+##########################################################################
+
+#Wohp
+nep_bombard_by_highlander = {
+	pop_growth_speed_reduction = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
+	icon_frame = 3
+}
+
+nep_extravagant_orgy = {
+	pop_growth_speed_reduction = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
+	icon_frame = 3
+}
+
+nep_black_technologies = {
+	planet_jobs_physics_research_produces_mult = 0.125
+	planet_jobs_society_research_produces_mult = 0.125
+	planet_jobs_engineering_research_produces_mult = 0.125
+	icon = "gfx/interface/icons/planet_modifiers/pm_archaeological_dig.dds"
+	icon_frame = 1
+}
