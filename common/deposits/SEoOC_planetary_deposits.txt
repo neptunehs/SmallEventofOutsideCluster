@@ -38,9 +38,35 @@ d_nep_dragon_temple = {
 		}
 	}
 
-	planet_modifier = { 
-		job_clerk_add = 2
-		job_nep_dragon_administrator_add = 1
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_clerk_add = 2
+			job_nep_dragon_administrator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_nep_dragon_administrator_drone_hive_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_nep_dragon_administrator_drone_machine_add = 1
+		}
 	}
 
 	drop_weight = {

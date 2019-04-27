@@ -110,6 +110,10 @@
  
  job_nep_dragon_administrator:0 "奉龙殿管理者"
  job_nep_dragon_administrator_desc:0 "负责奉龙殿的管理、旅游、发掘、监控等的管理负责者"
+ job_nep_dragon_administrator_drone_hive:0 "奉龙殿管理子人口"
+ job_nep_dragon_administrator_drone_hive_desc:0 "负责奉龙殿的管理、研究、发掘、监控等的管理负责者"
+ job_nep_dragon_administrator_drone_machine:0 "奉龙殿管理子人口"
+ job_nep_dragon_administrator_drone_machine_desc:0 "负责奉龙殿的管理、研究、发掘、监控等的管理负责者"
  
  NEP_DRAGON_PRIMARY_WEAPON:0 "Heptagram Dragon's Breath"
  NEP_DRAGON_PRIMARY_WEAPON_DESC:0 "Heptagram Dragon's Breath" 
@@ -171,3 +175,5 @@
  
  
  mod_job_nep_dragon_administrator_add:0 "奉龙殿管理者职业"
+ mod_job_nep_dragon_administrator_drone_hive_add:0 "奉龙殿管理子人口职业"
+ mod_job_nep_dragon_administrator_drone_machine_add:0 "奉龙殿管理子人口职业"

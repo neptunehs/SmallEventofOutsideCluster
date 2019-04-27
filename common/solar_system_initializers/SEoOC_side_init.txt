@@ -12,7 +12,7 @@ nep_wohp_init = {
 	
 	change_orbit = 32
 	
-	flags = { nep_whop_system }
+	flags = { nep_wohp_system }
 	
 	planet = {
 		count = { min = 1 max = 4 }
@@ -61,7 +61,6 @@ nep_wohp_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
-			generate_primitives_on_planet = yes
 			create_species = {
 				name = random
 				class = random_non_machine
@@ -73,7 +72,7 @@ nep_wohp_init = {
 				homeworld = this
 			}
 			last_created_species = {
-				save_event_target_as = nep_whop_species
+				save_event_target_as = nep_wohp_species
 			}
 			if = {
 				limit = {
@@ -101,13 +100,10 @@ nep_wohp_init = {
 					set_primitive_age = machine_age
 					save_global_event_target_as = nep_gaia_country
 					set_country_flag = nep_gaia_country
+					set_country_flag = machine_age
 				}
 			}
-			set_owner = event_target:nep_gaia_country
-			while = {
-				count = 25
-				create_pop = { species = event_target:nep_whop_species }
-			}
+			setup_primitive_planet = yes
 			add_modifier = { modifier = "planet_population_control" days = -1 }
 			set_planet_flag = has_megastructure
 		}
@@ -128,7 +124,6 @@ nep_wohp_init = {
 			
 			init_effect = {
 				prevent_anomaly = yes
-				generate_primitives_on_planet = yes
 				set_planet_entity = {
 					entity = "orbital_habitat_entity"
 					graphical_culture = event_target:nep_gaia_country
@@ -139,8 +134,8 @@ nep_wohp_init = {
 					is_mod = yes
 					name = "NAME_Highlander"
 					plural = "NAME_Highlanders"
-					class = event_target:nep_whop_species
-					portrait = event_target:nep_whop_species
+					class = event_target:nep_wohp_species
+					portrait = THIS
 					traits = {
 						ideal_planet_class = pc_gaia
 						trait = trait_self_modified
@@ -151,7 +146,7 @@ nep_wohp_init = {
 					homeworld = this
 				}
 				last_created_species = {
-					save_event_target_as = nep_whop_highlander_species
+					save_event_target_as = nep_wohp_highlander_species
 				}
 				if = {
 					limit = {
@@ -168,7 +163,7 @@ nep_wohp_init = {
 						#	civic = civic_imperial_cult
 						#	civic = civic_life_seeded
 						#}
-						species = event_target:nep_whop_highlander_species
+						species = event_target:nep_wohp_highlander_species
 						ethos = {
 							ethic = ethic_xenophobe
 							ethic = ethic_authoritarian
@@ -179,19 +174,16 @@ nep_wohp_init = {
 						set_primitive_age = atomic_age
 						save_global_event_target_as = nep_highlander_country
 						set_country_flag = nep_highlander_country
+						set_country_flag = atomic_age
 					}
 				}
-				set_owner = event_target:nep_highlander_country
+				setup_primitive_planet = yes
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				while = {
-					count = 20
-					create_pop = { species = event_target:nep_whop_species }
-				}
-				while = {
 					count = 10
-					create_pop = { species = event_target:nep_whop_highlander_species }
+					create_pop = { species = event_target:nep_wohp_species }
 				}
-				event_target:nep_whop_species = {
+				event_target:nep_wohp_species = {
 					set_citizenship_type = {
 						country = event_target:nep_highlander_country
 						type = citizenship_slavery
@@ -260,17 +252,14 @@ nep_deus_init_01 = {
 		class = ideal_planet_class
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 16 max = 20 }
-		tile_blockers = none
+		deposit_blockers = none
 		modifiers = none
 
 		init_effect = {
+			generate_empire_home_planet = yes
 			prevent_anomaly = yes
 		}
-		
-		init_effect = {
-			generate_start_buildings_and_blockers = yes			
-		}
-		
+				
 		change_orbit = @base_moon_distance
 
 		moon = {

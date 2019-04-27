@@ -103,6 +103,10 @@
  
  job_nep_dragon_administrator:0 "Dragon Temple Administrator"
  job_nep_dragon_administrator_desc:0 "Administrator of Dragon Temple"
+ job_nep_dragon_administrator_drone_hive:0 "Dragon Temple Administrator"
+ job_nep_dragon_administrator_drone_hive_desc:0 "Administrator of Dragon Temple"
+ job_nep_dragon_administrator_drone_machine:0 "Dragon Temple Administrator"
+ job_nep_dragon_administrator_drone_machine_desc:0 "Administrator of Dragon Temple"
  
  NEP_DRAGON_PRIMARY_WEAPON:0 "Heptagram Dragon's Breath"
  NEP_DRAGON_PRIMARY_WEAPON_DESC:0 "Heptagram Dragon's Breath" 
@@ -163,3 +167,5 @@
  nep_Legnahcras_defensive_army:0 "Legnahcras Defensive Army"
  
  mod_job_nep_dragon_administrator_add:0 "Dragon Temple Administrator job"
+ mod_job_nep_dragon_administrator_drone_hive_add:0 "Dragon Temple Administrator Drone job"
+ mod_job_nep_dragon_administrator_drone_machine_add:0 "Dragon Temple Administrator Drone job"

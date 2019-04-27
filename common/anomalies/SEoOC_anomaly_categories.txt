@@ -10,19 +10,23 @@ nep_SEoOC_whop_category = {
 	
 	spawn_chance = {
 		modifier = {
-			add = 1
+			add = 0.5
+			solar_system = {
+				has_natural_wormhole = no
+			}
+		}
+		modifier = {
+			factor = 3
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant
 				planet_size > 35
 			}
 			solar_system = {
-				NOT = { has_natural_wormhole = no }
+				has_natural_wormhole = no
 			}
 		}
 	}
 
-	on_success = {
-		anomaly_event = nep_wohp.1
-	}
+	on_success = nep_wohp.1
 }
