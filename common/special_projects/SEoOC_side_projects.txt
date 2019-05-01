@@ -10,11 +10,10 @@ special_project = {
 	requirements = {
 		shipclass_transport = 5
 		leader = general
-		skill = 5
 	}
 	
 	on_success = {
-		set_global_flag = nep_gaia_assist_1
+		owner = { set_country_flag = nep_gaia_assist_1 }
 	}
 	
 	on_fail = {
@@ -60,7 +59,7 @@ special_project = {
 	}
 	
 	on_success = {
-		set_global_flag = nep_highlander_assist_1
+		owner = { set_country_flag = nep_highlander_assist_1 }
 	}
 	
 	on_fail = {

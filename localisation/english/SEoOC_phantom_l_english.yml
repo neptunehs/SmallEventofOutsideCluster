@@ -20,7 +20,7 @@
  nep_phantom.3004.a:0 "Give a plan."
  
  nep_phantom.3005.name:0 "Old place"
- nep_phantom.3005.desc:0 "Our scientists found out where the existence of [event_target:nep_phantom_global.GetName] came from. Perhaps everyone will not be surprised: they are from the center of the galaxy, the third sub seal which kept slience before. The third sub seal seems to warp all incoming fleet in an unidentified way (it do this in a high spped, so our sensor don't function before), and the origin looks quite distant ——— But we felt a very weak energy response similar to Orb from that direction. The brave probe group conducted a biotransmission test on the third sub-seal under the code of [event_target:nep_phantom_global.GetName], confirming that even if someone's fleet is transmitting, it has no effect; but if the transmission is a large fleet, it looks like It will lead to a period of inability to use. If there are enemies on the opposite side, the fleet may need to defend itself against the enemy. "
+ nep_phantom.3005.desc:0 "Our scientists found out where the existence of [event_target:nep_phantom_global.GetName] came from. Perhaps everyone will not be surprised: they are from the center of the galaxy, the third sub seal which kept slience before. The third sub seal seems to warp all incoming fleet in an unidentified way (it do this in a high spped, so our sensor don't function before), and the origin looks quite distant --- But we felt a very weak energy response similar to Orb from that direction. The brave probe group conducted a biotransmission test on the third sub-seal under the code of [event_target:nep_phantom_global.GetName], confirming that even if someone's fleet is transmitting, it has no effect; but if the transmission is a large fleet, it looks like It will lead to a period of inability to use. If there are enemies on the opposite side, the fleet may need to defend itself against the enemy. "
  nep_phantom.3005.a:0 "Call our strongest fleet, we must solve them."
  
  nep_phantom.3006.name:0 "Arrival"
@@ -31,7 +31,7 @@
  
  nep_phantom.30061.name:0 "Warp point is ready for use"
  nep_phantom.30061.desc:0 "The warp point of [event_target:nep_Ginan_system.GetName] is ready for use. But third sub seal kept slience too,it seems that too many fleets are not allowed to appear in these systems."
- nep_phantom.30061.a:0 "Good。"
+ nep_phantom.30061.a:0 "Good."
  
  nep_phantom.30062.name:0 "Warp point is ready for use"
  nep_phantom.30062.desc:0 "The Warp point of [event_target:nep_seal_3.GetName] is ready for use."
@@ -74,7 +74,7 @@
  nep_phantom.30081.a:0 "Excellent!"
  
  nep_phantom.3201.name:0 "Threat from Above"
- nep_phantom.3201.desc.a:0 "The fleet that was previously mistaken for the remnants of the Krah'en Empire has arrived [From.GetName]. They are orbiting [From.GetName] and nobody knows what they want to do. Our military tried various ways to intercept it, but our attacks are completely ineffective and they don't accept any communication. They seem to be looming, and some even think that this is the ghost of the Krah'en empire —— of course, this is impossible. In addition, the military and the civil society have given them many names: Ghost, Illusion, Blurs, and Phantom. Would you better give them an offical name?"
+ nep_phantom.3201.desc.a:0 "The fleet that was previously mistaken for the remnants of the Krah'en Empire has arrived [From.GetName]. They are orbiting [From.GetName] and nobody knows what they want to do. Our military tried various ways to intercept it, but our attacks are completely ineffective and they don't accept any communication. They seem to be looming, and some even think that this is the ghost of the Krah'en empire -- of course, this is impossible. In addition, the military and the civil society have given them many names: Ghost, Illusion, Blurs, and Phantom. Would you better give them an offical name?"
  nep_phantom.3201.desc.b:0 "The fleet of another team [event_target:nep_phantom_global.GetName] has arrived at [From.GetName]. The local people have started panic and we must deal with it as soon as possible."
  nep_phantom.3201.aa:0 "Their code name uses the Phantom. Pay close attention to their actions."
  nep_phantom.3201.ab:0 "Their code name uses the Ghost. Pay close attention to their actions."
@@ -153,7 +153,7 @@
  nep_phantom_research:0 "[event_target:nep_phantom_global.GetName] research"
  nep_phantom_research_DESC:0 "We must find a radical solution to the constant intrusion of [event_target:nep_phantom_global.GetName]." 
  nep_phantom_research_2:0 "[event_target:nep_phantom_global.GetName] origin research"
- nep_phantom_research_2_DESC:0 "We must find where [event_target:nep_phantom_global.GetName] come from，then solve them."
+ nep_phantom_research_2_DESC:0 "We must find where [event_target:nep_phantom_global.GetName] come from,then solve them."
  nep_phantom_Ginan:0 "Goto [event_target:nep_phantom_global.GetName] origin system"
  nep_phantom_Ginan_DESC:0 "Using the warp point of the third sub seal to the [event_target:nep_phantom_global.GetName] origin systems."
  nep_phantom_Ginan_2:0 "Return to Grand Seal system"

@@ -72,7 +72,7 @@ nep_wohp_init = {
 				homeworld = this
 			}
 			last_created_species = {
-				save_event_target_as = nep_wohp_species
+				save_global_event_target_as = nep_wohp_species
 			}
 			if = {
 				limit = {
@@ -81,7 +81,7 @@ nep_wohp_init = {
 					}
 				}
 				create_country = {
-					name = "NAME_Gaia_Resistors"
+					name = "NAME_nep_Gaia_Resistors"
 					type = primitive
 					auto_delete = no
 					#authority = auth_democratic
@@ -116,7 +116,7 @@ nep_wohp_init = {
 		}
 		
 		moon = {
-			name = "NAME_Highland"
+			name = "NAME_nep_Highland"
 			class = pc_habitat
 			orbit_angle = 45
 			orbit_distance = 10
@@ -130,20 +130,25 @@ nep_wohp_init = {
 				}
 				set_planet_flag = megastructure
 				set_planet_flag = habitat
-				create_species = {
-					is_mod = yes
-					name = "NAME_Highlander"
-					plural = "NAME_Highlanders"
-					class = event_target:nep_wohp_species
-					portrait = THIS
-					traits = {
-						ideal_planet_class = pc_gaia
-						trait = trait_self_modified
-						trait = trait_robust
-						trait = trait_wasteful
-						trait = trait_decadent
+				save_event_target_as = nep_highlander
+				event_target:nep_gaia_country = {
+					capital_scope = {
+						create_species = {
+							is_mod = yes
+							name = NAME_nep_Highlander
+							plural = NAME_nep_Highlanders
+							class = this
+							portrait = this
+							traits = {
+								ideal_planet_class = pc_gaia
+								trait = trait_self_modified
+								trait = trait_robust
+								trait = trait_wasteful
+								trait = trait_decadent
+							}
+							homeworld = event_target:nep_highlander
+						}
 					}
-					homeworld = this
 				}
 				last_created_species = {
 					save_event_target_as = nep_wohp_highlander_species
@@ -155,7 +160,7 @@ nep_wohp_init = {
 						}
 					}
 					create_country = {
-						name = "NAME_Highlander_Dominator"
+						name = "NAME_nep_Highlander_Dominator"
 						type = primitive
 						auto_delete = no
 						#authority = auth_imperial
@@ -178,17 +183,18 @@ nep_wohp_init = {
 					}
 				}
 				setup_primitive_planet = yes
+				add_building = building_urban_dwellings
+				add_building = building_primitive_farm
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				while = {
-					count = 10
-					create_pop = { species = event_target:nep_wohp_species }
-				}
-				event_target:nep_wohp_species = {
-					set_citizenship_type = {
-						country = event_target:nep_highlander_country
-						type = citizenship_slavery
-						cooldown = no
+					count = 16
+					random_owned_pop = {
+						kill_pop = yes
 					}
+				}
+				while = {
+					count = 24
+					create_pop = { species = event_target:nep_wohp_species }
 				}
 			}
 		}
@@ -337,10 +343,6 @@ nep_deus_init_02 = {
 		
 		change_orbit = @base_moon_distance
 		
-		init_effect = {
-			set_planet_flag = prescripted_ideal		# used by code, do not remove
-		}		
-
 		moon = {
 			count = { min = 0 max = 1 }
 			class = random_non_colonizable

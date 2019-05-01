@@ -164,7 +164,7 @@ ship_event = {
 	}
 	
 	immediate = {
-		owner = { country_event = { id = nep_wohp.3 days = 5 random = 3 } }
+	
 	}
 	
 	option = {
@@ -178,26 +178,23 @@ country_event = {
 	desc = "nep_wohp.3.desc"
 	picture = GFX_evt_interior_battle
 	show_sound = event_ship_bridge
-	location = FROM
+	location = FROMFROM.solar_system
 	
 	is_triggered_only = yes
 	
 	trigger = {	
-		event_target:nep_gaia_country = {
+		event_target:nep_highlander_country = {
 			capital_scope = {
+				has_observation_outpost = yes
 				observation_outpost_owner = { 
 					exists = this
 					is_same_value = root.owner
 				}
 			}
 		}
-		event_target:nep_highlander_country = {
-			capital_scope = {
-				observation_outpost_owner = { 
-					exists = this
-					is_same_value = root.owner
-				}
-			}
+		NOR = {
+			is_hostile = event_target:nep_gaia_country
+			is_hostile = event_target:nep_highlander_country
 		}
 	}
 	
@@ -268,6 +265,13 @@ country_event = {
 		room = event_target:nep_gaia_country
 	}
 	
+	trigger = {
+		NOR = {
+			is_hostile = event_target:nep_gaia_country
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
+	
 	immediate = {
 	
 	}
@@ -280,6 +284,7 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.4.b
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.41 }
 		}
@@ -309,6 +314,7 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.41.a
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.6 }
 		}
@@ -324,7 +330,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = { id = nep_wohp.42 days = 30 random = 60 }
-			#set_country_flag = nep_gaia_assist
+			set_country_flag = nep_gaia_assist
 		}
 	}
 }
@@ -337,6 +343,12 @@ country_event = {
 	diplomatic = yes
 	
 	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
+	}
 	
 	picture_event_data = {
 		portrait = event_target:nep_gaia_country
@@ -352,18 +364,19 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.42.a
+		add_resource = {
+			energy = -500
+			consumer_goods = -250
+			alloys = -150
+		}
 		hidden_effect = {
-			add_resource = {
-				energy = -500
-				consumer_goods = -250
-				alloys = -150
-			}
 			set_country_flag = nep_gaia_assist_2
 		}
 	}
 	
 	option = {
 		name = nep_wohp.42.b
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.42 days = 60 }
 		}
@@ -392,6 +405,9 @@ country_event = {
 		has_country_flag = nep_gaia_assist_1
 		has_country_flag = nep_gaia_assist_2
 		NOT = { has_special_project = nep_gaia_assist_project_2 }
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
 	}
 	
 	picture_event_data = {
@@ -427,9 +443,17 @@ country_event = {
 	show_sound = event_ground_battle
 	
 	is_triggered_only = yes
-		
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
+	}
+	
 	immediate = {
 		country_event = { id = nep_wohp.45 days = 10 }
+		remove_global_flag = nep_gaia_assist_1
+		remove_global_flag = nep_gaia_assist_2
 	}
 	
 	option = {
@@ -447,18 +471,30 @@ country_event = {
 	
 	is_triggered_only = yes
 		
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
+	}
+	
 	immediate = {
 		set_country_flag = nep_gaia_assist_war
-		remove_global_flag = nep_gaia_assist_1
-		remove_global_flag = nep_gaia_assist_2
 		event_target:nep_highlander_country.capital_scope = {
 			while = {
 				count = 10
 				create_army = {
-					name = "NAME_Gaia_assault_force"
+					name = "NAME_nep_Gaia_assault_force"
 					owner = event_target:nep_gaia_country
+					species = event_target:nep_wohp_species
 					type = nep_gaia_super_army
 				}
+			}
+		}
+		if = {
+			limit = { NOT = { is_at_war_with = event_target:nep_highlander_country } }
+			declare_war = {
+				target = event_target:nep_highlander_country
+				attacker_war_goal = wg_war_in_heaven_primitive
 			}
 		}
 	}
@@ -481,6 +517,9 @@ country_event = {
 		}
 		any_country = { has_country_flag = nep_gaia_assist_war }
 		FromFrom = { is_same_value = event_target:nep_highlander_country.capital_scope }
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
 	}
 	
 	immediate = {
@@ -527,6 +566,9 @@ country_event = {
 		}
 		any_country = { has_country_flag = nep_gaia_assist_war }
 		FromFrom = { is_same_value = event_target:nep_highlander_country.capital_scope }
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
 	}
 	
 	immediate = {
@@ -548,6 +590,12 @@ country_event = {
 	location = event_target:nep_highlander_country.capital_scope
 	
 	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_gaia_country
+		}
+	}
 	
 	immediate = { }
 	
@@ -571,21 +619,27 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {		
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
+	
 	immediate = {
 		remove_country_flag = nep_wohp_player
 		remove_country_flag = nep_wohp_see_resistance
 		remove_country_flag = nep_wohp_see_colosseum
 		event_target:nep_gaia_country.capital_scope = {
-			observation_outpost_owner = {
-				# Xenoist Faction Enlightenment Demand
-				set_timed_country_flag = {
-					flag = recent_enlightenment_timed
-					days = 7200 # 20 years
-				}
-			}
 			solar_system = {
 				every_system_planet = {
 					limit = { has_observation_outpost = yes }
+					observation_outpost_owner = {
+						# Xenoist Faction Enlightenment Demand
+						set_timed_country_flag = {
+							flag = recent_enlightenment_timed
+							days = 7200 # 20 years
+						}
+					}
 					observation_outpost = {
 						dismantle = yes
 					}
@@ -623,7 +677,7 @@ country_event = {
 					civic = civic_post_apocalyptic
 				}
 			}
-			set_name = "NAME_Gaia_Resistors"
+			set_name = "NAME_nep_Gaia_Republic"
 			add_opinion_modifier = { who = root modifier = nep_you_are_our_Savior }
 			if = {
 				limit = {
@@ -647,11 +701,13 @@ country_event = {
 			}
 			give_technology = { tech = tech_gaia_super_weapon message = no }
 			give_technology = { tech = tech_wormhole_stabilization message = no }
+			event_target:nep_wohp_species = {
+				set_military_service_type = { country = prev type = military_service_full cooldown = no }
+			}
+			event_target:nep_wohp_highlander_species = {
+				set_military_service_type = { country = prev type = military_service_full cooldown = no }
+			}
 			capital_scope = {
-				if = {
-					limit = { has_modifier = nep_bombard_by_highlander }
-					remove_modifier = nep_bombard_by_highlander
-				}
 				solar_system = {
 					every_system_planet = {
 						limit = { 
@@ -661,12 +717,6 @@ country_event = {
 							modifier = nep_black_technologies
 							days = -1
 						}
-					}
-					random_system_planet = {
-						limit = {
-							has_modifier = nep_extravagant_orgy
-						}
-						remove_modifier = nep_extravagant_orgy
 					}
 				}
 			}
@@ -690,6 +740,13 @@ country_event = {
 
 	diplomatic = yes
 	
+	trigger = {
+		NOR = {
+			is_hostile = event_target:nep_gaia_country
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
+	
 	is_triggered_only = yes
 		
 	picture_event_data = {
@@ -712,6 +769,7 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.5.b
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.51 }
 		}
@@ -741,6 +799,7 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.51.a
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.6 }
 		}
@@ -755,6 +814,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = { id = nep_wohp.52 days = 30 random = 60 }
+			set_country_flag = nep_highlander_assist
 		}
 	}
 }
@@ -767,6 +827,12 @@ country_event = {
 	diplomatic = yes
 	
 	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
 	
 	picture_event_data = {
 		portrait = event_target:nep_highlander_country
@@ -782,17 +848,18 @@ country_event = {
 	
 	option = {
 		name = nep_wohp.52.a
+		add_resource = {
+			energy = -1000
+			consumer_goods = -300
+		}
 		hidden_effect = {
-			add_resource = {
-				energy = -1000
-				consumer_goods = -300
-			}
 			set_country_flag = nep_highlander_assist_2
 		}
 	}
 	
 	option = {
 		name = nep_wohp.42.b
+		default_hide_option = yes
 		hidden_effect = {
 			country_event = { id = nep_wohp.52 days = 60 }
 		}
@@ -821,6 +888,9 @@ country_event = {
 		has_country_flag = nep_highlander_assist_1
 		has_country_flag = nep_highlander_assist_2
 		NOT = { has_special_project = nep_highlander_conquer_project_2 }
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
 	}
 	
 	picture_event_data = {
@@ -855,9 +925,17 @@ country_event = {
 	show_sound = event_ground_battle
 	
 	is_triggered_only = yes
-		
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
+	
 	immediate = {
 		country_event = { id = nep_wohp.55 days = 10 }
+		remove_global_flag = nep_highlander_assist_1
+		remove_global_flag = nep_highlander_assist_2
 	}
 	
 	option = {
@@ -874,19 +952,31 @@ country_event = {
 	location = event_target:nep_gaia_country.capital_scope
 	
 	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
 		
 	immediate = {
 		set_country_flag = nep_highlander_assist_war
-		remove_global_flag = nep_highlander_assist_1
-		remove_global_flag = nep_highlander_assist_2
 		event_target:nep_gaia_country.capital_scope = {
 			while = {
 				count = 10
 				create_army = {
 					name = "NAME_Gaia_assault_force"
 					owner = event_target:nep_highlander_country
+					species = event_target:nep_wohp_species
 					type = nep_gene_slave_army
 				}
+			}
+		}
+		if = {
+			limit = { NOT = { is_at_war_with = event_target:nep_gaia_country } }
+			declare_war = {
+				target = event_target:nep_gaia_country
+				attacker_war_goal = wg_war_in_heaven_primitive
 			}
 		}
 	}
@@ -909,6 +999,9 @@ country_event = {
 		}
 		any_country = { has_country_flag = nep_highlander_assist_war }
 		FromFrom = { is_same_value = event_target:nep_gaia_country.capital_scope }
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
 	}
 	
 	immediate = {
@@ -955,6 +1048,9 @@ country_event = {
 		}
 		any_country = { has_country_flag = nep_highlander_assist_war }
 		FromFrom = { is_same_value = event_target:nep_gaia_country.capital_scope }
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
 	}
 	
 	immediate = {
@@ -999,21 +1095,27 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {		
+		NOT = {
+			is_hostile = event_target:nep_highlander_country
+		}
+	}
+	
 	immediate = {
 		remove_country_flag = nep_wohp_player
 		remove_country_flag = nep_wohp_see_resistance
 		remove_country_flag = nep_wohp_see_colosseum
 		event_target:nep_highlander_country.capital_scope = {
-			observation_outpost_owner = {
-				# Xenoist Faction Enlightenment Demand
-				set_timed_country_flag = {
-					flag = recent_enlightenment_timed
-					days = 7200 # 20 years
-				}
-			}
 			solar_system = {
 				every_system_planet = {
 					limit = { has_observation_outpost = yes }
+					observation_outpost_owner = {
+						# Xenoist Faction Enlightenment Demand
+						set_timed_country_flag = {
+							flag = recent_enlightenment_timed
+							days = 7200 # 20 years
+						}
+					}
 					observation_outpost = {
 						dismantle = yes
 					}
@@ -1058,7 +1160,7 @@ country_event = {
 					civic = civic_life_seeded
 				}
 			}
-			set_name = "NAME_Highlander_Kingdom"
+			set_name = "NAME_nep_Highlander_Kingdom"
 			add_opinion_modifier = { who = root modifier = nep_you_are_very_strong }
 			if = {
 				limit = {
@@ -1080,13 +1182,15 @@ country_event = {
 					}
 				}
 			}
+			event_target:nep_wohp_species = {
+				set_military_service_type = { country = prev type = military_service_limited cooldown = no }
+			}
+			event_target:nep_wohp_highlander_species = {
+				set_military_service_type = { country = prev type = military_service_full cooldown = no }
+			}
 			set_country_flag = nep_can_use_gene_slave
 			give_technology = { tech = tech_wormhole_stabilization message = no }
 			capital_scope = {
-				if = {
-					limit = { has_modifier = nep_extravagant_orgy }
-					remove_modifier = nep_extravagant_orgy
-				}
 				solar_system = {
 					every_system_planet = {
 						limit = { 
@@ -1096,12 +1200,6 @@ country_event = {
 							modifier = nep_black_technologies
 							days = -1
 						}
-					}
-					random_system_planet = {
-						limit = {
-							has_modifier = nep_bombard_by_highlander
-						}
-						remove_modifier = nep_bombard_by_highlander
 					}
 				}
 			}
@@ -1148,7 +1246,7 @@ country_event = {
 		is_country_type = default
 		NOR = {
 			has_country_flag = nep_highlander_assist_war
-			is_same_value = event_target:nep_highlaner_country
+			is_same_value = event_target:nep_highlander_country
 		}
 	}
 	
@@ -1205,37 +1303,31 @@ event = {
 		event_target:nep_gaia_country = {
 			capital_scope = {
 				if = {
-					limit = { NOT = { has_modifier = nep_bombard_by_highlander } }
-					add_modifier = {
-						modifier = nep_bombard_by_highlander
-						days = -1
-					}
-				}
-				if = {
 					limit = { planet_devastation > 90 }
 					if = { limit = { has_ground_combat = no } add_planet_devastation = -10 }					
 				}
 				else = {
 					random_list = {
-						1 = { add_planet_devastation = -7 }
-						1 = { add_planet_devastation = -4 }
-						1 = { add_planet_devastation = -1 }
+						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -7 } }
+						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -4 } }
+						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -1 } }
 						1 = { add_planet_devastation = 1 }
 						1 = { add_planet_devastation = 4 }
 						1 = { add_planet_devastation = 7 }
-						1 = { }
+						1 = { if = { limit = { has_ground_combat = yes } add_planet_devastation = 5 }  }
 					}
 				}
 				if = {
 					limit = {
-						count_planet_army = {
-							count < 12
+						count_armies = {
 							limit = { army_type = nep_gaia_super_army_defensive }
+							count < 12
 						}
 					}
 					create_army = {
-						name = "NAME_Gaia_resist_force"
+						name = "NAME_nep_Gaia_resist_force"
 						owner = event_target:nep_gaia_country
+						species = event_target:nep_wohp_species
 						type = nep_gaia_super_army_defensive
 					}
 				}
@@ -1244,22 +1336,16 @@ event = {
 		event_target:nep_highlander_country = {
 			capital_scope = {
 				if = {
-					limit = { NOT = { has_modifier = nep_extravagant_orgy } }
-					add_modifier = {
-						modifier = nep_extravagant_orgy
-						days = -1
-					}
-				}
-				if = {
 					limit = {
-						count_planet_army = {
-							count < 12
+						count_armies = {
 							limit = { army_type = nep_gene_slave_army_defensive }
+							count < 12
 						}
 					}
 					create_army = {
-						name = "NAME_highlander_royal_ashes"
+						name = "NAME_nep_highlander_royal_ashes"
 						owner = event_target:nep_highlander_country
+						species = event_target:nep_wohp_species
 						type = nep_gene_slave_army_defensive
 					}
 				}
@@ -1283,7 +1369,7 @@ event = {
 	immediate = {
 		event_target:nep_gaia_country = {
 			capital_scope = {
-				planet_event = { id = nep_wohp.92 days = 60 random = 60 }
+				planet_event = { id = nep_wohp.92 days = 150 random = 60 }
 			}
 		}
 		event_target:nep_highlander_country = {
@@ -1303,6 +1389,11 @@ planet_event = {
 	trigger = {
 		has_global_flag = nep_wohp_spawn
 		NOT = { has_global_flag = nep_wohp_end }
+		NOT = {
+			any_country = {
+				has_country_flag = nep_gaia_assist
+			}
+		}
 	}
 	
 	immediate = {
@@ -1311,17 +1402,23 @@ planet_event = {
 			create_army = {
 				name = "NAME_Gaia_assault_force"
 				owner = event_target:nep_gaia_country
+				species = event_target:nep_wohp_species
 				type = nep_gaia_super_army
 			}
 		}
-		observation_outpost_owner = {
-			if = {
-				limit = { 
-					has_country_flag = nep_wohp_player
-					NOT = { has_country_flag = nep_wohp_see_resistance } 
+		solar_system = {
+			every_system_planet = {
+				limit = { has_observation_outpost = yes }
+				observation_outpost_owner = {
+					if = {
+						limit = { 
+							has_country_flag = nep_wohp_player
+							NOT = { has_country_flag = nep_wohp_see_resistance } 
+						}
+						set_country_flag = nep_wohp_see_resistance
+						country_event = { id = nep_wohp.910 }
+					}
 				}
-				set_country_flag = nep_wohp_see_resistance
-				country_event = { id = nep_wohp.910 }
 			}
 		}
 	}
@@ -1376,25 +1473,36 @@ planet_event = {
 	trigger = {
 		has_global_flag = nep_wohp_spawn
 		NOT = { has_global_flag = nep_wohp_end }
+		NOT = {
+			any_country = {
+				has_country_flag = nep_highlander_assist
+			}
+		}
 	}
 	
 	immediate = {
 		while = {
 			count = 5
 			create_army = {
-				name = "NAME_highlander_gladiators"
+				name = "NAME_nep_highlander_gladiators"
 				owner = event_target:nep_highlander_country
+				species = event_target:nep_wohp_species
 				type = nep_gene_slave_army
 			}
 		}
-		observation_outpost_owner = {
-			if = {
-				limit = {
-					has_country_flag = nep_wohp_player
-					NOT = { has_country_flag = nep_wohp_see_colosseum } 
+		solar_system = {
+			every_system_planet = {
+				limit = { has_observation_outpost = yes }
+				observation_outpost_owner = {
+					if = {
+						limit = {
+							has_country_flag = nep_wohp_player
+							NOT = { has_country_flag = nep_wohp_see_colosseum } 
+						}
+						set_country_flag = nep_wohp_see_colosseum
+						country_event = { id = nep_wohp.920 }
+					}
 				}
-				set_country_flag = nep_wohp_see_colosseum
-				country_event = { id = nep_wohp.920 }
 			}
 		}
 	}

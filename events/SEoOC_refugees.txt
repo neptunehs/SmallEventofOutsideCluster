@@ -78,7 +78,7 @@ pop_event = {
 	title = OK
 	desc = OK
 	
-	#hide_window = yes
+	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
@@ -97,7 +97,7 @@ planet_event = {
 	title = OK
 	desc = OK
 	
-	#hide_window = yes
+	hide_window = yes
 	
 	trigger = {
 		exists = owner
@@ -131,7 +131,7 @@ pop_event = {
 	id = nep_refugees.6
 	title = OK
 	desc = OK
-	#hide_window = yes
+	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
@@ -164,7 +164,7 @@ planet_event = {
 	title = OK
 	desc = OK
 	
-	#hide_window = yes
+	hide_window = yes
 	
 	trigger = {
 		exists = owner

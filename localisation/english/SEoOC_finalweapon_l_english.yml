@@ -72,7 +72,7 @@
  nep_finalweapon.8007.a:0 "Good."
  
  nep_finalweapon.9.name:0 "Finalweapon:Recover"
- nep_finalweapon.9.desc:0 "We finally started this weapon. In order to start it, we performed the system intrusion, replacement of parts, etc., so it should be weaker than the original -- for example, it can not now jump in the entire universe, because the original jump drive engine is damaged ——— In addition, the starburst function seems to require more than two machines to be used without danger. We can only ensure one, and basically cannot be used. ""
+ nep_finalweapon.9.desc:0 "We finally started this weapon. In order to start it, we performed the system intrusion, replacement of parts, etc., so it should be weaker than the original -- for example, it can not now jump in the entire universe, because the original jump drive engine is damaged --- In addition, the starburst function seems to require more than two machines to be used without danger. We can only ensure one, and basically cannot be used. ""
  nep_finalweapon.9.a:0 "Good." 
  
  nep_finalweapon_poi:0 "Grand Seal"
@@ -106,7 +106,7 @@
  nep_FINALWEAPON_THRUSTER_DESC:0 "Unknown."
  
  nep_finalweapon_antigov:0 "Anti-government Wave"
- nep_finalweapon_antigov_desc:0 "The government’s over-concentration of interest in the center of the universe has led to disasters, and the masses no longer trust these careerists. The people hope to have a better government and lead them to have the strength that no longer fear disaster.."
+ nep_finalweapon_antigov_desc:0 "The government's over-concentration of interest in the center of the universe has led to disasters, and the masses no longer trust these careerists. The people hope to have a better government and lead them to have the strength that no longer fear disaster.."
  nep_grand_seal_burst_debuff_5:0 "Physical common sense changes-Crisis state"
  nep_grand_seal_burst_debuff_5_desc:0 "The explosion in the center of the galaxy caused a serious change in the entire galaxy. Almost all physics empirical formulas lost their function, and even some constants we have trusted for years have lost their effect. There is no doubt that all civilizations with certain technology are now in chaos."
  nep_grand_seal_burst_debuff_4:0 "Physical common sense changes-Emergency state"

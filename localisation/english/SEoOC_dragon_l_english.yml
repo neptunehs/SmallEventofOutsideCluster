@@ -42,7 +42,7 @@
  
  nep_dragon.64.name:0 "Summoned Dragons"
  nep_dragon.64.desc:0 "There is a huge dragon and a lot of small dragons in this galaxy.However, no matter how you look at it, the opposite is not like being friendly to us. And the energy response shows that the dragon is very strong, and if want to defeat it, we need to be prepared."
- nep_dragon.64.a:0 "Next we must to kill a dragon? It’s like being in myth..." 
+ nep_dragon.64.a:0 "Next we must to kill a dragon? It's like being in myth..." 
 
  nep_dragon.8.name:0 "Reward?"
  nep_dragon.8.desc.a:0 "There is a --- do not know whether it is good or bad --- news, after we defeated the dragon, our §Ydragon temple§! suddenly began to operate. At present, there is no danger. The working temple shows how to use them: as long as we need a considerable cost and the power of the surrounding seven planets, we can summon a new dragon – but this dragon will be led by us. Text founded in Grand seal:"§YTwo orb§! and §Ydragon§! sacrificed here", I wonder if this is the "dragon"?"
@@ -54,7 +54,7 @@
  nep_dragon.8.c:0 "It's too dangerous." 
  
  nep_dragon.9.name:0 "Summon Successed"
- nep_dragon.9.desc:0 "We successfully summoned a heptagon dragon————the cost is that the seven planets became bleak because they lost the force. In addition, the dragon has not yet reached the best state. According to the information of the Dragon Temple, we still need to give it more star force. Star Force seems to slowly recover, let's wait."
+ nep_dragon.9.desc:0 "We successfully summoned a heptagon dragon----the cost is that the seven planets became bleak because they lost the force. In addition, the dragon has not yet reached the best state. According to the information of the Dragon Temple, we still need to give it more star force. Star Force seems to slowly recover, let's wait."
  nep_dragon.9.a:0 "Good." 
  
  nep_dragon.91.name:0 "Summon Failed"
@@ -70,7 +70,7 @@
  nep_dragon.93.c:0 "It's too dangerous."
  
  nep_dragon.94.name:0 "Perfection Successed"
- nep_dragon.94.desc:0 "Our Heptagon Dragon has become its strongest state. ————The price is that the seven planets become barren because they lost the force. Hope it will play a powerful role in the war."
+ nep_dragon.94.desc:0 "Our Heptagon Dragon has become its strongest state. ----The price is that the seven planets become barren because they lost the force. Hope it will play a powerful role in the war."
  nep_dragon.94.a:0 "Excellent." 
  
  nep_dragon.941.name:0 "Perfection Failed"
@@ -159,7 +159,7 @@
  NEP_SEALPORTAL_GALACTIC_DESC:0 "Special celestial bodies with black hole and wormhole properties"
  NEP_SEALPORTAL_GALACTIC_CANNOT_USE:0 "Our fleet cannot withstand the pressure of black holes."
  nep_dragon_summon:0 "Dragon Summoning"
- nep_dragon_summon_DESC:0 "Dragon temple started operation, and we can now summon a new dragon-—at the expense of the temporary bleak of the seven planets."
+ nep_dragon_summon_DESC:0 "Dragon temple started operation, and we can now summon a new dragon--at the expense of the temporary bleak of the seven planets."
  nep_dragon_kaier:0 "Dragon Perfection"
  nep_dragon_kaier_DESC:0 "If the star force of the seven planets has been restored, we can try to perfect the dragon."
  

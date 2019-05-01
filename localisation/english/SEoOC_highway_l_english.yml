@@ -80,12 +80,12 @@
  nep_highway.35.b:0 "We have wasted enough time! Go for other meaningful work!"
  
  nep_highway.4.name:0 "Interesting! Discovery"
- nep_highway.4.desc:0 "We translated the files we got in the relic(Or the note,it should be said).They are full of trivial things in life.There is nothing valuable.(Perhaps it is worth publishing a book called "The Life of Ancient Xenos?")But the content of a note made us feel extremely interested:"(Unreadable calendar)Waiting at the station §R<Missing content>§! on the §Yhighway§!",with a bunch of strange numbers.There are some things in these files that should be study notes, which have just recorded how to read these numbers.These strange numbers are a kind of coordinates,after conversion with our coordinates,the result is directed to a star field not recorded on our chart:And there is exactly one system we didn’t find before!However, this system probably does not have hyperlane access to other galaxies(This means that we have to use jump drive)."
+ nep_highway.4.desc:0 "We translated the files we got in the relic(Or the note,it should be said).They are full of trivial things in life.There is nothing valuable.(Perhaps it is worth publishing a book called "The Life of Ancient Xenos?")But the content of a note made us feel extremely interested:"(Unreadable calendar)Waiting at the station §R<Missing content>§! on the §Yhighway§!",with a bunch of strange numbers.There are some things in these files that should be study notes, which have just recorded how to read these numbers.These strange numbers are a kind of coordinates,after conversion with our coordinates,the result is directed to a star field not recorded on our chart:And there is exactly one system we didn't find before!However, this system probably does not have hyperlane access to other galaxies(This means that we have to use jump drive)."
  nep_highway.4.a:0 "interesting. Maybe we should find a way to go in."
  nep_highway.4.b:0 "Just a bunch of junk data, don't waste more time on it!"
  
  nep_highway.45.name:0 "Interesting! Discovery"
- nep_highway.45.desc:0 "We translated the files we got in the storage(Although most of the data inside is corrupted) and all we found are scheduled records.There is nothing valuable.(Perhaps the only thing worth studying is "the robotic naming method of ancient xenos?")But there is a recorded content that makes us feel extremely interested:"(Unreadable calendar)Scheduling §R<ERROR>§! to station §R<Missing content>§! on the §Yhighway§!".Then we searched the memory storage for the keyword "highway", and most of the data obtained was damaged, but one of the data was completely retained.This record is a kind of coordinate, and there is a usage in another undamaged record,after conversion with our coordinates,the result is directed to a star field not recorded on our chart:And there is exactly one system we didn’t find before!However, this system probably does not have hyperlane access to other galaxies(This means that we have to use jump drive)."
+ nep_highway.45.desc:0 "We translated the files we got in the storage(Although most of the data inside is corrupted) and all we found are scheduled records.There is nothing valuable.(Perhaps the only thing worth studying is "the robotic naming method of ancient xenos?")But there is a recorded content that makes us feel extremely interested:"(Unreadable calendar)Scheduling §R<ERROR>§! to station §R<Missing content>§! on the §Yhighway§!".Then we searched the memory storage for the keyword "highway", and most of the data obtained was damaged, but one of the data was completely retained.This record is a kind of coordinate, and there is a usage in another undamaged record,after conversion with our coordinates,the result is directed to a star field not recorded on our chart:And there is exactly one system we didn't find before!However, this system probably does not have hyperlane access to other galaxies(This means that we have to use jump drive)."
  nep_highway.45.a:0 "interesting. Maybe we should find a way to go in."
  nep_highway.45.b:0 "Just a bunch of junk data, don't waste more time on it!"
  
@@ -126,7 +126,7 @@
  nep_highway_cybrex_explore_DESC:0 "Explore Cybrex relic.See if we can find something useful?" 
  
  nep_highway_first_station_explore:0 "Explore "Station" of "Highway""
- nep_highway_first_station_explore_DESC:0 "What is the “highway” and “station” mentioned in the record?"
+ nep_highway_first_station_explore_DESC:0 "What is the "highway" and "station" mentioned in the record?"
  
  first_highway_station_system_poi_name:0 "Poisition of interest"
  first_highway_station_system_poi_desc:0 "Here is where the record is mentioned."

@@ -1,6 +1,6 @@
 ﻿l_default:
  #############################
- #country
+ #country&species
  #############################
  NAME_Malfunctioning_Guards_country:0 "Malfunctioning Guards"
  NAME_nep_Seal_Evil_country:0 "Sealed Evil"
@@ -22,7 +22,13 @@
  NAME_nep_blurs:0 "Blurs"
  
  NAME_nep_finalweapon_country:0 "Corrupted Finalweapons"
-
+ 
+ NAME_nep_Gaia_Resistors:0 "Gaia Resistors"
+ NAME_nep_Gaia_Republic:0 "Republic of Gaia"
+ NAME_nep_Highlander:0 "Highlander"
+ NAME_nep_Highlanders:0 "Highlanders"
+ NAME_nep_Highlander_Dominator:0 "Highlander Dominator"
+ NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
  #############################
  #fleet&army
  #############################
@@ -54,6 +60,11 @@
  NAME_nep_ghost_fleet:0 "Ghost"
  NAME_nep_illusion_fleet:0 "Illusion"
  NAME_nep_blurs_fleet:0 "Blurs"
+ 
+ NAME_nep_Gaia_assault_force:0 "Gaia Assault Force"
+ NAME_nep_Gaia_resist_force:0 "Gaia Resist Force"
+ NAME_nep_highlander_royal_ashes:0 "Royal Ashes Force"
+ NAME_nep_highlander_gladiators:0 "Gladiators Force"
  
  ###########################
  #design
@@ -179,6 +190,11 @@
  NAME_Imai:0 "Imai"
  NAME_Mimosa:0 "Mimosa"
  NAME_Ginan:0 "Ginan"
+ 
+ NAME_nep_Gaia:0 "Gaia"
+ NAME_nep_Gaiaa:0 "Outerland"
+ NAME_nep_Gaiab:0 "Darkland"
+ NAME_nep_Highland:0 "Highland"
  
  ###############################
  #misc

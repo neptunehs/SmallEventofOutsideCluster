@@ -1,0 +1,31 @@
+civic_nep_deus_ex_machina = {
+	potential = {
+		ethics = ethic_fanatic_spiritualist
+		authority = auth_dictatorial
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_mechanists
+				value = civic_agrarian_idyll
+				value = civic_syncretic_evolution
+				value = civic_life_seeded
+				value = civic_philosopher_king
+				value = civic_feudal_realm
+				value = civic_corporate_dominion
+				value = civic_shadow_council
+				value = civic_fanatic_purifiers
+				value = civic_exalted_priesthood
+			}
+		}
+	}
+	modification = no
+	random_weight = {
+		base = 0
+	}
+	description = "civic_tooltip_nep_deus_ex_machina_effects"
+
+	traits = {
+		trait = trait_nep_servent_of_machina
+	}
+}

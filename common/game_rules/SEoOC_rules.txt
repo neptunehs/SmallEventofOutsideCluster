@@ -55,7 +55,24 @@ can_enter_system_by_jump = {
 }
 
 can_take_hostile_actions = {
+	#SEoOC
 	if = {
+		limit = {
+			OR = {
+				AND = {
+					root = { has_country_flag = nep_gaia_assist_war }
+					has_country_flag = nep_highlander_country
+				}
+				AND = {
+					root = { has_country_flag = nep_highlander_assist_war }
+					has_country_flag = nep_gaia_country
+				}
+			}
+		}
+		always = yes
+	}
+	#Vanilia
+	else_if = {
 		limit = {
 			ROOT = {
 				has_policy_flag = first_contact_attack_not_allowed

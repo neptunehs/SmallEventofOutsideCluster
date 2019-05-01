@@ -1142,3 +1142,19 @@ fleet_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nep_test.26
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_owned_pop_species = {
+			set_military_service_type = { country = root type = military_service_none cooldown = yes }
+		}
+	}
+}
