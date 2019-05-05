@@ -100,7 +100,8 @@ nep_gaia_super_army = {
 	resources = {
 		category = armies
 		cost = {
-			minerals = 300
+			minerals = 100
+			alloys = 100
 		}
 
 		upkeep = {
@@ -131,13 +132,14 @@ nep_gaia_super_army_defensive = {
 	morale = 2.5
 	collateral_damage = 0.75
 	war_exhaustion = 3.0
-	time = 100
+	time = 200
 	icon_frame = 9
 
 	resources = {
 		category = armies
 		cost = {
-			minerals = 300
+			minerals = 100
+			alloys = 100
 		}
 
 		upkeep = {
@@ -176,6 +178,7 @@ nep_gene_slave_army_defensive = {
 		category = armies
 		cost = {
 			minerals = 100
+			energy = 200
 		}
 
 		upkeep = {
@@ -216,6 +219,7 @@ nep_gene_slave_army = {
 		category = armies
 		cost = {
 			minerals = 100
+			energy = 200
 		}
 
 		upkeep = {

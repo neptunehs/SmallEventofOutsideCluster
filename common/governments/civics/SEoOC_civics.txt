@@ -1,9 +1,11 @@
 civic_nep_deus_ex_machina = {
 	potential = {
-		ethics = ethic_fanatic_spiritualist
-		authority = auth_dictatorial
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
 	}
 	possible = {
+		ethics = { value = ethic_fanatic_spiritualist }
+		authority = { value = auth_dictatorial }
 		civics = {
 			NOR = {
 				value = civic_mechanists
@@ -16,6 +18,7 @@ civic_nep_deus_ex_machina = {
 				value = civic_shadow_council
 				value = civic_fanatic_purifiers
 				value = civic_exalted_priesthood
+				value = civic_slaver_guilds
 			}
 		}
 	}
@@ -23,6 +26,7 @@ civic_nep_deus_ex_machina = {
 	random_weight = {
 		base = 0
 	}
+
 	description = "civic_tooltip_nep_deus_ex_machina_effects"
 
 	traits = {

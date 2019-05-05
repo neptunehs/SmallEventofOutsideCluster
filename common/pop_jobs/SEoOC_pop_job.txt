@@ -128,3 +128,132 @@ nep_dragon_administrator_drone_machine = {
 		}
 	}
 }
+
+nep_miko = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_nep_palace_of_machina
+	clothes_texture_index = 1
+	icon = high_priest
+
+	possible = {
+		has_trait = trait_nep_servent_of_machina
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 4
+			influence = 1
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	weight = {
+		weight = @ruler_job_weight
+		modifier = {
+			factor = 2
+			has_job = nep_miko
+		}
+		modifier = {
+			factor = 0.1
+			has_ethic = ethic_materialist
+			NOT = { has_job = nep_miko }
+		}
+		modifier = {
+			factor = 0
+			has_citizenship_rights = no	
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_repugnant
+		}	
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}		
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_quarrelsome
+		}	
+		modifier = {
+			factor = 1.2
+			has_ethic = ethic_spiritualist
+		}	
+		modifier = {
+			factor = 1.1
+			has_trait = trait_natural_sociologists
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_trait = trait_nep_servent_of_machina }
+		}
+		modifier = {
+			factor = 0
+			has_job = nep_servent_of_god
+		}
+	}
+}
+
+nep_servent_of_god = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_nep_palace_of_machina
+	clothes_texture_index = 1
+	icon = organic_battery
+
+	possible = {
+		has_trait = trait_nep_servent_of_machina
+	}
+
+	pop_modifier = {
+		pop_housing_usage_add = -0.5
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			energy = 4
+		}
+	}
+	
+	weight = {
+		weight = 2000
+		modifier = {
+			factor = 100
+			has_job = nep_servent_of_god
+		}
+		modifier = {
+			factor = 0
+			has_citizenship_rights = no	
+		}
+		modifier = {
+			factor = 2.5
+			has_trait = trait_charismatic
+		}
+		modifier = {
+			factor = 0.1
+			has_trait = trait_repugnant
+		}	
+		modifier = {
+			factor = 0
+			NOT = { has_trait = trait_nep_servent_of_machina }
+		}
+		modifier = {
+			factor = 2.5
+			has_job = nep_miko
+		}
+	}
+}

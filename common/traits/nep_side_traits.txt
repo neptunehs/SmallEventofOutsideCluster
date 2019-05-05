@@ -1,0 +1,23 @@
+trait_nep_servent_of_machina = {
+	cost = 0
+	sorting_priority = 20
+	
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_great_khan.dds"
+
+	initial = no
+	randomized = no
+	modification = no
+	forced_happiness = no
+	immortal_leaders = no
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	ai_weight = {
+		weight = 0
+	}
+	
+	modifier = {
+		pop_amenities_usage_mult = -0.5
+		pop_ethic_spiritualist_attraction_mult = 0.5		
+	}
+}

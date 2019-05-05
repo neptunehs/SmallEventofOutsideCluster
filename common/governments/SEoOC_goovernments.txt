@@ -1,27 +1,25 @@
-gov_nep_ = {
-	ruler_title = RT_CHIEF_PRECENTOR
-	ruler_title_female = RT_CHIEF_PRECENTOR_FEMALE
+gov_nep_servent_of_machina = {
+	ruler_title = RT_nep_HIGH_MIKO
+	ruler_title_female = RT_nep_HIGH_MIKO
 
 	election_candidates = {
+		modifier = {
+			add = 1000
+			gender = female
+		}
 		modifier = {
 			add = 100
 			leader_class = ruler
 		}
-		modifier = {
-			add = 10
-			leader_class = governor
-		}
 	}
 
 	possible = {
-		has_authority = auth_oligarchic
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist			
-		}
+		has_authority = auth_dictatorial
+		has_ethic = ethic_fanatic_spiritualist
+		has_valid_civic = civic_nep_deus_ex_machina
 	}
 
 	weight = {
-		base = 5
+		base = 2000
 	}
 }

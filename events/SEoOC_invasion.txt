@@ -238,7 +238,7 @@ fleet_event = {
 	id = nep_inva.2
 	title = "nep_inva.2.name"
 	desc = "nep_inva.2.desc"	
-	picture = GFX_evt_fleet_evil
+	picture = GFX_evt_unidentified_ship
 	location = FROM
 
 	fire_only_once = yes

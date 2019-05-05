@@ -452,8 +452,8 @@ country_event = {
 	
 	immediate = {
 		country_event = { id = nep_wohp.45 days = 10 }
-		remove_global_flag = nep_gaia_assist_1
-		remove_global_flag = nep_gaia_assist_2
+		remove_country_flag = nep_gaia_assist_1
+		remove_country_flag = nep_gaia_assist_2
 	}
 	
 	option = {
@@ -485,7 +485,7 @@ country_event = {
 				create_army = {
 					name = "NAME_nep_Gaia_assault_force"
 					owner = event_target:nep_gaia_country
-					species = event_target:nep_wohp_species
+					species = event_target:nep_gaia_species
 					type = nep_gaia_super_army
 				}
 			}
@@ -619,9 +619,19 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	trigger = {		
+	trigger = {
+		event_target:nep_gaia_country = {
+			capital_scope = {
+				exists = this
+				is_planet_class = pc_nuked
+				OR = {
+					NOT = { exists = controller	}
+					controller = { is_same_value = event_target:nep_gaia_country }
+				}
+			}
+		}
 		NOT = {
-			is_hostile = event_target:nep_highlander_country
+			is_hostile = event_target:nep_gaia_country
 		}
 	}
 	
@@ -701,12 +711,6 @@ country_event = {
 			}
 			give_technology = { tech = tech_gaia_super_weapon message = no }
 			give_technology = { tech = tech_wormhole_stabilization message = no }
-			event_target:nep_wohp_species = {
-				set_military_service_type = { country = prev type = military_service_full cooldown = no }
-			}
-			event_target:nep_wohp_highlander_species = {
-				set_military_service_type = { country = prev type = military_service_full cooldown = no }
-			}
 			capital_scope = {
 				solar_system = {
 					every_system_planet = {
@@ -719,6 +723,47 @@ country_event = {
 						}
 					}
 				}
+			}
+			#science
+			create_fleet = {
+				effect = {
+					set_owner = event_target:nep_gaia_country
+
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+
+					set_fleet_stance = evasive				
+					set_location = event_target:nep_gaia_country.capital_scope
+					
+					owner = {
+						create_leader = {
+							class = scientist
+							sub_type = survey
+							name = random
+							species = owner_main_species
+						}
+					}
+					set_leader = last_created_leader
+				}			
+			}				
+			#constructor
+			create_fleet = {
+				effect = {
+					set_owner = event_target:nep_gaia_country
+					
+					create_ship = {
+						name = random
+						random_existing_design = constructor
+					}
+					
+					set_fleet_stance = evasive
+					set_location = event_target:nep_gaia_country.capital_scope
+				}
+			}
+			event_target:nep_gaia_country = {
+				destroy_country = yes
 			}
 		}
 		event_target:nep_highlander_country = {
@@ -934,8 +979,8 @@ country_event = {
 	
 	immediate = {
 		country_event = { id = nep_wohp.55 days = 10 }
-		remove_global_flag = nep_highlander_assist_1
-		remove_global_flag = nep_highlander_assist_2
+		remove_country_flag = nep_highlander_assist_1
+		remove_country_flag = nep_highlander_assist_2
 	}
 	
 	option = {
@@ -967,7 +1012,7 @@ country_event = {
 				create_army = {
 					name = "NAME_Gaia_assault_force"
 					owner = event_target:nep_highlander_country
-					species = event_target:nep_wohp_species
+					species = event_target:nep_gaia_species
 					type = nep_gene_slave_army
 				}
 			}
@@ -1096,6 +1141,15 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {		
+		event_target:nep_highlander_country = {
+			exists = capital_scope
+			capital_scope = {
+				is_planet_class = pc_habitat
+				OR = {
+					controller = { is_same_value = event_target:nep_highlander_country }
+				}
+			}
+		}
 		NOT = {
 			is_hostile = event_target:nep_highlander_country
 		}
@@ -1137,6 +1191,9 @@ country_event = {
 					}
 					change_pc = pc_shattered
 					set_planet_entity = { entity = pc_shattered }
+					clear_deposits = yes
+					add_deposit = d_minerals_10
+					add_deposit = d_energy_6
 				}
 				every_system_planet = {
 					limit = {
@@ -1147,12 +1204,42 @@ country_event = {
 				}
 			}
 			set_planet_size = 25
-			create_pop = { species = event_target:nep_gaia_country }
 		}
 		event_target:primitive_country = {
 			set_country_flag = early_space_age
 			remove_country_flag = recently_advanced
-			country_event = { id = primitive.16 }
+			remove_country_flag = early_space_age
+			set_country_flag = primitives_can_into_space
+			set_country_type = default
+			change_country_flag = random
+			if = {
+				limit = { is_species_class = MAM }
+				set_graphical_culture = mammalian_01
+			}
+			if = {
+				limit = { is_species_class = REP }
+				set_graphical_culture = reptilian_01
+			}
+			if = {
+				limit = { is_species_class = AVI }
+				set_graphical_culture = avian_01
+			}
+			if = {
+				limit = { is_species_class = ART }
+				set_graphical_culture = arthropoid_01
+			}
+			if = {
+				limit = { is_species_class = MOL }
+				set_graphical_culture = molluscoid_01
+			}
+			if = {
+				limit = { is_species_class = FUN }
+				set_graphical_culture = fungoid_01
+			}
+			if = {
+				limit = { is_species_class = PLANT }
+				set_graphical_culture = plantoid_01
+			}
 			change_government = {
 				authority = auth_imperial
 				civics = {
@@ -1161,6 +1248,82 @@ country_event = {
 				}
 			}
 			set_name = "NAME_nep_Highlander_Kingdom"
+			add_resource = {
+				energy = 500
+				minerals = 1000 # enough for a spaceport and then some
+				influence = 300
+			}
+			capital_scope = {
+				clear_blockers = yes
+				while = {
+					limit = { 
+						num_pops < 8
+						#free_housing > 0
+					}
+					create_pop = {
+						species = owner
+					}
+				}
+				while = {
+					limit = { has_building = building_primitive_farm }
+					remove_building = building_primitive_farm
+				}
+				while = {
+					limit = { has_building = building_primitive_factory }
+					remove_building = building_primitive_factory
+				}
+				while = {
+					limit = { has_building = building_urban_dwellings }
+					remove_building = building_urban_dwellings
+				}
+				while = {
+					limit = { has_building = building_primitive_mine }
+					remove_building = building_primitive_mine
+				}
+				while = {
+					limit = { has_building = building_primitive_power_plant }
+					remove_building = building_primitive_power_plant
+				}
+				while = {
+					count = 10
+					create_pop = { species = event_target:nep_gaia_country }
+				}
+				add_building = building_nep_gaia_emulator
+				add_building = building_nep_gaia_emulator
+				add_district = district_hab_housing
+				add_district = district_hab_housing
+				add_district = district_hab_housing
+				add_district = district_hab_housing
+				add_district = district_hab_cultural
+				remove_building = building_primitive_capital
+				add_building = building_capital
+				add_building = building_research_lab_1
+				add_building = building_foundry_1
+				add_building = building_factory_1
+				
+				remove_all_armies = yes
+				solar_system = {
+					if = {
+						limit = {
+							NOT = { exists = starbase }
+						}
+						create_starbase = {
+							size = starbase_outpost
+							owner = root
+						}
+					}
+					else_if = {
+						limit = {
+							starbase = {
+								NOT = { owner = { is_same_value = root } }
+							}
+						}	
+						starbase = {
+							owner = { country_event = { id = primitive.180 days = 10 } }
+						}
+					}
+				}				
+			}
 			add_opinion_modifier = { who = root modifier = nep_you_are_very_strong }
 			if = {
 				limit = {
@@ -1182,12 +1345,6 @@ country_event = {
 					}
 				}
 			}
-			event_target:nep_wohp_species = {
-				set_military_service_type = { country = prev type = military_service_limited cooldown = no }
-			}
-			event_target:nep_wohp_highlander_species = {
-				set_military_service_type = { country = prev type = military_service_full cooldown = no }
-			}
 			set_country_flag = nep_can_use_gene_slave
 			give_technology = { tech = tech_wormhole_stabilization message = no }
 			capital_scope = {
@@ -1201,6 +1358,48 @@ country_event = {
 							days = -1
 						}
 					}
+				}
+			}
+			event_target:nep_gaia_species = {
+				set_citizenship_type = { country = prev type = citizenship_slavery cooldown = no }
+			}
+			#science
+			create_fleet = {
+				effect = {
+					set_owner = event_target:nep_highlander_country
+
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+
+					set_fleet_stance = evasive				
+					set_location = event_target:nep_highlander_country.capital_scope
+					
+					owner = {
+						create_leader = {
+							class = scientist
+							sub_type = survey
+							name = random
+							species = owner_main_species
+						}
+					}
+					set_leader = last_created_leader
+				}			
+			}
+				
+			#constructor
+			create_fleet = {
+				effect = {
+					set_owner = event_target:nep_highlander_country
+					
+					create_ship = {
+						name = random
+						random_existing_design = constructor
+					}
+					
+					set_fleet_stance = evasive
+					set_location = event_target:nep_highlander_country.capital_scope
 				}
 			}
 			event_target:nep_gaia_country = {
@@ -1327,7 +1526,7 @@ event = {
 					create_army = {
 						name = "NAME_nep_Gaia_resist_force"
 						owner = event_target:nep_gaia_country
-						species = event_target:nep_wohp_species
+						species = event_target:nep_gaia_species
 						type = nep_gaia_super_army_defensive
 					}
 				}
@@ -1345,12 +1544,53 @@ event = {
 					create_army = {
 						name = "NAME_nep_highlander_royal_ashes"
 						owner = event_target:nep_highlander_country
-						species = event_target:nep_wohp_species
+						species = event_target:nep_gaia_species
 						type = nep_gene_slave_army_defensive
+					}
+				}
+				if = {
+					limit = {
+						has_observation_outpost = yes
+						observation_outpost = { 
+							OR = {
+								has_mission = technological_enlightenment_1
+								has_mission = technological_enlightenment_2
+								has_mission = technological_enlightenment_3
+								has_mission = technological_enlightenment_4
+								has_mission = technological_enlightenment_5
+								has_mission = technological_enlightenment_6
+								has_mission = technological_enlightenment_7
+								has_mission = technological_enlightenment_8
+								has_mission = technological_enlightenment_9
+							}
+							mission_progress > 0.2
+						}
+					}
+					observation_outpost_owner = {
+						country_event = { id = nep_wohp.9000 }
 					}
 				}
 			}
 		}
+	}
+}
+
+country_event = {
+	id = nep_wohp.9000
+	title = "nep_wohp.9000.name"
+	desc = "nep_wohp.9000.desc"
+	picture = GFX_evt_interior_battle
+	show_sound = event_ground_battle
+	location = event_target:nep_highlander_country.capital_scope
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_highlander_country = { capital_scope = { observation_outpost = { add_mission_progress = -1 } } }
+	}
+	
+	option = {
+		name = nep_wohp.9000.a
 	}
 }
 
@@ -1402,7 +1642,7 @@ planet_event = {
 			create_army = {
 				name = "NAME_Gaia_assault_force"
 				owner = event_target:nep_gaia_country
-				species = event_target:nep_wohp_species
+				species = event_target:nep_gaia_species
 				type = nep_gaia_super_army
 			}
 		}
@@ -1486,7 +1726,7 @@ planet_event = {
 			create_army = {
 				name = "NAME_nep_highlander_gladiators"
 				owner = event_target:nep_highlander_country
-				species = event_target:nep_wohp_species
+				species = event_target:nep_gaia_species
 				type = nep_gene_slave_army
 			}
 		}
@@ -1666,9 +1906,26 @@ ship_event = {
 			limit = { has_star_flag = nep_deus_system_4 }
 			remove_star_flag = nep_deus_system_4
 		}
+		solar_system = {
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nep_deus_system
+			}
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+			link_wormholes = root.solar_system
+		}
+		owner = { country_event = { id = nep_wohp.1000 } }
 		random_list = {
 			3 = { ship_event = { id = nep_deus.1 } }
-			1 = { ship_event = { id = nep_deusp.1 } }
+			1 = { ship_event = { id = nep_deuspi.1 } }
 		}
 	}
 }
@@ -1679,17 +1936,386 @@ ship_event = {
 	hide_window = yes
 	
 	is_triggered_only = yes
-	
-	fire_only_once = yes
-	
+		
 	immediate = {
-	
+		random_system = {
+			limit = {
+				has_star_flag = nep_deus_system
+			}
+			random_system_planet = {
+				limit = { is_colonizable = yes }
+				create_species = {
+					name = random
+					class = random_non_machine
+					portrait = random
+					traits = {
+						trait = trait_nep_servent_of_machina
+						trait = trait_charismatic
+						trait = random_traits
+					}
+					homeworld = this
+				}
+				create_country = {
+					name = NAME_nep_Country_of_Machina
+					type = default
+					auto_delete = yes
+					species = last_created
+					authority = auth_dictatorial
+					civics = {
+						civic = civic_nep_deus_ex_machina
+						civic = random
+					}
+					flag = random
+					ethos = {
+						ethic = ethic_fanatic_spiritualist
+						ethic = ethic_authoritarian
+					}
+				}
+				last_created_country = {
+					save_global_event_target_as = nep_deus_country
+					IF = {
+						LIMIT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+						create_species = {
+							name = random
+							class = ROBOT
+							portrait = random
+							namelist = "AI"
+							traits = {
+								trait = trait_mechanical
+								trait = random_traits
+							}
+							effect = {
+								save_event_target_as = nep_machina_species
+							}
+						}
+						ELSE = {
+							create_species = {
+								name = random
+								class = ROBOT
+								portrait = default_robot
+								namelist = "AI"
+								traits = {
+									trait = trait_mechanical
+									trait = random_traits
+								}
+								effect = {
+									save_event_target_as = nep_machina_species
+								}
+							}
+						}
+					}
+					create_leader = {
+						class = ruler
+						species = event_target:nep_machina_species
+						name = random
+						skill = 10
+						event_leader = yes
+					}
+					set_leader = last_created_leader
+					# last_created_leader = {
+						# add_ruler_trait = leader_trait_nep_machina
+					# }
+				}
+				create_colony = {
+					owner = event_target:nep_deus_country
+					species = event_target:nep_deus_country
+				}
+				set_capital = yes
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = nep_deus_system_2
+			}
+			every_system_planet = {
+				limit = { is_colonizable = yes }
+				create_colony = {
+					owner = event_target:nep_deus_country
+					species = event_target:nep_deus_country
+				}
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = nep_deus_system
+			}
+			create_starbase = {
+				owner = event_target:nep_deus_country
+				size = starbase_citadel
+				module = shipyard
+				module = shipyard
+			}
+		}
+		every_system = {
+			limit = {
+				OR = {
+					has_star_flag = nep_deus_system_3
+					has_star_flag = nep_deus_system_2
+					has_star_flag = nep_deus_system_4
+					
+				}
+			}
+			create_starbase = {
+				owner = event_target:nep_deus_country
+				size = starbase_citadel
+				module = shipyard
+			}
+		}
+		event_target:nep_deus_country = {
+			random_country = {
+				limit = { 
+					if = {
+						limit = { any_country = { is_ai = no } }
+						is_ai = no
+					}
+					else = {
+						always = yes
+					}
+				}
+				save_event_target_as = nep_temp_country
+			}
+			copy_techs_from = { 
+				target = event_target:nep_temp_country
+			}
+			every_owned_planet = {
+				while = {
+					count = 5
+					create_pop = { species = event_target:nep_deus_country }
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 5
+					create_pop = { species = event_target:nep_deus_country }
+				}
+				add_building = building_nep_palace_of_machina
+			}
+			add_resource = {
+				food = 2000
+				minerals = 4000
+				alloys = 2000
+				energy = 2000
+				consumer_goods = 2000
+				influence = 300
+			}
+		}
 	}
 }
 
-namespace = nep_deusp
+country_event = {
+	id = nep_deus.2000
+	title = "nep_wohp.2000.name"
+	desc = "nep_deus.2000.desc"
+	picture = GFX_evt_city_planet
+	show_sound = event_ship_bridge
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = { }
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_deus.2
+	hide_window = yes
+	
+	fire_only_once = yes
+		
+	trigger = {
+		years_passed > 100
+		has_global_flag = nep_deus_spawn
+		exists = event_target:nep_deus_country
+		root = { is_same_value = event_target:nep_deus_country }
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+	}
+	
+	immediate = {
+		add_modifier = { 
+			modifier = nep_deus_malfunction
+			days = -1
+		}
+		set_country_flag = nep_deus_malfunction
+		country_event = { id = nep_deus.3 days = 360 random = 360 }
+	}
+}
+
+event = {
+	id = nep_deus.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = { is_country_type = default }
+			event_target:nep_deus_country = {
+				declare_war = {
+					target = prev
+					attacker_war_goal = wg_nep_deus_cleaning_war
+				}
+			}
+			country_event = { id = nep_deus.4 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_deus.4
+	title = nep_deus.4.name
+	desc = nep_deus.4.desc
+	
+	is_triggered_only = yes
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:nep_deus_country.ruler
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = nep_deus.4.a
+		default_hide_option = yes
+		hidden_effect = { country_event = { id = nep_deus.4000 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_deus.4000
+	title = nep_deus.4000.name
+	desc = nep_deus.4000.desc
+	picture = GFX_evt_sapient_AI
+	
+	is_triggered_only = yes
+	
+	immediate = {}
+	
+	option = {
+		name = nep_deus.4000.a
+	}
+	
+	option = {
+		name = nep_deus.4000.b
+		trigger = {
+			is_synthetic_empire = yes
+		}
+	}
+}
+
+country_event = {
+	id = nep_deus.5
+	title = nep_deus.5.name
+	desc = nep_deus.5.desc
+	picture = GFX_evt_fleet_from_surface
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_deus_spawn
+		From = { is_same_value = event_target:nep_deus_country }
+		FROMFROM = { is_same_value = event_target:nep_deus_country.capital_scope }
+	}
+		
+	immediate = {
+		FromFrom = {
+			remove_building = building_nep_palace_of_machina
+		}
+		From = {
+			remove_country_flag = nep_deus_malfunction
+			remove_modifier = nep_deus_malfunction
+		}
+	}
+	
+	option = {
+		name = nep_deus.5.a
+	}
+}
+
+#on_yearly_pulse
+event = {
+	id = nep_deus.9
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:nep_deus_country
+		event_target:nep_deus_country = { has_country_flag = nep_deus_malfunction }
+	}
+	
+	immediate = {
+		random_country = {
+			limit = { 
+				if = {
+					limit = { any_country = { is_ai = no } }
+					is_ai = no
+				}
+				else_if = {
+					limit = { any_country = { is_fallen_empire = yes } }
+					is_fallen_empire = yes
+				}
+				else = {
+					always = yes
+				}
+			}
+			save_event_target_as = nep_temp_country
+		}
+		event_target:nep_deus_country = {
+			if = {
+				limit = { tech_unlocked_ratio = { who = event_target:nep_temp_country ratio < 0.85 } }
+				add_resource = {
+					physics_research = 10000
+					society_research = 10000
+					engineering_research = 10000
+				}
+			}
+		}
+		add_resource = {
+			food = 2000
+			minerals = 2000
+			alloys = 2000
+			energy = 2000
+			consumer_goods = 2000
+		}
+		create_fleet = {
+			name = random
+			effect = {
+				set_owner = event_target:nep_temp_country
+				while = {
+					count = 10
+					create_ship = {
+						name = random
+						random_existing_design = battleship
+					}
+				}
+				set_location = {
+					target = event_target:nep_temp_country.capital_scope
+					distance = 150
+					angle = random
+				}
+			}
+			settings = {
+				uses_naval_capacity = no
+			}
+		}
+	}
+}
+
+namespace = nep_deuspi
 ship_event = {
-	id = nep_deusp.1
+	id = nep_deuspi.1
 	hide_window = yes
 	
 	is_triggered_only = yes
@@ -1698,5 +2324,53 @@ ship_event = {
 	
 	immediate = {
 	
+	}
+}
+
+namespace = nep_deuspl
+ship_event = {
+	id = nep_deuspl.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+	
+	}
+}
+
+#############################################
+# Guide a Girl to the Galaxy
+#############################################
+namespace = nep_guide
+ship_event = {
+	id = nep_guide.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = nep_guide_spawn
+	}
+}
+
+#############################################
+# White Goo Crisis
+#############################################
+namespace = nep_whitegoo
+ship_event = {
+	id = nep_whitegoo.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = nep_whitegoo_spawn
 	}
 }

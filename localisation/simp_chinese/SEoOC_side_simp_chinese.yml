@@ -73,6 +73,7 @@
  nep_wohp.55.desc:0 "[event_target:nep_highlander_country.GetName]开始攻击[event_target:nep_gaia_country.capital_scope.GetName]!我们的部队也要迅速参战！"
  nep_wohp.560.name:0 "胜利！"
  nep_wohp.560.desc:0 "[event_target:nep_highlander_country.GetName]成功捕获了几乎所有的敌对分子！让我们拭目以待接下来会发生什么。虽然这种落后的制度应该也很难有什么进步。"
+ nep_wohp.560.a:0 "我们走着瞧。"
  nep_wohp.570.name:0 "战败"
  nep_wohp.570.desc:0 "[event_target:nep_highlander_country.GetName]的攻击再次失败。现在我们可能需要重新寻找抵抗者们的新基地。"
  nep_wohp.570.a:0 "又要从头来了。"
@@ -97,6 +98,9 @@
  nep_wohp.920.desc:0 "[event_target:nep_gaia_country.capital_scope.GetName]突然遭到了来自[event_target:nep_highlander_country.capital_scope.GetName]的入侵。我们暂时还不知道他们这些欠发展文明是怎么防止窒息入侵$pc_nuked$的；另外这次入侵貌似是一次针对性的报复作战：入侵的人数不多（而且看起来像是奴隶），只顾着破坏跟杀人而不进行占领：这看起来更像是一支为了宣示力量的战争。"
  nep_wohp.920.a:0 "这看起来没什么意义。"
  nep_wohp.920.b:0 "无聊。让我们把他们一锅端吧。"
+ nep_wohp.9000.name:0 "启蒙进展困难"
+ nep_wohp.9000.desc:0 "因为[event_target:nep_highlander_country.GetName]跟[event_target:nep_gaia_country.GetName]的战争，我们的[event_target:nep_highlander_country.capital_scope.GetName]的启蒙工作几乎无法开展，专家们建议不要再浪费资源。"
+ nep_wohp.9000.a:0 "好吧……"
  
  nep_SEoOC_whop_category:0 "重力数据有误"
  nep_SEoOC_side_story_category_desc:0 "仪器显示重力数据有误，可能存在未知天体影响。"
@@ -118,7 +122,24 @@
  CAN_TAKE_HOSTILE_ACTION_NEP_GAIA:0 "你答应了帮助他们。"
  tech_gaia_super_weapon:0 "盖亚的特殊陆军武器"
  tech_gaia_super_weapon_desc:0 ""
+ building_nep_gaia_emulator:0 "盖亚模拟区"
+ building_nep_gaia_emulator_desc:0 "天上国利用粉碎盖亚得到的资源建造的盖亚模拟器，需要大量的能量跟矿石来维护。与其说是生产设施，不如说是天上人们看下等人辛苦工作用的地方。" 
  
  war_goal_wg_war_in_heaven_primitive:0 "天地战争"
  nep_you_are_our_Savior:0 "你拯救过我们"
  nep_you_are_very_strong:0 "你很强大"
+ 
+ nep_deus.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个奇怪的国家：一个巨型计算机领导的，主体民族是生物，且没有巨型计算机的端末以外的其他机器人的国家。貌似它们从原始族群时代就已经将这个计算机封为神，形成了一个很有特色的神权国家。"
+ 
+ nep_deus.4.name:0 "[event_target:nep_deus_country.GetName]"
+ nep_deus.4.desc:0 "经过我的计算，只要贵国存在，我的子民们就有毁灭的危险。现在我以及我的子民要消灭你们。"
+ nep_deus.4.a:0 "这群人疯了？"
+ 
+ nep_deus.4000.name:0 "暴走"
+ nep_deus.4000.desc:0 "貌似[event_target:nep_deus_country.GetName]对几乎所有的国家都进行了宣战。看来它的内部逻辑出问题，把所有的已知生物都当做需要消灭的威胁了。它所有的子民都完全信任这个结论，看来战争不可避免。"
+ nep_deus.4000.a:0 "真不靠谱。"
+ nep_deus.4000.b:0 "进行自检工作。我们不能犯一样的错误。"
+ 
+ nep_deus.5.name:0 "自毁"
+ nep_deus.5.desc:0 "我们攻下了[event_target:nep_deus_country.Capital_scope.GetName]。当我们试图进入统治这个国家的“神”的所在之处时，它自爆了。现在我们没有机会修复它了，然后失去了“神”的该国剩余势力也会因为没有停止抵抗的命令而抵抗到底。"
+ nep_deus.5.a:0 "没办法了。继续攻击！"

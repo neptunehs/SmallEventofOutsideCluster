@@ -69,3 +69,105 @@ nep_planetary_gun = {
 		}
 	}
 }
+
+building_nep_gaia_emulator = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = yes
+	can_be_disabled = yes
+	icon = "building_hydroponics_farm"
+
+	category = resource
+
+	potential = {
+		NOT = { is_planet_class = pc_machine }
+		NOT = { has_modifier = resort_colony }
+	}
+	planet_modifier = {
+		job_farmer_add = 5
+		job_miner_add = 5
+		job_technician_add = 5
+		job_crystal_miner_add = 1
+		job_gas_extractor_add = 1
+		job_mote_harvester_add = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = 16
+			minerals = 8
+		}
+	}
+}
+
+building_nep_palace_of_machina = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	category = government
+	
+	potential = {
+		exists = owner
+		owner = { has_valid_civic = civic_nep_deus_ex_machina }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_nep_deus_ex_machina } }
+	}
+	
+	planet_modifier = {
+		job_nep_miko_add = 4
+		job_nep_servent_of_god_add = 1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			any_pop = {
+				has_job = nep_servent_of_god
+			}
+		}
+		modifier = {
+			planet_jobs_food_produces_mult = 0.05
+			planet_jobs_minerals_produces_mult = 0.05
+			planet_jobs_energy_produces_mult = 0.05
+			planet_jobs_unity_produces_mult = 0.05
+			planet_jobs_alloys_produces_mult = 0.05
+			planet_jobs_consumer_goods_produces_mult = 0.05
+			planet_jobs_volatile_motes_produces_mult = 0.05
+			planet_jobs_exotic_gases_produces_mult = 0.05
+			planet_jobs_rare_crystals_produces_mult = 0.05
+			planet_jobs_physics_research_produces_mult = 0.1
+			planet_jobs_society_research_produces_mult = 0.1
+			planet_jobs_engineering_research_produces_mult = 0.1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			NOT = {
+				any_pop = {
+					has_job = nep_servent_of_god
+				}
+			}
+		}
+		modifier = {
+			planet_amenities_add = -20
+			planet_jobs_influence_produces_mult = -1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}	
+}

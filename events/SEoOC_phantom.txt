@@ -1750,7 +1750,7 @@ country_event = {
 	id = nep_phantom.3003
 	title = "nep_phantom.3003.name"
 	desc = "nep_phantom.3003.desc"
-	picture = GFX_evt_engineering_research
+	picture = GFX_evt_unidentified_monster
 	
 	is_triggered_only = yes
 		
@@ -1766,7 +1766,7 @@ country_event = {
 	id = nep_phantom.3004
 	title = "nep_phantom.3004.name"
 	desc = "nep_phantom.3004.desc"
-	picture = GFX_evt_engineering_research
+	picture = GFX_evt_unidentified_monster
 	
 	is_triggered_only = yes
 		

@@ -11,12 +11,14 @@ nep_SEoOC_whop_category = {
 	spawn_chance = {
 		modifier = {
 			add = 0.5
+			has_global_flag = nep_wohp_spawn
 			solar_system = {
 				has_natural_wormhole = no
 			}
 		}
 		modifier = {
 			factor = 3
+			has_global_flag = nep_wohp_spawn
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant

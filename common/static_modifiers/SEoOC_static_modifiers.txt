@@ -685,3 +685,8 @@ nep_black_technologies = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeological_dig.dds"
 	icon_frame = 1
 }
+
+#deus
+nep_deus_malfunction = {
+	#TODO
+}

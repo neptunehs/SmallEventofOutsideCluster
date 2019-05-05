@@ -27,8 +27,11 @@
  NAME_nep_Gaia_Republic:0 "盖亚共和国"
  NAME_nep_Highlander:0 "天上人"
  NAME_nep_Highlanders:0 "天上人"
+ NAME_nep_Gaia_Survivor:0 "盖亚幸存者"
+ NAME_nep_Gaia_Survivors:0 "盖亚幸存者"
  NAME_nep_Highlander_Dominator:0 "天上统治国"
  NAME_nep_Highlander_Kingdom:0 "天上人王国"
+ NAME_nep_Country_of_Machina:0 "机神国"
 
  #############################
  #fleet&army

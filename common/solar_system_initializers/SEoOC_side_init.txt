@@ -61,18 +61,31 @@ nep_wohp_init = {
 		
 		init_effect = {
 			prevent_anomaly = yes
+			save_event_target_as = nep_Gaia
 			create_species = {
 				name = random
 				class = random_non_machine
 				portrait = random
-				traits = {
-					trait = trait_survivor
-					trait = random_traits
-				}
-				homeworld = this
+				traits = random
 			}
 			last_created_species = {
 				save_global_event_target_as = nep_wohp_species
+			}
+			event_target:nep_wohp_species = {
+				create_species = {
+					name = NAME_nep_Gaia_Survivor
+					plural = NAME_nep_Gaia_Survivors
+					class = this
+					portrait = this
+					traits = {
+						trait = trait_survivor
+						trait = random_traits
+					}
+					homeworld = nep_Gaia
+				}
+			}
+			last_created_species = {
+				save_global_event_target_as = nep_gaia_species
 			}
 			if = {
 				limit = {
@@ -134,7 +147,6 @@ nep_wohp_init = {
 				event_target:nep_gaia_country = {
 					capital_scope = {
 						create_species = {
-							is_mod = yes
 							name = NAME_nep_Highlander
 							plural = NAME_nep_Highlanders
 							class = this
@@ -148,10 +160,10 @@ nep_wohp_init = {
 							}
 							homeworld = event_target:nep_highlander
 						}
+						last_created_species = {
+							save_event_target_as = nep_wohp_highlander_species
+						}
 					}
-				}
-				last_created_species = {
-					save_event_target_as = nep_wohp_highlander_species
 				}
 				if = {
 					limit = {
@@ -187,14 +199,18 @@ nep_wohp_init = {
 				add_building = building_primitive_farm
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				while = {
-					count = 16
+					count = 9
 					random_owned_pop = {
+						limit = { is_pop_category = worker }
 						kill_pop = yes
 					}
 				}
 				while = {
-					count = 24
-					create_pop = { species = event_target:nep_wohp_species }
+					count = 16
+					create_pop = { species = event_target:nep_gaia_species }
+				}
+				every_owned_pop = {
+					clear_pop_category = yes
 				}
 			}
 		}
