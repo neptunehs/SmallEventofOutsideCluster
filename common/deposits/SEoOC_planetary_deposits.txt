@@ -20,7 +20,16 @@ d_nep_unknown_vortex = {
 	drop_weight = {
 		weight = 0	
 	}
-	
+	on_cleared = {
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = owner
+				}
+				owner = { 
+			}
+		}
+	}
 	ai_weight = {
 		weight = 0
 	}

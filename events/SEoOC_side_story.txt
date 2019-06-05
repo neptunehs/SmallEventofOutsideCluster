@@ -68,6 +68,7 @@ ship_event = {
 		}
 		event_target:nep_highlander_country = {
 			set_country_flag = recently_advanced
+			set_country_type = nep_primitive_highlander
 			declare_war = {
 				target = event_target:nep_gaia_country
 				attacker_war_goal = wg_war_in_heaven_primitive
@@ -1159,6 +1160,9 @@ country_event = {
 		remove_country_flag = nep_wohp_player
 		remove_country_flag = nep_wohp_see_resistance
 		remove_country_flag = nep_wohp_see_colosseum
+		event_target:nep_highlander_country = {
+			set_country_type = primitive
+		}
 		event_target:nep_highlander_country.capital_scope = {
 			solar_system = {
 				every_system_planet = {
@@ -1834,7 +1838,6 @@ ship_event = {
 	fire_only_once = yes
 	
 	immediate = {
-		set_global_flag = nep_deus_spawn
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
@@ -1938,6 +1941,7 @@ ship_event = {
 	is_triggered_only = yes
 		
 	immediate = {
+		set_global_flag = nep_deus_spawn
 		random_system = {
 			limit = {
 				has_star_flag = nep_deus_system
@@ -1946,7 +1950,7 @@ ship_event = {
 				limit = { is_colonizable = yes }
 				create_species = {
 					name = random
-					class = random_non_machine
+					class = HUM
 					portrait = random
 					traits = {
 						trait = trait_nep_servent_of_machina
@@ -2292,7 +2296,7 @@ event = {
 		create_fleet = {
 			name = random
 			effect = {
-				set_owner = event_target:nep_temp_country
+				set_owner = event_target:nep_deus_country
 				while = {
 					count = 10
 					create_ship = {
@@ -2301,7 +2305,7 @@ event = {
 					}
 				}
 				set_location = {
-					target = event_target:nep_temp_country.capital_scope
+					target = event_target:nep_deus_country.capital_scope
 					distance = 150
 					angle = random
 				}
@@ -2323,7 +2327,1734 @@ ship_event = {
 	fire_only_once = yes
 	
 	immediate = {
+		set_global_flag = nep_deuspi_spawn
+		random_system = {
+			limit = {
+				has_star_flag = nep_deus_system
+			}
+			random_system_planet = {
+				limit = { is_colonizable = yes }
+				create_species = {
+					name = random
+					class = HUM
+					portrait = random
+					traits = {
+						trait = trait_nep_servent_of_machina
+						trait = trait_charismatic
+						trait = random_traits
+					}
+					homeworld = this
+				}
+				last_created_species = {
+					save_event_target_as = nep_deus_species				
+				}
+				if = {
+					limit = {
+						NOT = {
+							exists = event_target:nep_deus_country
+						}
+					}
+					create_country = {
+						name = NAME_nep_Country_of_Machina
+						type = primitive
+						auto_delete = no
+						species = last_created
+						ethos = {
+							ethic = ethic_fanatic_spiritualist
+							ethic = ethic_authoritarian
+						}
+					}
+					last_created_country = {
+						set_primitive_age = late_medieval_age
+						save_global_event_target_as = nep_deus_country
+						set_country_flag = nep_deus_country
+						set_country_flag = late_medieval_age
+						set_country_flag = recently_advanced
+					}
+				}
+				setup_primitive_planet = yes
+				add_modifier = { modifier = "planet_population_control" days = -1 }
+				add_building = building_nep_palace_of_machina
+			}
+			create_country = {
+				name = random
+				type = nep_global_for_protrait
+				auto_delete = no
+			}
+			last_created_country = {
+				save_global_event_target_as = nep_global_deus
+				create_leader = {
+					name = random
+					species = event_target:nep_deus_species
+					gender = male
+					skill = random
+					set_age = 14
+				}
+				last_created_leader = {
+					save_global_event_target_as = nep_deus_male
+				}
+				create_leader = {
+					name = random
+					species = event_target:nep_deus_species
+					gender = female
+					skill = random
+					set_age = 14
+				}
+				last_created_leader = {
+					save_global_event_target_as = nep_deus_female
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_deuspi.2
+	hide_window = yes
 	
+	is_triggered_only = yes
+		
+	trigger = {
+		has_global_flag = nep_deuspi_spawn
+		NOT = { owner = { has_country_flag = nep_deuspi_visited } }
+		from = { has_star_flag = nep_deus_system }
+	}
+	
+	immediate = {
+		owner = { 
+			set_country_flag = nep_deuspi_visited
+			country_event = { id = nep_deuspi.2000 } 
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.2000
+	title = "nep_deuspi.2000.name"
+	desc = "nep_deuspi.2000.desc"
+	picture = GFX_evt_medieval_alien_civilization
+	show_sound = event_ship_bridge
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = { }
+	
+	option = {
+		name = OK
+	}
+}
+
+#When observation station complete
+ship_event = {
+	id = nep_deuspi.3
+	title = "nep_deuspi.3.name"
+	desc = "nep_deuspi.3.desc"
+	picture = GFX_evt_arguing_senate
+	show_sound = event_ship_bridge
+	location = THIS
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		solar_system = { has_star_flag = nep_deus_system }
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.3.a
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = "ethic_fanatic_materialist"
+				}
+				AND = {
+					has_authority = auth_machine_intelligence
+					NOT = { has_valid_civic = civic_machine_terminator }
+				}
+			}
+		}
+		owner = {
+			enable_special_project = {
+				name = "nep_deuspi_hack_project"
+				owner = root.owner
+				location = event_target:nep_deus_home
+			}
+		}
+	}
+		
+	option = {
+		name = OK
+		default_hide_option = yes
+		hidden_effect = {
+			owner = { country_event = { id = nep_deuspi.6 days = 15 random = 36000 } }
+		}
+	}
+}
+
+#Hack
+country_event = {
+	id = nep_deuspi.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		random_list = {
+			29 = { country_event = { id = nep_deuspi.41 } } #success
+			31 = { country_event = { id = nep_deuspi.42 } } #fail
+		}
+	}
+}
+
+
+country_event = {
+	id = nep_deuspi.41
+	title = "nep_deuspi.41.name"
+	desc = "nep_deuspi.41.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	immediate = {
+		set_global_flag = nep_deuspi_end
+	}
+	
+	option = {
+		name = nep_deuspi.41.a
+		default_hide_option = yes
+		#protectorate
+		hidden_effect = { country_event = { id = nep_deuspi.51 } }
+	}
+	
+	option = {
+		name = nep_deuspi.41.b
+		default_hide_option = yes
+		trigger = {
+			NOT = { has_authority = auth_machine_intelligence }
+		}
+		#join
+		hidden_effect = { country_event = { id = nep_deuspi.53 } }
+	}
+	
+	option = {
+		name = nep_deuspi.41.c
+		default_hide_option = yes
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		#Die!
+		event_target:nep_deus_home = { 
+			destroy_colony = yes
+		}
+		event_target:nep_deus_country = {
+			destroy_country = yes
+		}
+		hidden_effect = {
+			event_target:nep_global_deus = {
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.42
+	title = "nep_deuspi.42.name"
+	desc = "nep_deuspi.42.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	immediate = {
+		set_global_flag = nep_deuspi_end
+	}
+	
+	option = {
+		name = nep_deuspi.42.a
+		custom_tooltip = nep_deuspi.42.a.tooltip
+		default_hide_option = yes
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+}
+
+#protectorate
+country_event = {
+	id = nep_deuspi.51
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_deus_country = {
+			remove_country_flag = late_medieval_age
+			remove_country_flag = recently_advanced
+			set_country_type = default
+			change_country_flag = random
+			set_graphical_culture = humanoid_01
+			change_government = {
+				authority = auth_dictatorial
+				civics = {
+					civic = civic_nep_deus_ex_machina
+					civic = random
+				}
+			}
+			set_name = NAME_nep_Country_of_Machina
+			if = {
+				limit = {
+					home_planet = {
+						has_observation_outpost = yes
+					}
+				}
+				home_planet = {
+					observation_outpost_owner = {
+						country_event = { id = primitive.17 }
+					}
+				}
+			}
+			add_resource = {
+				energy = 500
+				minerals = 1000 # enough for a spaceport and then some
+			}
+			add_resource = { influence = 300 }
+			capital_scope = {
+				observation_outpost = {
+					dismantle = yes
+				}
+				clear_blockers = yes
+				while = {
+					limit = { 
+						num_pops < 8
+						#free_housing > 0
+					}
+					create_pop = {
+						species = owner
+					}
+				}
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_mining
+				add_district = district_mining
+				add_district = district_generator
+				add_district = district_generator
+				add_building = building_capital
+				add_building = building_research_lab_1
+				add_building = building_foundry_1
+				add_building = building_factory_1
+				
+				remove_all_armies = yes
+				solar_system = {
+					if = {
+						limit = {
+							NOT = { exists = starbase }
+						}
+						create_starbase = {
+							size = starbase_outpost
+							owner = event_target:nep_deus_country
+						}
+					}
+				}
+			}
+			random_owned_ship = {
+				limit = { is_ship_size = primitive_space_station }
+				fleet = { destroy_fleet = THIS }
+			}
+			if = {
+				limit = {
+					root = { is_country_type = default }
+				}
+				if = {
+					limit = {
+						root = { has_valid_civic = "civic_inwards_perfection" }
+					}
+					set_subject_of = {
+						who = root
+						subject_type = tributary
+					}
+				}			
+				else = {
+					set_subject_of = {
+						who = root
+						subject_type = protectorate
+					}						
+				}
+			}
+		}
+		set_country_flag = nep_enli_deus_by_hack
+		country_event = { id = nep_deuspi.5 }
+	}
+}
+
+#Enlightenment with Hate
+country_event = {
+	id = nep_deuspi.52
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_deus_country = {
+			remove_country_flag = late_medieval_age
+			remove_country_flag = recently_advanced
+			set_country_type = default
+			change_country_flag = random
+			set_graphical_culture = humanoid_01
+			change_government = {
+				authority = auth_dictatorial
+				civics = {
+					civic = civic_nep_deus_ex_machina
+					civic = random
+				}
+			}
+			set_name = NAME_nep_Country_of_Machina
+			add_resource = {
+				energy = 5000
+				minerals = 10000 # enough for a spaceport and then some
+			}
+			add_resource = { influence = 500 }
+			capital_scope = {
+				observation_outpost = {
+					dismantle = yes
+				}
+				clear_blockers = yes
+				while = {
+					limit = {
+						num_pops < 12
+						#free_housing > 0
+					}
+					create_pop = {
+						species = owner
+					}
+				}
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_mining
+				add_district = district_mining
+				add_district = district_generator
+				add_district = district_generator
+				add_building = building_capital
+				add_building = building_research_lab_1
+				add_building = building_foundry_1
+				add_building = building_factory_1
+				
+				remove_all_armies = yes
+				solar_system = {
+					if = {
+						limit = {
+							NOT = { exists = starbase }
+						}
+						create_starbase = {
+							size = starbase_outpost
+							owner = event_target:nep_deus_country
+						}
+					}
+					else_if = {
+						limit = {
+							starbase = {
+								NOT = { owner = { is_same_value = event_target:nep_deus_country } }
+							}
+						}	
+						starbase = {
+							destroy_fleet = this
+						}
+						create_starbase = {
+							size = starbase_outpost
+							owner = event_target:nep_deus_country
+						}
+					}
+				}
+			}
+			random_owned_ship = {
+				limit = { is_ship_size = primitive_space_station }
+				fleet = { destroy_fleet = THIS }
+			}
+			add_opinion_modifier = { who = root modifier = opinion_nep_you_angry_me }
+			country_event = { id = nep_deuspi.520 days = 15 }
+		}
+		every_system = {
+			limit = {
+				OR = {
+					has_star_flag = nep_deus_system_2
+					has_star_flag = nep_deus_system_3
+					has_star_flag = nep_deus_system_4
+				}				
+			}
+			add_claims = { 
+				who = event_target:nep_deus_country 
+				num_of_claims = 10 
+				show_notification = yes 
+			}
+		}
+		set_country_flag = nep_enli_deus_by_hate
+		country_event = { id = nep_deuspi.5 }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.520
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		capital_scope = {
+			create_fleet = {
+				name = random
+				effect = {
+					set_owner = event_target:nep_deus_country
+					while = {
+						count = 10
+						create_ship = {
+							name = random
+							random_existing_design = battleship
+						}
+					}
+					set_location = {
+						target = event_target:nep_deus_country.capital_scope
+						distance = 150
+						angle = random
+					}
+				}
+				settings = {
+					uses_naval_capacity = no
+				}
+			}
+			while = {
+				count = 13
+				create_army = {
+					name = "NAME_Machina_Guardians"
+					owner = event_target:nep_deus_country
+					type = nep_Legnahcras_defensive_army
+				}
+			}
+		}
+	}
+}
+
+#join
+country_event = {
+	id = nep_deuspi.53
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_deus_country = {
+			remove_country_flag = late_medieval_age
+			remove_country_flag = recently_advanced
+			capital_scope = {
+				observation_outpost = {
+					dismantle = yes
+				}
+				clear_blockers = yes
+				while = {
+					limit = { 
+						num_pops < 8
+						#free_housing > 0
+					}
+					create_pop = {
+						species = owner
+					}
+				}
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_city
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_farming
+				add_district = district_mining
+				add_district = district_mining
+				add_district = district_generator
+				add_district = district_generator
+				add_building = building_capital
+				add_building = building_research_lab_1
+				add_building = building_foundry_1
+				add_building = building_factory_1
+				
+				remove_all_armies = yes
+				set_owner = root
+				solar_system = {
+					if = {
+						limit = {
+							NOT = { exists = starbase }
+						}
+						create_starbase = {
+							size = starbase_outpost
+							owner = root
+						}
+					}
+					else_if = {
+						limit = {
+							starbase = {
+								NOT = { owner = { is_same_value = root } }
+							}
+						}	
+						starbase = {
+							set_owner = root
+						}
+					}
+				}
+			}
+			random_owned_ship = {
+				limit = { is_ship_size = primitive_space_station }
+				fleet = { destroy_fleet = THIS }
+			}
+			if = {
+				limit = {
+					root = { is_country_type = default }
+				}
+				if = {
+					limit = {
+						root = { has_valid_civic = "civic_inwards_perfection" }
+					}
+					set_subject_of = {
+						who = root
+						subject_type = tributary
+					}
+				}			
+				else = {
+					set_subject_of = {
+						who = root
+						subject_type = protectorate
+					}						
+				}
+			}
+		}
+		set_country_flag = nep_deus_joined
+		country_event = { id = nep_deuspi.5 }
+		add_modifier = {
+			modifier = nep_deus_super_computer
+			days = -1
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.5
+	title = "nep_deuspi.5.name"
+	desc = { 
+		trigger = { 
+			has_country_flag = nep_enli_deus_by_hack
+			NOT = { has_country_flag = nep_deus_you_want_save }
+		}
+		text = nep_deuspi.5.desc.a
+	}
+	desc = { 
+		trigger = { has_country_flag = nep_enli_deus_by_hate }
+		text = nep_deuspi.5.desc.b
+	}
+	desc = { 
+		trigger = { has_country_flag = nep_deus_joined }
+		text = nep_deuspi.5.desc.c
+	}
+	desc = { 
+		trigger = { 
+			has_country_flag = nep_enli_deus_by_hack
+			has_country_flag = nep_deus_you_want_save
+		}
+		text = nep_deuspi.5.desc.d
+	}
+	
+	picture = GFX_evt_metropolis
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {		
+		set_global_flag = nep_deuspi_end
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+#Lost Radio
+country_event = {
+	id = nep_deuspi.6
+	title = "nep_deuspi.6.name"
+	desc = "nep_deuspi.6.desc"
+	picture = GFX_evt_alien_planet
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = { }
+	
+	option = {
+		name = nep_deuspi.6.a
+		hidden_effect = { country_event = { id = nep_deuspi.61 days = 10 random = 10 } }
+	}
+	
+	option = {
+		name = nep_deuspi.6.b
+	}
+	
+	option = {
+		name = nep_deuspi.6.c
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_fanatic_militarist
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+			NOR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		event_target:nep_deus_home = {
+			random_owned_pop = {
+				kill_pop = yes
+			}
+		}
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.61
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			1 = { country_event = { id = nep_deuspi.7 } } # Virus
+			1 = { country_event = { id = nep_deuspi.8 } } # Miko
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.7
+	title = nep_deuspi.7.name
+	desc = nep_deuspi.7.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+		
+	picture_event_data = {
+		portrait = event_target:nep_deus_country.ruler
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.7.a
+		set_country_flag = nep_deus_you_want_save
+		enable_special_project = {
+			name = nep_deus_virus_emergency
+			location = event_target:nep_deus_home
+			owner = root
+		}
+		event_target:nep_deus_home = {
+			planet_event = { id = nep_deuspi.71 days = 30 }
+		}
+	}
+	option = {
+		name = nep_deuspi.7.b
+		hidden_effect = {
+			set_country_flag = nep_deus_dont_save
+			event_target:nep_deus_home = {
+				planet_event = { id = nep_deuspi.71 days = 30 }
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = nep_deuspi.71
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_planet_flag = nep_deus_virus_clear }
+	}
+	
+	immediate = {
+		if = {
+			limit = { num_pops > 2 } 
+			random_owned_pop = { kill_pop = yes }
+			planet_event = { id = nep_deuspi.71 days = 30 }
+		}
+		else = {
+			event_target:nep_deus_country = {
+				set_country_type = faction
+				create_fleet = {
+					name = "NAME_Enigmatic_Fortress"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:nep_deus_country
+						while = {
+							count = 1 #just to show-case that formation will tile
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Vault"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Guardian"
+								graphical_culture = "ancient"
+							}			
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Guardian"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Warden"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Warden"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Defender"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Defender"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Defender"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Defender"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+							create_ship = {
+								name = ""
+								design = "NAME_Ancient_Sentinel"
+								graphical_culture = "ancient"
+							}
+						}
+						set_fleet_formation = {
+							position = { x = 13.0	y = -7.0	} #17
+							position = { x = 11.5	y = -13.0	} #16
+							position = { x = 0.0	y = -15.5	} #15
+							position = { x = 13.0	y = 7.0		} #14
+							position = { x = -11.8	y = -4.0	} #13
+							position = { x = -15.8	y = 6.5		} #12
+							position = { x = -10.0	y = 8.5		} #11
+							position = { x = -1.6	y = 15.0	} #10
+							position = { x = 14.0	y = -3.0	} #9
+							position = { x = 1.3	y = -11.0	} #8
+							position = { x = -10.5	y = 1.0		} #7
+							position = { x = 3.0	y = 8.0		} #6
+							position = { x = -4.3	y = -7.0	} #5
+							position = { x = 8.0	y = 9.0		} #4
+							position = { x = -4.0	y = 7.3		} #3 
+							position = { x = 7.5	y = -10.5	} #2
+							position = { x = 0.0	y = 0.0		} #1
+						}
+						set_formation_scale = 0.5
+						set_location = {
+							target = root
+							distance = 0
+							angle = 1
+						}
+					}
+				}
+				event_target:nep_deus_home = {
+					destroy_colony = yes
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						has_country_flag = nep_deus_dont_save
+						has_country_flag = nep_deus_you_want_save
+					}
+				}
+				country_event = { id = nep_deuspi.72 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.72
+	title = "nep_deuspi.72.name"
+	desc = {
+		trigger = { has_country_flag = nep_deus_dont_save }
+		text = nep_deuspi.72.desc.a
+	}
+	desc = {
+		trigger = { has_country_flag = nep_deus_you_want_save }
+		text = nep_deuspi.72.desc.b
+	}
+	picture = GFX_evt_enigmatic_fortress
+	show_sound = event_ship_bridge
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_country_flag = nep_deus_dont_save
+		remove_country_flag = nep_deus_you_want_save
+	}
+	
+	option = {
+		name = anomaly.625.a
+	}
+}
+
+country_event = {
+	id = nep_deuspi.73
+	title = nep_deuspi.73.name
+	desc = nep_deuspi.73.desc
+	picture = GFX_evt_disease_outbreak
+	show_sound = event_ship_bridge
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = OK
+		add_resource = { minerals = -300 }
+		event_target:nep_deus_home = { add_building = building_clinic }
+		hidden_effect = { country_event = { id = nep_deuspi.74 days = 60 } }
+	}
+
+	option = {
+		name = nep_deuspi.73.b
+		hidden_effect = { 
+			remove_country_flag = nep_deus_you_want_save
+			set_country_flag = nep_deus_dont_save
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.74
+	title = nep_deuspi.74.name
+	desc = nep_deuspi.74.desc
+	picture = GFX_evt_disease_outbreak
+	show_sound = event_ship_bridge
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_deus_home = {
+			set_planet_flag = nep_deus_virus_clear
+		}
+	}
+	
+	option = {
+		name = nep_deuspi.74.a
+		hidden_effect = { 
+			country_event = { id = nep_deuspi.75 days = 720 } 
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.75
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		country_event = { id = nep_deuspi.51 } 
+	}
+	
+	after = {
+		remove_country_flag = nep_deus_you_want_save
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8
+	title = TRANSMISSION
+	desc = nep_deuspi.8.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = ONSCREEN
+		default_hide_option = yes
+		country_event = { id = nep_deuspi.8001 }
+	}
+	
+	option = {
+		name = nep_deuspi.8.a
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8001
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8001.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8001.a
+		set_country_flag = nep_deus_lie
+		country_event = { id = nep_deuspi.8012 }
+	}
+	
+	option = {
+		name = nep_deuspi.8001.b
+		country_event = { id = nep_deuspi.8022 }
+	}
+	
+	
+	option = {
+		name = nep_deuspi.8001.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8012
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8012.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8012.a
+		is_dialog_only = yes
+		response_text = nep_deuspi.8012.a.response
+	}
+	
+	option = {
+		name = nep_deuspi.8012.b
+		country_event = { id = nep_deuspi.8013 }
+	}
+	
+	
+	option = {
+		name = nep_deuspi.8012.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8013
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8013.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8013.a
+		add_resource = {
+			minerals = 1
+		}
+		country_event = { id = nep_deuspi.80142 }
+	}
+	
+	option = {
+		name = nep_deuspi.8013.b
+		country_event = { id = nep_deuspi.8014 }
+	}
+	
+	
+	option = {
+		name = nep_deuspi.8012.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8014
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8014.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8014.a
+		custom_tooltip = nep_deuspi.8014.a.tooltip
+		hidden_effect = {
+			random_list = {
+				3 = { country_event = { id = nep_deuspi.8015 days = 5 } }
+				1 = { country_event = { id = nep_deuspi.8016 days = 5 } }
+			}
+		}
+	}
+	
+	option = {
+		name = nep_deuspi.8014.b
+		hidden_effect = { country_event = { id = nep_deuspi.8017 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8014.c
+		trigger = { 
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_authoritarian
+				has_authority = auth_hive_mind
+			}
+		}
+		event_target:nep_deus_home = {
+			random_owned_pop = {
+				kill_pop = yes
+			}
+		}
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+		
+	option = {
+		name = nep_deuspi.8012.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.80142
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.80142.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8014.a
+		custom_tooltip = nep_deuspi.8014.a.tooltip
+		hidden_effect = {
+			random_list = {
+				3 = { country_event = { id = nep_deuspi.8015 days = 5 } }
+				1 = { country_event = { id = nep_deuspi.8016 days = 5 } }
+			}
+		}
+	}
+	
+	option = {
+		name = nep_deuspi.8014.b
+		hidden_effect = { country_event = { id = nep_deuspi.8017 } }
+	}
+		
+	option = {
+		name = nep_deuspi.8012.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8015
+	title = "nep_deuspi.41.name"
+	desc = "nep_deuspi.8015.desc"
+	picture = GFX_evt_alien_planet
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = nep_deuspi_end
+	}
+	
+	option = {
+		name = nep_deuspi.41.a
+		default_hide_option = yes
+		#protectorate
+		hidden_effect = { country_event = { id = nep_deuspi.51 } }
+	}
+	
+	option = {
+		name = nep_deuspi.41.b
+		default_hide_option = yes
+		trigger = {
+			NOT = { has_authority = auth_machine_intelligence }
+		}
+		#join
+		hidden_effect = { country_event = { id = nep_deuspi.53 } }
+	}
+	
+	option = {
+		name = nep_deuspi.41.c
+		default_hide_option = yes
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+			}
+		}
+		#Die!
+		event_target:nep_deus_home = { 
+			destroy_colony = yes
+		}
+		event_target:nep_deus_country = {
+			destroy_country = yes
+		}
+		hidden_effect = {
+			event_target:nep_global_deus = {
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8016
+	title = "nep_deuspi.42.name"
+	desc = "nep_deuspi.8016.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_laboratory_sound
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = nep_deuspi_end
+	}
+	
+	option = {
+		name = nep_deuspi.42.a
+		custom_tooltip = nep_deuspi.42.a.tooltip
+		default_hide_option = yes
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8017
+	title = "nep_deuspi.8017.name"
+	desc = "nep_deuspi.8017.desc"
+	picture = GFX_evt_alien_segregation
+	location = event_target:nep_deus_home
+
+	is_triggered_only = yes
+	
+	immediate = {}
+	
+	option = {
+		name = nep_deuspi.8017.a
+		custom_tooltip = nep_deuspi.42.a.tooltip
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8017.b
+		hidden_effect = { country_event = { id = nep_deuspi.8018 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8017.c
+		custom_tooltip = nep_deuspi.8017.c.tooltip
+		hidden_effect = {
+			random_list = {
+				3 = { country_event = { id = nep_deuspi.8019 } }
+				1 = { country_event = { id = nep_deuspi.8020 } }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8018
+	title = "nep_deuspi.8018.name"
+	desc = "nep_deuspi.8018.desc"
+	picture = GFX_evt_alien_segregation
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {}
+	
+	option = {
+		name = nep_deuspi.8018.a
+		custom_tooltip = nep_deuspi.8018.a.tooltip
+		hidden_effect = {
+			event_target:nep_deus_home = {
+				random_owned_pop = {
+					kill_pop = yes
+				}
+				closest_system = {
+					limit = {
+						any_system_planet = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 1
+						}
+					}
+					random_system_planet = {
+						limit = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 1
+						}
+						create_pop = {
+							species = event_target:nep_deus_country
+						}
+					}
+				}
+			}
+			root = {
+				random_owned_pop = {
+					limit = { is_same_species = event_target:nep_deus_country }
+					add_modifier = {
+						modifier = nep_remorse
+						days = -1
+					}
+				}
+			}
+		}
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8018.b
+		enable_special_project = {
+			name = "nep_deus_rescue_1"
+			location = event_target:nep_deus_home
+			owner = ROOT
+		}
+	}
+	
+	option = {
+		name = nep_deuspi.8018.b
+		enable_special_project = {
+			name = "nep_deus_rescue_2"
+			location = event_target:nep_deus_home
+			owner = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8019
+	title = "nep_deuspi.8019.name"
+	desc = "nep_deuspi.8019.desc"
+	picture = GFX_evt_alien_segregation
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {}
+	
+	option = {
+		name = nep_deuspi.8019.a
+		hidden_effect = {
+			event_target:nep_deus_home = {
+				random_owned_pop = {
+					kill_pop = yes
+				}
+				random_owned_pop = {
+					limit = { has_job = nep_servent_of_god }
+					kill_pop = yes
+				}
+				closest_system = {
+					limit = {
+						any_system_planet = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 2
+						}
+					}
+					random_system_planet = {
+						limit = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 2
+						}
+						create_pop = {
+							species = event_target:nep_deus_country
+						}
+						create_pop = {
+							species = event_target:nep_deus_country
+						}
+					}
+				}
+			}
+		}
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8019.b
+		custom_tooltip = nep_deuspi.8019.b.tooltip
+		hidden_effect = {
+			event_target:nep_deus_home = {
+				random_owned_pop = {
+					kill_pop = yes
+				}
+				random_owned_pop = {
+					limit = { has_job = nep_servent_of_god }
+					kill_pop = yes
+				}
+				closest_system = {
+					limit = {
+						any_system_planet = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 2
+						}
+					}
+					random_system_planet = {
+						limit = {
+							exists = owner
+							owner = { is_same_value = root }
+							is_colony = yes
+							free_housing >= 2
+						}
+						create_pop = {
+							species = event_target:nep_deus_country
+						}
+						create_pop = {
+							species = event_target:nep_deus_country
+						}
+					}
+				}
+			}
+		}
+		enable_special_project = {
+			name = "nep_deus_rescue_3"
+			location = event_target:nep_deus_home
+			owner = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8020
+	title = "nep_deuspi.8020.name"
+	desc = "nep_deuspi.8020.desc"
+	picture = GFX_evt_alien_segregation
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {}
+	
+	option = {
+		name = nep_deuspi.42.a
+		custom_tooltip = nep_deuspi.42.a.tooltip
+		#Enlightenment with Hate
+		hidden_effect = { country_event = { id = nep_deuspi.52 } }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8021
+	title = "nep_deuspi.8021.name"
+	desc = "nep_deuspi.8021.desc"
+	picture = GFX_evt_alien_segregation
+	location = event_target:nep_deus_home
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_deus_home = {
+			remove_building = building_nep_palace_of_machina
+			set_owner = ROOT
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+
+country_event = {
+	id = nep_deuspi.8022
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8022.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8022.a
+		default_hide_option = yes
+		country_event = { id = nep_deuspi.8023 }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8023
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8023.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8023.a
+		country_event = { id = nep_deuspi.8024 }
+	}
+	
+	option = {
+		name = nep_deuspi.8001.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
+	}
+}
+
+country_event = {
+	id = nep_deuspi.8024
+	title = UNKNOWN_LONG
+	desc = nep_deuspi.8024.desc
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nep_deus_male
+		planet_background = event_target:nep_deus_country
+		graphical_culture = event_target:nep_deus_country
+		city_level = event_target:nep_deus_country
+		room = event_target:nep_deus_country
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_deuspi.8024.a
+		custom_tooltip = nep_deuspi.8024.a.tooltip
+		hidden_effect = {
+			random_list = {
+				3 = { country_event = { id = nep_deuspi.8015 days = 5 } }
+				1 = { country_event = { id = nep_deuspi.8016 days = 5 } }
+			}
+		}
+	}
+	
+	option = {
+		name = nep_deuspi.8024.b
+		hidden_effect = { country_event = { id = nep_deuspi.8017 } }
+	}
+	
+	option = {
+		name = nep_deuspi.8012.c
+		default_hide_option = yes
+		hidden_effect = { set_global_flag = nep_deuspi_end }
 	}
 }
 
@@ -2337,7 +4068,6 @@ ship_event = {
 	fire_only_once = yes
 	
 	immediate = {
-	
 	}
 }
 
@@ -2372,5 +4102,22 @@ ship_event = {
 	
 	immediate = {
 		set_global_flag = nep_whitegoo_spawn
+	}
+}
+
+#############################################
+# Genesis
+#############################################
+namespace = nep_genesis
+ship_event = {
+	id = nep_genesis.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = nep_genesis_spawn
 	}
 }

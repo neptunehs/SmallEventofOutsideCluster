@@ -15,3 +15,9 @@ nep_you_are_very_strong = {
 		base = 50
 	}
 }
+
+opinion_nep_you_angry_me = {
+	opinion = {
+		base = -1000
+	}
+}

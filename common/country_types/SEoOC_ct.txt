@@ -364,3 +364,56 @@ nep_phantom_global_event = {
 		}
 	}
 }
+
+nep_primitive_highlander = {
+	randomize_ethos = yes
+	shuffle_pop_ethos = yes
+	observable = no
+
+	ai = {
+		enabled = no
+		construction = no
+	}
+	faction = {
+		hostile = no
+		primitive = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = yes
+	}
+	hide_names_if_no_communication = yes
+	#custom_diplomacy = yes # This makes primitives show up in the galaxy empire view.
+	
+	modules = {
+		standard_event_module = {}
+		basic_technology_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+		standard_species_rights_module = {}
+	}
+}
+
+nep_global_for_protrait = {
+	share_communications = no
+	default_ships = no
+	government = no
+	observable = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		standard_event_module = {} # Needed for events
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+		standard_leader_module = {}
+	}
+}
