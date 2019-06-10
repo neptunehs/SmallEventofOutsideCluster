@@ -62,6 +62,7 @@
  nep_inva.6.name:0 "New Orb Discovery"
  nep_inva.6.desc:0 "In an abandoned but intact underground warehouse of the Krah'en Empire (it seems to be forgotten because they feel that these things are not important), we have discovered the courage we have dreamed of.It seems that the Krah'en Empire discovered this orb in the galaxy where their outpost was located. When the imperator tried to dedicate this orb to the God-Emperor, he found that the orb could not pass the portal, so he gave up here. Now, we are one step closer to solving the mystery of the grand seal. In addition, we have found some other useful information."
  nep_inva.6.a:0 "Good."
+ nep_inva.6.a.tooltip:0 "The orbs can be active now.But we don't know what will happen,please be prepared before active."
  
  nep_inva.71.name:0 "Krah'en Empire"
  nep_inva.71.desc:0 "Announcement to [This.GetName]: Although you have signed the Armistice Treaty with great difficulty, it is a pity for you that our Emperor is very dissatisfied and decided to put the former governor to death and change me to continue to destroy you. . Be prepared."

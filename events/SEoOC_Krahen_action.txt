@@ -642,7 +642,11 @@ planet_event = {
 	hide_window = yes
 	
 	is_triggered_only = yes
-
+	
+	pre_triggers = {
+		has_owner =	yes
+	}
+	
 	trigger = {
 		has_global_flag = nep_Krahen_crisis
 		NOT = { has_planet_flag = nep_Krahen_invading_planet }
@@ -793,6 +797,10 @@ planet_event = {
 	hide_window = yes
 	
 	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
 
 	trigger = {
 		has_global_flag = nep_Krahen_crisis

@@ -1143,6 +1143,38 @@ country_event = {
 			}
 		}
 		set_spawn_system_batch = end
+		random_system = {
+			limit = { has_star_flag = nep_inva_system }
+			save_global_event_target_as = nep_inva_system_1
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_inva_system
+				NOT = { is_same_value = event_target:nep_inva_system_1 }
+			}
+			save_global_event_target_as = nep_inva_system_2
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_inva_system
+				NOR = { 
+					is_same_value = event_target:nep_inva_system_1 
+					is_same_value = event_target:nep_inva_system_2 
+				}
+			}
+			save_global_event_target_as = nep_inva_system_3
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_inva_system
+				NOR = { 
+					is_same_value = event_target:nep_inva_system_1
+					is_same_value = event_target:nep_inva_system_2
+					is_same_value = event_target:nep_inva_system_3
+				}
+			}
+			save_global_event_target_as = nep_inva_system_4
+		}
 	}
 	
 	after = {
@@ -2744,25 +2776,26 @@ country_event = {
 	
 	option = {
 		name = nep_inva.6.a
-		owner = {
-			add_monthly_resource_mult = {
-				resource = physics_research
-				value = @tier3researchreward
-			}
-			add_monthly_resource_mult = {
-				resource = society_research
-				value = @tier3researchreward
-			}
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = @tier3researchreward
-			}
-			add_research_option = tech_nep_destructor_ray
-			add_tech_progress = {
-				tech = tech_nep_destructor_ray
-				progress = 0.30
-			}
+		custom_tooltip = nep_inva.6.a.tooltip
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
 		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier3researchreward
+		}
+		add_research_option = tech_nep_destructor_ray
+		add_tech_progress = {
+			tech = tech_nep_destructor_ray
+			progress = 0.30
+		}
+		remove_relic = r_nep_orb_x1
+		add_relic = r_nep_orb_x2
 	}
 }
 

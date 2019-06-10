@@ -1,0 +1,40 @@
+nep_precursor_digsite_1 = {
+	desc = nep_precursor_digsite_1_desc
+	picture = GFX_evt_overgrown_city
+	stages = 4
+	max_instances = 1
+	weight = 0
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+	}
+	visible = {
+		has_country_flag = nep_highway_intro
+		default_site_visible_trigger = yes
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_F1
+		event = nep_highway.23
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_F2
+		event = nep_highway.24
+	}
+	stage = {
+		difficulty = 4
+		icon = GFX_archaeology_runes_F3
+		event = nep_highway.3
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_F3
+		event = nep_highway.4
+	}
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

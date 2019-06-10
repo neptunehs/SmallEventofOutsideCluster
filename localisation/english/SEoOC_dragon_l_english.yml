@@ -38,6 +38,7 @@
  
  nep_dragon.6.name:0 "New Threat?"
  nep_dragon.6.desc:0 "Scientists' research has no way for us to clarify the origins of these unknown forces. But the search is still useful -- we found out where the unknown forces came out: we found a similar Gennacu on all seven planets. There are unstarted weapons inside. We have modified some of their bio-programs to succeed and make them part of our combat power. But research can only end here, because there are new situations that must be dealt with, the Aemethms system has exploded a powerful energy response."
+ nep_dragon.6.desc2:0 "Scientists' research has no way for us to clarify the origins of these unknown forces. But the search is still useful -- we found out where the unknown forces came out: we found a similar Gennacu on all seven planets. Unfortunately, there are only a few damaged things: we can change them for alloys, but there is no further usage. And research can only end here, because there are new situations that must be dealt with, the Aemethms system has exploded a powerful energy response."
  nep_dragon.6.a:0 "Let the fleets prepare for the battle--based on past experience, this is not a good situation." 
  
  nep_dragon.64.name:0 "Summoned Dragons"
@@ -96,7 +97,8 @@
  nep_dragon_chain_desc:0 "To explore the source of energy response. May face battle, please be prepared."
  
  d_nep_unknown_vortex:0 "Mysterious Vortex"
- d_nep_unknown_vortex_desc:0 "This vortex never stopped, and the scientists have determined that it is protecting something. Give scientists some energy and they can stop it."
+ d_nep_unknown_vortex_desc:0 "This vortex never stopped, and the scientists have determined that it is protecting something. Give scientists some energy and enough intel and they can stop it."
+ NEP_UNKNOWN_VORTEX_CAN_BE_CLEARED:0 "But because of the shield not unlock by us,we don't have enough intel."
  
  d_nep_dragon_temple:0 "Dragon Temple"
  d_nep_dragon_temple_desc:0 "Ancient ruins that have been released. A very popular travel location recently. Sometimes it will start operation for unknown reasons."

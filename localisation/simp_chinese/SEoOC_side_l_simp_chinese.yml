@@ -260,3 +260,15 @@
  nep_deuspi.8024.b:0 "我们借你迷彩发生器，你就能神不知鬼不觉的找到你的最爱。"
  
  opinion_nep_you_angry_me:0 "曾威胁还是原始种群时的我们"
+ nep_SEoOC_deus_category:0 "$nep_SEoOC_whop_category$"
+ 
+ gov_nep_servent_of_machina:0 "机械神之仆从国"
+ RT_nep_HIGH_MIKO:0 "上位巫女"
+ civic_nep_deus_ex_machina:0 "机械神的领导"
+ civic_tooltip_nep_deus_ex_machina_effects:0 "起源种族的所有人口拥有$trait_nep_servent_of_machina$特性。星球起始得到一个$building_nep_palace_of_machina$建筑。将会被孤立在系外星系。外交关系可能会受到机械神的影响，尤其是机械神运行不正常的时候。"
+ building_nep_palace_of_machina:0 "机械神殿"
+ trait_nep_servent_of_machina:0 "机械神的仆从"
+ 
+ opinion_nep_machina_spiritualist:0 "信仰伪神的蠢货"
+ opinion_nep_spiritualist_machina:0 "信仰非机械伪神的蠢货"
+ opinion_nep_machina_materialist:0 "区区造物非神也"

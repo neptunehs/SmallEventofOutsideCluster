@@ -121,7 +121,7 @@ building_nep_palace_of_machina = {
 	can_be_disabled = no
 
 	category = government
-	
+	icon = building_supercomputer
 	potential = {
 		exists = owner
 		owner = { has_valid_civic = civic_nep_deus_ex_machina }

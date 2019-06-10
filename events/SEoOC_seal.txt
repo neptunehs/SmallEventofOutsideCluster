@@ -112,7 +112,8 @@ ship_event = {
 	
 	option = {
 		name = nep_seal.3.a
-		hidden_effect = { owner = { country_event = { id = nep_seal.4 days = 360 random = 360 } } }
+		owner = { add_relic = r_nep_orb_x1 }
+		hidden_effect = { owner = { country_event = { id = nep_seal.4 days = 180 random = 180 } } }
 	}
 }
 
@@ -337,7 +338,7 @@ country_event = {
 country_event = {
 	id = nep_seal.5
 	title = "nep_seal.5.name"
-	desc = "nep_seal.5.desc"	
+	desc = "nep_seal.5.desc"
 	picture = GFX_evt_exploding_ship
 	
 	fire_only_once = yes
@@ -363,19 +364,16 @@ country_event = {
 	
 	option = {
 		name = nep_seal.5.a
-		begin_event_chain = {
-			event_chain = "nep_seal_chain"
-			target = THIS
-		}
-		enable_special_project = {
-			name = "nep_malfunctioning_guards_research"
-			location = THIS.capital_scope
-			owner = THIS
+		custom_tooltip = nep_seal.5.a.tooltip
+		hidden_effect = { 
+			set_country_flag = nep_orb_1_can_active
+			set_country_flag = nep_orb_1_stage_1
 		}
 	}
 	
 	option = {
 		name = nep_seal.5.b
+		remove_relic = r_nep_orb_x1
 		hidden_effect = { country_event = { id = nep_finalweapon.4000 days = 21600 random = 4000 } }
 	}
 }
@@ -392,6 +390,8 @@ country_event = {
 	is_triggered_only = yes	
 	
 	immediate = {
+		remove_country_flag = nep_orb_1_can_active
+		remove_country_flag = nep_orb_1_stage_1
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
@@ -534,6 +534,7 @@ country_event = {
 	
 	option = {
 		name = nep_seal.6.a
+		begin_event_chain = { event_chain = nep_seal_chain target = root }
 		create_point_of_interest = {
 			id = grand_seal_system_poi.0
 			name = "grand_seal_system_poi_name"
@@ -628,7 +629,6 @@ country_event = {
 	
 	option = {
 		name = nep_seal.6.b
-		end_event_chain = "nep_seal_chain"
 	}
 }
 
@@ -704,16 +704,16 @@ country_event = {
 	
 	option = {
 		name = nep_seal.8.a
-		enable_special_project = {
-			name = "nep_grand_seal_final_answer"
-			location = event_target:nep_grand_seal_planet
-			owner = THIS
+		custom_tooltip = nep_seal.8.a.tooltip
+		hidden_effect = {
+			set_country_flag = nep_orb_1_can_active
+			set_country_flag = nep_orb_1_stage_2
 		}
 	}
 }
 
 #Boss appear
-ship_event = {
+country_event = {
 	id = nep_seal.9
 	title = "nep_seal.9.name"
 	desc = "nep_seal.9.desc"	
@@ -723,7 +723,9 @@ ship_event = {
 	
 	is_triggered_only = yes	
 
-	immediate = {	
+	immediate = {
+		remove_country_flag = nep_orb_1_can_active
+		remove_country_flag = nep_orb_1_stage_2
 		if = {
 			limit = {
 				NOT = { has_global_flag = seal_evil_country_created }
@@ -735,6 +737,12 @@ ship_event = {
 	
 	option = {
 		name = nep_seal.9.a
+		create_point_of_interest = {
+			id = grand_seal_system_poi.a
+			name = "nep_seal_poi_name"
+			desc = "nep_seal_poi_desc"
+			location = event_target:nep_grand_seal_planet.solar_system
+		}
 		owner = { end_event_chain = "nep_seal_chain" }
 	}
 }

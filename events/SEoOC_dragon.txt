@@ -583,12 +583,13 @@ planet_event = {
 	
 	is_triggered_only = yes
 	
+	pre_triggers = {
+		has_owner = yes
+		is_ai = no
+	}
+	
 	trigger = {
 		has_global_flag = nep_dragon_begin
-		OWNER = {
-			is_ai = no
-			has_country_flag = nep_dragon_founder
-		}
 		OR = {
 			has_planet_flag = nep_Auriel_planet
 			has_planet_flag = nep_Gabriel_planet
@@ -907,7 +908,14 @@ country_event = {
 country_event = {
 	id = nep_dragon.6
 	title = "nep_dragon.6.name"
-	desc = "nep_dragon.6.desc"
+	desc = {
+		trigger = { NOT = { has_global_flag = nep_SEoOC_easy } }
+		text = "nep_dragon.6.desc"
+	}
+	desc = {
+		trigger = { has_global_flag = nep_SEoOC_easy }
+		text = "nep_dragon.6.desc2"
+	}
 	picture = GFX_evt_engineering_research
 
 	is_triggered_only = yes	
@@ -973,81 +981,81 @@ country_event = {
 		event_target:nep_dragon_country = {
 			set_country_flag = nep_dragon_country
 		}
-		event_target:nep_Auriel_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Gabriel_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Sabriel_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Samuel_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Michael_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Jauiel_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}		
-		event_target:nep_Anael_planet = {
-			while = {
-				count = 2
-				create_army = {
-					name = "NAME_Legnahcras_existences"
-					owner = root
-					type = nep_Legnahcras_assault_army
-				}
-			}
-		}
-		every_owned_army = {
+		
+		if = {
 			limit = {
-				army_type = nep_Legnahcras_assault_army
+				NOT = { has_global_flag = nep_SEoOC_easy }
 			}
-			nep_easy_mod_reward_2 = yes
+			event_target:nep_Auriel_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Gabriel_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Sabriel_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Samuel_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Michael_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Jauiel_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}		
+			event_target:nep_Anael_planet = {
+				while = {
+					count = 2
+					create_army = {
+						name = "NAME_Legnahcras_existences"
+						owner = root
+						type = nep_Legnahcras_assault_army
+					}
+				}
+			}
 		}
 	}
 	
@@ -1058,6 +1066,12 @@ country_event = {
 			name = "nep_dragon_system_poi_name"
 			desc = "nep_dragon_system_poi_desc"
 			location = event_target:nep_dragon_star
+		}
+		if = {
+			limit = { has_global_flag = nep_SEoOC_easy }
+			add_resource = {
+				alloys = 5000
+			}
 		}
 	}
 }

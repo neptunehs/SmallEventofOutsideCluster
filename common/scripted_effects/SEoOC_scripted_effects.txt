@@ -653,17 +653,25 @@ create_Krahen_invader = {
 			set_fleet_bombardment_stance = armageddon
 			set_fleet_flag = nep_inva_fleet
 			
-			queue_actions = {
-				find_random_system = {
-					trigger = {
-						id = "nep_Krahen.trigger.0.0"
-						has_star_flag = nep_inva_system
-					}
-					found_system = {
-						move_to = this
-					}
-				}
+			
+			random_list = {
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_1 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_2 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_3 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_4 } }
 			}
+			
+			# queue_actions = {
+				# find_random_system = {
+					# trigger = {
+						# id = "nep_Krahen.trigger.0.0"
+						# has_star_flag = nep_inva_system
+					# }
+					# found_system = {
+						# move_to = this
+					# }
+				# }
+			# }
 		}
 		settings = {
 			can_change_leader = no
@@ -760,17 +768,24 @@ create_Krahen_constructor = {
 				angle = random 
 			}			
 			
-			queue_actions = {
-				find_random_system = {
-					trigger = {
-						id = "nep_Krahen.trigger.0.0.0"
-						has_star_flag = nep_inva_system
-					}
-					found_system = {
-						move_to = this
-					}
-				}
+			random_list = {
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_1 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_2 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_3 } }
+				1 = { queue_actions = { move_to = event_target:nep_inva_system_4 } }
 			}
+			
+			# queue_actions = {
+				# find_random_system = {
+					# trigger = {
+						# id = "nep_Krahen.trigger.0.0.0"
+						# has_star_flag = nep_inva_system
+					# }
+					# found_system = {
+						# move_to = this
+					# }
+				# }
+			# }
 		}
 	}
 }
@@ -2300,14 +2315,14 @@ nep_easy_mod_reward = {
 	}
 }
 
-nep_easy_mod_reward_2 = {
-	if = {
-		limit = {
-			has_global_flag = nep_SEoOC_easy
-		}
-		add_modifier = {
-			modifier = nep_Legnahcras_easy
-			days = -1
-		}
-	}
-}
+# nep_easy_mod_reward_2 = {
+	# if = {
+		# limit = {
+			# has_global_flag = nep_SEoOC_easy
+		# }
+		# add_modifier = {
+			# modifier = nep_Legnahcras_easy
+			# days = -1
+		# }
+	# }
+# }

@@ -20,16 +20,26 @@ d_nep_unknown_vortex = {
 	drop_weight = {
 		weight = 0	
 	}
-	on_cleared = {
-		hidden_effect = {
-			if = {
-				limit = {
-					exists = owner
+	
+	can_be_cleared = { 
+		custom_tooltip = {
+			fail_text = NEP_UNKNOWN_VORTEX_CAN_BE_CLEARED
+			AND = {
+				has_owner = yes
+				owner = {
+					is_ai = no
+					has_country_flag = nep_dragon_founder
 				}
-				owner = { 
 			}
 		}
 	}
+
+	on_cleared = {
+		hidden_effect = {
+			planet_event = { id = nep_dragon.4000 }
+		}
+	}
+	
 	ai_weight = {
 		weight = 0
 	}

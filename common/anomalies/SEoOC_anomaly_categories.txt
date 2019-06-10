@@ -10,15 +10,15 @@ nep_SEoOC_whop_category = {
 	
 	spawn_chance = {
 		modifier = {
-			add = 0.5
-			has_global_flag = nep_wohp_spawn
+			add = 1
+			NOT = { has_global_flag = nep_wohp_spawn }
 			solar_system = {
 				has_natural_wormhole = no
 			}
 		}
 		modifier = {
 			factor = 3
-			has_global_flag = nep_wohp_spawn
+			NOT = { has_global_flag = nep_wohp_spawn }
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant
@@ -31,4 +31,39 @@ nep_SEoOC_whop_category = {
 	}
 
 	on_success = nep_wohp.1
+}
+
+nep_SEoOC_deus_category = {
+	desc = nep_SEoOC_side_story_category_desc
+	picture = GFX_evt_wormhole
+	level = 10
+	#risk = 30
+	
+	should_ai_use = no	
+	max_once = yes
+	max_once_global = yes
+	
+	spawn_chance = {
+		modifier = {
+			add = 1
+			NOT = { has_global_flag = nep_deus_spawn }
+			solar_system = {
+				has_natural_wormhole = no
+			}
+		}
+		modifier = {
+			factor = 3
+			NOT = { has_global_flag = nep_deus_spawn }
+			OR = {
+				is_star = yes
+				is_planet_class = pc_gas_giant
+				planet_size > 35
+			}
+			solar_system = {
+				has_natural_wormhole = no
+			}
+		}
+	}
+
+	on_success = nep_deus.0
 }

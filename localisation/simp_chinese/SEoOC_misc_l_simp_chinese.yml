@@ -8,3 +8,13 @@
  SEoOC_diff_diff_policy_easy_desc:0 "如果你没有使用其他任何的非人设mod，选择这个。"
  SEoOC_diff_diff_policy_default:0 "标准"
  SEoOC_diff_diff_policy_default_desc:0 "本mod的标准数据。需要NSC或者其他的战力mod来保证你不会被挡住或被淹没。"
+
+ r_nep_orb_x1:0 "古代宝玉"
+ r_nep_orb_x1_desc:0 "来源不明的古代宝玉。"
+ r_nep_orb_x2:0 "古代宝玉*2"
+ r_nep_orb_x2_desc:0 "来源不明的古代宝玉，现在我们有两个。"
+ r_nep_orb_x3:0 "古代宝玉*3"
+ r_nep_orb_x3_desc:0 "来源不明的古代宝玉，我们凑齐了三个。"
+ r_nep_orb_x3_useful:0 "古代宝玉*3"
+ r_nep_orb_x3_useful_desc:0 "来源不明的古代宝玉，我们凑齐了三个。在完成了它的使命后，它完全解放了它的力量。现在我们可以利用其增强我们的军力。"
+ nep_orb_triumph:0 "古代宝玉强化"
