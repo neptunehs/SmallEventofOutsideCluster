@@ -1,8 +1,7 @@
 civic_nep_deus_ex_machina = {
 	potential = {
-		#ethics = { value = ethic_fanatic_spiritualist }
-		#authority = { value = auth_dictatorial }
-		always = no
+		ethics = { value = ethic_fanatic_spiritualist }
+		authority = { value = auth_dictatorial }
 	}
 	possible = {
 		civics = {
@@ -18,6 +17,7 @@ civic_nep_deus_ex_machina = {
 				value = civic_fanatic_purifiers
 				value = civic_exalted_priesthood
 				value = civic_slaver_guilds
+				value = civic_post_apocalyptic
 			}
 		}
 	}

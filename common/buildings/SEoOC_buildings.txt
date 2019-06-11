@@ -114,22 +114,34 @@ building_nep_gaia_emulator = {
 }
 
 building_nep_palace_of_machina = {
-	capital = yes
+	capital = no
 	can_build = no
 	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
 
-	category = government
-	icon = building_supercomputer
+	icon = building_institute
+
 	potential = {
 		exists = owner
-		owner = { has_valid_civic = civic_nep_deus_ex_machina }
+		owner = { 
+			OR = {
+				has_valid_civic = civic_nep_deus_ex_machina 
+				is_primitive = yes
+			}
+		}
 	}
 	
 	destroy_trigger = {
-		exists = owner
-		owner = { NOT = { has_valid_civic = civic_nep_deus_ex_machina } }
+		AND = {
+			exists = owner
+			owner = { 
+				AND = {
+					NOT = { has_valid_civic = civic_nep_deus_ex_machina }
+					is_primitive = no
+				}
+			}
+		}
 	}
 	
 	planet_modifier = {

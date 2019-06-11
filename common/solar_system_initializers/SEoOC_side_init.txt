@@ -265,7 +265,7 @@ nep_deus_init_01 = {
 		count = 1
 		orbit_distance = 20
 		home_planet = yes
-		class = ideal_planet_class
+		class = rl_habitable_normal
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 16 max = 20 }
 		deposit_blockers = none
@@ -274,6 +274,7 @@ nep_deus_init_01 = {
 		init_effect = {
 			generate_empire_home_planet = yes
 			prevent_anomaly = yes
+			set_planet_flag = nep_deus_home
 			save_global_event_target_as = nep_deus_home
 		}
 				
@@ -348,7 +349,7 @@ nep_deus_init_02 = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = ideal_planet_class
+		class = rl_habitable_normal
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 15 max = 25 }
 		

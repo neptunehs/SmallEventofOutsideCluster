@@ -46,14 +46,20 @@ nep_SEoOC_deus_category = {
 	spawn_chance = {
 		modifier = {
 			add = 1
-			NOT = { has_global_flag = nep_deus_spawn }
+			NOR = { 
+				has_global_flag = nep_deus_spawn
+				has_global_flag = nep_deuspi_spawn
+			}
 			solar_system = {
 				has_natural_wormhole = no
 			}
 		}
 		modifier = {
 			factor = 3
-			NOT = { has_global_flag = nep_deus_spawn }
+			NOR = { 
+				has_global_flag = nep_deus_spawn
+				has_global_flag = nep_deuspi_spawn
+			}
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant

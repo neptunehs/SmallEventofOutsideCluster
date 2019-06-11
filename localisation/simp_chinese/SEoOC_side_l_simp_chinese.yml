@@ -183,7 +183,7 @@
  nep_deuspi.7.b:0 "我们没兴趣干涉你们。"
  
  nep_deuspi.72.name:0 "悲愤的守护神"
- nep_deuspi.72.desc.a:0 "[event_target:nep_deus_country.GetName]因为病毒灭亡了，他们的“神”启动了“墓碑”计划。现在它变成了一个巨大的要塞，一直守护者它的子民的原来的家园。它一直向我们发布乱码一般的数据，像是要表达它的愤怒而无助的感情：但一个计算机如果存在了类似感情的东西，那肯定是它已经损坏了。"
+ nep_deuspi.72.desc.a:0 "[event_target:nep_deus_country.GetName]因为病毒灭亡了，他们的“神”启动了“墓碑”计划。现在它变成了一个巨大的要塞，一直守护者它的子民的原来的家园。它一直向我们发布乱码一般的数据，像是要表达它的愤怒而无助的感情：但一个计算机如果存在了类似感情的东西，那肯定是它已经损坏了。它要求我们不再打扰他们的永远的安宁————否则它将会攻击。"
  nep_deuspi.72.desc.b:0 "[event_target:nep_deus_country.GetName]因为病毒灭亡了，我们没能赶上。他们的“神”启动了“墓碑”计划。现在它变成了一个巨大的要塞，一直守护者它的子民的原来的家园。我们对它表达了遗憾之意，它也接受了，并且要求我们不再打扰他们的永远的安宁————否则它将会攻击。"
  
  nep_deuspi.73.name:0 "研究完毕"
@@ -207,7 +207,7 @@
  nep_deuspi.8012.b:0 "你能拿出什么献祭给我？"
  nep_deuspi.8012.c:0 "无聊。遮断信号。"
  
- nep_deuspi.8013.desc:0 "我手里只有这个雕像，这个是我的家宝，可以进献给您。\n\n§Y这玩意儿只值1$minarals$。§!"
+ nep_deuspi.8013.desc:0 "我手里只有这个雕像，这个是我的家宝，可以进献给您。\n\n§Y这玩意儿只值1矿石。§!"
  nep_deuspi.8013.a:0 "好。我这就接受你的献祭。"
  nep_deuspi.8013.b:0 "这可不行。你必须献出你自己的自由与灵魂，完全顺从于我。"
  
@@ -252,23 +252,65 @@
  
  nep_deuspi.8023.desc:0 "那是什么？你们拥有拯救我的力量吗？"
  nep_deuspi.8023.a:0 "有的。只要你愿意协助我们。"
- nep_deuspi.8001.c:0 "遮断信号。"
  
  nep_deuspi.8024.desc:0 "你们需要我做什么？"
  nep_deuspi.8024.a:0 "你只需要把这个道具放在你的“神”那儿，我就能跟你们的神进行“交涉”。"
  nep_deuspi.8024.a.tooltip:0 "那其实是一个系统入侵器具。"
  nep_deuspi.8024.b:0 "我们借你迷彩发生器，你就能神不知鬼不觉的找到你的最爱。"
  
+ nep_deuspl.2.name:0 "逻辑模块损坏"
+ nep_deuspl.2.desc:0 "最近逻辑模块有些问题。需要运行一下自检修复程序。"
+ nep_deuspl.2.a:0 "运行。"
+ nep_deuspl.2.b:0 "降低该问题解决优先级。"
+ 
+ nep_deuspl.3.name:0 "暴走"
+ nep_deuspl.3.desc:0 "外交逻辑判断……§G<ERROR>§!§Y<ERROR>§!§R<ERROR>§!/n/n所有的外星帝国都非常的危险！要保护子民们，只能将他们全部消灭！"
+ nep_deuspl.3.a:0 "§R杀！杀！杀！§!"
+ 
+ nep_deuspl.4.name:0 "损坏判断"
+ nep_deuspl.4.desc:0 "自检修复程序低优先级已经维持了相当长的时间了，需要提升优先级？§YY/N§!"
+ nep_deuspl.4.a:0 "N"
+ nep_deuspl.4.b:0 "Y"
+ 
+ nep_deuspl.5.name:0 "外交逻辑修复"
+ nep_deuspl.5.desc:0 "判断之前发生严重错误。进行外交修复。停止战争。"
+ nep_deuspl.5.tooltip:0 "将导致所有国家得到“危险的机械”的观点。"
+ 
+ nep_deuspl.81.name:0 "失守"
+ nep_deuspl.81.desc:0 "敌人即将接近安置计算机所在的宫殿。一切都已经完了。"
+ nep_deuspl.81.a:0 "自爆。"
+ 
+ nep_deuspl.9.name:0 "快速修理程序启动。"
+ nep_deuspl.9.desc:0 "被损伤的计算机将会很快修复，并且再度君临国家。"
+ 
+ opinion_nep_dangerous_machine:0 "危险的机械"
+ 
  opinion_nep_you_angry_me:0 "曾威胁还是原始种群时的我们"
  nep_SEoOC_deus_category:0 "$nep_SEoOC_whop_category$"
  
  gov_nep_servent_of_machina:0 "机械神之仆从国"
+ gov_nep_servent_of_machina_desc:0 "由一个机械神明引导的国家。"
  RT_nep_HIGH_MIKO:0 "上位巫女"
  civic_nep_deus_ex_machina:0 "机械神的领导"
- civic_tooltip_nep_deus_ex_machina_effects:0 "起源种族的所有人口拥有$trait_nep_servent_of_machina$特性。星球起始得到一个$building_nep_palace_of_machina$建筑。将会被孤立在系外星系。外交关系可能会受到机械神的影响，尤其是机械神运行不正常的时候。"
+ civic_nep_deus_ex_machina_desc:0 "该政权将由一个机械神明引导。"
+ civic_tooltip_nep_deus_ex_machina_effects:0 "起源种族的所有人口拥有$trait_nep_servent_of_machina$特性。星球起始得到一个$building_nep_palace_of_machina$建筑。将会被孤立在系外星系。外交关系可能会受到机械神的影响，尤其是机械神运行不正常的时候。§R损失首都时游戏结束。§!"
  building_nep_palace_of_machina:0 "机械神殿"
+ building_nep_palace_of_machina_desc:0 " "
  trait_nep_servent_of_machina:0 "机械神的仆从"
  
+ opinion_nep_was_hacked:0 "处于被黑状态"
  opinion_nep_machina_spiritualist:0 "信仰伪神的蠢货"
  opinion_nep_spiritualist_machina:0 "信仰非机械伪神的蠢货"
  opinion_nep_machina_materialist:0 "区区造物非神也"
+ 
+ job_nep_miko:0 "巫女"
+ job_nep_miko_plural:0 "巫女"
+ job_nep_miko_desc:0 " "
+ mod_job_nep_miko_add:0 "巫女职业"
+ job_nep_servent_of_god:0 "神的服侍者"
+ job_nep_servent_of_god_desc:0 " "
+ mod_job_nep_servent_of_god_add:0 "神的服侍者职业"
+ job_nep_servent_of_god_plural:0 "神的服侍者"
+ 
+ nep_deuspi_hack_project:0 "入侵“神”"
+ nep_deuspi_hack_project_DESC:0 "如果成功，我们将取得这个国家的控制权。"

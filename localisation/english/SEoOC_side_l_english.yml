@@ -129,3 +129,187 @@
  war_goal_wg_war_in_heaven_primitive:0 "Small War of Heaven"
  nep_you_are_our_Savior:0 "You are our Savior"
  nep_you_are_very_strong:0 "You are very strong"
+ 
+ 
+ nep_deus.2000.name:0 "$nep_wohp.2000.name$"
+ nep_deus.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god from primitive era and formed a very distinctive theocratic state."
+ 
+ nep_deus.4.name:0 "[event_target:nep_deus_country.GetName]"
+ nep_deus.4.desc:0 "After my calculations, as long as your country exists, my people are in danger of destruction. Now I and my people are going to destroy you."
+ nep_deus.4.a:0 "Are they crazy?"
+ 
+ nep_deus.4000.name:0 "Malfunction"
+ nep_deus.4000.desc:0 "It looks like [event_target:nep_deus_country.GetName] has declared war on almost all countries. It seems that it has some internal logic problem, and all known creatures are treated as threats that need to be eliminated. All their people fully trust this conclusion, it seems that war is inevitable."
+ nep_deus.4000.a:0 "Unreliable."
+ nep_deus.4000.b:0 "Do self-tests. We can't make the same mistake."
+ 
+ nep_deus.5.name:0 "Self-destruction"
+ nep_deus.5.desc:0 "We captured [event_target:nep_deus_country.Capital_scope.GetName]. When we tried to enter the place where the "God" that ruled the country was located, it blew itself. Now we have no chance to fix its logical problem and end this war. The remaining forces of the country that lost the "God" will also resist the end because there is no order to stop the resistance."
+ nep_deus.5.a:0 "No choice.Continue attacking!"
+ 
+ nep_deuspi.2000.name:0 "$nep_wohp.2000.name$"
+ nep_deuspi.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god and formed a very distinctive theocratic state."
+ 
+ nep_deuspi.3.name:0 "$observation_station$ Construction Completed"
+ nep_deuspi.3.desc:0 "We have completed $observation_station$ of [event_target:nep_deus_home.GetName]."
+ nep_deuspi.3.a:0 "We now have the conditions to invade the "God" through electronic warfare."
+ 
+ nep_deuspi.41.name:0 "Intrusion successful"
+ nep_deuspi.41.desc:0 "We successfully hacked into the computer of the "God" of [event_target:nep_deus_country.GetName]. Now, please decide the fate of it and its people."
+ nep_deuspi.41.a:0 "Make them vassals."
+ nep_deuspi.41.b:0 "They will be a member of our country."
+ nep_deuspi.41.c:0 "Look at how pious its people are. Let them all self-discipline."
+ 
+ nep_deuspi.42.name:0 "Intrusion failed"
+ nep_deuspi.42.desc:0 "We failed hacked into the "God" of [event_target:nep_deus_country.GetName]. It immediately started the firewall and we were unable to re-invade it. The invasion completely angered it, and it is now beginning to enlighten its people in exchange for the ability to confront us."
+ nep_deuspi.42.a:0 "What? Can computers enlighten primitives?"
+ nep_deuspi.42.a.tooltip:0 "Will form a new FTL country that is unfriendly to those who angered it."
+ 
+ nep_deuspi.5.name:0 "[event_target:nep_deus_country.GetName] enters a new era"
+ nep_deuspi.5.desc.a:0 "We succeeded in getting the hacked "God" of the  [event_target:nep_deus_country.GetName] to issue the instructions we needed. Under our command, the enlightenment of this country was completed at an amazing rate, and become our vassal. As long as they believe in their "God" one day, they are loyal to us forever."
+ nep_deuspi.5.desc.b:0 "[event_target:nep_deus_country.GetName] has succeeded in becoming a FTL country. Their "God" declared that it will protect their people by all means at any cost. We don't know what effect it will have on our universe."
+ nep_deuspi.5.desc.c:0 "[event_target:nep_deus_country.GetName]'s people have all joined our country under the direction of "God". Although they are still only loyal to their "God", since "God" is loyal to us, so they will also be part of our obedience."
+ nep_deuspi.5.desc.d:0 "[event_target:nep_deus_country.GetName]'s "God" decided to accept our protection, which it believes is the best way to protect its people."
+ 
+ nep_deuspi.6.name:0 "Lost Communicator"
+ nep_deuspi.6.desc:0 "Our observer accidentally lost a communicator when performing tasks in [event_target:nep_deus_country.GetName]. Because we can't retrieve it later, we can think that the locals have taken it. Because this place has a supercomputer --- yes, that "God", so it is almost certain that it can understand what our communicator is used for. Maybe it will use the communicator to access our network to protest."
+ nep_deuspi.6.a:0 "This is our fault. Wait for its access and be prepared to apologize."
+ nep_deuspi.6.b:0 "Truncate the connection permission of this communicator."
+ nep_deuspi.6.c:0 "Blast the entire area to ensuring communicator not be used by primitives."
+ 
+ nep_deuspi.7.name:0 "[event_target:nep_deus_country.GetName]"
+ nep_deuspi.7.desc:0 "Here is [event_target:nep_deus_country.GetName]. Your people left a communicator while "observing" my people. I should have protested... But now I have to thank this accident. My people need your help. My people are faced with a strange virus threat, which has been analyzed by me, up to §Y85.73%§! chance will cause large rate of my people to die,and cause they can't maintain enough genetic diversity to make the population proliferate. I don't have the knowledge of viruses in my memory, and my people have no research efforts. I have been trying to contact you who are observing in the sky, but I have been unable to do it until I get the communicator."
+ nep_deuspi.7.a:0 "Our scientists will collect samples for research immediately."
+ nep_deuspi.7.b:0 "We are not interested in interfering with you."
+ 
+ nep_deuspi.72.name:0 "Grief and Indignation"
+ nep_deuspi.72.desc.a:0 "Because the virus cause genocide in [event_target:nep_deus_country.GetName], their "God" launched the "Tombstone" plan. Now it has become a huge fortress, always guarding the home of their people which no more exist. It has been sending us garbled data, like expressing its acute distress and helpless emotion: but if a computer has something like emotion , it must be malfunction.It asked us not to disturb their eternal peace - or it would attack."
+ nep_deuspi.72.desc.b:0 "The virus cause genocide in [event_target:nep_deus_country.GetName],we were failed to catch up. Their "God" launched the "Tombstone" plan. Now it has become a huge fortress,always guarding the home of their people which no more exist. We expressed regret for it, and it accepted it, and asked us not to disturb their eternal peace - or it would attack."
+ 
+ nep_deuspi.73.name:0 "Research completed"
+ nep_deuspi.73.desc:0 "Our scientists have extracted pathogens and have developed specific drugs. Now we need to build $building_clinic$ on their planet to better rescue and produce drugs."
+ nep_deuspi.73.b:0 "We don't have this credits."
+ 
+ nep_deuspi.74.name:0 "The disease is under control"
+ nep_deuspi.74.desc:0 "The epidemic of [event_target:nep_deus_country.GetName] is under control. Their "God" is very grateful and promises to repay us in the future."
+ nep_deuspi.74.a:0 "Did a good deed again."
+ 
+ nep_deuspi.8.desc:0 "§YIncoming transmission from our lost communicator.§!\n\n"Sobbing...§Y[event_target:nep_deus_female.GetName]§!"\n\n§YThis seems to be crying. §!"
+ nep_deuspi.8.a:0 "Terminate transmission."
+ nep_deuspi.8001.desc:0 "Wow! How come the face suddenly appeared? Strange face... It happened in the strange iron block that I had seen before? Is it... this is an artifact? You are different world God? Our God is not allowed to touch the gods of the outside world... but now there is no way... please help me!"
+ nep_deuspi.8001.a:0 "(Lie) Yes, we are gods of different worlds."
+ nep_deuspi.8001.b:0 "We are not gods, but we can help you."
+ nep_deuspi.8001.c:0 "Terminate transmission."
+ 
+ nep_deuspi.8012.desc:0 "Although I know that connect with you are betraying and embarrassing about our "God"... but I really want to know, my friend, §Y[event_target:nep_deus_female.GetName]§!, now where is she. Ah, my name is §Y[event_target:nep_deus_male.GetName]§!. My childhood friend was selected as a Miko--this is honored in the history of our village. But I have never seen her since then, I want to see her, at all costs."
+ nep_deuspi.8012.a:0 "What do you want to see her?"
+ nep_deuspi.8012.a.response:0 "I love her. Even if this has no result."
+ nep_deuspi.8012.b:0 "What sacrifice can you give me?"
+ nep_deuspi.8012.c:0 "Boring.Terminate transmission."
+ 
+ nep_deuspi.8013.desc:0 "I only have this statue in my hand. This is my treasure. I can dedicate it to you. \n\n§Y This is only worth 1 Minerals. §!"
+ nep_deuspi.8013.a:0 "Okay. I will accept your sacrifice."
+ nep_deuspi.8013.b:0 "This is not enough. You must give up your soul and submissive to me."
+ 
+ nep_deuspi.8014.desc:0 "That... what do you need me to do? Give my life?"
+ nep_deuspi.8014.a:0 "No. You just need to put this item beside your "God"..."
+ nep_deuspi.8014.a.tooltip:0 "Give him a remote connector. As long as this is affected, the "God" will be completely unable to resist our system intrusion.... The premise is that the child can really pick it up."
+ nep_deuspi.8014.b:0 "No. I borrowed this "artifact" and you can get into palace without anybody knows."
+ nep_deuspi.8014.c:0 "(Lie) Yes. As long as the ritual using your blood is completed, you will meet your wish."
+ nep_deuspi.80142.desc:0 "Thank you! What do I need to do next?"
+ 
+ nep_deuspi.8015.desc:0 "With the help of that child, we successfully hacked into the computer of the "God" of [event_target:nep_deus_country.GetName]. Although we have given the order to let the child see its lover, but now the child's business is no longer important. Now t is our fish, please decide the fate of it and its people."
+ nep_deuspi.8016.desc:0 "The action of child failed, and we are confessed under the question of "God". It immediately started the firewall, and we can't hack it again. It looks like this invasion completely angered it, and it is now beginning to enlighten its people in exchange for the ability to confront us."
+ 
+ nep_deuspi.8017.name:0 "Truth"
+ nep_deuspi.8017.desc:0 "The child in [event_target:nep_deus_country.GetName] successfully entered the "Temple" with our camouflage generator and found her lover. But the truth is cruel: some of the so-called the miko will become bio-battery that serves as the "God" power supply: and his lover is just there. When he saw her, he made a scream and attracted security. He was arrested. We have to decide our next move."
+ nep_deuspi.8017.a:0 "No matter what he is."
+ nep_deuspi.8017.b:0 "Requires the observasion station to rescue him immediately."
+ nep_deuspi.8017.c:0 "Requires the observasion station to rescue him and his lover immediately."
+ nep_deuspi.8017.c.tooltip:0 "If you want to save both sides, you may fail."
+ 
+ nep_deuspi.8018.name:0 "Choice"
+ nep_deuspi.8018.desc:0 "We rescued the child. He was begging for the rescuers to save his lover, what do we do?"
+ nep_deuspi.8018.a:0 "We don't take this risk."
+ nep_deuspi.8018.a.tooltip:0 "Place this child on closest colony. But this child will always get the negative effect of §YRemorse§!"
+ nep_deuspi.8018.b:0 "Let's save the rest of the child."
+ nep_deuspi.8018.c:0 "Let's save the rest of the child and take down the inhuman "God" by the way."
+ 
+ nep_deuspi.8019.name:0 "Successful rescue"
+ nep_deuspi.8019.desc:0 "We successfully rescued the child's lover. Next we will place them on the nearest colony. In addition, it seems that "God" is very angry about this,maybe we need to do something."
+ nep_deuspi.8019.a:0 "Regardless of it."
+ nep_deuspi.8019.b:0 "Send a team to crash that "god"."
+ nep_deuspi.8019.b.tooltip:0 "There are two children in our hands. We can use them as a propaganda tool to remove the faith of those people from that country and join us."
+ 
+ nep_deuspi.8020.name:0 "Failed"
+ nep_deuspi.8020.desc:0 "Our rescue plan failed. The "God" was very angry about this and began to enlighten its people against us."
+ 
+ nep_deuspi.8021.name:0 "The Fall of "God""
+ nep_deuspi.8021.desc:0 "The "God" of [event_target:nep_deus_country.GetName] was wiped out by us. The rest of the people were ready to resist, but with the help of two, everyone understood the truth of their "God" and reluctantly stopped the resistance. Among them, people of insight thought that we should join us and sign a treaty with us. Next, we will wait for time to solve everything."
+
+ nep_deuspi.8022.desc:0 "You are not a god of a different world? Who are you?"
+ nep_deuspi.8022.a:0 "We are [Root.GetName]. We are aliens."
+ 
+ nep_deuspi.8023.desc:0 "What is that? Do you have the power to save me?"
+ nep_deuspi.8023.a:0 "Yes. As long as you are willing to assist us."
+ 
+ nep_deuspi.8024.desc:0 "What do you need me to do?"
+ nep_deuspi.8024.a:0 "You only need to put this item besides your "God" and I will be able to "negotiate" with your god."
+ nep_deuspi.8024.a.tooltip:0 "That is actually a system intrusion device."
+ nep_deuspi.8024.b:0 "We borrow your camouflage generator and you can find your lover without anybody knows."
+ 
+ nep_deuspl.2.name:0 "Logical Module Corruption"
+ nep_deuspl.2.desc:0 "Recently there are some problems with the logic module. You need to run the self-test and fix procedure."
+ nep_deuspl.2.a:0 "Run."
+ nep_deuspl.2.b:0 "Reduce priority of this procedure."
+ 
+ nep_deuspl.3.name:0 "Runaway"
+ nep_deuspl.3.desc:0 "Diplomatic logic judges...§G<ERROR>§!§Y<ERROR>§!§R<ERROR>§!/n/nAll alien empire are very dangerous! To protect our people we can only destroy them all!"
+ nep_deuspl.3.a:0 "§Rkill! Kill! KILL!§!"
+ 
+ nep_deuspl.4.name:0 "Damage Judgment"
+ nep_deuspl.4.desc:0 "The low priority of the self-test and fix procedure has been maintained for a long time and needs to be prioritized.§YY/N§!"
+ nep_deuspl.4.a:0 "N"
+ nep_deuspl.4.b:0 "Y"
+ 
+ nep_deuspl.5.name:0 "Diplomatic Logic Repair"
+ nep_deuspl.5.desc:0 "Serious error occurred.Conduct diplomatic repairs. Stop the war."
+ nep_deuspl.5.tooltip:0 "Will lead all countries get §Y"dangerous machine"§! opinion."
+ 
+ nep_deuspl.81.name:0 "Falling"
+ nep_deuspl.81.desc:0 "The enemy is about to approach the palace where the computer is located. Everything is over."
+ nep_deuspl.81.a:0 "Self-explosive."
+ 
+ nep_deuspl.9.name:0 "Quick repair procedure starts."
+ nep_deuspl.9.desc:0 "The damaged computer will be repaired soon and will lead the country again."
+ 
+ opinion_nep_dangerous_machine:0 "Dangerous Machine"
+ 
+ opinion_nep_you_angry_me:0 "Used to be threaten when primitive"
+ nep_SEoOC_deus_category:0 "$nep_SEoOC_whop_category$"
+ 
+ gov_nep_servent_of_machina:0 "Servent of Machina"
+ gov_nep_servent_of_machina_desc:0 "A country guided by a mechanical god."
+ RT_nep_HIGH_MIKO:0 "High Miko"
+ civic_nep_deus_ex_machina:0 "Lead of Machina"
+ civic_nep_deus_ex_machina_desc:0 "This country will be guided by a mechanical god."
+ civic_tooltip_nep_deus_ex_machina_effects:0 "All populations of the origin race have $trait_nep_servent_of_machina$ trait. The planet starts with a $building_nep_palace_of_machina$ building. It will be isolated in an extragalactic cluster. Diplomatic relations may be affected.§RLose the game when capital lost.§!"
+ building_nep_palace_of_machina:0 "Mechina Temple"
+ building_nep_palace_of_machina_desc:0 " "
+ trait_nep_servent_of_machina:0 "Servant of the Machina"
+ opinion_nep_was_hacked:0 "Was hacked"
+ opinion_nep_machina_spiritualist:0 "Idoit who believe fake god"
+ opinion_nep_spiritualist_machina:0 "Idoit who believe nothing"
+ opinion_nep_machina_materialist:0 "Idoit who believe metals"
+ 
+ job_nep_miko:0 "Miko"
+ job_nep_miko_plural:0 "Mikos"
+ job_nep_miko_desc:0 " "
+ mod_job_nep_miko_add:0 "Miko jobs"
+ job_nep_servent_of_god:0 "Servent of God"
+ job_nep_servent_of_god_desc:0 ""
+ mod_job_nep_servent_of_god_add:0 "Servent of God jobs"
+ job_nep_servent_of_god_plural:0 "Servent of God"
+ 
+ nep_deuspi_hack_project:0 "Hack the "God""
+ nep_deuspi_hack_project_DESC:0 "If success,we will took this country."

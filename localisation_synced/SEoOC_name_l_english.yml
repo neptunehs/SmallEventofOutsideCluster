@@ -31,6 +31,8 @@
  NAME_nep_Gaia_Survivors:0 "Gaia Survivors"
  NAME_nep_Highlander_Dominator:0 "Highlander Dominator"
  NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
+ NAME_nep_Country_of_Machina:0 "Machina"
+ NAME_nep_machina:0 "Machina"
  #############################
  #fleet&army
  #############################
@@ -68,6 +70,7 @@
  NAME_nep_highlander_royal_ashes:0 "Royal Ashes Force"
  NAME_nep_highlander_gladiators:0 "Gladiators Force"
  
+ NAME_Machina_Guardians:0 "Machina Guardians"
  ###########################
  #design
  ###########################

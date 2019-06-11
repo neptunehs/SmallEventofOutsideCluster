@@ -25,6 +25,8 @@ country_event = {
 			has_country_flag = league_world_found
 			has_country_flag = irassian_world_found
 			has_country_flag = cybrex_world_found
+			has_country_flag = green_thumb_achievement
+			has_country_flag = dust_off_achievement
 		}
 		OR = {
 			has_technology = "tech_sensors_3"
@@ -162,6 +164,60 @@ country_event = {
 							NOT = { exists = archaeological_site } 
 						}
 						planet_event = { id = nep_highway.21 }
+					}
+				}
+			}
+			green_thumb_achievement = {
+				random_system = {
+					limit = { has_star_flag = last_baol_system }
+					random_system_planet = {
+						limit = { has_planet_flag = grunur_prime }
+						if = {
+							limit = {
+								has_anomaly = no
+								NOT = { exists = archaeological_site } 
+							}
+							planet_event = { id = nep_highway.21 }
+						}
+						else = {
+							solar_system = {
+								random_system_planet = {
+									limit = { 
+										is_star = no
+										has_anomaly = no
+										NOT = { exists = archaeological_site } 
+									}
+									planet_event = { id = nep_highway.21 }
+								}
+							}
+						}
+					}
+				}
+			}
+			dust_off_achievement = {
+				random_system = {
+					limit = { has_star_flag = Zrocursor }
+					random_system_planet = {
+						limit = { has_planet_flag = Zrocursor_homeworld }
+						if = {
+							limit = {
+								has_anomaly = no
+								NOT = { exists = archaeological_site } 
+							}
+							planet_event = { id = nep_highway.21 }
+						}
+						else = {
+							solar_system = {
+								random_system_planet = {
+									limit = { 
+										is_star = no
+										has_anomaly = no
+										NOT = { exists = archaeological_site } 
+									}
+									planet_event = { id = nep_highway.21 }
+								}
+							}
+						}
 					}
 				}
 			}

@@ -152,17 +152,9 @@ nep_dragon_administrator_drone_machine = {
 
 nep_miko = {
 	category = ruler
-	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_nep_palace_of_machina
 	clothes_texture_index = 1
 	icon = high_priest
-
-	possible_pre_triggers = {
-		has_owner = yes
-		is_enslaved = no
-		is_being_purged = no
-		is_being_assimilated = no
-	}
 
 	possible = {
 		has_trait = trait_nep_servent_of_machina
@@ -175,14 +167,25 @@ nep_miko = {
 			influence = 1
 		}
 		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { is_primitive = no }
+			}
 			energy = 2
+		}
+		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { is_primitive = yes }
+			}
+			food = 1
 		}
 	}
 	
 	weight = {
 		weight = @ruler_job_weight
 		modifier = {
-			factor = 2
+			factor = 3
 			has_job = nep_miko
 		}
 		modifier = {
@@ -192,7 +195,10 @@ nep_miko = {
 		}
 		modifier = {
 			factor = 0
-			has_citizenship_rights = no	
+			AND = {
+				owner = { is_primitive = no }
+				has_citizenship_rights = no
+			}
 		}
 		modifier = {
 			factor = 1.25
@@ -217,7 +223,7 @@ nep_miko = {
 			has_trait = trait_quarrelsome
 		}	
 		modifier = {
-			factor = 1.2
+			factor = 2.5
 			has_ethic = ethic_spiritualist
 		}	
 		modifier = {
@@ -232,23 +238,28 @@ nep_miko = {
 			factor = 0
 			has_job = nep_servent_of_god
 		}
+		modifier = {
+			factor = 1000
+			has_job = peasant
+		}
 	}
 }
 
 nep_servent_of_god = {
 	category = ruler
-	condition_string = RULER_JOB_TRIGGER
+	#condition_string = RULER_JOB_TRIGGER
 	building_icon = building_nep_palace_of_machina
 	clothes_texture_index = 1
 	icon = organic_battery
 
-
-	possible_pre_triggers = {
-		has_owner = yes
-	}
-
 	possible = {
 		has_trait = trait_nep_servent_of_machina
+		OWNER = {
+			OR = {
+				is_primitive = yes
+				is_primitive = no
+			}
+		}
 	}
 
 	pop_modifier = {
@@ -270,7 +281,10 @@ nep_servent_of_god = {
 		}
 		modifier = {
 			factor = 0
-			has_citizenship_rights = no	
+			AND = {
+				owner = { is_primitive = no }
+				has_citizenship_rights = no
+			}
 		}
 		modifier = {
 			factor = 2.5
@@ -285,7 +299,7 @@ nep_servent_of_god = {
 			NOT = { has_trait = trait_nep_servent_of_machina }
 		}
 		modifier = {
-			factor = 2.5
+			factor = 3.5
 			has_job = nep_miko
 		}
 	}

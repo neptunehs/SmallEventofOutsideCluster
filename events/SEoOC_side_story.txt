@@ -1,39 +1,39 @@
 #############################################
 # Roll failed
 #############################################
-namespace = nep_fail
+# namespace = nep_fail
 
-ship_event = {
-	id = nep_fail.1
-	title = "nep_fail.1.name"
-	desc = "nep_fail.1.desc"
-	picture = GFX_evt_ship_in_orbit
-	show_sound = event_ship_bridge
-	location = FROM
+# ship_event = {
+	# id = nep_fail.1
+	# title = "nep_fail.1.name"
+	# desc = "nep_fail.1.desc"
+	# picture = GFX_evt_ship_in_orbit
+	# show_sound = event_ship_bridge
+	# location = FROM
 	
-	is_triggered_only = yes
-	immediate = {
-		if = {
-			limit = {
-				AND = {
-					has_global_flag = nep_X_creatures_spawn
-					has_global_flag = nep_wohp_spawn
-					has_global_flag = nep_omega_spawn
-					has_global_flag = nep_deus_spawn
-				}
-			}
-			remove_global_flag = nep_X_creatures_spawn
-			remove_global_flag = nep_wohp_spawn
-			remove_global_flag = nep_omgea_spawn
-			remove_global_flag = nep_deus_spawn
-			set_global_flag = nep_SEoOC_side_story_all_spawn
-		}
-	}
+	# is_triggered_only = yes
+	# immediate = {
+		# if = {
+			# limit = {
+				# AND = {
+					# has_global_flag = nep_X_creatures_spawn
+					# has_global_flag = nep_wohp_spawn
+					# has_global_flag = nep_omega_spawn
+					# has_global_flag = nep_deus_spawn
+				# }
+			# }
+			# remove_global_flag = nep_X_creatures_spawn
+			# remove_global_flag = nep_wohp_spawn
+			# remove_global_flag = nep_omgea_spawn
+			# remove_global_flag = nep_deus_spawn
+			# set_global_flag = nep_SEoOC_side_story_all_spawn
+		# }
+	# }
 	
-	option = {
-		name = OK
-	}
-}
+	# option = {
+		# name = OK
+	# }
+# }
 
 
 #############################################
@@ -1841,10 +1841,10 @@ ship_event = {
 		set_spawn_system_batch = begin
 		no_scope = {
 			spawn_system = {
-				min_distance >= 499
-				max_distance <= 510
-				min_orientation_angle = -124
-				max_orientation_angle = -132
+				min_distance >= 494
+				max_distance <= 500
+				min_orientation_angle = -142
+				max_orientation_angle = -134
 				hyperlane = no
 				initializer = nep_deus_init_01
 			}
@@ -1889,26 +1889,65 @@ ship_event = {
 			every_system = {
 				limit = { has_star_flag = nep_deus_system_2 }
 				add_hyperlane = { from = event_target:nep_deus_system to = this }
+				random_system_planet = {
+					limit = { is_colonizable = yes }
+					if = {
+						limit = {
+							event_target:nep_deus_home = {
+								OR = {
+									is_planet_class = pc_desert
+									is_planet_class = pc_arid
+									is_planet_class = pc_savannah
+								}
+							}
+						}
+						random_list = {
+							1 = { change_pc = pc_desert }
+							1 = { change_pc = pc_arid }
+							1 = { change_pc = pc_savannah }
+						}
+					}					
+					if = {
+						limit = {
+							event_target:nep_deus_home = {
+								OR = {
+									is_planet_class = pc_tropical
+									is_planet_class = pc_continental
+									is_planet_class = pc_ocean
+								}
+							}
+						}
+						random_list = {
+							1 = { change_pc = pc_tropical }
+							1 = { change_pc = pc_continental }
+							1 = { change_pc = pc_ocean }
+						}
+					}					
+					if = {
+						limit = {
+							event_target:nep_deus_home = {
+								OR = {
+									is_planet_class = pc_tundra
+									is_planet_class = pc_arctic
+									is_planet_class = pc_alpine
+								}
+							}
+						}
+						random_list = {
+							1 = { change_pc = pc_tundra }
+							1 = { change_pc = pc_arctic }
+							1 = { change_pc = pc_alpine }
+						}
+					}
+				}
 			}
 			add_hyperlane = { from = event_target:nep_deus_system to = event_target:nep_deus_system_3 }
-			random_system = {
+			every_system = {
 				limit = { has_star_flag = nep_deus_system_4 }
 				add_hyperlane = { from = event_target:nep_deus_system_3 to = this }
 			}
 		}
 		set_spawn_system_batch = end
-		every_system = {
-			limit = { has_star_flag = nep_deus_system_2 }
-			remove_star_flag = nep_deus_system_2
-		}
-		every_system = {
-			limit = { has_star_flag = nep_deus_system_3 }
-			remove_star_flag = nep_deus_system_3
-		}
-		every_system = {
-			limit = { has_star_flag = nep_deus_system_4 }
-			remove_star_flag = nep_deus_system_4
-		}
 		solar_system = {
 			spawn_natural_wormhole = {
 				bypass_type = wormhole
@@ -1927,8 +1966,8 @@ ship_event = {
 		}
 		owner = { country_event = { id = nep_wohp.1000 } }
 		random_list = {
-			3 = { ship_event = { id = nep_deus.1 } }
-			1 = { ship_event = { id = nep_deuspi.1 } }
+			28 = { ship_event = { id = nep_deus.1 } }
+			13 = { ship_event = { id = nep_deuspi.1 } }
 		}
 	}
 }
@@ -2011,7 +2050,7 @@ ship_event = {
 					create_leader = {
 						class = ruler
 						species = event_target:nep_machina_species
-						name = random
+						name = "NAME_nep_machina"
 						skill = 10
 						event_leader = yes
 					}
@@ -2025,18 +2064,6 @@ ship_event = {
 					species = event_target:nep_deus_country
 				}
 				set_capital = yes
-			}
-		}
-		every_system = {
-			limit = {
-				has_star_flag = nep_deus_system_2
-			}
-			every_system_planet = {
-				limit = { is_colonizable = yes }
-				create_colony = {
-					owner = event_target:nep_deus_country
-					species = event_target:nep_deus_country
-				}
 			}
 		}
 		every_system = {
@@ -2056,13 +2083,24 @@ ship_event = {
 					has_star_flag = nep_deus_system_3
 					has_star_flag = nep_deus_system_2
 					has_star_flag = nep_deus_system_4
-					
 				}
 			}
 			create_starbase = {
 				owner = event_target:nep_deus_country
 				size = starbase_citadel
 				module = shipyard
+			}
+		}
+		every_system = {
+			limit = {
+				has_star_flag = nep_deus_system_2
+			}
+			every_system_planet = {
+				limit = { is_colonizable = yes }
+				create_colony = {
+					owner = event_target:nep_deus_country
+					species = event_target:nep_deus_country
+				}
 			}
 		}
 		event_target:nep_deus_country = {
@@ -2086,12 +2124,23 @@ ship_event = {
 					count = 5
 					create_pop = { species = event_target:nep_deus_country }
 				}
+				add_district = district_city
+				add_district = district_farming
+				random_list = {
+					1 = { add_district = district_mining }
+					1 = { add_district = district_generator }
+				}
 			}
 			capital_scope = {
 				while = {
 					count = 5
 					create_pop = { species = event_target:nep_deus_country }
 				}
+				add_district = district_city
+				add_district = district_city
+				add_district = district_farming
+				add_district = district_mining
+				add_district = district_generator
 				add_building = building_nep_palace_of_machina
 			}
 			add_resource = {
@@ -2106,7 +2155,7 @@ ship_event = {
 	}
 }
 
-country_event = {
+fleet_event = {
 	id = nep_deus.2000
 	title = "nep_wohp.2000.name"
 	desc = "nep_deus.2000.desc"
@@ -2116,10 +2165,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		exists = event_target:nep_deus_country
+		has_global_flag = nep_deus_spawn
+		owner = { NOT = { has_country_flag = nep_deus_visited } } 
+	}
+	
 	immediate = { }
 	
 	option = {
 		name = OK
+		hidden_effect = { owner = { set_country_flag = nep_deus_visited } }
 	}
 }
 
@@ -2137,7 +2193,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		years = 100
+		years = 70
 	}
 	
 	immediate = {
@@ -2150,7 +2206,7 @@ country_event = {
 	}
 }
 
-event = {
+country_event = {
 	id = nep_deus.3
 	hide_window = yes
 	
@@ -2158,7 +2214,14 @@ event = {
 	
 	immediate = {
 		every_country = {
-			limit = { is_country_type = default }
+			limit = { 
+				is_country_type = default 
+				NOT = { is_same_value = event_target:nep_deus_country }
+			}
+			if = {
+				limit = { NOT = { has_communications = event_target:nep_deus_country } }
+				establish_communications_no_message = event_target:nep_deus_country
+			}
 			event_target:nep_deus_country = {
 				declare_war = {
 					target = prev
@@ -2237,7 +2300,6 @@ country_event = {
 			remove_building = building_nep_palace_of_machina
 		}
 		From = {
-			remove_country_flag = nep_deus_malfunction
 			remove_modifier = nep_deus_malfunction
 		}
 	}
@@ -2356,7 +2418,7 @@ ship_event = {
 					}
 					create_country = {
 						name = NAME_nep_Country_of_Machina
-						type = primitive
+						type = nep_primitive_machina
 						auto_delete = no
 						species = last_created
 						ethos = {
@@ -2369,12 +2431,57 @@ ship_event = {
 						save_global_event_target_as = nep_deus_country
 						set_country_flag = nep_deus_country
 						set_country_flag = late_medieval_age
-						set_country_flag = recently_advanced
+						set_country_flag = recently_advanced						
 					}
 				}
 				setup_primitive_planet = yes
+				while = {
+					count = 5
+					create_pop = { species = event_target:nep_deus_country }
+				}				
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				add_building = building_nep_palace_of_machina
+				last_created_country = {
+					IF = {
+						LIMIT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+						create_species = {
+							name = random
+							class = ROBOT
+							portrait = random
+							namelist = "AI"
+							traits = {
+								trait = trait_mechanical
+								trait = random_traits
+							}
+							effect = {
+								save_event_target_as = nep_machina_species
+							}
+						}
+						ELSE = {
+							create_species = {
+								name = random
+								class = ROBOT
+								portrait = default_robot
+								namelist = "AI"
+								traits = {
+									trait = trait_mechanical
+									trait = random_traits
+								}
+								effect = {
+									save_event_target_as = nep_machina_species
+								}
+							}
+						}
+					}
+					create_leader = {
+						class = ruler
+						species = event_target:nep_machina_species
+						name = "NAME_nep_machina"
+						skill = 10
+						event_leader = yes
+					}
+					set_leader = last_created_leader
+				}
 			}
 			create_country = {
 				name = random
@@ -2418,6 +2525,7 @@ fleet_event = {
 		has_global_flag = nep_deuspi_spawn
 		NOT = { owner = { has_country_flag = nep_deuspi_visited } }
 		from = { has_star_flag = nep_deus_system }
+		exists = event_target:nep_deus_country
 	}
 	
 	immediate = {
@@ -2460,22 +2568,36 @@ ship_event = {
 	
 	trigger = {
 		solar_system = { has_star_flag = nep_deus_system }
+		owner = {
+			if = {
+				limit = { NOT = { has_communications = event_target:nep_deus_country } }
+				establish_communications_no_message = event_target:nep_deus_country
+			}
+		}
 	}
 	
 	immediate = {
 	
 	}
-	
+
+	option = {
+		name = OK
+		default_hide_option = yes
+		hidden_effect = {
+			owner = { country_event = { id = nep_deuspi.6 days = 15 random = 3600 } }
+		}
+	}
+
 	option = {
 		name = nep_deuspi.3.a
 		trigger = {
 			owner = {
 				OR = {
 					has_ethic = "ethic_fanatic_materialist"
-				}
-				AND = {
-					has_authority = auth_machine_intelligence
-					NOT = { has_valid_civic = civic_machine_terminator }
+					AND = {
+						has_authority = auth_machine_intelligence
+						NOT = { has_valid_civic = civic_machine_terminator }
+					}
 				}
 			}
 		}
@@ -2485,14 +2607,6 @@ ship_event = {
 				owner = root.owner
 				location = event_target:nep_deus_home
 			}
-		}
-	}
-		
-	option = {
-		name = OK
-		default_hide_option = yes
-		hidden_effect = {
-			owner = { country_event = { id = nep_deuspi.6 days = 15 random = 36000 } }
 		}
 	}
 }
@@ -2604,6 +2718,7 @@ country_event = {
 	
 	immediate = {
 		event_target:nep_deus_country = {
+			set_country_type = primitive
 			remove_country_flag = late_medieval_age
 			remove_country_flag = recently_advanced
 			set_country_type = default
@@ -2649,8 +2764,16 @@ country_event = {
 					}
 				}
 				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_factory
 				remove_building = building_primitive_factory
 				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				remove_building = building_urban_dwellings
 				remove_building = building_urban_dwellings
 				add_district = district_city
 				add_district = district_city
@@ -2679,6 +2802,9 @@ country_event = {
 							owner = event_target:nep_deus_country
 						}
 					}
+					else = {
+						starbase = { set_owner = event_target:nep_deus_country }
+					}
 				}
 			}
 			random_owned_ship = {
@@ -2704,9 +2830,14 @@ country_event = {
 						subject_type = protectorate
 					}						
 				}
+				add_opinion_modifier = { who = root modifier = opinion_nep_was_hacked }
 			}
 		}
 		set_country_flag = nep_enli_deus_by_hack
+		if = {
+			limit = { NOT = { has_communications = event_target:nep_deus_country } }
+			establish_communications_no_message = event_target:nep_deus_country
+		}
 		country_event = { id = nep_deuspi.5 }
 	}
 }
@@ -2720,6 +2851,7 @@ country_event = {
 	
 	immediate = {
 		event_target:nep_deus_country = {
+			set_country_type = primitive
 			remove_country_flag = late_medieval_age
 			remove_country_flag = recently_advanced
 			set_country_type = default
@@ -2753,8 +2885,16 @@ country_event = {
 					}
 				}
 				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_factory
 				remove_building = building_primitive_factory
 				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				remove_building = building_urban_dwellings
 				remove_building = building_urban_dwellings
 				add_district = district_city
 				add_district = district_city
@@ -2784,19 +2924,8 @@ country_event = {
 							owner = event_target:nep_deus_country
 						}
 					}
-					else_if = {
-						limit = {
-							starbase = {
-								NOT = { owner = { is_same_value = event_target:nep_deus_country } }
-							}
-						}	
-						starbase = {
-							destroy_fleet = this
-						}
-						create_starbase = {
-							size = starbase_outpost
-							owner = event_target:nep_deus_country
-						}
+					else = {
+						starbase = { set_owner = event_target:nep_deus_country }
 					}
 				}
 			}
@@ -2822,6 +2951,10 @@ country_event = {
 			}
 		}
 		set_country_flag = nep_enli_deus_by_hate
+		if = {
+			limit = { NOT = { has_communications = event_target:nep_deus_country } }
+			establish_communications_no_message = event_target:nep_deus_country
+		}
 		country_event = { id = nep_deuspi.5 }
 	}
 }
@@ -2876,6 +3009,7 @@ country_event = {
 	
 	immediate = {
 		event_target:nep_deus_country = {
+			set_country_type = primitive
 			remove_country_flag = late_medieval_age
 			remove_country_flag = recently_advanced
 			capital_scope = {
@@ -2893,8 +3027,16 @@ country_event = {
 					}
 				}
 				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_farm
+				remove_building = building_primitive_factory
+				remove_building = building_primitive_factory
 				remove_building = building_primitive_factory
 				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_primitive_capital
+				remove_building = building_urban_dwellings
+				remove_building = building_urban_dwellings
 				remove_building = building_urban_dwellings
 				add_district = district_city
 				add_district = district_city
@@ -2924,15 +3066,8 @@ country_event = {
 							owner = root
 						}
 					}
-					else_if = {
-						limit = {
-							starbase = {
-								NOT = { owner = { is_same_value = root } }
-							}
-						}	
-						starbase = {
-							set_owner = root
-						}
+					else = {
+						starbase = { set_owner = root }
 					}
 				}
 			}
@@ -3021,7 +3156,9 @@ country_event = {
 	location = event_target:nep_deus_home
 	
 	is_triggered_only = yes
-	
+
+	fire_only_once = yes	
+
 	immediate = { }
 	
 	option = {
@@ -3067,9 +3204,20 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_list = {
-			1 = { country_event = { id = nep_deuspi.7 } } # Virus
-			1 = { country_event = { id = nep_deuspi.8 } } # Miko
+		if = {
+			limit = {
+				any_owned_planet = {
+					is_colony = yes
+					free_housing >= 2
+				}
+			}
+			random_list = {
+				1 = { country_event = { id = nep_deuspi.7 } } # Virus
+				1 = { country_event = { id = nep_deuspi.8 } } # Miko
+			}
+		}
+		else = {
+			country_event = { id = nep_deuspi.7 }
 		}
 	}
 }
@@ -3809,7 +3957,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nep_deuspi.8018.b
+		name = nep_deuspi.8018.c
 		enable_special_project = {
 			name = "nep_deus_rescue_2"
 			location = event_target:nep_deus_home
@@ -4063,7 +4211,7 @@ country_event = {
 }
 
 namespace = nep_deuspl
-ship_event = {
+country_event = {
 	id = nep_deuspl.1
 	hide_window = yes
 	
@@ -4071,10 +4219,523 @@ ship_event = {
 	
 	fire_only_once = yes
 	
+	trigger = {
+		has_valid_civic = civic_nep_deus_ex_machina
+	}
+	
 	immediate = {
+		if = {
+			limit = { is_ai = no }
+			set_global_flag = nep_deus_spawn
+			set_spawn_system_batch = begin
+			no_scope = {
+				spawn_system = {
+					min_distance >= 494
+					max_distance <= 500
+					min_orientation_angle = -142
+					max_orientation_angle = -134
+					hyperlane = no
+					initializer = nep_deus_init_01
+				}
+			}
+			random_system = {
+				limit = {
+					has_star_flag = nep_deus_system
+				}
+				while = {
+					count = 3
+					spawn_system = {
+						min_distance >= 10
+						max_distance <= 20
+						hyperlane = no
+						initializer = nep_deus_init_02
+					}
+				}
+				spawn_system = {
+					min_distance >= 10
+					max_distance <= 20
+					min_orientation_angle = -124
+					max_orientation_angle = -132
+					hyperlane = no
+					initializer = nep_deus_init_03
+				}
+				random_system = {
+					limit = { has_star_flag = nep_deus_system_3 }
+					while = {
+						count = 3
+						spawn_system = {
+							min_distance >= 10
+							max_distance <= 20
+							min_orientation_angle = -124
+							max_orientation_angle = -132
+							hyperlane = no
+							initializer = nep_deus_init_04
+						}
+					}
+					save_event_target_as = nep_deus_system_3
+				}
+				save_global_event_target_as = nep_deus_system
+				clear_global_event_target = nep_deus_home
+				random_planet = {
+					limit = { has_planet_flag = nep_deus_home }
+					save_global_event_target_as = nep_deus_home
+				}
+				event_target:nep_deus_home = {
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_desert }
+						}
+						change_pc = pc_desert
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_arid }
+						}
+						change_pc = pc_arid
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_savannah }
+						}
+						change_pc = pc_savannah
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_tropical }
+						}
+						change_pc = pc_tropical
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_continental }
+						}
+						change_pc = pc_continental
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_ocean }
+						}
+						change_pc = pc_ocean
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_tundra }
+						}
+						change_pc = pc_tundra
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_arctic }
+						}
+						change_pc = pc_arctic
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_alpine }
+						}
+						change_pc = pc_alpine
+					}
+					if = {
+						limit = {
+							root.capital_scope = { is_planet_class = pc_nuked }
+						}
+						change_pc = pc_nuked
+					}
+					if = {
+						limit = {
+							root.capital_scope = { 
+								OR = {
+									is_planet_class = pc_gaia
+									is_planet_class = pc_habitat
+									is_planet_class = pc_ringworld_habitable
+								}
+							}
+						}
+						change_pc = pc_gaia
+					}
+				}
+				every_system = {
+					limit = { has_star_flag = nep_deus_system_2 }
+					add_hyperlane = { from = event_target:nep_deus_system to = this }
+					random_system_planet = {
+						limit = { is_colonizable = yes }
+						if = {
+							limit = {
+								event_target:nep_deus_home = {
+									OR = {
+										is_planet_class = pc_desert
+										is_planet_class = pc_arid
+										is_planet_class = pc_savannah
+									}
+								}
+							}
+							random_list = {
+								1 = { change_pc = pc_desert }
+								1 = { change_pc = pc_arid }
+								1 = { change_pc = pc_savannah }
+							}
+						}					
+						if = {
+							limit = {
+								event_target:nep_deus_home = {
+									OR = {
+										is_planet_class = pc_tropical
+										is_planet_class = pc_continental
+										is_planet_class = pc_ocean
+									}
+								}
+							}
+							random_list = {
+								1 = { change_pc = pc_tropical }
+								1 = { change_pc = pc_continental }
+								1 = { change_pc = pc_ocean }
+							}
+						}					
+						if = {
+							limit = {
+								event_target:nep_deus_home = {
+									OR = {
+										is_planet_class = pc_tundra
+										is_planet_class = pc_arctic
+										is_planet_class = pc_alpine
+									}
+								}
+							}
+							random_list = {
+								1 = { change_pc = pc_tundra }
+								1 = { change_pc = pc_arctic }
+								1 = { change_pc = pc_alpine }
+							}
+						}
+					}
+				}
+				add_hyperlane = { from = event_target:nep_deus_system to = event_target:nep_deus_system_3 }
+				every_system = {
+					limit = { has_star_flag = nep_deus_system_4 }
+					add_hyperlane = { from = event_target:nep_deus_system_3 to = this }
+				}
+			}
+			set_spawn_system_batch = end
+			event_target:nep_deus_system = {
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = yes
+				}
+				random_rim_system = {
+					limit = { has_natural_wormhole = no }
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+					}
+					link_wormholes = prev
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = root
+				}
+			}
+			clear_global_event_target = nep_deus_home
+			random_planet = {
+				limit = { has_planet_flag = nep_deus_home }
+				save_global_event_target_as = nep_deus_home
+			}
+			event_target:nep_deus_home = {
+				create_colony = {
+					owner = root
+					species = root
+					ethos = owner
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				generate_start_pops = yes
+				add_building = building_nep_palace_of_machina
+			}
+			species = {
+				set_species_homeworld = event_target:nep_deus_home
+			}
+			add_research_option = tech_wormhole_stabilization
+			random_owned_planet = {
+				limit = {
+					is_colony = yes
+					is_capital = yes
+				}
+				solar_system = {
+					random_fleet_in_system = {
+						limit = {
+							any_owned_ship = {
+								is_ship_class = shipclass_starbase
+							}
+						}
+						destroy_fleet = this
+					}
+				}
+				destroy_colony = yes
+				remove_planet = yes
+				surveyed = { set_surveyed = no surveyor = root }
+			}
+			every_owned_fleet = {
+				limit = {
+					NOT = { is_ship_class = shipclass_starbase }
+				}
+				set_location = {
+					target = root.capital_scope
+					distance = 1
+					angle = random
+				}
+			}
+		}
+		else = {
+			
+		}
 	}
 }
 
+country_event = {
+	id = nep_deuspl.2
+	title = "nep_deuspl.2.name"
+	desc = "nep_deuspl.2.desc"
+	picture = GFX_evt_sapient_AI
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		has_valid_civic = civic_nep_deus_ex_machina
+		years_passed > 80
+		resource_stockpile_compare = {
+			resource = energy
+			value >= 200
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 30
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = { 
+		name = nep_deuspl.2.a
+		add_resource = {
+			energy = -100
+		}
+	}
+	
+	option = { 
+		name = nep_deuspl.2.b
+		hidden_effect = {
+			country_event = { id = nep_deuspl.3 days = 3600 random = 12800 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspl.3
+	title = "nep_deuspl.3.name"
+	desc = "nep_deuspl.3.desc"
+	picture = GFX_evt_machine_sapience
+	
+	trigger = {
+		has_valid_civic = civic_nep_deus_ex_machina
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		save_global_event_target_as = nep_deus_country
+		add_modifier = { 
+			modifier = nep_deus_malfunction
+			days = -1
+		}
+		set_country_flag = nep_deus_malfunction
+		country_event = { id = nep_deus.3 days = 360 random = 360 }
+		country_event = { id = nep_deuspl.4 days = 3600 random = 18000 }
+	}
+	
+	option = { 
+		name = nep_deuspl.3.a
+	}
+}
+
+country_event = {
+	id = nep_deuspl.4
+	title = "nep_deuspl.4.name"
+	desc = "nep_deuspl.4.desc"
+	picture = GFX_evt_machine_sapience
+	is_triggered_only = yes
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_deuspl.4.a
+	}
+	option = {
+		name = nep_deuspl.4.b
+		country_event = { id = nep_deuspl.5 days = 5 }
+	}
+}
+
+country_event = {
+	id = nep_deuspl.5
+	title = "nep_deuspl.5.name"
+	desc = "nep_deuspl.5.desc"
+	picture = GFX_evt_machine_sapience
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_country_flag = nep_deus_malfunction
+		remove_modifier = nep_deus_malfunction
+	}
+	
+	option = {
+		name = OK
+		custom_tooltip = nep_deuspl.5.tooltip
+		hidden_effect = {
+			every_country = {
+				limit = { is_at_war_with = root }
+				add_opinion_modifier = { who = root modifier = opinion_nep_dangerous_machine }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspl.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		fromfrom = { is_same_value = event_target:nep_deus_home }
+		from = { has_valid_civic = civic_nep_deus_ex_machina }
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = swarm
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+			is_country_type = ai_empire
+			is_country_type = awakened_marauders
+			is_country_type = nep_Krahen_country
+		}
+	}
+	
+	immediate = {
+		from = { country_event = { id = nep_deuspl.81 } }
+	}
+}
+
+planet_event = {
+	id = nep_deuspl.800
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_planet_flag = nep_deus_home
+		from = { NOT = { has_valid_civic = civic_nep_deus_ex_machina } }
+	}
+	
+	immediate = {
+		random_country = {
+			limit = { 
+				has_valid_civic = civic_nep_deus_ex_machina
+			}
+			country_event = { id = nep_deuspl.81 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_deuspl.801
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from = { is_same_value = event_target:nep_deus_home }
+		NOT = { has_valid_civic = civic_nep_deus_ex_machina }
+		OR = {
+			is_country_type = default
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+			is_country_type = swarm
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+			is_country_type = ai_empire
+			is_country_type = awakened_marauders
+			is_country_type = nep_Krahen_country
+		}
+	}
+	
+	immediate = {
+		from = { country_event = { id = nep_deuspl.81 } }
+	}
+}
+
+country_event = {
+	id = nep_deuspl.81
+	title = "nep_deuspl.81.name"
+	desc = "nep_deuspl.81.desc"
+	picture = GFX_evt_glitchy_matrix
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_deuspl.81.a
+	}
+	
+	after = {
+		destroy_country = yes
+	}
+}
+country_event = {
+	id = nep_deuspl.9
+	title = "nep_deuspl.9.name"
+	desc = "nep_deuspl.9.desc"
+	picture = GFX_evt_machine_sapience
+	
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = civic_nep_deus_ex_machina
+		from = { is_same_value = root.ruler	}
+	}
+	
+	immediate = {
+		clone_leader = {
+			target = root.owner
+			effect = {
+				save_global_event_target_as = nep_deus_temp_ruler
+			}
+		}
+		country_event = { id = nep_deuspl.91 days = 5 }
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_deuspl.91
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		assign_leader = event_target:nep_deus_temp_ruler
+		clear_global_event_target = nep_deus_temp_ruler
+	}
+}
 #############################################
 # Guide a Girl to the Galaxy
 #############################################

@@ -32,6 +32,7 @@
  NAME_nep_Highlander_Dominator:0 "天上统治国"
  NAME_nep_Highlander_Kingdom:0 "天上人王国"
  NAME_nep_Country_of_Machina:0 "机神国"
+ NAME_nep_machina:0 "机械神"
 
  #############################
  #fleet&army
@@ -70,6 +71,7 @@
  NAME_nep_highlander_royal_ashes:0 "光荣炮灰军"
  NAME_nep_highlander_gladiators:0 "斗兽勇士军"
  
+ NAME_Machina_Guardians:0 "机械神守护者"
  ###########################
  #design
  ###########################

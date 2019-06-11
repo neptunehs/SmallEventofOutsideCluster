@@ -234,6 +234,7 @@ tech_gaia_super_weapon = {
 	is_rare = yes
 	weight = @tier3weight3
 	is_reverse_engineerable = no
+	icon = tech_biomechanics
 	
 	potential = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }
