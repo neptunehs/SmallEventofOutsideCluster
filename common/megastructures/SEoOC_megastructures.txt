@@ -49,3 +49,164 @@ nep_sealgate_restored = {
 	construction_blocks_others = no
 	bypass_type = nep_sealgate
 }
+
+nep_station_whitegoo_mega = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 360
+
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 150
+			influence = 5
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	prerequisites = { "tech_nep_whitegoo_4" }
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_whitegoo_station"
+			NOT = { any_ship_in_system = { is_ship_size = nep_station_whitegoo } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_nep_whitegoo"
+			OR = {
+				has_star_flag = nep_whitegoo_1
+				has_star_flag = nep_whitegoo_2
+				has_star_flag = nep_whitegoo_3
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_nep_whitegoo_no_more"
+			has_global_flag = nep_whitegoo_begin
+		}
+	}
+	
+	placement_rules = {
+
+	}
+		
+	ai_weight = {
+		factor = 15
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = { 
+					owner = { is_same_value = from } 
+				}
+			}
+		}
+	}
+
+	
+	on_build_complete = {
+		create_fleet = {
+			settings = {
+				spawn_debris = no 
+			}
+			effect = {
+				set_owner = from
+				create_ship = {
+					random_existing_design = nep_station_whitegoo
+				}
+				set_location = {
+					target = fromfrom
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		remove_megastructure = fromfrom
+		remove_star_flag = nep_whitegoo_1
+		remove_star_flag = nep_whitegoo_2
+		remove_star_flag = nep_whitegoo_3
+		set_star_flag = nep_whitegoo_no_effect
+		every_system_planet = {
+			if = { 
+				limit = { has_modifier = nep_whitegoo_1 }
+				remove_modifier = nep_whitegoo_1
+			}
+			if = { 
+				limit = { has_modifier = nep_whitegoo_2 }
+				remove_modifier = nep_whitegoo_2
+			}
+			if = { 
+				limit = { has_modifier = nep_whitegoo_3 }
+				remove_modifier = nep_whitegoo_3
+			}
+		}
+		every_fleet_in_system = {
+			if = { 
+				limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_1 } }
+				remove_modifier = nep_whitegoo_fleet_1
+			}
+			if = { 
+				limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_2 } }
+				remove_modifier = nep_whitegoo_fleet_2
+			}
+			if = { 
+				limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_3 } }
+				remove_modifier = nep_whitegoo_fleet_3
+			}
+		}
+		every_neighbor_system = {
+			remove_star_flag = nep_whitegoo_1
+			remove_star_flag = nep_whitegoo_2
+			remove_star_flag = nep_whitegoo_3
+			set_star_flag = nep_whitegoo_no_effect
+			every_system_planet = {
+				if = { 
+					limit = { has_modifier = nep_whitegoo_1 }
+					remove_modifier = nep_whitegoo_1
+				}
+				if = { 
+					limit = { has_modifier = nep_whitegoo_2 }
+					remove_modifier = nep_whitegoo_2
+				}
+				if = { 
+					limit = { has_modifier = nep_whitegoo_3 }
+					remove_modifier = nep_whitegoo_3
+				}
+			}
+			every_fleet_in_system = {
+				if = { 
+					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_1 } }
+					remove_modifier = nep_whitegoo_fleet_1
+				}
+				if = { 
+					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_2 } }
+					remove_modifier = nep_whitegoo_fleet_2
+				}
+				if = { 
+					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_3 } }
+					remove_modifier = nep_whitegoo_fleet_3
+				}
+			}
+		}
+	}
+}

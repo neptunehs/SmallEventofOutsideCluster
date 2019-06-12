@@ -16,6 +16,8 @@
  nep_highway.22.b.tooltip:0 "This "old" relic should be able to turn to a lot of junk."
  nep_highway.22.c:0 "Open a demolition show."
  nep_highway.22.c.tooltip:0 "This ruin may be the last existence of §Y[ROOT.FROM.Solar_System.GetName]§!.It should be interesting to wipe out an ancient xenos in front of the entire country."
+ 
+ nep_precursor_digsite_1:0 "Strange Shadows"
  nep_precursor_digsite_1_desc:0 "Investigate the strange shadows on [Planet.GetName]."
  
  nep_highway.23.desc:0 "We found traces of people who have lived in these small ruins. At present, it is initially judged that these are some building in a living area: in other words, the possibility of digging out good things is not so good."

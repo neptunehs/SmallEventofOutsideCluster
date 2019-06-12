@@ -16,7 +16,8 @@
  nep_highway.22.b.tooltip:0 "这个“老”遗迹应该能挖不少废品。"
  nep_highway.22.c:0 "做一个公开破坏的节目。"
  nep_highway.22.c.tooltip:0 "这个遗迹可能是§Y[ROOT.FROM.Solar_System.GetName]§!的文明的最后的存在了。在整个国家面前永远消灭掉一个古老的异星人文明应该很有趣。"
-
+ 
+ nep_precursor_digsite_1:0 "奇怪的阴影"
  nep_precursor_digsite_1_desc:0 "探索[Planet.GetName]的不明阴影。"
  
  nep_highway.23.desc:0 "我们在小型遗迹中找到了曾经有人生活过的痕迹。目前初步判断这是一个生活区的建筑：换句话说，挖出好东西的可能性不大。"

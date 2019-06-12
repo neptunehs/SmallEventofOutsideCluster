@@ -263,7 +263,7 @@
  nep_deuspl.2.a:0 "Run."
  nep_deuspl.2.b:0 "Reduce priority of this procedure."
  
- nep_deuspl.3.name:0 "Runaway"
+ nep_deuspl.3.name:0 "<ERROR>"
  nep_deuspl.3.desc:0 "Diplomatic logic judges...§G<ERROR>§!§Y<ERROR>§!§R<ERROR>§!/n/nAll alien empire are very dangerous! To protect our people we can only destroy them all!"
  nep_deuspl.3.a:0 "§Rkill! Kill! KILL!§!"
  
@@ -299,7 +299,7 @@
  trait_nep_servent_of_machina:0 "Servant of the Machina"
  opinion_nep_was_hacked:0 "Was hacked"
  opinion_nep_machina_spiritualist:0 "Idoit who believe fake god"
- opinion_nep_spiritualist_machina:0 "Idoit who believe nothing"
+ opinion_nep_spiritualist_machina:0 "Idoit who believe not exists"
  opinion_nep_machina_materialist:0 "Idoit who believe metals"
  
  job_nep_miko:0 "Miko"

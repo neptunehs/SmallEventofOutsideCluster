@@ -165,7 +165,14 @@ ship_event = {
 	}
 	
 	immediate = {
-	
+		if = {
+			limit = { NOT = { has_communications = event_target:nep_gaia_country } }
+			establish_communications_no_message = event_target:nep_gaia_country
+		}
+		if = {
+			limit = { NOT = { has_communications = event_target:nep_highlander_country } }
+			establish_communications_no_message = event_target:nep_highlander_country
+		}
 	}
 	
 	option = {
@@ -199,7 +206,8 @@ country_event = {
 		}
 	}
 	
-	immediate = { }
+	immediate = {
+	}
 	
 	option = {
 		name = nep_wohp.3.a
@@ -2567,17 +2575,17 @@ ship_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		has_global_flag = nep_deuspi_spawn
 		solar_system = { has_star_flag = nep_deus_system }
+	}
+	
+	immediate = {
 		owner = {
 			if = {
 				limit = { NOT = { has_communications = event_target:nep_deus_country } }
 				establish_communications_no_message = event_target:nep_deus_country
 			}
 		}
-	}
-	
-	immediate = {
-	
 	}
 
 	option = {
@@ -4757,18 +4765,452 @@ ship_event = {
 # White Goo Crisis
 #############################################
 namespace = nep_whitegoo
-ship_event = {
+country_event = {
 	id = nep_whitegoo.1
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		years_passed > 105
+		has_global_flag = nep_whitegoo_can_spawn
+		NOT = { has_global_flag = nep_whitegoo_spawn }
+		is_same_value = event_target:global_event_country
+	}
+	
+	mean_time_to_happen = {
+		years = 30
+	}
+	
+	immediate = {
+		set_global_flag = nep_whitegoo_spawn
+		set_global_flag = nep_whitegoo_begin
+		random_system = {
+			limit = {
+				is_rim_system = no
+				nep_st_is_not_outer_or_fe_system = yes
+				NOR = {
+					has_star_flag = empire_home_system
+					has_star_flag = empire_cluster
+					has_star_flag = hostile_system
+					has_star_flag = guardian
+				}			
+				any_neighbor_system = {
+					is_rim_system = no
+					nep_st_is_not_outer_or_fe_system = yes
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = empire_cluster
+					}
+				}
+			}
+			save_global_event_target_as = nep_whitegoo_system_1
+			nep_whitegoo_1 = yes
+		}
+		random_system = {
+			limit = {
+				is_rim_system = no
+				nep_st_is_not_outer_or_fe_system = yes
+				NOR = {
+					has_star_flag = empire_home_system
+					has_star_flag = empire_cluster
+					has_star_flag = hostile_system
+					has_star_flag = guardian
+				}			
+				any_neighbor_system = {
+					is_rim_system = no
+					nep_st_is_not_outer_or_fe_system = yes
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = empire_cluster
+					}
+				}
+				distance = {
+					source = event_target:nep_whitegoo_system_1
+					min_jumps = 10
+					max_jumps = 100
+				}
+			}
+			save_global_event_target_as = nep_whitegoo_system_2
+			nep_whitegoo_1 = yes
+		}
+		random_system = {
+			limit = {
+				is_rim_system = no
+				nep_st_is_not_outer_or_fe_system = yes
+				NOR = {
+					has_star_flag = empire_home_system
+					has_star_flag = empire_cluster
+					has_star_flag = hostile_system
+					has_star_flag = guardian
+				}			
+				any_neighbor_system = {
+					is_rim_system = no
+					nep_st_is_not_outer_or_fe_system = yes
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = empire_cluster
+					}
+				}
+				distance = {
+					source = event_target:nep_whitegoo_system_1
+					min_jumps = 10
+					max_jumps = 100
+				}
+				distance = {
+					source = event_target:nep_whitegoo_system_2
+					min_jumps = 10
+					max_jumps = 100
+				}
+			}
+			save_global_event_target_as = nep_whitegoo_system_3
+			nep_whitegoo_1 = yes
+		}
+		country_event = { id = nep_whitegoo.2 days = 30 random = 3 }
+		country_event = { id = nep_whitegoo.3 days = 720 random = 100 }
+		country_event = { id = nep_whitegoo.4 days = 2160 random = 300 }
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.2
 	hide_window = yes
 	
 	is_triggered_only = yes
 	
-	fire_only_once = yes
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		is_same_value = event_target:global_event_country
+	}
 	
 	immediate = {
-		set_global_flag = nep_whitegoo_spawn
+		every_system = {
+			limit = {
+				NOR = {
+					has_star_flag = nep_whitegoo_1
+					has_star_flag = nep_whitegoo_no_effect
+				}
+				any_neighbor_system = {
+					has_star_flag = nep_whitegoo_1
+				}
+			}
+			nep_whitegoo_1 = yes
+		}
+		country_event = { id = nep_whitegoo.2 days = 30 random = 3 }
 	}
 }
+
+country_event = {
+	id = nep_whitegoo.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		is_same_value = event_target:global_event_country
+	}
+	immediate = {
+		event_target:nep_whitegoo_system_1 = {
+			nep_whitegoo_2 = yes
+		}
+		event_target:nep_whitegoo_system_2 = {
+			nep_whitegoo_2 = yes
+		}
+		event_target:nep_whitegoo_system_3 = {
+			nep_whitegoo_2 = yes
+		}
+		country_event = { id = nep_whitegoo.31 days = 30 random = 3 }
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.31
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		is_same_value = event_target:global_event_country
+	}
+	
+	immediate = {
+		every_system = {
+			limit = {
+				has_star_flag = nep_whitegoo
+				NOR = {
+					has_star_flag = nep_whitegoo_2
+					has_star_flag = nep_whitegoo_no_effect
+				}
+				any_neighbor_system = {
+					has_star_flag = nep_whitegoo_2
+				}
+			}
+			nep_whitegoo_2 = yes
+		}
+		country_event = { id = nep_whitegoo.31 days = 30 random = 3 }
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		is_same_value = event_target:global_event_country
+	}
+	immediate = {
+		event_target:nep_whitegoo_system_1 = {
+			nep_whitegoo_3 = yes
+		}
+		event_target:nep_whitegoo_system_2 = {
+			nep_whitegoo_3 = yes
+		}
+		event_target:nep_whitegoo_system_3 = {
+			nep_whitegoo_3 = yes
+		}
+		country_event = { id = nep_whitegoo.41 days = 30 random = 3 }
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.41
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		is_same_value = event_target:global_event_country
+	}
+	
+	immediate = {
+		every_system = {
+			limit = {
+				has_star_flag = nep_whitegoo_2
+				NOR = {
+					has_star_flag = nep_whitegoo_3
+					has_star_flag = nep_whitegoo_no_effect
+				}
+				any_neighbor_system = {
+					has_star_flag = nep_whitegoo_3
+				}
+			}
+			nep_whitegoo_3 = yes
+		}
+		country_event = { id = nep_whitegoo.41 days = 30 random = 3 }
+	}
+}
+
+#Notifition
+#stage1
+country_event = {
+	id = nep_whitegoo.5000
+	title = nep_whitegoo.5000.name
+	desc = nep_whitegoo.5000.desc
+	picture = GFX_evt_gray_gooed_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = nep_whitegoo_noti }
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_noti
+	}
+	
+	option = {
+		name = nep_whitegoo.5000.a
+	}
+}
+
+#stage2
+country_event = {
+	id = nep_whitegoo.5001
+	title = nep_whitegoo.5001.name
+	desc = nep_whitegoo.5001.desc
+	picture = GFX_evt_gray_gooed_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = nep_whitegoo_2_noti }
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_2_noti
+	}
+	
+	option = {
+		name = nep_whitegoo.5001.a
+	}
+}
+
+#stage3
+country_event = {
+	id = nep_whitegoo.5002
+	title = nep_whitegoo.5002.name
+	desc = nep_whitegoo.5002.desc
+	picture = GFX_evt_gray_gooed_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = nep_whitegoo_3_noti }
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_3_noti
+	}
+	
+	option = {
+		name = nep_whitegoo.5002.a
+	}
+}
+
+#Techonology
+country_event = {
+	id = nep_whitegoo.5
+	title = nep_whitegoo.5.name
+	desc = nep_whitegoo.5.desc
+	picture = GFX_evt_gray_gooed_planet
+
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		OR = {
+			has_country_flag = nep_whitegoo_2_noti
+			has_country_flag = nep_whitegoo_3_noti
+		}
+		NOT = { has_country_flag = nep_whitegoo_tech }
+	}
+	
+	mean_time_to_happen = {
+		months = 7
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_tech
+	}
+	
+	option = {
+		name = nep_whitegoo.5.a
+		add_research_option = tech_nep_whitegoo_1
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.51
+	title = nep_whitegoo.51.name
+	desc = nep_whitegoo.51.desc
+	picture = GFX_evt_gray_gooed_planet
+
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		NOT = { has_country_flag = nep_whitegoo_tech }
+		any_neighbor_country = {
+			has_country_flag = nep_whitegoo_tech
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 15
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_tech
+	}
+	
+	option = {
+		name = nep_whitegoo.51.a
+		add_research_option = tech_nep_whitegoo_1
+	}
+}
+
+#On_actions
+#on_entering_system_fleet
+fleet_event = {
+	id = nep_whitegoo.6
+	hide_window = yes
+		
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+	}
+	
+	immediate = {
+		remove_modifier = nep_whitegoo_fleet_1
+		remove_modifier = nep_whitegoo_fleet_2
+		remove_modifier = nep_whitegoo_fleet_3
+		if = {
+			limit = {
+				owner = { NOT = { has_technology = tech_nep_whitegoo_3_3 } }
+				from = { has_star_flag = nep_whitegoo_1 }
+			}
+			add_modifier = {
+				modifier = nep_whitegoo_fleet_1
+				days = -1
+			}
+		}
+		if = {
+			limit = { from = { has_star_flag = nep_whitegoo_2 } }
+			add_modifier = {
+				modifier = nep_whitegoo_fleet_2
+				days = -1
+			}
+		}
+		if = {
+			limit = { from = { has_star_flag = nep_whitegoo_3 } }
+			add_modifier = {
+				modifier = nep_whitegoo_fleet_3
+				days = -1
+			}
+		}
+	}
+}
+
+#on_tech_increased
+country_event = {
+	id = nep_whitegoo.61
+	hide_window = yes
+		
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		OR = {
+			last_increased_tech = tech_nep_whitegoo_3_2
+			last_increased_tech = tech_nep_whitegoo_3_3
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				last_increased_tech = tech_nep_whitegoo_3_2
+			}
+			every_owned_planet = {
+				remove_modifier = nep_whitegoo_1
+			}
+		}
+		if = {
+			limit = {
+				last_increased_tech = tech_nep_whitegoo_3_3
+			}
+			every_owned_fleet = {
+				remove_modifier = nep_whitegoo_fleet_1
+			}
+		}
+	}
+}
+
+#.62
+#.63
 
 #############################################
 # Genesis
