@@ -17,12 +17,12 @@
  nep_seal.4.a:0 "Battlestation!" 
  
  nep_seal.5.name:0 "End of battle"
- nep_seal.5.desc:0 "The war on the growth of unidentified forces is over.After analyzing a large number of samples, the scientists have figured out a lot of things:first of all, these forces seem to be the ancient guardian of the highway. Second, the other role of these highways is to seal something. These fleets are designed to protect the seal from damage. Then it may be because the maintenance fee is insufficient, and it is used as a highway to earn maintenance fees. This is also why this highway is so... round. Now we don't know where the seal is, but scientists think this seal is related to the orb we got before. In addition, when we completely eliminated the unidentified forces, orb has some reaction. We can try to active it, maybe there is a windfall."
- nep_seal.5.a:0 "Very funny. Establish special project research. " 
+ nep_seal.5.desc:0 "The war on the growth of unidentified forces is over.After analyzing a large number of samples, the scientists have figured out a lot of things:first of all, these forces seem to be the ancient guardian of the highway. Second, the other role of these highways is to seal something. These fleets are designed to protect the seal from damage. Then it may be because the maintenance fee is insufficient, and it is used as a highway to earn maintenance fees. This is also why this highway is so... round. Now we don't know where the seal is, but scientists think this seal is related to the orb we got before. In addition, when we completely eliminated the unidentified forces, orb has some reaction. We can try to activate it."
+ nep_seal.5.a:0 "Very funny. Let's try. " 
  nep_seal.5.a.tooltip:0 "Now ancient orb can be active as a relic.Will continue scenario after active."
  nep_seal.5.b:0 "I don't want to see this kind of war again. Throw the orb into the black hole." 
  
- nep_seal.6.name:0 "Study Completed"
+ nep_seal.6.name:0 "Direction to the Void"
  nep_seal.6.desc:0 "After the activation of orb, its energy points to many points: including the center of the universe--the scientists thought that this was the location of the seal mentioned earlier, and some special areas that could be used as the foothold of jump drive: these special space were called §YStep to the Void §!by ancient people. There is nothing inside, but nobody knows why it can be used as a transit point for jump drives, and can reach the center of the seal system through several jumps. However, the information left in all guardians is emphasized - §R The seal is very dangerous, never open! §!"
  nep_seal.6.a:0 "The science team will go immediately! " 
  nep_seal.6.b:0 "It sounds really dangerous. Forget it, the life of the people is more important. " 
@@ -58,7 +58,7 @@
  
  grand_seal_system_poi_name:0 "Grand Seal"
  grand_seal_system_poi_desc:0 "Here is the center of the universe!"
- 
+  
  nep_step_poi_name:0 "Step to the Void"
  nep_step_poi_desc:0 "Jump to the galaxy center!"
  

@@ -116,6 +116,7 @@ nep_wohp_init = {
 			}
 			setup_primitive_planet = yes
 			add_modifier = { modifier = "planet_population_control" days = -1 }
+			add_modifier = { modifier = "nep_bombard_by_highlander" days = -1 }
 			set_planet_flag = has_megastructure
 		}
 		
@@ -195,6 +196,7 @@ nep_wohp_init = {
 				setup_primitive_planet = yes
 				add_building = building_urban_dwellings
 				add_building = building_primitive_farm
+				add_modifier = { modifier = "nep_extravagant_orgy" days = -1 }
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				while = {
 					count = 16

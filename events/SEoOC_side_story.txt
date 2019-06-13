@@ -165,13 +165,15 @@ ship_event = {
 	}
 	
 	immediate = {
-		if = {
-			limit = { NOT = { has_communications = event_target:nep_gaia_country } }
-			establish_communications_no_message = event_target:nep_gaia_country
-		}
-		if = {
-			limit = { NOT = { has_communications = event_target:nep_highlander_country } }
-			establish_communications_no_message = event_target:nep_highlander_country
+		owner = {
+			if = {
+				limit = { NOT = { has_communications = event_target:nep_gaia_country } }
+				establish_communications_no_message = event_target:nep_gaia_country
+			}
+			if = {
+				limit = { NOT = { has_communications = event_target:nep_highlander_country } }
+				establish_communications_no_message = event_target:nep_highlander_country
+			}
 		}
 	}
 	
@@ -1530,8 +1532,8 @@ event = {
 				}
 				if = {
 					limit = {
+						has_ground_combat = no
 						count_armies = {
-							limit = { army_type = nep_gaia_super_army_defensive }
 							count < 12
 						}
 					}
@@ -1548,8 +1550,8 @@ event = {
 			capital_scope = {
 				if = {
 					limit = {
+						has_ground_combat = no
 						count_armies = {
-							limit = { army_type = nep_gene_slave_army_defensive }
 							count < 12
 						}
 					}
@@ -5209,9 +5211,387 @@ country_event = {
 	}
 }
 
-#.62
-#.63
 
+#on_fleet_disbanded
+country_event = {
+	id = nep_whitegoo.62
+	hide_window = yes
+		
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		from = { is_ship_size = nep_station_whitegoo }
+	}
+	
+	immediate = {
+		from.solar_system = {
+			remove_star_flag = nep_whitegoo_no_effect
+			every_neighbor_system = {
+				limit = { 
+					NOT = {
+						any_neighbor_system = {
+							any_ship_in_system = {
+								is_ship_size = nep_station_whitegoo
+							}
+						}
+					}
+				}
+				remove_star_flag = nep_whitegoo_no_effect
+			}
+		}
+		event_target:nep_whitegoo_system_1 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+		event_target:nep_whitegoo_system_2 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+		event_target:nep_whitegoo_system_3 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+	}
+}
+
+
+#on_fleet_destroyed_victim
+country_event = {
+	id = nep_whitegoo.63
+	hide_window = yes
+		
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		fromfrom = { is_ship_size = nep_station_whitegoo }
+	}
+	
+	immediate = {
+		fromfrom.solar_system = {
+			remove_star_flag = nep_whitegoo_no_effect
+			every_neighbor_system = {
+				limit = { 
+					NOT = {
+						any_neighbor_system = {
+							any_ship_in_system = {
+								is_ship_size = nep_station_whitegoo
+							}
+						}
+					}			
+				}
+				remove_star_flag = nep_whitegoo_no_effect
+			}
+		}
+		event_target:nep_whitegoo_system_1 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+		event_target:nep_whitegoo_system_2 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+		event_target:nep_whitegoo_system_3 = {
+			if = {
+				limit = { 
+					AND = {
+						NOT = { has_star_flag = nep_whitegoo_no_effect }
+						NOR = {
+							has_star_flag = nep_whitegoo_1
+							has_star_flag = nep_whitegoo_2
+							has_star_flag = nep_whitegoo_3
+						}
+					}
+				}
+				nep_whitegoo_3 = yes
+			}
+		}
+	}
+}
+
+#Cavaneers
+country_event = {
+	id = nep_whitegoo.7
+	title = nep_whitegoo.7.name
+	custom_gui = "enclave_caravaneer_window"
+	desc = nep_whitegoo.7.desc
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		exists = event_target:caravaneer_home_country
+		has_technology = tech_nep_whitegoo_4
+		NOT = { has_country_flag = nep_whitegoo_tech_sell }
+		event_target:caravaneer_home_country = {
+			NOT = { is_hostile = root }
+			NOT = { has_country_flag = nep_whitegoo_tech_gain }
+		}
+		NOR = {
+			caravaneer_base_active_diplo = yes
+			has_active_event = { 
+				nep_whitegoo.7
+				nep_whitegoo.71
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_barren_cold
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_tech_sell
+	}
+	
+	option = {
+		name = nep_whitegoo.7.a
+		add_resource = {
+			energy = 5000
+			influence = 100
+		}
+		event_target:caravaneer_home_country = { set_country_flag = nep_whitegoo_tech_gain }
+	}
+	
+	option = {
+		name = nep_whitegoo.7.b
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.71
+	title = nep_whitegoo.71.name
+	custom_gui = "enclave_caravaneer_window"
+	desc = nep_whitegoo.71.desc
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		exists = event_target:caravaneer_home_country
+		NOT = { has_technology = tech_nep_whitegoo_4 }
+		NOT = { has_country_flag = nep_whitegoo_tech_buy }
+		event_target:caravaneer_home_country = {
+			NOT = { is_hostile = root }
+			has_country_flag = nep_whitegoo_tech_gain
+		}
+		NOR = {
+			caravaneer_base_active_diplo = yes
+			has_active_event = { 
+				nep_whitegoo.7
+				nep_whitegoo.71
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_barren_cold
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_tech_buy
+	}
+	
+	option = {
+		name = nep_whitegoo.71.a
+		add_resource = {
+			energy = -3500
+		}
+		add_research_option = tech_nep_whitegoo_4
+		add_tech_progress = {
+			tech = tech_nep_whitegoo_4
+			progress = 0.8
+		}
+	}	
+	option = {
+		name = nep_whitegoo.71.b
+	}
+}
+
+#Origin found
+country_event = {
+	id = nep_whitegoo.8000
+	hide_window = yes
+
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		count_owned_ships = {
+			count >=3
+			limit = { is_ship_size = nep_station_whitegoo }
+		}
+		NOT = { has_country_flag = nep_whitegoo_8000_temp }
+	}
+	
+	immediate = {
+		set_country_flag = nep_whitegoo_8000_temp
+		country_event = { id = nep_whitegoo.8001 days = 30 random = 30 }
+	}
+}
+
+
+country_event = {
+	id = nep_whitegoo.8001
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			1 = { country_event = { id = nep_whitegoo.8 days = 30 random = 30 } }
+			2 = { country_event = { id = nep_whitegoo.8001 days = 30 random = 30 } }
+		}
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.8
+	title = nep_whitegoo.8.name
+	desc = nep_whitegoo.8.desc
+	picture = GFX_evt_gray_gooed_planet
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_whitegoo.8.a
+		add_research_option = tech_nep_whitegoo_5
+	}
+}
+
+
+country_event = {
+	id = nep_whitegoo.81
+	title = nep_whitegoo.81.name
+	desc = nep_whitegoo.81.desc
+	picture = GFX_evt_gray_gooed_planet
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		last_increased_tech = tech_nep_whitegoo_5
+	}
+	
+	immediate = {
+		event_target:nep_whitegoo_system_1 = {
+			random_system_planet = {
+				limit = { is_star = yes }
+				save_event_target_as = nep_whitegoo_81_temp_1
+			}
+		}
+		event_target:nep_whitegoo_system_2 = {
+			random_system_planet = {
+				limit = { is_star = yes }
+				save_event_target_as = nep_whitegoo_81_temp_2
+			}
+		}
+		event_target:nep_whitegoo_system_3 = {
+			random_system_planet = {
+				limit = { is_star = yes }
+				save_event_target_as = nep_whitegoo_81_temp_3
+			}
+		}
+	}
+	
+	option = {
+		name = nep_whitegoo.81.a
+		enable_special_project = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.82
+	title = nep_whitegoo.82.name
+	desc = nep_whitegoo.82.desc
+	picture = GFX_evt_gray_gooed_planet
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_whitegoo_system_1 = {
+
+		}
+		event_target:nep_whitegoo_system_2 = {
+		
+		}
+		event_target:nep_whitegoo_system_3 = {
+		
+		}
+	}	
+}
 #############################################
 # Genesis
 #############################################

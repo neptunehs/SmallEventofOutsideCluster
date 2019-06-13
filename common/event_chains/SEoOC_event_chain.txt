@@ -41,3 +41,8 @@ nep_finalweapon_chain = {
 	picture = GFX_evt_black_hole
 	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
 }
+
+nep_whitegoo_chain = {
+	picture = GFX_evt_gray_gooed_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+}

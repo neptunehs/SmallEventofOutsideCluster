@@ -17,4 +17,7 @@
  r_nep_orb_x3_desc:0 "Ancient Orb from unknown source,now we have all three."
  r_nep_orb_x3_useful:0 "Ancient Orb*3"
  r_nep_orb_x3_useful_desc:0 "Ancient Orb from unknown source,now we have all three.After completing its mission, it completely liberated its power. Now we can use it to enhance our military force."
- nep_orb_triumph:0 "古代宝玉强化"
+ nep_orb_triumph:0 "Ancient Orb Buffs"
+ nep_orbs_custom_tooltip:0 "Although it can't be actived at any time, it can be actived as long as its mission requires."
+ nep_orb_can_active:0 "§GClick to Activate Orbs.If actived, story will continue.§!"
+ nep_orb_no_reaction:0 "§ROrb had no reaction.May need to wait or other conditions needed.§!"

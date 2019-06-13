@@ -672,13 +672,13 @@ nep_phantom_easy = {
 
 #Wohp
 nep_bombard_by_highlander = {
-	pop_growth_speed_reduction = 1
+	job_soldier_add = -10
 	icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
 	icon_frame = 3
 }
 
 nep_extravagant_orgy = {
-	pop_growth_speed_reduction = 1
+	job_soldier_add = -10
 	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 3
 }
@@ -691,6 +691,7 @@ nep_black_technologies = {
 	icon_frame = 1
 }
 
+#deus
 nep_deus_malfunction = {
 	planet_building_build_speed_mult = 0.5
 	planet_jobs_food_produces_mult = 0.5
@@ -718,4 +719,68 @@ nep_deus_super_computer = {
 nep_remorse = {
 	pop_happiness = -0.5
 	pop_growth_speed = -1
+}
+
+#whitegoo
+nep_whitegoo_1 = {
+	planet_jobs_energy_produces_mult = -0.15
+	planet_jobs_food_produces_mult = -0.15
+	planet_building_build_speed_mult = -0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 7
+}
+
+nep_whitegoo_2 = {
+	planet_jobs_energy_produces_mult = -0.15
+	planet_jobs_food_produces_mult = -0.15
+	planet_building_build_speed_mult = -0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 7
+}
+
+
+nep_whitegoo_3 = {
+	planet_jobs_energy_produces_mult = -0.15
+	planet_jobs_minerals_produces_mult = -0.15
+	planet_jobs_food_produces_mult = -0.15
+	planet_jobs_alloys_produces_mult = -0.15
+	planet_building_build_speed_mult = -0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 7
+}
+
+
+nep_whitegoo_fleet_1 = {
+	ship_weapon_range_mult = -0.1
+	ship_speed_mult = -0.1
+	ship_evasion_mult = -0.1
+	ship_emergency_ftl_mult = -0.05
+	ship_disengage_chance_reduction = 0.05
+	ship_windup_mult = -0.05
+	ship_winddown_mult = -0.05
+	ship_interstellar_speed_mult = -0.05
+}
+
+
+nep_whitegoo_fleet_2 = {
+	ship_weapon_range_mult = -0.1
+	ship_speed_mult = -0.1
+	ship_evasion_mult = -0.1
+	ship_emergency_ftl_mult = -0.1
+	ship_disengage_chance_reduction = 0.1
+	ship_windup_mult = -0.1
+	ship_winddown_mult = -0.1
+	ship_interstellar_speed_mult = -0.1
+}
+
+
+nep_whitegoo_fleet_3 = {
+	ship_weapon_range_mult = -0.1
+	ship_speed_mult = -0.2
+	ship_evasion_mult = -0.1
+	ship_emergency_ftl_mult = -0.2
+	ship_disengage_chance_reduction = 0.2
+	ship_windup_mult = -0.2
+	ship_winddown_mult = -0.2
+	ship_interstellar_speed_mult = -0.2
 }

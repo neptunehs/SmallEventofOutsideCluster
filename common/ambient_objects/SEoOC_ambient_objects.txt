@@ -1,0 +1,6 @@
+ambient_object = {
+	name = "nep_whitegoo_space"
+	entity = "nep_spacedust_entity_ex"
+	selectable = no
+	show_name = no
+}

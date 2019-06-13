@@ -18,3 +18,6 @@
  r_nep_orb_x3_useful:0 "古代宝玉*3"
  r_nep_orb_x3_useful_desc:0 "来源不明的古代宝玉，我们凑齐了三个。在完成了它的使命后，它完全解放了它的力量。现在我们可以利用其增强我们的军力。"
  nep_orb_triumph:0 "古代宝玉强化"
+ nep_orbs_custom_tooltip:0 "虽然不是任何时候都能发动，但只要它的使命需要它的时候，就能发动。"
+ nep_orb_can_active:0 "§G宝玉在可发动状态。发动后将会继续剧情。§!"
+ nep_orb_no_reaction:0 "§R宝玉没有反应。可能需要等一个更好的时机。§!"

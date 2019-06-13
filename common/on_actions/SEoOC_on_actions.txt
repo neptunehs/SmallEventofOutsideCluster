@@ -283,6 +283,7 @@ on_rebels_take_planet_owner_switched = {
 on_tech_increased = {
 	events = {
 		nep_whitegoo.61
+		nep_whitegoo.81
 	}
 }
 

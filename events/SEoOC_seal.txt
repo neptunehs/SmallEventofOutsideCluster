@@ -739,8 +739,8 @@ country_event = {
 		name = nep_seal.9.a
 		create_point_of_interest = {
 			id = grand_seal_system_poi.a
-			name = "nep_seal_poi_name"
-			desc = "nep_seal_poi_desc"
+			name = "grand_seal_system_poi_name"
+			desc = "grand_seal_system_poi_desc"
 			location = event_target:nep_grand_seal_planet.solar_system
 		}
 		owner = { end_event_chain = "nep_seal_chain" }

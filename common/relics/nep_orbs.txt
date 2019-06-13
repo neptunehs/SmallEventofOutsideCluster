@@ -17,16 +17,11 @@ r_nep_orb_x1 = {
 	ai_weight = {
 		weight = 0
 	}
-	
-	triggered_country_modifier = {
-		potential = {
-			always = yes
-		}
-	}
 
 	score = 0
 
 	active_effect = {
+		custom_tooltip = nep_orbs_custom_tooltip
 		hidden_effect = { 
 			if = {
 				limit = { has_country_flag = nep_orb_1_stage_1 }
@@ -42,8 +37,9 @@ r_nep_orb_x1 = {
 	# Possible check for activation
 	possible = {
 		custom_tooltip = {
+			success_text = "nep_orb_can_active"
 			fail_text = "nep_orb_no_reaction"
-			NOT = { has_country_flag = nep_orb_1_can_active }
+			has_country_flag = nep_orb_1_can_active
 		}
 	}
 }
@@ -64,16 +60,11 @@ r_nep_orb_x2 = {
 	ai_weight = {
 		weight = 0
 	}
-	
-	triggered_country_modifier = {
-		potential = {
-			always = yes
-		}
-	}
 
 	score = 0
 
 	active_effect = {
+		custom_tooltip = nep_orbs_custom_tooltip
 		hidden_effect = { 
 			remove_country_flag = nep_orb_2_can_active
 			country_event = { id = nep_phantom.1 days = 90 } 
@@ -83,8 +74,9 @@ r_nep_orb_x2 = {
 	# Possible check for activation
 	possible = {
 		custom_tooltip = {
+			success_text = "nep_orb_can_active"
 			fail_text = "nep_orb_no_reaction"
-			NOT = { has_country_flag = nep_orb_2_can_active }
+			has_country_flag = nep_orb_2_can_active
 		}
 	}
 }
@@ -105,34 +97,28 @@ r_nep_orb_x3 = {
 	ai_weight = {
 		weight = 0
 	}
-	
-	triggered_country_modifier = {
-		potential = {
-			always = yes
-		}
-	}
 
 	score = 0
 
 	active_effect = {
+		custom_tooltip = nep_orbs_custom_tooltip
 		country_event = { id = nep_finalweapon.4 }
 	}
 
 	# Possible check for activation
 	possible = {
 		custom_tooltip = {
+			success_text = "nep_orb_can_active"
 			fail_text = "nep_orb_no_reaction"
-			NOT = { has_country_flag = nep_orb_3_can_active }
+			has_country_flag = nep_orb_3_can_active
 		}
 		custom_tooltip = {
 			fail_text = "nep_dragon_not_ready"
 			event_target:nep_seal_system = {
-				NOT = {
-					any_ship_in_system = {
-						OR = {
-							is_ship_size = nep_dragon_reward
-							is_ship_size = nep_dragon_reward_kai
-						}
+				any_ship_in_system = {
+					OR = {
+						is_ship_size = nep_dragon_reward
+						is_ship_size = nep_dragon_reward_kai
 					}
 				}
 			}
