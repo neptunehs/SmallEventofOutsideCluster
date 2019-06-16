@@ -1,5 +1,7 @@
 ﻿l_simp_chinese:
- nep_fail.1.name:0 "仪表错误"
+ #########################################
+ # whop
+ #########################################  nep_fail.1.name:0 "仪表错误"
  nep_fail.1.desc:0 "经过[Root.GetName]搭载的自检系统的修复，仪表恢复了正常，没有在该星系发现任何的有价值的东西。"
  
  nep_wohp.1000.name:0 "发现新的虫洞"
@@ -129,8 +131,9 @@
  nep_you_are_our_Savior:0 "你拯救过我们"
  nep_you_are_very_strong:0 "你很强大"
 
- 
- 
+ #########################################
+ # deus
+ ######################################### 
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个奇怪的国家：一个巨型计算机领导的，主体民族是生物，且没有巨型计算机的端末以外的其他机器人的国家。貌似它们从原始族群时代就已经将这个计算机封为神，形成了一个很有特色的神权国家。"
  
@@ -323,7 +326,9 @@
  nep_deus_rescue_3:0 "弑神"
  nep_deus_rescue_3_DESC:0 "把那台把人不当人的机器“神”拆掉。"
  
- 
+ #########################################
+ # whitegoo
+ ######################################### 
  tech_nep_whitegoo_1:0 "白雾基础研究"
  tech_nep_whitegoo_1_desc:0 "首先我们要知道这些白雾是什么东西。"
  tech_nep_whitegoo_2_1:0 "白雾传播学"
@@ -347,4 +352,15 @@
  tech_nep_whitegoo_4:0 "白雾吸收空间站"
  tech_nep_whitegoo_4_desc:0 "我们已经拥有足够的知识对白雾进行比较彻底的解决。"
  tech_nep_whitegoo_4_prereqfor_title:0 "§H解锁：白雾吸收空间站§!"
- tech_nep_whitegoo_4_prereqfor_desc:0 "这种空间站将会对整个星系跟周边星系的白雾进行吸收。"
+ tech_nep_whitegoo_4_prereqfor_desc:0 "这种空间站将会对整个星系跟周边星系的白雾进行吸收。
+ tech_nep_whitegoo_5:0 "白雾传播路径论"
+ tech_nep_whitegoo_5_desc:0 "让科学家们集中精力找到白雾的传播源。"
+ tech_nep_whitegoo_5_prereqfor_title:0 "§H解锁：白雾源头星系§!"
+ tech_nep_whitegoo_5_prereqfor_desc:0 "将揭示白雾是从何而来以便彻底解决问题。"
+ 
+ nep_whitegoo_can_spawn_policy:0 "SEoOC - 是否开启经济危机"
+ nep_whitegoo_can_spawn_policy_desc:0 "注意：该项目只能在前100年更改。"
+ nep_whitegoo_can_spawn:0 "是"
+ nep_whitegoo_can_spawn_desc:0 ""
+ nep_whitegoo_cant_spawn:0 "否"
+ nep_whitegoo_cant_spawn_desc:0 ""

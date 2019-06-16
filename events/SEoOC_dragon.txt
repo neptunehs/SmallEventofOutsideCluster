@@ -275,6 +275,7 @@ fleet_event = {
 				location = event_target:nep_Anael_planet
 				owner = THIS.owner
 			}
+			remove_point_of_interest = grand_seal_system_poi.a
 		}
 	}
 }
@@ -331,6 +332,8 @@ ship_event = {
 					days = -1
 				}
 				add_deposit = "d_nep_unknown_vortex"
+				add_deposit = d_rich_mountain
+				add_deposit = d_rich_mountain
 			}
 			event_target:nep_Sabriel_planet = {
 				change_pc = pc_gaia
@@ -343,6 +346,8 @@ ship_event = {
 					days = -1
 				}
 				add_deposit = "d_nep_unknown_vortex"
+				add_deposit = d_underwater_vent
+				add_deposit = d_underwater_vent
 			}
 			event_target:nep_Samuel_planet = {
 				change_pc = pc_gaia
@@ -583,11 +588,6 @@ planet_event = {
 	
 	is_triggered_only = yes
 	
-	pre_triggers = {
-		has_owner = yes
-		is_ai = no
-	}
-	
 	trigger = {
 		has_global_flag = nep_dragon_begin
 		OR = {
@@ -603,6 +603,7 @@ planet_event = {
 	}
 	
 	immediate = {
+		log = "4000 fired"
 		if = {
 			limit = {
 				AND = {
@@ -643,6 +644,7 @@ planet_event = {
 					}
 				}
 			}
+			log = "4 may fired"
 			OWNER = { country_event = {	id = nep_dragon.4 days = 180 random = 360 } }
 		}
 	}
@@ -2038,14 +2040,19 @@ planet_event = {
 			has_planet_flag = nep_Jauiel_planet
 			has_planet_flag = nep_Anael_planet
 		}
-		NOR = {
-			has_deposit = d_nep_dragon_temple
-			has_deposit = d_nep_unknown_vortex
-		}
 	}
 	
 	immediate = {
-		add_deposit = d_nep_dragon_temple
+		planet_event = { id = nep_dragon.4000 }
+		if = {
+			limit = {
+				NOR = {
+					has_deposit = d_nep_dragon_temple
+					has_deposit = d_nep_unknown_vortex
+				}
+			}
+			add_deposit = d_nep_unknown_vortex
+		}
 	}
 }
 
@@ -2061,9 +2068,49 @@ fleet_event = {
 	}
 	
 	immediate = {
-		delete_fleet = {
+		destroy_fleet = {
 			target = this
 			destroy_template = yes
 		}		
+	}
+}
+
+#Destroy Babys
+#on_ship_destroyed_victim
+country_event = {
+	id = nep_dragon.998
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFrom = {
+			OR = {
+				is_ship_size = nep_dragon
+				is_ship_size = nep_dragon_reward
+				is_ship_size = nep_dragon_reward_kai
+			}
+		}
+	}
+	
+	immediate = {
+		every_owned_ship = {
+			limit = { is_ship_size = nep_dragon_baby }
+			if = {
+				limit = {
+					exists = this
+					fleet = { any_owned_ship = { NOT = { is_ship_size = nep_dragon_baby } } } 
+				}
+				fleet = {
+					destroy_fleet = {
+						target = this
+						destroy_template = yes
+					}
+				}
+			}
+			else = {
+				destroy_ship = this
+			}
+		}
 	}
 }

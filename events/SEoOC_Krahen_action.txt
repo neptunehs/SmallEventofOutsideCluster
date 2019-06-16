@@ -477,10 +477,11 @@ fleet_event = {
 	trigger = {
 		has_global_flag = nep_Krahen_crisis
 		has_fleet_flag = nep_inva_fleet
-		NOT = { 
-			AND = {
-				exists = orbit
-				orbit = { owner = { is_hostile = root.owner } }
+		NOT = {
+			exists = orbit
+			orbit = {
+				exists = owner
+				owner = { is_hostile = root.owner }
 			}
 		}
 	}
@@ -2221,6 +2222,34 @@ event = {
 							clear_auto_move_on_arrival = yes
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+####################################
+# For 2.3
+####################################
+fleet_event = {
+	id = nep_kai.5
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_Krahen_crisis
+	}
+	
+	immediate = {
+		queue_actions = {
+			find_random_system = {
+				trigger = {
+					id = "nep_Krahen.trigger.5"
+					has_star_flag = nep_inva_system
+				}
+				found_system = {
+					move_to = this
 				}
 			}
 		}

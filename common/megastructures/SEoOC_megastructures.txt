@@ -222,5 +222,17 @@ nep_station_whitegoo_mega = {
 			}
 		}
 		remove_megastructure = fromfrom
+		if = {
+			limit = { 
+				has_global_flag = nep_whitegoo_begin
+				has_star_flag = nep_whitegoo_origin
+			}
+			remove_global_flag = nep_whitegoo_begin
+			every_playable_country = { country_event = { id = nep_whitegoo.91 } }
+			random_country = {
+				limit = { is_same_value = event_target:global_event_country }
+				country_event = { id = nep_whitegoo.9 }
+			}
+		}		
 	}
 }

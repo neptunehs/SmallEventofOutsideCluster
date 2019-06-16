@@ -78,11 +78,16 @@ on_entering_battle = {
 	}
 }
 
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
 on_ship_destroyed_victim = {
 	events = {
 		nep_inva.43
 		nep_inva.51
 		nep_dragon.82
+		nep_dragon.998
 	}
 }
 

@@ -653,25 +653,7 @@ create_Krahen_invader = {
 			set_fleet_bombardment_stance = armageddon
 			set_fleet_flag = nep_inva_fleet
 			
-			
-			random_list = {
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_1 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_2 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_3 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_4 } }
-			}
-			
-			# queue_actions = {
-				# find_random_system = {
-					# trigger = {
-						# id = "nep_Krahen.trigger.0.0"
-						# has_star_flag = nep_inva_system
-					# }
-					# found_system = {
-						# move_to = this
-					# }
-				# }
-			# }
+			fleet_event = { id = nep_kai.5 days = 3 }
 		}
 		settings = {
 			can_change_leader = no
@@ -766,26 +748,9 @@ create_Krahen_constructor = {
 				target = PREV
 				distance = 20
 				angle = random 
-			}			
-			
-			random_list = {
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_1 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_2 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_3 } }
-				1 = { queue_actions = { move_to = event_target:nep_inva_system_4 } }
 			}
 			
-			# queue_actions = {
-				# find_random_system = {
-					# trigger = {
-						# id = "nep_Krahen.trigger.0.0.0"
-						# has_star_flag = nep_inva_system
-					# }
-					# found_system = {
-						# move_to = this
-					# }
-				# }
-			# }
+			fleet_event = { id = nep_kai.5 days = 3 }
 		}
 	}
 }
@@ -2345,7 +2310,7 @@ nep_whitegoo_1 = {
 				}
 			}
 			while = {
-				count = 15
+				count = 3
 				create_ambient_object = {
 					type = nep_whitegoo_space
 					location = solar_system
@@ -2402,7 +2367,7 @@ nep_whitegoo_2 = {
 				}
 			}
 			while = {
-				count = 15
+				count = 4
 				create_ambient_object = {
 					type = nep_whitegoo_space
 					location = solar_system
@@ -2459,7 +2424,7 @@ nep_whitegoo_3 = {
 				}
 			}
 			while = {
-				count = 15
+				count = 5
 				create_ambient_object = {
 					type = nep_whitegoo_space
 					location = solar_system

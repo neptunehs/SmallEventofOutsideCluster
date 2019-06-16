@@ -384,6 +384,7 @@ country_event = {
 		set_global_flag = nep_Krahen_crisis
 		set_global_flag = nep_Krahen_stage_1
 		
+		#Wait for retreat
 		every_system = {
 			limit = { has_star_flag = nep_Krahen_cluster }
 			every_fleet_in_system = {
@@ -391,291 +392,6 @@ country_event = {
 					exists = owner
 				}
 				set_event_locked = yes
-			}
-		}		
-		#create Krahen colony&invader force
-		event_target:nep_Krahen_country = {
-			create_ship_design = { 
-				design = "NAME_Krahen_heavy_spacebase"
-			}
-			add_ship_design = last_created_design
-			create_ship_design = { 
-				design = "NAME_nep_Krahen_Colonizer"
-			}
-			add_ship_design = last_created_design
-			create_ship_design = { 
-				design = "NAME_nep_Krahen_Constructor"
-			}
-			add_ship_design = last_created_design
-		}
-		every_system = {
-			limit = { 
-				has_star_flag = nep_Krahen_cluster
-			}
-			every_fleet_in_system = {
-				limit = {
-					is_ship_class = shipclass_starbase
-				}
-				destroy_fleet = this
-			}
-			every_system_planet = {
-				limit = {
-					is_colony = yes
-					is_under_colonization = yes
-				}
-				destroy_colony = yes
-			}
-			create_starbase = {
-				size = nep_heavy_spacebase
-				owner = event_target:nep_Krahen_country
-			}
-			if = {
-				limit = { NOT = { has_star_flag = nep_Exterior_system } }
-				random_system_planet = {
-					limit = {
-						is_colony = no
-						is_colonizable = yes
-					}
-					if = {
-						limit = { planet_size < 12 }
-						change_planet_size = 12
-						reroll_planet = yes
-					}
-					create_colony = {
-						owner = event_target:nep_Krahen_country
-						species = event_target:nep_Krahen_country
-						ethos = owner
-					}
-					create_Krahen_buildings = yes
-					create_Krahen_invader = yes
-				}
-				random_system_planet = {
-					limit = {
-						is_colony = no
-						is_colonizable = yes
-					}
-					if = {
-						limit = { planet_size < 12 }
-						change_planet_size = 12
-						reroll_planet = yes
-					}
-					create_colony = {
-						owner = event_target:nep_Krahen_country
-						species = event_target:nep_Krahen_country
-						ethos = owner
-					}
-					create_Krahen_buildings = yes
-					create_Krahen_invader = yes
-				}
-				random_system_planet = {
-					limit = {
-						is_colony = no
-						is_colonizable = yes
-					}
-					if = {
-						limit = { planet_size < 12 }
-						change_planet_size = 12
-						reroll_planet = yes
-					}
-					create_colony = {
-						owner = event_target:nep_Krahen_country
-						species = event_target:nep_Krahen_country
-						ethos = owner
-					}
-					create_Krahen_buildings = yes
-					create_Krahen_invader = yes
-				}
-			}
-		}
-		
-		#create Krahen portal*4&defender force*2
-		random_system = {
-			limit = { has_star_flag = nep_Central_system }
-			set_star_flag = nep_Krahen_portal_system
-			random_system_planet = {
-				create_fleet = {
-					name = "NAME_nep_Portal_to_Emperor-God"
-					effect = {
-						set_owner = event_target:nep_Krahen_country
-						create_ship = {
-							name = "NAME_nep_Portal_to_Emperor-God"
-							design = "NAME_nep_Krahen_portal"
-							prefix = no
-							upgradable = no
-							effect = {
-								set_ship_flag = nep_Krahen_portal_1
-							}
-						}
-						set_location = {
-							target = prev
-							distance = 150
-							angle = random
-						}
-						set_event_locked = yes
-						set_fleet_flag = nep_Krahen_portal_1
-					}
-				}
-				create_Krahen_defender = yes
-				create_Krahen_defender = yes
-				create_Krahen_constructor = yes
-				create_Krahen_follower = yes
-				create_Krahen_colonizer = yes
-				create_Krahen_colonizer = yes
-			}
-		}
-		random_system = {
-			limit = { 
-				has_star_flag = nep_Krahen_cluster
-				NOR = {
-					has_star_flag = nep_Central_system
-					has_star_flag = nep_Exterior_system	
-				}
-			}
-			set_star_flag = nep_Krahen_portal_system
-			random_system_planet = {
-				create_fleet = {
-					name = "NAME_nep_Portal_to_Emperor-God"
-					effect = {
-						set_owner = event_target:nep_Krahen_country
-						create_ship = {
-							name = "NAME_nep_Portal_to_Emperor-God"
-							design = "NAME_nep_Krahen_portal"
-							prefix = no
-							upgradable = no
-							effect = {
-								set_ship_flag = nep_Krahen_portal_2
-							}
-						}
-						set_location = {
-							target = prev
-							distance = 150
-							angle = random
-						}
-						set_event_locked = yes
-						set_fleet_flag = nep_Krahen_portal_2
-					}
-				}
-				create_Krahen_defender = yes
-				create_Krahen_defender = yes
-				create_Krahen_constructor = yes
-				create_Krahen_follower = yes
-			}
-		}
-		random_system = {
-			limit = {
-				has_star_flag = nep_Krahen_cluster
-				NOR = {
-					has_star_flag = nep_Central_system
-					has_star_flag = nep_Exterior_system	
-					has_star_flag = nep_Krahen_portal_system
-				}
-			}
-			set_star_flag = nep_Krahen_portal_system
-			random_system_planet = {
-				create_fleet = {
-					name = "NAME_nep_Portal_to_Emperor-God"
-					effect = {
-						set_owner = event_target:nep_Krahen_country
-						create_ship = {
-							name = "NAME_nep_Portal_to_Emperor-God"
-							design = "NAME_nep_Krahen_portal"
-							prefix = no
-							upgradable = no
-							effect = {
-								set_ship_flag = nep_Krahen_portal_3
-							}
-						}
-						set_location = {
-							target = prev
-							distance = 150
-							angle = random
-						}
-						set_event_locked = yes
-						set_fleet_flag = nep_Krahen_portal_3
-					}
-				}
-				create_Krahen_defender = yes
-				create_Krahen_defender = yes
-				create_Krahen_constructor = yes
-				create_Krahen_follower = yes
-			}
-		}
-		random_system = {
-			limit = { 
-				has_star_flag = nep_Krahen_cluster
-				NOR = {
-					has_star_flag = nep_Central_system
-					has_star_flag = nep_Exterior_system	
-					has_star_flag = nep_Krahen_portal_system
-				}
-			}
-			set_star_flag = nep_Krahen_portal_system
-			random_system_planet = {
-				create_fleet = {
-					name = "NAME_nep_Portal_to_Emperor-God"
-					effect = {
-						set_owner = event_target:nep_Krahen_country
-						create_ship = {
-							name = "NAME_nep_Portal_to_Emperor-God"
-							design = "NAME_nep_Krahen_portal"
-							prefix = no
-							upgradable = no
-							effect = {
-								set_ship_flag = nep_Krahen_portal_4
-							}
-						}
-						set_location = {
-							target = prev
-							distance = 150
-							angle = random
-						}
-						set_event_locked = yes
-						set_fleet_flag = nep_Krahen_portal_4
-					}
-				}
-				create_Krahen_defender = yes
-				create_Krahen_defender = yes
-				create_Krahen_constructor = yes
-				create_Krahen_follower = yes
-			}
-		}
-		
-		#sealgate
-		while = {
-			count = 2
-			random_system = {
-				limit = {
-					has_star_flag = nep_Krahen_cluster
-					NOR = { 
-						has_star_flag = nep_Central_system 
-						has_star_flag = nep_Exterior_system
-						any_system_megastructure = {
-							OR = { 
-								is_megastructure_type = nep_sealgate_ruined
-								is_megastructure_type = nep_sealgate_restored
-							}
-						}
-					}
-				}
-				random_system_planet = {
-					limit = { is_star = yes }
-					save_event_target_as = nep_mega_temp_poi
-					solar_system = {
-						spawn_megastructure = {
-							name = "NAME_nep_Seal_Gate"
-							type = nep_sealgate_restored
-							location = event_target:nep_mega_temp_poi
-							orbit_angle = 128
-							orbit_distance = 176
-						}
-					}
-				}
-				every_system_megastructure = {
-					limit = {
-						is_megastructure_type = nep_sealgate_restored
-					}
-					activate_gateway = this
-				}
 			}
 		}
 		
@@ -1143,37 +859,291 @@ country_event = {
 			}
 		}
 		set_spawn_system_batch = end
-		random_system = {
-			limit = { has_star_flag = nep_inva_system }
-			save_global_event_target_as = nep_inva_system_1
-		}
-		random_system = {
-			limit = { 
-				has_star_flag = nep_inva_system
-				NOT = { is_same_value = event_target:nep_inva_system_1 }
+		
+		#create Krahen colony&invader force
+		event_target:nep_Krahen_country = {
+			create_ship_design = { 
+				design = "NAME_Krahen_heavy_spacebase"
 			}
-			save_global_event_target_as = nep_inva_system_2
+			add_ship_design = last_created_design
+			create_ship_design = { 
+				design = "NAME_nep_Krahen_Colonizer"
+			}
+			add_ship_design = last_created_design
+			create_ship_design = { 
+				design = "NAME_nep_Krahen_Constructor"
+			}
+			add_ship_design = last_created_design
 		}
-		random_system = {
+		every_system = {
 			limit = { 
-				has_star_flag = nep_inva_system
-				NOR = { 
-					is_same_value = event_target:nep_inva_system_1 
-					is_same_value = event_target:nep_inva_system_2 
+				has_star_flag = nep_Krahen_cluster
+			}
+			every_fleet_in_system = {
+				limit = {
+					is_ship_class = shipclass_starbase
+				}
+				destroy_fleet = this
+			}
+			every_system_planet = {
+				limit = {
+					is_colony = yes
+					is_under_colonization = yes
+				}
+				destroy_colony = yes
+			}
+			create_starbase = {
+				size = nep_heavy_spacebase
+				owner = event_target:nep_Krahen_country
+			}
+			if = {
+				limit = { NOT = { has_star_flag = nep_Exterior_system } }
+				random_system_planet = {
+					limit = {
+						is_colony = no
+						is_colonizable = yes
+					}
+					if = {
+						limit = { planet_size < 12 }
+						change_planet_size = 12
+						reroll_planet = yes
+					}
+					create_colony = {
+						owner = event_target:nep_Krahen_country
+						species = event_target:nep_Krahen_country
+						ethos = owner
+					}
+					create_Krahen_buildings = yes
+					create_Krahen_invader = yes
+				}
+				random_system_planet = {
+					limit = {
+						is_colony = no
+						is_colonizable = yes
+					}
+					if = {
+						limit = { planet_size < 12 }
+						change_planet_size = 12
+						reroll_planet = yes
+					}
+					create_colony = {
+						owner = event_target:nep_Krahen_country
+						species = event_target:nep_Krahen_country
+						ethos = owner
+					}
+					create_Krahen_buildings = yes
+					create_Krahen_invader = yes
+				}
+				random_system_planet = {
+					limit = {
+						is_colony = no
+						is_colonizable = yes
+					}
+					if = {
+						limit = { planet_size < 12 }
+						change_planet_size = 12
+						reroll_planet = yes
+					}
+					create_colony = {
+						owner = event_target:nep_Krahen_country
+						species = event_target:nep_Krahen_country
+						ethos = owner
+					}
+					create_Krahen_buildings = yes
+					create_Krahen_invader = yes
 				}
 			}
-			save_global_event_target_as = nep_inva_system_3
+		}
+		
+		#create Krahen portal*4&defender force*2
+		random_system = {
+			limit = { has_star_flag = nep_Central_system }
+			set_star_flag = nep_Krahen_portal_system
+			random_system_planet = {
+				create_fleet = {
+					name = "NAME_nep_Portal_to_Emperor-God"
+					effect = {
+						set_owner = event_target:nep_Krahen_country
+						create_ship = {
+							name = "NAME_nep_Portal_to_Emperor-God"
+							design = "NAME_nep_Krahen_portal"
+							prefix = no
+							upgradable = no
+							effect = {
+								set_ship_flag = nep_Krahen_portal_1
+							}
+						}
+						set_location = {
+							target = prev
+							distance = 150
+							angle = random
+						}
+						set_event_locked = yes
+						set_fleet_flag = nep_Krahen_portal_1
+					}
+				}
+				create_Krahen_defender = yes
+				create_Krahen_defender = yes
+				create_Krahen_constructor = yes
+				create_Krahen_follower = yes
+				create_Krahen_colonizer = yes
+				create_Krahen_colonizer = yes
+			}
 		}
 		random_system = {
 			limit = { 
-				has_star_flag = nep_inva_system
-				NOR = { 
-					is_same_value = event_target:nep_inva_system_1
-					is_same_value = event_target:nep_inva_system_2
-					is_same_value = event_target:nep_inva_system_3
+				has_star_flag = nep_Krahen_cluster
+				NOR = {
+					has_star_flag = nep_Central_system
+					has_star_flag = nep_Exterior_system	
 				}
 			}
-			save_global_event_target_as = nep_inva_system_4
+			set_star_flag = nep_Krahen_portal_system
+			random_system_planet = {
+				create_fleet = {
+					name = "NAME_nep_Portal_to_Emperor-God"
+					effect = {
+						set_owner = event_target:nep_Krahen_country
+						create_ship = {
+							name = "NAME_nep_Portal_to_Emperor-God"
+							design = "NAME_nep_Krahen_portal"
+							prefix = no
+							upgradable = no
+							effect = {
+								set_ship_flag = nep_Krahen_portal_2
+							}
+						}
+						set_location = {
+							target = prev
+							distance = 150
+							angle = random
+						}
+						set_event_locked = yes
+						set_fleet_flag = nep_Krahen_portal_2
+					}
+				}
+				create_Krahen_defender = yes
+				create_Krahen_defender = yes
+				create_Krahen_constructor = yes
+				create_Krahen_follower = yes
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nep_Krahen_cluster
+				NOR = {
+					has_star_flag = nep_Central_system
+					has_star_flag = nep_Exterior_system	
+					has_star_flag = nep_Krahen_portal_system
+				}
+			}
+			set_star_flag = nep_Krahen_portal_system
+			random_system_planet = {
+				create_fleet = {
+					name = "NAME_nep_Portal_to_Emperor-God"
+					effect = {
+						set_owner = event_target:nep_Krahen_country
+						create_ship = {
+							name = "NAME_nep_Portal_to_Emperor-God"
+							design = "NAME_nep_Krahen_portal"
+							prefix = no
+							upgradable = no
+							effect = {
+								set_ship_flag = nep_Krahen_portal_3
+							}
+						}
+						set_location = {
+							target = prev
+							distance = 150
+							angle = random
+						}
+						set_event_locked = yes
+						set_fleet_flag = nep_Krahen_portal_3
+					}
+				}
+				create_Krahen_defender = yes
+				create_Krahen_defender = yes
+				create_Krahen_constructor = yes
+				create_Krahen_follower = yes
+			}
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_Krahen_cluster
+				NOR = {
+					has_star_flag = nep_Central_system
+					has_star_flag = nep_Exterior_system	
+					has_star_flag = nep_Krahen_portal_system
+				}
+			}
+			set_star_flag = nep_Krahen_portal_system
+			random_system_planet = {
+				create_fleet = {
+					name = "NAME_nep_Portal_to_Emperor-God"
+					effect = {
+						set_owner = event_target:nep_Krahen_country
+						create_ship = {
+							name = "NAME_nep_Portal_to_Emperor-God"
+							design = "NAME_nep_Krahen_portal"
+							prefix = no
+							upgradable = no
+							effect = {
+								set_ship_flag = nep_Krahen_portal_4
+							}
+						}
+						set_location = {
+							target = prev
+							distance = 150
+							angle = random
+						}
+						set_event_locked = yes
+						set_fleet_flag = nep_Krahen_portal_4
+					}
+				}
+				create_Krahen_defender = yes
+				create_Krahen_defender = yes
+				create_Krahen_constructor = yes
+				create_Krahen_follower = yes
+			}
+		}
+		
+		#sealgate
+		while = {
+			count = 2
+			random_system = {
+				limit = {
+					has_star_flag = nep_Krahen_cluster
+					NOR = { 
+						has_star_flag = nep_Central_system 
+						has_star_flag = nep_Exterior_system
+						any_system_megastructure = {
+							OR = { 
+								is_megastructure_type = nep_sealgate_ruined
+								is_megastructure_type = nep_sealgate_restored
+							}
+						}
+					}
+				}
+				random_system_planet = {
+					limit = { is_star = yes }
+					save_event_target_as = nep_mega_temp_poi
+					solar_system = {
+						spawn_megastructure = {
+							name = "NAME_nep_Seal_Gate"
+							type = nep_sealgate_restored
+							location = event_target:nep_mega_temp_poi
+							orbit_angle = 128
+							orbit_distance = 176
+						}
+					}
+				}
+				every_system_megastructure = {
+					limit = {
+						is_megastructure_type = nep_sealgate_restored
+					}
+					activate_gateway = this
+				}
+			}
 		}
 	}
 	

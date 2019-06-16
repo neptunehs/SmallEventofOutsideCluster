@@ -84,6 +84,9 @@
  nep_Legnahcras_research:0 "Unknown Ground Force Research"
  nep_Legnahcras_research_DESC:0 "The "brave" scientists are trying to figure out what these unidentified forces are."
  
+ nep_Legnahcras_HQ_assault:0 "Legnahcras HQ Assault"
+ nep_Legnahcras_HQ_assault_DESC:0 "All of these monsters are centrally commanded by HQ, and if the HQ is destroyed, their combat effectiveness will be greatly reduced."
+ 
  nep_dragon_system_poi_name:0 "Aemethms"
  nep_dragon_system_poi_desc:0 "This is the origin of the unknown energy response."
  

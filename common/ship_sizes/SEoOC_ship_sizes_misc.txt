@@ -73,4 +73,3 @@ nep_station_whitegoo = {
 		}
 	}
 }
-}

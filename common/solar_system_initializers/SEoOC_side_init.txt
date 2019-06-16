@@ -483,6 +483,161 @@ nep_deus_init_04 = {
 	}
 }
 
+nep_whitegoo_init_1 = {
+	class = "rl_standard_stars"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { nep_whitegoo_portal_1 }
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 3
+		orbit_angle = { min = 45 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+nep_whitegoo_init_2 = {
+	class = "rl_standard_stars"
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { nep_whitegoo_portal_2 }
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 3
+		orbit_angle = { min = 45 max = 270 }
+		orbit_distance = 20
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 25
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = 1
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+		
+		change_orbit = @base_moon_distance
+		
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 2 }
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 20
+	}
+}
+
+nep_whitegoo_init_3 = {
+	class = sc_black_hole
+
+	usage = misc_system_init
+	usage_odds = 0
+	
+	flags = { nep_whitegoo_origin }
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	
+	change_orbit = 25
+	
+	planet = {
+		count = 2
+		class = pc_barren_cold
+		orbit_angle = { min = 45 max = 270 }
+		orbit_distance = 20
+	}
+}
+
 nep_guide_init = {
 	class = "rl_standard_stars"
 

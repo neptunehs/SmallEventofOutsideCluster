@@ -36,7 +36,7 @@ d_nep_unknown_vortex = {
 
 	on_cleared = {
 		hidden_effect = {
-			planet_event = { id = nep_dragon.4000 }
+			planet_event = { id = nep_dragon.4000 days = 3 }
 		}
 	}
 	
