@@ -224,7 +224,10 @@ special_project = {
 	}
 		
 	on_success = {
-		owner = { id = nep_whitegoo.82 }
+		owner = { 
+			set_country_flag = nep_whitegoo_83_temp
+			country_event = { id = nep_whitegoo.82 }
+		}
 	}
 	
 	on_fail = {

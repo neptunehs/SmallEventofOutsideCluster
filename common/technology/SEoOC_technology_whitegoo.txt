@@ -7,6 +7,7 @@ tech_nep_whitegoo_1 = {
 	is_reverse_engineerable = no
 	category = { biology }
 	weight = 0
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -109,6 +110,7 @@ tech_nep_whitegoo_2_1 = {
 	category = { particles }
 	prerequisites = { "tech_nep_whitegoo_1" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -209,6 +211,7 @@ tech_nep_whitegoo_2_2 = {
 	category = { psionics }
 	prerequisites = { "tech_nep_whitegoo_1" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -309,6 +312,7 @@ tech_nep_whitegoo_2_3 = {
 	category = { materials }
 	prerequisites = { "tech_nep_whitegoo_1" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -410,6 +414,7 @@ tech_nep_whitegoo_3_1 = {
 	category = { field_manipulation }
 	prerequisites = { "tech_nep_whitegoo_2_1" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -513,6 +518,7 @@ tech_nep_whitegoo_3_2 = {
 	category = { statecraft }
 	prerequisites = { "tech_nep_whitegoo_2_2" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -617,6 +623,7 @@ tech_nep_whitegoo_3_3 = {
 	category = { propulsion }
 	prerequisites = { "tech_nep_whitegoo_2_3" }
 	weight = @tier4weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -720,6 +727,7 @@ tech_nep_whitegoo_4 = {
 	category = { voidcraft }
 	prerequisites = { "tech_nep_whitegoo_3_1" "tech_nep_whitegoo_3_2" "tech_nep_whitegoo_3_3" }
 	weight = @tier5weight1
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech
@@ -799,6 +807,7 @@ tech_nep_whitegoo_5 = {
 	is_reverse_engineerable = no
 	category = { voidcraft }
 	weight = 0
+	icon = tech_template_whitegoo
 
 	potential = {
 		has_country_flag = nep_whitegoo_tech

@@ -27,6 +27,10 @@ nep_st_is_not_outer_or_fe_system = {
 		has_star_flag = nep_deus_system
 		has_star_flag = nep_deus_system_2
 		has_star_flag = nep_deus_system_3
+		has_star_flag = nep_deus_system_4
+		has_star_flag = nep_whitegoo_portal_1
+		has_star_flag = nep_whitegoo_portal_2
+		has_star_flag = nep_whitegoo_origin
 		has_star_flag = nep_guide_init
 	}
 }
@@ -60,6 +64,9 @@ nep_st_is_not_outer_system = {
 		has_star_flag = nep_deus_system_2
 		has_star_flag = nep_deus_system_3
 		has_star_flag = nep_deus_system_4
+		has_star_flag = nep_whitegoo_portal_1
+		has_star_flag = nep_whitegoo_portal_2
+		has_star_flag = nep_whitegoo_origin
 		has_star_flag = nep_guide_init
 	}
 }

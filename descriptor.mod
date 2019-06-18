@@ -1,4 +1,4 @@
-﻿name="SmallEventofOutsideCluster for 2.2.5"
+﻿name="Some Events of Outside Cluster for 2.3"
 archive="SEoOC.zip"
 tags={
 	"Graphics"
@@ -6,4 +6,4 @@ tags={
 }
 picture="SEoOC.jpg"
 remote_file_id="1562501671"
-supported_version="2.2.5"
+supported_version="2.3.*"

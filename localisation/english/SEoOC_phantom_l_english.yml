@@ -3,9 +3,13 @@
  nep_battleship_phantom:0 "Battleship?"
  nep_battleship_phantom_plural:0 "Battleship?"
  
+ nep_phantom.3000.name:0 "Nothing Happened?"
+ nep_phantom.3000.desc:0 "After we activated orbs, the two orbs shook their energy in a certain direction after resonating with each other, but there was no movement after that, as if nothing happened."
+ nep_phantom.3000.a:0 "May be waiting for the next?"
+ 
  nep_phantom.3001.name:0 "Remnant of Krah'en Empire?"
  nep_phantom.3001.desc:0 "our border suddenly observe something might be remnants of the Krah'en Empire. But we don't have their exactly intel, The military officers think this is fake news. However, news has been reported it greatly, and some border systems have experienced small-scale panic."
- nep_phantom.3001.a:0 "Even if it is true, we will fight them."
+ nep_phantom.3001.a:0 "Even if it is true, we will beat them."
  
  nep_phantom.3002.name:0 "Mysterious fleet approaching"
  nep_phantom.3002.desc:0 "Our border suddenly appeared unidentified fleets. They are said to be called [event_target:nep_phantom_global.GetName] by a certain country. They do not respond to any communication. Any attack is invalid for them, and no one knows what their purpose is."

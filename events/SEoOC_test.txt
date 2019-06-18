@@ -1158,3 +1158,29 @@ country_event = {
 		}
 	}
 }
+
+planet_event = {
+	id = nep_test.27
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_country = {
+			limit = { is_ai = no }
+			save_event_target_as = nep_player_empire
+		}
+		if = {
+			limit = {
+				solar_system = { has_access_fleet = event_target:nep_player_empire }
+			}
+			log = "test.27:[Root.Solar_system.GetName]:yes"
+		}
+		else = {
+			log = "test.27:[Root.Solar_system.GetName]:no"
+		}
+	}
+}

@@ -222,6 +222,23 @@ can_jump_drive = {
 			always = no
 		}
 	}
+	else_if = {
+		limit = { 
+			exists = solar_system
+			solar_system = { 
+				OR = {
+					has_star_flag = nep_whitegoo_1
+					has_star_flag = nep_whitegoo_2
+					has_star_flag = nep_whitegoo_3
+				}
+			}
+			owner = { NOT = { has_technology = tech_nep_whitegoo_3_2 } }
+		}
+		custom_tooltip = {
+			text = "CAN_NOT_JUMP_IN_WHITEGOO"
+			always = no
+		}
+	}
 	else = {
 		always = yes
 	}

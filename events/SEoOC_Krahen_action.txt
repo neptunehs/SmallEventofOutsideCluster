@@ -17,7 +17,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[This.GetName]:1000"
+		#log = "[This.GetName]:1000"
 		closest_system = {
 			limit = {
 				OR = {
@@ -57,7 +57,7 @@ fleet_event = {
 						}
 						NOT = { owner = { has_country_flag = nep_Krahen_country } }
 					}
-					log = "[Root.GetName]:1000:[This.GetName]:Y"
+					#log = "[Root.GetName]:1000:[This.GetName]:Y"
 					root = {
 						auto_move_to_planet = {
 							target = prev
@@ -72,7 +72,7 @@ fleet_event = {
 						is_star = yes
 					}
 					root = {
-						log = "[Root.GetName]:1000:[This.GetName]:N"
+						#log = "[Root.GetName]:1000:[This.GetName]:N"
 						auto_move_to_planet = {
 							target = prev
 							clear_auto_move_on_arrival = yes
@@ -101,7 +101,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1001"
+		#log = "[Root.GetName]:1001"
 		random_list = {
 			50 = {
 				closest_system = {
@@ -143,7 +143,7 @@ fleet_event = {
 								}
 								NOT = { owner = { has_country_flag = nep_Krahen_country } }
 							}
-							log = "[Root.GetName]:1001:[This.GetName]:Y"
+							#log = "[Root.GetName]:1001:[This.GetName]:Y"
 							root = {
 								auto_move_to_planet = {
 									target = prev
@@ -160,7 +160,7 @@ fleet_event = {
 							save_event_target_as = nep_1001_temp
 						}
 						root = {
-							log = "[Root.GetName]:1001:[This.GetName]:N"
+							#log = "[Root.GetName]:1001:[This.GetName]:N"
 							auto_move_to_planet = {
 								target = event_target:nep_1001_temp
 								clear_auto_move_on_arrival = yes
@@ -191,7 +191,7 @@ fleet_event = {
 								}
 								NOT = { owner = { has_country_flag = nep_Krahen_country } }
 							}
-							log = "[Root.GetName]:1001:[This.GetName]:Y"
+							#log = "[Root.GetName]:1001:[This.GetName]:Y"
 							root = {
 								auto_move_to_planet = {
 									target = prev
@@ -234,7 +234,7 @@ fleet_event = {
 										}
 										NOT = { owner = { has_country_flag = nep_Krahen_country } }
 									}
-									log = "[Root.GetName]:1001:[This.GetName]:Y"
+									#log = "[Root.GetName]:1001:[This.GetName]:Y"
 									root = {
 										auto_move_to_planet = {
 											target = prev
@@ -248,7 +248,7 @@ fleet_event = {
 									limit = {
 										is_star = yes
 									}
-									log = "[Root.GetName]:1001:[This.GetName]:Y"
+									#log = "[Root.GetName]:1001:[This.GetName]:Y"
 									root = {
 										auto_move_to_planet = {
 											target = prev
@@ -286,7 +286,7 @@ fleet_event = {
 								}
 								NOT = { owner = { has_country_flag = nep_Krahen_country } }
 							}
-							log = "[Root.GetName]:1001:[This.GetName]:Y"
+							#log = "[Root.GetName]:1001:[This.GetName]:Y"
 							root = {
 								auto_move_to_planet = {
 									target = prev
@@ -382,7 +382,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:[From.GetName]:1010"
+		#log = "[Root.GetName]:[From.GetName]:1010"
 		from = { remove_auto_move_target = yes }
 		if = {
 			limit = { 
@@ -408,15 +408,15 @@ country_event = {
 							owner = { is_same_value = event_target:nep_Krahen_country }
 						}
 						found_planet = {
-							effect = {
-								id = "nep_Krahen.trigger.1010.0"
-								log = "[Root.GetName]:1010:[This.GetName]"
-							}
+							#effect = {
+								#id = "nep_Krahen.trigger.1010.0"
+								#log = "[Root.GetName]:1010:[This.GetName]"
+							#}
 							#move_to = this
 							orbit_planet = THIS
 							effect = {
 								id = "nep_Krahen.trigger.1010.1"
-								log = "[Root.GetName]:1010:1001 fired"
+								#log = "[Root.GetName]:1010:1001 fired"
 								prev = { fleet_event = { id = nep_kai.1001 days = 10 } }
 							}
 						}
@@ -449,10 +449,10 @@ country_event = {
 							NOT = { owner = { is_same_value = event_target:nep_Krahen_country } }
 						}
 						found_planet = {
-							effect = {
-								id = "nep_Krahen.trigger.1010.3"
-								log = "[Root.GetName]:1010:[This.GetName]"
-							}
+							#effect = {
+								#id = "nep_Krahen.trigger.1010.3"
+								#log = "[Root.GetName]:1010:[This.GetName]"
+							#}
 							#move_to = this
 							orbit_planet = THIS
 						}
@@ -461,7 +461,7 @@ country_event = {
 			}
 		}
 		else = {
-			log = "[Root.GetName]:1010:N"
+			#log = "[Root.GetName]:1010:N"
 			From = { fleet_event = { id = nep_kai.1001 } }
 		}
 	}	
@@ -487,7 +487,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1011"
+		#log = "[Root.GetName]:1011"
 		if = {
 			limit = { 
 				has_fleet_flag = nep_Krahen_fleet_no_tanks
@@ -508,10 +508,10 @@ fleet_event = {
 						owner = { is_same_value = event_target:nep_Krahen_country }
 					}
 					found_planet = {
-						effect = {
-							id = "nep_Krahen.trigger.1011.0"
-							log = "[Root.GetName]:1011:[This.GetName]"
-						}
+						#effect = {
+							#id = "nep_Krahen.trigger.1011.0"
+							#log = "[Root.GetName]:1011:[This.GetName]"
+						#}
 						#move_to = this
 						orbit_planet = THIS
 					}
@@ -540,10 +540,10 @@ fleet_event = {
 						NOT = { owner = { is_same_value = event_target:nep_Krahen_country } }
 					}
 					found_planet = {
-						effect = {
-							id = "nep_Krahen.trigger.1011.3"
-							log = "[Root.GetName]:1011:[This.GetName]"
-						}
+						#effect = {
+							#id = "nep_Krahen.trigger.1011.3"
+							#log = "[Root.GetName]:1011:[This.GetName]"
+						#}
 						#move_to = this
 						orbit_planet = THIS
 					}
@@ -551,7 +551,7 @@ fleet_event = {
 			}
 		}		
 		else = {
-			log = "[Root.GetName]:1011:N"
+			#log = "[Root.GetName]:1011:N"
 			fleet_event = { id = nep_kai.1001 }
 		}
 	}
@@ -562,7 +562,7 @@ fleet_event = {
 				has_fleet_flag = nep_Krahen_fleet_no_tanks
 			}
 			remove_fleet_flag = nep_Krahen_fleet_no_tanks
-			log = "[Root.GetName]:1011:1001 fired"
+			#log = "[Root.GetName]:1011:1001 fired"
 			fleet_event = { id = nep_kai.1001 days = 10 }
 		}
 	}
@@ -589,7 +589,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1020"
+		#log = "[Root.GetName]:1020"
 		remove_auto_move_target = yes
 		clear_fleet_actions = this
 		from = {
@@ -600,7 +600,7 @@ fleet_event = {
 					exists = owner
 					owner = { is_hostile = root.owner }
 				}
-				log = "[Root.GetName]:1020:[This.GetName]"
+				#log = "[Root.GetName]:1020:[This.GetName]"
 				root = {
 					auto_follow_fleet = { target = prev attack_fleet = yes }
 				}
@@ -658,7 +658,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1030"
+		#log = "[Root.GetName]:1030"
 		set_planet_flag = nep_Krahen_invading_planet
 		From = {
 			every_owned_ship = {
@@ -670,7 +670,7 @@ planet_event = {
 					}
 				}
 				root = {
-						log = "[Root.GetName]:1030:1 army"
+						#log = "[Root.GetName]:1030:1 army"
 						create_army = {
 						name = "NAME_Krahen_Invader"
 						owner = event_target:nep_Krahen_country
@@ -696,7 +696,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1031"
+		#log = "[Root.GetName]:1031"
 		fromfrom = {
 			remove_planet_flag = nep_Krahen_invading_planet
 			every_planet_army = {
@@ -717,14 +717,14 @@ country_event = {
 					}
 					every_fleet_in_system = {
 						limit = { has_fleet_flag = nep_inva_fleet }
-						log = "[Root.GetName]:1031:1011fired"
+						#log = "[Root.GetName]:1031:1011fired"
 						fleet_event = { id = nep_kai.1011 }
 					}
 				}
 				else = {
 					every_fleet_in_system = {
 						limit = { has_fleet_flag = nep_inva_fleet }
-						log = "[Root.GetName]:1031:1001fired"
+						#log = "[Root.GetName]:1031:1001fired"
 						fleet_event = { id = nep_kai.1001 }
 					}
 				}
@@ -747,7 +747,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1032"
+		#log = "[Root.GetName]:1032"
 		fromfrom = {
 			solar_system = {
 				save_event_target_as = nep_1032_temp
@@ -768,7 +768,7 @@ country_event = {
 								exists = owner
 								owner = { has_country_flag = nep_Krahen_country }
 							}
-							log = "[Root.GetName]:1032:[This.GetName]"
+							#log = "[Root.GetName]:1032:[This.GetName]"
 							root = {
 								auto_move_to_planet = {
 									target = prev
@@ -811,7 +811,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1040:[This.GetName]"
+		#log = "[Root.GetName]:1040:[This.GetName]"
 		solar_system = {
 			every_fleet_in_system = {
 				limit = { 
@@ -851,7 +851,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1050:[This.GetName]"
+		#log = "[Root.GetName]:1050:[This.GetName]"
 		random_list = {
 			50 = {
 				closest_system = {
@@ -1070,7 +1070,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1051:[This.GetName]"
+		#log = "[Root.GetName]:1051:[This.GetName]"
 		random_list = {
 			50 = {
 				closest_system = {
@@ -1290,7 +1290,7 @@ fleet_event = {
 					}
 				}
 				random_system_planet = {
-					log = "[Root.GetName]:1098:[This.GetName]:Y"
+					#log = "[Root.GetName]:1098:[This.GetName]:Y"
 					root = {
 						set_location = prev
 						set_timed_fleet_flag = { flag = nep_inva_fleet_jumped days = 200 }		
@@ -1304,7 +1304,7 @@ fleet_event = {
 			}
 		}
 		else = { 
-			log = "[Root.GetName]:1098:N"		
+			#log = "[Root.GetName]:1098:N"		
 			fleet_event = { id = nep_kai.1098 days = 200 } 
 		}		
 	}
@@ -1324,7 +1324,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "[Root.GetName]:1099"
+		#log = "[Root.GetName]:1099"
 		if = {
 			limit = {
 				NOT = { has_fleet_flag = nep_inva_fleet_jumped }
@@ -1341,7 +1341,7 @@ fleet_event = {
 					}
 				}
 				random_system_planet = {
-					log = "[Root.GetName]:1099:[This.GetName]:Y"
+					#log = "[Root.GetName]:1099:[This.GetName]:Y"
 					root = {
 						set_location = this
 						set_timed_fleet_flag = { flag = nep_inva_fleet_jumped days = 200 }
@@ -1355,7 +1355,7 @@ fleet_event = {
 			}
 		}
 		else = {
-			log = "[Root.GetName]:1099:N"
+			#log = "[Root.GetName]:1099:N"
 			fleet_event = { id = nep_kai.1099 days = 200 }
 		}
 	}
@@ -2059,6 +2059,14 @@ country_event = {
 				find_closest_planet = {
 					trigger = {
 						id = nep_Krahen_colonizer.1
+						NOT = { 
+							AND = {
+								solar_system = {
+									has_star_flag = nep_Krahen_cluster
+									any_system_planet = { is_colony = yes }
+								}
+							}
+						}
 						is_colony = no
 						is_under_colonization = no
 						can_colonize = { who = event_target:nep_Krahen_country status = yes }

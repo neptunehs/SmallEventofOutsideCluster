@@ -644,10 +644,10 @@ nep_Krahen_easy = {
 	ship_armor_mult = -0.75
 	ship_shield_mult = -0.75
 	ship_weapon_range_mult = -0.5
-	army_health = -0.7
-	army_morale = -0.7
-	army_damage_mult = -0.7
-	army_morale_damage_mult = -0.7
+	army_health = -0.99
+	army_morale = -0.9
+	army_damage_mult = -0.9
+	army_morale_damage_mult = -0.9
 }
 
 nep_finalweapon_easy = {
@@ -726,6 +726,8 @@ nep_whitegoo_1 = {
 	planet_jobs_energy_produces_mult = -0.15
 	planet_jobs_food_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
+	planet_crime_mult = 0.01
+	planet_stability_add = -1
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 7
 }
@@ -734,6 +736,8 @@ nep_whitegoo_2 = {
 	planet_jobs_energy_produces_mult = -0.15
 	planet_jobs_food_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
+	planet_crime_mult = 0.03
+	planet_stability_add = -3
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 7
 }
@@ -745,6 +749,8 @@ nep_whitegoo_3 = {
 	planet_jobs_food_produces_mult = -0.15
 	planet_jobs_alloys_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
+	planet_crime_mult = 0.05
+	planet_stability_add = -5
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 7
 }
@@ -752,7 +758,7 @@ nep_whitegoo_3 = {
 
 nep_whitegoo_fleet_1 = {
 	ship_weapon_range_mult = -0.1
-	ship_speed_mult = -0.1
+	ship_speed_mult = -0.05
 	ship_evasion_mult = -0.1
 	ship_emergency_ftl_mult = -0.05
 	ship_disengage_chance_reduction = 0.05
@@ -764,7 +770,7 @@ nep_whitegoo_fleet_1 = {
 
 nep_whitegoo_fleet_2 = {
 	ship_weapon_range_mult = -0.1
-	ship_speed_mult = -0.1
+	ship_speed_mult = -0.07
 	ship_evasion_mult = -0.1
 	ship_emergency_ftl_mult = -0.1
 	ship_disengage_chance_reduction = 0.1
@@ -776,7 +782,7 @@ nep_whitegoo_fleet_2 = {
 
 nep_whitegoo_fleet_3 = {
 	ship_weapon_range_mult = -0.1
-	ship_speed_mult = -0.2
+	ship_speed_mult = -0.1
 	ship_evasion_mult = -0.1
 	ship_emergency_ftl_mult = -0.2
 	ship_disengage_chance_reduction = 0.2

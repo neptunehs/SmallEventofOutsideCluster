@@ -3,6 +3,10 @@
  nep_battleship_phantom:0 "战列舰?"
  nep_battleship_phantom_plural:0 "战列舰?"
  
+ nep_phantom.3000.name:0 "发动失败？"
+ nep_phantom.3000.desc:0 "我们发动了宝玉后，两个宝玉在经过互相共鸣后将其能量射向某个方向，但之后并没有什么动静，好像什么事情都没有发生。"
+ nep_phantom.3000.a:0 "可能要等待下一个机会？"
+ 
  nep_phantom.3001.name:0 "卡恩帝国残部？"
  nep_phantom.3001.desc:0 "边境的星系突然传来了卡恩帝国残部出现的信息。但是我们没办法捕捉到他们，上层认为这是fake news。但是国内的新闻大大的报道，一部分边境星系出现了小规模的恐慌。"
  nep_phantom.3001.a:0 "就算是真的，我们也会打垮他们。"

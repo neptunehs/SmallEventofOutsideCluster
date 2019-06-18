@@ -915,23 +915,6 @@ country_event = {
 					}
 					create_Krahen_buildings = yes
 					create_Krahen_invader = yes
-				}
-				random_system_planet = {
-					limit = {
-						is_colony = no
-						is_colonizable = yes
-					}
-					if = {
-						limit = { planet_size < 12 }
-						change_planet_size = 12
-						reroll_planet = yes
-					}
-					create_colony = {
-						owner = event_target:nep_Krahen_country
-						species = event_target:nep_Krahen_country
-						ethos = owner
-					}
-					create_Krahen_buildings = yes
 					create_Krahen_invader = yes
 				}
 				random_system_planet = {
@@ -949,6 +932,7 @@ country_event = {
 						species = event_target:nep_Krahen_country
 						ethos = owner
 					}
+					create_Krahen_buildings = yes
 					create_Krahen_buildings = yes
 					create_Krahen_invader = yes
 				}
@@ -2766,6 +2750,7 @@ country_event = {
 		}
 		remove_relic = r_nep_orb_x1
 		add_relic = r_nep_orb_x2
+		set_country_flag = nep_orb_2_can_active
 	}
 }
 

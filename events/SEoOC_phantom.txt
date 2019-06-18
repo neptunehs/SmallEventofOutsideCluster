@@ -1720,6 +1720,23 @@ planet_event = {
 ###################################
 # notification
 ###################################
+#Orb activity
+country_event = {
+	id = nep_phantom.3000
+	title = "nep_phantom.3000.name"
+	desc = "nep_phantom.3000.desc"
+	picture = GFX_evt_analyzing_artifacts
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.3000.a
+	}
+}
+
 #first encount,on_crossing_border
 country_event = {
 	id = nep_phantom.3001

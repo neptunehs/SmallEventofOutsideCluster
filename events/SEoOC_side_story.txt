@@ -4759,6 +4759,7 @@ ship_event = {
 
 #############################################
 # White Goo Crisis
+# Idea by Kertheon
 #############################################
 namespace = nep_whitegoo
 country_event = {
@@ -4801,6 +4802,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_1
+			log = "nep_white_goo_1:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		random_system = {
@@ -4828,6 +4830,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_2
+			log = "nep_white_goo_2:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		random_system = {
@@ -4860,6 +4863,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_3
+			log = "nep_white_goo_3:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		country_event = { id = nep_whitegoo.2 days = 30 random = 3 }
@@ -4934,7 +4938,7 @@ country_event = {
 	immediate = {
 		every_system = {
 			limit = {
-				has_star_flag = nep_whitegoo
+				has_star_flag = nep_whitegoo_1
 				NOR = {
 					has_star_flag = nep_whitegoo_2
 					has_star_flag = nep_whitegoo_no_effect
@@ -5004,21 +5008,35 @@ country_event = {
 
 #Notifition
 #stage1
-country_event = {
+planet_event = {
 	id = nep_whitegoo.5000
-	title = nep_whitegoo.5000.name
-	desc = nep_whitegoo.5000.desc
-	picture = GFX_evt_gray_gooed_planet
+	hide_window = yes
 
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_flag = nep_whitegoo_noti }
+		solar_system = {
+			exists = space_owner
+			space_owner = { NOT = { has_country_flag = nep_whitegoo_noti } }
+		}
 	}
 	
 	immediate = {
-		set_country_flag = nep_whitegoo_noti
+		solar_system.space_owner = { 
+			country_event = { id = nep_whitegoo.50000 }
+			set_country_flag = nep_whitegoo_noti 
+		}
 	}
+}
+
+country_event = {
+	id = nep_whitegoo.50000
+	title = nep_whitegoo.5000.name
+	desc = nep_whitegoo.5000.desc
+	picture = GFX_evt_gray_gooed_planet
+	location = FROM.solar_system
+	
+	is_triggered_only = yes
 	
 	option = {
 		name = nep_whitegoo.5000.a
@@ -5026,21 +5044,35 @@ country_event = {
 }
 
 #stage2
-country_event = {
+planet_event = {
 	id = nep_whitegoo.5001
-	title = nep_whitegoo.5001.name
-	desc = nep_whitegoo.5001.desc
-	picture = GFX_evt_gray_gooed_planet
+	hide_window = yes
 
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_flag = nep_whitegoo_2_noti }
+		solar_system = {
+			exists = space_owner
+			space_owner = { NOT = { has_country_flag = nep_whitegoo_2_noti } }
+		}
 	}
 	
 	immediate = {
-		set_country_flag = nep_whitegoo_2_noti
+		solar_system.space_owner = { 
+			country_event = { id = nep_whitegoo.50010 }
+			set_country_flag = nep_whitegoo_2_noti 
+		}
 	}
+}
+
+country_event = {
+	id = nep_whitegoo.50010
+	title = nep_whitegoo.5001.name
+	desc = nep_whitegoo.5001.desc
+	picture = GFX_evt_gray_gooed_planet
+	location = From.solar_system
+	
+	is_triggered_only = yes
 	
 	option = {
 		name = nep_whitegoo.5001.a
@@ -5048,21 +5080,34 @@ country_event = {
 }
 
 #stage3
-country_event = {
+planet_event = {
 	id = nep_whitegoo.5002
-	title = nep_whitegoo.5002.name
-	desc = nep_whitegoo.5002.desc
-	picture = GFX_evt_gray_gooed_planet
-
+	hide_window = yes
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_flag = nep_whitegoo_3_noti }
+		solar_system = {
+			exists = space_owner
+			space_owner = { NOT = { has_country_flag = nep_whitegoo_3_noti } }
+		}
 	}
 	
 	immediate = {
-		set_country_flag = nep_whitegoo_3_noti
+		solar_system.space_owner = {
+			country_event = { id = nep_whitegoo.50020 }
+			set_country_flag = nep_whitegoo_3_noti 
+		}
 	}
+}
+
+country_event = {
+	id = nep_whitegoo.50020
+	title = nep_whitegoo.5002.name
+	desc = nep_whitegoo.5002.desc
+	picture = GFX_evt_gray_gooed_planet
+	location = From.solar_system
+	
+	is_triggered_only = yes
 	
 	option = {
 		name = nep_whitegoo.5002.a
@@ -5191,8 +5236,10 @@ country_event = {
 			limit = {
 				last_increased_tech = tech_nep_whitegoo_3_2
 			}
-			every_owned_planet = {
-				remove_modifier = nep_whitegoo_1
+			every_system_within_border = {
+				every_system_planet = {
+					remove_modifier = nep_whitegoo_1
+				}
 			}
 		}
 		if = {
@@ -5363,7 +5410,7 @@ country_event = {
 #Cavaneers
 country_event = {
 	id = nep_whitegoo.7
-	title = nep_whitegoo.7.name
+	title = cara_home_main.title
 	custom_gui = "enclave_caravaneer_window"
 	desc = nep_whitegoo.7.desc
 	
@@ -5417,7 +5464,7 @@ country_event = {
 
 country_event = {
 	id = nep_whitegoo.71
-	title = nep_whitegoo.71.name
+	title = cara_home_main.title
 	custom_gui = "enclave_caravaneer_window"
 	desc = nep_whitegoo.71.desc
 	
@@ -5664,8 +5711,16 @@ country_event = {
 country_event = {
 	id = nep_whitegoo.83
 	title = nep_whitegoo.83.name
-	desc = nep_whitegoo.83.desc
+	desc = {
+		trigger = { has_country_flag = nep_whitegoo_83_temp }
+		text = nep_whitegoo.83.desc
+	}
+	desc = {
+		trigger = { NOT = { has_country_flag = nep_whitegoo_83_temp } }
+		text = nep_whitegoo.83.desc.a
+	}
 	picture = GFX_evt_gray_gooed_planet
+	location = event_target:nep_whitegoo_origin
 	
 	is_triggered_only = yes
 	
@@ -5708,7 +5763,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		remove_global_flag = nep_whitegoo_begin
+		if = {
+			limit = { has_global_flag = nep_whitegoo_begin }
+			remove_global_flag = nep_whitegoo_begin
+		}
 		every_system = {
 			limit = {
 				OR = {
@@ -5760,6 +5818,13 @@ country_event = {
 		if = {
 			limit = { NOT = { exists = event_target:nep_whitegoo_9000_temp } }
 			set_global_flag = nep_whitegoo_end
+			every_country = {
+				remove_country_flag = nep_whitegoo_8000_temp
+				remove_country_flag = nep_whitegoo_83_temp
+			}
+		}
+		else = {
+			country_event = { id = nep_whitegoo.9000 days = 30 random = 3 }
 		}
 	}
 }

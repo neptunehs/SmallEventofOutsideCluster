@@ -665,6 +665,166 @@ nep_guide_init = {
 	
 	planet = {
 		count = 1
+		orbit_distance = 30
+		class = pc_nuked
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		
+		init_effect = {
+			prevent_anomaly = yes
+			save_event_target_as = nep_Gaia
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+			}
+			last_created_species = {
+				save_global_event_target_as = nep_wohp_species
+				create_species = {
+					name = NAME_nep_Gaia_Survivor
+					plural = NAME_nep_Gaia_Survivors
+					class = this
+					portrait = this
+					traits = {
+						trait = trait_survivor
+						trait = random_traits
+					}
+					homeworld = nep_Gaia
+				}
+				last_created_species = {
+					save_global_event_target_as = nep_gaia_species
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = event_target:nep_gaia_country
+					}
+				}
+				create_country = {
+					name = "NAME_nep_Gaia_Resistors"
+					type = primitive
+					auto_delete = no
+					#authority = auth_democratic
+					#civics = {
+					#	civic = civic_free_haven
+					#	civic = civic_post_apocalyptic
+					#}
+					species = last_created
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_egalitarian
+						ethic = ethic_pacifist
+					}
+				}
+				last_created_country = {
+					set_primitive_age = machine_age
+					save_global_event_target_as = nep_gaia_country
+					set_country_flag = nep_gaia_country
+					set_country_flag = machine_age
+				}
+			}
+			setup_primitive_planet = yes
+			add_modifier = { modifier = "planet_population_control" days = -1 }
+			add_modifier = { modifier = "nep_bombard_by_highlander" days = -1 }
+			set_planet_flag = has_megastructure
+		}
+		
+		moon = {
+			count = { min = 1 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+		
+		moon = {
+			name = "NAME_nep_Highland"
+			class = pc_habitat
+			orbit_angle = 45
+			orbit_distance = 10
+			size = 12
+			
+			init_effect = {
+				prevent_anomaly = yes
+				set_planet_entity = {
+					entity = "orbital_habitat_entity"
+					graphical_culture = event_target:nep_gaia_country
+				}
+				set_planet_flag = megastructure
+				set_planet_flag = habitat
+				save_event_target_as = nep_highlander
+				event_target:nep_gaia_country = {
+					capital_scope = {
+						create_species = {
+							name = NAME_nep_Highlander
+							plural = NAME_nep_Highlanders
+							class = this
+							portrait = this
+							traits = {
+								ideal_planet_class = pc_gaia
+								trait = trait_self_modified
+								trait = trait_robust
+								trait = trait_wasteful
+								trait = trait_decadent
+							}
+							homeworld = event_target:nep_highlander
+						}
+					}
+				}
+				last_created_species = {
+					save_event_target_as = nep_wohp_highlander_species
+				}
+				if = {
+					limit = {
+						NOT = {
+							exists = event_target:nep_highlander_country
+						}
+					}
+					create_country = {
+						name = "NAME_nep_Highlander_Dominator"
+						type = primitive
+						auto_delete = no
+						#authority = auth_imperial
+						#civics = {
+						#	civic = civic_imperial_cult
+						#	civic = civic_life_seeded
+						#}
+						species = event_target:nep_wohp_highlander_species
+						ethos = {
+							ethic = ethic_xenophobe
+							ethic = ethic_authoritarian
+							ethic = ethic_militarist
+						}
+					}
+					last_created_country = {
+						set_primitive_age = atomic_age
+						save_global_event_target_as = nep_highlander_country
+						set_country_flag = nep_highlander_country
+						set_country_flag = atomic_age
+					}
+				}
+				setup_primitive_planet = yes
+				add_building = building_urban_dwellings
+				add_building = building_primitive_farm
+				add_modifier = { modifier = "nep_extravagant_orgy" days = -1 }
+				add_modifier = { modifier = "planet_population_control" days = -1 }
+				while = {
+					count = 16
+					random_owned_pop = {
+						kill_pop = yes
+					}
+				}
+				while = {
+					count = 24
+					create_pop = { species = event_target:nep_gaia_species }
+				}
+			}
+		}
+	}
+	
+	planet = {
+		count = 1
 		orbit_distance = 25
 		class = rl_habitable_normal
 		orbit_angle = { min = 90 max = 270 }

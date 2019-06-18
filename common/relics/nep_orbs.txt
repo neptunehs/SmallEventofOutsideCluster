@@ -67,7 +67,8 @@ r_nep_orb_x2 = {
 		custom_tooltip = nep_orbs_custom_tooltip
 		hidden_effect = { 
 			remove_country_flag = nep_orb_2_can_active
-			country_event = { id = nep_phantom.1 days = 90 } 
+			country_event = { id = nep_phantom.3000 }
+			country_event = { id = nep_phantom.1 days = 45 random = 45 } 
 		}
 	}
 
@@ -112,13 +113,16 @@ r_nep_orb_x3 = {
 			fail_text = "nep_orb_no_reaction"
 			has_country_flag = nep_orb_3_can_active
 		}
-		custom_tooltip = {
-			fail_text = "nep_dragon_not_ready"
-			event_target:nep_seal_system = {
-				any_ship_in_system = {
-					OR = {
-						is_ship_size = nep_dragon_reward
-						is_ship_size = nep_dragon_reward_kai
+		if = {
+			limit = { has_country_flag = nep_orb_3_can_active }
+			custom_tooltip = {
+				fail_text = "nep_dragon_not_ready"
+				event_target:nep_seal_system = {
+					any_ship_in_system = {
+						OR = {
+							is_ship_size = nep_dragon_reward
+							is_ship_size = nep_dragon_reward_kai
+						}
 					}
 				}
 			}

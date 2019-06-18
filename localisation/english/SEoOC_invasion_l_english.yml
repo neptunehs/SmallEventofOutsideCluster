@@ -26,7 +26,7 @@
  nep_inva.22.a:0 "Well done."
  
  nep_inva.31.name:0 "Krah'en Empire"
- nep_inva.31.desc:0 "Announcement to the entire galaxy: I am from the Kahn Empire, the governor appointed by the great Emperor. You should be glorified, and our Emperor is interested in your little Milky Way. However, He has no interest in your "bugs" and has appointed me to expel you. We have gone through a careful plan to complete the outpost in this alien galaxies, and soon the big fleet will arrive, and everything is going on in secret - unfortunately in an accident, we were discovered. Your luck is very bad, your life is short because of this accident---the Emperor decided not to wait for the entire fleet to assemble, but to launch an attack immediately. Of course, our fleet is enough to destroy you. So, you should have a good resentment that found our country. Next, the technology we "get" from the Pyridian Empire will be presented to everyone -- a few hidden systems. You weak countries should not think that the systems can be hidden by the whole? From those systems there will be our powerful fleet and begin to expel you. Give up all your fantasies and greet your destined knot."
+ nep_inva.31.desc:0 "Announcement to the entire galaxy: I am from the Krah'en Empire, the imperator appointed by the great Emperor. You should be glorified, and our Emperor is interested in your little Milky Way. However, He has no interest in your "bugs" and has appointed me to expel you. We have gone through a careful plan to complete the outpost in this alien galaxies, and soon the big fleet will arrive, and everything is going on in secret - unfortunately in an accident, we were discovered. Your luck is very bad, your life is short because of this accident---the Emperor decided not to wait for the entire fleet to assemble, but to launch an attack immediately. Of course, our fleet is enough to destroy you. So, you should have a good resentment that found our country. Next, the technology we "get" from the Pyridian Empire will be presented to everyone -- a few hidden systems. You weak countries should not think that the systems can be hidden by the whole? From those systems there will be our powerful fleet and begin to expel you. Give up all your fantasies and greet your destined knot."
  nep_inva.31.a:0 "Who are you guys?"
  nep_inva.31.a.response:0 "There are still people who bravely respond to our information. It seems that this little galaxy is not all waste. However, I don't need to answer your question --- anyway, your country, and you, are finished."
  nep_inva.31.b:0 "What is your relationship with the grand seal?"
@@ -145,4 +145,9 @@
  tech_nep_destructor_ray:0 "Destructor Ray"
  tech_nep_destructor_ray_desc:0 ""
  
- war_goal_wg_nep_Krahen_invasion_war:0 "卡恩帝国入侵战争"
+ war_goal_wg_nep_Krahen_invasion_war:0 "Krah'en Invasion Wars"
+ 
+ nep_Krahen_invader_personalities:0 "Krah'en Invader"
+ gov_Krahen_gov:0 "Krah'en Frontline"
+ RT_nep_imperator:0 "Imperator"
+ RT_nep_vice_imperator:0 "Vice Imperator"

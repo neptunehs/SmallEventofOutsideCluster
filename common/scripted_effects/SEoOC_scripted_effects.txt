@@ -2241,8 +2241,10 @@ nep_easy_mod = {
 		}
 		if = {
 			limit = {
-				is_country_type = nep_phantom_active
-				is_country_type = nep_phantom_passive
+				OR = {
+					is_country_type = nep_phantom_active
+					is_country_type = nep_phantom_passive
+				}
 			}
 			add_modifier = {
 				modifier = nep_phantom_easy
@@ -2319,33 +2321,58 @@ nep_whitegoo_1 = {
 					set_ambient_object_flag = nep_whitegoo_ambient_object
 				}
 			}
+			if = {
+				limit = {
+					exists = space_owner
+					space_owner = {
+						NOT = { has_country_flag = nep_whitegoo_noti }
+					}
+				}
+				random_system_planet = {
+					planet_event = { id = nep_whitegoo.5000 }
+				}
+			}
 		}
 		1 = {
 			if = {
-				limit = {
+				limit = {					
+					exists = space_owner
 					space_owner = {
 						NOT = { has_technology = tech_nep_whitegoo_3_1 }
 					}
 				}
 				set_star_flag = nep_whitegoo_1
 				every_system_planet = {
+					limit = { owner = { NOT = { has_technology = tech_nep_whitegoo_3_2 } } }
 					add_modifier = {
 						modifier = nep_whitegoo_1
 					}
 				}
 				every_fleet_in_system = {
+					limit = { owner = { NOT = { has_technology = tech_nep_whitegoo_3_3 } } }
 					add_modifier = {
 						modifier = nep_whitegoo_fleet_1
 					}
 				}
 				while = {
-					count = 15
+					count = 3
 					create_ambient_object = {
 						type = nep_whitegoo_space
 						location = solar_system
 					}
 					last_created_ambient_object = {
 						set_ambient_object_flag = nep_whitegoo_ambient_object
+					}
+				}
+				if = {
+					limit = {
+						exists = space_owner
+						space_owner = {
+							NOT = { has_country_flag = nep_whitegoo_noti }
+						}
+					}
+					random_system_planet = {
+						planet_event = { id = nep_whitegoo.5000 }
 					}
 				}
 			}
@@ -2376,10 +2403,22 @@ nep_whitegoo_2 = {
 					set_ambient_object_flag = nep_whitegoo_ambient_object
 				}
 			}
+			if = {
+				limit = {
+					exists = space_owner
+					space_owner = {
+						NOT = { has_country_flag = nep_whitegoo_2_noti }
+					}
+				}
+				random_system_planet = {
+					planet_event = { id = nep_whitegoo.5001 }
+				}
+			}
 		}
 		1 = {
 			if = {
 				limit = {
+					exists = space_owner
 					space_owner = {
 						NOT = { has_technology = tech_nep_whitegoo_3_1 }
 					}
@@ -2396,13 +2435,24 @@ nep_whitegoo_2 = {
 					}
 				}
 				while = {
-					count = 15
+					count = 4
 					create_ambient_object = {
 						type = nep_whitegoo_space
 						location = solar_system
 					}
 					last_created_ambient_object = {
 						set_ambient_object_flag = nep_whitegoo_ambient_object
+					}
+				}
+				if = {
+					limit = {
+						exists = space_owner
+						space_owner = {
+							NOT = { has_country_flag = nep_whitegoo_2_noti }
+						}
+					}
+					random_system_planet = {
+						planet_event = { id = nep_whitegoo.5001 }
 					}
 				}
 			}
@@ -2433,10 +2483,22 @@ nep_whitegoo_3 = {
 					set_ambient_object_flag = nep_whitegoo_ambient_object
 				}
 			}
+			if = {
+				limit = {
+					exists = space_owner
+					space_owner = {
+						NOT = { has_country_flag = nep_whitegoo_3_noti }
+					}
+				}
+				random_system_planet = {
+					planet_event = { id = nep_whitegoo.5002 }
+				}
+			}
 		}
 		1 = {
 			if = {
 				limit = {
+					exists = space_owner
 					space_owner = {
 						NOT = { has_technology = tech_nep_whitegoo_3_1 }
 					}
@@ -2453,13 +2515,24 @@ nep_whitegoo_3 = {
 					}
 				}
 				while = {
-					count = 15
+					count = 5
 					create_ambient_object = {
 						type = nep_whitegoo_space
 						location = solar_system
 					}
 					last_created_ambient_object = {
 						set_ambient_object_flag = nep_whitegoo_ambient_object
+					}
+				}
+				if = {
+					limit = {
+						exists = space_owner
+						space_owner = {
+							NOT = { has_country_flag = nep_whitegoo_3_noti }
+						}
+					}
+					random_system_planet = {
+						planet_event = { id = nep_whitegoo.5002 }
 					}
 				}
 			}

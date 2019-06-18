@@ -1,7 +1,8 @@
 ﻿l_simp_chinese:
  #########################################
  # whop
- #########################################  nep_fail.1.name:0 "仪表错误"
+ #########################################  
+ nep_fail.1.name:0 "仪表错误"
  nep_fail.1.desc:0 "经过[Root.GetName]搭载的自检系统的修复，仪表恢复了正常，没有在该星系发现任何的有价值的东西。"
  
  nep_wohp.1000.name:0 "发现新的虫洞"
@@ -297,7 +298,7 @@
  civic_nep_deus_ex_machina:0 "机械神的领导"
  civic_nep_deus_ex_machina_desc:0 "该政权将由一个机械神明引导。"
  civic_tooltip_nep_deus_ex_machina_effects:0 "起源种族的所有人口拥有$trait_nep_servent_of_machina$特性。星球起始得到一个$building_nep_palace_of_machina$建筑。将会被孤立在系外星系。外交关系可能会受到机械神的影响，尤其是机械神运行不正常的时候。§R损失首都时游戏结束。§!"
- building_nep_palace_of_machina:0 "机械神殿"
+ building_nep_palace_of_machina:0 "机械神殿-方舟"
  building_nep_palace_of_machina_desc:0 " "
  trait_nep_servent_of_machina:0 "机械神的仆从"
  
@@ -329,6 +330,51 @@
  #########################################
  # whitegoo
  ######################################### 
+ nep_whitegoo.5000.name:0 "奇怪的白雾"
+ nep_whitegoo.5000.desc:0 "§Y[From.Solar_system.GetName]§!突然出现了一些奇怪的白雾。这种白雾会干扰我们舰队的推进器导致效率下降，同时导致星球接受太阳光减少可能导致发电效率降低，并且这些白雾产生了一些奇怪的共鸣导致一部分设备运行异常。这种白雾貌似还会逐渐在星系间传播，可能会成为新的威胁。"
+ nep_whitegoo.5000.a:0 "令人担忧。"
+ 
+ nep_whitegoo.5001.name:0 "浓厚的白雾"
+ nep_whitegoo.5001.desc:0 "§Y[From.Solar_system.GetName]§!的白雾越发浓厚，科学家认为那么浓厚的白雾将会更加严重的影响舰队跟殖民地的运行。之前不那么浓厚的星系也将渐渐地变得浓厚，我们可能必须开始采取手段了。"
+ nep_whitegoo.5001.a:0 "令人担忧。"
+ 
+ nep_whitegoo.5002.name:0 "深不见底的白雾"
+ nep_whitegoo.5002.desc:0 "§Y[From.Solar_system.GetName]§!的白雾已经厚到危险的程度，严重威胁舰队跟殖民地的经济。而且还在不断扩散，如果不想想办法，我们的经济会遭受沉重打击！"
+ nep_whitegoo.5002.a:0 "令人担忧。"
+ 
+ nep_whitegoo.5.name:0 "白雾基础研究提案"
+ nep_whitegoo.5.desc:0 "我们已经有一些星系被奇怪的白雾所覆盖。科学家们认为白雾的一切都值得研究，并拿出了研究提案。说不定我们能从这些研究中找到解决这个问题的端倪。"
+ nep_whitegoo.5.a:0 "希望这值得。"
+ 
+ nep_whitegoo.51.name:0 "白雾基础研究提案"
+ nep_whitegoo.51.desc:0 "其他国家开始研究那些奇怪的白雾，科学家认为我们也得未雨绸缪，跟进研究。一些科学家已经在科研交流中得到了一些资料跟样本，我们也可以开始进行研究了。"
+ nep_whitegoo.51.a:0 "希望这值得。"
+ 
+ nep_whitegoo.7.desc:0 "您好。听说您们最近研究出了如何对付那些白雾的办法？要不要跟我们做个交易，您把这个技术卖我们，我们给你5000$energy$，并且会宣传是您们的技术。"
+ nep_whitegoo.7.a:0 "成交。"
+ nep_whitegoo.7.b:0 "想要技术，自己研究去。"
+ 
+ nep_whitegoo.71.desc:0 "您好。最近您们应该也听说了白雾正在到处肆虐。现在我们有一个解决方案，请问您们是否需要？只要3500$energy$。"
+ nep_whitegoo.71.a:0 "成交。"
+ nep_whitegoo.71.b:0 "我们自有办法。"
+ 
+ nep_whitegoo.8.name:0 "新的研究方法提出"
+ nep_whitegoo.8.desc:0 "科学家们提出一个认为可以找到白雾源头的研究方案。"
+ nep_whitegoo.8.a:0 "我会在合适的时间让他们研究。"
+ 
+ nep_whitegoo.81.name:0 "白雾源头"
+ nep_whitegoo.81.desc:0 "科学家们在经过研究后，认为白雾同时起源于三个星系。我们将会将其标注在星图上，并且建立研究计划。"
+ nep_whitegoo.81.a:0 "三个？同时？肯定有问题。"
+ 
+ nep_whitegoo.83.name:0 "白雾源头"
+ nep_whitegoo.83.desc:0 "我们在之前被认为是白雾源头的星系里找到了一个虫洞。看来这才是通向真正元凶的星系的道路。"
+ nep_whitegoo.83.desc.a:0 "我们在突然收到某几个星系的虫洞活动痕迹。这几个虫洞很隐蔽，之前根本没人知道，现在既然发生了活动证明有人使用了它们。经过科学家们跟之前的信息进行对照后，认为这几个虫洞很可能跟白雾的根源有关。"
+ nep_whitegoo.83.a:0 "我们这就去完全解决问题。"
+ 
+ nep_whitegoo.91.name:0 "根除"
+ nep_whitegoo.91.desc:0 "白雾的根源星系已经建立了吸收空间站，所有的白雾都将被吸入。现有的白雾也将慢慢消失。基本上，困扰全宇宙的白雾问题即将解决。"
+ nep_whitegoo.91.a:0 "全宇宙的胜利！"
+ 
  tech_nep_whitegoo_1:0 "白雾基础研究"
  tech_nep_whitegoo_1_desc:0 "首先我们要知道这些白雾是什么东西。"
  tech_nep_whitegoo_2_1:0 "白雾传播学"
@@ -352,15 +398,34 @@
  tech_nep_whitegoo_4:0 "白雾吸收空间站"
  tech_nep_whitegoo_4_desc:0 "我们已经拥有足够的知识对白雾进行比较彻底的解决。"
  tech_nep_whitegoo_4_prereqfor_title:0 "§H解锁：白雾吸收空间站§!"
- tech_nep_whitegoo_4_prereqfor_desc:0 "这种空间站将会对整个星系跟周边星系的白雾进行吸收。
+ tech_nep_whitegoo_4_prereqfor_desc:0 "这种空间站将会对整个星系跟周边星系的白雾进行吸收。"
  tech_nep_whitegoo_5:0 "白雾传播路径论"
  tech_nep_whitegoo_5_desc:0 "让科学家们集中精力找到白雾的传播源。"
  tech_nep_whitegoo_5_prereqfor_title:0 "§H解锁：白雾源头星系§!"
  tech_nep_whitegoo_5_prereqfor_desc:0 "将揭示白雾是从何而来以便彻底解决问题。"
  
- nep_whitegoo_can_spawn_policy:0 "SEoOC - 是否开启经济危机"
- nep_whitegoo_can_spawn_policy_desc:0 "注意：该项目只能在前100年更改。"
+ policy_nep_whitegoo_can_spawn_policy:0 "SEoOC - 是否开启经济危机"
+ policy_nep_whitegoo_can_spawn_policy_desc:0 "注意：该项目只能在前100年更改。"
  nep_whitegoo_can_spawn:0 "是"
  nep_whitegoo_can_spawn_desc:0 ""
  nep_whitegoo_cant_spawn:0 "否"
  nep_whitegoo_cant_spawn_desc:0 ""
+ 
+ nep_whitegoo_research:0 "白雾起源研究"
+ nep_whitegoo_research_DESC:0 "我们已经找到了白雾的来源。在那儿进行研究应该能找到什么有用的信息。"
+ 
+ nep_whitegoo_poi_name:0 "白雾起源地"
+ nep_whitegoo_poi_desc:0 "在此地建造一个白雾吸收空间站就可以彻底解决该问题。"
+ 
+ nep_station_whitegoo:0 "白雾吸收空间站"
+ nep_station_whitegoo_plural:0 "白雾吸收空间站"
+ 
+ nep_whitegoo_chain_title:0 "白雾起源"
+ nep_whitegoo_chain_desc:0 "前往白雾起源，寻找问题解决。"
+ 
+ nep_station_whitegoo_mega:0 "$nep_station_whitegoo$"
+ nep_station_whitegoo_mega_DESC:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
+ nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 ""
+ 
+ CAN_NOT_JUMP_IN_WHITEGOO:0 "§R白雾干扰跃迁引擎的使用。§!"
+ 

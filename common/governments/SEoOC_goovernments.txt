@@ -20,6 +20,19 @@ gov_nep_servent_of_machina = {
 	}
 
 	weight = {
-		base = 2000
+		base = 10000
+	}
+}
+
+gov_Krahen_gov = {
+	ruler_title = RT_nep_imperator
+	ruler_title_female = RT_nep_vice_imperator
+
+	possible = {
+		is_country_type = nep_Krahen_country
+	}
+
+	weight = {
+		base = 10000
 	}
 }

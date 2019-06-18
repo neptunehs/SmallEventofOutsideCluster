@@ -146,3 +146,8 @@
  tech_nep_destructor_ray_desc:0 ""
  
  war_goal_wg_nep_Krahen_invasion_war:0 "卡恩帝国入侵战争"
+ 
+ nep_Krahen_invader_personalities:0 "卡恩入侵军"
+ gov_Krahen_gov:0 "卡恩前线军政府"
+ RT_nep_imperator:0 "执政官"
+ RT_nep_vice_imperator:0 "副执政官"
