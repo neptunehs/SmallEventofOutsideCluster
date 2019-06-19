@@ -126,11 +126,9 @@ nep_station_whitegoo_mega = {
 	on_build_complete = {
 		if = {
 			limit = { 
-				NOT = { 
-					solar_system = { 
-						any_ship_in_system = {
-							is_ship_size = nep_station_whitegoo
-						}
+				NOT = {
+					any_ship_in_system = {
+						is_ship_size = nep_station_whitegoo
 					}
 				}
 			}
@@ -141,7 +139,7 @@ nep_station_whitegoo_mega = {
 				effect = {
 					set_owner = from
 					create_ship = {
-						random_existing_design = nep_station_whitegoo
+						design = "NAME_nep_station_whitegoo"
 					}
 					set_location = {
 						target = fromfrom
@@ -167,6 +165,10 @@ nep_station_whitegoo_mega = {
 					limit = { has_modifier = nep_whitegoo_3 }
 					remove_modifier = nep_whitegoo_3
 				}
+			}
+			every_system_ambient_object = {
+				limit = { has_ambient_object_flag = nep_whitegoo_ambient_object }
+				destroy_ambient_object = this
 			}
 			every_fleet_in_system = {
 				if = { 

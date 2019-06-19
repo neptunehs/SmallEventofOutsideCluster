@@ -346,7 +346,7 @@
  nep_whitegoo.71.b:0 "We have our own way."
  
  nep_whitegoo.8.name:0 "New research program proposed"
- nep_whitegoo.8.desc:0 "Scientists have proposed a research program that can find the source of white fog."
+ nep_whitegoo.8.desc:0 "Scientists have proposed a research program that can find the source of white goo."
  nep_whitegoo.8.a:0 "I will let them study at the right time."
  
  nep_whitegoo.81.name:0 "White Goo Source"
@@ -359,7 +359,7 @@
  nep_whitegoo.83.a:0 "We will solve the problem completely."
  
  nep_whitegoo.91.name:0 "Eradication"
- nep_whitegoo.91.desc:0 "The source system of the white goo have established an absorption space station, and all white goo will be inhaled. The existing white goo will slowly disappear. Basically, the white fog problem goo problem troubled the whole universe is about to solve."
+ nep_whitegoo.91.desc:0 "The source system of the white goo have established an absorption space station, and all white goo will be inhaled. The existing white goo will slowly disappear. Basically, the white goo problem goo problem troubled the whole universe is about to solve."
  nep_whitegoo.91.a:0 "A victory of whole universe!"
  
  tech_nep_whitegoo_1:0 "White Goo Basic Research"
@@ -378,8 +378,8 @@
  tech_nep_whitegoo_3_2_desc:0 "Research on ways to block the white goo resonate."
  tech_nep_whitegoo_3_2_prereqfor_title:0 "§HUnlock:White Goo Resonance Block§!"
  tech_nep_whitegoo_3_2_prereqfor_desc:0 "The Jump Drive will be able to use in the white goo. To some extent invalidate the impact of white goo on the planet's economy."
- tech_nep_whitegoo_2_3:0 "White Goo Discharge"
- tech_nep_whitegoo_2_3_desc:0 "We want to study the way to discharge white goo from the propulsions of our spacecraft."
+ tech_nep_whitegoo_3_3:0 "White Goo Discharge"
+ tech_nep_whitegoo_3_3_desc:0 "We want to study the way to discharge white goo from the propulsions of our spacecraft."
  tech_nep_whitegoo_3_3_prereqfor_title:0 "§HUnlock:White Goo Discharge§!"
  tech_nep_whitegoo_3_3_prereqfor_desc:0 "The effect of white goo on the speed of the spacecraft is somewhat ineffective."
  tech_nep_whitegoo_4:0 "White Goo Absorption Station"
@@ -412,6 +412,6 @@
  
  nep_station_whitegoo_mega:0 "$nep_station_whitegoo$"
  nep_station_whitegoo_mega_DESC:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
- nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 ""
+ nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
  
  CAN_NOT_JUMP_IN_WHITEGOO:0 "§RWhite Goo interferes with the use of the Jump Drive.§!"

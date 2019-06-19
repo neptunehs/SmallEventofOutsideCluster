@@ -15,6 +15,7 @@ decision_nep_repeller = {
 	}
 	
 	potential = {
+		owner = { is_ai = no }
 		has_global_flag = nep_phantom_begin
 		has_planet_flag = nep_phantom_orbit
 		owner = { has_country_flag = nep_can_build_repeller }
@@ -29,7 +30,7 @@ decision_nep_repeller = {
 	}
 	
 	ai_weight = {
-		weight = 1000
+		weight = 1
 	}
 }
 
@@ -45,6 +46,7 @@ decision_nep_repeller_function = {
 	}
 	
 	potential = {
+		owner = { is_ai = no }
 		has_global_flag = nep_phantom_begin
 		has_planet_flag = nep_phantom_orbit
 		has_planet_flag = nep_phantom_repeller_build
@@ -64,6 +66,6 @@ decision_nep_repeller_function = {
 	}
 	
 	ai_weight = {
-		weight = 1000
+		weight = 1
 	}
 }

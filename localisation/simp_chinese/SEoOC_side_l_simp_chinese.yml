@@ -391,8 +391,8 @@
  tech_nep_whitegoo_3_2_desc:0 "研究破坏白雾造成共鸣的方法。"
  tech_nep_whitegoo_3_2_prereqfor_title:0 "§H解锁特性：白雾共鸣阻碍§!"
  tech_nep_whitegoo_3_2_prereqfor_desc:0 "跃迁引擎将能够在白雾中发挥作用。在一定程度上无效化白雾对星球经济的影响。"
- tech_nep_whitegoo_2_3:0 "白雾分子排出"
- tech_nep_whitegoo_2_3_desc:0 "我们要研究将白雾从我们的宇宙船的推进器中排出去的方法。"
+ tech_nep_whitegoo_3_3:0 "白雾分子排出"
+ tech_nep_whitegoo_3_3_desc:0 "我们要研究将白雾从我们的宇宙船的推进器中排出去的方法。"
  tech_nep_whitegoo_3_3_prereqfor_title:0 "§H解锁特性：白雾分子排出§!"
  tech_nep_whitegoo_3_3_prereqfor_desc:0 "在一定程度上无效白雾对宇宙船的速度的影响。"
  tech_nep_whitegoo_4:0 "白雾吸收空间站"
@@ -425,7 +425,13 @@
  
  nep_station_whitegoo_mega:0 "$nep_station_whitegoo$"
  nep_station_whitegoo_mega_DESC:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
- nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 ""
+ nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
  
  CAN_NOT_JUMP_IN_WHITEGOO:0 "§R白雾干扰跃迁引擎的使用。§!"
  
+ nep_whitegoo_1:0 "白雾"
+ nep_whitegoo_1_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
+ nep_whitegoo_2:0 "白雾"
+ nep_whitegoo_2_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
+ nep_whitegoo_2:0 "白雾"
+ nep_whitegoo_2_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"

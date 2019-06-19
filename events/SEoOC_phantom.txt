@@ -1587,7 +1587,36 @@ planet_event = {
 		random_owned_pop = {
 			kill_pop = yes
 		}
-		owner = { country_event = { id = nep_phantom.3210 } } #notification
+		if = {
+			limit = {
+				has_modifier = nep_phantom_planet_debuff_death
+			}
+			remove_modifier = nep_phantom_planet_debuff_death
+		}
+		add_modifier = {
+			modifier = nep_phantom_planet_debuff_death
+			days = 180
+		}
+	}
+	
+	after = {
+		if = {
+			limit = { has_owner = yes }
+			owner = { country_event = { id = nep_phantom.3210 } } #notification
+		}
+		else_if = {
+			limit = { is_colony = no }
+			solar_system = {
+				every_fleet_in_system = {
+					limit = {
+						owner = { is_country_type = nep_phantom_passive }
+					}
+					clear_fleet_actions = this
+					fleet_event = { id = nep_phantom.1002 }
+				}
+			}
+			owner = { country_event = { id = nep_phantom.32100 } } #notification
+		}
 	}
 }
 
@@ -1604,8 +1633,37 @@ planet_event = {
 		random_owned_pop = {
 			kill_pop = yes
 		}
-		owner = { country_event = { id = nep_phantom.3210 } } #notification
+		if = {
+			limit = {
+				has_modifier = nep_phantom_planet_debuff_death
+			}
+			remove_modifier = nep_phantom_planet_debuff_death
+		}
+		add_modifier = {
+			modifier = nep_phantom_planet_debuff_death
+			days = 180
+		}
 		planet_event = { id = nep_phantom.2101 days = 22 }  #death loop
+	}
+	
+	after = {
+		if = {
+			limit = { has_owner = yes }
+			owner = { country_event = { id = nep_phantom.3210 } } #notification
+		}
+		else_if = {
+			limit = { is_colony = no }
+			solar_system = {
+				every_fleet_in_system = {
+					limit = {
+						owner = { is_country_type = nep_phantom_passive }
+					}
+					clear_fleet_actions = this
+					fleet_event = { id = nep_phantom.1002 }
+				}
+			}
+			owner = { country_event = { id = nep_phantom.32100 } } #notification
+		}
 	}
 }
 
@@ -1625,6 +1683,10 @@ planet_event = {
 	immediate = {
 		owner = { country_event = { id = nep_phantom.3220 } } #notification
 		set_planet_flag = nep_phantom_repeller_build
+		if = {
+			limit = { owner = { is_ai = yes } }
+			planet_event = { id = nep_phantom.4001 }
+		}			
 	}
 }
 
@@ -2277,6 +2339,23 @@ country_event = {
 }
 
 country_event = {
+	id = nep_phantom.32100
+	title = "nep_phantom.32100.name"
+	desc = "nep_phantom.32100.desc"
+	picture = GFX_evt_collapsing_roof
+	location = from
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	}
+	
+	option = {
+		name = nep_phantom.32100.a
+	}
+}
+
+country_event = {
 	id = nep_phantom.3210
 	title = "nep_phantom.3210.name"
 	desc = {
@@ -2301,18 +2380,6 @@ country_event = {
 	}
 		
 	immediate = {
-		from = {
-			if = {
-				limit = {
-					has_modifier = nep_phantom_planet_debuff_death
-				}
-				remove_modifier = nep_phantom_planet_debuff_death
-			}
-			add_modifier = {
-				modifier = nep_phantom_planet_debuff_death
-				days = 180
-			}			
-		}
 	}
 	
 	after = {
@@ -2445,55 +2512,46 @@ country_event = {
 ####################################
 # For AI Empire
 ####################################
-# event = {
-	# id = nep_phantom.4000
-	# hide_window = yes
+planet_event = {
+	id = nep_phantom.4000
+	hide_window = yes
 	
-	# is_triggered_only = yes
+	pre_triggers = {
+		has_owner = yes
+		is_ai = yes
+		original_owner = yes
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
 	
-	# trigger = {
-		# has_global_flag = nep_phantom_has_found
-		# NOT = { has_global_flag = nep_phantom_active_end }
-	# }
+	trigger = {
+		has_global_flag = nep_phantom_begin
+		has_planet_flag = nep_phantom_orbit
+		owner = { has_country_flag = nep_can_build_repeller }
+		NOT = { has_planet_flag = nep_phantom_repeller_build }
+	}
 	
-	# immediate = {
-		# every_country = {
-			# if = {
-				# limit = { 
-					# is_ai = yes
-					# has_special_project = nep_phantom_research_repeller 
-				# }
-				# add_resource = {
-					# society_research = -2000
-				# }
-				# abort_special_project = nep_phantom_research_repeller 
-				# set_country_flag = nep_can_build_repeller
-			# }
-		# }
-		# every_planet = {
-			# limit = {
-				# owner = { is_ai = yes }
-				# has_country_flag = nep_can_build_repeller
-				# has_planet_flag = nep_phantom_orbit
-			# }
-			# planet_event = { id = nep_phantom.4001 days = 180 }
-		# }
-	# }
-# }
+	mean_time_to_happen = {
+		days = 90
+	}
+	
+	immediate = {
+		planet_event = { id = nep_phantom.2200 days = 180 }
+	}
+}
 
-# planet_event = {
-	# id = nep_phantom.4001
-	# hide_window = yes
+planet_event = {
+	id = nep_phantom.4001
+	hide_window = yes
 	
-	# is_triggered_only = yes
+	is_triggered_only = yes
 	
-	# immediate = {
-		# set_planet_flag = nep_phantom_repeller_build
-		# set_planet_flag = nep_phantom_repeller_functioning
-		# planet_event = { id = nep_phantom.2201 days = 45 }
-		# add_modifier = {
-			# modifier = nep_phantom_repeller_function
-			# days = 90
-		# }
-	# }	
-# }
+	immediate = {
+		set_planet_flag = nep_phantom_repeller_functioning
+		planet_event = { id = nep_phantom.2201 days = 45 }
+		add_modifier = {
+			modifier = nep_phantom_repeller_function
+			days = 90
+		}
+	}	
+}

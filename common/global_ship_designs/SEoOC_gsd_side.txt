@@ -1,0 +1,5 @@
+ship_design = {
+	name = "NAME_nep_station_whitegoo"
+	ship_size = nep_station_whitegoo
+	use_design_name = yes
+}
