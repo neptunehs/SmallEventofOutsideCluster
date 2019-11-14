@@ -415,3 +415,12 @@
  nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
  
  CAN_NOT_JUMP_IN_WHITEGOO:0 "§RWhite Goo interferes with the use of the Jump Drive.§!"
+ 
+ nep_whitegoo_1:0 "白雾"
+ nep_whitegoo_1_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
+ nep_whitegoo_2:0 "白雾"
+ nep_whitegoo_2_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
+ nep_whitegoo_3:0 "白雾"
+ nep_whitegoo_3_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
+ 
+ 

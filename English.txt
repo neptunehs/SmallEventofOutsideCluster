@@ -1,4 +1,4 @@
-A linear event pack mod,with 6 events and 1 anomaly,but without any new models.So it's small.
+A event pack mod,with 6 linear events and 3 other events,but without any new models.
 All events happened in newly generate outside clusters or systems.
 
 Warning:My mother language is Chinese,so this mod use google translate to make English localization,and quality is low.
@@ -14,6 +14,7 @@ events:
 anomaly:
 1.War of Heaven(Primitive)
 4.Deus Ex Machina
+6.Whitegoo
 
 Note:
 1.This mod has easy mode and default mode,you can change it in policies before first event begin,or auto turn to easy mode if you don't use NSC(newshipclasses) mod.

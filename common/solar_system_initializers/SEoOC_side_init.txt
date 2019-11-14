@@ -644,7 +644,7 @@ nep_guide_init = {
 	usage = misc_system_init
 	usage_odds = 0
 	
-	flags = { nep_guide_init }
+	flags = { nep_guide_star }
 	
 	planet = {
 		count = 1
@@ -665,13 +665,63 @@ nep_guide_init = {
 	
 	planet = {
 		orbit_distance = 30
-		class = pc_nuked
+		class = rl_habitable_normal
 		orbit_angle = { min = 90 max = 270 }
 		size = 25
 		
 		init_effect = {
 			prevent_anomaly = yes
-			save_global_event_target_as = nep_guide_star
+			save_global_event_target_as = nep_guide_planet
+			create_primitive_species = yes
+			create_country = {
+				name = random
+				authority = random
+				civics = {
+					civic = civic_landed_nobility
+					civic = civic_flat_world_theory
+				}
+				species = last_created
+				ethos = random
+				flag = {
+					icon = {
+						category = "special"
+						file = "primitive.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "new_dawn.dds"
+					}
+					colors={
+						"turquoise"
+						"green"
+						"null"
+						"null"
+					}
+				}
+				type = primitive
+			}
+			last_created_country = {
+				set_graphical_culture = preindustrial_01
+				set_country_flag = renaissance_age 
+				set_primitive_age = renaissance_age
+				change_country_flag = {
+					icon = {
+						category = "special"
+						file = "primitive.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "new_dawn.dds"
+					}
+					colors={
+						"pink"
+						"burgundy"
+						"null"
+						"null"
+					}
+				}
+			}
+			setup_primitive_planet = yes
 		}
 		
 		moon = {
@@ -684,7 +734,7 @@ nep_guide_init = {
 	planet = {
 		count = 1
 		orbit_distance = 25
-		class = rl_habitable_normal
+		class = random_non_colonizable
 		orbit_angle = { min = 90 max = 270 }
 		size = { min = 16 max = 20 }
 		

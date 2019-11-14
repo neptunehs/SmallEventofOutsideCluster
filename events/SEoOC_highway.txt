@@ -852,7 +852,7 @@ fleet_event = {
 				}
 			}				
 		}
-		owner = { set_country_flag = first_station_found }
+		owner = { set_country_flag = nep_first_station_found }
 		random_system = {
 			limit = {
 				has_star_flag = nep_highway_station_system 

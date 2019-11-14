@@ -4753,10 +4753,2427 @@ ship_event = {
 	fire_only_once = yes
 	
 	immediate = {
-		set_global_flag = nep_guide_spawn
+		set_spawn_system_batch = begin
+		no_scope = {
+			spawn_system = {
+				min_distance >= 494
+				max_distance <= 500
+				min_orientation_angle = 15
+				max_orientation_angle = 345
+				hyperlane = no
+				initializer = nep_guide_init
+			}
+		}
+		set_spawn_system_batch = end
+		solar_system = {
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nep_guide_star
+			}
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+			link_wormholes = root.solar_system
+		}
 	}
 }
 
+planet_event = {
+	id = nep_guide.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	pre_trigger = {
+		has_owner = yes
+		is_capital = yes
+	}
+	
+	trigger = {
+		from = { 
+			is_ai = no 
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+		NOT = { has_global_flag = nep_guide_begin }
+		root = { is_same_value = event_target:nep_guide_planet }
+	}
+	
+	immediate = {
+		from = { country_event = { id = nep_guide.2000 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.2000
+	title = "nep_guide.2000.name"
+	desc = "nep_guide.2000.desc"
+	picture = GFX_evt_alien_nature
+	location = fromfromfrom
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		fromfromfrom = {
+			set_event_locked = yes
+		}
+	}
+	
+	option = {
+		name = nep_guide.2000.a
+		hidden_effect = { 
+			country_event = { id = nep_guide.2001 days = 3 }	
+			fromfromfrom = {
+				save_global_event_target_as = nep_guide_ship
+			}
+			set_global_flag = nep_guide_begin
+		}
+	}
+	
+	
+	option = {
+		name = nep_guide.2000.b
+		fromfromfrom = {
+			set_event_locked = no
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.2001
+	title = "nep_guide.2001.name"
+	desc = "nep_guide.2001.desc"
+	picture = GFX_evt_alien_nature
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = nep_guide.2001.a
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		hidden_effect = { 
+			country_event = { id = nep_guide.2002 days = 15 }
+			event_target:nep_guide_ship = { set_event_locked = no }
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.2002
+	title = "nep_guide.2002.name"
+	desc = "nep_guide.2002.desc"
+	picture = GFX_evt_alien_nature
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.2002.a
+		trigger = {
+			NOT = { 
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					capital_scope = { is_same_value = nep_guide_planet }
+				}
+				species = {
+					save_event_target_as = nep_guide_species
+				}
+			}
+			create_country = {
+				name = random
+				type = nep_global_for_protrait
+				auto_delete = no
+			}
+			last_created_country = {
+				save_global_event_target_as = nep_global_guide
+				create_leader = {
+					name = random
+					species = event_target:nep_guide_species
+					gender = female
+					skill = random
+					set_age = 14
+				}
+				last_created_leader = {
+					save_global_event_target_as = nep_guide_female
+				}
+			}
+			country_event = { id = nep_guide.2003 days = 10 }
+		}
+	}
+	
+	option = {
+		name = nep_guide.2002.b
+		hidden_effect = { set_global_flag = nep_guide_end }
+	}
+	
+	option = {
+		name = nep_guide.2002.c
+		trigger = {
+			OR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		event_target:nep_guide_ship = {
+			kill_leader = { show_notification = no }
+		}
+		hidden_effect = { set_global_flag = nep_guide_end }
+	}
+}
+
+country_event = {
+	id = nep_guide.2003
+	title = UNKNOWN_LONG
+	desc = "nep_guide.2003.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.2003.a
+		hidden_effect = { country_event = { id = nep.guide.3 } }
+	}
+
+	option = {
+		name = nep_guide.2003.b
+		hidden_effect = { 
+			event_target:nep_global_guide = {
+				destroy_country = yes
+			}
+			set_global_flag = nep_guide_end
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.3
+	title = "nep_guide.3.name"
+	desc = "nep_guide.3.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.3.a
+		begin_event_chain = nep_guide_chain
+		enable_special_project = {
+			name = nep_guide_training
+			owner = root
+			location = root.capital_scope
+		}
+	}
+	
+	option = {
+		name = nep_guide.2003.b
+		hidden_effect = { 
+			event_target:nep_global_guide = {
+				destroy_country = yes
+			}
+			set_global_flag = nep_guide_end
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.3000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { from = { NOT = { is_same_value = event_target:nep_guide_ship } } }
+			enable_special_project = {
+				name = nep_guide_training
+				owner = root
+				location = root.capital_scope
+			}
+			country_event = { id = nep_guide.3001 }
+		}
+		else = {
+			country_event = { id = nep_guide.3002 }
+			country_event = { id = nep_guide.4000 days = 360 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.3001
+	title = "nep_guide.3001.name"
+	desc = "nep_guide.3001.desc"
+	picture = GFX_evt_space_walk
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_guide.3002
+	title = nep_guide.female.name
+	desc = "nep_guide.3002.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_guide.4000
+	title = nep_guide.female.name
+	desc = "nep_guide.4000.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4000.a
+	}
+	
+	after = {
+		country_event = { id = nep_guide.4 }
+	}
+}
+
+country_event = {
+	id = nep_guide.4001
+	title = nep_guide.female.name
+	desc = "nep_guide.4001.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4001.a
+	}
+	
+	after = {
+		event_target:nep_guide_ship = { set_event_locked = no }
+		country_event = { id = nep_guide.4 }
+	}
+}
+
+#Roll
+country_event = {
+	id = nep_guide.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			1 = {
+				#Gaia Planet
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_gaia } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								is_planet_class = pc_gaia
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_gaia
+						country_event = { id = nep_guide.4010 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { is_planet_class = pc_gaia }
+								enable_special_project = {
+									name = nep_guide_gaia
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Nuked Planet
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_nuked } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								is_planet_class = pc_nuked
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_nuked 
+						country_event = { id = nep_guide.4020 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { is_planet_class = pc_nuked }
+								enable_special_project = {
+									name = nep_guide_nuked
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Alien City
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_alien } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								is_colony = yes
+								owner = { 
+									NOR = { 
+										is_same_species = root
+										is_same_species = event_target:nep_guide_female
+									}
+									is_primitive = yes
+									OR = {
+										has_country_flag = iron_age
+										has_country_flag = late_medieval_age
+										has_country_flag = renaissance_age
+										has_country_flag = steam_age
+									}
+								}
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_alien 
+						country_event = { id = nep_guide.4030 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = {
+									is_colony = yes
+									owner = { 
+										NOT = { is_same_species = root } 
+										is_primitive = yes
+										OR = {
+											has_country_flag = iron_age
+											has_country_flag = late_medieval_age
+											has_country_flag = renaissance_age
+											has_country_flag = steam_age
+										}
+									}
+								}
+								enable_special_project = {
+									name = nep_guide_alien
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Relic City
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_relic } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								is_planet_class = pc_relic
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_relic 
+						country_event = { id = nep_guide.4040 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { is_planet_class = pc_relic }
+								enable_special_project = {
+									name = nep_guide_relic
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Can Colonize + site
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_site } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								habitability = { who = event_target:nep_guide_female.species value = 0.6 }
+								exists = archaeological_site
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_site 
+						country_event = { id = nep_guide.4050 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									habitability = { who = event_target:nep_guide_female.species value = 0.6 }
+									exists = archaeological_site
+								}
+								enable_special_project = {
+									name = nep_guide_site
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Habitat
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_habitat } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								is_planet_class = pc_habitat
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_habitat
+						country_event = { id = nep_guide.4060 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { is_planet_class = pc_habitat }
+								enable_special_project = {
+									name = nep_guide_habitat
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#Megastructure
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_mega } }
+					closest_system = {
+						limit = {
+							owner = { is_same_value = root }
+							has_any_megastructure = yes
+							OR = {
+								has_megastructure = spy_orb_4
+								has_megastructure = think_tank_4
+								has_megastructure = dyson_sphere_5
+								has_megastructure = dyson_sphere_restored
+								has_megastructure = spy_orb_restored
+								has_megastructure = think_tank_restored
+								has_megastructure = matter_decompressor_4
+								has_megastructure = matter_decompressor_restored
+								has_megastructure = strategic_coordination_center_3
+								has_megastructure = strategic_coordination_center_restored
+								has_megastructure = mega_art_installation_3
+								has_megastructure = mega_art_installation_restored
+								has_megastructure = interstellar_assembly_4
+								has_megastructure = interstellar_assembly_restored
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_mega
+						country_event = { id = nep_guide.4070 }
+						event_target:nep_guide_temp_4 = {
+							random_megastructure = {
+								limit = { NOT = { is_megastructure_type = habitat_0 } }
+								enable_special_project = {
+									name = nep_guide_mega
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			# 1 = {
+				# #hazardous_weather
+				# if = {
+					# limit = { NOT = { has_country_flag = nep_guide_hazardous_weather } }
+					# closest_system = {
+						# limit = {
+							# has_access_fleet = root
+							# any_system_planet = {
+								# OR = {
+									# is_colony = yes
+									# is_colonizable = yes
+								# }
+								# has_modifier = hazardous_weather
+							# }
+						# }
+						# save_event_target_as = nep_guide_temp_4
+					# }
+					# if = {
+						# limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						# country_event = { id = nep_guide.4 }
+					# }
+					# else = {
+						# set_country_flag = nep_guide_hazardous_weather
+						# country_event = { id = nep_guide.4080 }
+						# event_target:nep_guide_temp_4 = {
+							# random_system_planet = {
+								# limit = { 
+									# OR = {
+										# is_colony = yes
+										# is_colonizable = yes
+									# }
+									# has_modifier = hazardous_weather 
+								# }
+								# enable_special_project = {
+									# name = nep_guide_hazardous_weather
+									# owner = root
+									# location = this
+								# }
+							# }
+						# }
+					# }
+				# }
+				# else = {
+					# country_event = { id = nep_guide.4 }
+				# }
+			# }
+			1 = {
+				#dangerous_wildlife
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_dangerous_wildlife } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = dangerous_wildlife
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_dangerous_wildlife
+						country_event = { id = nep_guide.4090 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = dangerous_wildlife
+								}
+								enable_special_project = {
+									name = nep_guide_dangerous_wildlife
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#low_gravity
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_low_gravity } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = low_gravity
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_low_gravity
+						country_event = { id = nep_guide.4100 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = low_gravity
+								}
+								enable_special_project = {
+									name = nep_guide_low_gravity
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#high_gravity
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_high_gravity } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = high_gravity
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_high_gravity
+						country_event = { id = nep_guide.4110 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = high_gravity
+								}
+								enable_special_project = {
+									name = nep_guide_high_gravity
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#tidal_locked
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_tidal_locked } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = tidal_locked
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_tidal_locked
+						country_event = { id = nep_guide.4120 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = tidal_locked
+								}
+								enable_special_project = {
+									name = nep_guide_tidal_locked
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#titanic_life
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_titanic_life } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = titanic_life
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_titanic_life
+						country_event = { id = nep_guide.4130 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = titanic_life
+								}
+								enable_special_project = {
+									name = nep_guide_titanic_life
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			1 = {
+				#natural_beauty
+				if = {
+					limit = { NOT = { has_country_flag = nep_guide_natural_beauty } }
+					closest_system = {
+						limit = {
+							has_access_fleet = root
+							any_system_planet = {
+								OR = {
+									is_colony = yes
+									is_colonizable = yes
+								}
+								has_modifier = natural_beauty
+							}
+						}
+						save_event_target_as = nep_guide_temp_4
+					}
+					if = {
+						limit = { NOT = { exists = event_target:nep_guide_temp_4 } }
+						country_event = { id = nep_guide.4 }
+					}
+					else = {
+						set_country_flag = nep_guide_natural_beauty
+						country_event = { id = nep_guide.4140 }
+						event_target:nep_guide_temp_4 = {
+							random_system_planet = {
+								limit = { 
+									OR = {
+										is_colony = yes
+										is_colonizable = yes
+									}
+									has_modifier = natural_beauty
+								}
+								enable_special_project = {
+									name = nep_guide_natural_beauty
+									owner = root
+									location = this
+								}
+							}
+						}
+					}
+				}
+				else = {
+					country_event = { id = nep_guide.4 }
+				}
+			}
+			0.1 = {
+				#To prevent bug
+				add_event_chain_counter = {
+					event_chain = "nep_guide_chain"
+					counter = "nep_guide_dreams"
+					amount = 1
+				}
+				if = {
+					limit = {
+						has_completed_event_chain_counter = { 
+							event_chain = nep_guide_chain 
+							counter = nep_guide_dreams
+						}
+					}
+					country_event = { id = nep_guide.5 days = 15 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4010
+	title = nep_guide.female.name
+	desc = "nep_guide.4010.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4010.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4011
+	title = "nep_guide.4011.name"
+	desc = "nep_guide.4011.desc"
+	picture = GFX_evt_gaia_planet
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_gaia
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4012
+	title = nep_guide.female.name
+	desc = "nep_guide.4012.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_guide_ship = { set_event_locked = yes }
+	}
+	
+	option = {
+		name = nep_guide.4012.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 15 }
+		}
+		else = { country_event = { id = nep_guide.4001 days = 15 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4020
+	title = nep_guide.female.name
+	desc = "nep_guide.4020.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4020.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4021
+	title = "nep_guide.4011.name"
+	desc = "nep_guide.4011.desc"
+	picture = GFX_evt_dead_city
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_nuked
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4022
+	title = nep_guide.female.name
+	desc = "nep_guide.4022.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {	
+		event_target:nep_guide_ship = { set_event_locked = yes }
+	}
+	
+	option = {
+		name = nep_guide.4022.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4001 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4030
+	title = nep_guide.female.name
+	desc = "nep_guide.4030.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4030.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4031
+	title = "nep_guide.4011.name"
+	desc = "nep_guide.4011.desc"
+	picture = GFX_evt_alien_city
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_alien
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4032
+	title = nep_guide.female.name
+	desc = "nep_guide.4032.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_guide_ship = { set_event_locked = yes }
+	}
+	
+	option = {
+		name = nep_guide.4032.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 17 }
+		}
+		else = { country_event = { id = nep_guide.4001 days = 17 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4040
+	title = nep_guide.female.name
+	desc = "nep_guide.4040.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4040.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4041
+	title = "nep_guide.4011.name"
+	desc = "nep_guide.4011.desc"
+	picture = GFX_evt_relic_city
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_relic
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4042
+	title = nep_guide.female.name
+	desc = "nep_guide.4042.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4042.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 15 }
+		}
+		else = { country_event = { id = nep_guide.4001 days = 15 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4050
+	title = nep_guide.female.name
+	desc = "nep_guide.4050.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4050.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4051
+	title = "nep_guide.4011.name"
+	desc = "nep_guide.4011.desc"
+	picture = GFX_evt_archaeological_dig
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_site
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4052
+	title = nep_guide.female.name
+	desc = "nep_guide.4052.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4052.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 10 }
+		}
+		else = { country_event = { id = nep_guide.4001 days = 10 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4060
+	title = nep_guide.female.name
+	desc = "nep_guide.4060.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4060.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4061
+	title = "nep_guide.4061.name"
+	desc = "nep_guide.4061.desc"
+	picture = GFX_evt_nep_habitat
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_habitat
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4062
+	title = nep_guide.female.name
+	desc = "nep_guide.4062.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4062.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4070
+	title = nep_guide.female.name
+	desc = "nep_guide.4070.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4070.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4071
+	title = "nep_guide.4071.name"
+	desc = "nep_guide.4071.desc"
+	picture = GFX_evt_nep_megastructure
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_mega
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4072
+	title = nep_guide.female.name
+	desc = "nep_guide.4072.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4072.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4080
+	title = nep_guide.female.name
+	desc = "nep_guide.4080.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4080.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4081
+	title = "nep_guide.4081.name"
+	desc = "nep_guide.4081.desc"
+	picture = GFX_evt_arid_planet
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_hazardous_weather
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4082
+	title = nep_guide.female.name
+	desc = "nep_guide.4082.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4082.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4090
+	title = nep_guide.female.name
+	desc = "nep_guide.4090.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4090.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4091
+	title = "nep_guide.4091.name"
+	desc = "nep_guide.4091.desc"
+	picture = GFX_evt_alien_wildlife
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_dangerous_wildlife
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4092
+	title = nep_guide.female.name
+	desc = "nep_guide.4092.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4092.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4100
+	title = nep_guide.female.name
+	desc = "nep_guide.4100.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4100.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4101
+	title = "nep_guide.4101.name"
+	desc = "nep_guide.4101.desc"
+	picture = GFX_evt_dark_alley
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_low_gravity
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4102
+	title = nep_guide.female.name
+	desc = "nep_guide.4102.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4102.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4110
+	title = nep_guide.female.name
+	desc = "nep_guide.4110.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4110.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4111
+	title = "nep_guide.4111.name"
+	desc = "nep_guide.4111.desc"
+	picture = GFX_evt_towel
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_high_gravity
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4112
+	title = nep_guide.female.name
+	desc = "nep_guide.4112.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4112.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4120
+	title = nep_guide.female.name
+	desc = "nep_guide.4120.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4120.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4121
+	title = "nep_guide.4121.name"
+	desc = "nep_guide.4121.desc"
+	picture = GFX_evt_ocean_planet
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_tidal_locked
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4122
+	title = nep_guide.female.name
+	desc = "nep_guide.4122.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4122.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4130
+	title = nep_guide.female.name
+	desc = "nep_guide.4130.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4130.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4131
+	title = "nep_guide.4131.name"
+	desc = "nep_guide.4131.desc"
+	picture = GFX_evt_alien_nature
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_titanic_life
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4132
+	title = nep_guide.female.name
+	desc = "nep_guide.4132.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4132.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4130
+	title = nep_guide.female.name
+	desc = "nep_guide.4130.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4130.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4131
+	title = "nep_guide.4131.name"
+	desc = "nep_guide.4131.desc"
+	picture = GFX_evt_alien_nature
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_titanic_life
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4132
+	title = nep_guide.female.name
+	desc = "nep_guide.4132.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4132.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4140
+	title = nep_guide.female.name
+	desc = "nep_guide.4140.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4140.a
+	}
+}
+
+country_event = {
+	id = nep_guide.4141
+	title = "nep_guide.4141.name"
+	desc = "nep_guide.4141.desc"
+	picture = GFX_evt_alien_nature
+	location = event_target:nep_guide_ship
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+		enable_special_project = {
+			name = nep_guide_natural_beauty
+			owner = root
+			location = from.orbit
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.4142
+	title = nep_guide.female.name
+	desc = "nep_guide.4142.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4142.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 5 }
+		}
+		else = { country_event = { id = nep_guide.4 days = 5 } }
+	}
+}
+
+ship_event = {
+	id = nep_guide.4998
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = nep_guide_end }
+		has_global_flag = nep_guide_begin
+		is_same_value = event_target:nep_guide_ship
+		from = {
+			any_ship_in_system = {
+				is_in_combat = yes
+			}
+		}
+	}
+	
+	immediate = {
+		owner = { country_event = { id = nep_guide.4999 } }
+	}
+}
+
+country_event = {
+	id = nep_guide.4999
+	title = nep_guide.female.name
+	desc = "nep_guide.4999.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.4999.a
+		add_event_chain_counter = {
+			event_chain = "nep_guide_chain"
+			counter = "nep_guide_dreams"
+			amount = 1
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_completed_event_chain_counter = { 
+					event_chain = nep_guide_chain 
+					counter = nep_guide_dreams
+				}
+			}
+			country_event = { id = nep_guide.5 days = 15 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_guide.5
+	title = nep_guide.female.name
+	desc = "nep_guide.5.desc"
+	
+	picture_event_data = {
+		portrait = event_target:nep_guide_female
+		room = ethic_spaceship_room
+	}
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = nep_guide.5.a
+	}
+	
+	after = {
+		country_event = { id = nep_guide.6 days = 150 random = 500 }
+	}
+}
 #############################################
 # White Goo Crisis
 # Idea by Kertheon
@@ -4776,7 +7193,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		years = 30
+		years = 120
 	}
 	
 	immediate = {
@@ -5886,23 +8303,5 @@ country_event = {
 	option = {
 		name = nep_whitegoo.91.a
 		end_event_chain = nep_whitegoo_chain
-	}
-}
-
-
-#############################################
-# Genesis
-#############################################
-namespace = nep_genesis
-ship_event = {
-	id = nep_genesis.1
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	fire_only_once = yes
-	
-	immediate = {
-		set_global_flag = nep_genesis_spawn
 	}
 }

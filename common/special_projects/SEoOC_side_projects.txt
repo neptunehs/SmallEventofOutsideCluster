@@ -222,11 +222,476 @@ special_project = {
 		shipclass_science_ship = 1
 		leader = scientist
 	}
-		
+	
 	on_success = {
 		owner = { 
 			set_country_flag = nep_whitegoo_83_temp
 			country_event = { id = nep_whitegoo.82 }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_training"
+	days_to_research = 1
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_space_walk
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		owner = {
+			country_event = { id = nep_guide.3000 }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_gaia"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_gaia_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4011 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4012 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_nuked"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_dead_city
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4021 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4022 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_alien"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_alien_city
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4031 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4032 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_relic"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_relic_city
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4041 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4042 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_site"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_archaeological_dig
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4051 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4052 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_habitat"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_nep_habitat
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4061 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4062 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_mega"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_nep_megastructure
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4071 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4072 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_hazardous_weather"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_arid_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4081 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4082 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_dangerous_wildlife"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_alien_wildlife
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4091 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4092 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_low_gravity"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_dark_alley
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4101 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4102 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+special_project = {
+	key = "nep_guide_high_gravity"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_towel
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4111 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4112 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_tidal_locked"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_ocean_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4121 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4122 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_titanic_life"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_alien_nature
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4131 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4132 } }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
+special_project = {
+	key = "nep_guide_natural_beauty"
+	days_to_research = 5
+	event_chain = "nep_guide_chain"
+	tech_department = society_technology
+	picture = GFX_evt_alien_nature
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		if = {
+			limit = { is_same_value = event_target:nep_guide_ship }
+			owner = {
+				country_event = { id = nep_guide.4141 }
+			}
+		}
+		else = {
+			owner = { country_event = { id = nep_guide.4142 } }
 		}
 	}
 	

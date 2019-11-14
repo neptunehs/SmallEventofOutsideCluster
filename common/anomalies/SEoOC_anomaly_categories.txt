@@ -12,20 +12,22 @@ nep_SEoOC_whop_category = {
 		modifier = {
 			add = 1
 			NOT = { has_global_flag = nep_wohp_spawn }
-			solar_system = {
-				has_natural_wormhole = no
-			}
 		}
 		modifier = {
 			factor = 3
-			NOT = { has_global_flag = nep_wohp_spawn }
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant
 				planet_size > 35
 			}
+		}
+		modifier = {
+			factor = 0
 			solar_system = {
-				has_natural_wormhole = no
+				has_natural_wormhole = yes
+				any_system_planet = {
+					has_anomaly = yes
+				}
 			}
 		}
 	}
@@ -50,23 +52,22 @@ nep_SEoOC_deus_category = {
 				has_global_flag = nep_deus_spawn
 				has_global_flag = nep_deuspi_spawn
 			}
-			solar_system = {
-				has_natural_wormhole = no
-			}
 		}
 		modifier = {
 			factor = 3
-			NOR = { 
-				has_global_flag = nep_deus_spawn
-				has_global_flag = nep_deuspi_spawn
-			}
 			OR = {
 				is_star = yes
 				is_planet_class = pc_gas_giant
 				planet_size > 35
 			}
+		}
+		modifier = {
+			factor = 0
 			solar_system = {
-				has_natural_wormhole = no
+				has_natural_wormhole = yes
+				any_system_planet = {
+					has_anomaly = yes
+				}
 			}
 		}
 	}

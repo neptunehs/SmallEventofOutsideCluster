@@ -117,4 +117,23 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+	
+	spriteType = {
+		name = "GFX_evt_nep_habitat"
+		texturefile = "gfx/interface/planetview/habitat.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_nep_megastructure"
+		texturefile = "gfx/interface/planetview/megastructure.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+	spriteType = {
+		name = "GFX_evt_SEoOC_config"
+		texturefile = "gfx/event_pictures/SEoOC_config.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
 }

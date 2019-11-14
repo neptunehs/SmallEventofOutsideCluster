@@ -1,0 +1,1056 @@
+namespace = nep_config
+
+country_event = {
+	id = nep_config.1
+	title = "nep_config.1.name"
+	desc = "nep_config.1.desc"	
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_config.1.diff
+		trigger = {
+			NOT = { has_global_flag = nep_highway_begin }
+		}
+		hidden_effect = {
+			country_event = { id = nep_config.2 }
+		}
+	}
+	
+	option = {
+		name = nep_config.1.wf
+		trigger = { 
+			NOT = { has_global_flag = nep_whitegoo_begin }
+		}
+		hidden_effect = {
+			country_event = { id = nep_config.3 }
+		}
+	}
+	
+	option = {
+		name = nep_config.1.debug
+		hidden_effect = {
+			country_event = { id = nep_config.4 }
+		}
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.2
+	title = "nep_config.2.name"
+	desc = { 
+		trigger = { 
+			NOT = { has_global_flag = nep_SEoOC_easy }
+		}
+		text = nep_config.2.desc.a
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_SEoOC_easy
+		}
+		text = nep_config.2.desc.b
+	}
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.2.easy
+		trigger = {
+			NOT = { has_global_flag = nep_SEoOC_active }
+		}
+		hidden_effect = { set_global_flag = nep_SEoOC_easy }
+	}
+	
+	option = {
+		name = nep_config.2.default
+		trigger = {
+			NOT = { has_global_flag = nep_SEoOC_active }
+		}
+		hidden_effect = { remove_global_flag = nep_SEoOC_easy }
+	}
+	
+	option = {
+		name = nep_config.2.easy.nsc
+		trigger = {
+			has_global_flag = nep_SEoOC_active
+		}
+		hidden_effect = { remove_global_flag = nep_SEoOC_easy }
+	}
+	
+	option = {
+		name = nep_config.2.default.nsc
+		trigger = {
+			has_global_flag = nep_SEoOC_active
+		}
+		hidden_effect = { remove_global_flag = nep_SEoOC_easy }
+	}
+	
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.1 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.3
+	title = "nep_config.3.name"
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_can_spawn
+		}
+		text = nep_config.3.desc.y
+	}
+	desc = { 
+		trigger = { 
+			NOT = { has_global_flag = nep_whitegoo_can_spawn }
+		}
+		text = nep_config.3.desc.n
+	}
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.3.spawntime
+		trigger = {
+			has_global_flag = nep_whitegoo_can_spawn
+		}
+		hidden_effect = { country_event = { id = nep_config.3000 } }
+	}
+	
+	option = {
+		name = nep_config.3.spawnmtth
+		trigger = {
+			has_global_flag = nep_whitegoo_can_spawn
+		}
+		hidden_effect = { country_event = { id = nep_config.3001 } }
+	}
+	
+	option = {
+		name = nep_config.3.y
+		trigger = {
+			NOT = { has_global_flag = nep_whitegoo_can_spawn }
+		}
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_can_spawn
+			country_event = { id = nep_config.3 }
+		}
+	}
+	
+	option = {
+		name = nep_config.3.n
+		trigger = {
+			has_global_flag = nep_whitegoo_can_spawn
+		}
+		hidden_effect = { 
+			remove_global_flag = nep_whitegoo_can_spawn
+			country_event = { id = nep_config.3 }
+		}
+	}
+	
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.1 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.3000
+	title = "nep_config.3000.name"
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_2250
+		}
+		text = nep_config.3000.desc.2250
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_2300
+		}
+		text = nep_config.3000.desc.2300
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_2350
+		}
+		text = nep_config.3000.desc.2350
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_2400
+		}
+		text = nep_config.3000.desc.2400
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_midgame
+		}
+		text = nep_config.3000.desc.midgame
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_lategame
+		}
+		text = nep_config.3000.desc.lategame
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_2200
+		}
+		text = nep_config.3000.desc.2200
+	}
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.3000.2250
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_2250
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3000.2300
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_2300
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3000.2350
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_2350
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3000.2400
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_2400
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3000.midgame
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_midgame
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3000.lategame
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_lategame
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	
+	option = {
+		name = nep_config.3000.2200
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_2200
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.3 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.3001
+	title = "nep_config.3001.name"
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_15
+		}
+		text = nep_config.3001.desc.15
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_40
+		}
+		text = nep_config.3001.desc.40
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_110
+		}
+		text = nep_config.3001.desc.110
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_225
+		}
+		text = nep_config.3001.desc.225
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_470
+		}
+		text = nep_config.3001.desc.470
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_whitegoo_1105
+		}
+		text = nep_config.3001.desc.1105
+	}
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.3001.15
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_15
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3001.40
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_40
+			country_event = { id = nep_config.3 }
+		}
+	}
+	option = {
+		name = nep_config.3001.110
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_110
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3001.225
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_225
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3001.470
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_470
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.3001.1105
+		hidden_effect = { 
+			set_global_flag = nep_whitegoo_1105
+			country_event = { id = nep_config.3 } 
+		}
+	}
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.3 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.4
+	title = "nep_config.4.name"
+	desc = "nep_config.4.desc"	
+	
+	picture = GFX_evt_SEoOC_Config
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.4.highway
+		hidden_effect = { country_event = { id = nep_config.4001 } }
+	}
+	
+	option = {
+		name = nep_config.4.dragon
+		hidden_effect = { country_event = { id = nep_config.4002 } }
+	}
+	
+	option = {
+		name = nep_config.4.orb
+		hidden_effect = { country_event = { id = nep_config.4003 } }
+	}
+	
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.1 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.4001
+	title = "nep_config.4001.name"
+	desc = "nep_config.4001.desc"	
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.4001.highway.begin
+		trigger = {
+			OR = {
+				has_country_flag = vultaum_world_found
+				has_country_flag = yuht_world_found
+				has_country_flag = league_world_found
+				has_country_flag = irassian_world_found
+				has_country_flag = cybrex_world_found
+				has_country_flag = green_thumb_achievement
+				has_country_flag = dust_off_achievement
+			}
+			OR = {
+				has_technology = "tech_sensors_3"
+				has_technology = "tech_sensors_4"
+			}
+		}
+		hidden_effect = {
+			set_global_flag = nep_highway_begin
+			set_country_flag = nep_highway_intro
+			switch = {
+				trigger = has_country_flag
+				vultaum_world_found = { 
+					random_system = {
+						limit = { has_star_flag = vultaumar }
+						random_system_planet = {
+							limit = { has_planet_flag = vultaum_homeworld }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = { 
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				}
+				yuht_world_found = {
+					random_system = {
+						limit = { has_star_flag = yuhtaan }
+						random_system_planet = {
+							limit = { has_planet_flag = yuht_homeworld }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = {
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				}
+				league_world_found = {
+					random_system = {
+						limit = { has_star_flag = fen_habbanis }
+						random_system_planet = {
+							limit = { has_planet_flag = first_league_homeworld }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = {
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				}
+				irassian_world_found = {
+					random_system = {
+						limit = { has_star_flag = irass }
+						random_system_planet = {
+							limit = { has_planet_flag = irassian_homeworld }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = { 
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				} 
+				cybrex_world_found = {
+					random_system = {
+						limit = { has_star_flag = cybrex }
+						random_system_planet = {
+							limit = {
+								is_star = no
+								has_anomaly = no
+								NOT = { exists = archaeological_site } 
+							}
+							planet_event = { id = nep_highway.21 }
+						}
+					}
+				}
+				green_thumb_achievement = {
+					random_system = {
+						limit = { has_star_flag = last_baol_system }
+						random_system_planet = {
+							limit = { has_planet_flag = grunur_prime }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = { 
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				}
+				dust_off_achievement = {
+					random_system = {
+						limit = { has_star_flag = Zrocursor }
+						random_system_planet = {
+							limit = { has_planet_flag = Zrocursor_homeworld }
+							if = {
+								limit = {
+									has_anomaly = no
+									NOT = { exists = archaeological_site } 
+								}
+								planet_event = { id = nep_highway.21 }
+							}
+							else = {
+								solar_system = {
+									random_system_planet = {
+										limit = { 
+											is_star = no
+											has_anomaly = no
+											NOT = { exists = archaeological_site } 
+										}
+										planet_event = { id = nep_highway.21 }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		trigger = { has_country_flag = nep_first_station_found }
+		name = nep_config.4001.highway.warp
+		hidden_effect = {
+			set_global_flag = nep_highway_debug_flag
+			random_system = {
+				limit = {
+					has_star_flag = nep_highway_station_system 
+				}
+				random_system_planet = {
+					save_event_target_as = first_highway_station_system
+				}
+			}
+			random_owned_fleet = {
+				limit = { is_ship_size = science }
+				set_location = {
+					target = event_target:first_highway_station_system
+					distance = random
+					angle = random
+					direction = in_system
+				}
+			}
+		}
+	}
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.4 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = nep_config.4002
+	title = "nep_config.4002.name"
+	desc = "nep_config.4002.desc"	
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.4002.dragon.Legnahcras
+		trigger = {
+			has_global_flag = nep_dragon_begin
+			AND = {
+				any_owned_planet = {
+					has_planet_flag = nep_Auriel_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Gabriel_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Sabriel_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Samuel_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Michael_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Jauiel_planet
+				}
+				any_owned_planet = {
+					has_planet_flag = nep_Anael_planet
+				}
+			}
+			NOT = { has_global_flag = nep_Legnahcras_begin }
+			NOT = { has_global_flag = nep_not_pass_Aemethms }
+		}
+		hidden_effect = { country_event = { id = nep_dragon.4 }	}
+	}
+	
+	option = {
+		name = nep_config.4002.dragon.soft		
+		trigger = {
+			any_planet = {
+				OR = {
+					has_planet_flag = nep_Auriel_planet
+					has_planet_flag = nep_Gabriel_planet
+					has_planet_flag = nep_Sabriel_planet
+					has_planet_flag = nep_Samuel_planet
+					has_planet_flag = nep_Michael_planet
+					has_planet_flag = nep_Jauiel_planet
+					has_planet_flag = nep_Anael_planet
+				}
+			}
+		}
+		hidden_effect = { country_event = { id = nep_config.40020 } }
+	}
+	
+	option = {
+		name = nep_config.4002.dragon.hard
+		trigger = {
+			any_planet = {
+				OR = {
+					has_planet_flag = nep_Auriel_planet
+					has_planet_flag = nep_Gabriel_planet
+					has_planet_flag = nep_Sabriel_planet
+					has_planet_flag = nep_Samuel_planet
+					has_planet_flag = nep_Michael_planet
+					has_planet_flag = nep_Jauiel_planet
+					has_planet_flag = nep_Anael_planet
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = nep_dragon_summoner
+			every_ship = {
+				limit = {
+					OR = {
+						is_ship_size = nep_dragon_reward
+						is_ship_size = nep_dragon_reward_kai
+					}
+				}
+				delete_fleet = {
+					target = this
+					destroy_template = yes
+				}
+			}
+			create_fleet = {
+				name = "NAME_Astaroth"
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					uses_naval_capacity = no
+					can_change_composition = no
+					can_change_leader = no
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = "NAME_Heptagram_Dragon"
+						design = "Heptagram Dragon Rebirth"
+						effect = {
+							nep_easy_mod_reward = yes
+						}
+					}
+					set_location = {
+						target = event_target:nep_dragon_star
+						distance = 1
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = nep_config.4002.dragon.boss.resummon
+		hidden_effect = { country_event = { id = nep_config.40021 } }
+	}
+	
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.4 } }
+	}
+	
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
+	}
+}
+	
+country_event = {
+	id = nep_config.40020
+	title = "nep_config.40020.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = nep_dragon_summoner }
+		}
+		text = "nep_config.40020.desc.notsummoner"
+	}
+	desc = {
+		trigger = {
+			has_country_flag = nep_dragon_summoner
+			any_planet = {
+				OR = {
+					has_planet_flag = nep_Auriel_planet
+					has_planet_flag = nep_Gabriel_planet
+					has_planet_flag = nep_Sabriel_planet
+					has_planet_flag = nep_Samuel_planet
+					has_planet_flag = nep_Michael_planet
+					has_planet_flag = nep_Jauiel_planet
+					has_planet_flag = nep_Anael_planet
+				}
+				OR = {
+					NOR = {
+						has_modifier = nep_Auriel_modifier	
+						has_modifier = nep_Gabriel_modifier
+						has_modifier = nep_Sabriel_modifier
+						has_modifier = nep_Samuel_modifier
+						has_modifier = nep_Michael_modifier
+						has_modifier = nep_Jauiel_modifier
+						has_modifier = nep_Anael_modifier
+					}
+					NOT = { has_deposit = d_nep_dragon_temple }
+				}
+			}
+		}
+		text = "nep_config.40020.desc.planetnotready"
+	}	
+	desc = {
+		trigger = {
+			has_country_flag = nep_dragon_summoner
+			AND = {
+				event_target:nep_Auriel_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Auriel_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Gabriel_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Gabriel_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Sabriel_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Sabriel_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Samuel_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Samuel_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Michael_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Michael_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Jauiel_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Jauiel_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+				event_target:nep_Anael_planet = {
+					owner = { has_country_flag = nep_dragon_summoner }
+					has_modifier = nep_Anael_modifier
+					has_deposit = d_nep_dragon_temple
+				}
+			}
+		}
+		text = "nep_config.40020.desc.ready"
+	}
+	
+	is_triggered_only = yes
+
+	immediate = {}
+	
+	option = {
+		name = nep_config.40020.triggerfix1
+		trigger = {
+			NOT = { has_country_flag = nep_dragon_summoner }
+		}
+		hidden_effect = {
+			set_country_flag = nep_dragon_summoner 
+			country_event = { id = nep_config.40020 }
+		}
+	}
+	option = {
+		name = nep_config.40020.triggerfix2
+		trigger = {
+			has_country_flag = nep_dragon_summoner
+			any_planet = {
+				OR = {
+					has_planet_flag = nep_Auriel_planet
+					has_planet_flag = nep_Gabriel_planet
+					has_planet_flag = nep_Sabriel_planet
+					has_planet_flag = nep_Samuel_planet
+					has_planet_flag = nep_Michael_planet
+					has_planet_flag = nep_Jauiel_planet
+					has_planet_flag = nep_Anael_planet
+				}
+				OR = {
+					NOR = {
+						has_modifier = nep_Auriel_modifier	
+						has_modifier = nep_Gabriel_modifier
+						has_modifier = nep_Sabriel_modifier
+						has_modifier = nep_Samuel_modifier
+						has_modifier = nep_Michael_modifier
+						has_modifier = nep_Jauiel_modifier
+						has_modifier = nep_Anael_modifier
+					}
+					NOT = { has_deposit = d_nep_dragon_temple }
+				}
+			}
+		}
+		hidden_effect = {
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Auriel_planet
+				}
+				remove_modifier = nep_Auriel_modifier
+				remove_modifier = nep_Auriel_debuff
+				add_modifier = {
+					modifier = "nep_Auriel_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Gabriel_planet
+				}
+				remove_modifier = nep_Gabriel_modifier
+				remove_modifier = nep_Gabriel_debuff
+				add_modifier = {
+					modifier = "nep_Gabriel_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Sabriel_planet
+				}
+				remove_modifier = nep_Sabriel_modifier
+				remove_modifier = nep_Sabriel_debuff
+				add_modifier = {
+					modifier = "nep_Sabriel_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Samuel_planet
+				}
+				remove_modifier = nep_Samuel_modifier
+				remove_modifier = nep_Samuel_debuff
+				add_modifier = {
+					modifier = "nep_Samuel_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Michael_planet
+				}
+				remove_modifier = nep_Michael_modifier
+				remove_modifier = nep_Michael_debuff
+				add_modifier = {
+					modifier = "nep_Michael_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Jauiel_planet
+				}
+				remove_modifier = nep_Jauiel_modifier
+				remove_modifier = nep_Jauiel_debuff
+				add_modifier = {
+					modifier = "nep_Jauiel_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_Anael_planet
+				}
+				remove_modifier = nep_Anael_modifier
+				remove_modifier = nep_Anael_debuff
+				add_modifier = {
+					modifier = "nep_Anael_modifier"
+					days = -1
+				}
+				remove_deposit = d_nep_unknown_vortex
+				remove_deposit = d_nep_dragon_temple
+				add_deposit = d_nep_dragon_temple
+			}
+		}
+	}
+	
+	option = {
+		name = nep_config.40020.redospecialproject
+		hidden_effect = {
+			every_ship = {
+				limit = {
+					OR = {
+						is_ship_size = nep_dragon_reward
+						is_ship_size = nep_dragon_reward_kai
+					}
+				}
+				delete_fleet = {
+					target = this
+					destroy_template = yes
+				}
+			}
+			abort_special_project = "nep_dragon_summon"
+			enable_special_project = {
+				name = "nep_dragon_summon"
+				location = event_target:nep_dragon_star
+				owner = this
+			}
+		}
+	}
+}

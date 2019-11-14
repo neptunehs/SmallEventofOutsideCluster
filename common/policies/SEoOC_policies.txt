@@ -127,7 +127,7 @@ nep_whitegoo_can_spawn_policy = {
 					remove_global_flag = nep_whitegoo_can_spawn
 				}
 				every_country = {
-					limit = { can_change_policy = nep_SEoOC_diff_policy }
+					limit = { can_change_policy = nep_whitegoo_can_spawn_policy }
 					set_policy = {
 						policy = nep_whitegoo_can_spawn_policy
 						option = nep_whitegoo_cant_spawn
