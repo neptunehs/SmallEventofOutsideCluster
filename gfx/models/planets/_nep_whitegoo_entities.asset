@@ -3,7 +3,7 @@
 
 entity = {
 	name = "nep_spacedust_entity_ex"
-	pdxmesh = "spacedust"
+	pdxmesh = "spacedust_mesh"
 	
 	meshsettings = {
 	name = "spaceDustShape"

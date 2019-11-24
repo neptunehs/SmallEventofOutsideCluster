@@ -24,9 +24,11 @@ nep_SEoOC_whop_category = {
 		modifier = {
 			factor = 0
 			solar_system = {
-				has_natural_wormhole = yes
-				any_system_planet = {
-					has_anomaly = yes
+				OR = {
+					has_natural_wormhole = yes
+					any_system_planet = {
+						has_anomaly = yes
+					}
 				}
 			}
 		}
@@ -64,9 +66,11 @@ nep_SEoOC_deus_category = {
 		modifier = {
 			factor = 0
 			solar_system = {
-				has_natural_wormhole = yes
-				any_system_planet = {
-					has_anomaly = yes
+				OR = {
+					has_natural_wormhole = yes
+					any_system_planet = {
+						has_anomaly = yes
+					}
 				}
 			}
 		}

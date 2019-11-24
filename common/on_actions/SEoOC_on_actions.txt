@@ -23,7 +23,7 @@ on_entering_system = {
 		nep_seal.2 #first enter ambient place
 		nep_dragon.64 #first enter dragon system
 		nep_inva.474
-		nep_guide.4998
+		#nep_guide.4998
 	}
 }
 
@@ -61,6 +61,7 @@ on_yearly_pulse = {
 		#nep_phantom.4000
 		nep_wohp.90
 		nep_deus.9
+		nep_whitegoo.1000
 	}
 }
 
@@ -307,6 +308,18 @@ on_fleet_disbanded = {
 # FromFrom = Fleet of the science ship that surveyed it, if any
 on_planet_surveyed = {
 	events = {
-		nep_guide.2
+		#nep_guide.2
+	}
+}
+
+on_building_outpost_station = {
+	events = {
+		nep_whitegoo.64
+	}
+}
+
+on_starbase_transfer = {
+	events = {
+		nep_whitegoo.64
 	}
 }

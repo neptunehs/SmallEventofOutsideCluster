@@ -19,24 +19,6 @@ country_event = {
 		if = {
 			limit = { NOT = { has_global_flag = has_nsc_active } }
 			set_global_flag = nep_SEoOC_easy
-			every_country = {
-				limit = { can_change_policy = nep_SEoOC_diff_policy }
-				set_policy = {
-					policy = nep_SEoOC_diff_policy
-					option = SEoOC_diff_diff_policy_easy
-					cooldown = no
-				}
-			}
-		}
-		else = {
-			every_country = {
-				limit = { can_change_policy = nep_SEoOC_diff_policy }
-				set_policy = {
-					policy = nep_SEoOC_diff_policy
-					option = SEoOC_diff_diff_policy_default
-					cooldown = no
-				}
-			}
 		}
 	}
 }
@@ -66,13 +48,7 @@ event = {
 	
 	immediate = {
 		set_global_flag = nep_whitegoo_can_spawn
-		every_country = {
-			limit = { can_change_policy = nep_whitegoo_can_spawn_policy }
-			set_policy = {
-				policy = nep_whitegoo_can_spawn_policy
-				option = nep_whitegoo_can_spawn
-				cooldown = no
-			}
-		}
+		set_global_flag = nep_whitegoo_midgame
+		set_global_flag = nep_whitegoo_110
 	}
 }

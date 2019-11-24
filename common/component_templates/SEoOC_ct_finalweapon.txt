@@ -42,7 +42,6 @@ weapon_component_template = {
 		Dreadnought = 50000
 		titan = 50000
 		Flagship = 50000
-		supportship = 100000
 		starbase_stronghold = 50000
 		xl_cannon = 25000
 
@@ -139,7 +138,6 @@ weapon_component_template = {
 		Dreadnought = 50000
 		titan = 50000
 		Flagship = 50000
-		supportship = 100000
 		starbase_stronghold = 50000
 		xl_cannon = 25000
 
@@ -236,7 +234,6 @@ weapon_component_template = {
 		Dreadnought = 10000
 		titan = 10000
 		Flagship = 10000
-		supportship = 100000
 		starbase_stronghold = 10000
 		xl_cannon = 15000
 
@@ -321,7 +318,6 @@ weapon_component_template = {
 		Dreadnought = 5000
 		titan = 5000
 		Flagship = 5000
-		supportship = 100000
 		starbase_stronghold = 5000
 		xl_cannon = 5000
 

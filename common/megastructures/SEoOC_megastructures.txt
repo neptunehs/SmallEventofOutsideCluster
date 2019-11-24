@@ -71,6 +71,9 @@ nep_station_whitegoo_mega = {
 
 	prerequisites = { "tech_nep_whitegoo_4" }
 
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
 	possible = {
 		exists = starbase
 		custom_tooltip = {

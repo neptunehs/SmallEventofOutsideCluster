@@ -578,7 +578,7 @@ weapon_component_template = {
 
 	total_fire_time = 160
 
-	range = 250.0
+	range = 200.0
 	accuracy = 1
 	tracking = 1
 	

@@ -16,7 +16,7 @@ tech_nep_whitegoo_1 = {
 	
 	modifier = {
 		terraform_speed_mult = 0.05
-		terraforming_cost_mult = 0.05
+		terraforming_cost_mult = -0.05
 	}
 
 	weight_modifier = {

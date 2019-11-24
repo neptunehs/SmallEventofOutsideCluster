@@ -32,6 +32,10 @@ nep_dragon_boss_buff = {
 	ship_fire_rate_mult = 1
 }
 
+nep_debuffed_dragon = {
+	ship_hull_mult = -0.99	
+}
+
 nep_Auriel_modifier = {
 	planet_amenities_mult = 0.1
 	pop_growth_speed = 0.1

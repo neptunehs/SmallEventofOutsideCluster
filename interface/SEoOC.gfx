@@ -131,7 +131,7 @@ spriteTypes = {
 		alwaystransparent = yes	
 	}
 	spriteType = {
-		name = "GFX_evt_SEoOC_config"
+		name = "GFX_evt_SEoOC_Config"
 		texturefile = "gfx/event_pictures/SEoOC_config.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes		
