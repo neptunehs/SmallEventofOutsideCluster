@@ -1,4 +1,4 @@
-﻿name="Some Events of Outside Cluster for 2.3"
+﻿name="Some Event of Outside Cluster for 2.3"
 archive="SEoOC.zip"
 tags={
 	"Graphics"

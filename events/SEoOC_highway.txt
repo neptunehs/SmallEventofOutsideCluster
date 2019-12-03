@@ -901,7 +901,14 @@ ship_event = {
 			has_event_chain = "nep_highway_chain"
 		}
 		FROM = {
-			has_star_flag = nep_highway_station_system
+			if = { 
+				limit = { is_scope_type = galactic_object }
+				has_star_flag = nep_highway_station_system
+			}
+			else = {
+				limit = { is_scope_type = ship }
+				solar_system = { has_star_flag = nep_highway_station_system }
+			}
 		}
 	}
 	
@@ -929,6 +936,21 @@ ship_event = {
 			location = event_target:nep_highway_first_station_explore_poi
 			owner = THIS.owner
 		}
+	}
+}
+
+#For debug
+
+ship_event = {
+	id = nep_highway.5000
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes		
+	
+	immediate = {
+		ship_event = { id = nep_highway.5 }
 	}
 }
 

@@ -24,6 +24,9 @@ country_event = {
 	
 	option = {
 		name = nep_config.1.wf
+		trigger = {
+			NOT = { has_global_flag = nep_whitegoo_end }
+		}
 		hidden_effect = {
 			country_event = { id = nep_config.3 }
 		}
@@ -697,6 +700,9 @@ country_event = {
 					angle = random
 					direction = in_system
 				}
+				random_owned_ship = {
+					ship_event = { id = nep_highway.5000 }
+				}
 			}
 		}
 	}
@@ -728,24 +734,31 @@ country_event = {
 			AND = {
 				any_owned_planet = {
 					has_planet_flag = nep_Auriel_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Gabriel_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Sabriel_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Samuel_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Michael_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Jauiel_planet
+					is_under_colonization = no
 				}
 				any_owned_planet = {
 					has_planet_flag = nep_Anael_planet
+					is_under_colonization = no
 				}
 			}
 			NOT = { has_global_flag = nep_Legnahcras_begin }
@@ -757,15 +770,34 @@ country_event = {
 	option = {
 		name = nep_config.4002.dragon.soft		
 		trigger = {
-			any_planet = {
-				OR = {
+			AND = {
+				any_owned_planet = {
 					has_planet_flag = nep_Auriel_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Gabriel_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Sabriel_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Samuel_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Michael_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Jauiel_planet
+					is_under_colonization = no
+				}
+				any_owned_planet = {
 					has_planet_flag = nep_Anael_planet
+					is_under_colonization = no
 				}
 			}
 		}
@@ -774,19 +806,6 @@ country_event = {
 	
 	option = {
 		name = nep_config.4002.dragon.hard
-		trigger = {
-			any_planet = {
-				OR = {
-					has_planet_flag = nep_Auriel_planet
-					has_planet_flag = nep_Gabriel_planet
-					has_planet_flag = nep_Sabriel_planet
-					has_planet_flag = nep_Samuel_planet
-					has_planet_flag = nep_Michael_planet
-					has_planet_flag = nep_Jauiel_planet
-					has_planet_flag = nep_Anael_planet
-				}
-			}
-		}
 		hidden_effect = {
 			set_country_flag = nep_dragon_summoner
 			every_ship = {
@@ -820,7 +839,7 @@ country_event = {
 						}
 					}
 					set_location = {
-						target = event_target:nep_dragon_star
+						target = root.capital_scope
 						distance = 1
 						angle = random
 					}
@@ -831,19 +850,6 @@ country_event = {
 	
 	option = {
 		name = nep_config.4002.dragon.debuffed
-		trigger = {
-			any_planet = {
-				OR = {
-					has_planet_flag = nep_Auriel_planet
-					has_planet_flag = nep_Gabriel_planet
-					has_planet_flag = nep_Sabriel_planet
-					has_planet_flag = nep_Samuel_planet
-					has_planet_flag = nep_Michael_planet
-					has_planet_flag = nep_Jauiel_planet
-					has_planet_flag = nep_Anael_planet
-				}
-			}
-		}
 		hidden_effect = {
 			set_country_flag = nep_dragon_summoner
 			every_ship = {
@@ -881,7 +887,7 @@ country_event = {
 						}
 					}
 					set_location = {
-						target = event_target:nep_dragon_star
+						target = root.capital_scope
 						distance = 1
 						angle = random
 					}
@@ -911,6 +917,15 @@ country_event = {
 	title = "nep_config.1.name"
 	desc = {
 		trigger = {
+			OR = {
+				NOT = { has_global_flag = nep_dragon_end }
+			}
+		}
+		text = "nep_config.40020.desc.dragonnotend"
+	}
+	desc = {
+		trigger = {
+			has_global_flag = nep_dragon_end
 			NOT = { has_country_flag = nep_dragon_summoner }
 		}
 		text = "nep_config.40020.desc.notsummoner"
@@ -995,12 +1010,43 @@ country_event = {
 	immediate = {}
 	
 	option = {
+		name = nep_config.40020.triggerfix0
+		trigger = {
+			NOT = { has_global_flag = nep_dragon_end }
+		}
+		hidden_effect = {
+			every_ship = {
+				limit = {
+					OR = {
+						is_ship_size = nep_dragon_reward
+						is_ship_size = nep_dragon_reward_kai
+					}
+				}
+				fleet = {
+					delete_fleet = {
+						target = this
+						destroy_template = yes
+					}
+				}
+			}
+			set_global_flag = nep_dragon_end
+			remove_global_flag = nep_dragon_begin
+			country_event = { id = nep_config.40020 }
+		}
+	}
+	
+	option = {
 		name = nep_config.40020.triggerfix1
 		trigger = {
+			has_global_flag = nep_dragon_end
 			NOT = { has_country_flag = nep_dragon_summoner }
 		}
 		hidden_effect = {
-			set_country_flag = nep_dragon_summoner 
+			every_playable_country = { 
+				remove_country_flag = nep_dragon_founder
+				remove_country_flag = nep_dragon_summoner
+			}
+			set_country_flag = nep_dragon_summoner
 			country_event = { id = nep_config.40020 }
 		}
 	}
@@ -1145,19 +1191,34 @@ country_event = {
 						is_ship_size = nep_dragon_reward_kai
 					}
 				}
-				delete_fleet = {
-					target = this
-					destroy_template = yes
+				fleet = {
+					delete_fleet = {
+						target = this
+						destroy_template = yes
+					}
 				}
 			}
 			abort_special_project = "nep_dragon_summon"
+			random_planet = {
+				limit = {
+					has_planet_flag = nep_dragon_star
+				}
+				save_global_event_target_as = nep_dragon_star
+			}
 			enable_special_project = {
 				name = "nep_dragon_summon"
 				location = event_target:nep_dragon_star
 				owner = this
 			}
-			country_event = { id = nep_config.40020 }
 		}
+	}
+	option = {
+		name = nep_config.previous
+		hidden_effect = { country_event = { id = nep_config.4 } }
+	}
+	option = {
+		name = nep_config.OK
+		default_hide_option = yes
 	}
 }
 

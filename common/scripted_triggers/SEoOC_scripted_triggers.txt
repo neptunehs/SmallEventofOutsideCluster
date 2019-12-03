@@ -72,3 +72,13 @@ nep_st_is_not_outer_system = {
 		has_star_flag = miniature_universe
 	}
 }
+
+nep_st_no_anomaly_system = {
+	OR = {
+		nep_st_is_not_outer_system = no
+		has_natural_wormhole = yes
+		any_system_planet = {
+			has_anomaly = yes
+		}
+	}
+}
