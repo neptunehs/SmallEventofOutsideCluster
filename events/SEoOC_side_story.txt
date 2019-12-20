@@ -2751,6 +2751,7 @@ country_event = {
 			add_resource = {
 				energy = 500
 				minerals = 1000 # enough for a spaceport and then some
+				alloys = 100
 			}
 			add_resource = { influence = 300 }
 			capital_scope = {
@@ -3263,7 +3264,7 @@ country_event = {
 			owner = root
 		}
 		event_target:nep_deus_home = {
-			planet_event = { id = nep_deuspi.71 days = 30 }
+			planet_event = { id = nep_deuspi.71 days = 45 random = 30  }
 		}
 	}
 	option = {
@@ -3271,7 +3272,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = nep_deus_dont_save
 			event_target:nep_deus_home = {
-				planet_event = { id = nep_deuspi.71 days = 30 }
+				planet_event = { id = nep_deuspi.71 days = 45 random = 30  }
 			}
 		}
 	}
@@ -3289,9 +3290,9 @@ planet_event = {
 	
 	immediate = {
 		if = {
-			limit = { num_pops > 2 } 
+			limit = { num_pops >= 2 } 
 			random_owned_pop = { kill_pop = yes }
-			planet_event = { id = nep_deuspi.71 days = 30 }
+			planet_event = { id = nep_deuspi.71 days = 45 random = 30 }
 		}
 		else = {
 			event_target:nep_deus_country = {
@@ -7870,6 +7871,7 @@ country_event = {
 		has_global_flag = nep_whitegoo_begin
 		exists = event_target:caravaneer_home_country
 		has_technology = tech_nep_whitegoo_4
+		has_communications = event_target:caravaneer_home_country
 		NOT = { has_country_flag = nep_whitegoo_tech_sell }
 		event_target:caravaneer_home_country = {
 			NOT = { is_hostile = root }
@@ -7924,6 +7926,7 @@ country_event = {
 		has_global_flag = nep_whitegoo_begin
 		exists = event_target:caravaneer_home_country
 		NOT = { has_technology = tech_nep_whitegoo_4 }
+		has_communications = event_target:caravaneer_home_country
 		NOT = { has_country_flag = nep_whitegoo_tech_buy }
 		event_target:caravaneer_home_country = {
 			NOT = { is_hostile = root }
@@ -8339,5 +8342,37 @@ country_event = {
 	option = {
 		name = nep_whitegoo.91.a
 		end_event_chain = nep_whitegoo_chain
+	}
+}
+
+country_event = {
+	id = nep_whitegoo.9999
+	title = nep_whitegoo.9999.name
+	desc = nep_whitegoo.9999.desc
+	picture = GFX_evt_gray_gooed_planet
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_end
+		any_owned_planet = {
+			has_star_flag = nep_whitegoo_origin
+			any_ship_in_system = { is_ship_size = nep_station_whitegoo }
+		}
+		NOR = {
+			has_research_option = tech_nanite_transmutation
+			has_technology = tech_nanite_transmutation
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_whitegoo.9999.a
+		add_research_option = tech_nanite_transmutation
 	}
 }

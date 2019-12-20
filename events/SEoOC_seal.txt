@@ -392,143 +392,253 @@ country_event = {
 	immediate = {
 		remove_country_flag = nep_orb_1_can_active
 		remove_country_flag = nep_orb_1_stage_1
-		set_spawn_system_batch = begin
-		no_scope = {
-			spawn_system = {
-				min_distance >= 0
-				max_distance <= 0
-				min_orientation_angle = 0
-				max_orientation_angle = 0
-				hyperlane = no
-				initializer = nep_seal_init
+		set_global_flag = birch_black_hole_occured
+		if = {
+			limit = { has_special_project = INVESTIGATE_GALACTIC_CORE }
+			abort_special_project = INVESTIGATE_GALACTIC_CORE
+		}
+		save_global_event_target_as = find_galactic_core_owner
+		clear_global_event_target = find_galactic_core_owner
+		if = {
+			limit = { 
+				any_system = {
+					has_star_flag = giga_core_01
+				}
+			}
+			random_system = {
+				limit = { has_star_flag = giga_core_01 }
+				set_star_flag = nep_seal_system
+				set_star_flag = guardian
+				save_global_event_target_as = nep_seal_system
+				random_system_planet = {
+					limit = { is_star = yes }
+					set_planet_flag = nep_grand_seal
+					save_event_target_as = nep_grand_seal_planet
+				}
+				spawn_megastructure = {
+					name = "NAME_Ring_Section_A"
+					type = "ring_world_2"
+					orbit_angle = 120
+					orbit_distance = -135
+					owner = root
+					graphical_culture = root
+					location = star
+				}
+				random_megastructure = {
+					save_event_target_as = nep_temp_megastructure_1
+				}
+				spawn_planet = {
+					class = "pc_black_hole"
+					location = event_target:nep_temp_megastructure_1
+					init_effect = {
+						prevent_anomaly = yes
+						clear_deposits = yes
+						set_name = "NAME_Sub_Seal_1"
+						set_planet_flag = nep_seal_1
+						set_planet_size = 40
+					}
+				}
+				remove_megastructure = event_target:nep_temp_megastructure_1
+				spawn_megastructure = {
+					name = "NAME_Ring_Section_A"
+					type = "ring_world_2"
+					orbit_angle = 120
+					orbit_distance = 90
+					owner = root
+					graphical_culture = root
+					location = star
+				}
+				random_megastructure = {
+					save_event_target_as = nep_temp_megastructure_2
+				}
+				spawn_planet = {
+					class = "pc_black_hole"
+					location = event_target:nep_temp_megastructure_2
+					init_effect = {
+						prevent_anomaly = yes
+						clear_deposits = yes
+						set_name = "NAME_Sub_Seal_2"
+						set_planet_flag = nep_seal_2	
+						set_planet_size = 40
+					}
+				}
+				remove_megastructure = event_target:nep_temp_megastructure_2
+				spawn_megastructure = {
+					name = "NAME_Ring_Section_A"
+					type = "ring_world_2"
+					orbit_angle = 120
+					orbit_distance = -45
+					owner = root
+					graphical_culture = root
+					location = star
+				}
+				random_megastructure = {
+					save_event_target_as = nep_temp_megastructure_3
+				}
+				spawn_planet = {
+					class = "pc_black_hole"
+					location = event_target:nep_temp_megastructure_3
+					init_effect = {
+						prevent_anomaly = yes
+						clear_deposits = yes
+						set_name = "NAME_Sub_Seal_3"
+						set_planet_flag = nep_seal_3	
+						set_planet_size = 40
+						save_global_event_target_as = nep_sub_seal_3
+					}
+				}
+				remove_megastructure = event_target:nep_temp_megastructure_3
 			}
 		}
-		random_system = {
-			limit = { has_star_flag = nep_seal_system }
-			save_global_event_target_as = nep_seal_system
-		}
-		event_target:nep_seal_system = {
-			spawn_system = {
-				min_distance >= 95
-				max_distance <= 95
-				min_orientation_angle = 0
-				max_orientation_angle = 0
-				hyperlane = no
-				initializer = nep_step_1
+		else = {
+			set_spawn_system_batch = begin
+			no_scope = {
+				spawn_system = {
+					min_distance >= 0
+					max_distance <= 0
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					hyperlane = no
+					initializer = nep_seal_init
+				}
 			}
-			spawn_system = {
-				min_distance >= 190
-				max_distance <= 190
-				min_orientation_angle = 0
-				max_orientation_angle = 0
-				hyperlane = no
-				initializer = nep_step_2
+			random_system = {
+				limit = { has_star_flag = nep_seal_system }
+				save_global_event_target_as = nep_seal_system
 			}
-			spawn_system = {
-				min_distance >= 95
-				max_distance <= 95
-				min_orientation_angle = 72
-				max_orientation_angle = 72
-				hyperlane = no
-				initializer = nep_step_3
+			event_target:nep_seal_system = {
+				spawn_system = {
+					min_distance >= 95
+					max_distance <= 95
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					hyperlane = no
+					initializer = nep_step_1
+				}
+				spawn_system = {
+					min_distance >= 190
+					max_distance <= 190
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					hyperlane = no
+					initializer = nep_step_2
+				}
+				spawn_system = {
+					min_distance >= 95
+					max_distance <= 95
+					min_orientation_angle = 72
+					max_orientation_angle = 72
+					hyperlane = no
+					initializer = nep_step_3
+				}
+				spawn_system = {
+					min_distance >= 190
+					max_distance <= 190
+					min_orientation_angle = 72
+					max_orientation_angle = 72
+					hyperlane = no
+					initializer = nep_step_4
+				}
+				spawn_system = {
+					min_distance >= 95
+					max_distance <= 95
+					min_orientation_angle = 144
+					max_orientation_angle = 144
+					hyperlane = no
+					initializer = nep_step_5
+				}
+				spawn_system = {
+					min_distance >= 190
+					max_distance <= 190
+					min_orientation_angle = 144
+					max_orientation_angle = 144
+					hyperlane = no
+					initializer = nep_step_6
+				}
+				spawn_system = {
+					min_distance >= 95
+					max_distance <= 95
+					min_orientation_angle = 216
+					max_orientation_angle = 216
+					hyperlane = no
+					initializer = nep_step_7
+				}
+				spawn_system = {
+					min_distance >= 190
+					max_distance <= 190
+					min_orientation_angle = 216
+					max_orientation_angle = 216
+					hyperlane = no
+					initializer = nep_step_8
+				}
+				spawn_system = {
+					min_distance >= 95
+					max_distance <= 95
+					min_orientation_angle = 288
+					max_orientation_angle = 288
+					hyperlane = no
+					initializer = nep_step_9
+				}
+				spawn_system = {
+					min_distance >= 190
+					max_distance <= 190
+					min_orientation_angle = 288
+					max_orientation_angle = 288
+					hyperlane = no
+					initializer = nep_step_10
+				}
 			}
-			spawn_system = {
-				min_distance >= 190
-				max_distance <= 190
-				min_orientation_angle = 72
-				max_orientation_angle = 72
-				hyperlane = no
-				initializer = nep_step_4
+			set_spawn_system_batch = end
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_1 }
+				save_event_target_as = nep_Step_to_the_Void_1
 			}
-			spawn_system = {
-				min_distance >= 95
-				max_distance <= 95
-				min_orientation_angle = 144
-				max_orientation_angle = 144
-				hyperlane = no
-				initializer = nep_step_5
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_2 }
+				save_event_target_as = nep_Step_to_the_Void_2
 			}
-			spawn_system = {
-				min_distance >= 190
-				max_distance <= 190
-				min_orientation_angle = 144
-				max_orientation_angle = 144
-				hyperlane = no
-				initializer = nep_step_6
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_3 }
+				save_event_target_as = nep_Step_to_the_Void_3
 			}
-			spawn_system = {
-				min_distance >= 95
-				max_distance <= 95
-				min_orientation_angle = 216
-				max_orientation_angle = 216
-				hyperlane = no
-				initializer = nep_step_7
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_4 }
+				save_event_target_as = nep_Step_to_the_Void_4
 			}
-			spawn_system = {
-				min_distance >= 190
-				max_distance <= 190
-				min_orientation_angle = 216
-				max_orientation_angle = 216
-				hyperlane = no
-				initializer = nep_step_8
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_5 }
+				save_event_target_as = nep_Step_to_the_Void_5
 			}
-			spawn_system = {
-				min_distance >= 95
-				max_distance <= 95
-				min_orientation_angle = 288
-				max_orientation_angle = 288
-				hyperlane = no
-				initializer = nep_step_9
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_6 }
+				save_event_target_as = nep_Step_to_the_Void_6
 			}
-			spawn_system = {
-				min_distance >= 190
-				max_distance <= 190
-				min_orientation_angle = 288
-				max_orientation_angle = 288
-				hyperlane = no
-				initializer = nep_step_10
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_7 }
+				save_event_target_as = nep_Step_to_the_Void_7
 			}
-		}
-		set_spawn_system_batch = end
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_1 }
-			save_event_target_as = nep_Step_to_the_Void_1
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_2 }
-			save_event_target_as = nep_Step_to_the_Void_2
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_3 }
-			save_event_target_as = nep_Step_to_the_Void_3
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_4 }
-			save_event_target_as = nep_Step_to_the_Void_4
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_5 }
-			save_event_target_as = nep_Step_to_the_Void_5
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_6 }
-			save_event_target_as = nep_Step_to_the_Void_6
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_7 }
-			save_event_target_as = nep_Step_to_the_Void_7
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_8 }
-			save_event_target_as = nep_Step_to_the_Void_8
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_9 }
-			save_event_target_as = nep_Step_to_the_Void_9
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Step_to_the_Void_10 }
-			save_event_target_as = nep_Step_to_the_Void_10
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_8 }
+				save_event_target_as = nep_Step_to_the_Void_8
+			}
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_9 }
+				save_event_target_as = nep_Step_to_the_Void_9
+			}
+			random_system = {
+				limit = { has_star_flag = nep_Step_to_the_Void_10 }
+				save_event_target_as = nep_Step_to_the_Void_10
+			}
+			if = {
+				limit = { has_global_flag = gigastructures_enabled }
+				event_target:nep_seal_system = {
+					set_star_flag = giga_core_01
+					random_system_planet = {
+						limit = { is_star = yes }
+						change_pc = pc_core_black_hole
+					}
+				}
+			}
 		}
 	}
 	

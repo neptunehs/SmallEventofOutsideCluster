@@ -24,13 +24,13 @@
  NAME_nep_finalweapon_country:0 "暴走的最终兵器"
  
  NAME_nep_Gaia_Resistors:0 "盖亚抵抗军"
- NAME_nep_Gaia_Republic:0 "盖亚共和国"
+ #NAME_nep_Gaia_Republic:0 "盖亚共和国"
  NAME_nep_Highlander:0 "天上人"
  NAME_nep_Highlanders:0 "天上人"
  NAME_nep_Gaia_Survivor:0 "盖亚幸存者"
  NAME_nep_Gaia_Survivors:0 "盖亚幸存者"
  NAME_nep_Highlander_Dominator:0 "天上统治国"
- NAME_nep_Highlander_Kingdom:0 "天上人王国"
+ #NAME_nep_Highlander_Kingdom:0 "天上人王国"
  NAME_nep_Country_of_Machina:0 "机神国"
  NAME_nep_machina:0 "机械神"
 
@@ -72,6 +72,13 @@
  NAME_nep_highlander_gladiators:0 "斗兽勇士军"
  
  NAME_Machina_Guardians:0 "机械神守护者"
+  
+ NAME_nep_Grand_Captain_Balfour:0 "大海贼巴尔弗"
+ NAME_nep_Tawni_Balfour:0 "唐尼·巴尔弗"
+ NAME_nep_Pete_Girly:0 "彼得·格里"
+ NAME_nep_Captain_Swift:0 "斯威伏特"
+ NAME_nep_Cyrca:0 "塞尔卡"
+ NAME_nep_Balfour_Family_Machine_Guard:0 "巴尔弗一家的自动守卫"
  ###########################
  #design
  ###########################
@@ -152,6 +159,8 @@
  NAME_nep_Lighthouse_WNW:0 "西北西灯塔"
  NAME_nep_Lighthouse_NW:0 "西北灯塔"
  NAME_nep_Lighthouse_NNW:0 "北北西灯塔"
+ 
+ NAME_nep_debris:0 "大型残骸"
 
  NAME_Grand_Seal_of_Void:0 "虚无大封印"
  NAME_Sub_Seal_1:0 "第一子封印"

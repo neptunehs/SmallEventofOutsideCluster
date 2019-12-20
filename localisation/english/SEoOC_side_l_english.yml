@@ -3,6 +3,9 @@
  nep_fail.1.name:0 "Something Error"
  nep_fail.1.desc:0 "After the repair of the self-test system carried out by [Root.GetName],the instruments has returned to normal and no valuables have been found in [Root.Solar_System.GetName] system."
  
+ #########################################
+ # wohp
+ ######################################### 
  nep_wohp.1000.name:0 "Found a new wormhole"
  nep_wohp.1000.desc:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
  
@@ -130,7 +133,12 @@
  nep_you_are_our_Savior:0 "You are our Savior"
  nep_you_are_very_strong:0 "You are very strong"
  
+ NAME_nep_Gaia_Republic:0 "Republic of Gaia"
+ NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
  
+ #########################################
+ # deus
+ ######################################### 
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god from primitive era and formed a very distinctive theocratic state."
  
@@ -310,9 +318,17 @@
  job_nep_servent_of_god_desc:0 ""
  mod_job_nep_servent_of_god_add:0 "Servent of God jobs"
  job_nep_servent_of_god_plural:0 "Servent of God"
- 
+  
  nep_deuspi_hack_project:0 "Hack the "God""
  nep_deuspi_hack_project_DESC:0 "If success,we will took this country."
+ nep_deus_virus_emergency:0 "Medical Emergency"
+ nep_deus_virus_emergency_DESC:0 "This planet has a medical emergency due to the unknown viruses, and it needs urgent solution."
+ nep_deus_rescue_1:0 "Rescue"
+ nep_deus_rescue_1_DESC:0 "The poor child was caught and immediately sent a team to rescue him."
+ nep_deus_rescue_2:0 "Rescue"
+ nep_deus_rescue_2_DESC:0 "Immediately sent a team to rescue the lover of this poor child."
+ nep_deus_rescue_3:0 "Killing "God""
+ nep_deus_rescue_3_DESC:0 "Dismantle the "God" that treats people as replaceable parts."
  
  #########################################
  # whitegoo
@@ -361,6 +377,10 @@
  nep_whitegoo.91.name:0 "Eradication"
  nep_whitegoo.91.desc:0 "The source system of the white goo have established an absorption space station, and all white goo will be inhaled. The existing white goo will slowly disappear. From now on, the white goo problem that troubled the whole universe is about to solve."
  nep_whitegoo.91.a:0 "A victory of whole universe!"
+ 
+ nep_whitegoo.9999.name:0 "By-product"
+ nep_whitegoo.9999.desc:0 "Because the white fog concentration of the white mist origin is too high, our white fog absorption station there has produced some by-products after absorbing and compressing those. Scientists think we have a way to use it."
+ nep_whitegoo.9999.a:0 "Just find them."
  
  tech_nep_whitegoo_1:0 "White Goo Basic Research"
  tech_nep_whitegoo_1_desc:0 "First we need to know what these white goo are."

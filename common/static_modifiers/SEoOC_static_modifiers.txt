@@ -794,3 +794,10 @@ nep_whitegoo_fleet_3 = {
 	ship_winddown_mult = -0.2
 	ship_interstellar_speed_mult = -0.2
 }
+
+#############################################
+# gpc
+#############################################
+nep_gpc_piracy = {
+	local_trade_protection_add = -12
+}

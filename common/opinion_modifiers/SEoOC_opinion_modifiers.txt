@@ -109,3 +109,12 @@ opinion_nep_dangerous_machine = {
 		}
 	}
 }
+
+opinion_nep_you_destroy_our_escort = {
+	opinion = {
+		base = -100
+	}
+	decay = {
+		base = 2
+	}
+}

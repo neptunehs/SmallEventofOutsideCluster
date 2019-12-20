@@ -366,8 +366,8 @@ nep_phantom_global_event = {
 }
 
 nep_primitive_highlander = {
-	randomize_ethos = yes
-	shuffle_pop_ethos = yes
+	#randomize_ethos = yes
+	#shuffle_pop_ethos = yes
 	observable = no
 
 	ai = {
@@ -395,8 +395,8 @@ nep_primitive_highlander = {
 }
 
 nep_primitive_machina = {
-	randomize_ethos = yes
-	shuffle_pop_ethos = yes
+	#randomize_ethos = yes
+	#shuffle_pop_ethos = yes
 	observable = no
 
 	ai = {
@@ -420,6 +420,7 @@ nep_primitive_machina = {
 			contact_rule = script_only
 		}
 		standard_species_rights_module = {}
+		standard_leader_module = {}
 	}
 }
 

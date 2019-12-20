@@ -157,12 +157,25 @@ country_event = {
 			cybrex_world_found = {
 				random_system = {
 					limit = { has_star_flag = cybrex }
-					random_system_planet = {
-						limit = {
-							is_star = no
-							has_anomaly = no
-							NOT = { exists = archaeological_site } 
+					random_system_ambient_object = {
+						save_event_target_as = nep_cybrex_temp
+					}
+					spawn_planet = {
+						class = "pc_planet_large_debris"
+						location = event_target:nep_cybrex_temp
+						init_effect = {
+							prevent_anomaly = yes
+							clear_deposits = yes
+							set_name = "NAME_nep_debris"
+							save_event_target_as = nep_cybrex_temp_planet
+							surveyed = {
+								set_surveyed = yes
+								surveyor = root
+							}
+							set_all_comms_surveyed = yes
 						}
+					}
+					event_target:nep_cybrex_temp_planet = {
 						planet_event = { id = nep_highway.21 }
 					}
 				}
@@ -879,6 +892,16 @@ fleet_event = {
 	}
 	option = {
 		name = nep_highway.4.b
+	}
+	
+	after = {
+		random_system = {
+			limit = { has_star_flag = cybrex }
+			random_system_planet = {
+				limit = { is_planet_class = pc_planet_large_debris }
+				remove_planet = yes
+			}
+		}
 	}
 }
 

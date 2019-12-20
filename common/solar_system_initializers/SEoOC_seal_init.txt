@@ -139,7 +139,7 @@ nep_seal_init = {
 		name = "NAME_Sub_Seal_3"
 		orbit_distance = 120
 		orbit_angle = -45
-		size = 20
+		size = 40
 		has_ring = no
 		
 		flags = { nep_seal_3 } 

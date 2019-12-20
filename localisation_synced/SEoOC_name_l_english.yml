@@ -24,13 +24,13 @@
  NAME_nep_finalweapon_country:0 "Corrupted Finalweapons"
  
  NAME_nep_Gaia_Resistors:0 "Gaia Resistors"
- NAME_nep_Gaia_Republic:0 "Republic of Gaia"
+ #NAME_nep_Gaia_Republic:0 "Republic of Gaia"
  NAME_nep_Highlander:0 "Highlander"
  NAME_nep_Highlanders:0 "Highlanders"
  NAME_nep_Gaia_Survivor:0 "Gaia Survivor"
  NAME_nep_Gaia_Survivors:0 "Gaia Survivors"
  NAME_nep_Highlander_Dominator:0 "Highlander Dominator"
- NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
+ #NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
  NAME_nep_Country_of_Machina:0 "Machina"
  NAME_nep_machina:0 "Machina"
  #############################
@@ -71,6 +71,13 @@
  NAME_nep_highlander_gladiators:0 "Gladiators Force"
  
  NAME_Machina_Guardians:0 "Machina Guardians"
+ 
+ NAME_nep_Grand_Captain_Balfour:0 "Grand Captain Balfour"
+ NAME_nep_Tawni_Balfour:0 "Tawni Balfour"
+ NAME_nep_Pete_Girly:0 "Pete Girly"
+ NAME_nep_Captain_Swift:0 "Captain Swift"
+ NAME_nep_Cyrca:0 "Cyrca"
+ NAME_nep_Balfour_Family_Machine_Guard:0 "Automatic Guard of Balfour Family"
  ###########################
  #design
  ###########################
@@ -151,7 +158,9 @@
  NAME_nep_Lighthouse_WNW:0 "Lighthouse WNW"
  NAME_nep_Lighthouse_NW:0 "Lighthouse NW"
  NAME_nep_Lighthouse_NNW:0 "Lighthouse NNW"
-
+ 
+ NAME_nep_debris:0 "Large Wrecks"
+ 
  NAME_Grand_Seal_of_Void:0 "Grand Seal of Void"
  NAME_Sub_Seal_1:0 "Sub Seal 1"
  NAME_Sub_Seal_2:0 "Sub Seal 2"

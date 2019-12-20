@@ -9,6 +9,10 @@
  SEoOC_diff_diff_policy_default:0 "Default"
  SEoOC_diff_diff_policy_default_desc:0 "Default difficulty,choose this with NSC or other strong mod."
  
+ pc_planet_large_debris:0 "Large Wrecks"
+ pc_planet_large_debris_desc:0 "Large Wrecks.If you search carefully,you may even find some undamaged buildings here."
+
+ 
  r_nep_orb_x1:0 "Ancient Orb"
  r_nep_orb_x1_desc:0 "Ancient Orb from unknown source."
  r_nep_orb_x2:0 "Ancient Orb*2"

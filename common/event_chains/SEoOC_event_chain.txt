@@ -57,3 +57,13 @@ nep_whitegoo_chain = {
 #		}
 #	}
 #}
+
+nep_gpc_chain = {
+	picture = GFX_evt_pirate_armada
+	icon = "gfx/interface/icons/situation_log/situation_combat.dds"
+	counter = {
+		nep_gpc_clues = {
+			max = 4
+		}
+	}
+}

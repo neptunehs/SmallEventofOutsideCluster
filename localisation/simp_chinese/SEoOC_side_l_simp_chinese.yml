@@ -132,6 +132,9 @@
  nep_you_are_our_Savior:0 "你拯救过我们"
  nep_you_are_very_strong:0 "你很强大"
 
+ NAME_nep_Gaia_Republic:0 "盖亚共和国"
+ NAME_nep_Highlander_Kingdom:0 "天上人王国"
+ 
  #########################################
  # deus
  ######################################### 
@@ -374,6 +377,10 @@
  nep_whitegoo.91.name:0 "根除"
  nep_whitegoo.91.desc:0 "白雾的根源星系已经建立了吸收空间站，所有的白雾都将被吸入。现有的白雾也将慢慢消失。基本上，困扰全宇宙的白雾问题即将解决。"
  nep_whitegoo.91.a:0 "全宇宙的胜利！"
+ 
+ nep_whitegoo.9999.name:0 "副产物"
+ nep_whitegoo.9999.desc:0 "因为白雾起源的白雾浓度实在太高，我们在那儿的白雾吸收空间站在吸收并压缩那些后产生了一些副产物，科学家们认为我们有办法对其进行使用。"
+ nep_whitegoo.9999.a:0 "那就研究吧。"
  
  tech_nep_whitegoo_1:0 "白雾基础研究"
  tech_nep_whitegoo_1_desc:0 "首先我们要知道这些白雾是什么东西。"
