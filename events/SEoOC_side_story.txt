@@ -3461,6 +3461,7 @@ country_event = {
 	
 	option = {
 		name = anomaly.625.a
+		abort_special_project = nep_deuspi_hack_project
 	}
 }
 
@@ -8353,12 +8354,14 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = nep_whitegoo_end
-		any_owned_planet = {
-			has_star_flag = nep_whitegoo_origin
-			any_ship_in_system = { is_ship_size = nep_station_whitegoo }
+		any_owned_ship = {
+			is_ship_size = nep_station_whitegoo
+			solar_system = {
+				has_star_flag = nep_whitegoo_origin
+			}
 		}
 		NOR = {
-			has_research_option = tech_nanite_transmutation
+			has_country_flag = nep_whitegoo_9999_triggered
 			has_technology = tech_nanite_transmutation
 		}
 	}
@@ -8374,5 +8377,6 @@ country_event = {
 	option = {
 		name = nep_whitegoo.9999.a
 		add_research_option = tech_nanite_transmutation
+		hidden_effect = { set_country_flag = nep_whitegoo_9999_triggered }
 	}
 }

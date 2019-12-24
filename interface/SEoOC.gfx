@@ -18,6 +18,11 @@ spriteTypes = {
 		name = "GFX_wg_nep_deus_cleaning_war"
 		texturefile = "gfx/interface/icons/diplomacy/diplomatic_rival_mutual_icon.dds"
 	}
+
+	spriteType = {
+		name = "GFX_ship_part_nep_destructor_ray"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nep_destructor_ray.dds"
+	}
 	
 	SpriteType = {
 		name = "GFX_relic_nep_orb_x1"
@@ -156,3 +161,4 @@ spriteTypes = {
 		alwaystransparent = yes		
 	}
 }
+

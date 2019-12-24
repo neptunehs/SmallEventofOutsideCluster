@@ -325,7 +325,7 @@ fleet_event = {
 		}
 		text = "nep_highway.23.desc"
 	}
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_collapsing_roof
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -363,7 +363,7 @@ fleet_event = {
 		}
 		text = "nep_highway.24.desc"
 	}
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_crusher_droid
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -387,7 +387,7 @@ fleet_event = {
 	id = nep_highway.3
 	title = "nep_highway.22.name"
 	desc = "nep_highway.3.desc"	
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_excavation_team
 
 	fire_only_once = yes
 
@@ -895,11 +895,13 @@ fleet_event = {
 	}
 	
 	after = {
-		random_system = {
-			limit = { has_star_flag = cybrex }
-			random_system_planet = {
-				limit = { is_planet_class = pc_planet_large_debris }
-				remove_planet = yes
+		hidden_effect = {
+			random_system = {
+				limit = { has_star_flag = cybrex }
+				random_system_planet = {
+					limit = { is_planet_class = pc_planet_large_debris }
+					remove_planet = yes
+				}
 			}
 		}
 	}

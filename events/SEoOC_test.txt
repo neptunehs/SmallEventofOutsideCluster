@@ -802,21 +802,6 @@ country_event = {
 					days = -1
 				}
 			}
-			if = {
-				limit = {
-					any_country = {
-						OR = {
-							has_tradition = tr_plentiful_assault_5
-							has_tradition = tr_est_militarism_finish
-							always = no
-						}						
-					}
-				}
-				add_modifier = {
-					modifier = nep_Krahen_buff_plentiful
-					days = -1
-				}
-			}
 			nep_easy_mod = yes
 		}
 		set_global_flag = nep_Krahen_begin

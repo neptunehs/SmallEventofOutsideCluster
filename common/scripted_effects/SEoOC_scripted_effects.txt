@@ -2261,9 +2261,11 @@ nep_easy_mod_reward = {
 		}
 		if = {
 			limit = {
-				is_ship_size = nep_dragon_reward
-				is_ship_size = nep_dragon_reward_kai
-				is_ship_size = nep_dragon_baby
+				OR = {
+					is_ship_size = nep_dragon_reward
+					is_ship_size = nep_dragon_reward_kai
+					is_ship_size = nep_dragon_baby
+				}
 			}
 			add_modifier = {
 				modifier = nep_dragon_easy

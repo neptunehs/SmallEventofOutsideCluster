@@ -122,7 +122,7 @@ country_event = {
 	
 	option = {
 		name = nep_gpc.1.a #agreed
-		custom_tooltip = nep_gpc.1.a.tooltip
+		#custom_tooltip = nep_gpc.1.a.tooltip
 		hidden_effect = {
 			country_event = { id = nep_gpc.1000 } 
 		}
@@ -579,6 +579,7 @@ country_event = {
 	
 	trigger = {
 		NOT = { has_global_flag = nep_gpc_end }
+		is_country_type = default
 		from = { has_country_flag = nep_gpc_pirate1 }
 	}
 	
@@ -590,7 +591,10 @@ country_event = {
 				NOT = { has_global_flag = nep_gpc_stage_2 }
 				NOT = { has_global_flag = nep_gpc_2003_temp }
 			}
-			set_global_flag = nep_gpc_2003_temp
+			random_list = {
+				1 = { }
+				1 = { set_global_flag = nep_gpc_2003_temp }
+			}
 		}
 	}
 	
@@ -676,16 +680,19 @@ country_event = {
 	}
 	
 	after = {
-		remove_country_flag = nep_escort_country	
-		event_target:nep_caravaneer_fleet_country = {
-			destroy_country = yes
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = nep_gpc_stage_2 }
-				NOT = { has_global_flag = nep_gpc_end }
+		hidden_effect = {
+			remove_country_flag = nep_escort_country	
+			event_target:nep_caravaneer_fleet_country = {
+				destroy_country = yes
 			}
-			set_global_flag = nep_gpc_end
+			if = {
+				limit = {
+					NOT = { has_global_flag = nep_gpc_stage_2 }
+					NOT = { has_global_flag = nep_gpc_end }
+				}
+				set_global_flag = nep_gpc_end
+			}
+			clear_global_event_target = nep_escort_destiny
 		}
 	}
 }
@@ -717,7 +724,7 @@ country_event = {
 	is_triggered_only = yes
 		
 	immediate = {
-		
+		clear_global_event_target = nep_escort_destiny
 	}
 	
 	option = {
@@ -900,6 +907,7 @@ country_event = {
 							set_fleet_stance = aggressive
 							set_aggro_range_measure_from = self
 							set_aggro_range = 800
+							save_event_target_as = nep_grand_captain
 						}
 					}
 					create_fleet = {
@@ -928,6 +936,12 @@ country_event = {
 	
 	option = {
 		name = nep_gpc.3.a
+		create_point_of_interest = {
+			id = nep_gpc.3.poi.0
+			name = "nep_gpc_poi_name"
+			desc = "nep_gpc_poi_desc"
+			location = event_target:nep_grand_captain
+		}		
 	}
 }
 
@@ -2019,6 +2033,7 @@ country_event = {
 		trigger = { fromfrom = { has_star_flag = nep_gpc_cyrca } }
 		text = nep_gpc.40052.desc.d
 	}
+	picture = GFX_evt_ancient_records
 	
 	is_triggered_only = yes
 	
@@ -2057,7 +2072,7 @@ country_event = {
 		add_event_chain_counter = {
 			event_chain = "nep_gpc_chain"
 			counter = "nep_gpc_clues"
-			amount = 1			
+			amount = 1
 		}
 		hidden_effect = {
 			if = {
@@ -2426,7 +2441,7 @@ fleet_event = {
 	id = nep_gpc.6002
 	title = "nep_gpc.6002.name"
 	desc = "nep_gpc.6002.desc"
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_cold_barren_planet
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -2454,7 +2469,7 @@ fleet_event = {
 	id = nep_gpc.6003
 	title = "nep_gpc.6003.name"
 	desc = "nep_gpc.6003.desc"
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_discovered_hidden_door
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -2482,7 +2497,7 @@ fleet_event = {
 	id = nep_gpc.7
 	title = "nep_gpc.7.name"
 	desc = "nep_gpc.7.desc"
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_generator_powerup
 	
 	archaeology = yes
 	is_triggered_only = yes

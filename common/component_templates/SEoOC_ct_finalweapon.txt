@@ -25,64 +25,64 @@ weapon_component_template = {
 	use_ship_kill_target = no
 	prerequisites = { "tech_nep_finalweapon_tech" }
 
-	target_weights = {	
-		starbase_outpost = 50
-		starbase_starport = 100
-		starbase_starhold = 1500
-		starbase_starfortress = 50000
-		starbase_citadel = 50000
-		starbase_swarm = 50000
-		starbase_ai = 50000
-		starbase_exd = 50000
-		starbase_marauder = 1500
-		ion_cannon = 25000
-		StrikeCruiser = 2000
-		Battlecruiser = 4000
-		Carrier = 30000
-		Dreadnought = 50000
-		titan = 50000
-		Flagship = 50000
-		starbase_stronghold = 50000
-		xl_cannon = 25000
+	# target_weights = {	
+		# starbase_outpost = 50
+		# starbase_starport = 100
+		# starbase_starhold = 1500
+		# starbase_starfortress = 50000
+		# starbase_citadel = 50000
+		# starbase_swarm = 50000
+		# starbase_ai = 50000
+		# starbase_exd = 50000
+		# starbase_marauder = 1500
+		# ion_cannon = 25000
+		# StrikeCruiser = 2000
+		# Battlecruiser = 4000
+		# Carrier = 30000
+		# Dreadnought = 50000
+		# titan = 50000
+		# Flagship = 50000
+		# starbase_stronghold = 50000
+		# xl_cannon = 25000
 
-		battleship = 40000
-		cruiser = 1500
-		destroyer = 500
-		corvette = 100
+		# battleship = 40000
+		# cruiser = 1500
+		# destroyer = 500
+		# corvette = 100
 		
-		military_station_large = 25000
-		military_station_medium = 1000
-		military_station_small = 50
+		# military_station_large = 25000
+		# military_station_medium = 1000
+		# military_station_small = 50
 		
-		massive_ship_fallen_empire = 50000
-		large_ship_fallen_empire = 1500
-		small_ship_fallen_empire = 500
+		# massive_ship_fallen_empire = 50000
+		# large_ship_fallen_empire = 1500
+		# small_ship_fallen_empire = 500
 		
-		military_station_large_fallen_empire = 25000
-		military_station_small_fallen_empire = 1000
+		# military_station_large_fallen_empire = 25000
+		# military_station_small_fallen_empire = 1000
 		
-		queen_swarm = 50000
-		large_ship_carrier_swarm = 1500
-		large_ship_swarm = 500
-		small_ship_swarm = 100
-		
-		
-		large_ship_ed = 50000
-		medium_ship_ed = 1500
-		small_ship_ed = 500
+		# queen_swarm = 50000
+		# large_ship_carrier_swarm = 1500
+		# large_ship_swarm = 500
+		# small_ship_swarm = 100
 		
 		
-		dimensional_portal_ed = 100000
+		# large_ship_ed = 50000
+		# medium_ship_ed = 1500
+		# small_ship_ed = 500
 		
-		large_ship_ai = 50000
-		small_ship_ai = 1500
 		
-		final_core_ai = 200000
-		core_ai = 100000
+		# dimensional_portal_ed = 100000
 		
-		military_station_large_ai = 25000
-		military_station_small_ai = 1000
-	}
+		# large_ship_ai = 50000
+		# small_ship_ai = 1500
+		
+		# final_core_ai = 200000
+		# core_ai = 100000
+		
+		# military_station_large_ai = 25000
+		# military_station_small_ai = 1000
+	# }
 
 
 	ai_tags = {
@@ -121,64 +121,64 @@ weapon_component_template = {
 	use_ship_kill_target = no
 	prerequisites = { "tech_nep_finalweapon_tech" }
 
-	target_weights = {	
-		starbase_outpost = 50
-		starbase_starport = 100
-		starbase_starhold = 1500
-		starbase_starfortress = 50000
-		starbase_citadel = 50000
-		starbase_swarm = 50000
-		starbase_ai = 50000
-		starbase_exd = 50000
-		starbase_marauder = 1500
-		ion_cannon = 25000
-		StrikeCruiser = 2000
-		Battlecruiser = 4000
-		Carrier = 30000
-		Dreadnought = 50000
-		titan = 50000
-		Flagship = 50000
-		starbase_stronghold = 50000
-		xl_cannon = 25000
+	# target_weights = {	
+		# starbase_outpost = 50
+		# starbase_starport = 100
+		# starbase_starhold = 1500
+		# starbase_starfortress = 50000
+		# starbase_citadel = 50000
+		# starbase_swarm = 50000
+		# starbase_ai = 50000
+		# starbase_exd = 50000
+		# starbase_marauder = 1500
+		# ion_cannon = 25000
+		# StrikeCruiser = 2000
+		# Battlecruiser = 4000
+		# Carrier = 30000
+		# Dreadnought = 50000
+		# titan = 50000
+		# Flagship = 50000
+		# starbase_stronghold = 50000
+		# xl_cannon = 25000
 
-		battleship = 40000
-		cruiser = 1500
-		destroyer = 500
-		corvette = 100
+		# battleship = 40000
+		# cruiser = 1500
+		# destroyer = 500
+		# corvette = 100
 		
-		military_station_large = 25000
-		military_station_medium = 1000
-		military_station_small = 50
+		# military_station_large = 25000
+		# military_station_medium = 1000
+		# military_station_small = 50
 		
-		massive_ship_fallen_empire = 50000
-		large_ship_fallen_empire = 1500
-		small_ship_fallen_empire = 500
+		# massive_ship_fallen_empire = 50000
+		# large_ship_fallen_empire = 1500
+		# small_ship_fallen_empire = 500
 		
-		military_station_large_fallen_empire = 25000
-		military_station_small_fallen_empire = 1000
+		# military_station_large_fallen_empire = 25000
+		# military_station_small_fallen_empire = 1000
 		
-		queen_swarm = 50000
-		large_ship_carrier_swarm = 1500
-		large_ship_swarm = 500
-		small_ship_swarm = 100
-		
-		
-		large_ship_ed = 50000
-		medium_ship_ed = 1500
-		small_ship_ed = 500
+		# queen_swarm = 50000
+		# large_ship_carrier_swarm = 1500
+		# large_ship_swarm = 500
+		# small_ship_swarm = 100
 		
 		
-		dimensional_portal_ed = 100000
+		# large_ship_ed = 50000
+		# medium_ship_ed = 1500
+		# small_ship_ed = 500
 		
-		large_ship_ai = 50000
-		small_ship_ai = 1500
 		
-		final_core_ai = 200000
-		core_ai = 100000
+		# dimensional_portal_ed = 100000
 		
-		military_station_large_ai = 25000
-		military_station_small_ai = 1000
-	}
+		# large_ship_ai = 50000
+		# small_ship_ai = 1500
+		
+		# final_core_ai = 200000
+		# core_ai = 100000
+		
+		# military_station_large_ai = 25000
+		# military_station_small_ai = 1000
+	# }
 
 	projectile_gfx = "plasma_cannon_l"
 	tags = { weapon_type_energy }
@@ -217,55 +217,55 @@ weapon_component_template = {
 	use_ship_kill_target = no
 	prerequisites = { "tech_nep_finalweapon_tech" }
 
-	target_weights = {
-		starbase_outpost = 50
-		starbase_starport = 12000
-		starbase_starhold = 15000
-		starbase_starfortress = 10000
-		starbase_citadel = 10000
-		starbase_swarm = 10000
-		starbase_ai = 10000
-		starbase_exd = 50000
-		starbase_marauder = 1500
-		ion_cannon = 25000
-		StrikeCruiser = 12000
-		Battlecruiser = 14000
-		Carrier = 10000
-		Dreadnought = 10000
-		titan = 10000
-		Flagship = 10000
-		starbase_stronghold = 10000
-		xl_cannon = 15000
+	# target_weights = {
+		# starbase_outpost = 50
+		# starbase_starport = 12000
+		# starbase_starhold = 15000
+		# starbase_starfortress = 10000
+		# starbase_citadel = 10000
+		# starbase_swarm = 10000
+		# starbase_ai = 10000
+		# starbase_exd = 50000
+		# starbase_marauder = 1500
+		# ion_cannon = 25000
+		# StrikeCruiser = 12000
+		# Battlecruiser = 14000
+		# Carrier = 10000
+		# Dreadnought = 10000
+		# titan = 10000
+		# Flagship = 10000
+		# starbase_stronghold = 10000
+		# xl_cannon = 15000
 
-		battleship = 10000
-		cruiser = 15000
-		destroyer = 15000
-		corvette = 11000
+		# battleship = 10000
+		# cruiser = 15000
+		# destroyer = 15000
+		# corvette = 11000
 				
-		massive_ship_fallen_empire = 10000
-		large_ship_fallen_empire = 15000
-		small_ship_fallen_empire = 11000
+		# massive_ship_fallen_empire = 10000
+		# large_ship_fallen_empire = 15000
+		# small_ship_fallen_empire = 11000
 				
-		queen_swarm = 50000
-		large_ship_carrier_swarm = 1500
-		large_ship_swarm = 500
-		small_ship_swarm = 100
+		# queen_swarm = 50000
+		# large_ship_carrier_swarm = 1500
+		# large_ship_swarm = 500
+		# small_ship_swarm = 100
 				
-		large_ship_ed = 50000
-		medium_ship_ed = 1500
-		small_ship_ed = 500
+		# large_ship_ed = 50000
+		# medium_ship_ed = 1500
+		# small_ship_ed = 500
 				
-		dimensional_portal_ed = 100000
+		# dimensional_portal_ed = 100000
 		
-		large_ship_ai = 50000
-		small_ship_ai = 1500
+		# large_ship_ai = 50000
+		# small_ship_ai = 1500
 		
-		final_core_ai = 200000
-		core_ai = 100000
+		# final_core_ai = 200000
+		# core_ai = 100000
 		
-		military_station_large_ai = 25000
-		military_station_small_ai = 1000
-	}
+		# military_station_large_ai = 25000
+		# military_station_small_ai = 1000
+	# }
 	
 	projectile_gfx = "space_whale_weapon"
 	tags = { weapon_type_energy }
@@ -301,55 +301,55 @@ weapon_component_template = {
 	use_ship_kill_target = no
 	prerequisites = { "tech_nep_finalweapon_tech" }
 
-	target_weights = {
-		starbase_outpost = 5000
-		starbase_starport = 12000
-		starbase_starhold = 15000
-		starbase_starfortress = 5000
-		starbase_citadel = 5000
-		starbase_swarm = 5000
-		starbase_ai = 5000
-		starbase_exd = 5000
-		starbase_marauder = 1500
-		ion_cannon = 5000
-		StrikeCruiser = 10000
-		Battlecruiser = 5000
-		Carrier = 5000
-		Dreadnought = 5000
-		titan = 5000
-		Flagship = 5000
-		starbase_stronghold = 5000
-		xl_cannon = 5000
+	# target_weights = {
+		# starbase_outpost = 5000
+		# starbase_starport = 12000
+		# starbase_starhold = 15000
+		# starbase_starfortress = 5000
+		# starbase_citadel = 5000
+		# starbase_swarm = 5000
+		# starbase_ai = 5000
+		# starbase_exd = 5000
+		# starbase_marauder = 1500
+		# ion_cannon = 5000
+		# StrikeCruiser = 10000
+		# Battlecruiser = 5000
+		# Carrier = 5000
+		# Dreadnought = 5000
+		# titan = 5000
+		# Flagship = 5000
+		# starbase_stronghold = 5000
+		# xl_cannon = 5000
 
-		battleship = 5000
-		cruiser = 5000
-		destroyer = 10000
-		corvette = 15000
+		# battleship = 5000
+		# cruiser = 5000
+		# destroyer = 10000
+		# corvette = 15000
 				
-		massive_ship_fallen_empire = 10000
-		large_ship_fallen_empire = 15000
-		small_ship_fallen_empire = 11000
+		# massive_ship_fallen_empire = 10000
+		# large_ship_fallen_empire = 15000
+		# small_ship_fallen_empire = 11000
 				
-		queen_swarm = 5000
-		large_ship_carrier_swarm = 500
-		large_ship_swarm = 10000
-		small_ship_swarm = 15000
+		# queen_swarm = 5000
+		# large_ship_carrier_swarm = 500
+		# large_ship_swarm = 10000
+		# small_ship_swarm = 15000
 				
-		large_ship_ed = 5000
-		medium_ship_ed = 10000
-		small_ship_ed = 15000
+		# large_ship_ed = 5000
+		# medium_ship_ed = 10000
+		# small_ship_ed = 15000
 				
-		dimensional_portal_ed = 100000
+		# dimensional_portal_ed = 100000
 		
-		large_ship_ai = 5000
-		small_ship_ai = 15000
+		# large_ship_ai = 5000
+		# small_ship_ai = 15000
 		
-		final_core_ai = 200000
-		core_ai = 100000
+		# final_core_ai = 200000
+		# core_ai = 100000
 		
-		military_station_large_ai = 2500
-		military_station_small_ai = 10000
-	}
+		# military_station_large_ai = 2500
+		# military_station_small_ai = 10000
+	# }
 	
 	projectile_gfx = "stormfire_auto_cannons_s"
 	tags = { weapon_type_kinetic }

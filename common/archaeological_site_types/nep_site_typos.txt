@@ -9,8 +9,8 @@ nep_precursor_digsite_1 = {
 		exists = leader
 	}
 	visible = {
-		has_country_flag = nep_highway_intro
 		default_site_visible_trigger = yes
+		has_country_flag = nep_highway_intro
 	}
 	stage = {
 		difficulty = 2
@@ -50,11 +50,11 @@ nep_gpc_site = {
 		exists = leader
 	}
 	visible = {
+		default_site_visible_trigger = yes
 		has_country_flag = nep_gpc_tawni_balfour_clue_get
 		has_country_flag = nep_gpc_pete_girly_clue_get
 		has_country_flag = nep_gpc_captain_swift_clue_get
 		has_country_flag = nep_gpc_cyrca_clue_get
-		default_site_visible_trigger = yes
 	}
 	stage = {
 		difficulty = 2
