@@ -3461,7 +3461,7 @@ country_event = {
 	
 	option = {
 		name = anomaly.625.a
-		abort_special_project = nep_deuspi_hack_project
+		abort_special_project = nep_deus_virus_emergency
 	}
 }
 

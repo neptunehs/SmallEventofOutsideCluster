@@ -143,6 +143,7 @@ country_event = {
 	
 	trigger = {
 		NOT = { has_global_flag = nep_SEoOC_easy }
+		NOT = { has_global_flag = gigastructures_enabled }
 	}
 
 	immediate = {
