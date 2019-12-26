@@ -142,3 +142,23 @@
 		# }
 	# }
 # }
+
+orbital_bombardment_Krahen = {
+
+	potential = {
+		is_country_type = nep_Krahen_country
+	}
+
+	option = {
+		name = "orbital_bombardment_armageddon"
+
+		policy_flags = {
+			orbital_bombardment_armageddon
+		}
+		modifier = {}
+
+		AI_weight = {
+			weight = 1
+		}
+	}
+}

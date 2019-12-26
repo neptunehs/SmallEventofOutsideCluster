@@ -654,6 +654,11 @@ nep_Krahen_easy = {
 	army_morale_damage_mult = -0.9
 }
 
+nep_inva_fleet_jumped_debuff_easy = {
+	ship_weapon_damage = -0.12
+	ship_speed_mult = -0.55
+}
+
 nep_finalweapon_easy = {
 	ship_weapon_damage = -0.9
 	ship_hull_mult = -0.9

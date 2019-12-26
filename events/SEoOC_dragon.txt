@@ -1387,6 +1387,7 @@ event = {
 		any_country = {
 			has_country_flag = nep_dragon_summoner_summoned
 			NOT = { has_country_flag = nep_dragon_summoner_hold }
+			NOT = { has_special_project = nep_dragon_summon }
 			NOT = {
 				any_owned_ship = {
 					OR = {
