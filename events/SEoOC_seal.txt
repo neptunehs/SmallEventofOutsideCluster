@@ -746,6 +746,27 @@ country_event = {
 	}
 }
 
+ship_event = {
+	id = nep_seal.7000
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { has_country_flag = nep_grand_seal_founder }
+		solar_system = { 
+			has_star_flag = nep_seal_system
+			is_surveyed = { who = root.owner status = yes }
+		}
+	}
+	
+	immediate = {
+		ship_event = { id = nep_seal.7 days = 5 random = 5 }
+	}
+}
+
 #After survey
 ship_event = {
 	id = nep_seal.7
@@ -759,11 +780,11 @@ ship_event = {
 
 	trigger = {
 		OWNER = { has_country_flag = nep_grand_seal_founder }
-		FROM = { has_star_flag = nep_seal_system }
+		solar_system = { has_star_flag = nep_seal_system }
 	}
 	
 	immediate = {
-		FROM = {
+		solar_system = {
 			random_system_planet = {
 				limit = { has_planet_flag = nep_grand_seal }
 				save_global_event_target_as = nep_grand_seal_planet

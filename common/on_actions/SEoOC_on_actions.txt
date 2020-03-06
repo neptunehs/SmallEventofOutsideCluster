@@ -25,6 +25,7 @@ on_entering_system = {
 		nep_inva.474
 		nep_gpc.4004
 		#nep_guide.4998
+		nep_seal.7000
 	}
 }
 
