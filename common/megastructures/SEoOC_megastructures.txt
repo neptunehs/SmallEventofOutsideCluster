@@ -115,7 +115,11 @@ nep_station_whitegoo_mega = {
 	}
 		
 	ai_weight = {
-		factor = 15
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { has_star_flag = nep_whitegoo_2 }
+		}
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
@@ -124,6 +128,29 @@ nep_station_whitegoo_mega = {
 					owner = { is_same_value = from } 
 				}
 			}
+		}
+		modifier = {
+			factor = 0.5
+			solar_system = {
+				exists = owner
+				owner = { has_country_flag = nep_whitegoo_8000_temp }
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_system_planet = {
+				is_colony = yes
+			}
+		}
+		modifier = {
+			factor = 3.6
+			any_system_planet = {
+				is_capital = yes
+			}
+		}
+		modifier = {
+			factor = 1000
+			has_star_flag = nep_whitegoo_origin
 		}
 	}
 	

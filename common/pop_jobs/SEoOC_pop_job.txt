@@ -152,7 +152,7 @@ nep_dragon_administrator_drone_machine = {
 
 nep_miko = {
 	category = ruler
-	building_icon = building_nep_palace_of_machina
+	building_icon = building_institute
 	clothes_texture_index = 1
 	icon = high_priest
 
@@ -248,7 +248,7 @@ nep_miko = {
 nep_servent_of_god = {
 	category = ruler
 	#condition_string = RULER_JOB_TRIGGER
-	building_icon = building_nep_palace_of_machina
+	building_icon = building_institute
 	clothes_texture_index = 1
 	icon = organic_battery
 

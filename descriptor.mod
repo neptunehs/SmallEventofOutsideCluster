@@ -1,9 +1,8 @@
-﻿name="Some Events of Outside Cluster"
-version="2.5.1"
+version="2.6.1"
 tags={
-	"Graphics"
 	"Events"
 }
+name="Some Events of Outside Cluster"
 picture="SEoOC.jpg"
+supported_version="2.6.*"
 remote_file_id="1562501671"
-supported_version="2.5.*"

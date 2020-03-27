@@ -6,13 +6,13 @@ opinion_nep_grand_seal_burst = {
 
 nep_you_are_our_Savior = {
 	opinion = {
-		base = 100
+		base = 200
 	}
 }
 
 nep_you_are_very_strong = {
 	opinion = {
-		base = 50
+		base = 100
 	}
 }
 

@@ -6,10 +6,7 @@ civic_nep_deus_ex_machina = {
 	possible = {
 		civics = {
 			NOR = {
-				value = civic_mechanists
 				value = civic_agrarian_idyll
-				value = civic_syncretic_evolution
-				value = civic_life_seeded
 				value = civic_philosopher_king
 				value = civic_feudal_realm
 				value = civic_corporate_dominion
@@ -17,7 +14,14 @@ civic_nep_deus_ex_machina = {
 				value = civic_fanatic_purifiers
 				value = civic_exalted_priesthood
 				value = civic_slaver_guilds
-				value = civic_post_apocalyptic
+			}
+		}
+		origin = {
+			NOR = { 
+				value = origin_mechanists 
+				value = origin_syncretic_evolution 
+				value = origin_life_seeded
+				value = origin_post_apocalyptic
 			}
 		}
 	}

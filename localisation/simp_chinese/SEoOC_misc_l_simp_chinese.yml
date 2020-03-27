@@ -24,3 +24,7 @@
  nep_orbs_custom_tooltip:0 "虽然不是任何时候都能发动，但只要它的使命需要它的时候，就能发动。"
  nep_orb_can_active:0 "§G宝玉在可发动状态。发动后将会继续剧情。§!"
  nep_orb_no_reaction:0 "§R宝玉没有反应。可能需要等一个更好的时机。§!"
+ 
+ policy_orbital_bombardment_Krahen:0 "$policy_orbital_bombardment$"
+ policy_orbital_bombardment_Krahen_desc:0 "$policy_orbital_bombardment_desc$"
+ gov_Krahen_gov_desc:0 ""

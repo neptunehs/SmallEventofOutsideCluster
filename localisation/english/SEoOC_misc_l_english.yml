@@ -25,3 +25,7 @@
  nep_orbs_custom_tooltip:0 "Although it can't be actived at any time, it can be actived as long as its mission requires."
  nep_orb_can_active:0 "§GClick to Activate Orbs.If actived, story will continue.§!"
  nep_orb_no_reaction:0 "§ROrb had no reaction.May need to wait or other conditions needed.§!"
+ 
+ policy_orbital_bombardment_Krahen:0 "$policy_orbital_bombardment$"
+ policy_orbital_bombardment_Krahen_desc:0 "$policy_orbital_bombardment_desc$"
+ gov_Krahen_gov_desc:0 ""

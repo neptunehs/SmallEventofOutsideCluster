@@ -414,6 +414,9 @@ country_event = {
 					set_planet_flag = nep_grand_seal
 					save_event_target_as = nep_grand_seal_planet
 				}
+				every_system_megastructure = {
+					set_megastructure_flag = nep_seal6_temp
+				}
 				spawn_megastructure = {
 					name = "NAME_Ring_Section_A"
 					type = "ring_world_2"
@@ -424,6 +427,7 @@ country_event = {
 					location = star
 				}
 				random_system_megastructure = {
+					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
 					save_event_target_as = nep_temp_megastructure_1
 				}
 				spawn_planet = {
@@ -448,6 +452,7 @@ country_event = {
 					location = star
 				}
 				random_system_megastructure = {
+					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
 					save_event_target_as = nep_temp_megastructure_2
 				}
 				spawn_planet = {
@@ -472,6 +477,7 @@ country_event = {
 					location = star
 				}
 				random_system_megastructure = {
+					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
 					save_event_target_as = nep_temp_megastructure_3
 				}
 				spawn_planet = {
@@ -487,6 +493,9 @@ country_event = {
 					}
 				}
 				remove_megastructure = event_target:nep_temp_megastructure_3
+				every_system_megastructure = {
+					remove_megastructure_flag = nep_seal6_temp
+				}
 			}
 		}
 		else = {

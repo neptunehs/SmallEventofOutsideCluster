@@ -122,3 +122,6 @@
  nep_gpc_clues:0 "Clues"
  r_nep_alchemist_box:0 "Alchemist Box of §YGrand Captain Balfour§!"
  r_nep_alchemist_box_desc:0 "The legacy of the §YGrand Captain Balfour§!, once known as the most powerful pirate force. After activation, it will produce 10,000 alloys. However, a long cooling time is required afterwards."
+  
+ nep_gpc_site:0 "Legacy of Grand Captain Balfour"
+ nep_gpc_site_desc:0 "Here is the place where the treasure is most likely to be stored."

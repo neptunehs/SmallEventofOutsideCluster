@@ -123,3 +123,6 @@
  nep_gpc_clues:0 "线索"
  r_nep_alchemist_box:0 "§Y大海贼巴尔弗§!的炼金箱"
  r_nep_alchemist_box_desc:0 "曾经被誉为最强大的海盗的§Y大海贼巴尔弗§!的遗产。发动后会生成10000的合金。但是，之后会需要很长的冷却时间。"
+ 
+ nep_gpc_site:0 "海盗的遗产"
+ nep_gpc_site_desc:0 "这里是最有可能存放大海贼巴尔弗的遗产的地方。"

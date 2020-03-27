@@ -86,7 +86,7 @@ country_event = {
 				}
 				distance = {
 					source = root.capital_scope
-					min_jumps = 5 max_jumps = 25
+					min_jumps = 5 max_jumps = 20
 				}
 				solar_system = { has_access_fleet = root }
 			}
@@ -344,6 +344,7 @@ fleet_event = {
 	trigger = {
 		has_global_flag = nep_gpc_spawn
 		NOT = { has_global_flag = nep_gpc_end }
+		exists = event_target:nep_caravaneer_fleet_fleet
 		root = { is_same_value = event_target:nep_caravaneer_fleet_fleet }
 	}
 	
@@ -481,7 +482,7 @@ fleet_event = {
 		}
 		else = {
 			random_list = {
-				1 = {}
+				29 = {}
 				1 = { fleet_event = { id = nep_gpc.2002 } }
 			}
 		}
@@ -647,6 +648,7 @@ country_event = {
 	trigger = {
 		has_global_flag = nep_gpc_spawn
 		NOT = { has_global_flag = nep_gpc_end }
+		exists = event_target:nep_caravaneer_fleet_fleet
 		from = { is_same_value = event_target:nep_caravaneer_fleet_fleet }
 	}
 	
@@ -704,6 +706,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		exists = event_target:nep_caravaneer_fleet_fleet
 		fromfrom = { is_same_value = event_target:nep_caravaneer_fleet_fleet }
 	}
 	
