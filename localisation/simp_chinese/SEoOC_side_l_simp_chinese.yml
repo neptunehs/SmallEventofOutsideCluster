@@ -291,16 +291,20 @@
  nep_deuspl.9.name:0 "快速修理程序启动。"
  nep_deuspl.9.desc:0 "被损伤的计算机将会很快修复，并且再度君临国家。"
  
+ nep_deuspl.92.name:0 "GAME OVER"
+ nep_deuspl.92.desc:0 "因为某些原因，机神已经断开连接。一切都已经完了。"
+ nep_deuspl.92.a:0 "GAME OVER."
+ 
  opinion_nep_dangerous_machine:0 "危险的机械"
  
  opinion_nep_you_angry_me:0 "曾威胁还是原始种群时的我们"
  nep_SEoOC_deus_category:0 "$nep_SEoOC_whop_category$"
  
- gov_nep_servent_of_machina:0 "机械神之仆从国"
+ gov_nep_servent_of_machina:0 "机神之仆从国"
  gov_nep_servent_of_machina_desc:0 "由一个机械神明引导的国家。"
- RT_nep_HIGH_MIKO:0 "上位巫女"
- civic_nep_deus_ex_machina:0 "机械神的领导"
- civic_nep_deus_ex_machina_desc:0 "该政权将由一个机械神明引导。"
+ RT_nep_machina:0 "机神"
+ origin_nep_deus_ex_machina:0 "机神的领导"
+ origin_nep_deus_ex_machina_desc:0 "该政权将由一个机械神明引导。"
  civic_tooltip_nep_deus_ex_machina_effects:0 "起源种族的所有人口拥有$trait_nep_servent_of_machina$特性。星球起始得到一个$building_nep_palace_of_machina$建筑。将会被孤立在系外星系。外交关系可能会受到机械神的影响，尤其是机械神运行不正常的时候。§R损失首都时游戏结束。§!"
  building_nep_palace_of_machina:0 "机械神殿-方舟"
  building_nep_palace_of_machina_desc:0 " "

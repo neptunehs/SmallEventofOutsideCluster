@@ -160,5 +160,10 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes		
 	}
+	spriteType = {
+		name = "GFX_origin_nep_deus_ex_machina"
+		texturefile = "gfx/event_pictures/origins/origin_nep_deus_ex_machina.dds"
+		alwaystransparent = yes
+	}
 }
 

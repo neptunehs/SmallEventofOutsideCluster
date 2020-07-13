@@ -426,6 +426,7 @@ nep_primitive_machina = {
 
 nep_global_for_protrait = {
 	share_communications = no
+	playable = no
 	default_ships = no
 	government = no
 	observable = no
@@ -444,6 +445,30 @@ nep_global_for_protrait = {
 		exclusive_diplomacy_module = {
 			contact_rule = script_only
 		}
+		standard_leader_module = {}
+	}
+}
+
+nep_galactic_trust_territorys = {
+	share_communications = no
+	playable = no
+	#default_ships = no
+	government = no
+	observable = no
+	show_in_contacts_list = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		standard_event_module = {} # Needed for events
 		standard_leader_module = {}
 	}
 }

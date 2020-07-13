@@ -291,6 +291,10 @@
  nep_deuspl.9.name:0 "Quick repair procedure starts."
  nep_deuspl.9.desc:0 "The damaged computer will be repaired soon and will lead the country again."
  
+ nep_deuspl.92.name:0 "GAME OVER"
+ nep_deuspl.92.desc:0 "For some reason,Machina has out-lined.Everything is over."
+ nep_deuspl.92.a:0 "GAME OVER."
+ 
  opinion_nep_dangerous_machine:0 "Dangerous Machine"
  
  opinion_nep_you_angry_me:0 "Used to be threaten when primitive"
@@ -298,9 +302,9 @@
  
  gov_nep_servent_of_machina:0 "Servent of Machina"
  gov_nep_servent_of_machina_desc:0 "A country guided by a mechanical god."
- RT_nep_HIGH_MIKO:0 "High Miko"
- civic_nep_deus_ex_machina:0 "Lead of Machina"
- civic_nep_deus_ex_machina_desc:0 "This country will be guided by a mechanical god."
+ RT_nep_machina:0 "Machina"
+ origin_nep_deus_ex_machina:0 "Lead of Machina"
+ origin_nep_deus_ex_machina_desc:0 "This country will be guided by a mechanical god."
  civic_tooltip_nep_deus_ex_machina_effects:0 "All populations of the origin race have $trait_nep_servent_of_machina$ trait. The planet starts with a $building_nep_palace_of_machina$ building. It will be isolated in an extragalactic cluster. Diplomatic relations may be affected.§RLose the game when capital lost.§!"
  building_nep_palace_of_machina:0 "Mechina Temple - Ark"
  building_nep_palace_of_machina_desc:0 " "

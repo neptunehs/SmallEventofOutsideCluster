@@ -4,7 +4,7 @@
 
 nep_highway_fee = {
 	country_energy_produces_mult = 0.05
-	country_trade_fee = -0.05	
+	country_trade_fee = -0.05
 }
 
 ##########################################################################
@@ -732,9 +732,10 @@ nep_remorse = {
 
 #whitegoo
 nep_whitegoo_1 = {
-	planet_jobs_energy_produces_mult = -0.15
+	planet_jobs_energy_produces_mult = -0.10
 	planet_jobs_food_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
+	trade_value_mult = -0.10
 	planet_crime_mult = 0.01
 	planet_stability_add = -1
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -742,9 +743,10 @@ nep_whitegoo_1 = {
 }
 
 nep_whitegoo_2 = {
-	planet_jobs_energy_produces_mult = -0.15
+	planet_jobs_energy_produces_mult = -0.10
 	planet_jobs_food_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
+	trade_value_mult = -0.10
 	planet_crime_mult = 0.03
 	planet_stability_add = -3
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
@@ -758,8 +760,9 @@ nep_whitegoo_3 = {
 	planet_jobs_food_produces_mult = -0.15
 	planet_jobs_alloys_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.15
-	planet_crime_mult = 0.05
-	planet_stability_add = -5
+	trade_value_mult = -0.15
+	planet_crime_mult = 0.06
+	planet_stability_add = -6
 	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
 	icon_frame = 7
 }

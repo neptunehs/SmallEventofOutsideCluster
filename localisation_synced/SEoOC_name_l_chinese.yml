@@ -1,7 +1,9 @@
 ﻿l_simp_chinese:
  #############################
  #country
- #############################
+ ############################# 
+ NAME_nep_galactic_trust_territorys_highway:0 "环银河高速路$galactic_community$托管区"
+ 
  NAME_Malfunctioning_Guards_country:0 "暴走的护卫舰队"
  NAME_nep_Seal_Evil_country:0 "被封印的邪恶"
 
@@ -37,6 +39,8 @@
  #############################
  #fleet&army
  #############################
+ NAME_nep_Trust_Territory:0 "托管区"
+ 
  NAME_Malfunctioning_Guards:0 "暴走的护卫舰队"
  NAME_nep_Seal_Evil:0 "被封印的邪恶"
 
@@ -82,6 +86,7 @@
  ###########################
  #design
  ###########################
+ NAME_nep_outpost:0 "$outpost$"
  NAME_Deek:0 "迪克级"
  NAME_Sekae:0 "瑟卡埃级"
  NAME_Tes:0 "忒斯级"

@@ -676,12 +676,22 @@ planet_event = {
 					}
 				}
 				root = {
-						#log = "[Root.GetName]:1030:1 army"
+					#log = "[Root.GetName]:1030:1 army"
+					if = {
+						limit = { has_global_flag = nep_SEoOC_easy }
 						create_army = {
-						name = "NAME_Krahen_Invader"
-						owner = event_target:nep_Krahen_country
-						type = nep_Krahen_anti_grav
+							name = "NAME_Krahen_Invader"
+							owner = event_target:nep_Krahen_country
+							type = nep_Krahen_anti_grav_2
+						}
 					}
+					else = {
+						create_army = {
+							name = "NAME_Krahen_Invader"
+							owner = event_target:nep_Krahen_country
+							type = nep_Krahen_anti_grav
+						}
+					}					
 				}
 			}
 		}
@@ -706,7 +716,12 @@ country_event = {
 		fromfrom = {
 			remove_planet_flag = nep_Krahen_invading_planet
 			every_planet_army = {
-				limit = { army_type = nep_Krahen_anti_grav }
+				limit = { 
+					OR = {
+						army_type = nep_Krahen_anti_grav 
+						army_type = nep_Krahen_anti_grav_2
+					}
+				}
 				remove_army = yes
 			}
 			solar_system = {

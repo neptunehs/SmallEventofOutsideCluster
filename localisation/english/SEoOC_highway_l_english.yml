@@ -76,3 +76,10 @@
  
  sc_hw_n:1 "$pc_b_star$"
  sc_hw_n_desc:1 "$pc_b_star_desc$"
+ 
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory:0 "Make Surround-Galaxy Highway as $galactic_community$ Trust Territory"
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_desc:0 "The Surround-Galaxy Highway is the property of the entire universe and should be trusteed by $galactic_community$. No country is allowed to claim on it!"
+ SEoOC_highway_galactic_trust_territory:0 "The Surround-Galaxy Highway will be trusteed by $galactic_community$,everyone will get border access to it."
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal:0 "Repeal Surround-Galaxy Highway Trust Territory"
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal_desc:0 "Repeal Surround-Galaxy Highway Trust Territory."
+ SEoOC_highway_galactic_trust_territory_repeal:0 "The Surround-Galaxy Highway will not be trusteed by $galactic_community$."

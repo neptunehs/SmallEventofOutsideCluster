@@ -32,7 +32,7 @@ event = {
 				has_valid_civic = civic_fanatic_purifiers
 				has_valid_civic = civic_hive_devouring_swarm
 				has_valid_civic = civic_machine_terminator
-				has_valid_civic = civic_nep_deus_ex_machina
+				has_origin = origin_nep_deus_ex_machina
 			}
 			has_communications = event_target:caravaneer_home_country
 			event_target:caravaneer_home_country = {
@@ -56,7 +56,7 @@ event = {
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_hive_devouring_swarm
 					has_valid_civic = civic_machine_terminator
-					has_valid_civic = civic_nep_deus_ex_machina
+					has_origin = origin_nep_deus_ex_machina
 				}
 				has_communications = event_target:caravaneer_home_country
 				event_target:caravaneer_home_country = {
@@ -65,7 +65,7 @@ event = {
 				num_owned_planets >= 3
 				fleet_power >= 5000
 			}
-			country_event = { id = nep_gpc.1099 days = 360 random = 5000 }
+			country_event = { id = nep_gpc.1099 days = 360 random = 3600 }
 		}
 	}
 }
@@ -93,10 +93,16 @@ country_event = {
 			save_global_event_target_as = nep_escort_destiny
 		}
 		if = {
-			limit = { exists = event_target:nep_escort_destiny }
+			limit = { 
+				exists = event_target:nep_escort_destiny
+				any_owned_fleet = {
+					can_access_system = root.capital_scope
+					can_access_system = event_target:nep_escort_destiny
+				}
+			}
 			country_event = { id = nep_gpc.1 }
 		}
-		else = { country_event = { id = nep_gpc.1099 days = 360 random = 5000 } }
+		else = { country_event = { id = nep_gpc.1099 days = 360 random = 1800 } }
 	}
 }
 

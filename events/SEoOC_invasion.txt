@@ -2019,7 +2019,7 @@ event = {
 				if = {
 					limit = {
 						owner = {
-							count_owned_ships = {
+							count_owned_ship = {
 								limit = { fleet = { has_fleet_order = follow_order } }
 								count < 240
 							}

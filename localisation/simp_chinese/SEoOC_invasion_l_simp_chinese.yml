@@ -151,3 +151,8 @@
  gov_Krahen_gov:0 "卡恩前线军政府"
  RT_nep_imperator:0 "执政官"
  RT_nep_vice_imperator:0 "副执政官"
+ 
+ resolution_galactic_focus_SEoOC_galactic_focus_Krahen:0 "焦点：卡恩入侵"
+ resolution_galactic_focus_SEoOC_galactic_focus_Krahen_desc:0 "卡恩帝国对于整个星系的所有国家都是威胁。如果我们不团结一致阻止他们，他们就会将我们消灭殆尽。我们应该通过星系焦点处理这一危机。"
+ resolution_galactic_focus_crisis_SEoOC_galactic_focus_Krahen_success:0 "$resolution_galactic_focus_crisis_effect_success$"
+ 

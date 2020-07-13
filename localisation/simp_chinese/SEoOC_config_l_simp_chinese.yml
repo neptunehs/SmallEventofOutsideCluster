@@ -1,5 +1,6 @@
 ﻿l_simp_chinese:
  edict_nep_options_menu:0 "SEoOC菜单"
+ edict_nep_options_menu_desc:0 "用这个菜单配置SEoOC这个mod的事件或者进入这个mod的debug模式。" 
  
  nep_config.1.name:0 "SEoOC菜单"
  nep_config.OK:0 "关闭"
@@ -81,5 +82,5 @@
  nep_config.4003.desc.orb3useful:0 "你已经完成了SEoOC的全部主线。这里没有什么可做的事情了。"
  nep_config.4003.desc.noorbs:0 "你还没搞到宝玉。没有什么可做的事情。"
  nep_config.4003.orb1:0 "启动。"
- nep_config.4003.orb1:0 "启动。"
- nep_config.4003.orb1:0 "启动。"
+ nep_config.4003.orb2:0 "启动。"
+ nep_config.4003.orb3:0 "启动。"

@@ -1,5 +1,6 @@
 ﻿l_english:
  edict_nep_options_menu:0 "SEoOC Config Bar"
+ edict_nep_options_menu_desc:0 "Use this menu to config or debug the events of SEoOC."
  
  nep_config.1.name:0 "SEoOC Config Bar"
  nep_config.OK:0 "Close"
@@ -82,5 +83,5 @@
  nep_config.4003.desc.orb3useful:0 "You have complete all main-line of SEoOC.Nothing to do here now."
  nep_config.4003.desc.noorbs:0 "You don't have any orbs.Nothing to do here now."
  nep_config.4003.orb1:0 "Make it activable."
- nep_config.4003.orb1:0 "Make them activable."
- nep_config.4003.orb1:0 "Make them activable."
+ nep_config.4003.orb2:0 "Make them activable."
+ nep_config.4003.orb3:0 "Make them activable."

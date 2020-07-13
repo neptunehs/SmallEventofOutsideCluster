@@ -1988,7 +1988,7 @@ country_event = {
 	
 	option = {
 		name = nep_highway.8.a
-		add_modifier = { modifier = nep_highway_fee days = -1 }
+		add_modifier = { modifier = nep_highway_fee days = 3600 }
 	}
 	
 	option = {
@@ -2026,6 +2026,86 @@ country_event = {
 						status = yes
 					}
 				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_highway.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { any_country = { has_country_flag = nep_galactic_trust_territorys_highway } } }
+			create_country = {
+				name = NAME_nep_galactic_trust_territorys_highway
+				type = nep_galactic_trust_territorys
+				auto_delete = no
+				flag = {
+					icon = {
+						category = "ornate"
+						file = "flag_ornate_24.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors ={
+						"teal"
+						"dark_teal"
+						"null"
+						"null"
+					}
+				}
+			}
+			last_created_country = {
+				save_event_target_as = nep_galactic_trust_territorys_highway
+				set_country_flag = nep_galactic_trust_territorys_highway
+				create_ship_design = {
+					design = "NAME_nep_outpost"
+				}
+				add_ship_design = last_created_design
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = nep_highway_note_system }
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
+			}
+			create_starbase = {
+				size = starbase_outpost
+				owner = event_target:nep_galactic_trust_territorys_highway
+			}
+		}
+		every_country = {
+			establish_communications_no_message = event_target:nep_galactic_trust_territorys_highway
+			establish_contact = { who = event_target:nep_galactic_trust_territorys_highway }
+			every_system = {
+				limit = { has_star_flag = nep_highway_note_system }
+				remove_claims = { who = prev num_of_claims = 10 }
+			}
+		}
+		every_country = {
+			limit = { has_modifier = nep_highway_fee }
+			remove_modifier = nep_highway_fee
+		}
+	}
+}
+
+country_event = {
+	id = nep_highway.91
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_system = {
+			limit = { has_star_flag = nep_highway_note_system }
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
 			}
 		}
 	}

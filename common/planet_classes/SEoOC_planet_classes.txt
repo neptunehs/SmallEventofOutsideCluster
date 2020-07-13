@@ -26,7 +26,7 @@ pc_star_void_dummy_01 = {
 }
 
 pc_planet_large_debris = {
-	entity = "void_dummy_01_entity"
+	entity = "void_dummy"
 	entity_scale = 1.0
 
 	picture = pc_ringworld_broken

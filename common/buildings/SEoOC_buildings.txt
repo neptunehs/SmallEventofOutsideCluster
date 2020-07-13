@@ -126,7 +126,7 @@ building_nep_palace_of_machina = {
 		exists = owner
 		owner = { 
 			OR = {
-				has_valid_civic = civic_nep_deus_ex_machina 
+				has_origin = origin_nep_deus_ex_machina 
 				is_primitive = yes
 			}
 		}
@@ -137,7 +137,7 @@ building_nep_palace_of_machina = {
 			exists = owner
 			owner = { 
 				AND = {
-					NOT = { has_valid_civic = civic_nep_deus_ex_machina }
+					NOT = { has_origin = origin_nep_deus_ex_machina }
 					is_primitive = no
 				}
 			}

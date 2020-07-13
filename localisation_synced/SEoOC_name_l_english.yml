@@ -2,6 +2,8 @@
  #############################
  #country&species
  #############################
+ NAME_nep_galactic_trust_territorys_highway:0 "Surround-Galaxy Highway Trust Territory"
+ 
  NAME_Malfunctioning_Guards_country:0 "Malfunctioning Guards"
  NAME_nep_Seal_Evil_country:0 "Sealed Evil"
 
@@ -36,6 +38,8 @@
  #############################
  #fleet&army
  #############################
+ NAME_nep_Trust_Territory:0 "Trust Territory"
+ 
  NAME_Malfunctioning_Guards:0 "Malfunctioning Guards"
  NAME_nep_Seal_Evil:0 "Sealed Evil"
 
@@ -81,6 +85,7 @@
  ###########################
  #design
  ###########################
+ NAME_nep_outpost:0 "$outpost$"
  NAME_Deek:0 "Deek"
  NAME_Sekae:0 "Sekae"
  NAME_Tes:0 "Tes"
@@ -126,22 +131,22 @@
  NAME_nep_Station_WNW:0 "Station WNW"
  NAME_nep_Station_NW:0 "Station NW"
  NAME_nep_Station_NNW:0 "Station NNW"
- NAME_nep_Highway_Note_N:0 "Highway Note N"
- NAME_nep_Highway_Note_NNE:0 "Highway Note NNE"
- NAME_nep_Highway_Note_NE:0 "Highway Note NE"
- NAME_nep_Highway_Note_ENE:0 "Highway Note ENE"
- NAME_nep_Highway_Note_E:0 "Highway Note E"
- NAME_nep_Highway_Note_ESE:0 "Highway Note ESE"
- NAME_nep_Highway_Note_SE:0 "Highway Note SE"
- NAME_nep_Highway_Note_SSE:0 "Highway Note SSE"
- NAME_nep_Highway_Note_S:0 "Highway Note S"
- NAME_nep_Highway_Note_SSW:0 "Highway Note SSW"
- NAME_nep_Highway_Note_SW:0 "Highway Note SW"
- NAME_nep_Highway_Note_WSW:"Highway Note WSW"
- NAME_nep_Highway_Note_W:0 "Highway Note W"
- NAME_nep_Highway_Note_WNW:0 "Highway Note WNW"
- NAME_nep_Highway_Note_NW:0 "Highway Note NW"
- NAME_nep_Highway_Note_NNW:0 "Highway Note NNW"
+ NAME_nep_Highway_Note_N:0 "Highway Node N"
+ NAME_nep_Highway_Note_NNE:0 "Highway Node NNE"
+ NAME_nep_Highway_Note_NE:0 "Highway Node NE"
+ NAME_nep_Highway_Note_ENE:0 "Highway Node ENE"
+ NAME_nep_Highway_Note_E:0 "Highway Node E"
+ NAME_nep_Highway_Note_ESE:0 "Highway Node ESE"
+ NAME_nep_Highway_Note_SE:0 "Highway Node SE"
+ NAME_nep_Highway_Note_SSE:0 "Highway Node SSE"
+ NAME_nep_Highway_Note_S:0 "Highway Node S"
+ NAME_nep_Highway_Note_SSW:0 "Highway Node SSW"
+ NAME_nep_Highway_Note_SW:0 "Highway Node SW"
+ NAME_nep_Highway_Note_WSW:"Highway Node WSW"
+ NAME_nep_Highway_Note_W:0 "Highway Node W"
+ NAME_nep_Highway_Note_WNW:0 "Highway Node WNW"
+ NAME_nep_Highway_Note_NW:0 "Highway Node NW"
+ NAME_nep_Highway_Note_NNW:0 "Highway Node NNW"
  NAME_nep_Lighthouse_N:0 "Lighthouse N"
  NAME_nep_Lighthouse_NNE:0 "Lighthouse NNE"
  NAME_nep_Lighthouse_NE:0 "Lighthouse NE"

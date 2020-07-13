@@ -151,3 +151,8 @@
  gov_Krahen_gov:0 "Krah'en Frontline"
  RT_nep_imperator:0 "Imperator"
  RT_nep_vice_imperator:0 "Vice Imperator"
+ 
+ resolution_galactic_focus_SEoOC_galactic_focus_Krahen:0 "$TRIGGER_FAIL$Defeat Kran'en Empire"
+ resolution_galactic_focus_SEoOC_galactic_focus_Krahen_desc:0 "Kran'en Empire are a true crisis and a threat to the entire galaxy. We must unite and defeat the menace."
+ resolution_galactic_focus_crisis_SEoOC_galactic_focus_Krahen_success:0 "$resolution_galactic_focus_crisis_effect_success$"
+ 

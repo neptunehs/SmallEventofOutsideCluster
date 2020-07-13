@@ -33,22 +33,9 @@ opinion_nep_machina_spiritualist = {
 		base = 0
 		
 		modifier = {
-			add = -100
+			add = -25
 			has_ethic = "ethic_spiritualist"
-			FROM = { has_valid_civic = civic_nep_deus_ex_machina }
-		}
-	}
-}
-
-
-opinion_nep_machina_spiritualist = {
-	opinion = {
-		base = 0
-		
-		modifier = {
-			add = -100
-			has_ethic = "ethic_spiritualist"
-			FROM = { has_valid_civic = civic_nep_deus_ex_machina }
+			FROM = { has_origin = origin_nep_deus_ex_machina }
 		}
 	}
 }
@@ -58,9 +45,9 @@ opinion_nep_spiritualist_machina = {
 		base = 0
 		
 		modifier = {
-			add = -100
+			add = -25
 			FROM = { has_ethic = "ethic_spiritualist" }
-			has_valid_civic = civic_nep_deus_ex_machina
+			has_origin = origin_nep_deus_ex_machina
 		}
 	}
 }
@@ -72,7 +59,7 @@ opinion_nep_machina_materialist = {
 		modifier = {
 			add = -20
 			has_ethic = "ethic_materialist"
-			FROM = { has_valid_civic = civic_nep_deus_ex_machina }
+			FROM = { has_origin = origin_nep_deus_ex_machina }
 		}
 	}
 }

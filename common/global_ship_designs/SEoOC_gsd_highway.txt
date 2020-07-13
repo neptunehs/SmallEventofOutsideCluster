@@ -333,4 +333,18 @@ ship_design = {
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }	
-	
+
+ship_design = {
+	name = "NAME_nep_outpost"
+	ship_size = starbase_outpost
+	section = {
+		template = "OUTPOST_STARBASE_SECTION"
+		slot = "mid"
+		
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_RED_LASER"
+		}
+	}
+	required_component="STARBASE_FISSION_REACTOR"
+}

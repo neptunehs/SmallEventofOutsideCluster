@@ -76,3 +76,10 @@
  
  sc_hw_n:1 "$pc_b_star$"
  sc_hw_n_desc:1 "$pc_b_star_desc$"
+ 
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory:0 "$galactic_community$托管环银河高速路"
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_desc:0 "环银河高速路属于全宇宙的财产，必须由$galactic_community$进行托管。不能允许任何国家对其宣示主权！"
+ SEoOC_highway_galactic_trust_territory:0 "$galactic_community$将托管环银河高速路，所有国家都可以自由通过。"
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal:0 "取消$galactic_community$托管环银河高速路"
+ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal_desc:0 "取消$galactic_community$托管环银河高速路，各国将可以进行主权宣示或者占领相关星系。"
+ SEoOC_highway_galactic_trust_territory_repeal:0 "$galactic_community$将取消托管环银河高速路。"

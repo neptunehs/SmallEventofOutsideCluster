@@ -2099,10 +2099,8 @@ ship_event = {
 					auto_delete = yes
 					species = last_created
 					authority = auth_dictatorial
-					civics = {
-						civic = civic_nep_deus_ex_machina
-						civic = random
-					}
+					civics = random
+					origin = origin_nep_deus_ex_machina
 					flag = random
 					ethos = {
 						ethic = ethic_fanatic_spiritualist
@@ -2527,6 +2525,7 @@ ship_event = {
 						type = nep_primitive_machina
 						auto_delete = no
 						species = last_created
+						origin = origin_nep_deus_ex_machina
 						ethos = {
 							ethic = ethic_fanatic_spiritualist
 							ethic = ethic_authoritarian
@@ -2834,10 +2833,7 @@ country_event = {
 			set_graphical_culture = humanoid_01
 			change_government = {
 				authority = auth_dictatorial
-				civics = {
-					civic = civic_nep_deus_ex_machina
-					civic = random
-				}
+				civics = random
 			}
 			set_name = NAME_nep_Country_of_Machina
 			if = {
@@ -2974,10 +2970,7 @@ country_event = {
 			set_graphical_culture = humanoid_01
 			change_government = {
 				authority = auth_dictatorial
-				civics = {
-					civic = civic_nep_deus_ex_machina
-					civic = random
-				}
+				civics = random
 			}
 			set_name = NAME_nep_Country_of_Machina
 			add_resource = {
@@ -3162,7 +3155,7 @@ country_event = {
 				add_district = district_farming
 				add_district = district_mining
 				add_district = district_mining
-				add_district = district_nirator
+				add_district = district_generator
 				add_district = district_generator
 				add_building = building_capital
 				add_building = building_research_lab_1
@@ -4335,7 +4328,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		has_valid_civic = civic_nep_deus_ex_machina
+		has_origin = origin_nep_deus_ex_machina
 	}
 	
 	immediate = {
@@ -4617,7 +4610,7 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		has_valid_civic = civic_nep_deus_ex_machina
+		has_origin = origin_nep_deus_ex_machina
 		years_passed > 80
 		resource_stockpile_compare = {
 			resource = energy
@@ -4655,7 +4648,7 @@ country_event = {
 	picture = GFX_evt_machine_sapience
 	
 	trigger = {
-		has_valid_civic = civic_nep_deus_ex_machina
+		has_origin = origin_nep_deus_ex_machina
 	}
 	
 	is_triggered_only = yes
@@ -4727,14 +4720,14 @@ country_event = {
 	trigger = {
 		has_global_flag = nep_deus_spawn
 		fromfrom = { is_same_value = event_target:nep_deus_home }
-		from = { has_valid_civic = civic_nep_deus_ex_machina }		
+		from = { has_origin = origin_nep_deus_ex_machina }		
 		any_country = {
 			AND = {
 				NOT = { 
 					is_ai = yes
 					has_country_flag = nep_deus_malfunction
 				}
-				has_valid_civic = civic_nep_deus_ex_machina
+				has_origin = origin_nep_deus_ex_machina
 			}
 		}
 		OR = {
@@ -4769,16 +4762,16 @@ planet_event = {
 					is_ai = yes
 					has_country_flag = nep_deus_malfunction
 				}
-				has_valid_civic = civic_nep_deus_ex_machina
+				has_origin = origin_nep_deus_ex_machina
 			}
 		}
-		from = { NOT = { has_valid_civic = civic_nep_deus_ex_machina } }
+		from = { NOT = { has_origin = origin_nep_deus_ex_machina } }
 	}
 	
 	immediate = {
 		random_country = {
 			limit = { 
-				has_valid_civic = civic_nep_deus_ex_machina
+				has_origin = origin_nep_deus_ex_machina
 			}
 			country_event = { id = nep_deuspl.81 }
 		}
@@ -4792,11 +4785,11 @@ country_event = {
 	
 	trigger = {
 		from = { is_same_value = event_target:nep_deus_home }
-		NOT = { has_valid_civic = civic_nep_deus_ex_machina }
+		NOT = { has_origin = origin_nep_deus_ex_machina }
 		any_country = {
 			AND = {
 				is_ai = no
-				has_valid_civic = civic_nep_deus_ex_machina
+				has_origin = origin_nep_deus_ex_machina
 			}
 		}
 		OR = {
@@ -4838,6 +4831,7 @@ country_event = {
 		destroy_country = yes
 	}
 }
+
 country_event = {
 	id = nep_deuspl.9
 	title = "nep_deuspl.9.name"
@@ -4846,18 +4840,24 @@ country_event = {
 	
 	is_triggered_only = yes
 	trigger = {
-		has_valid_civic = civic_nep_deus_ex_machina
+		has_origin = origin_nep_deus_ex_machina
 		from = { is_same_value = root.ruler	}
 	}
 	
 	immediate = {
-		clone_leader = {
-			target = root.owner
-			effect = {
-				save_global_event_target_as = nep_deus_temp_ruler
+		if = {
+			limit = { is_ai = yes }
+			clone_leader = {
+				target = root.owner
+				effect = {
+					save_global_event_target_as = nep_deus_temp_ruler
+				}
 			}
+			country_event = { id = nep_deuspl.91 days = 5 }
 		}
-		country_event = { id = nep_deuspl.91 days = 5 }
+		else = {
+			country_event = { id = nep_deuspl.92 }
+		}
 	}
 	
 	option = {
@@ -4876,6 +4876,28 @@ country_event = {
 		clear_global_event_target = nep_deus_temp_ruler
 	}
 }
+
+country_event = {
+	id = nep_deuspl.92
+	title = "nep_deuspl.92.name"
+	desc = "nep_deuspl.92.desc"
+	picture = GFX_evt_glitchy_matrix
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = nep_deuspl.92.a
+	}
+	
+	after = {
+		destroy_country = yes
+	}
+}
+
 #############################################
 # Guide a Girl to the Galaxy
 #############################################
@@ -8106,7 +8128,7 @@ country_event = {
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
 		NOT = { has_country_flag = nep_whitegoo_8000_temp }
-		count_owned_ships = {
+		count_owned_ship = {
 			count >=3
 			limit = { is_ship_size = nep_station_whitegoo }
 		}
