@@ -7,6 +7,7 @@
  
  nep_wohp.1000.name:0 "发现新的虫洞"
  nep_wohp.1000.desc:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ nep_wohp.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_wohp_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
  
  nep_wohp.2000.name:0 "未探索星系"
  nep_wohp.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个$pc_nuked$跟一个$pc_habitat$，双方都存在生命迹象，但没有对我们的接触信息发出回复。情况很奇怪，难道一个$pc_habitat$上面会没有能够跟我们进行沟通的高层次文明？"
@@ -139,6 +140,10 @@
  #########################################
  # deus
  ######################################### 
+ nep_deus.1000.name:0 "发现新的虫洞"
+ nep_deus.1000.desc:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ nep_deus.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_deus_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ 
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个奇怪的国家：一个巨型计算机领导的，主体民族是生物，且没有巨型计算机的端末以外的其他机器人的国家。貌似它们从原始族群时代就已经将这个计算机封为神，形成了一个很有特色的神权国家。"
  
@@ -147,7 +152,7 @@
  nep_deus.4.a:0 "这群人疯了？"
  
  nep_deus.4000.name:0 "暴走"
- nep_deus.4000.desc:0 "貌似[event_target:nep_deus_country.GetName]对几乎所有的国家都进行了宣战。看来它的内部逻辑出问题，把所有的已知生物都当做需要消灭的威胁了。它所有的子民都完全信任这个结论，看来战争不可避免。"
+ nep_deus.4000.desc:0 "貌似[event_target:nep_deus_country.GetName]对几乎所有的国家都进行了敌对宣告。看来它的内部逻辑出问题，把所有的已知生物都当做需要消灭的威胁了。它所有的子民都完全信任这个结论，看来战争不可避免。"
  nep_deus.4000.a:0 "真不靠谱。"
  nep_deus.4000.b:0 "进行自检工作。我们不能犯一样的错误。"
  
@@ -291,7 +296,7 @@
  nep_deuspl.9.name:0 "快速修理程序启动。"
  nep_deuspl.9.desc:0 "被损伤的计算机将会很快修复，并且再度君临国家。"
  
- nep_deuspl.92.name:0 "GAME OVER"
+ nep_deuspl.92.name:0 "最后的通知"
  nep_deuspl.92.desc:0 "因为某些原因，机神已经断开连接。一切都已经完了。"
  nep_deuspl.92.a:0 "GAME OVER."
  

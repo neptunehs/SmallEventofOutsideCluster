@@ -126,6 +126,13 @@ on_planet_attackers_win = {
 	}
 }
 
+on_planet_defenders_win = {
+	events = {
+		nep_dragon.4001
+		nep_dragon.4002
+	}
+}
+
 on_planet_attackers_lose = {
 	events = {
 		nep_wohp.47

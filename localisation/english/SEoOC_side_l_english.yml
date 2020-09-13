@@ -8,6 +8,7 @@
  ######################################### 
  nep_wohp.1000.name:0 "Found a new wormhole"
  nep_wohp.1000.desc:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
+ nep_wohp.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole in §Y[event_target:nep_wohp_system_alternative.GetName]§! affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
  
  nep_wohp.2000.name:0 "Unexplored System"
  nep_wohp.2000.desc:0 "[From.GetName] has entered a system we have never explored. There is a $pc_nuked$ and a $pc_habitat$ in this system. There are signs of life on both sides, but no communication to us. This situation is very strange:Is there a civilization on a $pc_habitat$ which havn't enough level of technology that can communicate with us?"
@@ -22,7 +23,7 @@
  nep_wohp.3.c:0 "No matter what they are."
  
  nep_wohp.4.name:0 "[event_target:nep_gaia_country.GetName]"
- nep_wohp.4.desc:0 "......communication from aliens? How did you access our communications?......No, forget it, it doesn't matter.Here is [event_target:nep_gaia_country.GetName],Is there any need for this "hell"?To treat us all as slaves like [event_target:nep_highlander_country.GetName], or to annihilate us?"
+ nep_wohp.4.desc:0 "......Communication from aliens? How did you access our communications network?......Ah,nevermind,it doesn't matter.Here is [event_target:nep_gaia_country.GetName],Is there any need for this "hell"?To treat us all as slaves like [event_target:nep_highlander_country.GetName], or to annihilate us?"
  nep_wohp.4.a:0 "Here is [Root.GetName].Would you like to introduce yourself first?？"
  nep_wohp.4.a.response:0 "Self-introduction......?So curious,aren't you?Why so interested in those half-dead people who are struggling in hell?Well......You came from the universe,you should be able to see our Mother Gaia:she is full of darkness and despair.It used to be a beautiful planet, and there is a very developed civilization that can enter and travel the universe.But then it faded:[event_target:nep_gaia_country.capital_scope.GetName] and $pc_habitat$, known as [event_target:nep_highlander_country.Capital_Scope.GetName], have left a lot of relics and descendants----that is, we and the "Highlanders" who live in the [event_target:nep_highlander_country.Capital_Scope.GetName].Our technology is in a very serious recession,and Most of the ruins are no longer possible to use.There are more relics available in [event_target:nep_highlander_country.GetName],but in the long-term recession they have even lost their historical heritage,so think they are higher than us----in fact we are all same species----And think that our "lower creatures" should be taken for granted as their slaves.They do everything evil to us,without their hands get dirty----but the slaves who have been caught and mind-control do.We have endured many years of disasters, and the beautiful planet has become the planet of death.We can only organized to form the Resistance Army, relying on the only operational relics to build powerful weapons and equip them with the only soldiers,go through the sacred "Light Path"----as if the ancient name was the Equator Elevator---- and counter-attacks.As long as we kill the scared leader of [event_target:nep_highlander_country.GetName], their sacredness will be lost and everything may be reversed."
  nep_wohp.4.b:0 "Maybe we are coming to be your savior?"
@@ -139,6 +140,10 @@
  #########################################
  # deus
  ######################################### 
+ nep_deus.1000.name:0 "Found a new wormhole"
+ nep_deus.1000.desc:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
+ nep_deus.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole in §Y[event_target:nep_deus_system_alternative.GetName]§! affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
+ 
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god from primitive era and formed a very distinctive theocratic state."
  
@@ -147,7 +152,7 @@
  nep_deus.4.a:0 "Are they crazy?"
  
  nep_deus.4000.name:0 "Malfunction"
- nep_deus.4000.desc:0 "It looks like [event_target:nep_deus_country.GetName] has declared war on almost all countries. It seems that it has some internal logic problem, and all known creatures are treated as threats that need to be eliminated. All their people fully trust this conclusion, it seems that war is inevitable."
+ nep_deus.4000.desc:0 "It looks like [event_target:nep_deus_country.GetName] has declared hostile on almost all countries. It seems that it has some internal logic problem, and all known creatures are treated as threats that need to be eliminated. All their people fully trust this conclusion, it seems that war is inevitable."
  nep_deus.4000.a:0 "Unreliable."
  nep_deus.4000.b:0 "Do self-tests. We can't make the same mistake."
  
@@ -291,7 +296,7 @@
  nep_deuspl.9.name:0 "Quick repair procedure starts."
  nep_deuspl.9.desc:0 "The damaged computer will be repaired soon and will lead the country again."
  
- nep_deuspl.92.name:0 "GAME OVER"
+ nep_deuspl.92.name:0 "Final Notification"
  nep_deuspl.92.desc:0 "For some reason,Machina has out-lined.Everything is over."
  nep_deuspl.92.a:0 "GAME OVER."
  

@@ -813,9 +813,14 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		fromfrom = {
-			exists = controller
-			controller = { is_country_type = nep_Legnahcras_country } 
+		OR = {
+			from = { is_country_type = nep_Legnahcras_country }
+			fromfrom = {
+				AND = {
+					exists = controller
+					controller = { is_country_type = nep_Legnahcras_country }
+				}
+			}
 		}
 	}
 	
@@ -855,9 +860,14 @@ country_event = {
 	is_triggered_only = yes
 		
 	trigger = {
-		fromfrom = { 
-			exists = controller
-			controller = { is_country_type = nep_Legnahcras_country } 
+		OR = {
+			from = { is_country_type = nep_Legnahcras_country }
+			fromfrom = {
+				AND = {
+					exists = controller
+					controller = { is_country_type = nep_Legnahcras_country }
+				}
+			}
 		}
 	}
 	

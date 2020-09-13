@@ -2018,11 +2018,21 @@ country_event = {
 					owner = root 
 				}
 			}
-			every_country = {
-				limit = { NOT = { has_country_flag = nep_highway_founder } }
+			every_playable_country = {
+				limit = { 
+					NOR = { 
+						has_country_flag = nep_highway_founder 
+						is_in_federation_with = root
+						has_defensive_pact = root
+						is_overlord_to = root
+						is_loyal_to = root
+						is_disloyal_to = root
+						is_primitive = yes						
+					}
+				}
 				root = {
 					set_closed_borders = {
-						who = prev
+						who = root
 						status = yes
 					}
 				}
@@ -2042,6 +2052,7 @@ country_event = {
 			create_country = {
 				name = NAME_nep_galactic_trust_territorys_highway
 				type = nep_galactic_trust_territorys
+				#type = default
 				auto_delete = no
 				flag = {
 					icon = {

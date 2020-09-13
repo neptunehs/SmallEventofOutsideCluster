@@ -64,6 +64,10 @@ resolution_galactic_focus_SEoOC_galactic_focus_Krahen = {
 			}
 		}
 		modifier = {
+			factor = 1.5
+			has_country_flag = nep_Krahen_victim
+		}
+		modifier = {
 			factor = 0.75
 			NOT = {
 				any_neighbor_country = {
@@ -132,7 +136,7 @@ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory = {
 	target = no
 
 	effect = {
-		custom_tooltip = SEoOC_highway_galactic_trust_territory_repeal
+		custom_tooltip = SEoOC_highway_galactic_trust_territory
 		hidden_effect = {
 			country_event = { id = nep_highway.9 }
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_general days = @resolution_flag_timer }
@@ -233,7 +237,7 @@ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal = {
 
 	potential = {
 		has_global_flag = nep_highway_used
-		is_active_resolution = "resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal"
+		is_active_resolution = "resolution_commerce_industry_SEoOC_highway_galactic_trust_territory"
 	}
 
 	modifier = {

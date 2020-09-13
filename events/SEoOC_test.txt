@@ -1169,3 +1169,37 @@ planet_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nep_test.28
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		create_country = {
+			name = NAME_nep_galactic_trust_territorys_highway
+			type = nep_galactic_trust_territorys
+			auto_delete = no
+			flag = {
+				icon = {
+					category = "ornate"
+					file = "flag_ornate_24.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors ={
+					"teal"
+					"dark_teal"
+					"null"
+					"null"
+				}
+			}
+		}	
+	}
+}

@@ -25,6 +25,7 @@ fleet_event = {
 						exists = starbase
 						starbase = {
 							owner = { NOT = { has_country_flag = nep_Krahen_country } }
+							owner = { NOT = { has_country_flag = nep_galactic_trust_territorys_highway } }
 						}
 					}
 					any_system_planet = {
@@ -111,6 +112,7 @@ fleet_event = {
 								exists = starbase
 								starbase = {
 									owner = { NOT = { has_country_flag = nep_Krahen_country } }
+									owner = { NOT = { has_country_flag = nep_galactic_trust_territorys_highway } }
 								}
 							}
 							any_system_planet = {
@@ -180,6 +182,7 @@ fleet_event = {
 									is_under_colonization = yes
 								}
 								NOT = { owner = { has_country_flag = nep_Krahen_country } }
+								NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 							}
 						}
 						random_system_planet = {
@@ -189,7 +192,8 @@ fleet_event = {
 									is_colony = yes
 									is_under_colonization = yes
 								}
-								NOT = { owner = { has_country_flag = nep_Krahen_country } }
+								NOT = { owner = { has_country_flag = nep_Krahen_country } }								
+								NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 							}
 							#log = "[Root.GetName]:1001:[This.GetName]:Y"
 							root = {
@@ -274,7 +278,8 @@ fleet_event = {
 									is_colony = yes
 									is_under_colonization = yes
 								}
-								NOT = { owner = { has_country_flag = nep_Krahen_country } }
+								NOT = { owner = { has_country_flag = nep_Krahen_country } }								
+								NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 							}
 						}
 						random_system_planet = {
@@ -284,7 +289,8 @@ fleet_event = {
 									is_colony = yes
 									is_under_colonization = yes
 								}
-								NOT = { owner = { has_country_flag = nep_Krahen_country } }
+								NOT = { owner = { has_country_flag = nep_Krahen_country } }								
+								NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 							}
 							#log = "[Root.GetName]:1001:[This.GetName]:Y"
 							root = {
@@ -313,7 +319,8 @@ fleet_event = {
 							random_fleet_in_system = {
 								limit = {
 									exists = owner
-									NOT = { owner = { has_country_flag = nep_Krahen_country } }
+									NOT = { owner = { has_country_flag = nep_Krahen_country } }									
+									NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 								}
 								save_event_target_as = nep_1001_temp_2
 							}
@@ -643,7 +650,7 @@ country_event = {
 	}
 }
 
-#on_planet_zero_health,planet attack begin
+#on_planet_bombarded,planet attack begin
 planet_event = {
 	id = nep_kai.1030
 	hide_window = yes
@@ -813,6 +820,32 @@ country_event = {
 	}
 }
 
+planet_event = {
+	id = nep_kai.1033
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	pre_triggers = {
+		has_owner =	yes
+	}
+	
+	trigger = {
+		has_global_flag = nep_Krahen_crisis
+		planet_devastation >= 100
+		from = { 
+			has_country_flag = nep_Krahen_country
+		}
+		owner = { is_ai = yes }
+	}
+	
+	immediate = {
+		random_list = {
+			1 = { change_pc = pc_shattered }
+			299 = { break = yes }
+		}
+	}	
+}
 #on_planet_zero_pops,fire 1011
 planet_event = {
 	id = nep_kai.1040
@@ -910,7 +943,8 @@ fleet_event = {
 							AND = {
 								exists = starbase
 								starbase = {
-									owner = { NOT = { has_country_flag = nep_Krahen_country } }
+									owner = { NOT = { has_country_flag = nep_Krahen_country } }									
+									NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 								}
 							}
 							any_system_planet = {
@@ -1416,7 +1450,8 @@ fleet_event = {
 							is_colony = yes
 							is_under_colonization = yes
 						}
-						NOT = { owner = { has_country_flag = nep_Krahen_country } }
+						NOT = { owner = { has_country_flag = nep_Krahen_country } }						
+						NOT = { owner = { has_country_flag = nep_galactic_trust_territorys_highway } }
 					}
 				}
 				random_system_planet = {
@@ -1505,11 +1540,9 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					any_ship_in_system = {
-						fleet = {
-							is_ship_size = constructor
-							NOT = { has_fleet_flag = nep_Krahen_following_target_constructor }
-						}
+					any_fleet_in_system = {
+						is_ship_size = constructor
+						NOT = { has_fleet_flag = nep_Krahen_following_target_constructor }
 					}
 				}
 				random_fleet_in_system = {

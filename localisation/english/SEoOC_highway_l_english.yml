@@ -82,4 +82,5 @@
  SEoOC_highway_galactic_trust_territory:0 "The Surround-Galaxy Highway will be trusteed by $galactic_community$,everyone will get border access to it."
  resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal:0 "Repeal Surround-Galaxy Highway Trust Territory"
  resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal_desc:0 "Repeal Surround-Galaxy Highway Trust Territory."
- SEoOC_highway_galactic_trust_territory_repeal:0 "The Surround-Galaxy Highway will not be trusteed by $galactic_community$."
+ SEoOC_highway_galactic_trust_territory_repeal:0 "The Surround-Galaxy Highway will not be trusteed by $galactic_community$." 
+ resolution_category_SEoOC_commerce_industry_highway:0 "$galactic_community$ Trust Territory - Surround-Galaxy Highway"

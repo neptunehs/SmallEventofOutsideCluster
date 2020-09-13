@@ -33,7 +33,15 @@ nep_st_is_not_outer_or_fe_system = {
 		has_star_flag = nep_whitegoo_origin
 		has_star_flag = nep_guide_init
 		has_star_flag = miniature_universe
-		has_star_flag = giga_galactic_center 		
+		has_star_flag = giga_galactic_center 	
+		has_star_flag = Kuat_system_1
+		has_star_flag = Kuat_system_2
+		has_star_flag = Kuat_system_3
+		has_star_flag = Kuat_system
+		has_star_flag = ag_exe_invasion_gate_system
+		has_star_flag = ag_no_jump_out_system
+		has_star_flag = wg_naming_ship_system
+		has_star_flag = ehof_compound_system
 	}
 }
 
@@ -72,6 +80,14 @@ nep_st_is_not_outer_system = {
 		has_star_flag = nep_guide_init
 		has_star_flag = miniature_universe
 		has_star_flag = giga_galactic_center 
+		has_star_flag = Kuat_system_1
+		has_star_flag = Kuat_system_2
+		has_star_flag = Kuat_system_3
+		has_star_flag = Kuat_system
+		has_star_flag = ag_exe_invasion_gate_system
+		has_star_flag = ag_no_jump_out_system
+		has_star_flag = wg_naming_ship_system
+		has_star_flag = ehof_compound_system
 	}
 }
 

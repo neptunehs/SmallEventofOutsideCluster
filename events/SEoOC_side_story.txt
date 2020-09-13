@@ -163,9 +163,30 @@ ship_event = {
 			}
 		}
 		solar_system = {
-			spawn_natural_wormhole = {
-				bypass_type = wormhole
-				random_pos = yes
+			if = {
+				limit = { has_natural_wormhole = no }
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = yes
+				}
+			}
+			else = {
+				closest_system = {
+					min_steps = 1
+					limit = { 
+						has_natural_wormhole = no 
+						is_fe_cluster = no
+						NOT = { has_star_flag = sealed_system }
+						NOT = { has_star_flag = hostile_system }
+						NOT = { has_star_flag = guardian }
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+					}
+					save_global_event_target_as = nep_wohp_system_alternative
+				}
+				set_global_flag = nep_wohp_system_alternative
 			}
 		}
 		random_system = {
@@ -176,7 +197,13 @@ ship_event = {
 				bypass_type = wormhole
 				random_pos = yes
 			}
-			link_wormholes = root.solar_system
+			if = { 
+				limit = { has_global_flag = nep_wohp_system_alternative }
+				link_wormholes = event_target:nep_wohp_system_alternative
+			}
+			else = {
+				link_wormholes = root.solar_system
+			}
 		}
 		owner = { country_event = { id = nep_wohp.1000 } }
 	}
@@ -185,17 +212,31 @@ ship_event = {
 country_event = {
 	id = nep_wohp.1000
 	title = "nep_wohp.1000.name"
-	desc = "nep_wohp.1000.desc"
+	desc = {
+		trigger = { NOT = { has_global_flag = nep_wohp_system_alternative } }
+		text = "nep_wohp.1000.desc"
+	}
+	desc = {
+		trigger = { has_global_flag = nep_wohp_system_alternative } 
+		text = "nep_wohp.1000.desc.b"
+	}
 	picture = GFX_evt_wormhole
 	show_sound = event_ship_bridge
 	location = FROM
 	
 	is_triggered_only = yes
 	
-	immediate = { }
+	immediate = {
+	
+	}
 	
 	option = {
 		name = OK
+	}
+	
+	after = {		
+		remove_global_flag = nep_wohp_system_alternative
+		clear_global_event_target = nep_wohp_system_alternative
 	}
 }
 
@@ -2044,9 +2085,30 @@ ship_event = {
 		}
 		set_spawn_system_batch = end
 		solar_system = {
-			spawn_natural_wormhole = {
-				bypass_type = wormhole
-				random_pos = yes
+			if = {
+				limit = { has_natural_wormhole = no }
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = yes
+				}
+			}
+			else = {
+				closest_system = {
+					min_steps = 1
+					limit = { 
+						has_natural_wormhole = no 
+						is_fe_cluster = no
+						NOT = { has_star_flag = sealed_system }
+						NOT = { has_star_flag = hostile_system }
+						NOT = { has_star_flag = guardian }
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+					}
+					save_global_event_target_as = nep_deus_system_alternative
+				}
+				set_global_flag = nep_deus_system_alternative
 			}
 		}
 		random_system = {
@@ -2057,9 +2119,15 @@ ship_event = {
 				bypass_type = wormhole
 				random_pos = yes
 			}
-			link_wormholes = root.solar_system
+			if = { 
+				limit = { has_global_flag = nep_deus_system_alternative }
+				link_wormholes = event_target:nep_deus_system_alternative
+			}
+			else = {
+				link_wormholes = root.solar_system
+			}
 		}
-		owner = { country_event = { id = nep_wohp.1000 } }
+		owner = { country_event = { id = nep_deus.1000 } }
 		random_list = {
 			28 = { ship_event = { id = nep_deus.1 } }
 			13 = { ship_event = { id = nep_deuspi.1 } }
@@ -2067,6 +2135,36 @@ ship_event = {
 	}
 }
 
+country_event = {
+	id = nep_deus.1000
+	title = "nep_deus.1000.name"
+	desc = {
+		trigger = { NOT = { has_global_flag = nep_deus_system_alternative } }
+		text = "nep_deus.1000.desc"
+	}
+	desc = {
+		trigger = { has_global_flag = nep_deus_system_alternative } 
+		text = "nep_deus.1000.desc.b"
+	}
+	picture = GFX_evt_wormhole
+	show_sound = event_ship_bridge
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+	}
+	
+	after = {		
+		remove_global_flag = nep_deus_system_alternative
+		clear_global_event_target = nep_deus_system_alternative
+	}
+}
 
 ship_event = {
 	id = nep_deus.1
@@ -2306,13 +2404,29 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = {		
+	immediate = {	
+		change_government = {
+			civics = {
+				civic = civic_imperial_cult
+				civic = civic_exalted_priesthood
+				civic = civic_fanatic_purifiers
+			}
+		}
 		set_policy = {
 			policy = orbital_bombardment
 			option = orbital_bombardment_armageddon
 			cooldown = no
-		} 
-		every_country = {
+		}
+		set_subject_of = {
+			who = none
+		}
+		every_subject = {		
+			set_subject_of = {
+				who = none
+			}
+		}
+		remove_from_galactic_community = yes
+		every_playable_country = {
 			limit = { 
 				is_country_type = default 
 				NOT = { is_same_value = event_target:nep_deus_country }
@@ -2321,12 +2435,12 @@ country_event = {
 				limit = { NOT = { has_communications = event_target:nep_deus_country } }
 				establish_communications_no_message = event_target:nep_deus_country
 			}
-			event_target:nep_deus_country = {
-				declare_war = {
-					target = prev
-					attacker_war_goal = wg_nep_deus_cleaning_war
-				}
-			}
+			# event_target:nep_deus_country = {
+				# declare_war = {
+					# target = prev
+					# attacker_war_goal = wg_nep_deus_cleaning_war
+				# }
+			# }
 			country_event = { id = nep_deus.4 }
 		}
 	}
@@ -2398,6 +2512,10 @@ country_event = {
 	immediate = {
 		FromFrom = {
 			remove_building = building_nep_palace_of_machina
+			owner = {
+				kill_leader = { type = ruler show_notification = yes }
+				set_country_flag = nep_deus_killed_leader
+			}
 		}
 		From = {
 			remove_modifier = nep_deus_malfunction
@@ -4842,6 +4960,7 @@ country_event = {
 	trigger = {
 		has_origin = origin_nep_deus_ex_machina
 		from = { is_same_value = root.ruler	}
+		NOT = { has_country_flag = nep_deus_killed_leader }
 	}
 	
 	immediate = {

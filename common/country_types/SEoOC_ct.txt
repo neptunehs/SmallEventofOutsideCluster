@@ -451,10 +451,12 @@ nep_global_for_protrait = {
 
 nep_galactic_trust_territorys = {
 	share_communications = no
+	blocks_piracy = yes
 	playable = no
 	#default_ships = no
 	government = no
 	observable = no
+	enforces_borders = no
 	show_in_contacts_list = no
 	ai = {
 		enabled = no
@@ -469,6 +471,7 @@ nep_galactic_trust_territorys = {
 	}
 	modules = {
 		standard_event_module = {} # Needed for events
+		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
 		standard_leader_module = {}
 	}
 }
