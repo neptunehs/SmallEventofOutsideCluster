@@ -248,3 +248,22 @@ tech_gaia_super_weapon = {
 		factor = 2
 	}
 }
+
+tech_nep_ugo_tech = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { biology }
+	is_rare = yes
+	weight = @tier3weight3
+	is_reverse_engineerable = no
+	icon = tech_biomechanics
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		factor = 2
+	}
+}

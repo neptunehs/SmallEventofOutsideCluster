@@ -676,16 +676,24 @@ country_event = {
 						limit = { has_global_flag = giga_core_birch }
 						set_star_flag = giga_core_01
 						random_system_planet = {
-							limit = { has_planet_flag = nep_grand_seal }
-							set_planet_size = 10
+							limit = {
+								has_planet_flag = nep_grand_seal
+								NOT = { is_planet_class = pc_core_black_hole }
+							}
+							set_planet_size = 20
 							change_pc = pc_core_black_hole
 						}
 					}
 					if = {
-						limit = { has_global_flag = giga_core_qso }
+						limit = { 
+							has_global_flag = giga_core_qso							
+						}
 						set_star_flag = giga_core_02
 						random_system_planet = {
-							limit = { has_planet_flag = nep_grand_seal }
+							limit = {
+								has_planet_flag = nep_grand_seal
+								NOT = { is_planet_class = pc_core_quasar }
+							}
 							set_planet_size = 10
 							change_pc = pc_core_quasar
 						}

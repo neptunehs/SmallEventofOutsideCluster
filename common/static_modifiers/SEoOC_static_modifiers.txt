@@ -809,3 +809,22 @@ nep_whitegoo_fleet_3 = {
 nep_gpc_piracy = {
 	local_trade_protection_add = -12
 }
+
+#############################################
+# ugo
+#############################################
+nep_ugo_dangerous_creature = {
+	pop_environment_tolerance = -100
+	icon = "gfx/interface/icons/planet_modifiers/pm_dangerous_wildlife.dds"
+	icon_frame = 7
+}
+
+nep_ugo_hell = {
+	pop_environment_tolerance = -100
+	icon = "gfx/interface/icons/planet_modifiers/pm_bleak.dds"
+	icon_frame = 7
+}
+
+relic_activation_cooldown_nep_ugo_relic = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}

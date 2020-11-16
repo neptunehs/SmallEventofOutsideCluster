@@ -1,6 +1,6 @@
 ﻿l_english:
  #########################################
- # whop
+ # gpc
  #########################################
  nep_gpc.1.desc:0 "Hello, mighty §Y[Root.GetName]§!. We now have a shipment to §Y[event_target:nep_escort_destiny.GetName]§!, but according to reliable sources, the journey is not smooth. I hope you can provide escort. If completed, we will pay you 3000 §Y$energy$§!, 1500 §Y$consumer_goods$§!."
  nep_gpc.1.a:0 "Deal."
@@ -11,7 +11,7 @@
  
  nep_gpc.1002.desc:0 "Unfortunately, you have broken the contract. According to the prior agreement, I will charge you a penalty of 500 §Y$energy$§!."
  
- nep_gpc.2.desc:0 "Now that you are ready, let's go. The destination of the fleet is:§Y[event_target:nep_escort_destiny.GetName]§!。"
+ nep_gpc.2.desc:0 "Now that you are ready, let's go. The destination of the fleet is:§Y[event_target:nep_escort_destiny.GetName]§!."
  
  nep_gpc.2003.name:0 "Pirates Destroyed"
  nep_gpc.2003.desc:0 "The pirate fleet at §Y[fromfrom.solar_system.GetName]§! has been destroyed. We caught the captives who had escaped using the escape capsule. What to do?"

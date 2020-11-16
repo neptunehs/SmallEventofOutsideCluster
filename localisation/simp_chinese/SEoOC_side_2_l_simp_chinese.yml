@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  #########################################
- # whop
+ # gpc
  #########################################
  nep_gpc.1.desc:0 "你好，强大的§Y[Root.GetName]§!。我们现在有一批货需要运到§Y[event_target:nep_escort_destiny.GetName]§!，但根据可靠的消息来源显示这一路上不是很平稳，希望你们能够提供护送。如果完成，我们将会支付你们3000§Y$energy$§!，1500§Y$consumer_goods$§!。"
  nep_gpc.1.a:0 "成交。"

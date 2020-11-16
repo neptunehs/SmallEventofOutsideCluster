@@ -902,8 +902,11 @@ country_event = {
 				}
 			}
 		}
-		event_target:nep_highlander_country = {
-			destroy_country = yes
+		if = {
+			limit = { exists = event_target:nep_highlander_country }
+			event_target:nep_highlander_country = {
+				destroy_country = yes
+			}
 		}
 	}
 	
@@ -1928,23 +1931,6 @@ country_event = {
 }
 
 #############################################
-# X
-#############################################
-
-namespace = nep_X_creatures
-ship_event = {
-	id = nep_X_creatures.1
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	fire_only_once = yes
-	
-	immediate = {
-		set_global_flag = nep_X_creatures_spawn
-	}
-}
-#############################################
 # Omega Virus
 #############################################
 namespace = nep_omega
@@ -2193,7 +2179,7 @@ ship_event = {
 				}
 				create_country = {
 					name = NAME_nep_Country_of_Machina
-					type = default
+					type = nep_machina
 					auto_delete = yes
 					species = last_created
 					authority = auth_dictatorial
@@ -2266,6 +2252,134 @@ ship_event = {
 				size = starbase_citadel
 				module = shipyard
 				module = shipyard
+			}
+			starbase = {
+				save_event_target_as = nep_deus_system_starbase
+			}
+			create_fleet = {
+				name = "NAME_Enigmatic_Fortress"
+				settings = {
+					spawn_debris = no
+					is_boss = yes
+					uses_naval_capacity = no
+					garrison = yes
+				}
+				effect = {
+					set_owner = event_target:nep_deus_country
+					while = {
+						count = 1 #just to show-case that formation will tile
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Vault"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Guardian"
+							graphical_culture = "ancient"
+						}			
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Guardian"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Warden"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Warden"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Defender"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Defender"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Defender"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Defender"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+						create_ship = {
+							name = ""
+							design = "NAME_Ancient_Sentinel"
+							graphical_culture = "ancient"
+						}
+					}
+					set_fleet_formation = {
+						position = { x = 13.0	y = -7.0	} #17
+						position = { x = 11.5	y = -13.0	} #16
+						position = { x = 0.0	y = -15.5	} #15
+						position = { x = 13.0	y = 7.0		} #14
+						position = { x = -11.8	y = -4.0	} #13
+						position = { x = -15.8	y = 6.5		} #12
+						position = { x = -10.0	y = 8.5		} #11
+						position = { x = -1.6	y = 15.0	} #10
+						position = { x = 14.0	y = -3.0	} #9
+						position = { x = 1.3	y = -11.0	} #8
+						position = { x = -10.5	y = 1.0		} #7
+						position = { x = 3.0	y = 8.0		} #6
+						position = { x = -4.3	y = -7.0	} #5
+						position = { x = 8.0	y = 9.0		} #4
+						position = { x = -4.0	y = 7.3		} #3 
+						position = { x = 7.5	y = -10.5	} #2
+						position = { x = 0.0	y = 0.0		} #1
+					}
+					set_formation_scale = 0.5
+					set_location = {
+						target = event_target:nep_deus_system_starbase
+						distance = 45
+						angle = 1
+					}
+				}
 			}
 		}
 		every_system = {
@@ -2404,14 +2518,13 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = {	
-		change_government = {
-			civics = {
-				civic = civic_imperial_cult
-				civic = civic_exalted_priesthood
-				civic = civic_fanatic_purifiers
-			}
-		}
+	immediate = {
+		country_remove_ethic = ethic_fanatic_spiritualist
+		country_remove_ethic = ethic_authoritarian
+		country_add_ethic =	ethic_spiritualist
+		country_add_ethic =	ethic_fanatic_xenophobe
+		force_remove_civic = civic_barbaric_despoilers		
+		force_add_civic = civic_fanatic_purifiers
 		set_policy = {
 			policy = orbital_bombardment
 			option = orbital_bombardment_armageddon
@@ -2704,6 +2817,7 @@ ship_event = {
 						name = "NAME_nep_machina"
 						skill = 10
 						event_leader = yes
+						immortal = yes
 					}
 					set_leader = last_created_leader
 				}
@@ -8670,5 +8784,1565 @@ country_event = {
 		name = nep_whitegoo.9999.a
 		add_research_option = tech_nanite_transmutation
 		hidden_effect = { set_country_flag = nep_whitegoo_9999_triggered }
+	}
+}
+
+#############################################
+# UGO
+#############################################
+
+namespace = nep_ugo
+ship_event = {
+	id = nep_ugo.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = nep_ugo_spawn
+		set_spawn_system_batch = begin
+		no_scope = {
+			spawn_system = {
+				min_distance >= 492
+				max_distance <= 498
+				min_orientation_angle = -172
+				max_orientation_angle = -166
+				hyperlane = no
+				initializer = nep_ugo_init
+			}
+		}
+		set_spawn_system_batch = end
+		solar_system = {
+			if = {
+				limit = { has_natural_wormhole = no }
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = yes
+				}
+			}
+			else = {
+				closest_system = {
+					min_steps = 1
+					limit = { 
+						has_natural_wormhole = no 
+						is_fe_cluster = no
+						NOT = { has_star_flag = sealed_system }
+						NOT = { has_star_flag = hostile_system }
+						NOT = { has_star_flag = guardian }
+					}
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+					}
+					save_global_event_target_as = nep_ugo_system_alternative
+				}
+				set_global_flag = nep_ugo_system_alternative
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nep_ugo_system
+			}
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = yes
+			}
+			if = { 
+				limit = { has_global_flag = nep_ugo_system_alternative }
+				link_wormholes = event_target:nep_ugo_system_alternative
+			}
+			else = {
+				link_wormholes = root.solar_system
+			}
+		}
+		random_planet = {
+			limit = { has_planet_flag = nep_ugo_US388 }			
+			save_global_event_target_as = nep_ugo_US388
+		}
+		owner = { country_event = { id = nep_ugo.1000 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.1000
+	title = "nep_ugo.1000.name"
+	desc = {
+		trigger = { NOT = { has_global_flag = nep_ugo_system_alternative } }
+		text = "nep_ugo.1000.desc"
+	}
+	desc = {
+		trigger = { has_global_flag = nep_ugo_system_alternative } 
+		text = "nep_ugo.1000.desc.b"
+	}
+	picture = GFX_evt_wormhole
+	show_sound = event_ship_bridge
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+	
+	option = {
+		name = OK
+	}
+	
+	after = {		
+		remove_global_flag = nep_ugo_system_alternative
+		clear_global_event_target = nep_ugo_system_alternative
+	}
+}
+
+#on_planet_surveyed
+planet_event = {
+	id = nep_ugo.1001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_planet_flag = nep_ugo_US388
+		from = { is_country_type = default }
+		NOT = { has_global_flag = nep_ugo_surveyed }
+	}
+	
+	immediate = { 
+		from = {
+			if = {
+				limit = { is_ai = no }
+				set_country_flag = nep_ugo_target
+				country_event = { id = nep_ugo.1002 }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = nep_ugo.1002
+	title = "nep_ugo.1002.name"
+	desc = "nep_ugo.1002.desc"
+	picture = GFX_evt_wormhole
+	location = From.fromfrom
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = nep_ugo.1002.a		
+		enable_special_project = {
+			name = "nep_ugo_project_0"
+			location = event_target:nep_ugo_US388
+			owner = root
+		}
+	}
+}
+
+ship_event = {
+	id = nep_ugo.1003
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		event_target:nep_ugo_US388 = {
+			remove_modifier = nep_ugo_dangerous_creature
+			set_global_flag = nep_ugo_dangerous_creature_removed
+			fleet = {
+				random_owned_ship = {
+					destroy_ship = this
+				}
+				random_owned_ship = {
+					destroy_ship = this
+				}
+				random_owned_ship = {
+					destroy_ship = this
+				}
+				random_owned_ship = {
+					destroy_ship = this
+				}
+				random_owned_ship = {
+					destroy_ship = this
+				}
+			}
+		}
+		owner = { country_event = { id = nep_ugo.1004 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.1004
+	title = "nep_ugo.1004.name"
+	desc = "nep_ugo.1004.desc"
+	picture = GFX_evt_wormhole
+	location = From
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}	
+}
+
+country_event = {
+	id = nep_ugo.2000
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = nep_ugo_dangerous_creature_removed
+		any_country = {
+			has_country_flag = nep_ugo_target
+		}
+		is_same_value = event_target:global_event_country
+		mid_game_years_passed >= 15
+	}
+	
+	immediate = {
+		country_event = { id = nep_ugo.2001 days = 360 random = 7200 }
+	}
+}
+
+
+country_event = {
+	id = nep_ugo.2001
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			1 = { country_event = { id = nep_ugo.2 days = 5 random = 355 } }
+			2 = { country_event = { id = nep_ugo.2001 days = 360 random = 3600 } }
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.2
+	hide_window = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_planet = {
+			limit = { has_planet_flag = nep_ugo_US388 }	
+			create_country = {
+				name = "NAME_nep_Ghost_Science_Ship"
+				type = nep_ugo_first_ship
+				effect = {
+					save_event_target_as = nep_ugo_first_ship
+				}
+			}
+			create_fleet = {
+				name = "NAME_nep_Ghost_Science_Ship"
+				effect = {
+					set_owner = event_target:nep_ugo_first_ship
+					create_ship_design = {
+						design = "NAME_Prototype"
+					}
+					create_ship = {
+						name = "NAME_nep_Ghost_Science_Ship"
+						design = last_created_design
+						graphical_culture = "extra_dimensional_01"
+						prefix = no
+						upgradable = no
+					}
+					set_location = event_target:nep_ugo_abandoned_observation
+					save_global_event_target_as = nep_ugo_fleet
+				}
+			}
+		}
+		event_target:nep_ugo_fleet = {
+			auto_move_to_planet = { target = event_target:nep_ugo_US388 clear_auto_move_on_arrival = yes }
+		}
+	}
+}
+
+#on_fleet_auto_move_arrival
+country_event = {
+	id = nep_ugo.2002
+	hide_window = yes
+			
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:nep_ugo_fleet
+		from = { is_same_value = event_target:nep_ugo_fleet }
+		fromfrom = { is_same_value = event_target:nep_ugo_US388 }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				fromfrom = {
+					is_colony = yes
+					is_under_colonization = no
+					exists = owner
+					owner = {
+						is_ai = no
+						has_country_flag = nep_ugo_target
+					}
+				}
+			}
+			fromfrom.owner = { country_event = { id = nep_ugo.3000 days = 5 } }
+			destroy_fleet = from
+		}
+		else_if = {
+			limit = {
+				fromfrom = {
+					exists = owner
+				}
+			}
+			fromfrom.owner = { country_event = { id = nep_ugo.2003 days = 50 } }
+		}
+		else = {
+				country_event = { id = nep_ugo.2004 days = 50 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.2003
+	title = "nep_ugo.2003.name"
+	desc = {
+		trigger = { is_under_colonization = yes }
+		text = "nep_ugo.2003.desc.a"
+	}	
+	desc = {
+		trigger = { is_under_colonization = no }
+		text = "nep_ugo.2003.desc.b"
+	}
+	picture = GFX_evt_wormhole
+	location = event_target:nep_ugo_US388
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_ugo_US388 = { 
+			destroy_colony = yes
+			change_pc = pc_toxic
+		}
+		event_target:nep_ugo_fleet = {
+			auto_move_to_planet = { target = event_target:nep_ugo1_temp clear_auto_move_on_arrival = yes }
+		}
+	}
+	
+	option = {
+		name = "nep_ugo.2003.a"
+	}
+}
+
+country_event = {
+	id = nep_ugo.2004
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_ugo_US388 = {
+			change_pc = pc_toxic
+			add_modifier = { modifier = nep_ugo_hell }
+		}
+		event_target:nep_ugo_fleet = {
+			auto_move_to_planet = { target = event_target:nep_ugo1_temp clear_auto_move_on_arrival = yes }
+		}
+	}
+}
+
+#on_fleet_auto_move_arrival
+
+country_event = {
+	id = nep_ugo.2005
+	hide_window = yes
+			
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:nep_ugo_fleet
+		from = { is_same_value = event_target:nep_ugo_fleet }
+		fromfrom = { is_same_value = event_target:nep_ugo1_temp }
+	}
+	
+	immediate = {
+		random_planet = {
+			limit = {
+				owner = { has_country_flag = nep_ugo_target }
+				is_colony = yes
+				is_capital = no
+			}
+			event_target:nep_ugo_fleet = {
+				auto_move_to_planet = { target = prev clear_auto_move_on_arrival = yes }
+			}
+		}
+	}
+}
+	
+#on_crossing_border
+
+fleet_event = {
+	id = nep_ugo.2006
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:nep_ugo_fleet
+		is_same_value = event_target:nep_ugo_fleet
+		exists = fromfrom
+		fromfrom = {
+			exists = space_owner
+			space_owner = { 
+				is_country_type = default 
+				NOT = { has_country_flag = nep_ugo_2006_temp }
+			}
+		}
+		from = {
+			OR = {
+				NOT = { exists = space_owner }
+				AND = {
+					exists = space_owner
+					space_owner = { NOT = { is_same_value = root.fromfrom.space_owner } }
+					# technically redundant
+				}
+			}
+		}
+	}
+
+	immediate = {
+		fromfrom.space_owner = { set_country_flag = nep_ugo_2006_temp }
+		fromfrom.space_owner = { country_event = { id = nep_ugo.2007 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.2007
+	title = "nep_ugo.2007.name"
+	desc = "nep_ugo.2007.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ship_bridge
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	immediate = { }
+	
+	option = {
+		name = "nep_ugo.2007.a"
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		name = "nep_ugo.2007.b"
+		event_target:nep_ugo_fleet.owner = { set_faction_hostility = { target = root set_hostile = yes } }
+	}
+}
+
+#on_fleet_auto_move_arrival
+country_event = {
+	id = nep_ugo.3
+	hide_window = yes
+			
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:nep_ugo_fleet
+		from = { is_same_value = event_target:nep_ugo_fleet }
+		fromfrom = { 
+			NOT = { is_same_value = event_target:nep_ugo1_temp }
+			NOT = { is_same_value = event_target:nep_ugo_US388 }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = nep_ugo_infect_begin
+		fromfrom = {
+			set_planet_flag = nep_ugo_infected
+		}
+		destroy_fleet = from
+	}
+}
+
+country_event = {
+	id = nep_ugo.3000
+	hide_window = yes
+			
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_global_flag = nep_ugo_infect_begin
+		event_target:nep_ugo_US388 = {
+			set_planet_flag = nep_ugo_infected
+		}
+	}
+}
+
+planet_event = {
+	id = nep_ugo.3001
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+		has_planet_flag = nep_ugo_infected
+	}
+	
+	mean_time_to_happen = {
+		days = 108
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				if = {
+					limit = { has_planet_flag = nep_ugo_at_war }
+					random_owned_pop = {
+						limit = {
+							NOT = { has_pop_flag = nep_ugo_infected }
+						}
+						set_pop_flag = nep_ugo_infected
+					}
+				}
+			}
+			1 = {
+				random_owned_pop = {
+					limit = {
+						NOT = { has_pop_flag = nep_ugo_infected }
+					}
+					set_pop_flag = nep_ugo_infected
+				}
+			}
+		}
+		if = {
+			limit = { has_planet_flag = nep_ugo_at_war }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				prev = { 
+					random_list = {
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_army"
+								owner = event_target:nep_ugo_faction
+								species = prev
+								type = "defense_army"
+							}
+						}
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_warriors_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_warriors_army_defensive"
+							}
+						}
+						1 = {
+							create_army = {
+								name = "NAME_nep_ugo_hyper_creatures_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_hyper_creatures_army_defensive"
+							}						
+						}
+					}
+				}
+				kill_pop = yes
+			}
+		}
+		else_if = {
+			limit = {
+				count_owned_pop = {
+					limit = {
+						has_pop_flag = nep_ugo_infected
+					}
+					count > 3				
+				}
+			}
+			if = {
+				limit = { NOT = { has_planet_flag = nep_ugo_benoticed } }
+				set_planet_flag = nep_ugo_benoticed
+			}
+			planet_event = { id = nep_ugo.3002 days = 5 random = 31 }
+		}
+	}
+}
+
+planet_event = {
+	id = nep_ugo.3002
+	hide_window = yes
+	
+	pre_triggers = {
+		has_owner = yes
+		original_owner = yes
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+		has_planet_flag = nep_ugo_infected
+		has_planet_flag = nep_ugo_benoticed
+	}
+	
+	immediate = {
+		owner = { 
+			if = {
+				limit = {
+					has_country_flag = nep_ugo_target 
+					NOT = { has_global_flag = nep_ugo_infected_benoticed }
+				}
+				country_event = { id = nep_ugo.3003 }
+			}
+			else_if = {
+				limit = {
+					has_global_flag = nep_ugo_infected_benoticed
+				}
+				country_event = { id = nep_ugo.3004 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.3003
+	title = "nep_ugo.3003.name"
+	desc = "nep_ugo.3003.desc"
+	picture = GFX_evt_alien_city
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+		has_country_flag = nep_ugo_target 
+		NOT = { has_global_flag = nep_ugo_infected_benoticed }
+	}
+	
+	immediate = {
+		set_global_flag = nep_ugo_infected_benoticed
+		if = {
+			limit = { NOT = { exists = event_target:nep_ugo_faction } }
+			create_country = {
+				name = "NAME_nep_ugo_country"
+				type = faction
+				effect = {
+					establish_communications_no_message = root.owner
+					establish_contact = { who = root.owner location = root.fleet.solar_system }
+					save_global_event_target_as = nep_ugo_faction
+					set_faction_hostility = { set_hostile = yes }
+				}
+			}
+		}
+		From = {
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				prev = { 
+					random_list = {
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_army"
+								owner = event_target:nep_ugo_faction
+								species = prev
+								type = "defense_army"
+							}
+						}
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_warriors_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_warriors_army_defensive"
+							}
+						}
+						1 = {
+							create_army = {
+								name = "NAME_nep_ugo_hyper_creatures_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_hyper_creatures_army_defensive"
+							}						
+						}
+					}
+				}
+				kill_pop = yes
+			}
+			set_planet_flag = nep_ugo_at_war
+		}
+	}
+	
+	option = {
+		name = "nep_ugo.3003.a"
+	}
+}
+
+country_event = {
+	id = nep_ugo.3004
+	title = "nep_ugo.3004.name"
+	desc = "nep_ugo.3004.desc"
+	picture = GFX_evt_alien_city
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+		has_global_flag = nep_ugo_infected_benoticed
+	}
+	
+	immediate = {
+		From = {
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				prev = { 
+					random_list = {
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_army"
+								owner = event_target:nep_ugo_faction
+								species = prev
+								type = "defense_army"
+							}
+						}
+						2 = {
+							create_army = {
+								name = "NAME_nep_ugo_warriors_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_warriors_army_defensive"
+							}
+						}
+						1 = {
+							create_army = {
+								name = "NAME_nep_ugo_hyper_creatures_army_defensive"
+								owner = event_target:nep_ugo_faction
+								type = "nep_ugo_hyper_creatures_army_defensive"
+							}						
+						}
+					}
+				}
+				kill_pop = yes
+			}
+			set_planet_flag = nep_ugo_at_war
+		}
+	}
+	
+	option = {
+		name = "nep_ugo.3004.a"
+	}
+}
+
+#on_planet_defenders_win
+#This = player
+country_event = {
+	id = nep_ugo.3005
+	title = "nep_ugo.3005.name"
+	desc = "nep_ugo.3005.desc"
+	picture = GFX_evt_alien_city
+	location = fromfrom
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = nep_ugo_defenders_win_no_notice }
+		fromfrom = { has_planet_flag = nep_ugo_at_war }
+		from = { is_same_value = event_target:nep_ugo_faction }
+	}
+	
+	immediate = {
+		fromfrom = { remove_planet_flag = nep_ugo_at_war }
+		if = {
+			limit = { has_country_flag = nep_ugo_target }
+			country_event = { id = nep_ugo.4 days = 13 random = 25 }
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+	
+	option = {
+		name = "nep_ugo.3005.b"
+		set_country_flag = nep_ugo_defenders_win_no_notice
+	}
+}
+
+#on_planet_defenders_win
+#This = player
+country_event = {
+	id = nep_ugo.3006
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = nep_ugo_defenders_win_no_notice
+		fromfrom = { has_planet_flag = nep_ugo_at_war }
+		from = { is_same_value = event_target:nep_ugo_faction }
+	}
+	
+	immediate = {
+		fromfrom = { remove_planet_flag = nep_ugo_at_war }
+		if = {
+			limit = { has_country_flag = nep_ugo_target }
+			country_event = { id = nep_ugo.4 days = 13 random = 25 }
+		}
+	}
+}
+
+#on_planet_defenders_lose
+#This = player
+country_event = {
+	id = nep_ugo.3007
+	title = "nep_ugo.3007.name"
+	desc = "nep_ugo.3007.desc"
+	picture = GFX_evt_alien_city
+	location = fromfrom
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		fromfrom = { has_planet_flag = nep_ugo_at_war }
+		from = { is_same_value = event_target:nep_ugo_faction }
+	}
+	
+	immediate = {
+		fromfrom = {
+			change_pc = pc_toxic
+			add_modifier = { modifier = nep_ugo_hell }
+		}
+	}
+	
+	option = {
+		name = CURSES
+	}
+}
+
+##infect speed config
+country_event = {
+	id = nep_ugo.3008
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 216
+	}
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+		is_same_value = event_target:global_event_country
+	}
+	
+	immediate = {
+		random_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			owner = { save_event_target_as = nep_ugo_3008_temp }
+		}
+		random_list = {
+			4 = {
+				event_target:nep_ugo_3008_temp = {
+					random_owned_planet = {
+						limit = { NOT = { has_planet_flag = nep_ugo_infected } }
+						set_planet_flag = nep_ugo_infected
+						random_owned_pop = {
+							set_pop_flag = nep_ugo_infected
+						}
+					}
+				}
+			}		
+			2 = {
+				random_planet = {
+					limit = { 
+						NOT = { has_planet_flag = nep_ugo_infected }
+						exists = owner
+						owner = { 
+							is_country_type = default
+							has_diplo_migration_treaty = event_target:nep_ugo_3008_temp
+						}
+					}
+					set_planet_flag = nep_ugo_infected
+					random_owned_pop = {
+						set_pop_flag = nep_ugo_infected
+					}
+				}
+			}
+			1 = {			
+				random_planet = {
+					limit = { 
+						NOT = { has_planet_flag = nep_ugo_infected }
+						exists = owner
+						owner = { 
+							is_country_type = default
+							NOT = { has_closed_borders = event_target:nep_ugo_3008_temp }
+						}
+						is_neighbor_of = event_target:nep_ugo_3008_temp
+					}
+					set_planet_flag = nep_ugo_infected
+					random_owned_pop = {
+						set_pop_flag = nep_ugo_infected
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.4
+	title = "nep_ugo.4.name"
+	desc = "nep_ugo.4.desc"
+	picture = GFX_evt_alien_city
+	location = fromfromfrom
+	
+	is_triggered_only = yes
+	
+	trigger = { has_country_flag = nep_ugo_target }
+	
+	immediate = {
+		set_country_flag = nep_ugo_finding_cure
+	}
+	
+	option = {
+		name = nep_ugo.4.a
+		enable_special_project = {
+			name = "nep_ugo_project_1"
+			location = event_target:nep_ugo_US388
+			owner = root
+		}
+	}
+}
+
+ship_event = {
+	id = nep_ugo.4001
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { owner = { has_country_flag = nep_ugo_target } }
+	
+	immediate = {
+		owner = { country_event = { id = nep_ugo.40010 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.40010
+	title = "nep_ugo.40010.name"
+	desc = "nep_ugo.40010.desc"
+	picture = GFX_evt_alien_city
+	location = event_target:nep_ugo_US388
+	is_triggered_only = yes
+	
+	immediate = {
+		from.fleet = { kill_leader = { type = scientist } }
+	}
+	
+	option = {
+		name = nep_ugo.40010.a
+		enable_special_project = {
+			name = "nep_ugo_project_2"
+			location = event_target:nep_ugo_US388
+			owner = root
+		}
+	}	
+}
+
+ship_event = {
+	id = nep_ugo.4002
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { owner = { has_country_flag = nep_ugo_target } }
+	
+	immediate = {
+		destroy_ship = root
+		owner = { country_event = { id = nep_ugo.40010 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.40020
+	title = "nep_ugo.40020.name"
+	desc = "nep_ugo.40020.desc"
+	picture = GFX_evt_alien_city
+	location = event_target:nep_ugo_US388
+	is_triggered_only = yes
+	
+	option = {
+		name = nep_ugo.40020.a
+		enable_special_project = {
+			name = "nep_ugo_project_2"
+			location = event_target:nep_ugo_US388
+			owner = root
+		}
+	}
+}
+
+ship_event = {
+	id = nep_ugo.5
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = { owner = { has_country_flag = nep_ugo_target } }
+	
+	immediate = {
+		owner = { country_event = { id = nep_ugo.5000 } }
+	}
+}
+
+country_event = {
+	id = nep_ugo.5000
+	title = "nep_ugo.5000.name"
+	desc = "nep_ugo.5000.desc"
+	picture = GFX_evt_alien_city
+	location = event_target:nep_ugo_US388
+	is_triggered_only = yes
+	
+	option = {
+		name = nep_ugo.5000.a
+		add_research_option = tech_nep_ugo_tech
+	}
+}
+
+#on_tech_increased
+country_event = {
+	id = nep_ugo.6
+	title = "nep_ugo.6.name"
+	desc = "nep_ugo.6.desc"
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	
+	trigger = { last_increased_tech = tech_nep_ugo_tech }
+	
+	option = {
+		name = nep_ugo.6.a		
+		enable_special_project = {
+			name = "nep_ugo_project_4"
+			location = root.capital_scope
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.7
+	title = "nep_ugo.7.name"
+	desc = "nep_ugo.7.desc"
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = nep_ugo_infect_begin
+	}
+	
+	option = {
+		name = nep_ugo.7.a
+		custom_tooltip = nep_ugo.7.a.tooltip
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 50
+			max = 9999
+		}
+		every_owned_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				kill_pop = yes
+			}
+			every_planet_army = {
+				limit = { owner = { is_same_value = event_target:nep_ugo_faction } }
+				remove_army = yes
+			}
+			remove_planet_flag = nep_ugo_infected 
+		}
+		hidden_effect = {
+			every_country = {
+				limit = { any_owned_planet = { has_planet_flag = nep_ugo_infected } }
+				country_event = { id = nep_ugo.7001 }
+			}
+		}
+	}
+	
+	option = {
+		name = nep_ugo.7.b
+		custom_tooltip = nep_ugo.7.b.tooltip
+		add_resource = {
+			influence = -100
+		}
+		trigger = {
+			NOR = {
+				AND = {				
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+					NOR = { 
+						has_ethic = ethic_militarist
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_valid_civic = civic_machine_servitor
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		every_owned_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				remove_pop_flag = nep_ugo_infected
+			}
+			every_planet_army = {
+				limit = { owner = { is_same_value = event_target:nep_ugo_faction } }
+				set_owner = root
+			}
+			remove_planet_flag = nep_ugo_infected 
+		}
+		add_relic = r_nep_ugo_relic
+		hidden_effect = {
+			set_country_flag = nep_can_use_ugo_warriors
+			every_country = {
+				limit = { any_owned_planet = { has_planet_flag = nep_ugo_infected } }
+				country_event = { id = nep_ugo.7002 }
+			}
+		}
+	}
+	
+	option = {
+		name = nep_ugo.7.c
+		custom_tooltip = nep_ugo.7.c.tooltip
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_authority = auth_hive_mind
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_machine_terminator
+				has_valid_civic = civic_machine_servitor
+			}
+		}		
+		if = {
+			limit = { has_ethic = ethic_xenophile }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 20
+				max = 4000
+			}
+		}
+		else_if = {
+			limit = { has_ethic = ethic_fanatic_xenophile }
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 40
+				max = 8000
+			}
+		}
+		else = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 10
+				max = 2000
+			}
+		}
+		every_owned_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				remove_pop_flag = nep_ugo_infected
+				modify_species = {
+					species = this
+					add_trait = trait_nep_ugo_1
+					add_traits_at_start_of_list = yes
+				}
+			}
+			every_planet_army = {
+				limit = { owner = { is_same_value = event_target:nep_ugo_faction } }
+				remove_army = yes
+				prev = {
+					random_owned_species = { 
+						limit = { has_trait = trait_nep_ugo_1 }
+						save_event_target_as = nep_ugo_7_temp
+					}
+					create_pop = { species = event_target:nep_ugo_7_temp }
+				}
+			}
+			remove_planet_flag = nep_ugo_infected
+		}
+		set_country_flag = nep_ugo_modifier		
+		hidden_effect = {
+			every_country = {
+				limit = { any_owned_planet = { has_planet_flag = nep_ugo_infected } }
+				country_event = { id = nep_ugo.7001 }
+			}
+		}
+	}
+}
+country_event = {
+	id = nep_ugo.7001
+	title = "nep_ugo.7001.name"
+	desc = "nep_ugo.7001.desc"
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				kill_pop = yes
+			}
+			every_planet_army = {
+				limit = { owner = { is_same_value = event_target:nep_ugo_faction } }
+				remove_army = yes
+			}
+			remove_planet_flag = nep_ugo_infected 
+		}
+	}
+	
+	option = { name = OK }
+}
+country_event = {
+	id = nep_ugo.7002
+	title = "nep_ugo.7002.name"
+	desc = "nep_ugo.7002.desc"
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				kill_pop = yes
+			}
+			remove_planet_flag = nep_ugo_infected 
+		}
+	}
+	
+	option = { name = CURSES }
+}
+
+#on_destroy_planet_with_PLANET_KILLER_UGO
+planet_event = {
+	id = nep_ugo.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { NOT = { is_same_value = from.owner } }
+			}
+			from.owner = {
+				country_event = { id = nep_ugo.8001 }
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			# Generate threat
+			add_threat = { who = from.owner amount = 3 }
+			# modifier for allies + those upset by robots
+			every_country = {
+				limit = {
+					NOR = {
+						is_same_value = from.owner
+						is_same_value = root.owner
+						AND = {
+							has_federation = yes
+							is_in_federation_with = from.owner
+						}
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						AND = {
+							has_federation = yes
+							is_in_federation_with = root.owner
+						}
+						has_ai_personality = awakened_fallen_empire_spiritualist
+						AND = {
+							is_country_type = default
+							OR = {
+								is_egalitarian = yes
+								is_spiritualist = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_a_world
+					who = from.owner
+				}
+			}
+			# modifiers for victim
+			owner = {
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_my_world
+					who = from.owner
+				}
+				add_modifier = {
+					modifier = colossus_victim
+					days = 10800 # 30 years
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { is_country_type = primitive }
+			}
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOR = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					is_country_type = default
+					NOR = {
+						is_xenophobe = yes
+						is_homicidal = yes
+						is_xenophile = yes
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_a_primitive_world
+					who = from.owner
+				}
+			}
+			every_country = {
+				limit = {
+					NOR = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							is_xenophile = yes
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_assimilated_a_primitive_world_phile
+					who = from.owner
+				}
+			}
+			# Add war exhaustion to planet owner 
+			owner = {
+				add_static_war_exhaustion = {
+					attacker = from.fleet.owner
+					location = root
+					value_for_planet_destruction = 1.0
+				}
+			}
+			if = {
+				limit = {
+					exists = owner
+					owner = { is_same_value = from.owner }
+				}
+				# already owned
+			}
+			else = {
+				set_owner = from.owner
+				if = {
+					limit = { 
+						AND = {
+							NOT = { has_building = building_colony_shelter }
+							NOT = { has_building = building_deployment_post }
+							has_upgraded_capital = no
+							has_major_upgraded_capital = no
+							has_fully_upgraded_capital = no
+							
+						}
+					}
+					if = {
+						limit = { from.owner = { is_machine_empire = yes } }
+						add_building = building_deployment_post
+					}
+					if = {
+						limit = { from.owner = { is_hive_empire = yes } }
+						add_building = building_hive_capital
+					}
+					if = {
+						limit = { from.owner = { is_regular_empire = yes } }
+						add_building = building_colony_shelter
+					}
+				}
+			}
+		}
+		every_owned_pop = {
+			if = {
+				limit = {
+					root.from = { has_authority = auth_hive_mind }
+					NOT = { has_trait = trait_hive_mind }
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_nep_ugo_2
+					add_trait = trait_hive_mind
+					add_traits_at_start_of_list = yes
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { root.from = { has_authority = auth_hive_mind } }
+					 has_trait = trait_hive_mind
+				}				
+				modify_species = {
+					species = this
+					add_trait = trait_nep_ugo_2
+					remove_trait = trait_hive_mind
+					add_traits_at_start_of_list = yes
+				}
+			}
+			else = {			
+				modify_species = {
+					species = this
+					add_trait = trait_nep_ugo_2
+					add_traits_at_start_of_list = yes
+				}
+			}
+		}
+		# Special graphics for Habitats and Ring Worlds
+		if = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+			spawn_habitat_divine_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			spawn_ringworld_divine_effect = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			# nothing
+		}
+		else = {
+			switch = {
+				trigger = is_planet_class
+				pc_desert = { change_pc = pc_desert }
+				pc_arid = { change_pc = pc_arid }
+				pc_savannah = { change_pc = pc_savannah }
+				pc_ocean = { change_pc = pc_ocean }
+				pc_continental = { change_pc = pc_continental }
+				pc_tropical = { change_pc = pc_tropical }
+				pc_tundra = { change_pc = pc_tundra }
+				pc_arctic = { change_pc = pc_arctic }
+				pc_alpine = { change_pc = pc_alpine }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.8001
+	title = "nep_ugo.8001.name"
+	desc = "nep_ugo.8001.desc"
+	picture = GFX_evt_planet_beam
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = nep_fired_ugo }
+	}
+
+	immediate = {
+		set_country_flag = nep_fired_ugo
+	}
+
+	option = {
+		name = OK
+	}
+}
+
+
+country_event = {
+	id = nep_ugo.9
+	hide_window = yes
+
+	mean_time_to_happen = {
+		days = 4800 #15years
+	}
+	
+	trigger = {
+		has_global_flag = nep_ugo_infect_begin
+	}
+	
+	immediate = {
+		random_planet = {
+			limit = { has_planet_flag = nep_ugo_US388 }		
+			change_pc = pc_shattered
+			remove_modifier = nep_ugo_hell
+		}
+		every_planet = {
+			limit = { has_planet_flag = nep_ugo_infected }
+			every_owned_pop = {
+				limit = { has_pop_flag = nep_ugo_infected }
+				kill_pop = yes
+			}
+			every_planet_army = {
+				limit = { owner = { is_same_value = event_target:nep_ugo_faction } }
+				remove_army = yes
+			}
+			remove_planet_flag = nep_ugo_infected
+		}
+		every_playable_country = {
+			country_event = { id = nep_ugo.9001 }
+		}
+	}
+}
+
+country_event = {
+	id = nep_ugo.9001
+	title = "nep_ugo.9001.name"
+	desc = "nep_ugo.9001.desc"
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	
+	option = {
+		name = nep_ugo.9001.a
 	}
 }

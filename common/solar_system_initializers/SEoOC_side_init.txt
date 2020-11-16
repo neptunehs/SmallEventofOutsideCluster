@@ -769,3 +769,135 @@ nep_guide_init = {
 		orbit_distance = 20
 	}
 }
+
+nep_ugo_init = {
+	name = "NAME_US"
+	class = "sc_m"
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 74
+	}
+	
+	flags = { nep_ugo_system }
+	
+	planet = {
+		name = "NAME_US_0"
+		class = "pc_m_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 20
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_US_11"
+		class = "pc_molten"
+		orbit_distance = 20
+		orbit_angle = 15
+		size = 16
+		has_ring = no
+	}
+	
+	planet = {
+		name = "NAME_US_23"
+		class = "pc_barren"
+		orbit_distance = 16
+		orbit_angle = 85
+		size = 16
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_US_66"
+		class = "pc_toxic"
+		orbit_distance = 16
+		orbit_angle = 110
+		size = 12
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_US_125"
+		class = "pc_barren"
+		orbit_distance = 16
+		orbit_angle = 125
+		size = 14
+		has_ring = no
+	}
+	
+	change_orbit = 6
+	
+	planet = {
+		name = "NAME_US_145"
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+	
+	planet = {
+		name = "NAME_US_178"
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 180 max = 360 }
+	}
+	
+	planet = {
+		name = "NAME_US_205"
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = -90 max = 90 }
+	}
+	
+	planet = {
+		name = "NAME_US_276"
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 180 }
+	}
+	
+	planet = {
+		name = "NAME_US_388"
+		class = "pc_tropical"
+		orbit_distance = 10
+		orbit_angle = 65
+		size = 16
+		has_ring = no
+		init_effect = {
+			set_planet_flag = nep_ugo_US388
+			add_deposit = d_city_ruins
+			add_deposit = d_city_ruins
+			create_ambient_object = {
+				type = abandoned_observation_outpost
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+				}
+				save_global_event_target_as = nep_ugo_abandoned_observation
+			}
+		}
+	}
+
+	planet = {
+		name = "NAME_US_465"
+		class = "pc_barren_cold"
+		orbit_distance = 16
+		orbit_angle = -130
+		size = 18
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_US_578"
+		class = "pc_frozen"
+		orbit_distance = 16
+		orbit_angle = 245
+		size = 12
+		has_ring = no
+	}
+}

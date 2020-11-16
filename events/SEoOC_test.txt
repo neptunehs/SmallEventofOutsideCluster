@@ -1203,3 +1203,88 @@ country_event = {
 		}	
 	}
 }
+
+country_event = {
+	id = nep_test.29
+	title = "nep_dragon.1.name"
+	desc = "nep_dragon.1.desc"	
+	picture = GFX_evt_frozen_planet
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+	}
+
+	option = { name = CURSES }
+}
+
+country_event = {
+	id = nep_test.30
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = nep_gpc_spawn
+		any_system = {
+			any_system_planet = {
+				is_colony = yes
+				is_capital = no
+				owner = {
+					is_country_type = default
+				}
+			}
+			distance = {
+				source = root.capital_scope
+				use_bypasses = yes
+				min_jumps = 5 
+				max_jumps = 20
+			}
+			has_access_fleet = root
+		}
+	}
+
+	immediate = {
+		random_system = {
+			limit = {
+				any_system_planet = {
+					is_colony = yes
+					is_capital = no
+					owner = {
+						is_country_type = default
+					}
+				}
+				distance = {
+					source = root.capital_scope
+					min_jumps = 5 max_jumps = 20
+				}
+				has_access_fleet = root
+			}
+			random_system_planet = {
+				limit = { is_colony = yes }
+				save_global_event_target_as = nep_escort_destiny
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.31
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:nep_escort_destiny
+		any_owned_fleet = {
+			can_access_system = root.capital_scope.solar_system
+			can_access_system = event_target:nep_escort_destiny.solar_system
+		}
+	}
+
+	immediate = {
+	}
+}
+

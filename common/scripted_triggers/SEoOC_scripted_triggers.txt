@@ -100,3 +100,24 @@ nep_st_no_anomaly_system = {
 		}
 	}
 }
+
+can_destroy_planet_with_PLANET_KILLER_NEP_UGO = {
+	custom_tooltip = {
+		fail_text = is_not_a_habitable_planet_or_megastructure
+		is_a_habitable_planet_megastructure = yes
+	}
+	custom_tooltip = {
+		fail_text = is_shielded
+		NOR = {
+			is_planet_class = pc_shielded
+			is_planet_class = pc_ringworld_shielded
+			is_planet_class = pc_habitat_shielded
+		}
+	}
+	custom_tooltip = {
+		fail_text = nep_no_sapient_pops
+		any_owned_pop = {
+			is_sapient = yes
+		}
+	}
+}

@@ -5,7 +5,12 @@ origin_nep_deus_ex_machina = {
 	picture = GFX_origin_nep_deus_ex_machina
 
 	possible = {
-		ethics = { value = ethic_fanatic_spiritualist }
+		ethics = { 
+			OR = {
+				value = ethic_fanatic_spiritualist 
+				value = ethic_spiritualist
+			}
+		}
 		authority = { value = auth_dictatorial }
 		civics = {
 			NOR = {
@@ -14,7 +19,7 @@ origin_nep_deus_ex_machina = {
 				value = civic_feudal_realm
 				value = civic_corporate_dominion
 				value = civic_shadow_council
-				value = civic_fanatic_purifiers
+				#value = civic_fanatic_purifiers
 				value = civic_exalted_priesthood
 				value = civic_slaver_guilds
 			}

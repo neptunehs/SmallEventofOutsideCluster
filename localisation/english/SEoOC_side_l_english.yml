@@ -7,8 +7,8 @@
  # wohp
  ######################################### 
  nep_wohp.1000.name:0 "Found a new wormhole"
- nep_wohp.1000.desc:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
- nep_wohp.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole in §Y[event_target:nep_wohp_system_alternative.GetName]§! affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
+ nep_wohp.1000.desc:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
+ nep_wohp.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole in §Y[event_target:nep_wohp_system_alternative.GetName]§! influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
  
  nep_wohp.2000.name:0 "Unexplored System"
  nep_wohp.2000.desc:0 "[From.GetName] has entered a system we have never explored. There is a $pc_nuked$ and a $pc_habitat$ in this system. There are signs of life on both sides, but no communication to us. This situation is very strange:Is there a civilization on a $pc_habitat$ which havn't enough level of technology that can communicate with us?"
@@ -107,8 +107,8 @@
  nep_wohp.9000.desc:0 "War between [event_target:nep_highlander_country.GetName] and [event_target:nep_gaia_country.GetName] make our enlightment mission on [event_target:nep_highlander_country.capital_scope.GetName] too hard to progress,specialist suggest not to waste time more."
  nep_wohp.9000.a:0 "Well..."
  
- nep_SEoOC_whop_category:0 "Gravity data is incorrect"
- nep_SEoOC_side_story_category_desc:0 "The instrument shows that the gravity data is incorrect and there may be an unknown celestial influence."
+ nep_SEoOC_whop_category:0 "Data of Gravity Sensor is incorrect"
+ nep_SEoOC_side_story_category_desc:0 "The sensor shows that the gravity data is incorrect,maybe the scientists meet some sensor malfunction, or get influenced by an unknown celestial object."
  
  nep_gaia_super_army:0 "Superior Weapon Army"
  nep_gaia_super_army_defensive:0 "Superior Weapon Army"
@@ -141,8 +141,8 @@
  # deus
  ######################################### 
  nep_deus.1000.name:0 "Found a new wormhole"
- nep_deus.1000.desc:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
- nep_deus.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,the instrument exception of [From.GetName] is not a real exception,but an unknown wormhole in §Y[event_target:nep_deus_system_alternative.GetName]§! affects.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
+ nep_deus.1000.desc:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
+ nep_deus.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole in §Y[event_target:nep_deus_system_alternative.GetName]§! influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
  
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god from primitive era and formed a very distinctive theocratic state."
@@ -571,4 +571,101 @@
  nep_guide.5.desc:0 "我有点想家了……也给您们添了足够多的麻烦了，请送我回家吧。我永远不会忘记这一段旅途的。"
  nep_guide.5.a:0 "这下船要有点寂寞了。"
  
+ #########################################
+ # ugo
+ #########################################   
+ nep_ugo.1000.name:0 "Found a new wormhole"
+ nep_ugo.1000.desc:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole, maybe we should go to see where the wormhole links to."
+ nep_ugo.1000.desc.b:0 "After [From.Leader.GetName]'s analyse,[From.GetName] have not met any sensor malfunction,but an unknown wormhole in §Y[event_target:nep_deus_system_alternative.GetName]§! influenced.After calculation,[From.Leader.GetName] puts forward the location of the wormhole , maybe we should go to see where the wormhole links to."
  
+ nep_ugo.1002.name:0 "Nothing interesting found."
+ nep_ugo.1002.desc:0 "After scanning the only habitable planet on [from.solar_system.GetName], our research vessel has concluded that while there are some extremely dangerous creatures on the planet, they will hinder the possibility of turning the planet into a colony; also, while an unknown wreckage ship is on this planet, but there are no survivors, and the technology is less advanced than ours, no research value. There is little else of interest beyond that."
+ nep_ugo.1002.a:0 "Let's clean up these ferocious creatures first." 
+ 
+ nep_ugo.1004.name:0 "Clear the dangerous creatures."
+ nep_ugo.1004.desc:0 "Dangerous creatures on [event_target:nep_ugo_US388.GetName] have been exorcised. The planet is ready for colonization, though our armies have suffered some losses."
+ 
+ nep_ugo.2003.name:0 "Strange Ecosystem Shift"
+ nep_ugo.2003.desc.a:0 "The [event_target:nep_ugo_US388.GetName] we are colonizing has suddenly undergone an ecosystem shift and has become no longer able to support colonization. We are forced to abandon our colonization plans. According to scientists, the ecosystem shift was caused by the planet's lower life forms, but the equipment of the colonization system was unable to fully analyze and understand the full picture of those lower life forms."
+ nep_ugo.2003.desc.b:0 "[event_target:nep_ugo_US388.GetName] has suddenly undergone an ecosystem shift, having become no longer able to support colonization. According to scientists, the shift in the ecosystem was caused by the planet's lower life forms."
+ nep_ugo.2003.a:0 "What a waste!"
+ 
+ nep_ugo.2007.name:0 "Unknown Ship"
+ nep_ugo.2007.desc:0 "A civilian ship of unknown nationality has passed through our borders. They asked to pass through our border and obtain supplies. Although they would respond to our inquiries and the security detection devices did not detect a problem, it felt like talking to them as if they were talking to some old AI, and did not inform us of their final destination. But they do not appear to be hostile, are they being allowed to pass?"
+ nep_ugo.2007.a:0 "What can an unarmed ship do, let them pass."
+ nep_ugo.2007.b:0 "Shoot them down."
+ 
+ nep_ugo.3003.name:0 "Biocrisis"
+ nep_ugo.3003.desc:0 "[from.GetName] Suddenly suffer a bio-crisis: a polymer believed to be a mononuclear organism has infected a number of citizens and turned them into monsters. After an urgent analysis by scientists, the bio-polymer is able to kill its hosts quickly after infection and mimic them using the host's DNA. They are also able to mimic strange monsters by exchanging DNA with other hosts of different races. More troublesome, they were able to kill their hosts while gaining knowledge of them for better mimicry. They suddenly get angry and start attacking others while our daily detections find them that. They can even infect robots and synthetics and control them through their interfaces and anthropomorphic structures. Also, because this attack was sudden and simultaneous, some scientists speculate that it was a hivemind-liked creatures. This creature is extremely dangerous, please mobilize the army to destroy it immediately. In addition, scientists have given them names based on their aggregate form: UVO, unidentified viscid-like object."
+ nep_ugo.3003.a:0 "Prepare for battle!"
+ 
+ nep_ugo.3004.name:0 "Biocrisis"
+ nep_ugo.3004.desc:0 "There's a bio-crisis on another planet: this time it's [From.GetName]."
+ nep_ugo.3004.a:0 "Prepare for battle!"
+ 
+ nep_ugo.3005.name:0 "Temporary Victory"
+ nep_ugo.3005.desc:0 "The battle against UVO at [fromfrom.GetName] was won, but the frontline commander believes they were not completely wiped out and may infect other creatures next."
+ nep_ugo.3005.b:0 "I don't need to be reminded of these temporary victory."
+  
+ nep_ugo.3007.name:0 "Colony Lost"
+ nep_ugo.3007.desc:0 "The battle against UVO at [fromfrom.GetName] failed, and the unconstrained UVO infected almost all creatures at a very rapid rate and turned its ecosystem into an unlivable environment for non-UVO creatures."
+ 
+ nep_ugo.4.name:0 "UVO: Searching For a Cure"
+ nep_ugo.4.desc:0 "Scientists believe we should go to [event_target:nep_ugo_US388.GetName] to find a cure to UVO. Multiple lines of evidence suggest that the creature was born from [event_target:nep_ugo_US388.GetName], and while we don't know if it is a human product, if not, there must be local predators of it present."
+ nep_ugo.4.a:0 "Get a nearby scientist there immediately."
+ 
+ nep_ugo.40010.name:0 "UVO: Mission Failed"
+ nep_ugo.40010.desc:0 "This is the last communication from [from.fleet.leader.GetName]: "We have found a UVO mass breeding site and there may be a clue here. We're just getting ready to ...... n-noo ahhhhhhh! .................. reporting, nothing has happened. Please wait for my next report." We believe that [from.fleet.leader.GetName] has been infected and has been mimicked. We have add [from.fleet.leader.GetName] to the blacklist of all facilities."
+ nep_ugo.40010.a:0 "A major loss, but we can't stop it."
+ 
+ nep_ugo.40020.name:0 "UVO: Mission failed."
+ nep_ugo.40020.desc:0 "It was discovered that [from.fleet.leader.GetName] and his team had returned to its science ship unannounced and was heading towards [Root.capital_scope.GetName]. After questioning, we believe that the ship's crew's answers were questionable , and that all of them had refused to enter the ship's medical facilities to be scanned as we had requested. It can be determined that all the team have been infected, please execute emergency orders: detonate the science ship."
+ nep_ugo.40020.a:0 "Another major loss, but we can't stop."
+ 
+ nep_ugo.5000.name:0 "UVO: Mission successful."
+ nep_ugo.5000.desc:0 "After [from.fleet.leader.GetName] analyzing the gathering places of the UVO's, they are found to have certain patterns. May I ask if you remember the ferocious creatures we eliminated earlier? We've discovered that the UVO's gathering place doesn't overlap at all with that of the ferocious creature. Maybe we might be able to find a way to stop the infection or make a cure from these ferocious creature. Although these creatures were nearly extinct in our previous attacks, our scientists have found some remains that can be used to extract genetic information."
+ nep_ugo.5000.a:0 "Immediate research."
+ 
+ nep_ugo.6.name:0 "UVO: The Vaccine Works"
+ nep_ugo.6.desc:0 "The anti-infection vaccine extracted by those creatures is effective. However, this vaccine could not be used on a large scale due to the high physical requirements of its users, but we can organize an army of immunized individuals to [event_target:nep_ugo_US388.GetName] in search of the UVO's hive-mind "heart". (If this creature is indeed a hive-minded creature as the scientists speculate ......)"
+ nep_ugo.6.a:0 "Worth trying."
+ 
+ nep_ugo.7.name:0 "UVO: The Queen"
+ nep_ugo.7.desc:0 "Our forces have found the leader of the UGO swarm, whom we will tentatively refer to as "The Queen". "The Queen" is intelligent but has no intention of communicating, and reconciliation is probably impossible, but our uninfected soldiers have a definite advantage against her, and now we can decide her fate."
+ nep_ugo.7.a:0 "Destroy her and stop all infections."
+ nep_ugo.7.a.tooltip:0 "Since UVO kills the host at the moment of infection, all infected but still lurking in the colony will be instantly destroyed by the loss of the swarm leader "The Queen". At the same time, all UVO monstrous soldiers will be destroyed."
+ nep_ugo.7.b:0 "Destroy her, but keep a small amount of controllable cells for military use."
+ nep_ugo.7.b.tooltip:0 "The cells retained will have two uses: the first will be the cells of a normal UVO, which will be able to be used to produce UVO-mimetic creatures as armies; the other will be the cells of "The Queen", which will be able to be used to produce colossus: once activated, All life on the planet will become UVO creatures controlled by us."
+ nep_ugo.7.c:0 "Capture her so that scientists can find a way to coexist peacefully."
+ nep_ugo.7.c.tooltip:0 "Scientists will quickly find a way to stop the infection and welcome all sentient UVO creatures into our country as nationals after "The Queen" is rendered harmless. All colonies get a decision to introduce UVO creatures to speed up national reproduction."
+ 
+ nep_ugo.7001.name:0 "UVO: Infection Cessation."
+ nep_ugo.7001.desc:0 "It appears that the source of these horrible creatures has been pinched, and all infected and anthropomorphic soldiers in the country have destroyed themselves."
+ 
+ nep_ugo.7002.name:0 "UVO: Infection stopped."
+ nep_ugo.7002.desc:0 "The source of these horrible creatures is said to have been snuffed out, and all domestic infections have eliminated themselves, but the anthropomorphic soldiers are still aggressive, though they have lost their infectivity. Scientists speculate that the source may not have been completely eliminated, and wonder if there will be other crises in the future."
+ 
+ nep_ugo.8001.desc:0 ""
+ nep_ugo.8001.name:0 ""
+ 
+ nep_ugo.9001.name:0 "UVO: infection stop"
+ nep_ugo.9001.desc:0 "After an unexplained explosion at [event_target:nep_ugo_US388.GetName] (believed to have been triggered by the UVO itself by a star-exterminating weapon made by an ancient civilization that existed on the planet in the past), all UVO creatures stopped moving and the infection ceased. The crisis is over."
+ nep_ugo.9001.a:0 "It's finally over."
+ 
+ nep_ugo_warriors_army_defensive:0 "UVO Mimetic Soldiers" 
+ nep_ugo_warriors_army:0 "UVO Mimetic Soldiers"
+ nep_ugo_hyper_creatures_army_defensive:0 "UVO Anthropomorphic Giant Monsters"
+ nep_ugo_hyper_creatures_army:0 "UVO Anthropomorphic Giant Monsters"
+ 
+ nep_ugo_hell:0 "Ecological Damaged"
+ nep_ugo_hell_desc:0 "The planet has been ecologically destroyed by UVO and cannot be colonized."
+ 
+ PLANET_KILLER_NEP_UGO:0 "UVO high-speed Infection Device" 
+ PLANET_KILLER_NEP_UGO_DESC:0 "When activated, it will quickly turn all creatures on the entire planet into UVO-infected mimics, and at your command." 
+ 
+ decision_nep_ugo_decision:0 "Introduce UVO"
+ decision_nep_ugo_decision_desc:0 "Introducing UVO on this planet."
+ decision_nep_ugo_decision_effects_short:0 "Introduce UVO on this planet to take advantage of UVO's rapid population growth."
+ 
+ trait_nep_ugo_1:0 "UVO creatures"
+ trait_nep_ugo_2:0 "UVO creatures:Bio-Ecological Restrictions"

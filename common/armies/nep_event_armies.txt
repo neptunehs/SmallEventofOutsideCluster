@@ -232,3 +232,113 @@ nep_gene_slave_army = {
 		}
 	}
 }
+
+#UGO
+nep_ugo_warriors_army_defensive = {
+	defensive = yes
+	damage = 1.5
+	health = 2.0
+	has_morale = no
+	morale_damage = 4.0
+	collateral_damage = 1
+	war_exhaustion = 2.5
+	time = 150
+	icon_frame = 6
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 300
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+nep_ugo_warriors_army = {
+	damage = 1.5
+	health = 1.5
+	has_morale = no
+	morale_damage = 4.0
+	collateral_damage = 1.0
+	war_exhaustion = 2.5
+	time = 150
+	icon_frame = 6
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 400
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+
+	potential = {
+		owner = { has_country_flag = nep_can_use_ugo_warriors }
+	}
+}
+
+nep_ugo_hyper_creatures_army_defensive = {
+	damage = 2.0
+	morale_damage = 4.0
+	collateral_damage = 5.0
+	war_exhaustion = 2.5
+	health = 3.0
+	has_morale = no
+	time = 300
+	icon_frame = 8
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 600
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+nep_ugo_hyper_creatures_army = {
+	damage = 2.0
+	morale_damage = 4.0
+	collateral_damage = 5.0
+	war_exhaustion = 2.5
+	health = 3.0
+	has_morale = no
+	time = 300
+	icon_frame = 8
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 600
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+
+	potential = {
+		owner = { has_country_flag = nep_can_use_ugo_warriors }
+	}
+}

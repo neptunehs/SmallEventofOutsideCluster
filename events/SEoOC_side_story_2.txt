@@ -77,27 +77,34 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_planet = {
+		random_system = {
 			limit = {
-				is_colony = yes
-				is_capital = no
-				owner = {
-					is_country_type = default
+				any_system_planet = {
+					is_colony = yes
+					is_capital = no
+					owner = {
+						is_country_type = default
+					}
 				}
 				distance = {
 					source = root.capital_scope
-					min_jumps = 5 max_jumps = 20
+					use_bypasses = yes
+					min_jumps = 5 
+					max_jumps = 20
 				}
-				solar_system = { has_access_fleet = root }
+				has_access_fleet = root
 			}
-			save_global_event_target_as = nep_escort_destiny
+			random_system_planet = {
+				limit = { is_colony = yes }
+				save_global_event_target_as = nep_escort_destiny
+			}
 		}
 		if = {
 			limit = { 
 				exists = event_target:nep_escort_destiny
 				any_owned_fleet = {
-					can_access_system = root.capital_scope
-					can_access_system = event_target:nep_escort_destiny
+					can_access_system = root.capital_scope.solar_system
+					can_access_system = event_target:nep_escort_destiny.solar_system
 				}
 			}
 			country_event = { id = nep_gpc.1 }
@@ -258,6 +265,7 @@ country_event = {
 				set_leader = last_created_leader
 			}
 		}
+		establish_communications_no_message = event_target:nep_caravaneer_fleet_country
 	}
 	
 	option = {

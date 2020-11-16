@@ -699,3 +699,97 @@ special_project = {
 
 	# }
 # }
+
+special_project = {
+	key = "nep_ugo_project_0"
+	days_to_research = 30
+	tech_department = society_technology
+	picture = GFX_evt_caravaneers
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 5
+	}
+	
+	on_success = {
+		ship_event = { id = nep_ugo.1003 }
+	}
+}
+
+special_project = {
+	key = "nep_ugo_project_1"
+	days_to_research = 120
+	tech_department = society_technology
+	picture = GFX_evt_caravaneers
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		ship_event = { id = nep_ugo.4001 }
+	}
+}
+
+special_project = {
+	key = "nep_ugo_project_2"
+	days_to_research = 120
+	tech_department = society_technology
+	picture = GFX_evt_caravaneers
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		ship_event = { id = nep_ugo.4002 } 
+	}
+}
+
+special_project = {
+	key = "nep_ugo_project_3"
+	days_to_research = 120
+	tech_department = society_technology
+	picture = GFX_evt_caravaneers
+	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		ship_event = { id = nep_ugo.5 } 
+	}
+}
+
+special_project = {
+	key = "nep_ugo_project_4"
+	days_to_research = 60
+	tech_department = physics_technology
+	picture = GFX_evt_victorious_army
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_transport = 10
+		leader = general
+	}
+		
+	on_success = {
+		OWNER = { country_event = { id = nep_ugo.7 } }
+	}
+}
