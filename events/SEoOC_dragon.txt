@@ -172,21 +172,19 @@ country_event = {
 		}
 		set_spawn_system_batch = end
 		
-		#portal
-		event_target:nep_seal_system = {
-			spawn_natural_wormhole = {
-				bypass_type = nep_sealportal
-				orbit_distance = 0
-				orbit_angle = -135
+		#portal		
+		random_planet = {
+			limit = { has_planet_flag = nep_seal_1 }
+			solar_system = {
+				spawn_megastructure = {
+					name = "NAME_Sub_Seal_1"
+					type = "nep_sealportal_node"
+					orbit_angle = 0
+					orbit_distance = 0
+					location = prev
+				}
 			}
-		}
-		event_target:nep_heptagram_system_5 = {
-			spawn_natural_wormhole = {
-				bypass_type = nep_sealportal
-				orbit_distance = 200
-				orbit_angle = 135
-			}
-			link_wormholes = event_target:nep_seal_system
+			remove_planet = yes
 		}
 		set_global_flag = nep_not_pass_sealportal
 		set_global_flag = nep_not_pass_Aemethms
@@ -814,11 +812,17 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			from = { is_country_type = nep_Legnahcras_country }
-			fromfrom = {
-				AND = {
-					exists = controller
-					controller = { is_country_type = nep_Legnahcras_country }
+			and = { 
+				exists = from 
+				from = { is_country_type = nep_Legnahcras_country }
+			}
+			and = {
+				exists = fromfrom
+				fromfrom = {
+					AND = {
+						exists = controller
+						controller = { is_country_type = nep_Legnahcras_country }
+					}
 				}
 			}
 		}
@@ -860,12 +864,18 @@ country_event = {
 	is_triggered_only = yes
 		
 	trigger = {
-		OR = {
-			from = { is_country_type = nep_Legnahcras_country }
-			fromfrom = {
-				AND = {
-					exists = controller
-					controller = { is_country_type = nep_Legnahcras_country }
+		OR = {		
+			and = { 
+				exists = from 
+				from = { is_country_type = nep_Legnahcras_country }
+			}
+			and = { 
+				exists = fromfrom
+				fromfrom = {
+					AND = {
+						exists = controller
+						controller = { is_country_type = nep_Legnahcras_country }
+					}
 				}
 			}
 		}

@@ -1,18 +1,5 @@
 @mining_station = 13
 
-#Thanks to LEX - Leviathan Events Xtended staffs
-entity = {
-	name = "void_dummy_01_entity"
-}
-
-entity = {
-	name = "void_dummy_01_entity_xx_entity"
-}
-
-entity = {
-	name = "nep_starbase_invinsible_entity"
-}
-
 entity = {
 	name = "humanoid_01_nep_station_whitegoo_entity"
 	pdxmesh = "humanoid_01_mining_station_mesh"

@@ -1,11 +1,11 @@
-resolution_category_SEoOC_galactic_focus_Krahen = {
-	group = galactic_focus
-	icon = "GFX_resolution_galactic_focus_category"
+# resolution_category_SEoOC_galactic_focus_Krahen = {
+	# group = galactic_focus
+	# icon = "GFX_resolution_galactic_focus_category"
 
-	resolution_types = {
-		"resolution_galactic_focus_SEoOC_galactic_focus_Krahen"
-	}
-}
+	# resolution_types = {
+		# "resolution_galactic_focus_SEoOC_galactic_focus_Krahen"
+	# }
+# }
 
 resolution_category_SEoOC_commerce_industry_highway = {
 	group = commerce_industry

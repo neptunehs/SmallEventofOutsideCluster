@@ -216,6 +216,19 @@
  NAME_nep_Gaiab:0 "Darkland"
  NAME_nep_Highland:0 "Highland"
  
+ NAME_US:0 "Urak Semur"
+ NAME_US_0:0 "US Zero"
+ NAME_US_11:0 "US 11"
+ NAME_US_23:0 "US 23"
+ NAME_US_66:0 "US 66"
+ NAME_US_125:0 "US 125"
+ NAME_US_145:0 "US 145"
+ NAME_US_178:0 "US 178"
+ NAME_US_205:0 "US 205"
+ NAME_US_276:0 "US 276"
+ NAME_US_388:0 "US 388"
+ NAME_US_465:0 "US 465"
+ NAME_US_578:0 "US 578"
  ###############################
  #misc
  ###############################

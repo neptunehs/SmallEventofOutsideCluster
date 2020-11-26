@@ -1,3 +1,16 @@
+nep_has_good_habitability_and_housing_and_jobs = {
+	has_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
+	any_owned_planet = {
+		habitability = { who = event_target:refugee_pop value >= 0.7 }
+		free_housing >= 1
+		is_under_colonization = no
+		is_controlled_by = owner
+		has_orbital_bombardment = no
+		free_jobs >= 1	
+		NOT = { has_planet_flag = nep_phantom_orbit }					
+	}
+}
+
 has_good_habitability_and_housing_phantom = {
 	is_country_type = default
 	NOT = { has_policy_flag = refugees_not_allowed } 

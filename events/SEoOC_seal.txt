@@ -416,11 +416,11 @@ country_event = {
 				}
 				every_system_megastructure = {
 					set_megastructure_flag = nep_seal6_temp
-				}
+				}				
 				spawn_megastructure = {
 					name = "NAME_Ring_Section_A"
 					type = "ring_world_2"
-					orbit_angle = -135
+					orbit_angle = -30
 					orbit_distance = 240
 					owner = root
 					graphical_culture = root
@@ -437,7 +437,7 @@ country_event = {
 						prevent_anomaly = yes
 						clear_deposits = yes
 						set_name = "NAME_Sub_Seal_1"
-						set_planet_flag = nep_seal_1
+						set_planet_flag = nep_seal_1	
 						set_planet_size = 40
 					}
 				}
@@ -470,7 +470,7 @@ country_event = {
 				spawn_megastructure = {
 					name = "NAME_Ring_Section_A"
 					type = "ring_world_2"
-					orbit_angle = -45
+					orbit_angle = 210
 					orbit_distance = 240
 					owner = root
 					graphical_culture = root
@@ -489,7 +489,6 @@ country_event = {
 						set_name = "NAME_Sub_Seal_3"
 						set_planet_flag = nep_seal_3	
 						set_planet_size = 40
-						save_global_event_target_as = nep_sub_seal_3
 					}
 				}
 				remove_megastructure = event_target:nep_temp_megastructure_3
@@ -499,15 +498,30 @@ country_event = {
 			}
 		}
 		else = {
-			set_spawn_system_batch = begin
-			no_scope = {
-				spawn_system = {
-					min_distance >= 0
-					max_distance <= 0
-					min_orientation_angle = 0
-					max_orientation_angle = 0
-					hyperlane = no
-					initializer = nep_seal_init
+			set_spawn_system_batch = begin			
+			if = {
+				limit = { has_global_flag = gigastructures_enabled }
+				no_scope = {
+					spawn_system = {
+						min_distance >= 0
+						max_distance <= 0
+						min_orientation_angle = 0
+						max_orientation_angle = 0
+						hyperlane = no
+						initializer = nep_seal_init_giga
+					}
+				}
+			}
+			else = {
+				no_scope = {
+					spawn_system = {
+						min_distance >= 0
+						max_distance <= 0
+						min_orientation_angle = 0
+						max_orientation_angle = 0
+						hyperlane = no
+						initializer = nep_seal_init
+					}
 				}
 			}
 			random_system = {
@@ -641,7 +655,6 @@ country_event = {
 				limit = { has_global_flag = gigastructures_enabled }
 				if = {
 					limit = {
-						exists = owner
 						NOR = {
 							has_global_flag = giga_core_birch
 							has_global_flag = giga_core_qso
@@ -686,7 +699,7 @@ country_event = {
 					}
 					if = {
 						limit = { 
-							has_global_flag = giga_core_qso							
+							has_global_flag = giga_core_qso		
 						}
 						set_star_flag = giga_core_02
 						random_system_planet = {
@@ -703,6 +716,18 @@ country_event = {
 					}
 				}
 			}
+		}
+		random_planet = {
+			limit = { has_planet_flag = nep_seal_1 }
+			save_global_event_target_as = nep_sub_seal_1
+		}
+		random_planet = {
+			limit = { has_planet_flag = nep_seal_2 }
+			save_global_event_target_as = nep_sub_seal_2
+		}
+		random_planet = {
+			limit = { has_planet_flag = nep_seal_3 }
+			save_global_event_target_as = nep_sub_seal_3
 		}
 	}
 	
@@ -815,7 +840,6 @@ ship_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = { has_country_flag = nep_grand_seal_founder }
 		solar_system = { 
 			has_star_flag = nep_seal_system
 			is_surveyed = { who = root.owner status = yes }
@@ -823,7 +847,22 @@ ship_event = {
 	}
 	
 	immediate = {
-		ship_event = { id = nep_seal.7 days = 5 random = 5 }
+		if = { 
+			limit = { owner = { has_country_flag = nep_grand_seal_founder } }
+			ship_event = { id = nep_seal.7 days = 5 random = 5 }
+		}
+		else = {			
+			owner = {
+				if = { 
+					limit = { has_global_flag = giga_core_birch }
+					set_country_flag = found_birch_candidate
+				}
+				if = { 
+					limit = { has_global_flag = giga_core_qso }
+					set_country_flag = found_qso_candidate
+				}
+			}
+		}
 	}
 }
 
@@ -848,6 +887,16 @@ ship_event = {
 			random_system_planet = {
 				limit = { has_planet_flag = nep_grand_seal }
 				save_global_event_target_as = nep_grand_seal_planet
+			}
+		}
+		owner = {
+			if = { 
+				limit = { has_global_flag = giga_core_birch }
+				set_country_flag = found_birch_candidate
+			}
+			if = { 
+				limit = { has_global_flag = giga_core_qso }
+				set_country_flag = found_qso_candidate
 			}
 		}
 	}

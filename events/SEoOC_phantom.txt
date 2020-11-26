@@ -126,6 +126,10 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = nep_phantom_passive_stage1
+	}
 	
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage1
@@ -139,6 +143,10 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_phantom_passive_stage2
+	}
+
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage2
 		set_global_flag = nep_phantom_passive_stage3
@@ -151,6 +159,10 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_phantom_passive_stage3
+	}
+
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage3
 		set_global_flag = nep_phantom_passive_stage4
@@ -163,6 +175,10 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_phantom_passive_stage4
+	}
+
 	immediate = {
 		remove_global_flag = nep_phantom_passive_stage4
 		set_global_flag = nep_phantom_passive_stage5
@@ -314,6 +330,7 @@ country_event = {
 	immediate = {
 		country_event = { id = nep_phantom.3003 } #notification
 		add_research_option = tech_nep_phantom_phase_shift
+		set_country_flag = nep_phantom_3_fired
 	}
 }
 
@@ -471,6 +488,72 @@ country_event = {
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
 		}
 		set_spawn_system_batch = end
+		if = {
+			limit = { NOT = { any_country = { has_country_flag = nep_Scrus_cluster_territorys } } }
+			create_country = {
+				name = NAME_nep_Scrus_cluster_territorys
+				type = nep_Scrus_cluster_territorys
+				auto_delete = no
+				flag = {
+					icon = {
+						category = "pirate"
+						file = "flag_pirate_11.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors ={
+						"black"
+						"dark_grey"
+						"null"
+						"null"
+					}
+				}
+			}
+			last_created_country = {
+				save_event_target_as = nep_Scrus_cluster_territorys
+				set_country_flag = nep_Scrus_cluster_territorys
+				create_ship_design = {
+					design = "NAME_nep_outpost"
+				}
+				add_ship_design = last_created_design
+			}
+		}
+		every_system = {
+			limit = { has_star_flag = nep_Scrus_cluster }
+			if = {
+				limit = { exists = starbase }
+				starbase = { fleet = { destroy_fleet = this } }
+			}
+			create_starbase = {
+				size = starbase_outpost
+				owner = event_target:nep_Scrus_cluster_territorys
+			}
+		}
+		random_planet = {
+			limit = { has_planet_flag = nep_seal_3 }
+			solar_system = {
+				spawn_megastructure = {
+					name = "NAME_Sub_Seal_3"
+					type = "nep_sealphantom_node"
+					orbit_angle = 0
+					orbit_distance = 0
+					location = prev
+				}
+			}
+			remove_planet = yes
+		}
+		random_megastructure = {
+			limit = { is_megastructure_type = nep_sealphantom_node }
+			create_ambient_object = {
+				type = nep_void
+				location = this
+			}
+			last_created_ambient_object = {
+				save_global_event_target_as = nep_sub_seal_3
+			}
+		}
 		country_event = { id = nep_phantom.3005 } #notifaction
 	}
 }
@@ -481,18 +564,17 @@ fleet_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		NOT = { has_global_flag = nep_phantom_active_begin }
+		NOT = { has_global_flag = nep_phantom_active_end }
+	}
+	
 	immediate = {
 		set_global_flag = nep_phantom_active_begin
+		set_global_flag = nep_phantom_in_the_arena
 		event_target:nep_Ginan_system = {
 			random_system_planet = {
 				save_global_event_target_as = nep_Ginan_star
-				root = {
-					set_location = {
-						target = prev
-						distance = 0
-						angle = random
-					}
-				}
 			}
 		}
 	}
@@ -500,11 +582,38 @@ fleet_event = {
 	after = {
 		#notifaction
 		owner = {
-			country_event = { id = nep_phantom.3006 } 
-			country_event = { id = nep_phantom.30061 days = 30 }
+			country_event = { id = nep_phantom.3006 }
 		}
 	}
 }
+
+fleet_event = {
+	id = nep_phantom.60
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_active_begin
+		NOR = { 
+			has_global_flag = nep_phantom_in_the_arena
+			has_global_flag = nep_phantom_active_end
+		}
+		from = { has_star_flag = nep_Scrus_cluster }
+	}
+	
+	immediate = {
+		set_global_flag = nep_phantom_in_the_arena
+	}
+	
+	after = {
+		#notifaction
+		owner = {
+			country_event = { id = nep_phantom.3006 }
+		}
+	}
+}
+
 
 fleet_event = {
 	id = nep_phantom.61
@@ -512,18 +621,21 @@ fleet_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_phantom_active_begin
+		has_global_flag = nep_phantom_in_the_arena
+		NOT = { has_global_flag = nep_phantom_active_end }
+		fromfrom = { has_star_flag = nep_Scrus_cluster }
+	}
+	
 	immediate = {
-		set_location = {
-			target = event_target:nep_seal_3
-			distance = 0
-			angle = random
-		}
+		remove_global_flag = nep_phantom_in_the_arena
 	}
 	
 	after = {
 		#notifaction
 		owner = {
-			country_event = { id = nep_phantom.30062 days = 30 }
+			country_event = { id = nep_phantom.30061 }
 		}
 	}
 }
@@ -534,19 +646,65 @@ fleet_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_phantom_active_begin
+		has_global_flag = nep_phantom_in_the_arena
+		NOT = { has_global_flag = nep_phantom_active_end }
+		from = { has_star_flag = nep_Scrus_cluster }
+	}
+	
+	immediate = {		
+		clear_fleet_actions = root
+		set_event_locked = yes
+		fleet_event = { id = nep_phantom.620 days = 3 }
+	}
+}
+
+fleet_event = {
+	id = nep_phantom.620
+	hide_window = yes
+	
+	is_triggered_only = yes
+		
 	immediate = {
-		set_location = {
-			target = event_target:nep_Ginan_star
-			distance = 0
-			angle = random
+		random_megastructure = {
+			limit = { is_megastructure_type = nep_sealphantom_node }
+			root = { set_location = prev }
 		}
+		set_event_locked = no
+		clear_orders = yes
 	}
 	
 	after = {
 		#notifaction
 		owner = {
-			country_event = { id = nep_phantom.30061 days = 30 }
+			country_event = { id = nep_phantom.30062 }
 		}
+	}
+}
+
+country_event = {
+	id = nep_phantom.63
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_phantom_active_begin
+		has_global_flag = nep_phantom_in_the_arena
+		from = { 
+			solar_system = { has_star_flag = nep_Scrus_cluster } 
+			NOT = { owner = { is_country_type = nep_phantom_active } }
+		}
+	}
+	
+	immediate = {
+		remove_global_flag = nep_phantom_in_the_arena
+	}
+	
+	after = {
+		#notifaction
+		country_event = { id = nep_phantom.30061 }
 	}
 }
 
@@ -1024,6 +1182,30 @@ event = {
 			}			
 			add_hyperlane = { from = this to = event_target:nep_Ginan_system }
 		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_1 }
+			remove_star_flag = nep_phantom_energy_consume_1
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_2 }
+			remove_star_flag = nep_phantom_energy_consume_2
+			set_star_flag = nep_phantom_energy_consume_1
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_3 }
+			remove_star_flag = nep_phantom_energy_consume_3
+			set_star_flag = nep_phantom_energy_consume_2
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_4 }
+			remove_star_flag = nep_phantom_energy_consume_4
+			set_star_flag = nep_phantom_energy_consume_3
+		}
+		every_system = {
+			limit = { has_star_flag = nep_phantom_energy_consume_5 }
+			remove_star_flag = nep_phantom_energy_consume_5
+			set_star_flag = nep_phantom_energy_consume_4
+		}
 	}
 }
 
@@ -1036,15 +1218,13 @@ country_event = {
 	
 	trigger = {
 		is_country_type = nep_phantom_active
-		from = { is_country_type = default }
+		from = { NOT = { is_country_type = nep_phantom_active } }
 	}
 	
 	immediate = {
+		remove_global_flag = nep_phantom_in_the_arena
 		from = { 
 			country_event = { id = nep_phantom.30077 }
-			abort_special_project = nep_phantom_Ginan
-			abort_special_project = nep_phantom_Ginan_2
-			abort_special_project = nep_phantom_Ginan_3
 		}
 		every_system = {
 			limit = { has_star_flag = nep_in_phantom_war }
@@ -1188,6 +1368,7 @@ country_event = {
 				OR = {
 					is_country_type = nep_phantom_active
 					is_country_type = nep_phantom_passive
+					is_country_type = nep_Scrus_cluster_territorys
 				}
 			}
 			every_owned_fleet = {
@@ -1581,9 +1762,14 @@ planet_event = {
 	
 	is_triggered_only = yes
 	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
 	trigger = { has_planet_flag = nep_phantom_orbit }	
 	
 	immediate = {
+		owner = { save_event_target_as = nep_phantom_2100_temp }
 		random_owned_pop = {
 			kill_pop = yes
 		}
@@ -1615,7 +1801,7 @@ planet_event = {
 					fleet_event = { id = nep_phantom.1002 }
 				}
 			}
-			owner = { country_event = { id = nep_phantom.32100 } } #notification
+			event_target:nep_phantom_2100_temp = { country_event = { id = nep_phantom.32100 } } #notification
 		}
 	}
 }
@@ -1627,9 +1813,14 @@ planet_event = {
 	
 	is_triggered_only = yes
 	
+	pre_triggers = {
+		has_owner = yes
+	}
+	
 	trigger = { has_planet_flag = nep_phantom_orbit }
 	
 	immediate = {
+		owner = { save_event_target_as = nep_phantom_2101_temp }
 		random_owned_pop = {
 			kill_pop = yes
 		}
@@ -1662,7 +1853,7 @@ planet_event = {
 					fleet_event = { id = nep_phantom.1002 }
 				}
 			}
-			owner = { country_event = { id = nep_phantom.32100 } } #notification
+			event_target:nep_phantom_2101_temp = { country_event = { id = nep_phantom.32100 } } #notification
 		}
 	}
 }
@@ -1893,19 +2084,6 @@ country_event = {
 	
 	option = {
 		name = nep_phantom.3005.a
-		hidden_effect = {
-			random_planet = {
-				limit = {
-					has_planet_flag = nep_seal_3
-				}
-				save_global_event_target_as = nep_seal_3
-			}
-		}
-		enable_special_project = {
-			name = nep_phantom_Ginan
-			owner = this
-			location = event_target:nep_seal_3
-		}
 	}
 }
 
@@ -1943,7 +2121,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nep_phantom.3006.b
+		name = OK
 		trigger = { has_country_flag = nep_phantom_3006_not_first }
 	}
 }
@@ -1961,12 +2139,7 @@ country_event = {
 	}
 		
 	option = {
-		name = nep_phantom.30061.a
-		enable_special_project = {
-			name = nep_phantom_Ginan_2
-			owner = this
-			location = event_target:nep_Ginan_star
-		}
+		name = OK
 	}
 }
 
@@ -1975,7 +2148,7 @@ country_event = {
 	title = "nep_phantom.30062.name"
 	desc = "nep_phantom.30062.desc"
 	picture = GFX_evt_black_hole
-	location = event_target:nep_seal_3
+	location = event_target:nep_sub_seal_3
 	
 	is_triggered_only = yes
 	
@@ -1983,12 +2156,7 @@ country_event = {
 	}
 		
 	option = {
-		name = nep_phantom.30062.a
-		enable_special_project = {
-			name = nep_phantom_Ginan_3
-			owner = this
-			location = event_target:nep_seal_3
-		}
+		name = CURSES
 	}
 }
 
@@ -2086,11 +2254,6 @@ country_event = {
 	
 	option = {
 		name = nep_phantom.30077.a
-		enable_special_project = {
-			name = nep_phantom_Ginan_3
-			owner = this
-			location = event_target:nep_seal_3
-		}
 	}
 }
 
@@ -2484,7 +2647,10 @@ country_event = {
 		name = nep_phantom.3221.b
 		trigger = { 
 			has_country_flag = nep_phantom_repeller_function_3 
-			NOT = { has_special_project = nep_phantom_research }
+			NOR = {				
+				has_country_flag = nep_phantom_3_fired
+				has_special_project = nep_phantom_research 
+			}			
 		}
 		enable_special_project = {
 			name = nep_phantom_research

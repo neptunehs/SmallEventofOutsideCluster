@@ -76,7 +76,7 @@ decision_nep_ugo_decision = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 50
+			influence = 20
 			energy = 500
 		}
 	}
@@ -88,6 +88,9 @@ decision_nep_ugo_decision = {
 		}	
 		NOT = { has_planet_flag = nep_ugo_modified }
 		has_current_purge = no
+		any_owned_pop = {
+			is_robot_pop = no
+		}
 	}
 	
 	effect = {
@@ -95,6 +98,7 @@ decision_nep_ugo_decision = {
 		hidden_effect = {
 			set_planet_flag = nep_ugo_modified
 			random_owned_pop = {
+				limit = { is_robot_pop = no }
 				save_event_target_as = nep_ugo_decision_temp
 			}
 			create_pop = { species = event_target:nep_ugo_decision_temp }

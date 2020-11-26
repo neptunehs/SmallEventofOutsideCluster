@@ -19,9 +19,7 @@ on_press_begin = {
 
 on_entering_system = {
 	events = {
-		nep_highway.5 #first enter station
-		nep_seal.2 #first enter ambient place
-		nep_dragon.64 #first enter dragon system
+		nep_surveyed.3
 		nep_inva.474
 		nep_gpc.4004
 		#nep_guide.4998
@@ -191,18 +189,26 @@ on_planet_zero_pops = {
 	}
 }
 
-on_entering_nepsealportal = {
+on_entering_nep_sealportal = {
 	events = {
 		nep_dragon.2
 	}
 }
 
-on_entering_nepsealgate = {
+on_entering_nep_sealgate = {
 	events = {
 		nep_inva.2
 	}
 }
 
+on_entering_nep_sealphantom = {
+	events = {
+		nep_phantom.62
+		nep_phantom.61
+		nep_phantom.60
+		nep_phantom.6
+	}
+}
 
 #on_blocker_cleared = {
 #	events = {
@@ -276,6 +282,19 @@ on_entering_wormhole = {
 	}
 }
 
+on_entering_nep_wormhole_wohp = {
+	events = {
+		nep_wohp.2
+	}
+}
+
+on_entering_nep_wormhole_deus = {
+	events = {
+		nep_deuspi.2
+		nep_deus.2000
+	}
+}
+
 # This = construction ship
 # Fires when construction is complete,
 # immediately before station is created
@@ -294,6 +313,13 @@ on_leader_death = {
 		nep_deuspl.9
 	}
 }
+
+on_ruler_removed = {
+	events = {
+		nep_deuspl.9
+	}
+}
+
 
 #Fired whenever a new owner is set for a planet,
 #be it after a war or through a trade
@@ -329,6 +355,7 @@ on_tech_increased = {
 # From = disbanded fleet
 on_fleet_disbanded = {
 	events = {
+		nep_phantom.63
 		nep_whitegoo.62
 	}
 }
@@ -369,8 +396,20 @@ on_building_nep_station_whitegoo = {
 	}
 }
 
-on_destroy_planet_with_PLANET_KILLER_UGO = {
+on_destroy_planet_with_PLANET_KILLER_NEP_UGO = {
 	events = {
 		nep_ugo.8
+	}
+}
+
+# Triggers event when each country first sends a ship into the system (once per country)
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+	events = {
+		nep_highway.5 #first enter station
+		nep_seal.2 #first enter ambient place
+		nep_dragon.64 #first enter dragon system
 	}
 }

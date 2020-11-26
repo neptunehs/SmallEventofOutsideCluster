@@ -15,12 +15,12 @@ origin_nep_deus_ex_machina = {
 		civics = {
 			NOR = {
 				value = civic_agrarian_idyll
-				value = civic_philosopher_king
+				#value = civic_philosopher_king
 				value = civic_feudal_realm
 				value = civic_corporate_dominion
 				value = civic_shadow_council
 				#value = civic_fanatic_purifiers
-				value = civic_exalted_priesthood
+				#value = civic_exalted_priesthood
 				value = civic_slaver_guilds
 			}
 		}

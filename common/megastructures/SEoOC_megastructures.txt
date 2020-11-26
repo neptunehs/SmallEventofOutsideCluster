@@ -182,6 +182,9 @@ nep_station_whitegoo_mega = {
 			remove_star_flag = nep_whitegoo_1
 			remove_star_flag = nep_whitegoo_2
 			remove_star_flag = nep_whitegoo_3
+			remove_modifier = nep_whitegoo_system_1
+			remove_modifier = nep_whitegoo_system_2
+			remove_modifier = nep_whitegoo_system_3
 			set_star_flag = nep_whitegoo_no_effect
 			every_system_planet = {
 				if = { 
@@ -202,23 +205,16 @@ nep_station_whitegoo_mega = {
 				destroy_ambient_object = this
 			}
 			every_fleet_in_system = {
-				if = { 
-					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_1 } }
-					remove_modifier = nep_whitegoo_fleet_1
-				}
-				if = { 
-					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_2 } }
-					remove_modifier = nep_whitegoo_fleet_2
-				}
-				if = { 
-					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_3 } }
-					remove_modifier = nep_whitegoo_fleet_3
-				}
+				limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet } }
+				remove_modifier = nep_whitegoo_fleet
 			}
 			every_neighbor_system = {
 				remove_star_flag = nep_whitegoo_1
 				remove_star_flag = nep_whitegoo_2
 				remove_star_flag = nep_whitegoo_3
+				remove_modifier = nep_whitegoo_system_1
+				remove_modifier = nep_whitegoo_system_2
+				remove_modifier = nep_whitegoo_system_3
 				set_star_flag = nep_whitegoo_no_effect
 				every_system_ambient_object = {
 					limit = { has_ambient_object_flag = nep_whitegoo_ambient_object }
@@ -237,20 +233,10 @@ nep_station_whitegoo_mega = {
 						limit = { has_modifier = nep_whitegoo_3 }
 						remove_modifier = nep_whitegoo_3
 					}
-				}
+				}				
 				every_fleet_in_system = {
-					if = { 
-						limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_1 } }
-						remove_modifier = nep_whitegoo_fleet_1
-					}
-					if = { 
-						limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_2 } }
-						remove_modifier = nep_whitegoo_fleet_2
-					}
-					if = { 
-						limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet_3 } }
-						remove_modifier = nep_whitegoo_fleet_3
-					}
+					limit = { any_owned_ship = { has_modifier = nep_whitegoo_fleet } }
+					remove_modifier = nep_whitegoo_fleet
 				}
 			}
 		}
@@ -268,4 +254,151 @@ nep_station_whitegoo_mega = {
 			}
 		}		
 	}
+}
+
+nep_wormhole_wohp_mega = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_evt_wormhole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	bypass_type = nep_wormhole_wohp
+}
+
+nep_wormhole_deus_mega = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_evt_wormhole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	bypass_type = nep_wormhole_deus
+}
+
+nep_wormhole_ugo_mega = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_evt_wormhole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	bypass_type = nep_wormhole_ugo
+}
+
+nep_sealportal_node_ruined = {
+	entity = "black_hole_entity_scale_40"
+	portrait = "GFX_evt_black_hole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+}
+
+nep_sealportal_node = {
+	entity = "black_hole_entity_scale_40"
+	portrait = "GFX_evt_black_hole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	possible = {
+		always = no
+	}
+	upgrade_from = {
+		nep_sealportal_node_ruined
+	}
+	build_time = 0
+	bypass_type = nep_sealportal
+}
+
+nep_sealportal_nexus = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_evt_wormhole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	bypass_type = nep_sealportal
+}
+
+
+nep_sealphantom_node_ruined = {
+	entity = "black_hole_entity_scale_40"
+	portrait = "GFX_evt_black_hole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+}
+
+nep_sealphantom_node = {
+	entity = "black_hole_entity_scale_40"
+	portrait = "GFX_evt_black_hole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+	potential = {
+		always = no
+	}
+	possible = {
+		always = no
+	}
+	upgrade_from = {
+		nep_sealphantom_node_ruined
+	}
+	build_time = 0
+	bypass_type = nep_sealphantom
+}
+
+nep_sealphantom_nexus = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_evt_wormhole"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	potential = {
+		always = no
+	}
+	bypass_type = nep_sealphantom
 }

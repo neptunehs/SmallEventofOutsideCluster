@@ -7,7 +7,8 @@
  
  nep_wohp.1000.name:0 "发现新的虫洞"
  nep_wohp.1000.desc:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
- nep_wohp.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_wohp_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ nep_wohp.1000.desc.c:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的天体影响了仪表。经过计算，[From.Leader.GetName]提出了天体的位置。"
+ #nep_wohp.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_wohp_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
  
  nep_wohp.2000.name:0 "未探索星系"
  nep_wohp.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个$pc_nuked$跟一个$pc_habitat$，双方都存在生命迹象，但没有对我们的接触信息发出回复。情况很奇怪，难道一个$pc_habitat$上面会没有能够跟我们进行沟通的高层次文明？"
@@ -135,14 +136,20 @@
 
  NAME_nep_Gaia_Republic:0 "盖亚共和国"
  NAME_nep_Highlander_Kingdom:0 "天上人王国"
- NAME_nep_Country_of_Machina:0 "机神国"
+  
+ BYPASS_NEP_WORMHOLE_WOHP:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_WOHP:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"
+ nep_wormhole_wohp_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ nep_wormhole_wohp_mega_DESC:0 "这个星系拥有一个§Y天然虫洞§!"
+ nep_wormhole_wohp_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_wohp_mega_DESC$"
  
  #########################################
  # deus
  ######################################### 
  nep_deus.1000.name:0 "发现新的虫洞"
  nep_deus.1000.desc:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
- nep_deus.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_deus_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ #nep_deus.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_deus_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ nep_deus.1000.desc.c:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的天体影响了仪表。经过计算，[From.Leader.GetName]提出了天体的位置。"
  
  nep_deus.2000.name:0 "$nep_wohp.2000.name$"
  nep_deus.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个奇怪的国家：一个巨型计算机领导的，主体民族是生物，且没有巨型计算机的端末以外的其他机器人的国家。貌似它们从原始族群时代就已经将这个计算机封为神，形成了一个很有特色的神权国家。"
@@ -340,118 +347,14 @@
  nep_deus_rescue_3:0 "弑神"
  nep_deus_rescue_3_DESC:0 "把那台把人不当人的机器“神”拆掉。"
  
- #########################################
- # whitegoo
- ######################################### 
- nep_whitegoo.5000.name:0 "奇怪的白雾"
- nep_whitegoo.5000.desc:0 "§Y[From.Solar_system.GetName]§!突然出现了一些奇怪的白雾。这种白雾会干扰我们舰队的推进器导致效率下降，同时导致星球接受太阳光减少可能导致发电效率降低，并且这些白雾产生了一些奇怪的共鸣导致一部分设备运行异常。这种白雾貌似还会逐渐在星系间传播，可能会成为新的威胁。"
- nep_whitegoo.5000.a:0 "令人担忧。"
+ NAME_nep_Country_of_Machina:0 "机神国"
  
- nep_whitegoo.5001.name:0 "浓厚的白雾"
- nep_whitegoo.5001.desc:0 "§Y[From.Solar_system.GetName]§!的白雾越发浓厚，科学家认为那么浓厚的白雾将会更加严重的影响舰队跟殖民地的运行。之前不那么浓厚的星系也将渐渐地变得浓厚，我们可能必须开始采取手段了。"
- nep_whitegoo.5001.a:0 "令人担忧。"
+ BYPASS_NEP_WORMHOLE_DEUS:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_DEUS:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"
+ nep_wormhole_deus_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ nep_wormhole_deus_mega_DESC:0 "这个星系拥有一个§Y天然虫洞§!"
+ nep_wormhole_deus_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_deus_mega_DESC$"
  
- nep_whitegoo.5002.name:0 "深不见底的白雾"
- nep_whitegoo.5002.desc:0 "§Y[From.Solar_system.GetName]§!的白雾已经厚到危险的程度，严重威胁舰队跟殖民地的经济。而且还在不断扩散，如果不想想办法，我们的经济会遭受沉重打击！"
- nep_whitegoo.5002.a:0 "令人担忧。"
- 
- nep_whitegoo.5.name:0 "白雾基础研究提案"
- nep_whitegoo.5.desc:0 "我们已经有一些星系被奇怪的白雾所覆盖。科学家们认为白雾的一切都值得研究，并拿出了研究提案。说不定我们能从这些研究中找到解决这个问题的端倪。"
- nep_whitegoo.5.a:0 "希望这值得。"
- 
- nep_whitegoo.51.name:0 "白雾基础研究提案"
- nep_whitegoo.51.desc:0 "其他国家开始研究那些奇怪的白雾，科学家认为我们也得未雨绸缪，跟进研究。一些科学家已经在科研交流中得到了一些资料跟样本，我们也可以开始进行研究了。"
- nep_whitegoo.51.a:0 "希望这值得。"
- 
- nep_whitegoo.7.desc:0 "您好。听说您们最近研究出了如何对付那些白雾的办法？要不要跟我们做个交易，您把这个技术卖我们，我们给你5000$energy$，并且会宣传是您们的技术。"
- nep_whitegoo.7.a:0 "成交。"
- nep_whitegoo.7.b:0 "想要技术，自己研究去。"
- 
- nep_whitegoo.71.desc:0 "您好。最近您们应该也听说了白雾正在到处肆虐。现在我们有一个解决方案，请问您们是否需要？只要3500$energy$。"
- nep_whitegoo.71.a:0 "成交。"
- nep_whitegoo.71.b:0 "我们自有办法。"
- 
- nep_whitegoo.8.name:0 "新的研究方法提出"
- nep_whitegoo.8.desc:0 "科学家们提出一个认为可以找到白雾源头的研究方案。"
- nep_whitegoo.8.a:0 "我会在合适的时间让他们研究。"
- 
- nep_whitegoo.81.name:0 "白雾源头"
- nep_whitegoo.81.desc:0 "科学家们在经过研究后，认为白雾同时起源于三个星系。我们将会将其标注在星图上，并且建立研究计划。"
- nep_whitegoo.81.a:0 "三个？同时？肯定有问题。"
- 
- nep_whitegoo.83.name:0 "白雾源头"
- nep_whitegoo.83.desc:0 "我们在之前被认为是白雾源头的星系里找到了一个虫洞。看来这才是通向真正元凶的星系的道路。§Y建造白雾吸收空间站在根源的黑洞星系即可完全解决该问题。§!"
- nep_whitegoo.83.desc.a:0 "我们在突然收到某几个星系的虫洞活动痕迹。这几个虫洞很隐蔽，之前根本没人知道，现在既然发生了活动证明有人使用了它们。经过科学家们跟之前的信息进行对照后，认为这几个虫洞很可能跟白雾的根源有关。§Y建造白雾吸收空间站在根源的黑洞星系即可完全解决该问题。§!"
- nep_whitegoo.83.a:0 "我们这就去完全解决问题。"
- 
- nep_whitegoo.91.name:0 "根除"
- nep_whitegoo.91.desc:0 "白雾的根源星系已经建立了吸收空间站，所有的白雾都将被吸入。现有的白雾也将慢慢消失。基本上，困扰全宇宙的白雾问题即将解决。"
- nep_whitegoo.91.a:0 "全宇宙的胜利！"
- 
- nep_whitegoo.9999.name:0 "副产物"
- nep_whitegoo.9999.desc:0 "因为白雾起源的白雾浓度实在太高，我们在那儿的白雾吸收空间站在吸收并压缩那些后产生了一些副产物，科学家们认为我们有办法对其进行使用。"
- nep_whitegoo.9999.a:0 "那就研究吧。"
- 
- tech_nep_whitegoo_1:0 "白雾基础研究"
- tech_nep_whitegoo_1_desc:0 "首先我们要知道这些白雾是什么东西。"
- tech_nep_whitegoo_2_1:0 "白雾传播学"
- tech_nep_whitegoo_2_1_desc:0 "我们要研究这白雾为什么能那么迅速的覆盖宇宙。"
- tech_nep_whitegoo_2_2:0 "白雾共鸣学"
- tech_nep_whitegoo_2_2_desc:0 "这个白雾对一些设备有奇怪的共鸣现象，我们要进行研究。"
- tech_nep_whitegoo_2_3:0 "白雾分子研究"
- tech_nep_whitegoo_2_3_desc:0 "我们要对白雾的构成与构造进行彻底分析，如果可能的话在实验室里从零复制。"
- tech_nep_whitegoo_3_1:0 "白雾传播阻碍"
- tech_nep_whitegoo_3_1_desc:0 "研究可以延缓白雾传播的干扰场技术。"
- tech_nep_whitegoo_3_1_prereqfor_title:0 "§H解锁特性：白雾传播阻碍§!"
- tech_nep_whitegoo_3_1_prereqfor_desc:0 "白雾的传播将会减缓50%（每次进行传播判定时有50%几率判定为传播失败）。"
- tech_nep_whitegoo_3_2:0 "白雾共鸣阻碍"
- tech_nep_whitegoo_3_2_desc:0 "研究破坏白雾造成共鸣的方法。"
- tech_nep_whitegoo_3_2_prereqfor_title:0 "§H解锁特性：白雾共鸣阻碍§!"
- tech_nep_whitegoo_3_2_prereqfor_desc:0 "跃迁引擎将能够在白雾中发挥作用。在一定程度上无效化白雾对星球经济的影响。"
- tech_nep_whitegoo_3_3:0 "白雾分子排出"
- tech_nep_whitegoo_3_3_desc:0 "我们要研究将白雾从我们的宇宙船的推进器中排出去的方法。"
- tech_nep_whitegoo_3_3_prereqfor_title:0 "§H解锁特性：白雾分子排出§!"
- tech_nep_whitegoo_3_3_prereqfor_desc:0 "在一定程度上无效白雾对宇宙船的速度的影响。"
- tech_nep_whitegoo_4:0 "白雾吸收空间站"
- tech_nep_whitegoo_4_desc:0 "我们已经拥有足够的知识对白雾进行比较彻底的解决。"
- tech_nep_whitegoo_4_prereqfor_title:0 "§H解锁：白雾吸收空间站§!"
- tech_nep_whitegoo_4_prereqfor_desc:0 "这种空间站将会对整个星系跟周边星系的白雾进行吸收。"
- tech_nep_whitegoo_5:0 "白雾传播路径论"
- tech_nep_whitegoo_5_desc:0 "让科学家们集中精力找到白雾的传播源。"
- tech_nep_whitegoo_5_prereqfor_title:0 "§H解锁：白雾源头星系§!"
- tech_nep_whitegoo_5_prereqfor_desc:0 "将揭示白雾是从何而来以便彻底解决问题。"
- 
- policy_nep_whitegoo_can_spawn_policy:0 "SEoOC - 是否开启经济危机"
- policy_nep_whitegoo_can_spawn_policy_desc:0 "注意：该项目只能在前100年更改。"
- nep_whitegoo_can_spawn:0 "是"
- nep_whitegoo_can_spawn_desc:0 ""
- nep_whitegoo_cant_spawn:0 "否"
- nep_whitegoo_cant_spawn_desc:0 ""
- 
- nep_whitegoo_research:0 "白雾起源研究"
- nep_whitegoo_research_DESC:0 "我们已经找到了白雾的来源。在那儿进行研究应该能找到什么有用的信息。"
- 
- nep_whitegoo_poi_name:0 "白雾起源地"
- nep_whitegoo_poi_desc:0 "在此地建造一个白雾吸收空间站就可以彻底解决该问题。"
- 
- nep_station_whitegoo:0 "白雾吸收空间站"
- nep_station_whitegoo_plural:0 "白雾吸收空间站"
- 
- nep_whitegoo_chain_title:0 "白雾起源"
- nep_whitegoo_chain_desc:0 "前往白雾起源，寻找问题解决。"
- 
- nep_station_whitegoo_mega:0 "$nep_station_whitegoo$"
- nep_station_whitegoo_mega_DESC:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
- nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
- 
- CAN_NOT_JUMP_IN_WHITEGOO:0 "§R白雾干扰跃迁引擎的使用。§!"
- 
- nep_whitegoo_1:0 "白雾"
- nep_whitegoo_1_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
- nep_whitegoo_2:0 "白雾"
- nep_whitegoo_2_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
- nep_whitegoo_3:0 "白雾"
- nep_whitegoo_3_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
  
  #############################################
  # Guide a Girl to the Galaxy
@@ -575,7 +478,8 @@
  #########################################   
  nep_ugo.1000.name:0 "发现新的虫洞"
  nep_ugo.1000.desc:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
- nep_ugo.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_wohp_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ #nep_ugo.1000.desc.b:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个位于§Y[event_target:nep_wohp_system_alternative.GetName]§!的未知的虫洞影响了仪表。经过计算，[From.Leader.GetName]提出了虫洞的位置，也许我们应该去看看这个以前没发现过的虫洞通向何处。"
+ nep_ugo.1000.desc.c:0 "经过[From.Leader.GetName]的研究，[From.GetName]的仪表异常并非真正的异常，而是有一个未知的天体影响了仪表。经过计算，[From.Leader.GetName]提出了天体的位置。"
  
  nep_ugo.1002.name:0 "没什么有趣发现"
  nep_ugo.1002.desc:0 "我们的科研船在扫描了[from.solar_system.GetName]的唯一宜居星球[from.GetName]后，认为虽然这星球上存在一些极为凶险的生物，他们将会阻碍将这个星球变成殖民地的可能性；另外虽然有一艘来源不明的船的残骸在这个星球上，但并没有人员存活，科技也并没有比我们更先进，不存在研究价值。除此以外没有什么其他的值得关注的内容。"
@@ -598,9 +502,9 @@
  nep_ugo.3003.desc:0 "[from.GetName]突然发生了一场生化危机：一种据信是单核生物的聚合体感染了一些市民，并且将这些市民变成了怪物。经过科学家们的紧急分析，这种生物聚合体能够在感染后迅速杀死宿主，并且利用宿主的DNA进行拟态。同时还能通过跟其他不同种族的宿主交流DNA，拟态成奇怪的怪物。更麻烦的是，他们能够在杀死宿主的同时获取宿主的知识，以获得更好的拟态效果。一直到我们的日常检测发现他们，他们才突然发难开始攻击其他人。它们甚至能感染机器人及合成人，通过它们的接口及拟生结构控制他们。另外因为这个攻击是突然同时发生的，有科学家推测这是一种意识相通的蜂群生物。这种生物异常危险，请调集军队立刻剿灭。另外，科学家根据他们的聚合体形态给他们取了名字：UGO，不明粘体状物体。"
  nep_ugo.3003.a:0 "准备战斗！"
  
- nep_ugo.3004.name:0 "生化危机"
- nep_ugo.3004.desc:0 "又一个星球发生了生化危机：这次是[From.GetName]。"
- nep_ugo.3004.a:0 "准备战斗！"
+ nep_ugo.30040.name:0 "生化危机"
+ nep_ugo.30040.desc:0 "又一个星球发生了生化危机：这次是[FromFrom.GetName]。"
+ nep_ugo.30040.a:0 "准备战斗！"
  
  nep_ugo.3005.name:0 "暂时的胜利"
  nep_ugo.3005.desc:0 "在[fromfrom.GetName]的对UGO战斗胜利了，但是前线指挥官认为它们并未被完全消灭，接下来可能还会感染其他生物。"
@@ -608,6 +512,11 @@
  
  nep_ugo.3007.name:0 "殖民地丢失"
  nep_ugo.3007.desc:0 "在[fromfrom.GetName]的对UGO战斗失败了，失去制约的UGO以非常迅速的速度感染了几乎所有的生物，并将其生态环境变成非UGO生物无法生存的环境。"
+ 
+ nep_ugo.30072.name:0 "生态转变"
+ nep_ugo.30072.desc.a:0 "[From.GetName]突然发生了生态系统的转变，所有的殖民人员全部失去联络。科学家认为那里已经被UGO全灭了。"
+ nep_ugo.30072.desc.b:0 "[From.GetName]突然发生了生态系统的转变，所有的殖民人员全部失去联络。原因并不明确。"
+ nep_ugo.30072.b:0 "真奇怪。"
  
  nep_ugo.4.name:0 "UGO:寻找解药"
  nep_ugo.4.desc:0 "科学家认为我们应该去[event_target:nep_ugo_US388.GetName]寻找对UGO的解药。多种证据显示，这种生物是从[event_target:nep_ugo_US388.GetName]诞生的，虽然不知道是否人为产物，但如果不是，当地一定会有它的天敌存在。"
@@ -644,8 +553,8 @@
  nep_ugo.7002.name:0 "UGO：感染停止"
  nep_ugo.7002.desc:0 "据说这些可怕的生物的源头已经被掐灭了，国内的所有感染者均已自行消灭，但拟态士兵虽然失去了感染性，但依然存在攻击性。科学家推测源头可能未被完全消灭，不知道未来会不会有其它的危机。"
  
- nep_ugo.8001.desc:0 ""
- nep_ugo.8001.name:0 ""
+ nep_ugo.8001.desc:0 "高速感染"
+ nep_ugo.8001.name:0 "[From.From.GetName]的全部人口都成为了UGO生物，并且服从于你。"
  
  nep_ugo.9001.name:0 "UGO：感染停止"
  nep_ugo.9001.desc:0 "在[event_target:nep_ugo_US388.GetName]发生了原因不明的爆炸（据信是UGO自行触发了该星球过去存在的远古文明制造的灭星兵器）后，所有的UGO生物均停止了行动，感染也停止了。危机过去了。"
@@ -656,17 +565,43 @@
  nep_ugo_hyper_creatures_army_defensive:0 "UGO拟态巨型怪物"
  nep_ugo_hyper_creatures_army:0 "UGO拟态巨型怪物"
  
+ nep_ugo_dangerous_creature:0 "凶猛生物"
+ nep_ugo_dangerous_creature_DESC:0 "凶猛生物使得这个星球不适合殖民。"
  nep_ugo_hell:0 "生态环境破坏"
  nep_ugo_hell_desc:0 "该星球被UGO破坏了生态环境，无法殖民。"
  
  PLANET_KILLER_NEP_UGO:0 "UGO高速感染装置" 
  PLANET_KILLER_NEP_UGO_DESC:0 "发动后会迅速将整个星球的所有生物均变成UGO感染拟态生物，且听从你的命令。" 
+ PLANET_KILLER_NEP_UGO_ACTION:0 "高速感染"
+ FLEETORDER_DESTROY_PLANET_WITH_PLANET_KILLER_NEP_UGO:0 "准备高速感染"
+ 
+ nep_SEoOC_ugo_category:0 "$nep_SEoOC_whop_category$"
  
  decision_nep_ugo_decision:0 "引入UGO"
- decision_nep_ugo_decision_desc:0 "在这个星球引入UGO。"
- decision_nep_ugo_decision_effects_short:0 "在这个星球引入UGO，以利用UGO的快速人口增长的有利条件。"
- 
+ decision_nep_ugo_decision_desc:0 "在这个星球引入UGO。注意，需要这个星球里存在非机器人类以供UGO进行复制。毕竟UGO虽然可以感染机器人，却无法增加机器人的制造速度。"
+ decision_nep_ugo_decision_effects_short:0 "在这个星球引入UGO，以利用UGO的复制能力加速增长人口。"
  
  trait_nep_ugo_1:0 "UGO生物"
  trait_nep_ugo_2:0 "UGO生物-生态限制"
+
+ nep_ugo_project_0:0 "清除凶猛生物"
+ nep_ugo_project_0_DESC:0 "[event_target:nep_ugo_US388.GetName]上的凶猛生物使得这个星球不适合殖民，消灭它们。"
  
+ nep_ugo_project_1:0 "UGO:寻找解药"
+ nep_ugo_project_1_DESC:0 "$nep_ugo.4.desc$"
+ nep_ugo_project_2:0 "UGO:寻找解药,第二次出发"
+ nep_ugo_project_2_DESC:0 "$nep_ugo.4.desc$"
+ nep_ugo_project_3:0 "UGO:寻找解药,第三次出发"
+ nep_ugo_project_3_DESC:0 "$nep_ugo.4.desc$"
+ nep_ugo_project_4:0 "远征[event_target:nep_ugo_US388.GetName]"
+ nep_ugo_project_4_DESC:0 "我们已经有了一队免疫UGO感染的部队。派遣他们去寻找彻底解决问题的办法吧。"
+ 
+ tech_nep_ugo_tech:0 "UGO疫苗研发"
+ tech_nep_ugo_tech_title:0 "得到少量的UGO疫苗以便下一步行动。"
+ tech_nep_ugo_tech_desc:0 "" 
+ 
+ BYPASS_NEP_WORMHOLE_UGO:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_UGO:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"
+ nep_wormhole_ugo_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
+ nep_wormhole_ugo_mega_DESC:0 "这个星系拥有一个§Y天然虫洞§!"
+ nep_wormhole_ugo_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_deus_mega_DESC$"

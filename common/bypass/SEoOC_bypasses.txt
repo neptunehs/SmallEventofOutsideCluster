@@ -1,3 +1,141 @@
+nep_wormhole_wohp = {
+	name = NATURAL_WORMHOLE_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = yes
+	windup_time = 0
+	winddown_time = 0
+	ftl_multiplier = 0
+	extends_sensors = yes
+	icon_frame = 12
+	remember_instances = yes
+	animation_time = 1
+	galactic_map_tooltip_header=NATURAL_WORMHOLE_GALACTIC
+	galactic_map_tooltip_desc=NATURAL_WORMHOLE_DESC
+	connection_type = scripted_connection
+	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
+	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
+	prerequisites = {
+		tech_wormhole_stabilization
+	}
+	
+	potential = {
+		always = yes
+	}
+	
+	country_can_use = {
+		always = yes
+	}
+	
+	scripted_connection = {
+		node = {
+			# system scope
+			has_star_flag = nep_wohp_system
+		}
+
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			NOT = { has_star_flag = nep_wohp_system }
+		}
+	}
+	
+	on_action = "on_entering_nep_wormhole_wohp"
+}
+
+nep_wormhole_deus = {
+	name = NATURAL_WORMHOLE_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = yes
+	windup_time = 0
+	winddown_time = 0
+	ftl_multiplier = 0
+	extends_sensors = yes
+	icon_frame = 12
+	remember_instances = yes
+	animation_time = 1
+	galactic_map_tooltip_header=NATURAL_WORMHOLE_GALACTIC
+	galactic_map_tooltip_desc=NATURAL_WORMHOLE_DESC
+	connection_type = scripted_connection
+	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
+	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
+	prerequisites = {
+		tech_wormhole_stabilization
+	}
+	
+	potential = {
+		always = yes
+	}
+	
+	country_can_use = {
+		always = yes
+	}
+	
+	scripted_connection = {
+		node = {
+			# system scope
+			has_star_flag = nep_deus_system
+		}
+
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			NOT = { has_star_flag = nep_deus_system }
+		}
+	}
+	
+	on_action = "on_entering_nep_wormhole_deus"
+}
+
+nep_wormhole_ugo = {
+	name = NATURAL_WORMHOLE_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = yes
+	windup_time = 0
+	winddown_time = 0
+	ftl_multiplier = 0
+	extends_sensors = yes
+	icon_frame = 12
+	remember_instances = yes
+	animation_time = 1
+	galactic_map_tooltip_header=NATURAL_WORMHOLE_GALACTIC
+	galactic_map_tooltip_desc=NATURAL_WORMHOLE_DESC
+	connection_type = scripted_connection
+	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
+	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
+	prerequisites = {
+		tech_wormhole_stabilization
+	}
+	
+	potential = {
+		always = yes
+	}
+	
+	country_can_use = {
+		always = yes
+	}
+	
+	scripted_connection = {
+		node = {
+			# system scope
+			has_star_flag = nep_ugo_system
+		}
+
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			NOT = { has_star_flag = nep_ugo_system }
+		}
+	}
+	
+	on_action = "on_entering_nep_wormhole_ugo"
+}
+
 nep_sealportal = {
 	name = NEP_SEALPORTAL_GALACTIC
 	is_pathfind = yes
@@ -13,7 +151,7 @@ nep_sealportal = {
 	animation_time = 1
 	galactic_map_tooltip_header=NEP_SEALPORTAL_GALACTIC
 	galactic_map_tooltip_desc=NEP_SEALPORTAL_GALACTIC_DESC
-	connection_type = one_to_one
+	connection_type = scripted_connection
 	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
 	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
 	prerequisites = {
@@ -29,7 +167,27 @@ nep_sealportal = {
 			}
 		}
 	}
-	on_action = "on_entering_nepsealportal"
+	scripted_connection = {
+		node = {
+			# system scope
+			has_star_flag = nep_seal_system
+		}
+
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			OR = {
+				has_star_flag = nep_Auriel_system
+				has_star_flag = nep_Gabriel_system
+				has_star_flag = nep_Sabriel_system 
+				has_star_flag = nep_Samuel_system
+				has_star_flag = nep_Michael_system
+				has_star_flag = nep_Jauiel_system
+				has_star_flag = nep_Anael_system
+			}
+		}
+	}
+	on_action = "on_entering_nep_sealportal"
 }
 
 nep_sealgate = {
@@ -63,5 +221,60 @@ nep_sealgate = {
 			has_star_flag = nep_Krahen_cluster
 		}
 	}
-	on_action = "on_entering_nepsealgate"
+	on_action = "on_entering_nep_sealgate"
+}
+
+nep_sealphantom = {
+	name = NEP_SEALPHANTOM_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = yes
+	windup_time = 15
+	winddown_time = 3
+	ftl_multiplier = 0
+	extends_sensors = no
+	icon_frame = 12
+	remember_instances = no
+	animation_time = 1
+	galactic_map_tooltip_header=NEP_SEALPHANTOM_GALACTIC
+	galactic_map_tooltip_desc=NEP_SEALPHANTOM_GALACTIC_DESC
+	connection_type = scripted_connection
+	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
+	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
+	prerequisites = {
+		tech_sealportal_dive
+	}
+	country_can_use = {
+		custom_tooltip = {
+			fail_text = NEP_SEALPORTAL_GALACTIC_CANNOT_USE
+			has_technology = tech_sealportal_dive
+		}
+		# custom_tooltip = {
+			# fail_text = NEP_SEALPHANTOM_GALACTIC_CANNOT_USE
+			# OR = {
+				# AND = {
+					# from = { NOT = { has_country_flag = nep_Scrus_cluster_territorys } }
+					# NOT = { has_global_flag = nep_phantom_in_the_arena }
+				# }
+				# AND = {
+					# from = { has_country_flag = nep_Scrus_cluster_territorys }
+					# has_global_flag = nep_phantom_in_the_arena
+				# }
+			# }
+		# }
+	}
+	scripted_connection = {
+		node = {
+			# system scope
+			has_star_flag = nep_seal_system
+		}
+
+		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)
+		nexus = {
+			# system scope
+			has_star_flag = nep_Ginan_system			
+		}
+	}
+	on_action = "on_entering_nep_sealphantom"
 }

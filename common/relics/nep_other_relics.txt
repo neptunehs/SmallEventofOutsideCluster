@@ -92,7 +92,7 @@ r_nep_ugo_relic = {
 				create_ship = {
 					name = "NAME_NEP_PLANET_KILLER_UGO"
 					design = "NAME_UGO_PLANET_KILLER_1"
-					prefix = yes
+					graphical_culture = root
 				}
 				set_owner = root
 				set_location = root.capital_scope.solar_system.starbase

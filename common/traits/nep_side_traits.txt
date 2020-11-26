@@ -26,7 +26,7 @@ trait_nep_ugo_1 = {
 	cost = 0
 	sorting_priority = 20
 	
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_great_khan.dds"
+	icon = "gfx/interface/icons/traits/trait_nep_ugo_1.dds"
 
 	initial = no
 	randomized = no
@@ -47,7 +47,7 @@ trait_nep_ugo_2 = {
 	cost = 0
 	sorting_priority = 20
 	
-	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_great_khan.dds"
+	icon = "gfx/interface/icons/traits/trait_nep_ugo_2.dds"
 
 	initial = no
 	randomized = no

@@ -458,6 +458,7 @@ weapon_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 500
+			sr_dark_matter = 1
 		}		
 		upkeep = {
 			energy = @xl_t7_upkeep_energy

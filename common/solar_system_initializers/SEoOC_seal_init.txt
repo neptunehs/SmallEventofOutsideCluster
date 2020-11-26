@@ -92,17 +92,17 @@ nep_seal_init = {
 		
 		flags = { nep_grand_seal } 
 		
+		
 		init_effect = {
 			prevent_anomaly = yes
 			clear_deposits = yes
 		}
 	}
-		
 	planet = {
 		class = "pc_black_hole"
 		name = "NAME_Sub_Seal_1"
 		orbit_distance = 120
-		orbit_angle = -135
+		orbit_angle = -30
 		size = 40
 		has_ring = no
 		
@@ -112,15 +112,13 @@ nep_seal_init = {
 			prevent_anomaly = yes
 			clear_deposits = yes
 		}
-	}
-	
+	}	
 	change_orbit = -120
-	
 	planet = {
 		class = "pc_black_hole"
 		name = "NAME_Sub_Seal_2"
 		orbit_distance = 120
-		orbit_angle = 90
+		orbit_angle = 120
 		size = 40
 		has_ring = no
 		
@@ -131,14 +129,12 @@ nep_seal_init = {
 			clear_deposits = yes
 		}
 	}
-	
 	change_orbit = -120
-	
 	planet = {
 		class = "pc_black_hole"
 		name = "NAME_Sub_Seal_3"
 		orbit_distance = 120
-		orbit_angle = -45
+		orbit_angle = 120
 		size = 40
 		has_ring = no
 		
@@ -147,7 +143,155 @@ nep_seal_init = {
 		init_effect = {
 			prevent_anomaly = yes
 			clear_deposits = yes
-			save_global_event_target_as = nep_sub_seal_3
+		}
+	}
+}
+
+nep_seal_init_giga = {
+	name = "NAME_Grand_Seal_of_Void"
+
+	class = "sc_grand_seal"
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 10
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 20
+	}
+	
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 30
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 40
+	}
+	
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 50
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 60
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 70
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 80
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 90
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 100
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 110
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 120
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 130
+	}
+	
+		asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 140
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 150
+	}
+	
+	flags = {
+		nep_seal_system
+		guardian
+	}
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 120
+		has_ring = no
+		
+		flags = { nep_grand_seal } 
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}
+			
+	planet = {
+		class = "pc_black_hole"
+		name = "NAME_Sub_Seal_1"
+		orbit_distance = 240
+		orbit_angle = -30
+		size = 40
+		has_ring = no
+		
+		flags = { nep_seal_1 } 
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}	
+	change_orbit = -240
+	planet = {
+		class = "pc_black_hole"
+		name = "NAME_Sub_Seal_2"
+		orbit_distance = 240
+		orbit_angle = 120
+		size = 40
+		has_ring = no
+		
+		flags = { nep_seal_2 } 
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}
+	change_orbit = -240
+	planet = {
+		class = "pc_black_hole"
+		name = "NAME_Sub_Seal_3"
+		orbit_distance = 240
+		orbit_angle = 120
+		size = 40
+		has_ring = no
+		
+		flags = { nep_seal_3 } 
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
 		}
 	}
 }

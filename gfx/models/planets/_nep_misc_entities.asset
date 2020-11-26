@@ -1,0 +1,36 @@
+#####    Planet attachments    ######
+@astroid_scale = 30
+
+entity = {
+	name = "black_hole_entity_scale_40"
+	pdxmesh = "black_hole_new_mesh"
+	
+	scale = 40
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 particle = "black_hole_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "blackhole_hum_idle" } }
+	}
+	locator = { name = "planet" }
+	attach = { "planet" = "black_hole_rings_entity" }
+	attach = { "planet" = "black_hole_grav_lens_entity" }
+	attach = { "planet" = "black_hole_grav_animation_entity" }
+	
+	game_data = {
+		size = 1
+		bloom_factor = 5
+	}
+}
+
+#Thanks to LEX - Leviathan Events Xtended staffs
+entity = {
+	name = "void_dummy_01_entity"
+}
+
+entity = {
+	name = "void_dummy_01_entity_xx_entity"
+}
+
+entity = {
+	name = "nep_starbase_invinsible_entity"
+}

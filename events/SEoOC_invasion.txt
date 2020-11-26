@@ -1156,6 +1156,7 @@ country_event = {
 					type = nep_Krahen_heavy_fortress_2
 				}
 			}
+			save_event_target_as = nep_inva_temp_planet
 			create_fleet = {
 				name = "NAME_nep_planetary_gun_invisible"
 				settings = {
@@ -1163,6 +1164,7 @@ country_event = {
 				}
 				effect = {
 					set_owner = event_target:nep_Krahen_country	
+					set_fleet_flag = nep_planetary_gun@event_target:nep_inva_temp_planet
 					create_ship = {
 						name = "NAME_nep_planetary_gun_invisible"
 						design = "NAME_nep_planetary_gun_design"
@@ -1605,6 +1607,7 @@ country_event = {
 				limit = { is_same_species = event_target:nep_Krahen_country } 
 				kill_pop = yes
 			}
+			set_owner = root
 			remove_building = nep_adv_tank_factory
 			remove_building = nep_heavy_fortress
 			remove_building = nep_heavy_fortress_2
@@ -2112,33 +2115,8 @@ event = {
 					is_colony = yes
 					has_ground_combat = no
 					has_building = "nep_planetary_gun"
-					NOT = { any_fleet_in_orbit = { is_ship_size = nep_planetary_gun_invisible } }
 				}
-				create_fleet = {
-					name = "NAME_nep_planetary_gun_invisible"
-					settings = {
-						spawn_debris = no 
-					}
-					effect = {
-						set_owner = event_target:nep_Krahen_country	
-						create_ship = {
-							name = "NAME_nep_planetary_gun_invisible"
-							design = "NAME_nep_planetary_gun_design"
-						}
-						set_location = {
-							target = prev
-							distance = 0
-							angle = random
-						}
-						set_fleet_stance = aggressive
-						set_aggro_range = 250
-						set_aggro_range_measure_from = self
-
-						queue_actions = {	
-							orbit_planet = prev
-						}
-					}
-				}
+				planet_event = { id = nep_inva.4600 }
 			}
 		}
 		while = {
@@ -2204,6 +2182,46 @@ event = {
 	}
 }
 
+planet_event = {
+	id = nep_inva.4600
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { solar_system = { any_fleet_in_system  = { has_fleet_flag = nep_planetary_gun@root } } }
+			}				
+			create_fleet = {
+				name = "NAME_nep_planetary_gun_invisible"
+				settings = {
+					spawn_debris = no 
+				}
+				effect = {
+					set_owner = event_target:nep_Krahen_country
+					set_fleet_flag = nep_planetary_gun@root
+					create_ship = {
+						name = "NAME_nep_planetary_gun_invisible"
+						design = "NAME_nep_planetary_gun_design"
+					}
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+					#set_fleet_stance = aggressive
+					set_aggro_range = 250
+					set_aggro_range_measure_from = self
+
+					queue_actions = {	
+						orbit_planet = prev
+					}
+				}
+			}
+		}
+	}
+}
 #unlock portal,on_space_battle_won
 country_event = {
 	id = nep_inva.47

@@ -28,18 +28,15 @@
  nep_phantom.3005.a:0 "叫我们的主力舰队上吧，一定要解决它们。"
  
  nep_phantom.3006.name:0 "到达目的地"
- nep_phantom.3006.desc.a:0 "我们的舰队§Y[From.GetName]§!到达了§Y[event_target:nep_Ginan_system.GetName]§!。这里到处都飘着一些机械残骸，而且安静的可怕：探测不到§Y[event_target:nep_phantom_global.GetName]§!的存在。另外，貌似传送装置隐藏在残骸中间，暂时无法使用。"
+ nep_phantom.3006.desc.a:0 "我们的舰队§Y[From.GetName]§!到达了§Y[event_target:nep_Ginan_system.GetName]§!。这里到处都飘着一些机械残骸，而且安静的可怕：探测不到§Y[event_target:nep_phantom_global.GetName]§!的存在。另外，貌似传送装置出现了奇怪的空间乱流，无法再从[event_target:nep_grand_seal_planet.solar_system.GetName]端通过舰队。"
  nep_phantom.3006.desc.b:0 "我们的舰队§Y[From.GetName]§!到达了§Y[event_target:nep_Ginan_system.GetName]§!。"
  nep_phantom.3006.a:0 "感觉是暴风雨前的宁静啊。"
- nep_phantom.3006.b:0 "好" 
  
- nep_phantom.30061.name:0 "传送已可使用"
- nep_phantom.30061.desc:0 "§Y[event_target:nep_Ginan_system.GetName]§!的传送已可使用。但是§Y[event_target:nep_seal_3.GetName]§!不知道为什么没有启动的痕迹，貌似是不允许太多舰队在对面星系出现。为什么§Y[event_target:nep_phantom_global.GetName]§!不受影响呢？"
- nep_phantom.30061.a:0 "好。"
+ nep_phantom.30061.name:0 "$NAME_Sub_Seal_3$正常化"
+ nep_phantom.30061.desc:0 "§Y$NAME_Sub_Seal_3$§!的空间乱流消失，传送功能已可使用。"
  
- nep_phantom.30062.name:0 "传送已可使用"
- nep_phantom.30062.desc:0 "§Y[event_target:nep_seal_3.GetName]§!的传送已可使用。"
- nep_phantom.30062.a:0 "好。"
+ nep_phantom.30062.name:0 "空间乱流"
+ nep_phantom.30062.desc:0 "§Y[from.GetName]§!被空间乱流推回了§Y$NAME_Sub_Seal_3$§!。"
  
  nep_phantom.30071.name:0 "暴风雨来临"
  nep_phantom.30071.desc:0 "§Y[From.GetName]§!进入了§Y[From.Solar_System.GetName]§!,然后遭到了§Y[event_target:nep_phantom_global.GetName]§!的伏击。根据§Y[From.GetName]§!发来的画面，§Y[From.Solar_System.GetName]§!布满了残骸，然后§Y[event_target:nep_phantom_global.GetName]§!残骸中间没有任何预兆的出现，科学家们怀疑这些残骸就是§Y[event_target:nep_phantom_global.GetName]§!本身。我们现在无法支援他们，只能祈祷他们能打赢。"
@@ -62,11 +59,11 @@
  nep_phantom.30075.a:0 "好。"
  
  nep_phantom.30077.name:0 "战败"
- nep_phantom.30077.desc:0 "我们战败了，第三子封印的传送装置又启动了。另外该星系的能量反应有所减弱。"
+ nep_phantom.30077.desc:0 "我们战败了，同时§Y$NAME_Sub_Seal_3$§!的空间乱流消失。另外该星系的能量反应有所减弱。"
  nep_phantom.30077.a:0 "可恶。"
  
  nep_phantom.30078.name:0 "能量吸收"
- nep_phantom.30078.desc:0 "在§Y[This.Solar_System.GetName]§!战斗的§Y[This.GetName]§!发来了异常报告，貌似在§Y[event_target:nep_phantom_global.GetName]§!的能量吸收攻击之下，舰队的护盾、推进器、武器都不同程度的运行不良。"
+ nep_phantom.30078.desc:0 "在§Y[fromfromfrom.GetName]§!战斗的§Y[This.GetName]§!发来了异常报告，貌似在§Y[event_target:nep_phantom_global.GetName]§!的能量吸收攻击之下，舰队的护盾、推进器、武器都不同程度的运行不良。"
  nep_phantom.30078.a:0 "花样真多！"
  
  
@@ -129,6 +126,18 @@
  
  CAN_NOT_JUMP_WHEN_IN_SCRUS:0 "$TRIGGER_FAIL$ 这个星系的亚空间极为不稳定，无法进行跃迁。"
  
+ BYPASS_NEP_SEALPHANTOM:0 "第一子封印虫洞特殊黑洞第三子封印亚型"
+ NEP_SEALPHANTOM_GALACTIC:0 "第一子封印类虫洞特殊黑洞第三子封印亚型"
+ NEP_SEALPHANTOM_GALACTIC_DESC:0 "同时具有黑洞跟虫洞性质的特殊天体"
+ NEP_SEALPHANTOM_GALACTIC_CANNOT_USE:0 "我们的舰队无法承受黑洞的压力。"
+ nep_sealphantom_node:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_node_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_nexus_MEGASTRUCTURE_DETAILS:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_nexus:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_nexus_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_node_ruined:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_node_ruined_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ 
  nep_phantom_orbit_stage1:0 "担忧"
  nep_phantom_orbit_stage1_desc:0 "星球的人们对于头上的舰队感到忧心忡忡。"
  nep_phantom_orbit_stage2:0 "衰弱症"
@@ -159,7 +168,8 @@
  NAME_nep_phantom_fleet:0 "幻影"
  NAME_nep_ghost_fleet:0 "鬼魂"
  NAME_nep_illusion_fleet:0 "幻象"
- NAME_nep_blurs_fleet:0 "模糊者"
+ NAME_nep_blurs_fleet:0 "模糊者" 
+ NAME_Sub_Seal_3:0 "第三子封印"
  
  nep_phantom_research:0 "[event_target:nep_phantom_global.GetName]研究"
  nep_phantom_research_DESC:0 "我们必须对[event_target:nep_phantom_global.GetName]的不断侵扰找到一个徹底的解决方案。"
@@ -192,4 +202,4 @@
  
  leader_trait_hero_of_mac:0 "孤胆英雄"
  leader_trait_hero_of_mac_desc:0 "对[event_target:nep_phantom_global.GetName]的伏击战中，在没有后援的情况下率领唯一的舰队完成了犹如英雄史诗一般的漂亮战绩。"
- 
+  

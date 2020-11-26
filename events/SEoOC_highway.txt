@@ -2027,12 +2027,12 @@ country_event = {
 						is_overlord_to = root
 						is_loyal_to = root
 						is_disloyal_to = root
-						is_primitive = yes						
+						is_primitive = yes
 					}
 				}
 				root = {
 					set_closed_borders = {
-						who = root
+						who = prev
 						status = yes
 					}
 				}

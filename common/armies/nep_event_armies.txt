@@ -286,6 +286,9 @@ nep_ugo_warriors_army = {
 
 	potential = {
 		owner = { has_country_flag = nep_can_use_ugo_warriors }
+		planet = {
+			is_capital = yes
+		}
 	}
 }
 
@@ -340,5 +343,8 @@ nep_ugo_hyper_creatures_army = {
 
 	potential = {
 		owner = { has_country_flag = nep_can_use_ugo_warriors }
+		planet = {
+			is_capital = yes
+		}
 	}
 }

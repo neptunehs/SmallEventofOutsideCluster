@@ -2,6 +2,7 @@
 
  nep_battleship_phantom:0 "Battleship?"
  nep_battleship_phantom_plural:0 "Battleship?"
+ NAME_Krahen_Battleship_phantom:0 "Battleship?"
  
  nep_phantom.3000.name:0 "Nothing Happened?"
  nep_phantom.3000.desc:0 "After we activated orbs, the two orbs shook their energy in a certain direction after resonating with each other, but there was no movement after that, as if nothing happened."
@@ -28,18 +29,15 @@
  nep_phantom.3005.a:0 "Call our strongest fleet, we must solve them."
  
  nep_phantom.3006.name:0 "Arrival"
- nep_phantom.3006.desc.a:0 "Our fleet §Y[From.GetName]§! has reached §Y[event_target:nep_Ginan_system.GetName]§!. There are mechanical wrecks everywhere, and the silence is terrible: the existence of §Y[event_target:nep_phantom_global.GetName]§! is not detected. In addition, it appears that the warp point is hidden in the wreckage and is temporarily unavailable."
+ nep_phantom.3006.desc.a:0 "Our fleet §Y[From.GetName]§! has reached §Y[event_target:nep_Ginan_system.GetName]§!. There are mechanical wrecks everywhere, and the silence is terrible: the existence of §Y[event_target:nep_phantom_global.GetName]§! is not detected. In addition, it seems that §Y$NAME_Sub_Seal_3$§! is experiencing strange spatial turbulence and can no longer pass the fleet from the §Y[event_target:nep_grand_seal_planet.solar_system.GetName]§! side."
  nep_phantom.3006.desc.b:0 "§Y[From.GetName]§! has reached §Y[event_target:nep_Ginan_system.GetName]§!."
  nep_phantom.3006.a:0 "It feels like the silence before the tempest."
- nep_phantom.3006.b:0 "Good." 
- 
- nep_phantom.30061.name:0 "Warp point is ready for use"
- nep_phantom.30061.desc:0 "The warp point of §Y[event_target:nep_Ginan_system.GetName]§! is ready for use. But third sub seal kept slience too,it seems that too many fleets are not allowed to appear in these systems."
- nep_phantom.30061.a:0 "Good."
- 
- nep_phantom.30062.name:0 "Warp point is ready for use"
- nep_phantom.30062.desc:0 "The Warp point of §Y[event_target:nep_seal_3.GetName]§! is ready for use."
- nep_phantom.30062.a:0 "Good."
+
+ nep_phantom.30061.name:0 "$NAME_Sub_Seal_3$ Normalization"
+ nep_phantom.30061.desc:0 "Spatial turbulence is gone,§Y$NAME_Sub_Seal_3$§! is functional now."
+
+ nep_phantom.30062.name:0 "Spatial turbulence"
+ nep_phantom.30062.desc:0 "§Y[from.GetName]§! was pushed back to §Y$NAME_Sub_Seal_3$§! by spatial turbulence."
  
  nep_phantom.30071.name:0 "The Tempest"
  nep_phantom.30071.desc:0 "§Y[From.GetName]§! entered §Y[From.Solar_System.GetName]§! and was ambushed by §Y[event_target:nep_phantom_global.GetName]§!. According to the §Y[From.GetName]§! screen, §Y[From.Solar_System.GetName]§! is full of wreckage, and then  §Y[event_target:nep_phantom_global.GetName]§! suddenly appear from wrecks. Scientists suspect that these wrecks are §Y[event_target:nep_phantom_global.GetName]§! itself. We can't support our fleet now, we can only pray that they can win. "
@@ -62,11 +60,11 @@
  nep_phantom.30075.a:0 "Good."
  
  nep_phantom.30077.name:0 "Defeated"
- nep_phantom.30077.desc:0 "We were defeated and the third sub seal warp point was activated.In addition, the energy response of this system has weakened."
+ nep_phantom.30077.desc:0 "We were defeated and §Y$NAME_Sub_Seal_3$§! is functional.In addition, the energy response of this system has weakened."
  nep_phantom.30077.a:0 "Damn."
  
  nep_phantom.30078.name:0 "Energy Siphon"
- nep_phantom.30078.desc:0 "An exception report was sent by §Y[This.GetName]§! which in the battle of §Y[This.Solar_System.GetName]§!. It seems that under the energy siphon attack of §Y[event_target:nep_phantom_global.GetName]§!, the fleet's shields, propulsions, and weapons are all in Poor operation."
+ nep_phantom.30078.desc:0 "An exception report was sent by §Y[This.GetName]§! which in the battle of §Y[fromfromfrom.GetName]§!. It seems that under the energy siphon attack of §Y[event_target:nep_phantom_global.GetName]§!, the fleet's shields, propulsions, and weapons are all in Poor operation."
  nep_phantom.30078.a:0 "So many tricks!"
  
  nep_phantom.3008.name:0 "The Tempest Past"
@@ -128,6 +126,19 @@
  
  CAN_NOT_JUMP_WHEN_IN_SCRUS:0 "$TRIGGER_FAIL$ Due to roiling subspace tides we can not use jump drive in this system."
  
+ BYPASS_NEP_SEALPHANTOM:0 "The Sub Seal 1 black hole type special wormhole the Sub Seal 3 sub-type"
+ NEP_SEALPHANTOM_GALACTIC:0 "The Sub Seal 1 black hole type special wormhole the Sub Seal 3 sub-type"
+ NEP_SEALPHANTOM_GALACTIC_DESC:0 "Special celestial bodies with black hole and wormhole properties"
+ NEP_SEALPHANTOM_GALACTIC_CANNOT_USE:0 "Our fleet cannot withstand the pressure of black holes."
+ nep_sealphantom_node:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_node_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_nexus_MEGASTRUCTURE_DETAILS:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_nexus:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_nexus_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_node_ruined:0 "$NEP_SEALPHANTOM_GALACTIC$"
+ nep_sealphantom_node_ruined_DESC:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ nep_sealphantom_node_ruined_MEGASTRUCTURE_DETAILS:0 "$NEP_SEALPHANTOM_GALACTIC_DESC$"
+ 
  nep_phantom_orbit_stage1:0 "Worrying"
  nep_phantom_orbit_stage1_desc:0 "People on the planet are worried about the fleet orbiting their planet."
  nep_phantom_orbit_stage2:0 "Debilitating disease"
@@ -158,7 +169,8 @@
  NAME_nep_phantom_fleet:0 "Phantom"
  NAME_nep_ghost_fleet:0 "Ghost"
  NAME_nep_illusion_fleet:0 "Illusion"
- NAME_nep_blurs_fleet:0 "Blurs"
+ NAME_nep_blurs_fleet:0 "Blurs" 
+ NAME_Sub_Seal_3:0 "Sub Seal 3"
  
  nep_phantom_research:0 "[event_target:nep_phantom_global.GetName] research"
  nep_phantom_research_DESC:0 "We must find a radical solution to the constant intrusion of [event_target:nep_phantom_global.GetName]." 

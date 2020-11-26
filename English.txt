@@ -1,4 +1,4 @@
-A event pack mod,with 6 linear events and 3 other events,but without any new models.
+A event pack mod,with 6 linear events and 5 other events,but without any new models.
 All events happened in newly generate outside clusters or systems.
 
 Warning:My mother language is Chinese,so this mod use google translate to make English localization,and quality is low.
@@ -14,16 +14,23 @@ events:
 Side story:
 anomaly:
 1.War of Heaven(Primitive)
+3.UVO
 4.Deus Ex Machina
-
-others:
 6.Whitegoo
 8.Grand Pirate Centrary
 
 Note:
 1.This mod has easy mode and default mode,you can change it in policies before first event begin,or auto turn to easy mode if you don't use NSC(newshipclasses) mod.
 2.May suffer performance in late-game(like L-gate events,all outside cluster will do).
-3.This mod may conflict to any mod changing game_rules/can_win_timed_victory,can_enter_system_by_jump,can_take_hostile_actions,can_jump_drive,I will compet every mod using this as I know.And may conflict to any mod generate outside clusters or orphan systems.(But have built-in compatibility with some mod like MEM,Extragalactic Clusters and so on.)
 4.I never try it in multiplayer game,may cause unknown problems.
 5.Of course,No achievements support.
 6.I don't know why,but if you load a save with this mod open,then load it without this mod,game will crash.
+
+
+In order to be compatible with mod Gigastructural Engineering&More£¨https://steamcommunity.com/workshop/filedetails/?id=1121692237£©, tthis mod uses some elements of mod Gigastructural Engineering&More.
+
+In addition, this mod has changed game_rules. If you use other mods on a large scale, please refer to the following game_rules compatible patch (just choose one):
+! Universial Game Rules Patch
+https://steamcommunity.com/sharedfiles/filedetails/?id=2187470106
+Sealed systems patch
+https://steamcommunity.com/sharedfiles/filedetails/?id=2157799521

@@ -1288,3 +1288,120 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = nep_test.32
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		always = no
+	}
+
+	immediate = {
+		if = { limit = { has_global_flag = giga_core_inactive } log = "giga_core_inactive" }
+		if = { limit = { has_global_flag = giga_core_active } log = "giga_core_active" }
+		if = { limit = { has_global_flag = giga_core_birch } log = "giga_core_birch" }
+		if = { limit = { has_global_flag = giga_core_qso } log = "giga_core_qso" }
+	}
+}
+
+fleet_event = {
+	id = nep_test.33
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_planet = {
+			clear_global_event_target = nep_sub_seal_3
+			save_global_event_target_as = nep_sub_seal_3
+		}
+		set_location = event_target:nep_sub_seal_3
+	}
+}
+
+fleet_event = {
+	id = nep_test.34
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_megastructure = {
+			clear_global_event_target = nep_sub_seal_3
+			save_global_event_target_as = nep_sub_seal_3
+		}
+		set_location = event_target:nep_sub_seal_3
+	}
+}
+
+fleet_event = {
+	id = nep_test.35
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_megastructure = {
+			limit = { is_megastructure_type = nep_sealphantom_node }
+			clear_global_event_target = nep_sub_seal_3
+			save_global_event_target_as = nep_sub_seal_3
+		}
+		set_location = event_target:nep_sub_seal_3
+	}
+}
+
+fleet_event = {
+	id = nep_test.36
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_megastructure = {
+			limit = { is_megastructure_type = nep_sealphantom_node }
+			clear_global_event_target = nep_sub_seal_4
+			save_global_event_target_as = nep_sub_seal_4
+		}
+		set_location = event_target:nep_sub_seal_4
+	}
+}
+
+fleet_event = {
+	id = nep_test.37
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = nep_seal_system }
+			random_system_megastructure = {
+				limit = { is_megastructure_type = nep_sealphantom_node }
+				clear_global_event_target = nep_sub_seal_4
+				save_global_event_target_as = nep_sub_seal_4
+			}
+		}
+		set_location = event_target:nep_sub_seal_4
+	}
+}

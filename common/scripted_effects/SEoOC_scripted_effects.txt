@@ -2325,16 +2325,17 @@ nep_whitegoo_1 = {
 	random_list = {
 		1 = {
 			set_star_flag = nep_whitegoo_1
+			add_modifier = { modifier = nep_whitegoo_system_1 }
 			every_system_planet = {
 				add_modifier = {
 					modifier = nep_whitegoo_1
 				}
 			}
-			every_fleet_in_system = {
-				add_modifier = {
-					modifier = nep_whitegoo_fleet_1
-				}
-			}
+			# every_fleet_in_system = {
+				# add_modifier = {
+					# modifier = nep_whitegoo_fleet_1
+				# }
+			# }
 			if = { 
 				limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 				while = {
@@ -2362,10 +2363,12 @@ nep_whitegoo_1 = {
 		}
 		1 = {
 			if = {
-				limit = {					
-					exists = space_owner
-					space_owner = {
-						NOT = { has_technology = tech_nep_whitegoo_3_1 }
+				limit = {
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							NOT = { has_technology = tech_nep_whitegoo_3_1 }
+						}
 					}
 				}
 				set_star_flag = nep_whitegoo_1
@@ -2375,8 +2378,7 @@ nep_whitegoo_1 = {
 							NOT = { exists = owner }
 							AND = {
 								exists = owner
-								owner = { NOT = { has_technology = tech_nep_whitegoo_3_2 }
-								}
+								owner = { NOT = { has_technology = tech_nep_whitegoo_3_2 } }
 							}
 						}
 					}
@@ -2384,21 +2386,21 @@ nep_whitegoo_1 = {
 						modifier = nep_whitegoo_1
 					}
 				}
-				every_fleet_in_system = {
-					limit = {
-						OR = {
-							NOT = { exists = owner }
-							AND = {
-								exists = owner
-								owner = { NOT = { has_technology = tech_nep_whitegoo_3_3 }
-								}
-							}
-						}
-					}
-					add_modifier = {
-						modifier = nep_whitegoo_fleet_1
-					}
-				}
+				# every_fleet_in_system = {
+					# limit = {
+						# OR = {
+							# NOT = { exists = owner }
+							# AND = {
+								# exists = owner
+								# owner = { NOT = { has_technology = tech_nep_whitegoo_3_3 }
+								# }
+							# }
+						# }
+					# }
+					# add_modifier = {
+						# modifier = nep_whitegoo_fleet_1
+					# }
+				# }
 				if = {
 					limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 					while = {
@@ -2431,16 +2433,17 @@ nep_whitegoo_2 = {
 	random_list = {
 		1 = {
 			set_star_flag = nep_whitegoo_2
+			add_modifier = { modifier = nep_whitegoo_system_2 }
 			every_system_planet = {
 				add_modifier = {
 					modifier = nep_whitegoo_2
 				}
 			}
-			every_fleet_in_system = {
-				add_modifier = {
-					modifier = nep_whitegoo_fleet_2
-				}
-			}			
+			# every_fleet_in_system = {
+				# add_modifier = {
+					# modifier = nep_whitegoo_fleet_2
+				# }
+			# }
 			if = { 
 				limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 				while = {
@@ -2469,22 +2472,25 @@ nep_whitegoo_2 = {
 		1 = {
 			if = {
 				limit = {
-					exists = space_owner
-					space_owner = {
-						NOT = { has_technology = tech_nep_whitegoo_3_1 }
+					OR = {
+						NOT = { exists = space_owner}
+						space_owner = {
+							NOT = { has_technology = tech_nep_whitegoo_3_1 }
+						}
 					}
 				}
 				set_star_flag = nep_whitegoo_2
+				add_modifier = { modifier = nep_whitegoo_system_2 }
 				every_system_planet = {
 					add_modifier = {
 						modifier = nep_whitegoo_2
 					}
 				}
-				every_fleet_in_system = {
-					add_modifier = {
-						modifier = nep_whitegoo_fleet_2
-					}
-				}
+				# every_fleet_in_system = {
+					# add_modifier = {
+						# modifier = nep_whitegoo_fleet_2
+					# }
+				# }
 				if = { 
 					limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 					while = {
@@ -2517,16 +2523,17 @@ nep_whitegoo_3 = {
 	random_list = {
 		1 = {
 			set_star_flag = nep_whitegoo_3
+			add_modifier = { modifier = nep_whitegoo_system_3 }
 			every_system_planet = {
 				add_modifier = {
 					modifier = nep_whitegoo_3
 				}
 			}
-			every_fleet_in_system = {
-				add_modifier = {
-					modifier = nep_whitegoo_fleet_3
-				}
-			}
+			# every_fleet_in_system = {
+				# add_modifier = {
+					# modifier = nep_whitegoo_fleet_3
+				# }
+			# }
 			if = { 
 				limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }	
 				while = {
@@ -2555,22 +2562,25 @@ nep_whitegoo_3 = {
 		1 = {
 			if = {
 				limit = {
-					exists = space_owner
-					space_owner = {
-						NOT = { has_technology = tech_nep_whitegoo_3_1 }
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = {
+							NOT = { has_technology = tech_nep_whitegoo_3_1 }
+						}
 					}
 				}
 				set_star_flag = nep_whitegoo_3
+				add_modifier = { modifier = nep_whitegoo_system_3 }
 				every_system_planet = {
 					add_modifier = {
 						modifier = nep_whitegoo_3
 					}
 				}
-				every_fleet_in_system = {
-					add_modifier = {
-						modifier = nep_whitegoo_fleet_3
-					}
-				}
+				# every_fleet_in_system = {
+					# add_modifier = {
+						# modifier = nep_whitegoo_fleet_3
+					# }
+				# }
 				if = { 
 					limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 					while = {

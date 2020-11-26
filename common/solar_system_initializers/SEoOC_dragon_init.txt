@@ -85,10 +85,20 @@ nep_Auriel_init = {
         has_ring = no
     }
 	
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = 0
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -166,10 +176,20 @@ nep_Gabriel_init = {
         has_ring = no
     }
 	
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -51.42
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -247,10 +267,20 @@ nep_Sabriel_init = {
         has_ring = no
     }
 	
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -102.85
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -318,7 +348,7 @@ nep_Samuel_init = {
 		nep_Samuel_system
 		nep_heptagram_cluster
 	}
-
+	
 	planet = {
       	count = 1
         class = star
@@ -328,10 +358,21 @@ nep_Samuel_init = {
         has_ring = no
     }
 	
+
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -154.28
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -409,10 +450,20 @@ nep_Michael_init = {
         has_ring = no
     }
 	
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -205.71
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -490,10 +541,20 @@ nep_Jauiel_init = {
         has_ring = no
     }
 	
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -257.14
+			orbit_distance = 210
+			location = star
+		}			
+	}
+	
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -574,7 +635,7 @@ nep_Anael_init = {
 	planet = {
         count = { min = 2 max = 5 }
         class = random_non_colonizable
-        orbit_distance = { min = 50 max = 140 }
+        orbit_distance = { min = 50 max = 100 }
       	orbit_angle = { min = 0 max = 360 }
         size = { min = 8 max = 24 }
 
@@ -628,6 +689,15 @@ nep_Anael_init = {
 				clear_deposits = yes
 				add_deposit = d_nep_Anael_moon_2
 			}
-		}		
+		}	
+	}
+	init_effect = {
+		spawn_megastructure = {
+			name = "NAME_Sub_Seal_1"
+			type = "nep_sealportal_nexus"
+			orbit_angle = -308.57
+			orbit_distance = 210
+			location = star
+		}			
 	}
 }

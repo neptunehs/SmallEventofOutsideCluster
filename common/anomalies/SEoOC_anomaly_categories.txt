@@ -85,7 +85,7 @@ nep_SEoOC_deus_category = {
 
 
 nep_SEoOC_ugo_category = {
-	desc = nep_SEoOC_ugo_story_category_desc
+	desc = nep_SEoOC_side_story_category_desc
 	picture = GFX_evt_wormhole
 	level = 10
 	#risk = 30

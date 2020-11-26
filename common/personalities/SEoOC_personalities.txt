@@ -81,7 +81,10 @@ nep_evangelising_zealots = {
 	}
 
 	allow = {
-		is_country_type = nep_machina
+		OR = { 
+			is_country_type = nep_machina
+			is_country_type = nep_machina_broken
+		}
 		NOT = {
 			has_ethic = "ethic_pacifist"
 			has_ethic = "ethic_fanatic_pacifist"
@@ -168,8 +171,11 @@ nep_fanatic_purifiers = {
 		attack_neutrals = yes
 	}
 
-	allow = {
-		is_country_type = nep_machina
+	allow = {		
+		OR = { 
+			is_country_type = nep_machina
+			is_country_type = nep_machina_broken
+		}
 		OR = {
 			AND = {
 				NOT = { host_has_dlc = "Utopia" }  

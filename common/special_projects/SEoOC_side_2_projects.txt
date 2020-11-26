@@ -1,3 +1,31 @@
+
+special_project = {
+	key = "nep_whitegoo_research"
+	days_to_research = 75
+	event_chain = "nep_whitegoo_chain"
+	tech_department = society_technology
+	picture = GFX_evt_interior_battle
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	
+	on_success = {
+		owner = { 
+			set_country_flag = nep_whitegoo_83_temp
+			country_event = { id = nep_whitegoo.82 }
+		}
+	}
+	
+	on_fail = {
+
+	}
+}
+
 special_project = {
 	key = "nep_escort_assignment"
 	days_to_research = 5

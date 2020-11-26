@@ -870,6 +870,7 @@ nep_ugo_init = {
 			set_planet_flag = nep_ugo_US388
 			add_deposit = d_city_ruins
 			add_deposit = d_city_ruins
+			add_modifier = { modifier = nep_ugo_dangerous_creature days = -1 }
 			create_ambient_object = {
 				type = abandoned_observation_outpost
 			}

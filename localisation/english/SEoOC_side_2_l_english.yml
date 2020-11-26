@@ -1,5 +1,118 @@
 ﻿l_english:
  #########################################
+ # whitegoo
+ ######################################### 
+ nep_whitegoo.5000.name:0 "Strange White Goo"
+ nep_whitegoo.5000.desc:0 "§Y[From.Solar_system.GetName]§! suddenly has some strange white goo. This white goo will interfere with the efficiency of our fleet's propulsions, and the planet's acceptance of solar light reduction may lead to power generation efficiency. And these white goo produce some strange resonances that cause some equipment to operate abnormally. This white goo seems to gradually spread between galaxies and may become a new threat."
+ nep_whitegoo.5000.a:0 "Worrying."
+ 
+ nep_whitegoo.5001.name:0 "Strong White Goo"
+ nep_whitegoo.5001.desc:0 "§Y[From.Solar_system.GetName]§! has a thicker white goo, and scientists believe that such a thick white goo will affect the operation of the fleet and the colonies more seriously. The previously less dense systems will gradually become strong, we may have to start taking measures."
+ nep_whitegoo.5001.a:0 "Worrying."
+ 
+ nep_whitegoo.5002.name:0 "Out of Sight"
+ nep_whitegoo.5002.desc:0 "White Goo in §Y[From.Solar_system.GetName]§! is already dangerous enough to seriously threaten the fleet and the colonial economy. It is still spreading. If we don't find a way, our economy will suffer a lot damage. "
+ nep_whitegoo.5002.a:0 "Worrying."
+ 
+ nep_whitegoo.5.name:0 "White Goo Basic Research Proposal"
+ nep_whitegoo.5.desc:0 "We already have some systems covered by strange white goo. Scientists believe that everything in white goo is worth studying and come up with research proposals. Maybe we can find some clues of the solution of this problem from these studies. "
+ nep_whitegoo.5.a:0 "I hope this is worth it."
+ 
+ nep_whitegoo.51.name:0 "White Goo Basic Research Proposal"
+ nep_whitegoo.51.desc:0 "Other countries have begun to study those strange white goo. Scientists believe that we have to plan ahead and follow up on research. Some scientists have obtained some information and samples in scientific research exchanges, and we can start research. "
+ nep_whitegoo.51.a:0 "I hope this is worth it."
+ 
+ nep_whitegoo.7.desc:0 "Greetings. We heard that you have recently developed a way to deal with those white goo. Do you want to make a deal with us, you sell this technology to us, we give you 5000 $energy$, and it will be propagate as your technology."
+ nep_whitegoo.7.a:0 "Deal."
+ nep_whitegoo.7.b:0 "Want technology, just study it yourself."
+ 
+ nep_whitegoo.71.desc:0 "Greetings. Recently you should have heard that white goo is raging everywhere. Now we have a solution. Do you need it? Just 3500 $energy$."
+ nep_whitegoo.71.a:0 "Deal."
+ nep_whitegoo.71.b:0 "We have our own way."
+ 
+ nep_whitegoo.8.name:0 "New research program proposed"
+ nep_whitegoo.8.desc:0 "Scientists have proposed a research program that can find the source of white goo."
+ nep_whitegoo.8.a:0 "I will let them study at the right time."
+ 
+ nep_whitegoo.81.name:0 "White Goo Source"
+ nep_whitegoo.81.desc:0 "The scientists have studied and believe that white goo originates from three systems at the same time. We will mark it on the star map and establish a research plan."
+ nep_whitegoo.81.a:0 "Three? At the same time? There must be a reason."
+ 
+ nep_whitegoo.83.name:0 "White Goo Source"
+ nep_whitegoo.83.desc:0 "We found a wormhole in the system that was previously thought to be the source of the white goo. It seems that this is the path to the system of the real origin.§YBuild a White Goo Absorption Station in the Black Hole System will slove white goo problem.§!"
+ nep_whitegoo.83.desc.a:0 "We are suddenly receiving traces of wormhole activity in several systems. These wormholes are hidden, no one knows before, and now that their activity has been proven to be used recently. After the scientists compared the previous information, they thought that these wormholes are likely to be related to the source of white goo.§YBuild a White Goo Absorption Station in the Black Hole System will slove white goo problem.§!"
+ nep_whitegoo.83.a:0 "We will solve the problem completely."
+ 
+ nep_whitegoo.91.name:0 "Eradication"
+ nep_whitegoo.91.desc:0 "The source system of the white goo have established an absorption space station, and all white goo will be inhaled. The existing white goo will slowly disappear. From now on, the white goo problem that troubled the whole universe is about to solve."
+ nep_whitegoo.91.a:0 "A victory of whole universe!"
+ 
+ nep_whitegoo.9999.name:0 "By-product"
+ nep_whitegoo.9999.desc:0 "Because the white fog concentration of the white mist origin is too high, our white fog absorption station there has produced some by-products after absorbing and compressing those. Scientists think we have a way to use it."
+ nep_whitegoo.9999.a:0 "Just find them."
+ 
+ tech_nep_whitegoo_1:0 "White Goo Basic Research"
+ tech_nep_whitegoo_1_desc:0 "First we need to know what these white goo are."
+ tech_nep_whitegoo_2_1:0 "White Goo Spreadology"
+ tech_nep_whitegoo_2_1_desc:0 "We need to study why this white goo covers the universe so quickly."
+ tech_nep_whitegoo_2_2:0 "White Goo Resonance Theory"
+ tech_nep_whitegoo_2_2_desc:0 "This white goo has a strange resonance with some devices, we need to research it."
+ tech_nep_whitegoo_2_3:0 "White Goo Molecular Research"
+ tech_nep_whitegoo_2_3_desc:0 "We want to thoroughly analyze the composition and construction of the white goo and, if possible, copy it from scratch in the lab."
+ tech_nep_whitegoo_3_1:0 "White Goo Spread Obstruction"
+ tech_nep_whitegoo_3_1_desc:0 "Research on interference field techniques that can delay white goo spread."
+ tech_nep_whitegoo_3_1_prereqfor_title:0 "§HUnlock:White Goo Spread Obstruction§!"
+ tech_nep_whitegoo_3_1_prereqfor_desc:0 "White goo spread speed will be reduced by 50%."
+ tech_nep_whitegoo_3_2:0 "White Goo Resonance Block"
+ tech_nep_whitegoo_3_2_desc:0 "Research on ways to block the white goo resonate."
+ tech_nep_whitegoo_3_2_prereqfor_title:0 "§HUnlock:White Goo Resonance Block§!"
+ tech_nep_whitegoo_3_2_prereqfor_desc:0 "The Jump Drive will be able to use in the white goo. To some extent invalidate the impact of white goo on the planet's economy."
+ tech_nep_whitegoo_3_3:0 "White Goo Discharge"
+ tech_nep_whitegoo_3_3_desc:0 "We want to study the way to discharge white goo from the propulsions of our spacecraft."
+ tech_nep_whitegoo_3_3_prereqfor_title:0 "§HUnlock:White Goo Discharge§!"
+ tech_nep_whitegoo_3_3_prereqfor_desc:0 "The effect of white goo on the speed of the spacecraft is somewhat ineffective."
+ tech_nep_whitegoo_4:0 "White Goo Absorption Station"
+ tech_nep_whitegoo_4_desc:0 "We already have enough knowledge to solve the white goo more thoroughly."
+ tech_nep_whitegoo_4_prereqfor_title:0 "§HUnlock: White Goo Absorption Station§!"
+ tech_nep_whitegoo_4_prereqfor_desc:0 "This space station will absorb white goo from the entire system and surrounding systems."
+ tech_nep_whitegoo_5:0 "White Goo Spread Path Mapping"
+ tech_nep_whitegoo_5_desc:0 "Let scientists concentrate on finding the source of white goo."
+ tech_nep_whitegoo_5_prereqfor_title:0 "§HUnlock: White Goo Source System§!"
+ tech_nep_whitegoo_5_prereqfor_desc:0 "Will reveal where the white goo came from in order to solve the problem completely."
+ 
+ policy_nep_whitegoo_can_spawn_policy:0 "SEoOC - Unlock Tiny Economy Crisis"
+ policy_nep_whitegoo_can_spawn_policy_desc:0 "Note: This policy can only be changed in the first 100 years."
+ nep_whitegoo_can_spawn:0 "Yep"
+ nep_whitegoo_can_spawn_desc:0 ""
+ nep_whitegoo_cant_spawn:0 "Nope"
+ nep_whitegoo_cant_spawn_desc:0 ""
+ 
+ nep_whitegoo_research:0 "White Goo Origin Study"
+ nep_whitegoo_research_DESC:0 "We have found the source of the white goo. What kind of useful information should be found there when conducting research?"
+ 
+ nep_whitegoo_poi_name:0 "White Goo Source"
+ nep_whitegoo_poi_desc:0 "Building a white goo absorbing space station here will solve this problem completely."
+ 
+ nep_station_whitegoo:0 "White Goo Absorption Station"
+ nep_station_whitegoo_plural:0 "White Goo Absorption Stations"
+ 
+ nep_whitegoo_chain_title:0 "White Goo Source"
+ nep_whitegoo_chain_desc:0 "Go to the origin of the white goo and find a solution to the problem."
+ 
+ nep_station_whitegoo_mega:0 "$nep_station_whitegoo$"
+ nep_station_whitegoo_mega_DESC:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
+ nep_station_whitegoo_mega_MEGASTRUCTURE_DETAILS:0 "$tech_nep_whitegoo_4_prereqfor_desc$"
+ 
+ CAN_NOT_JUMP_IN_WHITEGOO:0 "§RWhite Goo interferes with the use of the Jump Drive.§!"
+ 
+ nep_whitegoo_1:0 "White Goo"
+ nep_whitegoo_1_desc:0 "White Goo will affect the power generation capacity of planets then the economics. People need equipment to prevent the impact on the body, which will cause anxiety. Moreover, it is difficult to see things in the white fog, which will cause crimes."
+ nep_whitegoo_2:0 "White Goo"
+ nep_whitegoo_2_desc:0 "White Goo will affect the power generation capacity of planets then the economics. People need equipment to prevent the impact on the body, which will cause anxiety. Moreover, it is difficult to see things in the white fog, which will cause crimes."
+ nep_whitegoo_3:0 "White Goo"
+ nep_whitegoo_3_desc:0 "White Goo will affect the power generation capacity of planets then the economics. People need equipment to prevent the impact on the body, which will cause anxiety. Moreover, it is difficult to see things in the white fog, which will cause crimes."
+ 
+ #########################################
  # gpc
  #########################################
  nep_gpc.1.desc:0 "Hello, mighty §Y[Root.GetName]§!. We now have a shipment to §Y[event_target:nep_escort_destiny.GetName]§!, but according to reliable sources, the journey is not smooth. I hope you can provide escort. If completed, we will pay you 3000 §Y$energy$§!, 1500 §Y$consumer_goods$§!."
@@ -103,7 +216,7 @@
  
  nep_gpc_poi_name:0 "Grand Captain Balfour"
  nep_gpc_poi_desc:0 "The legendary pirate §YGrand Captain Balfour§!'s force."
- nep_gpc_tawni_balfour_poi_name:0 "§YTawni Balfour§!"
+ nep_gpc_tawni_balfour_poi_name:0 "Tawni Balfour"
  nep_gpc_tawni_balfour_poi_desc:0 "Here is the base of §YTawni Balfour§!."
  nep_gpc_pete_girly_poi_name:0 "Pete Girly"
  nep_gpc_pete_girly_poi_desc:0 "Here is the base of §YPete Girly§!."
@@ -112,7 +225,7 @@
  nep_gpc_cyrca_poi_name:0 "Cyrca"
  nep_gpc_cyrca_poi_desc:0 "Here is the base of §YCyrca§!."
  
- nep_gpc_pirate:0 "Pirate Waves"
+ nep_gpc_piracy:0 "Pirate Waves"
  
  nep_escort_assignment:0 "Escort Fleet Concentration Point"
  nep_escort_assignment_DESC:0 "Please don't forget that if you don't concentrate your fleets on time, you will breach the contract."
