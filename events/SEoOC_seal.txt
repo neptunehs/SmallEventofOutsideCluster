@@ -22,6 +22,7 @@ country_event = {
 		set_global_flag = nep_seal_ambient_created
 		capital_scope = {
 			closest_system = {
+				use_bypasses = yes
 				limit = {
 					has_star_flag = nep_highway_note_system
 				}
@@ -424,7 +425,7 @@ country_event = {
 					orbit_distance = 240
 					owner = root
 					graphical_culture = root
-					location = star
+					planet = star
 				}
 				random_system_megastructure = {
 					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
@@ -449,7 +450,7 @@ country_event = {
 					orbit_distance = 240
 					owner = root
 					graphical_culture = root
-					location = star
+					planet = star
 				}
 				random_system_megastructure = {
 					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
@@ -474,7 +475,7 @@ country_event = {
 					orbit_distance = 240
 					owner = root
 					graphical_culture = root
-					location = star
+					planet = star
 				}
 				random_system_megastructure = {
 					limit = { NOT = { has_megastructure_flag = nep_seal6_temp } }
@@ -717,15 +718,15 @@ country_event = {
 				}
 			}
 		}
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_1 }
 			save_global_event_target_as = nep_sub_seal_1
 		}
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_2 }
 			save_global_event_target_as = nep_sub_seal_2
 		}
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_3 }
 			save_global_event_target_as = nep_sub_seal_3
 		}

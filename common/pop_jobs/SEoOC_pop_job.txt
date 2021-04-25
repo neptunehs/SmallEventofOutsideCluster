@@ -164,7 +164,7 @@ nep_miko = {
 		category = planet_jobs
 		produces = {
 			unity = 4
-			influence = 1
+			influence = 0.25
 		}
 		upkeep = {
 			trigger = { 

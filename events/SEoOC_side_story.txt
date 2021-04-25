@@ -2600,6 +2600,13 @@ fleet_event = {
 	
 	immediate = {
 		owner = { set_country_flag = nep_deus_visited }
+		random_country = {
+			limit = { 
+				is_same_value = event_target:nep_deus_country				
+				NOT = { has_communications = root }
+			}
+			establish_communications_no_message = root
+		}
 	}
 	
 	option = {
@@ -2633,6 +2640,7 @@ country_event = {
 		country_event = { id = nep_deus.3 days = 360 random = 360 }
 	}
 }
+
 
 country_event = {
 	id = nep_deus.3
@@ -2760,6 +2768,27 @@ country_event = {
 	}
 }
 
+#on_space_battle_lost
+country_event = {
+	id = nep_deus.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = root
+		exists = from
+		exists = fromfrom
+		exists = fromfromfrom
+		is_country_type = nep_machina_broken
+		from = { has_communications = root }
+		fromfrom = { is_ship_class = shipclass_starbase }
+	}
+	
+	immediate = {
+		destroy_ship = fromfrom
+	}
+}
+	
 #on_yearly_pulse
 event = {
 	id = nep_deus.9
@@ -4517,6 +4546,7 @@ country_event = {
 					kill_pop = yes
 				}
 				closest_system = {
+					use_bypasses = yes
 					limit = {
 						any_system_planet = {
 							exists = owner
@@ -4764,7 +4794,7 @@ country_event = {
 				}
 				save_global_event_target_as = nep_deus_system
 				clear_global_event_target = nep_deus_home
-				random_planet = {
+				random_galaxy_planet = {
 					limit = { has_planet_flag = nep_deus_home }
 					save_global_event_target_as = nep_deus_home
 				}
@@ -4910,7 +4940,10 @@ country_event = {
 					random_pos = yes
 				}
 				random_rim_system = {
-					limit = { has_natural_wormhole = no }
+					limit = { 
+						has_natural_wormhole = no
+						NOT = { any_ship_in_system = { exists = this } }
+					}
 					spawn_natural_wormhole = {
 						bypass_type = wormhole
 						random_pos = yes
@@ -4925,7 +4958,7 @@ country_event = {
 				}
 			}
 			clear_global_event_target = nep_deus_home
-			random_planet = {
+			random_galaxy_planet = {
 				limit = { has_planet_flag = nep_deus_home }
 				save_global_event_target_as = nep_deus_home
 			}
@@ -4939,6 +4972,44 @@ country_event = {
 				generate_start_buildings_and_districts = yes
 				generate_start_pops = yes
 				add_building = building_nep_palace_of_machina
+				solar_system = {
+					random_system_planet = {
+						limit = {
+							has_deposit = d_energy_5
+							has_mining_station = no
+						}
+						create_mining_station = {
+							owner = root
+						}
+					}
+					random_system_planet = {
+						limit = {
+							has_deposit = d_energy_5
+							has_mining_station = no
+						}
+						create_mining_station = {
+							owner = root
+						}
+					}
+					random_system_planet = {
+						limit = {
+							has_deposit = d_minerals_5
+							has_mining_station = no
+						}
+						create_mining_station = {
+							owner = root
+						}
+					}
+					random_system_planet = {
+						limit = {
+							has_deposit = d_minerals_5
+							has_mining_station = no
+						}
+						create_mining_station = {
+							owner = root
+						}
+					}
+				}
 			}
 			species = {
 				set_species_homeworld = event_target:nep_deus_home
@@ -4961,7 +5032,7 @@ country_event = {
 				}
 				destroy_colony = yes
 				remove_planet = yes
-				surveyed = { set_surveyed = no surveyor = root }
+				set_surveyed = { surveyed = no surveyor = root }
 			}
 			every_owned_fleet = {
 				limit = {
@@ -4973,10 +5044,54 @@ country_event = {
 					angle = random
 				}
 			}
+			IF = {
+				LIMIT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+				create_species = {
+					name = random
+					class = ROBOT
+					portrait = random
+					namelist = "AI"
+					traits = {
+						trait = trait_mechanical
+						trait = random_traits
+					}
+					effect = {
+						save_event_target_as = nep_machina_species
+					}
+				}
+				ELSE = {
+					create_species = {
+						name = random
+						class = ROBOT
+						portrait = default_robot
+						namelist = "AI"
+						traits = {
+							trait = trait_mechanical
+							trait = random_traits
+						}
+						effect = {
+							save_event_target_as = nep_machina_species
+						}
+					}
+				}
+			}
+			create_leader = {
+				class = ruler
+				species = event_target:nep_machina_species
+				name = "NAME_nep_machina"
+				skill = 10
+				event_leader = yes
+				immortal = yes
+			}
+			set_leader = last_created_leader
 		}
 		else = {
 			
 		}
+	}
+
+	after = {
+		country_event = { id = distar.3043 days = 3 random = 3 }
 	}
 }
 
@@ -7727,7 +7842,7 @@ ship_event = {
 			}
 			#save_global_event_target_as = nep_ugo_system
 		}
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_ugo_US388 }			
 			save_global_event_target_as = nep_ugo_US388
 		}
@@ -7913,7 +8028,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_ugo_US388 }	
 			create_country = {
 				name = "NAME_nep_Ghost_Science_Ship"
@@ -8004,7 +8119,7 @@ country_event = {
 		trigger = { event_target:nep_ugo_US388 = { is_under_colonization = no } }
 		text = "nep_ugo.2003.desc.b"
 	}
-	picture = GFX_evt_toxic_planet
+	picture = GFX_evt_toxic
 	location = event_target:nep_ugo_US388
 	show_sound = event_ghost_town
 	is_triggered_only = yes
@@ -8064,7 +8179,7 @@ country_event = {
 	}
 	
 	immediate = {
-		random_planet = {
+		random_galaxy_planet = {
 			limit = {
 				exists = owner
 				owner = { has_country_flag = nep_ugo_target }
@@ -8173,7 +8288,7 @@ country_event = {
 			destroy_fleet = from
 		}
 		else = {
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					exists = owner
 					owner = { has_country_flag = nep_ugo_target }
@@ -8619,7 +8734,7 @@ country_event = {
 		trigger = { NOT = { has_global_flag = nep_ugo_infected_benoticed } }
 		text = "nep_ugo.30072.desc.b"
 	}
-	picture = GFX_evt_toxic_planet
+	picture = GFX_evt_toxic
 	location = from
 	show_sound = event_solar_fusion
 	
@@ -8658,7 +8773,7 @@ country_event = {
 	}
 	
 	immediate = {
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_ugo_infected }
 			owner = { save_event_target_as = nep_ugo_3008_temp }
 		}
@@ -8680,7 +8795,7 @@ country_event = {
 				}
 			}		
 			2 = {
-				random_planet = {
+				random_galaxy_planet = {
 					limit = { 
 						is_colony = yes
 						is_capital = no
@@ -8699,7 +8814,7 @@ country_event = {
 				}
 			}
 			1 = {			
-				random_planet = {
+				random_galaxy_planet = {
 					limit = { 
 						NOT = { has_planet_flag = nep_ugo_infected }
 						exists = owner
@@ -9053,7 +9168,7 @@ country_event = {
 	id = nep_ugo.7001
 	title = "nep_ugo.7001.name"
 	desc = "nep_ugo.7001.desc"
-	picture = GFX_evt_propaganda
+	picture = GFX_evt_alien_propaganda
 	is_triggered_only = yes
 	show_sound = event_alien_signal
 	
@@ -9074,7 +9189,7 @@ country_event = {
 	id = nep_ugo.7002
 	title = "nep_ugo.7002.name"
 	desc = "nep_ugo.7002.desc"
-	picture = GFX_evt_propaganda
+	picture = GFX_evt_alien_propaganda
 	is_triggered_only = yes
 	show_sound = event_alien_signal
 	
@@ -9366,12 +9481,12 @@ country_event = {
 	immediate = {
 		remove_global_flag = nep_ugo_infect_begin
 		remove_global_flag = nep_ugo_infected_benoticed
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_ugo_US388 }		
 			change_pc = pc_shattered
 			remove_modifier = nep_ugo_hell
 		}
-		every_planet = {
+		every_galaxy_planet = {
 			limit = { has_planet_flag = nep_ugo_infected }
 			every_owned_pop = {
 				limit = { has_pop_flag = nep_ugo_infected }

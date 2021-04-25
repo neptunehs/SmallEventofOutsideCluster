@@ -128,7 +128,7 @@ country_event = {
 			}
 		}
 		set_spawn_system_batch = end
-		random_planet = {
+		random_galaxy_planet = {
 			limit = {
 				has_planet_flag = nep_seal_2
 			}
@@ -137,7 +137,7 @@ country_event = {
 				spawn_megastructure = {
 					name = "NAME_nep_Seal_Gate"
 					type = nep_sealgate_ruined
-					location = event_target:nep_seal_2
+					planet = event_target:nep_seal_2
 					orbit_angle = 1
 					orbit_distance = 1
 				}
@@ -213,7 +213,7 @@ country_event = {
 					spawn_megastructure = {
 						name = "NAME_nep_Seal_Gate"
 						type = nep_sealgate_restored
-						location = event_target:nep_gate_temp_poi
+						planet = event_target:nep_gate_temp_poi
 						orbit_angle = 186
 						orbit_distance = 150
 					}
@@ -391,7 +391,6 @@ country_event = {
 							is_neighbor_of = prev
 							is_rim_system = yes
 							any_neighbor_system = {
-								ignore_hyperlanes = no
 								is_within_borders_of = prevprev
 							}
 							nep_st_is_not_outer_or_fe_system = yes
@@ -406,7 +405,6 @@ country_event = {
 						is_neighbor_of = prev
 						is_rim_system = yes
 						any_neighbor_system = {
-							ignore_hyperlanes = no
 							is_within_borders_of = prevprev
 						}
 						nep_st_is_not_outer_or_fe_system = yes
@@ -422,7 +420,6 @@ country_event = {
 							is_neighbor_of = prev
 							is_rim_system = yes
 							any_neighbor_system = {
-								ignore_hyperlanes = no
 								is_within_borders_of = prevprev
 							}
 							nep_st_is_not_outer_or_fe_system = yes
@@ -438,7 +435,6 @@ country_event = {
 						is_neighbor_of = prev
 						is_rim_system = yes
 						any_neighbor_system = {
-							ignore_hyperlanes = no
 							is_within_borders_of = prevprev
 						}						
 						nep_st_is_not_outer_or_fe_system = yes
@@ -454,7 +450,6 @@ country_event = {
 						is_neighbor_of = prev
 						is_rim_system = yes
 						any_neighbor_system = {
-							ignore_hyperlanes = no
 							is_within_borders_of = prevprev
 						}
 						nep_st_is_not_outer_or_fe_system = yes
@@ -471,7 +466,6 @@ country_event = {
 						is_neighbor_of = prev
 						is_rim_system = yes
 						any_neighbor_system = {
-							ignore_hyperlanes = no
 							is_within_borders_of = prevprev
 						}
 						nep_st_is_not_outer_or_fe_system = yes
@@ -483,7 +477,6 @@ country_event = {
 				limit = {
 					is_neighbor_of = event_target:nep_Krahen_victim_1
 					any_neighbor_system = {
-						ignore_hyperlanes = no
 						is_within_borders_of = event_target:nep_Krahen_victim_1
 					}
 					nep_st_is_not_outer_or_fe_system = yes
@@ -500,7 +493,6 @@ country_event = {
 				limit = {
 					is_neighbor_of = event_target:nep_Krahen_victim_2
 					any_neighbor_system = {
-						ignore_hyperlanes = no
 						is_within_borders_of = event_target:nep_Krahen_victim_2
 					}
 					nep_st_is_not_outer_or_fe_system = yes
@@ -524,7 +516,6 @@ country_event = {
 				limit = {
 					is_neighbor_of = event_target:nep_Krahen_victim_3
 					any_neighbor_system = {
-						ignore_hyperlanes = no
 						is_within_borders_of = event_target:nep_Krahen_victim_3
 					}
 					nep_st_is_not_outer_or_fe_system = yes
@@ -553,7 +544,6 @@ country_event = {
 				limit = {
 					is_neighbor_of = event_target:nep_Krahen_victim_4
 					any_neighbor_system = {
-						ignore_hyperlanes = no
 						is_within_borders_of = event_target:nep_Krahen_victim_4
 					}
 					nep_st_is_not_outer_or_fe_system = yes
@@ -612,7 +602,6 @@ country_event = {
 					limit = {
 						is_neighbor_of = event_target:nep_Krahen_victim_1
 						any_neighbor_system = {
-							ignore_hyperlanes = no
 							is_within_borders_of = event_target:nep_Krahen_victim_1
 						}
 						nep_st_is_not_outer_or_fe_system = yes
@@ -793,7 +782,7 @@ country_event = {
 					spawn_megastructure = {
 						name = "NAME_nep_Seal_Gate"
 						type = nep_sealgate_restored
-						location = event_target:nep_mega_temp_poi
+						planet = event_target:nep_mega_temp_poi
 						orbit_angle = 24
 						orbit_distance = 169
 					}
@@ -806,8 +795,7 @@ country_event = {
 				}
 				activate_gateway = this
 			}
-			random_neighbor_system = {
-				ignore_hyperlanes = yes
+			random_neighbor_system_euclidean = {
 				limit = {
 					AND = {
 						exists = space_owner
@@ -839,8 +827,7 @@ country_event = {
 			}
 			while = {
 				count = 2
-				random_neighbor_system = {
-					ignore_hyperlanes = yes
+				random_neighbor_system_euclidean = {
 					limit = {
 						NOT = { has_hyperlane_to = prev }
 						nep_st_is_not_outer_system = yes
@@ -1106,7 +1093,7 @@ country_event = {
 						spawn_megastructure = {
 							name = "NAME_nep_Seal_Gate"
 							type = nep_sealgate_restored
-							location = event_target:nep_mega_temp_poi
+							planet = event_target:nep_mega_temp_poi
 							orbit_angle = 128
 							orbit_distance = 176
 						}
@@ -1264,7 +1251,7 @@ country_event = {
 				limit = { is_megastructure_type = nep_sealgate_restored }
 				remove_megastructure = this
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_seal_2
 				}
@@ -1273,7 +1260,7 @@ country_event = {
 			spawn_megastructure = {
 				name = "NAME_nep_Seal_Gate"
 				type = nep_sealgate_restored
-				location = event_target:nep_seal_2
+				planet = event_target:nep_seal_2
 				orbit_angle = 1
 				orbit_distance = 1
 			}#No activate_gateway
@@ -1818,17 +1805,12 @@ event = {
 			nep_Krahen_stage_1 = {
 				if = {
 					limit = {
-						count_ships = {
-							count < 690
+						count_galaxy_fleet = {
+							count < 15
 							limit = {
 								exists = owner
 								owner = { has_country_flag = nep_Krahen_country }
-								#OR = {
-									#is_ship_size = nep_Krahen_corvette
-									#is_ship_size = nep_Krahen_destroyer
-									#is_ship_size = nep_Krahen_cruiser
-									is_ship_size = nep_Krahen_battleship
-								#}
+								is_ship_size = nep_Krahen_battleship
 							}
 						}
 					}
@@ -1856,17 +1838,12 @@ event = {
 			nep_Krahen_stage_2 = {
 				if = {
 					limit = {
-						count_ships = {
-							count < 840
+						count_galaxy_fleet = {
+							count < 20
 							limit = {
 								exists = owner
 								owner = { has_country_flag = nep_Krahen_country }
-								#OR = {
-									#is_ship_size = nep_Krahen_corvette
-									#is_ship_size = nep_Krahen_destroyer
-									#is_ship_size = nep_Krahen_cruiser
-									is_ship_size = nep_Krahen_battleship
-								#}
+								is_ship_size = nep_Krahen_battleship
 							}
 						}
 					}
@@ -1894,17 +1871,12 @@ event = {
 			nep_Krahen_stage_3 = {
 				if = {
 					limit = {
-						count_ships = {
-							count < 990
+						count_galaxy_fleet = {
+							count < 27
 							limit = {
 								exists = owner
 								owner = { has_country_flag = nep_Krahen_country }
-								#OR = {
-									#is_ship_size = nep_Krahen_corvette
-									#is_ship_size = nep_Krahen_destroyer
-									#is_ship_size = nep_Krahen_cruiser
-									is_ship_size = nep_Krahen_battleship
-								#}
+								is_ship_size = nep_Krahen_battleship
 							}
 						}
 					}
@@ -1932,17 +1904,12 @@ event = {
 			nep_Krahen_stage_4 = {
 				if = {
 					limit = {
-						count_ships = {
-							count < 1300
+						count_galaxy_fleet = {
+							count < 40
 							limit = {
 								exists = owner
 								owner = { has_country_flag = nep_Krahen_country }
-								#OR = {
-									#is_ship_size = nep_Krahen_corvette
-									#is_ship_size = nep_Krahen_destroyer
-									#is_ship_size = nep_Krahen_cruiser
-									is_ship_size = nep_Krahen_battleship
-								#}
+								is_ship_size = nep_Krahen_battleship
 							}
 						}
 					}
@@ -1979,7 +1946,7 @@ event = {
 			}
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { is_ship_size = nep_Krahen_battleship }
 						count < 60
 					}
@@ -2000,7 +1967,7 @@ event = {
 			}
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { is_ship_size = nep_Krahen_battleship }
 						count < 90
 					}
@@ -2028,9 +1995,9 @@ event = {
 				if = {
 					limit = {
 						owner = {
-							count_owned_ship = {
-								limit = { fleet = { has_fleet_order = follow_order } }
-								count < 240
+							count_owned_fleet = {
+								limit = { has_fleet_order = follow_order }
+								count < 9
 							}
 						}
 					}
@@ -2045,9 +2012,7 @@ event = {
 				exists = starbase
 				starbase = { owner = { has_country_flag = nep_Krahen_country } }
 				NOT = {
-					any_ship_in_system = {
-						fleet = { has_fleet_flag = nep_Krahen_defender }
-					}
+					any_fleet_in_system = { has_fleet_flag = nep_Krahen_defender }
 				}
 			}
 			starbase = { create_Krahen_defender_gate = yes }
@@ -2119,28 +2084,29 @@ event = {
 				planet_event = { id = nep_inva.4600 }
 			}
 		}
-		while = {
-			count = 3
-			random_planet = {
-				limit = {
-					is_colony = yes
-					exists = owner
-					owner = { has_country_flag = nep_Krahen_country }
-					has_ground_combat = no
-					solar_system = {
-						NOT = {
-							any_ship_in_system = {
-								exists = owner
-								owner = { NOT = { has_country_flag = nep_Krahen_country } }
-							}
-						}
-					}
-				}
-			}
-		}
+		# while = {
+			# count = 3
+			# random_galaxy_planet = {
+				# limit = {
+					# is_colony = yes
+					# exists = owner
+					# owner = { has_country_flag = nep_Krahen_country }
+					# has_ground_combat = no
+					# solar_system = {
+						# NOT = {
+							# any_ship_in_system = {
+								# exists = owner
+								# owner = { NOT = { has_country_flag = nep_Krahen_country } }
+							# }
+						# }
+					# }
+				# }
+				# create_Krahen_constructor = yes
+			# }
+		# }
 		while = {
 			count = 2
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					is_colony = yes
 					exists = owner

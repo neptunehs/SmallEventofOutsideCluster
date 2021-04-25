@@ -601,7 +601,7 @@ weapon_component_template = {
 
 utility_component_template = {
 	key = "nep_CARGO_POD"
-	size = large
+	size = aux
 	icon = "GFX_ship_part_curator_lab"
 	icon_frame = 1
 	power = 0

@@ -168,8 +168,8 @@ country_event = {
 							clear_deposits = yes
 							set_name = "NAME_nep_debris"
 							save_event_target_as = nep_cybrex_temp_planet
-							surveyed = {
-								set_surveyed = yes
+							set_surveyed = {
+								surveyed = yes
 								surveyor = root
 							}
 							set_all_comms_surveyed = yes
@@ -1933,11 +1933,10 @@ ship_event = {
 			limit = {
 				has_star_flag = nep_highway_station_system
 			}
-			random_neighbor_system = { 
+			random_neighbor_system_euclidean = { 
 				limit = { 
 					nep_st_is_not_outer_system = yes
 				}
-				ignore_hyperlanes = yes 
 				add_hyperlane = {
 					from = this
 					to = prev
@@ -2011,7 +2010,7 @@ country_event = {
 					delete_fleet = this
 				}
 				every_system_planet = {
-					surveyed = { set_surveyed = yes surveyor = root }
+					set_surveyed = { surveyed = yes surveyor = root }
 				}
 				create_starbase = { 
 					size = starbase_outpost

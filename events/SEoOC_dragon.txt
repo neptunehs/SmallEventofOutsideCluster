@@ -173,7 +173,7 @@ country_event = {
 		set_spawn_system_batch = end
 		
 		#portal		
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_1 }
 			solar_system = {
 				spawn_megastructure = {
@@ -181,7 +181,7 @@ country_event = {
 					type = "nep_sealportal_node"
 					orbit_angle = 0
 					orbit_distance = 0
-					location = prev
+					planet = prev
 				}
 			}
 			remove_planet = yes
@@ -834,7 +834,7 @@ country_event = {
 	
 	option = {
 		name = nep_dragon.4001.a
-		every_planet = {
+		every_galaxy_planet = {
 			limit = { 
 				NOT = { is_same_value = root.fromfrom }
 				OR = {
@@ -946,7 +946,7 @@ country_event = {
 	
 	immediate = {
 		remove_global_flag = nep_not_pass_Aemethms
-		random_planet = {
+		random_galaxy_planet = {
 			limit = {
 				has_planet_flag = nep_dragon_star
 			}

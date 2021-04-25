@@ -150,8 +150,8 @@ building_nep_palace_of_machina = {
 	}
 	
 	triggered_planet_modifier = {
-		potential = {
-			any_pop = {
+		potential = { 
+			any_owned_pop = {   
 				has_job = nep_servent_of_god
 			}
 		}
@@ -174,12 +174,12 @@ building_nep_palace_of_machina = {
 	triggered_planet_modifier = {
 		potential = {
 			NOT = {
-				any_pop = {
+				any_owned_pop = {
 					has_job = nep_servent_of_god
 				}
 			}
 		}
-		modifier = {
+		modifier = { 
 			planet_amenities_add = -20
 			planet_jobs_influence_produces_mult = -1
 		}

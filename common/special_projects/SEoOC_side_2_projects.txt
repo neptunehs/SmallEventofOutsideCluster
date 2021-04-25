@@ -42,7 +42,7 @@ special_project = {
 	}
 	
 	on_success = {
-		owner = { country_event = { id = nep_gpc.2 } } 
+		ship_event = { id = nep_gpc.2000 }
 	}
 	
 	on_fail = {

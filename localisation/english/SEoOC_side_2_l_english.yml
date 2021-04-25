@@ -239,3 +239,5 @@
   
  nep_gpc_site:0 "Legacy of Grand Captain Balfour"
  nep_gpc_site_desc:0 "Here is the place where the treasure is most likely to be stored."
+ 
+ SUBJECT_nep_escort:0 "Being escorted"

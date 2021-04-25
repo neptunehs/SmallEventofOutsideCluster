@@ -240,3 +240,5 @@
  
  nep_gpc_site:0 "海盗的遗产"
  nep_gpc_site_desc:0 "这里是最有可能存放大海贼巴尔弗的遗产的地方。"
+ 
+ SUBJECT_nep_escort:0 "行商舰队正在被护卫，临时性的"

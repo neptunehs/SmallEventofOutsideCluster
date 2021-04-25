@@ -15,7 +15,7 @@ nep_malfunctioning_guards = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		all_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -25,6 +25,7 @@ nep_seal_evil_country = {
 	is_space_critter = yes
 	blocks_piracy = yes
 	destroys_starbases = yes
+	government = no
 	ai = {
 		enabled = no
 	}
@@ -35,7 +36,7 @@ nep_seal_evil_country = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -45,6 +46,7 @@ nep_Legnahcras_country = {
 	is_space_critter = yes
 	blocks_piracy = yes
 	destroys_starbases = yes
+	government = no
 	ai = {
 		enabled = no
 	}
@@ -55,7 +57,7 @@ nep_Legnahcras_country = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -65,6 +67,7 @@ nep_dragon_country = {
 	is_space_critter = yes
 	blocks_piracy = yes
 	destroys_starbases = yes
+	government = no
 	ai = {
 		enabled = no
 	}
@@ -75,7 +78,7 @@ nep_dragon_country = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -114,7 +117,7 @@ nep_Krahen_country = {
 		standard_leader_module = {}
 		all_technology_module = {}
 		exclusive_diplomacy_module = {
-			contact_rule = always
+			contact_rule = never
 		}
 	}
 }
@@ -285,7 +288,7 @@ nep_finalweapon_country = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -312,7 +315,7 @@ nep_phantom_passive = {
 		auto_delete = yes
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = never } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -336,7 +339,7 @@ nep_phantom_active = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -360,7 +363,7 @@ nep_phantom_global_event = {
 	modules = {
 		standard_event_module = {} # Needed for events
 		exclusive_diplomacy_module = {
-			contact_rule = script_only
+			contact_rule = never
 		}
 	}
 }
@@ -377,6 +380,7 @@ nep_primitive_highlander = {
 	faction = {
 		hostile = no
 		primitive = yes
+		primitive_age = "ATOMIC_AGE"
 		needs_border_access = no
 		generate_borders = no
 		needs_colony = yes
@@ -388,7 +392,7 @@ nep_primitive_highlander = {
 		standard_event_module = {}
 		basic_technology_module = {}
 		exclusive_diplomacy_module = {
-			contact_rule = script_only
+			contact_rule = on_action_only
 		}
 		standard_species_rights_module = {}
 	}
@@ -417,7 +421,7 @@ nep_primitive_machina = {
 		standard_event_module = {}
 		basic_technology_module = {}
 		exclusive_diplomacy_module = {
-			contact_rule = script_only
+			contact_rule = on_action_only
 		}
 		standard_species_rights_module = {}
 		standard_leader_module = {}
@@ -1219,7 +1223,7 @@ nep_global_for_protrait = {
 	modules = {
 		standard_event_module = {} # Needed for events
 		exclusive_diplomacy_module = {
-			contact_rule = script_only
+			contact_rule = never
 		}
 		standard_leader_module = {}
 	}
@@ -1247,7 +1251,7 @@ nep_galactic_trust_territorys = {
 	}
 	modules = {
 		standard_event_module = {} # Needed for events
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		standard_leader_module = {}
 	}
 }
@@ -1273,7 +1277,7 @@ nep_ugo_first_ship = {
 		auto_delete = yes
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = never } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -1300,5 +1304,34 @@ nep_Scrus_cluster_territorys = {
 		auto_delete = no
 	}
 	modules = {
+		exclusive_diplomacy_module = { contact_rule = on_action_only }
+	}
+}
+
+nep_caravaneer_fleet = {
+	blocks_piracy = yes
+	show_in_contacts_list = no
+	government = no
+	can_have_their_comms_shared = yes
+	#is_enclave = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		hostile_when_attacked = no
+		auto_delete = yes
+	}
+	custom_diplomacy = yes
+	custom_opinion = yes
+	modules = {
+		basic_technology_module = {}
+		standard_event_module = {}
+		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		#basic_technology_module = {}
 	}
 }

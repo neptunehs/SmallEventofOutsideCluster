@@ -79,6 +79,7 @@ country_event = {
 						set_fleet_flag = nep_phantom_krahen
 						set_fleet_flag = nep_phantom_fleet_passive
 						closest_system = {
+							use_bypasses = yes
 							limit = {
 								any_system_planet = {
 									is_colony = yes
@@ -274,7 +275,8 @@ country_event = {
 					}
 					last_created_fleet = {
 						set_fleet_flag = nep_phantom_fleet_passive
-						closest_system = {
+						closest_system = {							
+							use_bypasses = yes
 							limit = {
 								any_system_planet = {
 									is_colony = yes
@@ -531,7 +533,7 @@ country_event = {
 				owner = event_target:nep_Scrus_cluster_territorys
 			}
 		}
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_3 }
 			solar_system = {
 				spawn_megastructure = {
@@ -539,7 +541,7 @@ country_event = {
 					type = "nep_sealphantom_node"
 					orbit_angle = 0
 					orbit_distance = 0
-					location = prev
+					planet = prev
 				}
 			}
 			remove_planet = yes
@@ -947,7 +949,7 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } }
 						count < 15
 					}
@@ -974,7 +976,7 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
 						count < 20
 					}
@@ -1001,7 +1003,7 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
 						count < 25
 					}
@@ -1035,7 +1037,7 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					count_system_ships = {
+					count_ship_in_system = {
 						limit = { owner = { is_same_value = event_target:nep_phantom_active } } 
 						count < 30
 					}
@@ -1153,7 +1155,7 @@ event = {
 			limit = { has_star_flag = nep_Scrus_cluster }
 			if = {
 				limit = {
-					any_ship = { owner = { is_country_type = default } }
+					any_fleet_in_system = { owner = { is_country_type = default } }
 				}
 			}
 			else = {
@@ -1166,7 +1168,7 @@ event = {
 		random_system = {
 			limit = {
 				NOT = { has_star_flag = nep_in_phantom_war }
-				any_ship_in_system = { fleet = { has_fleet_flag = nep_in_phantom_war } }
+				any_fleet_in_system = { has_fleet_flag = nep_in_phantom_war }
 			}
 			random_fleet_in_system = {
 				limit = { has_fleet_flag = nep_in_phantom_war }
@@ -1556,7 +1558,8 @@ fleet_event = {
 		}
 		random_list = {
 			90 = {
-				closest_system = {
+				closest_system = {					
+					use_bypasses = yes
 					limit = {
 						NOT = { is_same_value = event_target:nep_1002_temp_solar_system }
 						NOT = { any_ship_in_system = { owner =  { is_country_type = nep_phantom_passive } } }
@@ -1602,7 +1605,8 @@ fleet_event = {
 				}
 			}
 			10 = {
-				closest_system = {
+				closest_system = {					
+					use_bypasses = yes
 					limit = {
 						any_system_planet = {
 							is_colony = yes

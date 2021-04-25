@@ -121,3 +121,26 @@ can_destroy_planet_with_PLANET_KILLER_NEP_UGO = {
 		}
 	}
 }
+
+is_nep_country = {
+	OR = {
+		is_country_type = nep_malfunctioning_guards
+		is_country_type = nep_seal_evil_country
+		is_country_type = nep_Legnahcras_country
+		is_country_type = nep_dragon_country
+		is_country_type = nep_Krahen_country
+		is_country_type = nep_finalweapon_country
+		is_country_type = nep_phantom_passive
+		is_country_type = nep_phantom_active
+		is_country_type = nep_phantom_global_event
+		is_country_type = nep_primitive_highlander
+		is_country_type = nep_primitive_machina
+		#is_country_type = nep_machina
+		#is_country_type = nep_machina_broken		
+		is_country_type = nep_global_for_protrait
+		is_country_type = nep_galactic_trust_territorys
+		is_country_type = nep_ugo_first_ship 
+		is_country_type = nep_Scrus_cluster_territorys 
+		#is_country_type = nep_caravaneer_fleet 		
+	}
+}

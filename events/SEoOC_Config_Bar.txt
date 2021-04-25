@@ -808,7 +808,7 @@ country_event = {
 		name = nep_config.4002.dragon.hard
 		hidden_effect = {
 			set_country_flag = nep_dragon_summoner
-			every_ship = {
+			every_galaxy_fleet = {
 				limit = {
 					OR = {
 						is_ship_size = nep_dragon_reward
@@ -852,7 +852,7 @@ country_event = {
 		name = nep_config.4002.dragon.debuffed
 		hidden_effect = {
 			set_country_flag = nep_dragon_summoner
-			every_ship = {
+			every_galaxy_fleet = {
 				limit = {
 					OR = {
 						is_ship_size = nep_dragon_reward
@@ -933,7 +933,7 @@ country_event = {
 	desc = {
 		trigger = {
 			has_country_flag = nep_dragon_summoner
-			any_planet = {
+			any_galaxy_planet = {
 				OR = {
 					has_planet_flag = nep_Auriel_planet
 					has_planet_flag = nep_Gabriel_planet
@@ -1015,7 +1015,7 @@ country_event = {
 			NOT = { has_global_flag = nep_dragon_end }
 		}
 		hidden_effect = {
-			every_ship = {
+			every_galaxy_fleet = {
 				limit = {
 					OR = {
 						is_ship_size = nep_dragon_reward
@@ -1054,7 +1054,7 @@ country_event = {
 		name = nep_config.40020.triggerfix2
 		trigger = {
 			has_country_flag = nep_dragon_summoner
-			any_planet = {
+			any_galaxy_planet = {
 				OR = {
 					has_planet_flag = nep_Auriel_planet
 					has_planet_flag = nep_Gabriel_planet
@@ -1079,7 +1079,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Auriel_planet
 				}
@@ -1093,7 +1093,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Gabriel_planet
 				}
@@ -1107,7 +1107,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Sabriel_planet
 				}
@@ -1121,7 +1121,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Samuel_planet
 				}
@@ -1135,7 +1135,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Michael_planet
 				}
@@ -1149,7 +1149,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Jauiel_planet
 				}
@@ -1163,7 +1163,7 @@ country_event = {
 				remove_deposit = d_nep_dragon_temple
 				add_deposit = d_nep_dragon_temple
 			}
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_Anael_planet
 				}
@@ -1184,7 +1184,7 @@ country_event = {
 	option = {
 		name = nep_config.40020.redospecialproject
 		hidden_effect = {
-			every_ship = {
+			every_galaxy_fleet = {
 				limit = {
 					OR = {
 						is_ship_size = nep_dragon_reward
@@ -1199,7 +1199,7 @@ country_event = {
 				}
 			}
 			abort_special_project = "nep_dragon_summon"
-			random_planet = {
+			random_galaxy_planet = {
 				limit = {
 					has_planet_flag = nep_dragon_star
 				}

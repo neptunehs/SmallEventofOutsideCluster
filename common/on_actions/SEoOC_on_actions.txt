@@ -222,9 +222,15 @@ on_megastructure_upgraded = {
 	}
 }
 
+
+# Triggered when two empires discover each other
+# This = Empire 1
+# From = Empire 2
+# Fromfromfrom = System where contact occurred
 on_first_contact = {
 	events = {
 		#nep_inva.72
+		nep_first_contact_critters.1
 	}
 }
 
@@ -276,9 +282,9 @@ on_fleet_destroyed_victim = {
 # FROMFROM = System jumped from
 on_entering_wormhole = {
 	events = {
-		nep_wohp.2
-		nep_deuspi.2
-		nep_deus.2000
+		#nep_wohp.2
+		#nep_deuspi.2
+		#nep_deus.2000
 	}
 }
 
@@ -292,6 +298,11 @@ on_entering_nep_wormhole_deus = {
 	events = {
 		nep_deuspi.2
 		nep_deus.2000
+	}
+}
+
+on_entering_nep_wormhole_ugo = {
+	events = {
 	}
 }
 
@@ -411,5 +422,15 @@ on_entering_system_first_time = {
 		nep_highway.5 #first enter station
 		nep_seal.2 #first enter ambient place
 		nep_dragon.64 #first enter dragon system
+	}
+}
+
+# This = owner of fleet 1 (loser)
+# From = owner of fleet 2 (winner)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_lost = {
+	events = {
+		nep_deus.8
 	}
 }

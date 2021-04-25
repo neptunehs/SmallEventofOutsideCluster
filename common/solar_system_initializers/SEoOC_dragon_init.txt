@@ -91,7 +91,7 @@ nep_Auriel_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = 0
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -182,7 +182,7 @@ nep_Gabriel_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -51.42
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -273,7 +273,7 @@ nep_Sabriel_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -102.85
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -365,7 +365,7 @@ nep_Samuel_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -154.28
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -456,7 +456,7 @@ nep_Michael_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -205.71
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -547,7 +547,7 @@ nep_Jauiel_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -257.14
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 	
@@ -697,7 +697,7 @@ nep_Anael_init = {
 			type = "nep_sealportal_nexus"
 			orbit_angle = -308.57
 			orbit_distance = 210
-			location = star
+			planet = star
 		}			
 	}
 }

@@ -18,3 +18,10 @@ component_set = {
 	icon = "GFX_ship_part_divine_enforcer"
 	icon_frame = 1
 }
+
+component_set = {
+	key = "nep_MAGNETIC_SHIELD"
+	
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+}

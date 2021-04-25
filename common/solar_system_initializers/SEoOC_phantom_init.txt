@@ -236,7 +236,7 @@ nep_Ginan_init = {
 			type = "nep_sealphantom_nexus"
 			orbit_angle = 0
 			orbit_distance = 25
-			location = star
+			planet = star
 		}
 		while = {
 			count = 100

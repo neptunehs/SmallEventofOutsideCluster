@@ -683,14 +683,14 @@ fleet_event = {
 		event_target:nep_64_temp = {
 			if = {
 				limit = {
-					any_ship_in_system = { fleet = { has_fleet_flag = nep_star_bomb } }
+					any_fleet_in_system = { has_fleet_flag = nep_star_bomb }
 					OR = {
 						any_system_planet = {
 							is_colony = yes
 							exists = owner
 							owner = { has_country_flag = nep_can_disarm_bomb }
 						}
-						count_system_ships = {
+						count_ship_in_system = {
 							limit = {
 								owner = { has_country_flag = nep_can_disarm_bomb }
 								is_ship_class = shipclass_military
@@ -781,7 +781,7 @@ fleet_event = {
 								}
 							}
 						}						
-						count_system_ships = {
+						count_ship_in_system = {
 							limit = {
 								owner = { 
 									OR = {
@@ -982,8 +982,8 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		fromfrom = {
-			any_ship = {
+		fromfrom = {		
+			any_owned_ship = {
 				is_ship_size = nep_finalweapon
 			}
 			NOT = {
@@ -995,12 +995,13 @@ country_event = {
 	immediate = {
 		fromfrom = {
 			set_fleet_flag = nep_finalweapons_in_battle
-			every_ship = {
-				limit = {
-					is_ship_size = nep_finalweapon
-					fleet = { is_same_value = root.fromfrom }
+			root.fromfrom = {
+				every_owned_ship = {
+					limit = {
+						is_ship_size = nep_finalweapon
+					}
+					ship_event = { id = nep_finalweapon.7201 days = 3 }
 				}
-				ship_event = { id = nep_finalweapon.7201 days = 3 }
 			}
 		}
 	}
@@ -1020,7 +1021,7 @@ ship_event = {
 			repair_percentage = 0.3
 		}
 		else = {
-			fleet = {
+			fromfromfrom = {
 				if = {
 					limit = {
 						NOT = {

@@ -874,7 +874,7 @@ country_event = {
 	}
 	
 	immediate = {
-		every_planet = {
+		every_galaxy_planet = {
 			limit = {
 				OR = {
 					is_colony = yes
@@ -886,7 +886,7 @@ country_event = {
 				change_variable = { which = 1_num value = 1 }
 			}
 		}
-		every_planet = {
+		every_galaxy_planet = {
 			limit = {
 				colonizeable_planet = yes
 			}
@@ -1208,7 +1208,7 @@ country_event = {
 	id = nep_test.29
 	title = "nep_dragon.1.name"
 	desc = "nep_dragon.1.desc"	
-	picture = GFX_evt_frozen_planet
+	picture = GFX_evt_frozen
 	
 	is_triggered_only = yes
 		
@@ -1316,11 +1316,28 @@ fleet_event = {
 	}
 	
 	immediate = {
-		random_planet = {
+		random_galaxy_planet = {
 			clear_global_event_target = nep_sub_seal_3
 			save_global_event_target_as = nep_sub_seal_3
 		}
 		set_location = event_target:nep_sub_seal_3
+	}
+}
+
+fleet_event = {
+	id = nep_test.340
+	hide_window = yes
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		random_megastructure = {
+			root = { set_location = prev }
+		}
 	}
 }
 

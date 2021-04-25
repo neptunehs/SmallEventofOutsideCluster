@@ -24,7 +24,7 @@ can_win_timed_victory = {
 
 can_enter_system_by_jump = {
 	custom_tooltip = {
-		success_text = "debug: can jump"
+#		success_text = "debug: can jump"
 		fail_text = cannot_jump_to_system
 
 		# Sealed system
@@ -75,7 +75,7 @@ can_take_hostile_actions = {
 	else_if = {
 		limit = {
 			ROOT = {
-				has_policy_flag = first_contact_attack_not_allowed
+				NOT = { has_policy_flag = first_contact_attack_allowed }
 			}
 			NOT = {
 				is_hostile = ROOT
@@ -197,6 +197,14 @@ can_take_hostile_actions = {
 				AND = {
 					has_country_flag = nep_highlander_assist_war
 					root = { has_country_flag = nep_highlander_country }
+				}
+				AND = {
+					has_country_flag = nep_gpc_country
+					root = { has_country_flag = nep_caravaneer_fleet_country }
+				}
+				AND = {
+					root = { has_country_flag = nep_gpc_country }
+					has_country_flag = nep_caravaneer_fleet_country
 				}
 			}
 		}

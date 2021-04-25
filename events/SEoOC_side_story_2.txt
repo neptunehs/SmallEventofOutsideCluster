@@ -1467,6 +1467,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_country_flag = nep_gpc_country
 		create_species = {
 			name = random
 			class = random_non_machine
@@ -1474,7 +1475,7 @@ country_event = {
 			traits = random
 		}
 		create_country = {
-			name = "NAME_Caravaneer_Fleet"
+			name = "NAME_Caravaneer_Fleet2"
 			type = caravaneer_fleet
 			authority = auth_corporate
 			civics = {
@@ -1508,7 +1509,7 @@ country_event = {
 				set_graphical_culture = caravaneer_01
 				save_global_event_target_as = nep_caravaneer_fleet_country
 				create_fleet = {
-					name = "NAME_Caravaneer_Fleet_fleet"
+					name = "NAME_Caravaneer_Fleet2_fleet"
 					settings = { spawn_debris = no }
 					effect = {
 						set_fleet_stance = passive
@@ -1602,6 +1603,14 @@ country_event = {
 	}
 }
 
+ship_event = {
+	id = nep_gpc.2000
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = { country_event = { id = nep_gpc.2 } }
+	}
+}
 
 country_event = {
 	id = nep_gpc.2
@@ -1632,6 +1641,14 @@ country_event = {
 			auto_move_to_planet = {
 				target = event_target:nep_escort_destiny
 				clear_auto_move_on_arrival = yes
+			}
+		}
+		root.from = {
+			fleet = {
+				auto_follow_fleet = {
+					target = event_target:nep_caravaneer_fleet_fleet
+					attack_fleet = no
+				}
 			}
 		}
 	}
@@ -3024,10 +3041,8 @@ ship_event = {
 		trigger = { 
 			from = { 
 				has_star_flag = nep_gpc_tawni_balfour
-				any_ship_in_system = {
-					fleet = {
-						has_fleet_flag = nep_gpc_tawni_balfour_fleet
-					}
+				any_fleet_in_system = {
+					has_fleet_flag = nep_gpc_tawni_balfour_fleet
 				}
 			} 
 		}
@@ -3038,10 +3053,8 @@ ship_event = {
 			from = { 
 				has_star_flag = nep_gpc_tawni_balfour
 				NOT = {
-					any_ship_in_system = {
-						fleet = {
-							has_fleet_flag = nep_gpc_tawni_balfour_fleet
-						}
+					any_fleet_in_system = {
+						has_fleet_flag = nep_gpc_tawni_balfour_fleet
 					}
 				}
 			} 
@@ -3052,10 +3065,8 @@ ship_event = {
 		trigger = { 
 			from = { 
 				has_star_flag = nep_gpc_pete_girly
-				any_ship_in_system = {
-					fleet = {
-						has_fleet_flag = nep_gpc_pete_girly_fleet
-					}
+				any_fleet_in_system = {
+					has_fleet_flag = nep_gpc_pete_girly_fleet
 				}
 			} 
 		}
@@ -3066,10 +3077,8 @@ ship_event = {
 			from = { 
 				has_star_flag = nep_gpc_pete_girly
 				NOT = {
-					any_ship_in_system = {
-						fleet = {
-							has_fleet_flag = nep_gpc_pete_girly_fleet
-						}
+					any_fleet_in_system = {
+						has_fleet_flag = nep_gpc_pete_girly_fleet
 					}
 				}
 			} 
@@ -3080,10 +3089,8 @@ ship_event = {
 		trigger = { 
 			from = { 
 				has_star_flag = nep_gpc_captain_swift 
-				any_ship_in_system = {
-					fleet = {
-						has_fleet_flag = nep_gpc_captain_swift_fleet
-					}
+				any_fleet_in_system = {
+					has_fleet_flag = nep_gpc_captain_swift_fleet
 				}
 			}				
 		}
@@ -3094,10 +3101,8 @@ ship_event = {
 			from = { 
 				has_star_flag = nep_gpc_captain_swift 
 				NOT = {
-					any_ship_in_system = {
-						fleet = {
-							has_fleet_flag = nep_gpc_captain_swift_fleet
-						}
+					any_fleet_in_system = {
+						has_fleet_flag = nep_gpc_captain_swift_fleet
 					}
 				}
 			}
@@ -3108,10 +3113,8 @@ ship_event = {
 		trigger = { 
 			from = { 
 				has_star_flag = nep_gpc_cyrca 
-				any_ship_in_system = {
-					fleet = {
-						has_fleet_flag = nep_gpc_cyrca_fleet
-					}
+				any_fleet_in_system = {
+					has_fleet_flag = nep_gpc_cyrca_fleet
 				}				
 			} 
 		}
@@ -3122,10 +3125,8 @@ ship_event = {
 			from = { 
 				has_star_flag = nep_gpc_cyrca 
 				NOT = {
-					any_ship_in_system = {
-						fleet = {
-							has_fleet_flag = nep_gpc_cyrca_fleet
-						}
+					any_fleet_in_system = {
+						has_fleet_flag = nep_gpc_cyrca_fleet
 					}
 				}
 			} 
@@ -3738,7 +3739,7 @@ country_event = {
 	
 	option = {
 		name = nep_gpc.6001.a
-		random_planet = {
+		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_gpc_base }
 			create_archaeological_site = nep_gpc_site
 		}
@@ -3749,7 +3750,7 @@ fleet_event = {
 	id = nep_gpc.6002
 	title = "nep_gpc.6002.name"
 	desc = "nep_gpc.6002.desc"
-	picture = GFX_evt_cold_barren_planet
+	picture = GFX_evt_cold_barren
 	
 	archaeology = yes
 	is_triggered_only = yes
