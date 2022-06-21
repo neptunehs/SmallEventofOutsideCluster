@@ -135,9 +135,6 @@
  nep_you_are_our_Savior:0 "You are our Savior"
  nep_you_are_very_strong:0 "You are very strong"
  
- NAME_nep_Gaia_Republic:0 "Republic of Gaia"
- NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
- 
  BYPASS_NEP_WORMHOLE_WOHP:0 "$NATURAL_WORMHOLE_GALACTIC$"
  BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_WOHP:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"
  nep_wormhole_wohp_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"

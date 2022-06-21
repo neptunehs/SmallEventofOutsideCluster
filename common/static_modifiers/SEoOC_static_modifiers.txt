@@ -696,12 +696,18 @@ nep_phantom_easy = {
 #Wohp
 nep_bombard_by_highlander = {
 	job_soldier_add = -10
+	planet_jobs_produces_mult = -1
+	pop_growth_speed = -0.5
+	pop_growth_from_immigration = -1
 	icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
 	icon_frame = 3
 }
 
 nep_extravagant_orgy = {
 	job_soldier_add = -10
+	planet_jobs_produces_mult = -1
+	pop_growth_speed = -0.5
+	pop_growth_from_immigration = -1
 	icon = "gfx/interface/icons/planet_modifiers/pm_resort_planet.dds"
 	icon_frame = 3
 }
@@ -792,7 +798,7 @@ nep_whitegoo_fleet = {
 	ship_emergency_ftl_mult = 0.05
 	ship_disengage_chance_reduction = -0.05
 	ship_windup_mult = 0.05
-	ship_winddown_mult = 0.05
+	#ship_winddown_mult = 0.05
 	ship_interstellar_speed_mult = 0.05
 }
 
@@ -803,7 +809,7 @@ nep_whitegoo_system_1 = {
 	ship_emergency_ftl_mult = -0.05
 	ship_disengage_chance_reduction = 0.05
 	ship_windup_mult = -0.05
-	ship_winddown_mult = -0.05
+	#ship_winddown_mult = -0.05
 	ship_interstellar_speed_mult = -0.05
 }
 
@@ -815,7 +821,7 @@ nep_whitegoo_system_2 = {
 	ship_emergency_ftl_mult = -0.1
 	ship_disengage_chance_reduction = 0.1
 	ship_windup_mult = -0.1
-	ship_winddown_mult = -0.1
+	#ship_winddown_mult = -0.1
 	ship_interstellar_speed_mult = -0.1
 }
 
@@ -827,7 +833,7 @@ nep_whitegoo_system_3 = {
 	ship_emergency_ftl_mult = -0.2
 	ship_disengage_chance_reduction = 0.2
 	ship_windup_mult = -0.2
-	ship_winddown_mult = -0.2
+	#ship_winddown_mult = -0.2
 	ship_interstellar_speed_mult = -0.2
 }
 

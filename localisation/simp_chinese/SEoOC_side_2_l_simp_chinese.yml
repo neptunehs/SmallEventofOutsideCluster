@@ -105,6 +105,8 @@
  
  CAN_NOT_JUMP_IN_WHITEGOO:0 "§R白雾干扰跃迁引擎的使用。§!"
  
+ requires_nep_whitegoo_no_more:0 "白雾事件已经结束，不再需要这个了。"
+ 
  nep_whitegoo_1:0 "白雾"
  nep_whitegoo_1_desc:0 "白雾将会影响星球的发电能力，进而影响经济水平，人们需要设备防止对身体造成影响所以造成不安，而且在白雾中难以见物，将催生罪恶。"
  nep_whitegoo_2:0 "白雾"

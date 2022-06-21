@@ -180,6 +180,7 @@ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory = {
 		modifier = {
 			factor = 2.5
 			is_megacorp = yes
+			desc = auth_corporate
 		}
 
 		modifier = {
@@ -187,15 +188,18 @@ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory = {
 			any_system_within_border = {
 				has_star_flag = nep_highway_note_system
 			}
+			desc = nep_no_benefit_to_us
 		}
 		modifier = {
 			factor = 1.1
 			is_xenophile = yes
+			desc = ethic_xenophile
 		}
 
 		modifier = {
 			factor = 0.25
 			is_xenophobe = yes
+			desc = ethic_xenophobe
 		}
 	}
 }
@@ -253,14 +257,17 @@ resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_repeal = {
 		modifier = {
 			factor = 0.25
 			is_megacorp = yes
+			desc = auth_corporate
 		}
 		modifier = {
 			factor = 0.9
 			is_xenophile = yes
+			desc = ethic_xenophile
 		}
 		modifier = {
 			factor = 2.5
 			is_xenophobe = yes
+			desc = ethic_xenophobe
 		}
 	}
 }

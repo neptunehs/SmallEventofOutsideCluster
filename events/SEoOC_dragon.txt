@@ -673,7 +673,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -692,7 +692,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -711,7 +711,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -730,7 +730,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -749,7 +749,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -768,7 +768,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -787,7 +787,7 @@ country_event = {
 				count = 13
 				create_army = {
 					name = "NAME_Legnahcras_existences"
-					owner = last_created
+					owner = last_created_country
 					type = nep_Legnahcras_defensive_army
 				}
 			}
@@ -977,13 +977,13 @@ country_event = {
 				set_owner = event_target:nep_dragon_country
 				create_ship = {
 					name = "NAME_Heptagram_Dragon"
-					design = "Heptagram Dragon"
+					design = "NAME_Heptagram_Dragon_design"
 				}
 				while = {
 					count = 100
 					create_ship = {
 						name = "NAME_Summoned_Babys"
-						design = "Summoned Babys"
+						design = "NAME_Summoned_Babys_design"
 					}
 				}
 				set_location = event_target:nep_dragon_star
@@ -1457,7 +1457,7 @@ country_event = {
 				set_owner = root
 				create_ship = {
 					name = "NAME_Heptagram_Dragon"
-					design = "Heptagram Dragon Rebirth"
+					design = "NAME_Heptagram_Dragon_Rebirth_design"
 					effect = {
 						nep_easy_mod_reward = yes
 					}
@@ -1799,7 +1799,7 @@ country_event = {
 				set_owner = root
 				create_ship = {
 					name = "NAME_Heptagram_Dragon"
-					design = "Heptagram Dragon Kai"
+					design = "NAME_Heptagram_Dragon_Kai_design"
 					effect = {
 						nep_easy_mod_reward = yes
 					}

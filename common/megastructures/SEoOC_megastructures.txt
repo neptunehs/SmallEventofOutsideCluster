@@ -6,8 +6,8 @@ nep_sealgate_ruined = {
 	build_outside_gravity_well = no
 	bypass_type = nep_sealgate
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -47,7 +47,7 @@ nep_sealgate_restored = {
 			energy = 10000
 		}
 	}
-	construction_blocks_others = no
+	#construction_blocks_others = no
 	bypass_type = nep_sealgate
 }
 
@@ -72,8 +72,8 @@ nep_station_whitegoo_mega = {
 
 	prerequisites = { "tech_nep_whitegoo_4" }
 
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	possible = {
 		exists = starbase
@@ -262,8 +262,8 @@ nep_wormhole_wohp_mega = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -277,8 +277,8 @@ nep_wormhole_deus_mega = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -292,8 +292,8 @@ nep_wormhole_ugo_mega = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = yes
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -307,8 +307,8 @@ nep_sealportal_node_ruined = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -321,8 +321,8 @@ nep_sealportal_node = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -343,8 +343,8 @@ nep_sealportal_nexus = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -359,8 +359,8 @@ nep_sealphantom_node_ruined = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no
@@ -373,8 +373,8 @@ nep_sealphantom_node = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 	potential = {
 		always = no
 	}
@@ -394,8 +394,8 @@ nep_sealphantom_nexus = {
 	place_entity_on_planet_plane = no
 	build_outside_gravity_well = no
 	show_galactic_map_icon = no
-	construction_blocks_others = no
-	construction_blocked_by_others = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
 
 	potential = {
 		always = no

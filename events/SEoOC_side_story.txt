@@ -369,7 +369,7 @@ ship_event = {
 	title = "nep_wohp.3000.name"
 	desc = "nep_wohp.3000.desc"
 	picture = GFX_evt_interior_battle
-	show_sound = event_airlock_03
+	show_sound = event_airlock
 	location = THIS
 	
 	is_triggered_only = yes
@@ -841,7 +841,7 @@ country_event = {
 	title = "nep_wohp.48.name"
 	desc = "nep_wohp.48.desc"
 	picture = GFX_evt_metropolis
-	show_sound = event_factions_01
+	show_sound = event_factions
 	location = event_target:nep_gaia_country.capital_scope
 	
 	is_triggered_only = yes
@@ -926,13 +926,13 @@ country_event = {
 					}
 					set_subject_of = {
 						who = root
-						subject_type = tributary
+						preset = preset_tributary
 					}
 				}			
 				else = {
 					set_subject_of = {
 						who = root
-						subject_type = protectorate
+						preset = preset_protectorate
 					}
 				}
 			}
@@ -1361,7 +1361,7 @@ country_event = {
 	title = "nep_wohp.58.name"
 	desc = "nep_wohp.58.desc"
 	picture = GFX_evt_metropolis
-	show_sound = event_factions_01
+	show_sound = event_factions
 	location = event_target:nep_highlander_country.capital_scope
 	
 	is_triggered_only = yes
@@ -1564,13 +1564,13 @@ country_event = {
 					}
 					set_subject_of = {
 						who = root
-						subject_type = tributary
+						preset = preset_tributary
 					}
 				}			
 				else = {
 					set_subject_of = {
 						who = root
-						subject_type = protectorate
+						preset = preset_protectorate
 					}
 				}
 			}
@@ -1639,7 +1639,7 @@ country_event = {
 	
 	option = {
 		name = "observation.2000.a"
-		custom_tooltip = nep_wohp.58.a.tooltip
+		#custom_tooltip = nep_wohp.58.a.tooltip
 		hidden_effect = { root = { set_country_flag = nep_can_use_gene_slave } }
 	}
 }
@@ -1730,75 +1730,89 @@ event = {
 	}
 	
 	immediate = {
-		event_target:nep_gaia_country = {
-			capital_scope = {
-				if = {
-					limit = { planet_devastation > 90 }
-					if = { limit = { has_ground_combat = no } add_planet_devastation = -10 }					
-				}
-				else = {
-					random_list = {
-						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -7 } }
-						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -4 } }
-						1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -1 } }
-						1 = { add_planet_devastation = 1 }
-						1 = { add_planet_devastation = 4 }
-						1 = { add_planet_devastation = 7 }
-						1 = { if = { limit = { has_ground_combat = yes } add_planet_devastation = 5 }  }
+		log = "1"
+		if = {
+			limit = { exists = event_target:nep_gaia_country }
+			log = "2"
+			event_target:nep_gaia_country = {
+				log = "3"
+				capital_scope = {
+					log = "4"
+					if = {
+						limit = { planet_devastation > 90 }
+						log = "5"
+						if = { limit = { has_ground_combat = no } add_planet_devastation = -10 }					
 					}
-				}
-				if = {
-					limit = {
-						has_ground_combat = no
-						count_armies = {
-							count < 12
+					else = {
+						log = "6"
+						random_list = {
+							1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -7 } }
+							1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -4 } }
+							1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -1 } }
+							1 = { add_planet_devastation = 1 }
+							1 = { add_planet_devastation = 4 }
+							1 = { add_planet_devastation = 7 }
+							1 = { if = { limit = { has_ground_combat = yes } add_planet_devastation = 5 }  }
 						}
 					}
-					create_army = {
-						name = "NAME_nep_Gaia_resist_force"
-						owner = event_target:nep_gaia_country
-						species = event_target:nep_gaia_species
-						type = nep_gaia_super_army_defensive
+					log = "7"
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						log = "8"
+						create_army = {
+							name = "NAME_nep_Gaia_resist_force"
+							owner = event_target:nep_gaia_country
+							species = event_target:nep_gaia_species
+							type = nep_gaia_super_army_defensive
+						}
 					}
 				}
 			}
 		}
-		event_target:nep_highlander_country = {
-			capital_scope = {
-				if = {
-					limit = {
-						has_ground_combat = no
-						count_armies = {
-							count < 12
-						}
-					}
-					create_army = {
-						name = "NAME_nep_highlander_royal_ashes"
-						owner = event_target:nep_highlander_country
-						species = event_target:nep_gaia_species
-						type = nep_gene_slave_army_defensive
-					}
-				}
-				if = {
-					limit = {
-						has_observation_outpost = yes
-						observation_outpost = { 
-							OR = {
-								has_mission = technological_enlightenment_1
-								has_mission = technological_enlightenment_2
-								has_mission = technological_enlightenment_3
-								has_mission = technological_enlightenment_4
-								has_mission = technological_enlightenment_5
-								has_mission = technological_enlightenment_6
-								has_mission = technological_enlightenment_7
-								has_mission = technological_enlightenment_8
-								has_mission = technological_enlightenment_9
+		if = {
+			limit = { exists = event_target:nep_highlander_country }
+			event_target:nep_highlander_country = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
 							}
-							mission_progress > 0.2
+						}
+						create_army = {
+							name = "NAME_nep_highlander_royal_ashes"
+							owner = event_target:nep_highlander_country
+							species = event_target:nep_gaia_species
+							type = nep_gene_slave_army_defensive
 						}
 					}
-					observation_outpost_owner = {
-						country_event = { id = nep_wohp.9000 }
+					if = {
+						limit = {
+							has_observation_outpost = yes
+							observation_outpost = { 
+								OR = {
+									has_mission = technological_enlightenment_1
+									has_mission = technological_enlightenment_2
+									has_mission = technological_enlightenment_3
+									has_mission = technological_enlightenment_4
+									has_mission = technological_enlightenment_5
+									has_mission = technological_enlightenment_6
+									has_mission = technological_enlightenment_7
+									has_mission = technological_enlightenment_8
+									has_mission = technological_enlightenment_9
+								}
+								mission_progress > 0.2
+							}
+						}
+						observation_outpost_owner = {
+							country_event = { id = nep_wohp.9000 }
+						}
 					}
 				}
 			}
@@ -2294,7 +2308,7 @@ ship_event = {
 					name = NAME_nep_Country_of_Machina
 					type = nep_machina
 					auto_delete = yes
-					species = last_created
+					species = last_created_species
 					authority = auth_dictatorial
 					ethos = {
 						ethic = ethic_fanatic_spiritualist
@@ -2302,7 +2316,7 @@ ship_event = {
 					}
 					civics = {
 						civic = civic_philosopher_king
-						civic = civic_byzantine_bureaucracy
+						civic = civic_imperial_cult
 					}
 					origin = origin_nep_deus_ex_machina
 					flag = random
@@ -2716,7 +2730,7 @@ country_event = {
 	title = nep_deus.4000.name
 	desc = nep_deus.4000.desc
 	picture = GFX_evt_sapient_AI
-	show_sound = event_radio_chatter_03
+	show_sound = event_radio_chatter
 	
 	is_triggered_only = yes
 	
@@ -2765,6 +2779,98 @@ country_event = {
 	
 	option = {
 		name = nep_deus.5.a
+	}
+}
+
+event = {
+	id = nep_deus.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_deus_spawn
+		exists = event_target:nep_deus_country
+		any_galaxy_planet = {
+			exists = owner
+			exists = controller
+			owner = { is_same_value = event_target:nep_deus_country }
+			controller = { NOT = { is_same_value = event_target:nep_deus_country } }
+		}
+	}
+	
+	immediate = {
+		every_galaxy_planet = {
+			limit = {
+				exists = owner
+				exists = controller
+				owner = { is_same_value = event_target:nep_deus_country }
+				controller = { NOT = { is_same_value = event_target:nep_deus_country } }
+			}
+			if = {
+				limit = {
+					count_owned_pop = { count > 2 }
+				}
+				random_owned_pop = {
+					species = { save_event_target_as = nep_deus_6_temp }
+					kill_pop = yes
+					kill_pop = yes
+				}
+				create_army = {
+					name = random
+					owner = event_target:nep_deus_country
+					species = event_target:nep_deus_6_temp
+					type = defense_army
+				}
+				create_army = {
+					name = random
+					owner = event_target:nep_deus_country
+					species = event_target:nep_deus_6_temp
+					type = defense_army
+				}
+			}
+			else = {
+				set_owner = controller
+			}
+		}
+	}
+}
+
+event = {
+	id = nep_deus.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_deus_spawn
+		exists = event_target:nep_deus_country
+		any_galaxy_planet = {
+			exists = owner
+			exists = controller
+			controller = { is_same_value = event_target:nep_deus_country }
+			owner = { NOT = { is_same_value = event_target:nep_deus_country } }
+		}
+	}
+	
+	immediate = {
+		every_galaxy_planet = {
+			limit = {
+				exists = owner
+				exists = controller
+				controller = { is_same_value = event_target:nep_deus_country }
+				owner = { NOT = { is_same_value = event_target:nep_deus_country } }
+			}
+			if = {
+				limit = {
+					count_owned_pop = { count > 2 }
+				}
+				random_owned_pop = {
+					kill_pop = yes
+				}
+			}
+			else = {
+				set_owner = controller
+			}
+		}
 	}
 }
 
@@ -2927,7 +3033,7 @@ ship_event = {
 						name = NAME_nep_Country_of_Machina
 						type = nep_primitive_machina
 						auto_delete = no
-						species = last_created
+						species = last_created_species
 						origin = origin_nep_deus_ex_machina
 						ethos = {
 							ethic = ethic_fanatic_spiritualist
@@ -3330,13 +3436,13 @@ country_event = {
 					}
 					set_subject_of = {
 						who = root
-						subject_type = tributary
+						preset = preset_tributary
 					}
 				}
 				else = {
 					set_subject_of = {
 						who = root
-						subject_type = protectorate
+						preset = preset_protectorate
 					}						
 				}
 				if = {
@@ -3938,7 +4044,7 @@ country_event = {
 		text = nep_deuspi.72.desc.b
 	}
 	picture = GFX_evt_enigmatic_fortress
-	show_sound = event_yellow_alert_01
+	show_sound = event_yellow_alert
 	location = event_target:nep_deus_home
 	
 	is_triggered_only = yes
@@ -3959,7 +4065,7 @@ country_event = {
 	title = nep_deuspi.73.name
 	desc = nep_deuspi.73.desc
 	picture = GFX_evt_disease_outbreak
-	show_sound = event_laboratory_sound_02
+	show_sound = event_laboratory_sound
 	location = event_target:nep_deus_home
 	
 	is_triggered_only = yes
@@ -4002,7 +4108,7 @@ country_event = {
 	title = nep_deuspi.74.name
 	desc = nep_deuspi.74.desc
 	picture = GFX_evt_disease_outbreak
-	show_sound = event_laboratory_sound_03
+	show_sound = event_laboratory_sound
 	location = event_target:nep_deus_home
 	
 	is_triggered_only = yes
@@ -5100,7 +5206,7 @@ country_event = {
 	title = "nep_deuspl.2.name"
 	desc = "nep_deuspl.2.desc"
 	picture = GFX_evt_sapient_AI
-	show_sound = event_yellow_alert_01
+	show_sound = event_yellow_alert
 	
 	fire_only_once = yes
 	
@@ -5171,7 +5277,7 @@ country_event = {
 	title = "nep_deuspl.4.name"
 	desc = "nep_deuspl.4.desc"
 	picture = GFX_evt_machine_sapience
-	show_sound = event_scanner_02
+	show_sound = event_scanner
 	
 	is_triggered_only = yes
 	immediate = {
@@ -5192,7 +5298,7 @@ country_event = {
 	title = "nep_deuspl.5.name"
 	desc = "nep_deuspl.5.desc"
 	picture = GFX_evt_machine_sapience
-	show_sound = event_scanner_03
+	show_sound = event_scanner
 	is_triggered_only = yes
 	
 	immediate = {
@@ -5338,7 +5444,7 @@ country_event = {
 	title = "nep_deuspl.9.name"
 	desc = "nep_deuspl.9.desc"
 	picture = GFX_evt_machine_sapience
-	show_sound = event_ai_started_01
+	show_sound = event_ai_started
 	
 	is_triggered_only = yes
 	trigger = {
@@ -7920,7 +8026,7 @@ country_event = {
 	desc = "nep_ugo.1002.desc"
 	picture = GFX_evt_wormhole
 	location = From.fromfrom
-	show_sound = event_alien_nature_03
+	show_sound = event_alien_nature
 	
 	is_triggered_only = yes
 	
@@ -7975,7 +8081,7 @@ country_event = {
 	desc = "nep_ugo.1004.desc"
 	picture = GFX_evt_treasure_pile
 	location = From	
-	show_sound = event_alien_nature_03
+	show_sound = event_alien_nature
 	
 	is_triggered_only = yes
 	
@@ -8470,7 +8576,7 @@ country_event = {
 	title = "nep_ugo.3003.name"
 	desc = "nep_ugo.3003.desc"
 	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle_03
+	show_sound = event_ground_battle
 	location = FROM
 	
 	is_triggered_only = yes
@@ -8594,7 +8700,7 @@ country_event = {
 	title = "nep_ugo.30040.name"
 	desc = "nep_ugo.30040.desc"
 	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle_03
+	show_sound = event_ground_battle
 	location = FROMFROM
 	
 	is_triggered_only = yes
@@ -8679,7 +8785,7 @@ country_event = {
 	title = "nep_ugo.3007.name"
 	desc = "nep_ugo.3007.desc"
 	picture = GFX_evt_guardians
-	show_sound = event_ground_battle_02
+	show_sound = event_ground_battle
 	location = fromfrom
 	
 	is_triggered_only = yes
@@ -8952,7 +9058,7 @@ country_event = {
 	desc = "nep_ugo.5000.desc"
 	picture = GFX_evt_scanning_remains
 	location = event_target:nep_ugo_US388
-	show_sound = event_laboratory_sound_02
+	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 	
 	option = {
@@ -8967,7 +9073,7 @@ country_event = {
 	title = "nep_ugo.6.name"
 	desc = "nep_ugo.6.desc"
 	picture = GFX_evt_signing
-	show_sound = event_laboratory_sound_03
+	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 	
 	trigger = { 
@@ -8990,7 +9096,7 @@ country_event = {
 	title = "nep_ugo.7.name"
 	desc = "nep_ugo.7.desc"
 	picture = GFX_evt_unidentified_monster
-	show_sound = event_alien_nature_02
+	show_sound = event_alien_nature
 	is_triggered_only = yes
 	
 	immediate = {
@@ -9544,7 +9650,7 @@ country_event = {
 	title = "nep_ugo.9001.name"
 	desc = "nep_ugo.9001.desc"
 	picture = GFX_evt_exploding_planet
-	show_sound = event_ground_battle_02
+	show_sound = event_ground_battle
 	is_triggered_only = yes
 	
 	option = {

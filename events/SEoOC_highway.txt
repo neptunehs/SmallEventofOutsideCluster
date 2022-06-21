@@ -326,6 +326,7 @@ fleet_event = {
 		text = "nep_highway.23.desc"
 	}
 	picture = GFX_evt_collapsing_roof
+	show_sound = event_door_opening
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -364,6 +365,7 @@ fleet_event = {
 		text = "nep_highway.24.desc"
 	}
 	picture = GFX_evt_crusher_droid
+	show_sound = event_door_opening
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -388,6 +390,7 @@ fleet_event = {
 	title = "nep_highway.22.name"
 	desc = "nep_highway.3.desc"	
 	picture = GFX_evt_excavation_team
+	show_sound = event_door_opening
 
 	fire_only_once = yes
 
@@ -425,6 +428,7 @@ fleet_event = {
 	title = "nep_highway.22.name"
 	desc = "nep_highway.4.desc"	
 	picture = GFX_evt_synth_sabotage
+	show_sound = event_door_opening
 	
 	fire_only_once = yes
 	
@@ -448,6 +452,7 @@ fleet_event = {
 							min_orientation_angle = 85
 							max_orientation_angle = 94
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -474,6 +479,7 @@ fleet_event = {
 							min_orientation_angle = 62.5
 							max_orientation_angle = 71.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -501,6 +507,7 @@ fleet_event = {
 							min_orientation_angle = 40
 							max_orientation_angle = 50
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -528,6 +535,7 @@ fleet_event = {
 							min_orientation_angle = 17.5
 							max_orientation_angle = 26.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -555,6 +563,7 @@ fleet_event = {
 							min_orientation_angle = -5
 							max_orientation_angle = 4
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -582,6 +591,7 @@ fleet_event = {
 							min_orientation_angle = -27.5
 							max_orientation_angle = -17.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -609,6 +619,7 @@ fleet_event = {
 							min_orientation_angle = -50
 							max_orientation_angle = -40
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -636,6 +647,7 @@ fleet_event = {
 							min_orientation_angle = -72.5
 							max_orientation_angle = -62.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -663,6 +675,7 @@ fleet_event = {
 							min_orientation_angle = -85
 							max_orientation_angle = -95
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -690,6 +703,7 @@ fleet_event = {
 							min_orientation_angle = -117.5
 							max_orientation_angle = -107.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -717,6 +731,7 @@ fleet_event = {
 							min_orientation_angle = -140
 							max_orientation_angle = -131
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -744,6 +759,7 @@ fleet_event = {
 							min_orientation_angle = -162.5
 							max_orientation_angle = -152.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -771,6 +787,7 @@ fleet_event = {
 							min_orientation_angle = -185
 							max_orientation_angle = -175
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -798,6 +815,7 @@ fleet_event = {
 							min_orientation_angle = -207.5
 							max_orientation_angle = -198.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -825,6 +843,7 @@ fleet_event = {
 							min_orientation_angle = -230
 							max_orientation_angle = -221
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -852,6 +871,7 @@ fleet_event = {
 							min_orientation_angle = -252.5
 							max_orientation_angle = -243.5
 							hyperlane = yes
+							initializer = asteroid_init_01
 						}
 					}
 					spawn_system = {
@@ -1956,11 +1976,12 @@ ship_event = {
 			end_event_chain = "nep_highway_chain"
 			}
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			OWNER = {
 				set_country_flag = nep_highway_founder
-				country_event = { id = nep_highway.8 days = 30} 
-			} 
+				event_target:global_event_country = { country_event = { id = nep_highway.8000 } }
+				country_event = { id = nep_highway.8 days = 30 } 
+			}
 		}
 	}
 }
@@ -2035,6 +2056,28 @@ country_event = {
 						status = yes
 					}
 				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_highway.8000
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_system = {
+			limit = {
+				OR = {
+					has_star_flag = nep_highway_note_system
+					has_star_flag = nep_highway_station_system
+				}
+			}
+			spawn_megastructure = {
+				type = "hyper_relay_restored"
+				random_pos = yes
+				orbit_angle = 360		# range of the randomization
 			}
 		}
 	}

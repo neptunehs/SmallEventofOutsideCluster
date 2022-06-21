@@ -23,6 +23,7 @@ on_entering_system = {
 		nep_inva.474
 		nep_gpc.4004
 		#nep_guide.4998
+		nep_seal.2 #first enter ambient place
 		nep_seal.7000
 	}
 }
@@ -51,6 +52,8 @@ on_monthly_pulse = {
 		nep_inva.473
 		nep_inva.475
 		nep_wohp.9
+		nep_deus.6
+		nep_deus.7
 	}
 }
 
@@ -420,7 +423,6 @@ on_destroy_planet_with_PLANET_KILLER_NEP_UGO = {
 on_entering_system_first_time = {
 	events = {
 		nep_highway.5 #first enter station
-		nep_seal.2 #first enter ambient place
 		nep_dragon.64 #first enter dragon system
 	}
 }

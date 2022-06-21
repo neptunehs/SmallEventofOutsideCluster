@@ -6,7 +6,15 @@ trait_Krahen = {
 
 	initial = no
 	randomized = no
-	modification = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
 	forced_happiness = yes
 	immortal_leaders = yes
 

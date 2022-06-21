@@ -229,6 +229,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.2 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				NOR = {
@@ -256,6 +257,7 @@ country_event = {
 		is_same_value = event_target:global_event_country
 	}
 	immediate = {
+		log = "fire wg.3 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			nep_whitegoo_2 = yes
 		}
@@ -281,6 +283,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.31 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				has_star_flag = nep_whitegoo_1
@@ -308,7 +311,8 @@ country_event = {
 		has_global_flag = nep_whitegoo_begin
 		is_same_value = event_target:global_event_country
 	}
-	immediate = {
+	immediate = {		
+		log = "fire wg.4 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			nep_whitegoo_3 = yes
 		}
@@ -334,6 +338,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.41 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				has_star_flag = nep_whitegoo_2
@@ -367,6 +372,7 @@ planet_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.5000 root:[Root.GetName]"
 		solar_system.space_owner = { 
 			country_event = { id = nep_whitegoo.50000 }
 			set_country_flag = nep_whitegoo_noti 
@@ -383,12 +389,16 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	immediate = {
+		log = "fire wg.50000 root:[Root.GetName]"
+	}
+	
 	option = {
 		name = nep_whitegoo.5000.a
 	}
 }
 
-#stage2
+# stage2
 planet_event = {
 	id = nep_whitegoo.5001
 	hide_window = yes
@@ -403,6 +413,7 @@ planet_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.5001 root:[Root.GetName]"
 		solar_system.space_owner = { 
 			country_event = { id = nep_whitegoo.50010 }
 			set_country_flag = nep_whitegoo_2_noti 
@@ -419,12 +430,16 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	immediate = {
+		log = "fire wg.50010 root:[Root.GetName]"
+	}
+	
 	option = {
 		name = nep_whitegoo.5001.a
 	}
 }
 
-#stage3
+# stage3
 planet_event = {
 	id = nep_whitegoo.5002
 	hide_window = yes
@@ -438,6 +453,7 @@ planet_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.5002 root:[Root.GetName]"
 		solar_system.space_owner = {
 			country_event = { id = nep_whitegoo.50020 }
 			set_country_flag = nep_whitegoo_3_noti 
@@ -453,6 +469,10 @@ country_event = {
 	location = From.solar_system
 	
 	is_triggered_only = yes
+	
+	immediate = {
+		log = "fire wg.50020 root:[Root.GetName]"
+	}
 	
 	option = {
 		name = nep_whitegoo.5002.a
@@ -480,6 +500,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.5 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech
 	}
 	
@@ -508,6 +529,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.51 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech
 	}
 	
@@ -531,6 +553,7 @@ fleet_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.6 root:[Root.GetName]"
 		remove_modifier = nep_whitegoo_fleet
 		if = {
 			limit = {
@@ -561,6 +584,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.61 root:[Root.GetName]"
 		if = {
 			limit = {
 				last_increased_tech = tech_nep_whitegoo_3_2
@@ -597,6 +621,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.62 root:[Root.GetName]"
 		from.solar_system = {
 			remove_star_flag = nep_whitegoo_no_effect
 			every_neighbor_system = {
@@ -677,6 +702,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.63 root:[Root.GetName]"
 		fromfrom.solar_system = {
 			remove_star_flag = nep_whitegoo_no_effect
 			every_neighbor_system = {
@@ -758,6 +784,7 @@ ship_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.64 root:[Root.GetName]"
 		solar_system = {
 			every_system_planet = {
 				remove_modifier = nep_whitegoo_1
@@ -765,6 +792,7 @@ ship_event = {
 		}
 	}
 }
+
 #Cavaneers
 country_event = {
 	id = nep_whitegoo.7
@@ -774,6 +802,7 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
+		has_country_flag = nep_whitegoo_noti
 		exists = event_target:caravaneer_home_country
 		has_technology = tech_nep_whitegoo_4
 		has_communications = event_target:caravaneer_home_country
@@ -804,6 +833,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.7 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech_sell
 	}
 	
@@ -829,6 +859,7 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
+		has_country_flag = nep_whitegoo_noti
 		exists = event_target:caravaneer_home_country
 		NOT = { has_technology = tech_nep_whitegoo_4 }
 		has_communications = event_target:caravaneer_home_country
@@ -859,6 +890,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.71 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech_buy
 	}
 	
@@ -893,6 +925,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.8000 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_8000_temp
 		country_event = { id = nep_whitegoo.8001 days = 30 random = 30 }
 	}
@@ -906,6 +939,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		log = "fire wg.8001 root:[Root.GetName]"
 		random_list = {
 			1 = { country_event = { id = nep_whitegoo.8 days = 30 random = 30 } }
 			2 = { country_event = { id = nep_whitegoo.8001 days = 30 random = 30 } }
@@ -922,7 +956,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		
+		log = "fire wg.8 root:[Root.GetName]"
 	}
 	
 	option = {
@@ -946,6 +980,7 @@ country_event = {
 	}
 	
 	immediate = {
+		log = "fire wg.81 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			random_system_planet = {
 				limit = { is_star = yes }
@@ -994,6 +1029,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		log = "fire wg.82 root:[Root.GetName]"
 		set_spawn_system_batch = begin
 		event_target:nep_whitegoo_system_1 = {
 			spawn_system = {
@@ -1125,6 +1161,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		log = "fire wg.83 root:[Root.GetName]"
 		abort_special_project = nep_whitegoo_research
 	}
 	
@@ -1171,27 +1208,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		log = "fire wg.9 root:[Root.GetName]"
 		remove_global_flag = nep_whitegoo_begin
 		set_global_flag = nep_whitegoo_end
 		every_system = {
 			limit = { has_star_flag = nep_whitegoo_no_effect }
 			remove_star_flag = nep_whitegoo_no_effect
-		}
-		country_event = { id = nep_whitegoo.9000 }
-	}
-}
-
-country_event = {
-	id = nep_whitegoo.9000
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	immediate = {
-		if = {
-			limit = { has_global_flag = nep_whitegoo_begin }
-			remove_global_flag = nep_whitegoo_begin
-			set_global_flag = nep_whitegoo_end
 		}
 		every_system = {
 			limit = {
@@ -1199,13 +1221,6 @@ country_event = {
 					has_star_flag = nep_whitegoo_1
 					has_star_flag = nep_whitegoo_2
 					has_star_flag = nep_whitegoo_3
-				}
-				any_neighbor_system = {
-					NOR = {
-						has_star_flag = nep_whitegoo_1
-						has_star_flag = nep_whitegoo_2
-						has_star_flag = nep_whitegoo_3
-					}
 				}
 			}
 			save_event_target_as = nep_whitegoo_9000_temp
@@ -1237,19 +1252,72 @@ country_event = {
 				remove_modifier = nep_whitegoo_fleet
 			}
 		}
-		if = {
-			limit = { NOT = { exists = event_target:nep_whitegoo_9000_temp } }
-			set_global_flag = nep_whitegoo_end
-			every_country = {
-				remove_country_flag = nep_whitegoo_8000_temp
-				remove_country_flag = nep_whitegoo_83_temp
-			}
-		}
-		else = {
-			country_event = { id = nep_whitegoo.9000 days = 30 random = 3 }
-		}
+		#country_event = { id = nep_whitegoo.9000 }
 	}
 }
+
+# country_event = {
+	# id = nep_whitegoo.9000
+	# hide_window = yes
+	
+	# is_triggered_only = yes
+	
+	# immediate = {
+		# if = {
+			# limit = { has_global_flag = nep_whitegoo_begin }
+			# remove_global_flag = nep_whitegoo_begin
+			# set_global_flag = nep_whitegoo_end
+		# }
+		# every_system = {
+			# limit = {
+				# OR = {
+					# has_star_flag = nep_whitegoo_1
+					# has_star_flag = nep_whitegoo_2
+					# has_star_flag = nep_whitegoo_3
+				# }
+			# }
+			# save_event_target_as = nep_whitegoo_9000_temp
+			# remove_star_flag = nep_whitegoo_1
+			# remove_star_flag = nep_whitegoo_2
+			# remove_star_flag = nep_whitegoo_3
+			# remove_modifier = nep_whitegoo_system_1
+			# remove_modifier = nep_whitegoo_system_2
+			# remove_modifier = nep_whitegoo_system_3
+			# every_system_ambient_object = {
+				# limit = { has_ambient_object_flag = nep_whitegoo_ambient_object }
+				# destroy_ambient_object = this
+			# }
+			# every_system_planet = {
+				# if = { 
+					# limit = { has_modifier = nep_whitegoo_1 }
+					# remove_modifier = nep_whitegoo_1
+				# }
+				# if = { 
+					# limit = { has_modifier = nep_whitegoo_2 }
+					# remove_modifier = nep_whitegoo_2
+				# }
+				# if = { 
+					# limit = { has_modifier = nep_whitegoo_3 }
+					# remove_modifier = nep_whitegoo_3
+				# }
+			# }
+			# every_fleet_in_system = {
+				# remove_modifier = nep_whitegoo_fleet
+			# }
+		# }
+	 # if = {
+			# limit = { NOT = { exists = event_target:nep_whitegoo_9000_temp } }
+			# set_global_flag = nep_whitegoo_end
+			# every_country = {
+				# remove_country_flag = nep_whitegoo_8000_temp
+				# remove_country_flag = nep_whitegoo_83_temp
+			# }
+		# }
+		# else = {
+			# country_event = { id = nep_whitegoo.9000 days = 30 random = 3 }
+		# }
+	#}
+#}
 
 country_event = {
 	id = nep_whitegoo.91
@@ -1481,7 +1549,7 @@ country_event = {
 			civics = {
 				civic = civic_caravaneer_fleet2
 			}
-			species = last_created
+			species = last_created_species
 			flag = {
 				icon = {
 					category = "special"
@@ -3751,6 +3819,7 @@ fleet_event = {
 	title = "nep_gpc.6002.name"
 	desc = "nep_gpc.6002.desc"
 	picture = GFX_evt_cold_barren
+	show_sound = event_scanner
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -3779,6 +3848,7 @@ fleet_event = {
 	title = "nep_gpc.6002.name"
 	desc = "nep_gpc.6003.desc"
 	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_door_opening
 	
 	archaeology = yes
 	is_triggered_only = yes
@@ -3807,7 +3877,7 @@ fleet_event = {
 	title = "nep_gpc.7.name"
 	desc = "nep_gpc.7.desc"
 	picture = GFX_evt_generator_powerup
-	
+	show_sound = event_door_opening
 	archaeology = yes
 	is_triggered_only = yes
 	

@@ -1,34 +1,34 @@
-# wg_nep_Krahen_invasion_war = {
-	# casus_belli = cb_event
+wg_nep_Krahen_invasion_war = {
+	casus_belli = cb_event
 	
-	# total_war = yes
+	total_war = yes
 	
-	# surrender_acceptance = -5000
-	# war_exhaustion = 0
+	surrender_acceptance = -5000
+	war_exhaustion = 0
 	
-	# set_defender_wargoal = wg_nep_Krahen_invasion_war
+	set_defender_wargoal = wg_nep_Krahen_invasion_war
 
-	# potential = {
-		# always = no # event only
-	# }
-	# possible = {
-		# always = yes
-	# }
+	potential = {
+		always = no # event only
+	}
+	possible = {
+		always = yes
+	}
 	
-	# on_accept  = {
+	on_accept  = {
 
-	# }
+	}
 	
-	# on_status_quo = {
-		# hidden_effect = {
-			#country_event = { id = nep_inva.71 days = 3 }
-		# }
-	# }
+	on_status_quo = {
+		hidden_effect = {
+			country_event = { id = nep_inva.71 days = 3 }
+		}
+	}
 	
-	# ai_weight = {
-		# weight = 0
-	# }
-# }
+	ai_weight = {
+		weight = 0
+	}
+}
 
 wg_war_in_heaven_primitive = {
 	casus_belli = cb_event

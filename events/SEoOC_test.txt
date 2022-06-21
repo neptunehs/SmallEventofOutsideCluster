@@ -558,7 +558,7 @@ country_event = {
 		create_country = {
 			name = "NAME_finalweapon_country"
 			type = nep_finalweapon_country
-			species = last_created
+			species = last_created_species
 			flag = {
 			    icon = {
     		        category = "special"
@@ -671,7 +671,7 @@ planet_event = {
 		}
 		create_country = {
 			name = "Krah'en Empire"
-			species = last_created
+			species = last_created_species
 			type = nep_Krahen_country
 			auto_delete = no
 			# authority = auth_imperial
@@ -702,7 +702,7 @@ planet_event = {
 		}
 		create_colony = {
 			owner = last_created_country
-			species = last_created
+			species = last_created_species
 			ethos = owner
 		}
 		last_created_country = {
@@ -746,7 +746,7 @@ country_event = {
 		}
 		create_country = {
 			name = "NAME_nep_Krahen_Empire"
-			species = last_created
+			species = last_created_species
 			type = nep_Krahen_country
 			auto_delete = no
 			name_list = MOL_Krahen
@@ -888,7 +888,7 @@ country_event = {
 		}
 		every_galaxy_planet = {
 			limit = {
-				colonizeable_planet = yes
+				colonizable_planet = yes
 			}
 			root = {
 				change_variable = { which = 2_num value = 1 }
@@ -1420,5 +1420,154 @@ fleet_event = {
 			}
 		}
 		set_location = event_target:nep_sub_seal_4
+	}
+}
+
+fleet_event = {
+	id = nep_test.38
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+	}
+	
+	immediate = {
+		event_target:nep_gaia_country = {
+			capital_scope = {
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 1
+						}
+					}
+					log = "1"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 2
+						}
+					}
+					log = "2"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 3
+						}
+					}
+					log = "3"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 4
+						}
+					}
+					log = "4"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 5
+						}
+					}
+					log = "5"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 6
+						}
+					}
+					log = "6"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 7
+						}
+					}
+					log = "7"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 8
+						}
+					}
+					log = "8"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 9
+						}
+					}
+					log = "9"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 10
+						}
+					}
+					log = "10"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 11
+						}
+					}
+					log = "11"
+				}
+				if = {
+					limit = {
+						has_ground_combat = no
+						count_planet_army = {
+							count < 12
+						}
+					}
+					log = "12"
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_test.39
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+		has_global_flag = nep_whitegoo_spawn
+	}
+	
+	immediate = {
+		event_target:global_event_country = {
+			while = {
+				count = 30
+				country_event = { id = nep_whitegoo.2 }
+				country_event = { id = nep_whitegoo.31 }
+				country_event = { id = nep_whitegoo.41 }
+			}
+		}
 	}
 }

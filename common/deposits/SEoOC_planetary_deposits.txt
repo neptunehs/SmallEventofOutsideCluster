@@ -1,7 +1,7 @@
 d_nep_unknown_vortex = {	
 	time = 440
 	
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 	icon = unused/d_great_vortex
 	
@@ -46,7 +46,7 @@ d_nep_unknown_vortex = {
 }
 
 d_nep_dragon_temple = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 	icon = d_monument
 	should_swap_deposit_on_terraforming = no

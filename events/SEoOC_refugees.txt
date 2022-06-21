@@ -183,16 +183,17 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = {
-				any_owned_pop = {
-					has_migration_control = yes
-				}
+				#any_owned_pop = {
+					#has_migration_control = yes
+				#}
+				always = yes
 			}
 			random_list = {
 				95 = {
 					random_owned_pop = {
 						limit = { 
 							is_valid_refugee_pop = yes 
-							has_migration_control = no
+							#has_migration_control = no
 						}
 						save_event_target_as = refugee_pop
 						refugee_pop_effect_phantom = yes
@@ -213,7 +214,7 @@ planet_event = {
 			random_owned_pop = {
 				limit = { 
 					is_valid_refugee_pop = yes 
-					has_migration_control = no
+					#has_migration_control = no
 				}
 				save_event_target_as = refugee_pop
 				refugee_pop_effect_phantom = yes
@@ -243,16 +244,17 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = {
-				any_owned_pop = {
-					has_migration_control = yes
-				}
+				#any_owned_pop = {
+					#has_migration_control = yes
+				#}
+				always = yes
 			}
 			random_list = {
 				97 = {
 					random_owned_pop = {
 						limit = { 
 							is_valid_refugee_pop = yes 
-							has_migration_control = no
+							#has_migration_control = no
 						}
 						save_event_target_as = refugee_pop
 						refugee_pop_effect_phantom = yes
@@ -262,7 +264,7 @@ planet_event = {
 					random_owned_pop = {
 						limit = { 
 							is_valid_refugee_pop = yes
-							has_migration_control = yes
+							#has_migration_control = yes
 						}
 						save_event_target_as = refugee_pop
 						refugee_pop_effect_phantom = yes
@@ -274,7 +276,7 @@ planet_event = {
 			random_owned_pop = {
 				limit = { 
 					is_valid_refugee_pop = yes 
-					has_migration_control = no
+					#has_migration_control = no
 				}
 				save_event_target_as = refugee_pop
 				refugee_pop_effect_phantom = yes

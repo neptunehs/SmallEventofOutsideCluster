@@ -105,6 +105,8 @@
  
  CAN_NOT_JUMP_IN_WHITEGOO:0 "§RWhite Goo interferes with the use of the Jump Drive.§!"
  
+ requires_nep_whitegoo_no_more:0 "White Goo hazard has ended."
+ 
  nep_whitegoo_1:0 "White Goo"
  nep_whitegoo_1_desc:0 "White Goo will affect the power generation capacity of planets then the economics. People need equipment to prevent the impact on the body, which will cause anxiety. Moreover, it is difficult to see things in the white fog, which will cause crimes."
  nep_whitegoo_2:0 "White Goo"

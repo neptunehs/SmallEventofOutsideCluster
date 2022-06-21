@@ -12,9 +12,7 @@ nep_dragon_administrator = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 	
 	resources = {
 		category = planet_jobs
@@ -79,9 +77,7 @@ nep_dragon_administrator_drone_hive = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_jobs
@@ -121,10 +117,8 @@ nep_dragon_administrator_drone_machine = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
-
+	possible_precalc = can_fill_drone_job
+	
 	resources = {
 		category = planet_jobs
 		produces = {

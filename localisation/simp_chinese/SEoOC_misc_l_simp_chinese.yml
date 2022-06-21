@@ -1,6 +1,11 @@
 ﻿l_simp_chinese:
 
  effect_every_combatant_fleet:0 "Every Combatant"
+ effect_random_owned_pop_species:0 "Random owned pop species"
+ mod_planet_jobs_influence_produces_mult:0 "Planet jobs influence produces"
+ mod_damage_vs_country_type_default_mult:0 "Damage"
+ mod_damage_vs_country_type_nep_finalweapon_country_mult:0 "Damage to Final Weapon"
+ mod_damage_vs_country_type_nep_phantom_active_mult:0 "Damage to Phantom"
  
  policy_nep_SEoOC_diff_policy:0 "SEoOC难度调整"
  policy_nep_SEoOC_diff_policy_desc:0 "\n调整SEoOC(SomeEventofOutsideCluster)这个mod的剧情难度。"
@@ -27,7 +32,17 @@
  
  policy_orbital_bombardment_Krahen:0 "$policy_orbital_bombardment$"
  policy_orbital_bombardment_Krahen_desc:0 "$policy_orbital_bombardment_desc$"
-
+ 
+ ############New added in 20220521#####################
+ nep_no_benefit_to_us:0 "这会导致我们丢失领土，绝不可能支持。"
+ requires_nep_whitegoo:0 "这个星系没有被污染。"
+ nep_requires_dont_have_colossus:0 "你的帝国已经存在巨像。"
+ nep_requires_tech_thruster_4_and_zero_point_reactor:0 "你需要4级推进器及零点能。"
+ requires_no_existing_whitegoo_station:0 "一个星系只能建造一个。"
+ nep_dragon_not_ready:0 "还不行。再等等。"
+ nep_no_sapient_pops:0 "没有智能生物。"
+ nep_extravagant_orgy:0 "酒池肉林"
+ nep_bombard_by_highlander:0 "正在被天上人轰炸"
  ############UNUSED LOCALS#####################
  
  gov_Krahen_gov_desc:0 ""

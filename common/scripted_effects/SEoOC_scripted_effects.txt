@@ -2404,7 +2404,7 @@ nep_whitegoo_1 = {
 				if = {
 					limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 					while = {
-						count = 3
+						count = 2
 						create_ambient_object = {
 							type = nep_whitegoo_space
 							location = solar_system
@@ -2447,7 +2447,7 @@ nep_whitegoo_2 = {
 			if = { 
 				limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 				while = {
-					count = 4
+					count = 3
 					create_ambient_object = {
 						type = nep_whitegoo_space
 						location = solar_system
@@ -2584,7 +2584,7 @@ nep_whitegoo_3 = {
 				if = { 
 					limit = { NOT = { has_global_flag = nep_whitegoo_no_visual_effect} }
 					while = {
-						count = 5
+						count = 4
 						create_ambient_object = {
 							type = nep_whitegoo_space
 							location = solar_system

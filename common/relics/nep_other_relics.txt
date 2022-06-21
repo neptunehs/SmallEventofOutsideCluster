@@ -110,7 +110,7 @@ r_nep_ugo_relic = {
 	# Possible check for activation
 	possible = {
 		custom_tooltip = {
-			fail_text = "nep_requires_relic_no_cooldown"
+			fail_text = "requires_relic_no_cooldown"
 			NOT = { has_modifier = relic_activation_cooldown_nep_ugo_relic }
 		}
 		custom_tooltip = {

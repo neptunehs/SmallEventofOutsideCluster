@@ -533,7 +533,7 @@ refugee_pop_effect_phantom = {  #Must save event_target:refugee_pop before this 
 		# Resettle in Empire
 		if = {
 			limit = {
-				event_target:refugee_pop = { has_migration_control = no }
+				#event_target:refugee_pop = { has_migration_control = no }
 				any_owned_planet = {
 					habitability = { who = event_target:refugee_pop value >= 0.4 }
 					is_under_colonization = no

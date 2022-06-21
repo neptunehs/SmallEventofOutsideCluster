@@ -247,7 +247,7 @@ planet_event = {
 		create_country = {
 			name = "NAME_nep_finalweapon_country"
 			type = nep_finalweapon_country
-			species = last_created
+			species = last_created_species
 			flag = {
 			    icon = {
     		        category = "special"
@@ -380,7 +380,7 @@ fleet_event = {
 								is_colony = yes
 								is_under_colonization = yes
 								is_colonizable = yes
-								colonizeable_planet = yes
+								colonizable_planet = yes
 							}
 							OR = {
 								is_capital = no

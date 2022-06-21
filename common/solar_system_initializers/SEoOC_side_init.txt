@@ -121,10 +121,17 @@ nep_wohp_init = {
 		}
 		
 		moon = {
-			count = { min = 1 max = 2 }
-			class = random_non_colonizable
+			class = random_non_colonizable			
+			name = "NAME_nep_Gaiaa"
 			orbit_angle = { min = 90 max = 270 }
-			orbit_distance = 5
+			orbit_distance = 12
+		}		
+		
+		moon = {
+			class = random_non_colonizable			
+			name = "NAME_nep_Gaiab"
+			orbit_angle = { min = 1 max = 180 }
+			orbit_distance = 8
 		}
 		
 		moon = {

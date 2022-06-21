@@ -6,7 +6,15 @@ trait_nep_servent_of_machina = {
 
 	initial = no
 	randomized = no
-	modification = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
 	forced_happiness = no
 	immortal_leaders = no
 
@@ -30,7 +38,15 @@ trait_nep_ugo_1 = {
 
 	initial = no
 	randomized = no
-	modification = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
 	immortal_leaders = no
 
 	ai_weight = {
@@ -51,7 +67,15 @@ trait_nep_ugo_2 = {
 
 	initial = no
 	randomized = no
-	modification = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
 	immortal_leaders = no
 	forced_happiness = yes
 

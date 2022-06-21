@@ -85,21 +85,26 @@ nep_dragon_country = {
 }
 
 nep_Krahen_country = {
-	attack_unarmed_orbital_stations = no
+	attack_unarmed_orbital_stations = yes
 	#scaled_difficulty_bonuses = 0.5	# scales to setting
-	#end_game_crisis = yes
+	end_game_crisis = yes
 	destroys_starbases = yes
 	can_own_empty_planets = yes
 	needs_survey = no
 	has_complete_sensor = yes
 	can_planets_be_attacked = yes
 	has_capital = no
+	playable = no
+	enforces_borders = no
 	home_system = nep_Central_system
 	custom_starbase = nep_heavy_spacebase
-	orbital_bombardment = yes
+	minimalist_contacts_list_profile = yes
+	#orbital_bombardment = yes
 	government = no
 	piracy_risk = no
 	enforces_borders = no
+	observable = yes
+	uses_origins = no
 	ai = {
 		enabled = no
 	}
@@ -108,6 +113,7 @@ nep_Krahen_country = {
 		hostile = yes
 		needs_border_access = no
 		generate_borders = no
+		intel_effects_surveyed = no
 	}
 	
 	custom_diplomacy = yes
@@ -117,7 +123,7 @@ nep_Krahen_country = {
 		standard_leader_module = {}
 		all_technology_module = {}
 		exclusive_diplomacy_module = {
-			contact_rule = never
+			contact_rule = on_action_only
 		}
 	}
 }
@@ -380,10 +386,10 @@ nep_primitive_highlander = {
 	faction = {
 		hostile = no
 		primitive = yes
-		primitive_age = "ATOMIC_AGE"
 		needs_border_access = no
 		generate_borders = no
 		needs_colony = yes
+		intel_effects_surveyed = no
 	}
 	hide_names_if_no_communication = yes
 	#custom_diplomacy = yes # This makes primitives show up in the galaxy empire view.
@@ -413,6 +419,7 @@ nep_primitive_machina = {
 		needs_border_access = no
 		generate_borders = no
 		needs_colony = yes
+		intel_effects_surveyed = no
 	}
 	hide_names_if_no_communication = yes
 	#custom_diplomacy = yes # This makes primitives show up in the galaxy empire view.
@@ -463,264 +470,9 @@ nep_machina = { #fork by default,for not being subject or join fedaration
 			military_minister_module
 			foreign_minister_module
 			interior_minister_module
+			mercenary_buyer_minister_module
+			enclave_founder_minister_module
 		}
-
-		ship_data = {
-			constructor = {
-				min = 3
-				max = 3
-			}
-
-			science	= {
-				min = 3
-				max = 3
-			}
-
-			colonizer = {
-				min = 1
-				max = 1
-			}
-
-			colossus = {
-				min = 1
-				max = 1
-			}
-
-			titan = {
-				min = 1
-				max = 3
-			}
-
-			battleship = {
-				fraction = {
-					modifier = {
-						add = 25
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			cruiser = {
-				fraction = {
-					modifier = {
-						add = 35
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -10
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			destroyer = {
-				fraction = {
-					modifier = {
-						add = 50
-						has_technology = tech_destroyers
-					}
-					modifier = {
-						add = -15
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -10
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			corvette = {
-				fraction = {
-					base = 100
-					modifier = {
-						add = -25
-						has_technology = tech_destroyers
-					}
-					modifier = {
-						add = -45
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -5
-						has_technology = tech_battleships
-					}
-				}
-			}
-		}
-
-		army_data = {
-			assault_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							AND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-							AND = {
-								has_ai_personality_behaviour = slaver
-								has_technology = tech_neural_implants
-							}
-							AND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			slave_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							AND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-							NAND = {
-								has_ai_personality_behaviour = slaver
-								has_technology = tech_neural_implants
-							}
-							AND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			robotic_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							NAND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			clone_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							OR = {
-								NOT = { has_authority = auth_machine_intelligence }
-								has_civic = civic_machine_assimilator
-							}
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							NAND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-						}
-					}
-				}
-			}
-
-			psionic_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							NOT = { has_technology = tech_telepathy }
-							has_technology = tech_gene_seed_purification
-						}
-					}
-				}
-			}
-
-			gene_warrior_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							NOT = { has_technology = tech_gene_seed_purification }
-						}
-					}
-				}
-			}
-
-			machine_assault_1 = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							has_technology = tech_adaptive_combat_algorithms
-						}
-					}
-				}
-			}
-
-			machine_assault_2 = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = -25
-						has_technology = tech_biomechanics
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							NOT = { has_technology = tech_adaptive_combat_algorithms }
-						}
-					}
-				}
-			}
-
-			machine_assault_3 = {
-				fraction = {
-					factor = 25
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							NOT = { has_technology = tech_biomechanics }
-						}
-					}
-				}
-			}
-		}
-
 	}
 
 	trade_routes_available = {
@@ -849,268 +601,13 @@ nep_machina_broken = { #fork by default,for not being subject or join fedaration
 		government = yes
 		traditions = yes
 		construction = yes
+		espionage = no
 		follow = yes
 		can_use_market = yes
 		modules = {
 			berserk_military_minister_module
 			foreign_minister_module
 			interior_minister_module
-		}
-
-		ship_data = {
-			constructor = {
-				min = 3
-				max = 3
-			}
-
-			science	= {
-				min = 3
-				max = 3
-			}
-
-			colonizer = {
-				min = 1
-				max = 1
-			}
-
-			colossus = {
-				min = 1
-				max = 1
-			}
-
-			titan = {
-				min = 1
-				max = 3
-			}
-
-			battleship = {
-				fraction = {
-					modifier = {
-						add = 25
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			cruiser = {
-				fraction = {
-					modifier = {
-						add = 35
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -10
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			destroyer = {
-				fraction = {
-					modifier = {
-						add = 50
-						has_technology = tech_destroyers
-					}
-					modifier = {
-						add = -15
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -10
-						has_technology = tech_battleships
-					}
-				}
-			}
-
-			corvette = {
-				fraction = {
-					base = 100
-					modifier = {
-						add = -25
-						has_technology = tech_destroyers
-					}
-					modifier = {
-						add = -45
-						has_technology = tech_cruisers
-					}
-					modifier = {
-						add = -5
-						has_technology = tech_battleships
-					}
-				}
-			}
-		}
-
-		army_data = {
-			assault_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							AND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-							AND = {
-								has_ai_personality_behaviour = slaver
-								has_technology = tech_neural_implants
-							}
-							AND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			slave_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							AND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-							NAND = {
-								has_ai_personality_behaviour = slaver
-								has_technology = tech_neural_implants
-							}
-							AND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			robotic_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							NAND = {
-								has_ai_personality_behaviour = robot_liberator
-								has_technology = tech_droid_workers
-							}
-						}
-					}
-				}
-			}
-
-			clone_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							OR = {
-								NOT = { has_authority = auth_machine_intelligence }
-								has_civic = civic_machine_assimilator
-							}
-							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification
-							NAND = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
-								has_technology = tech_gene_banks
-							}
-						}
-					}
-				}
-			}
-
-			psionic_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							NOT = { has_technology = tech_telepathy }
-							has_technology = tech_gene_seed_purification
-						}
-					}
-				}
-			}
-
-			gene_warrior_army = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							has_authority = auth_machine_intelligence
-							NOT = { has_technology = tech_gene_seed_purification }
-						}
-					}
-				}
-			}
-
-			machine_assault_1 = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							has_technology = tech_adaptive_combat_algorithms
-						}
-					}
-				}
-			}
-
-			machine_assault_2 = {
-				fraction = {
-					factor = 100
-					modifier = {
-						factor = -25
-						has_technology = tech_biomechanics
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							NOT = { has_technology = tech_adaptive_combat_algorithms }
-						}
-					}
-				}
-			}
-
-			machine_assault_3 = {
-				fraction = {
-					factor = 25
-					modifier = {
-						factor = 0
-						OR = {
-							NOT = { has_authority = auth_machine_intelligence }
-							NOT = { has_technology = tech_biomechanics }
-						}
-					}
-				}
-			}
 		}
 	}
 	
@@ -1219,6 +716,7 @@ nep_global_for_protrait = {
 		generate_borders = no
 		needs_colony = no
 		auto_delete = no
+		intel_effects_surveyed = no
 	}
 	modules = {
 		standard_event_module = {} # Needed for events
@@ -1248,6 +746,7 @@ nep_galactic_trust_territorys = {
 		generate_borders = no
 		needs_colony = no
 		auto_delete = no
+		intel_effects_surveyed = no
 	}
 	modules = {
 		standard_event_module = {} # Needed for events
@@ -1275,6 +774,7 @@ nep_ugo_first_ship = {
 		needs_colony = no
 		hostile_when_attacked = yes
 		auto_delete = yes
+		intel_effects_surveyed = no
 	}
 	modules = {
 		exclusive_diplomacy_module = { contact_rule = never } # Nothing is allowed, but we need this for relationships.
@@ -1302,6 +802,7 @@ nep_Scrus_cluster_territorys = {
 		generate_borders = no
 		needs_colony = no
 		auto_delete = no
+		intel_effects_surveyed = no
 	}
 	modules = {
 		exclusive_diplomacy_module = { contact_rule = on_action_only }
@@ -1325,13 +826,14 @@ nep_caravaneer_fleet = {
 		needs_colony = no
 		hostile_when_attacked = no
 		auto_delete = yes
+		intel_effects_surveyed = no
 	}
 	custom_diplomacy = yes
 	custom_opinion = yes
 	modules = {
 		basic_technology_module = {}
 		standard_event_module = {}
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = never } # Nothing is allowed, but we need this for relationships.
 		#basic_technology_module = {}
 	}
 }
