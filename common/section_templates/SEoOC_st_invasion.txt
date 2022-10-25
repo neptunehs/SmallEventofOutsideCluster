@@ -268,6 +268,49 @@ ship_section_template = {
 }
 
 ship_section_template = {
+	key = "NEP_KRAHEN_BATTLESHIP_BOW_1_HARD"
+	ship_size = nep_Krahen_battleship
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "NEP_Krahen_BATTLESHIP_BOW_1_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+		}
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_02"
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_03"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "xl_gun_02"
+	}
+
+	large_utility_slots = 1
+	
+}
+
+ship_section_template = {
 	key = "NEP_KRAHEN_BATTLESHIP_MID_1"
 	ship_size = nep_Krahen_battleship
 	fits_on_slot = mid

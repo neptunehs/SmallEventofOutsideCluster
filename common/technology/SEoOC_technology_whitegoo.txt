@@ -12,6 +12,7 @@ tech_nep_whitegoo_1 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 	
 	modifier = {
@@ -115,6 +116,7 @@ tech_nep_whitegoo_2_1 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 	
 	modifier = {
@@ -216,6 +218,7 @@ tech_nep_whitegoo_2_2 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 	
 	modifier = {
@@ -317,6 +320,7 @@ tech_nep_whitegoo_2_3 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 
 	modifier = {
@@ -419,6 +423,7 @@ tech_nep_whitegoo_3_1 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 
 	prereqfor_desc = {
@@ -523,6 +528,7 @@ tech_nep_whitegoo_3_2 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 	
 	prereqfor_desc = {
@@ -628,6 +634,7 @@ tech_nep_whitegoo_3_3 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 
 	prereqfor_desc = {
@@ -732,6 +739,7 @@ tech_nep_whitegoo_4 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 
 	prereqfor_desc = {
@@ -812,6 +820,7 @@ tech_nep_whitegoo_5 = {
 	potential = {
 		has_country_flag = nep_whitegoo_tech
 		NOT = { has_global_flag = nep_whitegoo_end }
+		is_fallen_empire = no
 	}
 
 	prereqfor_desc = {

@@ -862,3 +862,68 @@ nep_ugo_hell = {
 relic_activation_cooldown_nep_ugo_relic = {
 	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
 }
+
+##########################################################################
+# HARD Mode
+##########################################################################
+nep_malfunctioning_guards_hard = {
+	ship_weapon_damage = 0.7
+	ship_hull_mult = 0.7
+	ship_armor_mult = 0.7
+	ship_shield_mult = 0.7
+}
+
+nep_seal_evil_hard = {
+	ship_weapon_damage = 1
+	ship_hull_mult = 1
+	ship_armor_mult = 1
+	ship_shield_mult = 1
+	ship_weapon_range_mult = 1
+}
+
+nep_Legnahcras_hard = {
+	army_health = 0.7
+	army_morale = 0.7
+	army_damage_mult = 0.7
+	army_morale_damage_mult = 0.7
+}
+
+nep_dragon_hard = {
+	ship_weapon_damage = 1.5
+	ship_hull_mult = 1.5
+	ship_armor_mult = 1.5
+	ship_shield_mult = 1.5
+	ship_weapon_range_mult = 1.5
+}
+
+nep_Krahen_hard = {
+	ship_weapon_damage = 2.2
+	ship_hull_mult = 2.2
+	ship_armor_mult = 2.2
+	ship_shield_mult = 2.2
+	ship_weapon_range_mult = 1.7
+	army_health = 2.2
+	army_morale = 2.2
+	army_damage_mult = 2.2
+	army_morale_damage_mult = 2.2
+	ship_speed_mult = 1
+	ship_evasion_add = 0.2
+}
+
+nep_finalweapon_hard = {
+	ship_weapon_damage = 4
+	ship_hull_mult = 4
+	ship_armor_mult = 4
+	ship_shield_mult = 4
+	ship_weapon_range_mult = 2.5
+	ship_speed_mult = 1.2
+	ship_evasion_add = 2
+}
+
+nep_phantom_hard = {
+	ship_weapon_damage = 2.4
+	ship_hull_mult = 2.4
+	ship_armor_mult = 2.4
+	ship_shield_mult = 2.4
+	ship_weapon_range_mult = 1
+}

@@ -787,6 +787,8 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		has_global_flag = nep_wohp_spawn
+		exists = event_target:nep_gaia_country
 		OR = {
 			has_country_flag = nep_gaia_assist_war
 			is_same_value = event_target:nep_gaia_country
@@ -1313,6 +1315,8 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		has_global_flag = nep_wohp_spawn
+		exists = event_target:nep_highlander_country
 		OR = {
 			has_country_flag = nep_highlander_assist_war
 			is_same_value = event_target:nep_highlander_country
@@ -1730,21 +1734,15 @@ event = {
 	}
 	
 	immediate = {
-		log = "1"
 		if = {
 			limit = { exists = event_target:nep_gaia_country }
-			log = "2"
 			event_target:nep_gaia_country = {
-				log = "3"
 				capital_scope = {
-					log = "4"
 					if = {
 						limit = { planet_devastation > 90 }
-						log = "5"
 						if = { limit = { has_ground_combat = no } add_planet_devastation = -10 }					
 					}
 					else = {
-						log = "6"
 						random_list = {
 							1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -7 } }
 							1 = { if = { limit = { has_ground_combat = no } add_planet_devastation = -4 } }
@@ -1755,7 +1753,6 @@ event = {
 							1 = { if = { limit = { has_ground_combat = yes } add_planet_devastation = 5 }  }
 						}
 					}
-					log = "7"
 					if = {
 						limit = {
 							has_ground_combat = no
@@ -1763,7 +1760,62 @@ event = {
 								count < 12
 							}
 						}
-						log = "8"
+						create_army = {
+							name = "NAME_nep_Gaia_resist_force"
+							owner = event_target:nep_gaia_country
+							species = event_target:nep_gaia_species
+							type = nep_gaia_super_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_Gaia_resist_force"
+							owner = event_target:nep_gaia_country
+							species = event_target:nep_gaia_species
+							type = nep_gaia_super_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_Gaia_resist_force"
+							owner = event_target:nep_gaia_country
+							species = event_target:nep_gaia_species
+							type = nep_gaia_super_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_Gaia_resist_force"
+							owner = event_target:nep_gaia_country
+							species = event_target:nep_gaia_species
+							type = nep_gaia_super_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
 						create_army = {
 							name = "NAME_nep_Gaia_resist_force"
 							owner = event_target:nep_gaia_country
@@ -1778,6 +1830,62 @@ event = {
 			limit = { exists = event_target:nep_highlander_country }
 			event_target:nep_highlander_country = {
 				capital_scope = {
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_highlander_royal_ashes"
+							owner = event_target:nep_highlander_country
+							species = event_target:nep_gaia_species
+							type = nep_gene_slave_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_highlander_royal_ashes"
+							owner = event_target:nep_highlander_country
+							species = event_target:nep_gaia_species
+							type = nep_gene_slave_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_highlander_royal_ashes"
+							owner = event_target:nep_highlander_country
+							species = event_target:nep_gaia_species
+							type = nep_gene_slave_army_defensive
+						}
+					}
+					if = {
+						limit = {
+							has_ground_combat = no
+							count_planet_army = {
+								count < 12
+							}
+						}
+						create_army = {
+							name = "NAME_nep_highlander_royal_ashes"
+							owner = event_target:nep_highlander_country
+							species = event_target:nep_gaia_species
+							type = nep_gene_slave_army_defensive
+						}
+					}
 					if = {
 						limit = {
 							has_ground_combat = no
@@ -1852,15 +1960,21 @@ event = {
 	}
 	
 	immediate = {
-		event_target:nep_gaia_country = {
-			capital_scope = {
-				planet_event = { id = nep_wohp.92 days = 150 random = 60 }
+		if = {
+			limit = { has_global_flag = nep_wohp_not_first_year }
+			event_target:nep_gaia_country = {
+				capital_scope = {
+					planet_event = { id = nep_wohp.92 days = 150 random = 60 }
+				}
+			}
+			event_target:nep_highlander_country = {
+				capital_scope = {
+					planet_event = { id = nep_wohp.91 days = 15 random = 15 }
+				}
 			}
 		}
-		event_target:nep_highlander_country = {
-			capital_scope = {
-				planet_event = { id = nep_wohp.91 days = 15 random = 15 }
-			}
+		else = {
+			set_global_flag = nep_wohp_not_first_year
 		}
 	}
 }
@@ -2306,7 +2420,7 @@ ship_event = {
 				}
 				create_country = {
 					name = NAME_nep_Country_of_Machina
-					type = nep_machina
+					type = default
 					auto_delete = yes
 					species = last_created_species
 					authority = auth_dictatorial
@@ -2316,7 +2430,7 @@ ship_event = {
 					}
 					civics = {
 						civic = civic_philosopher_king
-						civic = civic_imperial_cult
+						civic = civic_exalted_priesthood
 					}
 					origin = origin_nep_deus_ex_machina
 					flag = random
@@ -2366,6 +2480,22 @@ ship_event = {
 					# last_created_leader = {
 						# add_ruler_trait = leader_trait_nep_machina
 					# }
+					random_country = {
+						limit = {
+							is_ai = no
+						}
+						save_event_target_as = nep_temp_country
+					}
+					copy_techs_from = { 
+						target = event_target:nep_temp_country
+					}
+					give_technology = { tech = tech_destroyers message = yes }
+					give_technology = { tech = tech_cruisers message = yes }
+					give_technology = { tech = tech_battleships message = yes }
+					give_technology = { tech = tech_starbase_2 message = yes }
+					give_technology = { tech = tech_starbase_3 message = yes }
+					give_technology = { tech = tech_starbase_4 message = yes }
+					give_technology = { tech = tech_starbase_5 message = yes }
 				}
 				create_colony = {
 					owner = event_target:nep_deus_country
@@ -2544,21 +2674,6 @@ ship_event = {
 			}
 		}
 		event_target:nep_deus_country = {
-			random_country = {
-				limit = { 
-					if = {
-						limit = { any_country = { is_ai = no } }
-						is_ai = no
-					}
-					else = {
-						always = yes
-					}
-				}
-				save_event_target_as = nep_temp_country
-			}
-			copy_techs_from = { 
-				target = event_target:nep_temp_country
-			}
 			every_owned_planet = {
 				while = {
 					count = 5
@@ -2813,6 +2928,9 @@ event = {
 				random_owned_pop = {
 					species = { save_event_target_as = nep_deus_6_temp }
 					kill_pop = yes
+				}
+				random_owned_pop = {
+					species = { save_event_target_as = nep_deus_6_temp }
 					kill_pop = yes
 				}
 				create_army = {
@@ -2911,30 +3029,27 @@ event = {
 	}
 	
 	immediate = {
-		random_country = {
-			limit = { 
-				if = {
-					limit = { any_country = { is_ai = no } }
-					is_ai = no
-				}
-				else_if = {
-					limit = { any_country = { is_fallen_empire = yes } }
-					is_fallen_empire = yes
-				}
-				else = {
-					always = yes
-				}
-			}
-			save_event_target_as = nep_temp_country
-		}
+		# random_country = {
+			# limit = { 
+				# if = {
+					# limit = { any_country = { is_ai = no } }
+					# is_ai = no
+				# }
+				# else_if = {
+					# limit = { any_country = { is_fallen_empire = yes } }
+					# is_fallen_empire = yes
+				# }
+				# else = {
+					# always = yes
+				# }
+			# }
+			# save_event_target_as = nep_temp_country
+		# }
 		event_target:nep_deus_country = {
-			if = {
-				limit = { tech_unlocked_ratio = { who = event_target:nep_temp_country ratio < 0.85 } }
-				add_resource = {
-					physics_research = 10000
-					society_research = 10000
-					engineering_research = 10000
-				}
+			add_resource = {
+				physics_research = 10000
+				society_research = 10000
+				engineering_research = 10000
 			}
 		}
 		event_target:nep_deus_country = {
@@ -2944,7 +3059,8 @@ event = {
 				alloys = 2000
 				energy = 2000
 				consumer_goods = 2000
-				influence = 300
+				influence = 100
+				unity = 2000
 			}
 		}
 		create_fleet = {
@@ -7936,6 +8052,7 @@ ship_event = {
 				random_pos = yes
 				orbit_angle = 360		# range of the randomization
 			}
+			random_system_planet = { limit = { is_star = yes } save_global_event_target_as = nep_ugo1_temp }
 		}
 		random_system = {
 			limit = {
@@ -8238,6 +8355,7 @@ country_event = {
 		event_target:nep_ugo_US388 = { 
 			destroy_colony = yes
 			change_pc = pc_toxic
+			add_modifier = { modifier = nep_ugo_hell }
 		}
 		event_target:nep_ugo_fleet = {
 			auto_move_to_planet = { target = event_target:nep_ugo1_temp clear_auto_move_on_arrival = yes }
@@ -8993,9 +9111,7 @@ country_event = {
 	show_sound = event_laboratory_sound
 	is_triggered_only = yes
 	
-	immediate = {
-		from.fleet = { kill_leader = { type = scientist } }
-	}
+	immediate = { from.fleet = { set_event_locked = yes } }
 	
 	option = {
 		name = nep_ugo.40010.a
@@ -9005,6 +9121,13 @@ country_event = {
 			owner = root
 		}
 	}	
+	
+	after = {
+		from.fleet = { 
+			kill_leader = { type = scientist } 
+			hidden_effect = { set_event_locked = no }
+		}
+	}
 }
 
 ship_event = {
@@ -9015,7 +9138,7 @@ ship_event = {
 	trigger = { owner = { has_country_flag = nep_ugo_target } }
 	
 	immediate = {
-		destroy_ship = root
+		fleet = { set_event_locked = yes }
 		owner = { country_event = { id = nep_ugo.40020 } }
 	}
 }
@@ -9035,6 +9158,13 @@ country_event = {
 			name = "nep_ugo_project_3"
 			location = event_target:nep_ugo_US388
 			owner = root
+		}
+	}
+	
+	after = { 
+		from.fleet = { 
+			hidden_effect = { set_event_locked = no }
+			destroy_fleet = this
 		}
 	}
 }

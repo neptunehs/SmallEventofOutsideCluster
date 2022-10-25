@@ -26,11 +26,6 @@ Note:
 5.Of course,No achievements support.
 6.I don't know why,but if you load a save with this mod open,then load it without this mod,game will crash.
 
-
-In order to be compatible with mod Gigastructural Engineering&More£¨https://steamcommunity.com/workshop/filedetails/?id=1121692237£©, tthis mod uses some elements of mod Gigastructural Engineering&More.
-
 In addition, this mod has changed game_rules. If you use other mods on a large scale, please refer to the following game_rules compatible patch (just choose one):
 ! Universial Game Rules Patch
 https://steamcommunity.com/sharedfiles/filedetails/?id=2187470106
-Sealed systems patch
-https://steamcommunity.com/sharedfiles/filedetails/?id=2157799521

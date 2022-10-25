@@ -221,7 +221,7 @@
  nep_deuspi.8001.b:0 "我们不是什么神，但我们可以帮你。"
  nep_deuspi.8001.c:0 "遮断信号。"
  
- nep_deuspi.8012.desc:0 "虽然我知道拜托你们是对我们的“神”的背叛和亵渎……但我真的想知道，我的青梅竹马，§Y[event_target:nep_deus_female.GetName]§!，现在在哪儿。啊，我的名字是§Y[event_target:nep_deus_male.GetName]§!。我的青梅竹马她在之前荣誉的被选为巫女————这在我们村子历史上都是很少见的光荣的事情。但在那以后我就再也没见过她了，我想见她一面，不惜一切代价。"
+ nep_deuspi.8012.desc:0 "虽然我知道拜托你们是对我们的“神”的背叛和亵渎……但我真的想知道，我的青梅竹马，第4522727号。。。§Y[event_target:nep_deus_female.GetName]§!，现在在哪儿。啊，我是第4522714号，名字是§Y[event_target:nep_deus_male.GetName]§!。我的青梅竹马她在之前荣誉的被选为巫女————这在我们村子历史上都是很少见的光荣的事情。但在那以后我就再也没见过她了，我想见她一面，不惜一切代价。"
  nep_deuspi.8012.a:0 "你想见她做什么？"
  nep_deuspi.8012.a.response:0 "我要向她告白，我爱着她。哪怕这没有结果。"
  nep_deuspi.8012.b:0 "你能拿出什么献祭给我？"
@@ -347,7 +347,9 @@
  nep_deus_rescue_3:0 "弑神"
  nep_deus_rescue_3_DESC:0 "把那台把人不当人的机器“神”拆掉。"
  
- NAME_nep_Country_of_Machina:0 "机神国"
+ NAME_nep_Country_of_Machina:0 "机神国" 
+ personality_nep_servent_of_machina:0 "机神的领导"
+ personality_nep_servent_of_machina_broken:0 "疯狂机神的领导"
  
  BYPASS_NEP_WORMHOLE_DEUS:0 "$NATURAL_WORMHOLE_GALACTIC$"
  BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_DEUS:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"

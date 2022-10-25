@@ -48,6 +48,45 @@
  nep_highway.8.b:0 "This is our military priority!Fake News!"
  nep_highway.8.b.tooltip:0 "Automatically build starbases across all relevant stars throughout the Surround-Galaxy Highway and close border to all countries."
  
+ nep_highway.9999.name:0 "Highway Config Terminal"
+ nep_highway.9999.desc:0 "Our scientists find some terminals that can open or close hyperlanes between stations and highway.But you must have these system in control first.You can always open it in edicts to close hyperlanes."
+ 
+ 
+ nep_highway.10000.name:0 "Highway Config Terminal"
+ nep_highway.10000.desc:0 "You can close any highway node here,but you must have these system in control first."
+ nep_highway.10000.N.close:0 "Close $NAME_nep_Station_N$"
+ nep_highway.10000.NNE.close:0 "Close $NAME_nep_Station_NNE$"
+ nep_highway.10000.NE.close:0 "Close $NAME_nep_Station_NE$"
+ nep_highway.10000.ENE.close:0 "Close $NAME_nep_Station_ENE$"
+ nep_highway.10000.E.close:0 "Close $NAME_nep_Station_E$"
+ nep_highway.10000.ESE.close:0 "Close $NAME_nep_Station_ESE$"
+ nep_highway.10000.SE.close:0 "Close $NAME_nep_Station_SE$"
+ nep_highway.10000.SSE.close:0 "Close $NAME_nep_Station_SSE$"
+ nep_highway.10000.S.close:0 "Close $NAME_nep_Station_S$"
+ nep_highway.10000.SSW.close:0 "Close $NAME_nep_Station_SSW$"
+ nep_highway.10000.SW.close:0 "Close $NAME_nep_Station_SW$"
+ nep_highway.10000.WSW.close:0 "Close $NAME_nep_Station_WSW$"
+ nep_highway.10000.W.close:0 "Close $NAME_nep_Station_W$"
+ nep_highway.10000.WNW.close:0 "Close $NAME_nep_Station_WNW$"
+ nep_highway.10000.NW.close:0 "Close $NAME_nep_Station_NW$"
+ nep_highway.10000.NNW.close:0 "Close $NAME_nep_Station_NNW$" 
+ nep_highway.10000.N.open:0 "Open $NAME_nep_Station_N$"
+ nep_highway.10000.NNE.open:0 "Open $NAME_nep_Station_NNE$"
+ nep_highway.10000.NE.open:0 "Open $NAME_nep_Station_NE$"
+ nep_highway.10000.ENE.open:0 "Open $NAME_nep_Station_ENE$"
+ nep_highway.10000.E.open:0 "Open $NAME_nep_Station_E$"
+ nep_highway.10000.ESE.open:0 "Open $NAME_nep_Station_ESE$"
+ nep_highway.10000.SE.open:0 "Open $NAME_nep_Station_SE$"
+ nep_highway.10000.SSE.open:0 "Open $NAME_nep_Station_SSE$"
+ nep_highway.10000.S.open:0 "Open $NAME_nep_Station_S$"
+ nep_highway.10000.SSW.open:0 "Open $NAME_nep_Station_SSW$"
+ nep_highway.10000.SW.open:0 "Open $NAME_nep_Station_SW$"
+ nep_highway.10000.WSW.open:0 "Open $NAME_nep_Station_WSW$"
+ nep_highway.10000.W.open:0 "Open $NAME_nep_Station_W$"
+ nep_highway.10000.WNW.open:0 "Open $NAME_nep_Station_WNW$"
+ nep_highway.10000.NW.open:0 "Open $NAME_nep_Station_NW$"
+ nep_highway.10000.NNW.open:0 "Open $NAME_nep_Station_NNW$"
+ 
  nep_highway_chain_title:0 "Mysterious Highway"
  nep_highway_chain_desc:0 "What does the "highway" we find in the records of the ruins mean?" 
  
@@ -76,6 +115,11 @@
  
  sc_hw_n:1 "$pc_b_star$"
  sc_hw_n_desc:1 "$pc_b_star_desc$"
+ 
+ decision_nep_close_highway_node:0 "Close Highway Node"
+ decision_nep_open_highway_node:0 "Open Highway Node"
+ 
+ edict_nep_highway_menu:0 "Highway Config Terminal"
  
  resolution_commerce_industry_SEoOC_highway_galactic_trust_territory:0 "Make Surround-Galaxy Highway as $galactic_community$ Trust Territory"
  resolution_commerce_industry_SEoOC_highway_galactic_trust_territory_desc:0 "The Surround-Galaxy Highway is the property of the entire universe and should be trusteed by $galactic_community$. No country is allowed to claim on it!"

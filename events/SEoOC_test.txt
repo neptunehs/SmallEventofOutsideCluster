@@ -1571,3 +1571,43 @@ country_event = {
 		}
 	}
 }
+
+
+planet_event = {
+	id = nep_test.40
+	hide_window = yes	
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		always = no
+		has_global_flag = nep_highway_used
+		is_star = yes
+		solar_system = {
+			exists = space_owner
+			space_owner = { 
+				is_ai = no
+			}
+			has_star_flag = nep_highway_station_system
+			any_neighbor_system = {
+				has_star_flag = nep_highway_note_system 
+			}
+			NOT = {
+				any_neighbor_system = {
+					has_star_flag = nep_highway_note_system 
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		event_target:global_event_country = {
+			while = {
+				count = 30
+				country_event = { id = nep_whitegoo.2 }
+				country_event = { id = nep_whitegoo.31 }
+				country_event = { id = nep_whitegoo.41 }
+			}
+		}
+	}
+}

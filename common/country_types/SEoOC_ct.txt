@@ -442,8 +442,8 @@ nep_machina = { #fork by default,for not being subject or join fedaration
 	playable = yes
 	has_pulse_events = yes
 	piracy_risk = yes
-	randomize_ethos = yes
-	shuffle_pop_ethos = yes
+	randomize_ethos = no
+	shuffle_pop_ethos = no
 	needs_survey = yes
 	diplomatic_wars = yes
 	ship_disengagement = yes
@@ -452,17 +452,19 @@ nep_machina = { #fork by default,for not being subject or join fedaration
 	observable = yes
 	can_use_invalid_technology = no
 	can_receive_envoys = yes
+	ownership_limits = default
 
 	ai = {
 		enabled = yes
 		declare_war = yes
 		min_navy_for_wars = 0.5
-		min_assault_armies_for_wars = 6
+		min_assault_armies_for_wars = @armies_for_declaring_war
 		colonizer = yes
 		internal_policies = yes
 		modification = yes
 		government = yes
 		traditions = yes
+		ascension_perks = yes
 		construction = yes
 		follow = yes
 		can_use_market = yes
@@ -600,13 +602,14 @@ nep_machina_broken = { #fork by default,for not being subject or join fedaration
 		modification = yes
 		government = yes
 		traditions = yes
+		ascension_perks = yes
 		construction = yes
 		espionage = no
 		follow = yes
-		can_use_market = yes
+		can_use_market = no
 		modules = {
-			berserk_military_minister_module
-			foreign_minister_module
+			player_crisis_foreign_minister_module
+			player_crisis_military_minister_module
 			interior_minister_module
 		}
 	}

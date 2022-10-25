@@ -35,6 +35,12 @@ nep_sealgate_restored = {
 				has_technology = tech_gateway_construction
 			}
 		}
+		custom_tooltip = {
+			fail_text = "requires_Krahen_crisis_NOT_begin"
+			from = { 
+				NOT = { has_global_flag = nep_Krahen_crisis }
+			}
+		}
 	}
 	upgrade_from = {
 		nep_sealgate_ruined
@@ -247,11 +253,11 @@ nep_station_whitegoo_mega = {
 				has_star_flag = nep_whitegoo_origin
 			}
 			remove_global_flag = nep_whitegoo_begin
-			every_playable_country = { country_event = { id = nep_whitegoo.91 } }
 			random_country = {
 				limit = { is_same_value = event_target:global_event_country }
 				country_event = { id = nep_whitegoo.9 }
 			}
+			every_playable_country = { country_event = { id = nep_whitegoo.91 } }
 		}		
 	}
 }

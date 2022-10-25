@@ -192,7 +192,7 @@ nep_sealportal = {
 
 nep_sealgate = {
 	name = NEP_SEALGATE_GALACTIC
-	is_pathfind = yes
+	is_pathfind = no
 	uses_action = no
 	always_active = no
 	windup_time = 0

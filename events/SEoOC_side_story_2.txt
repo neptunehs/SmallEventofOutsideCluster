@@ -818,6 +818,7 @@ country_event = {
 				nep_whitegoo.71
 			}
 		}
+		is_fallen_empire = no
 	}
 	
 	mean_time_to_happen = {
@@ -875,10 +876,11 @@ country_event = {
 				nep_whitegoo.71
 			}
 		}
+		is_fallen_empire = no
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		months = 3
 	}
 	
 	diplomatic = yes
@@ -976,6 +978,7 @@ country_event = {
 
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
+		NOT = { has_global_flag = nep_whitegoo_82_triggered }
 		last_increased_tech = tech_nep_whitegoo_5
 	}
 	
@@ -1029,7 +1032,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.82 root:[Root.GetName]"
+		log = "fire wg.82 root:[Root.GetName]"		
+		set_country_flag = nep_whitegoo_83_temp
+		set_global_flag = nep_whitegoo_82_triggered
 		set_spawn_system_batch = begin
 		event_target:nep_whitegoo_system_1 = {
 			spawn_system = {
@@ -1138,7 +1143,7 @@ country_event = {
 			nep_whitegoo_2 = yes
 			nep_whitegoo_3 = yes
 		}
-		every_playable_country = {
+		every_country = {
 			country_event = { id = nep_whitegoo.83 }
 		}
 	}
@@ -1333,7 +1338,11 @@ country_event = {
 	
 	option = {
 		name = nep_whitegoo.91.a
-		end_event_chain = nep_whitegoo_chain
+		end_event_chain = nep_whitegoo_chain		
+		remove_point_of_interest = nep_whitegoo_poi.0.1
+		remove_point_of_interest = nep_whitegoo_poi.0.2
+		remove_point_of_interest = nep_whitegoo_poi.0.3
+		remove_point_of_interest = nep_whitegoo_poi.1
 	}
 }
 
@@ -1396,7 +1405,7 @@ event = {
 				NOT = { is_hostile = prev }
 			}
 			num_owned_planets >= 3
-			fleet_power >= 5000
+			fleet_power >= 7500
 		}
 	}
 	

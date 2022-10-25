@@ -258,7 +258,12 @@ tech_nep_ugo_tech = {
 	weight = @tier4weight3
 	is_reverse_engineerable = no
 	icon = tech_biomechanics
-	
+
+	potential = {
+		has_global_flag = nep_ugo_infect_begin
+		has_country_flag = nep_ugo_finding_cure
+	}
+
 	weight_modifier = {
 		factor = 0
 	}

@@ -1254,7 +1254,7 @@ country_event = {
 			}
 			spawn_megastructure = {
 				name = "NAME_nep_Seal_Gate"
-				type = nep_sealgate_restored
+				type = nep_sealgate_ruined
 				planet = event_target:nep_seal_2
 				orbit_angle = 1
 				orbit_distance = 1

@@ -525,11 +525,25 @@ create_Krahen_defender = {
 		name = "NAME_Krahen_Defender"
 		effect = {		
 			set_owner = event_target:nep_Krahen_country
-			while = {
-				count = 40
-				create_ship = {
-					name = "NAME_Krahen_Defender"
-					design = "NAME_Krahen_Battleship_defender"
+			if = {
+				limit = {
+					has_global_flag = nep_SEoOC_hard
+				}
+				while = {
+					count = 40
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_defender_HARD"
+					}
+				}
+			}
+			else = {
+				while = {
+					count = 40
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_defender"
+					}
 				}
 			}
 			assign_leader = last_created_leader
@@ -580,11 +594,25 @@ create_Krahen_defender_gate = {
 		name = "NAME_Krahen_Defender"
 		effect = {		
 			set_owner = event_target:nep_Krahen_country
-			while = {
-				count = 25
-				create_ship = {
-					name = "NAME_Krahen_Defender"
-					design = "NAME_Krahen_Battleship_defender"
+			if = {
+				limit = {
+					has_global_flag = nep_SEoOC_hard
+				}
+				while = {
+					count = 25
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_defender_HARD"
+					}
+				}
+			}
+			else = {
+				while = {
+					count = 25
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_defender"
+					}
 				}
 			}
 			assign_leader = last_created_leader
@@ -634,12 +662,26 @@ create_Krahen_invader = {
 	create_fleet = {
 		name = "NAME_Krahen_Invader"
 		effect = {
-			set_owner = event_target:nep_Krahen_country
-			while = {
-				count = 30
-				create_ship = {
-					name = "NAME_Krahen_Invader"
-					design = "NAME_Krahen_Battleship"
+			set_owner = event_target:nep_Krahen_country			
+			if = {
+				limit = {
+					has_global_flag = nep_SEoOC_hard
+				}
+				while = {
+					count = 30
+					create_ship = {
+						name = "NAME_Krahen_Invader"
+						design = "NAME_Krahen_Battleship_HARD"
+					}
+				}
+			}
+			else = {
+				while = {
+					count = 30
+					create_ship = {
+						name = "NAME_Krahen_Invader"
+						design = "NAME_Krahen_Battleship"
+					}
 				}
 			}
 			assign_leader = last_created_leader
@@ -682,11 +724,25 @@ create_Krahen_follower = {
 		name = "NAME_Krahen_Defender"
 		effect = {
 			set_owner = event_target:nep_Krahen_country
-			while = {
-				count = 30
-				create_ship = {
-					name = "NAME_Krahen_Defender"
-					design = "NAME_Krahen_Battleship_follower"
+			if = {
+				limit = {
+					has_global_flag = nep_SEoOC_hard
+				}
+				while = {
+					count = 30
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_follower_HARD"
+					}
+				}
+			}
+			else = {
+				while = {
+					count = 30
+					create_ship = {
+						name = "NAME_Krahen_Defender"
+						design = "NAME_Krahen_Battleship_follower"
+					}
 				}
 			}
 			assign_leader = last_created_leader
@@ -2251,6 +2307,77 @@ nep_easy_mod = {
 			}
 			add_modifier = {
 				modifier = nep_phantom_easy
+				days = -1
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_global_flag = nep_SEoOC_hard
+		}
+		if = {
+			limit = {
+				is_country_type = nep_malfunctioning_guards
+			}
+			add_modifier = {
+				modifier = nep_malfunctioning_guards_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_seal_evil_country
+			}
+			add_modifier = {
+				modifier = nep_seal_evil_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_dragon_country
+			}
+			add_modifier = {
+				modifier = nep_dragon_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_Krahen_country
+			}
+			add_modifier = {
+				modifier = nep_Krahen_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_finalweapon_country
+			}
+			add_modifier = {
+				modifier = nep_finalweapon_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				is_country_type = nep_Legnahcras_country
+			}
+			add_modifier = {
+				modifier = nep_Legnahcras_hard
+				days = -1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_country_type = nep_phantom_active
+					is_country_type = nep_phantom_passive
+				}
+			}
+			add_modifier = {
+				modifier = nep_phantom_hard
 				days = -1
 			}
 		}

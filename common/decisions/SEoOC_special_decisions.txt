@@ -72,7 +72,7 @@ decision_nep_repeller_function = {
 
 decision_nep_ugo_decision = {
 	owned_planets_only = yes
-
+	sound = evn_ove_tiyanki_family
 	resources = {
 		category = decisions
 		cost = {
@@ -112,3 +112,96 @@ decision_nep_ugo_decision = {
 		}
 	}
 }
+
+#Seems to impact the performance,abandan it
+# decision_nep_close_highway_node = {
+	# owned_planets_only = no
+	# sound = event_administrative_work
+	# resources = {
+		# category = decisions
+		# cost = {
+			# energy = 0
+		# }
+	# }
+	
+	# potential = {
+		# has_global_flag = nep_highway_used
+		# is_star = yes
+		# solar_system = {
+			# exists = space_owner
+			# space_owner = { 
+				# is_ai = no
+			# }
+			# has_star_flag = nep_highway_station_system
+			# any_neighbor_system = {
+				# has_star_flag = nep_highway_note_system 
+			# }
+		# }
+	# }
+	
+	# effect = {
+		# custom_tooltip = decision_nep_close_highway_node
+		# hidden_effect = {
+			# solar_system = {
+				# random_neighbor_system = {
+					# limit = { has_star_flag = nep_highway_note_system }
+					# remove_hyperlane = {
+						# from = this
+						# to = prev
+					# }
+				# }
+			# }
+		# }
+	# }
+# }
+
+# decision_nep_open_highway_node = {
+	# owned_planets_only = no
+	# sound = event_administrative_work
+	# resources = {
+		# category = decisions
+		# cost = {
+			# energy = 0
+		# }
+	# }
+	
+	# potential = {
+		# has_global_flag = nep_highway_used
+		# is_star = yes
+		# solar_system = { 
+			# exists = space_owner
+			# space_owner = { 
+				# is_ai = no
+			# }
+			# has_star_flag = nep_highway_station_system
+			# NOT = {
+				# any_neighbor_system = {
+					# has_star_flag = nep_highway_note_system 
+				# }
+			# }
+		# }
+	# }
+	
+	# effect = {
+		# custom_tooltip = decision_nep_open_highway_node
+		# hidden_effect = {
+			# solar_system = {
+				# random_neighbor_system_euclidean = {
+					# limit = { 
+						# has_star_flag = nep_highway_note_system
+						# distance = {
+							# source = prev
+							# min_distance >=10
+							# max_ditance <= 15
+							# type = euclidean
+						# }
+					# }
+					# add_hyperlane = {
+						# from = this
+						# to = prev
+					# }
+				# }
+			# }
+		# }
+	# }
+# }

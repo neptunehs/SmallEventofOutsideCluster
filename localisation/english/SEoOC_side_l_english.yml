@@ -219,7 +219,7 @@
  nep_deuspi.8001.b:0 "We are not gods, but we can help you."
  nep_deuspi.8001.c:0 "Terminate transmission."
  
- nep_deuspi.8012.desc:0 "Although I know that connect with you are betraying and embarrassing about our "God"... but I really want to know, my friend, §Y[event_target:nep_deus_female.GetName]§!, now where is she. Ah, my name is §Y[event_target:nep_deus_male.GetName]§!. My childhood friend was selected as a Miko--this is honored in the history of our village. But I have never seen her since then, I want to see her, at all costs."
+ nep_deuspi.8012.desc:0 "Although I know that connect with you are betraying and embarrassing about our "God"... but I really want to know, my friend, No.4522727...§Y[event_target:nep_deus_female.GetName]§!, now where is she. Ah, my name is No.4522714,§Y[event_target:nep_deus_male.GetName]§!. My childhood friend was selected as a Miko--this is honored in the history of our village. But I have never seen her since then, I want to see her, at all costs."
  nep_deuspi.8012.a:0 "What do you want to see her?"
  nep_deuspi.8012.a.response:0 "I love her. Even if this has no result."
  nep_deuspi.8012.b:0 "What sacrifice can you give me?"
@@ -345,6 +345,8 @@
  nep_deus_rescue_3_DESC:0 "Dismantle the "God" that treats people as replaceable parts."
  
  NAME_nep_Country_of_Machina:0 "Machina"
+ personality_nep_servent_of_machina:0 "Servent of Machina"
+ personality_nep_servent_of_machina_broken:0 "Servent of Berserk Machina"
  
  BYPASS_NEP_WORMHOLE_DEUS:0 "$NATURAL_WORMHOLE_GALACTIC$"
  BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_DEUS:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"

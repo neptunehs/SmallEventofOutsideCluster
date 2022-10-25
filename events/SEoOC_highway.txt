@@ -2003,6 +2003,7 @@ country_event = {
 	
 	immediate = {
 		set_global_flag = nep_highway_used
+		every_playable_country = { limit = { is_ai = no } country_event = { id = nep_highway.9999 days = 3 } }
 		country_event = { id = nep_seal.1 days = 90 random = 15} #A link to the seal
 	}
 	
@@ -2163,3 +2164,522 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nep_highway.9999
+	title = "nep_highway.9999.name"
+	desc = nep_highway.9999.desc
+	picture = GFX_evt_news_room
+
+	is_triggered_only = yes	
+	
+	option = {
+		name = OK
+		default_hide_option = yes
+	}
+	
+	option = {
+		name = ONSCREEN
+		country_event = { id = nep_highway.10000 }
+	}
+}
+country_event = {
+	id = nep_highway.10000
+	title = "nep_highway.10000.name"
+	desc = "nep_highway.10000.desc"
+	picture = GFX_evt_SEoOC_Config
+	
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = END_TRANSMISSION
+		default_hide_option = yes
+	}	
+	
+	option = {
+		name = nep_highway.10000.N.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_N
+				NOT = { has_global_flag = nep_highway_station_N_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_N
+				to = event_target:highway_note_N
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.N.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_N
+				has_global_flag = nep_highway_station_N_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_N
+				to = event_target:highway_note_N
+			}
+		}
+	}	
+	option = {
+		name = nep_highway.10000.NNE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NNE
+				NOT = { has_global_flag = nep_highway_station_NNE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_NNE
+				to = event_target:highway_note_NNE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NNE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NNE
+				has_global_flag = nep_highway_station_NNE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_NNE
+				to = event_target:highway_note_NNE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NE
+				NOT = { has_global_flag = nep_highway_station_NE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_NE
+				to = event_target:highway_note_NE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NE
+				has_global_flag = nep_highway_station_NE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_NE
+				to = event_target:highway_note_NE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.ENE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_ENE
+				NOT = { has_global_flag = nep_highway_station_ENE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_ENE
+				to = event_target:highway_note_ENE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.ENE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_ENE
+				has_global_flag = nep_highway_station_ENE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_ENE
+				to = event_target:highway_note_ENE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.E.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_E
+				NOT = { has_global_flag = nep_highway_station_E_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_E
+				to = event_target:highway_note_E
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.E.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_E
+				has_global_flag = nep_highway_station_E_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_E
+				to = event_target:highway_note_E
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.ESE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_ESE
+				NOT = { has_global_flag = nep_highway_station_ESE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_ESE
+				to = event_target:highway_note_ESE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.ESE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_ESE
+				has_global_flag = nep_highway_station_ESE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_ESE
+				to = event_target:highway_note_ESE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SE
+				NOT = { has_global_flag = nep_highway_station_SE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_SE
+				to = event_target:highway_note_SE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SE
+				has_global_flag = nep_highway_station_SE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_SE
+				to = event_target:highway_note_SE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SSE.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SSE
+				NOT = { has_global_flag = nep_highway_station_SSE_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_SSE
+				to = event_target:highway_note_SSE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SSE.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SSE
+				has_global_flag = nep_highway_station_SSE_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_SSE
+				to = event_target:highway_note_SSE
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.S.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_S
+				NOT = { has_global_flag = nep_highway_station_S_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_S
+				to = event_target:highway_note_S
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.S.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_S
+				has_global_flag = nep_highway_station_S_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_S
+				to = event_target:highway_note_S
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SSW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SSW
+				NOT = { has_global_flag = nep_highway_station_SSW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_SSW
+				to = event_target:highway_note_SSW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SSW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SSW
+				has_global_flag = nep_highway_station_SSW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_SSW
+				to = event_target:highway_note_SSW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SW
+				NOT = { has_global_flag = nep_highway_station_SW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_SW
+				to = event_target:highway_note_SW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.SW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_SW
+				has_global_flag = nep_highway_station_SW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_SW
+				to = event_target:highway_note_SW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.WSW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_WSW
+				NOT = { has_global_flag = nep_highway_station_WSW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_WSW
+				to = event_target:highway_note_WSW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.WSW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_WSW
+				has_global_flag = nep_highway_station_WSW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_WSW
+				to = event_target:highway_note_WSW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.W.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_W
+				NOT = { has_global_flag = nep_highway_station_W_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_W
+				to = event_target:highway_note_W
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.W.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_W
+				has_global_flag = nep_highway_station_W_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_W
+				to = event_target:highway_note_W
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.WNW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_WNW
+				NOT = { has_global_flag = nep_highway_station_WNW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_WNW
+				to = event_target:highway_note_WNW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.WNW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_WNW
+				has_global_flag = nep_highway_station_WNW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_WNW
+				to = event_target:highway_note_WNW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NW
+				NOT = { has_global_flag = nep_highway_station_NW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_NW
+				to = event_target:highway_note_NW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NW
+				has_global_flag = nep_highway_station_NW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_NW
+				to = event_target:highway_note_NW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NNW.close
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NNW
+				NOT = { has_global_flag = nep_highway_station_NNW_closed }
+			}
+		}
+		hidden_effect = {
+			remove_hyperlane = {
+				from = event_target:highway_station_NNW
+				to = event_target:highway_note_NNW
+			}
+		}
+	}
+	option = {
+		name = nep_highway.10000.NNW.open
+		trigger = {
+			any_system_within_border = {
+				has_star_flag = nep_highway_station_NNW
+				has_global_flag = nep_highway_station_NNW_closed
+			}
+		}
+		hidden_effect = {
+			add_hyperlane = {
+				from = event_target:highway_station_NNW
+				to = event_target:highway_note_NNW
+			}
+		}
+	}
+}
+	

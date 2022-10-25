@@ -51,9 +51,18 @@ country_event = {
 	title = "nep_config.1.name"
 	desc = { 
 		trigger = { 
-			NOT = { has_global_flag = nep_SEoOC_easy }
+			NOR = { 
+				has_global_flag = has_nsc_active 
+				has_global_flag = acot_activated
+			}
 		}
 		text = nep_config.2.desc.a
+	}
+	desc = { 
+		trigger = { 
+			has_global_flag = nep_SEoOC_hard
+		}
+		text = nep_config.2.desc.c
 	}
 	desc = { 
 		trigger = { 
@@ -72,7 +81,10 @@ country_event = {
 		# trigger = {
 			# NOT = { has_global_flag = nep_SEoOC_active }
 		# }
-		hidden_effect = { set_global_flag = nep_SEoOC_easy }
+		hidden_effect = { 		
+			remove_global_flag = nep_SEoOC_hard
+			set_global_flag = nep_SEoOC_easy 
+		}			
 	}
 	
 	option = {
@@ -80,7 +92,21 @@ country_event = {
 		# trigger = {
 			# NOT = { has_global_flag = nep_SEoOC_active }
 		# }
-		hidden_effect = { remove_global_flag = nep_SEoOC_easy }
+		hidden_effect = { 
+			remove_global_flag = nep_SEoOC_easy 
+			remove_global_flag = nep_SEoOC_hard
+		}
+	}
+	
+	option = {
+		name = nep_config.2.hard
+		# trigger = {
+			# NOT = { has_global_flag = nep_SEoOC_active }
+		# }
+		hidden_effect = { 
+			remove_global_flag = nep_SEoOC_easy 
+			set_global_flag = nep_SEoOC_hard
+		}
 	}
 	
 	# option = {

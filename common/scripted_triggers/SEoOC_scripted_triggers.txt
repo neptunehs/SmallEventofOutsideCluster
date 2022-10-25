@@ -1,51 +1,3 @@
-nep_st_is_not_outer_or_fe_system = {
-	NOR = {
-		is_fe_cluster = YES 
-		has_star_flag = lcluster
-		has_star_flag = sealed_system
-		has_star_flag = nep_Krahen_cluster
-		has_star_flag = nep_dragon_system
-		has_star_flag = nep_heptagram_cluster
-		has_star_flag = nep_Scrus_cluster
-		has_star_flag = nep_seal_system
-		has_star_flag = nep_highway_station_system
-		has_star_flag = nep_highway_note_system
-		has_star_flag = nep_Step_to_the_Void_1
-		has_star_flag = nep_Step_to_the_Void_2
-		has_star_flag = nep_Step_to_the_Void_3
-		has_star_flag = nep_Step_to_the_Void_4
-		has_star_flag = nep_Step_to_the_Void_5
-		has_star_flag = nep_Step_to_the_Void_6
-		has_star_flag = nep_Step_to_the_Void_7
-		has_star_flag = nep_Step_to_the_Void_8
-		has_star_flag = nep_Step_to_the_Void_9
-		has_star_flag = nep_Step_to_the_Void_10
-		has_star_flag = lex_garden_cluster
-		has_star_flag = mem_sadrell_extant_cluster
-		has_star_flag = extragalactic_cluster
-		has_star_flag = nep_wohp_system
-		has_star_flag = nep_deus_system
-		has_star_flag = nep_deus_system_2
-		has_star_flag = nep_deus_system_3
-		has_star_flag = nep_deus_system_4
-		has_star_flag = nep_whitegoo_portal_1
-		has_star_flag = nep_whitegoo_portal_2
-		has_star_flag = nep_whitegoo_origin
-		has_star_flag = nep_ugo_system 
-		#has_star_flag = nep_guide_init
-		has_star_flag = miniature_universe
-		has_star_flag = giga_galactic_center 	
-		has_star_flag = Kuat_system_1
-		has_star_flag = Kuat_system_2
-		has_star_flag = Kuat_system_3
-		has_star_flag = Kuat_system
-		has_star_flag = ag_exe_invasion_gate_system
-		has_star_flag = ag_no_jump_out_system
-		has_star_flag = wg_naming_ship_system
-		has_star_flag = ehof_compound_system
-	}
-}
-
 nep_st_is_not_outer_system = {
 	NOR = {
 		has_star_flag = lcluster
@@ -90,6 +42,18 @@ nep_st_is_not_outer_system = {
 		has_star_flag = ag_no_jump_out_system
 		has_star_flag = wg_naming_ship_system
 		has_star_flag = ehof_compound_system
+		has_star_flag = ehof_system_created_by_1
+		has_star_flag = ehof_system_created_by_2
+		has_star_flag = ehof_system_created_by_3
+		has_star_flag = ehof_system_created_by_4
+		has_star_flag = mem_vazuran_nexus
+	}
+}
+
+nep_st_is_not_outer_or_fe_system = {
+	AND = {
+		is_fe_cluster = NO
+		nep_st_is_not_outer_system = YES
 	}
 }
 

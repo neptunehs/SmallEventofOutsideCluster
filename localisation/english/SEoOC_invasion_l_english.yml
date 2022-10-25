@@ -156,3 +156,5 @@
  resolution_galactic_focus_SEoOC_galactic_focus_Krahen_desc:0 "Kran'en Empire are a true crisis and a threat to the entire galaxy. We must unite and defeat the menace."
  resolution_galactic_focus_crisis_SEoOC_galactic_focus_Krahen_success:0 "$resolution_galactic_focus_crisis_effect_success$"
  resolution_category_SEoOC_galactic_focus_Krahen:0 "Focus: Kran'en Empire"
+ 
+ requires_Krahen_crisis_NOT_begin:0 "Kran'en Empire destroyed it,completely."

@@ -17,8 +17,26 @@ country_event = {
 	immediate = {
 		set_global_flag = nep_SEoOC_active
 		if = {
-			limit = { NOT = { has_global_flag = has_nsc_active } }
+			limit = { 
+				NOR = { 
+					has_global_flag = has_nsc_active 
+					has_global_flag = acot_activated
+				} 
+			}
 			set_global_flag = nep_SEoOC_easy
+		}
+		if = {
+			limit = { 
+				has_global_flag = has_nsc_active	
+			}
+			#Not used.
+			set_global_flag = nep_SEoOC_normal 
+		}
+		if = {
+			limit = { 
+				has_global_flag = acot_activated	
+			}
+			set_global_flag = nep_SEoOC_hard
 		}
 	}
 }
