@@ -47,6 +47,8 @@ nep_st_is_not_outer_system = {
 		has_star_flag = ehof_system_created_by_3
 		has_star_flag = ehof_system_created_by_4
 		has_star_flag = mem_vazuran_nexus
+		has_star_flag = fatalf_new_colony
+		has_star_flag = cohesive_system
 	}
 }
 
@@ -107,6 +109,18 @@ is_nep_country = {
 		is_country_type = nep_galactic_trust_territorys
 		is_country_type = nep_ugo_first_ship 
 		is_country_type = nep_Scrus_cluster_territorys 
-		#is_country_type = nep_caravaneer_fleet 		
+		#is_country_type = nep_caravaneer_fleet
+	}
+}
+
+has_nep_arena_modifiers = {
+	OR = {
+		has_modifier = nep_arena_rank_S
+		has_modifier = nep_arena_rank_A
+		has_modifier = nep_arena_rank_B
+		has_modifier = nep_arena_rank_C
+		has_modifier = nep_arena_rank_D
+		has_modifier = nep_arena_rank_E
+		has_modifier = nep_arena_rank_F
 	}
 }

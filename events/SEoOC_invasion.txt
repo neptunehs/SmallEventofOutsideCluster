@@ -1188,34 +1188,34 @@ country_event = {
 				country_event = { id = nep_inva.31 }
 			}
 		}
-		every_country = {
-			limit = {
-				any_owned_planet = { is_colony = yes }
-				is_overlord = yes
-				is_federation_leader = yes
-				NOT = { is_at_war_with = event_target:nep_Krahen_country }
-			}
-			event_target:nep_Krahen_country	= {
-				declare_war = {
-					target = prev
-					name = "NAME_nep_Krahen_invasion_war"
-					attacker_war_goal = wg_nep_Krahen_invasion_war
-				}
-			}
-		}
-		every_playable_country = {
-			limit = {				
-				any_owned_planet = { is_colony = yes }
-				NOT = { is_at_war_with = event_target:nep_Krahen_country }
-			}
-			event_target:nep_Krahen_country	= {
-				declare_war = {
-					target = prev
-					name = "NAME_nep_Krahen_invasion_war"
-					attacker_war_goal = wg_nep_Krahen_invasion_war
-				}
-			}
-		}
+		# every_country = {
+			# limit = {
+				# any_owned_planet = { is_colony = yes }
+				# is_overlord = yes
+				# is_federation_leader = yes
+				# NOT = { is_at_war_with = event_target:nep_Krahen_country }
+			# }
+			# event_target:nep_Krahen_country	= {
+				# declare_war = {
+					# target = prev
+					# name = "NAME_nep_Krahen_invasion_war"
+					# attacker_war_goal = wg_nep_Krahen_invasion_war
+				# }
+			# }
+		# }
+		# every_playable_country = {
+			# limit = {				
+				# any_owned_planet = { is_colony = yes }
+				# NOT = { is_at_war_with = event_target:nep_Krahen_country }
+			# }
+			# event_target:nep_Krahen_country	= {
+				# declare_war = {
+					# target = prev
+					# name = "NAME_nep_Krahen_invasion_war"
+					# attacker_war_goal = wg_nep_Krahen_invasion_war
+				# }
+			# }
+		# }
 	}
 }
 
@@ -2801,12 +2801,12 @@ country_event = {
 	
 	option = {
 		name = nep_inva.72.a
-		event_target:nep_Krahen_country	= {
-			declare_war = {
-				target = prev
-				name = "NAME_nep_Krahen_invasion_war"
-				attacker_war_goal = wg_nep_Krahen_invasion_war
-			}
-		}
+		# event_target:nep_Krahen_country	= {
+			# declare_war = {
+				# target = prev
+				# name = "NAME_nep_Krahen_invasion_war"
+				# attacker_war_goal = wg_nep_Krahen_invasion_war
+			# }
+		# }
 	}
 }

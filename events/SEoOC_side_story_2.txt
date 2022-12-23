@@ -146,7 +146,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_1
-			log = "nep_white_goo_1:[this.GetName]"
+			#log = "nep_white_goo_1:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		random_system = {
@@ -174,7 +174,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_2
-			log = "nep_white_goo_2:[this.GetName]"
+			#log = "nep_white_goo_2:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		random_system = {
@@ -207,7 +207,7 @@ country_event = {
 				}
 			}
 			save_global_event_target_as = nep_whitegoo_system_3
-			log = "nep_white_goo_3:[this.GetName]"
+			#log = "nep_white_goo_3:[this.GetName]"
 			nep_whitegoo_1 = yes
 		}
 		add_global_ship_design = "NAME_nep_station_whitegoo"
@@ -229,7 +229,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.2 root:[Root.GetName]"
+		#log = "fire wg.2 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				NOR = {
@@ -257,7 +257,7 @@ country_event = {
 		is_same_value = event_target:global_event_country
 	}
 	immediate = {
-		log = "fire wg.3 root:[Root.GetName]"
+		#log = "fire wg.3 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			nep_whitegoo_2 = yes
 		}
@@ -283,7 +283,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.31 root:[Root.GetName]"
+		#log = "fire wg.31 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				has_star_flag = nep_whitegoo_1
@@ -312,7 +312,7 @@ country_event = {
 		is_same_value = event_target:global_event_country
 	}
 	immediate = {		
-		log = "fire wg.4 root:[Root.GetName]"
+		#log = "fire wg.4 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			nep_whitegoo_3 = yes
 		}
@@ -338,7 +338,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.41 root:[Root.GetName]"
+		#log = "fire wg.41 root:[Root.GetName]"
 		every_system = {
 			limit = {
 				has_star_flag = nep_whitegoo_2
@@ -372,7 +372,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.5000 root:[Root.GetName]"
+		#log = "fire wg.5000 root:[Root.GetName]"
 		solar_system.space_owner = { 
 			country_event = { id = nep_whitegoo.50000 }
 			set_country_flag = nep_whitegoo_noti 
@@ -390,7 +390,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.50000 root:[Root.GetName]"
+		#log = "fire wg.50000 root:[Root.GetName]"
 	}
 	
 	option = {
@@ -413,7 +413,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.5001 root:[Root.GetName]"
+		#log = "fire wg.5001 root:[Root.GetName]"
 		solar_system.space_owner = { 
 			country_event = { id = nep_whitegoo.50010 }
 			set_country_flag = nep_whitegoo_2_noti 
@@ -431,7 +431,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.50010 root:[Root.GetName]"
+		#log = "fire wg.50010 root:[Root.GetName]"
 	}
 	
 	option = {
@@ -453,7 +453,7 @@ planet_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.5002 root:[Root.GetName]"
+		#log = "fire wg.5002 root:[Root.GetName]"
 		solar_system.space_owner = {
 			country_event = { id = nep_whitegoo.50020 }
 			set_country_flag = nep_whitegoo_3_noti 
@@ -471,7 +471,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.50020 root:[Root.GetName]"
+		#log = "fire wg.50020 root:[Root.GetName]"
 	}
 	
 	option = {
@@ -500,7 +500,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.5 root:[Root.GetName]"
+		#log = "fire wg.5 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech
 	}
 	
@@ -529,7 +529,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.51 root:[Root.GetName]"
+		#log = "fire wg.51 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech
 	}
 	
@@ -553,7 +553,7 @@ fleet_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.6 root:[Root.GetName]"
+		#log = "fire wg.6 root:[Root.GetName]"
 		remove_modifier = nep_whitegoo_fleet
 		if = {
 			limit = {
@@ -584,7 +584,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.61 root:[Root.GetName]"
+		#log = "fire wg.61 root:[Root.GetName]"
 		if = {
 			limit = {
 				last_increased_tech = tech_nep_whitegoo_3_2
@@ -621,7 +621,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.62 root:[Root.GetName]"
+		#log = "fire wg.62 root:[Root.GetName]"
 		from.solar_system = {
 			remove_star_flag = nep_whitegoo_no_effect
 			every_neighbor_system = {
@@ -702,7 +702,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.63 root:[Root.GetName]"
+		#log = "fire wg.63 root:[Root.GetName]"
 		fromfrom.solar_system = {
 			remove_star_flag = nep_whitegoo_no_effect
 			every_neighbor_system = {
@@ -784,7 +784,7 @@ ship_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.64 root:[Root.GetName]"
+		#log = "fire wg.64 root:[Root.GetName]"
 		solar_system = {
 			every_system_planet = {
 				remove_modifier = nep_whitegoo_1
@@ -834,7 +834,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.7 root:[Root.GetName]"
+		#log = "fire wg.7 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech_sell
 	}
 	
@@ -892,7 +892,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.71 root:[Root.GetName]"
+		#log = "fire wg.71 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_tech_buy
 	}
 	
@@ -916,6 +916,7 @@ country_event = {
 country_event = {
 	id = nep_whitegoo.8000
 	hide_window = yes
+	is_triggered_only = yes
 
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
@@ -927,7 +928,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.8000 root:[Root.GetName]"
+		#log = "fire wg.8000 root:[Root.GetName]"
 		set_country_flag = nep_whitegoo_8000_temp
 		country_event = { id = nep_whitegoo.8001 days = 30 random = 30 }
 	}
@@ -941,7 +942,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.8001 root:[Root.GetName]"
+		#log = "fire wg.8001 root:[Root.GetName]"
 		random_list = {
 			1 = { country_event = { id = nep_whitegoo.8 days = 30 random = 30 } }
 			2 = { country_event = { id = nep_whitegoo.8001 days = 30 random = 30 } }
@@ -958,7 +959,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.8 root:[Root.GetName]"
+		#log = "fire wg.8 root:[Root.GetName]"
 	}
 	
 	option = {
@@ -983,7 +984,7 @@ country_event = {
 	}
 	
 	immediate = {
-		log = "fire wg.81 root:[Root.GetName]"
+		#log = "fire wg.81 root:[Root.GetName]"
 		event_target:nep_whitegoo_system_1 = {
 			random_system_planet = {
 				limit = { is_star = yes }
@@ -1032,7 +1033,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.82 root:[Root.GetName]"		
+		#log = "fire wg.82 root:[Root.GetName]"		
 		set_country_flag = nep_whitegoo_83_temp
 		set_global_flag = nep_whitegoo_82_triggered
 		set_spawn_system_batch = begin
@@ -1166,7 +1167,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.83 root:[Root.GetName]"
+		#log = "fire wg.83 root:[Root.GetName]"
 		abort_special_project = nep_whitegoo_research
 	}
 	
@@ -1213,7 +1214,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		log = "fire wg.9 root:[Root.GetName]"
+		#log = "fire wg.9 root:[Root.GetName]"
 		remove_global_flag = nep_whitegoo_begin
 		set_global_flag = nep_whitegoo_end
 		every_system = {
@@ -1339,10 +1340,12 @@ country_event = {
 	option = {
 		name = nep_whitegoo.91.a
 		end_event_chain = nep_whitegoo_chain		
-		remove_point_of_interest = nep_whitegoo_poi.0.1
-		remove_point_of_interest = nep_whitegoo_poi.0.2
-		remove_point_of_interest = nep_whitegoo_poi.0.3
-		remove_point_of_interest = nep_whitegoo_poi.1
+		hidden_effect = {
+			remove_point_of_interest = nep_whitegoo_poi.0.1
+			remove_point_of_interest = nep_whitegoo_poi.0.2
+			remove_point_of_interest = nep_whitegoo_poi.0.3
+			remove_point_of_interest = nep_whitegoo_poi.1
+		}
 	}
 }
 
@@ -1405,7 +1408,7 @@ event = {
 				NOT = { is_hostile = prev }
 			}
 			num_owned_planets >= 3
-			fleet_power >= 7500
+			fleet_power >= 17500
 		}
 	}
 	
@@ -1685,6 +1688,7 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		log = "fire gp.2000 root:[Root.GetName] owner:[owner.GetName]"
 		owner = { country_event = { id = nep_gpc.2 } }
 	}
 }
@@ -3933,11 +3937,11 @@ country_event = {
 }
 
 ###############################################
-# Arena
+# Bounty Office
 ###############################################
-namespace = nep_arena
-ship_event = {
-	id = nep_arena.1
+namespace = nep_bo
+country_event = {
+	id = nep_bo.0
 	hide_window = yes
 	
 	is_triggered_only = yes
@@ -3945,6 +3949,989 @@ ship_event = {
 	fire_only_once = yes
 	
 	immediate = {
+		country_event = { id = nep_bo.1 days = 5 }
+	}
+}
 
+country_event = {
+	id = nep_bo.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		no_scope = {
+			spawn_system = {
+				min_distance >= 482
+				max_distance <= 494
+				min_orientation_angle = 210
+				max_orientation_angle = 280
+				hyperlane = no
+				initializer = nep_bounty_office_init
+			}
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = caravaneer_home
+			}
+			spawn_megastructure = {
+				type = "nep_caravaneer_gate_mega"
+				random_pos = yes
+				orbit_angle = 360		# range of the randomization
+			}
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_bounty_office_system
+			}
+			spawn_megastructure = {
+				type = "nep_caravaneer_gate_mega"
+				random_pos = yes
+				orbit_angle = 360		# range of the randomization
+			}
+		}
+		country_event = { id = nep_ar.1 }
+	}
+}
+
+country_event = {
+	id = nep_bo.1000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_country_flag = caravaneer_home_country
+			from = { has_country_flag = caravaneer_home_country }
+		}
+	}
+	
+	immediate = {		
+		establish_communications_no_message = event_target:nep_bounty_office_country
+		from = { establish_communications_no_message = event_target:nep_bounty_office_country }
+	}
+}
+
+country_event = {
+	id = nep_bo.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+}
+###############################################
+# Arena
+###############################################
+namespace = nep_ar
+country_event = {
+	id = nep_ar.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		no_scope = {
+			spawn_system = {
+				min_distance >= 491
+				max_distance <= 491
+				min_orientation_angle = 140
+				max_orientation_angle = 140
+				hyperlane = no
+				initializer = nep_arena_office_init
+			}
+		}
+		no_scope = {
+			spawn_system = {
+				min_distance >= 491
+				max_distance <= 491
+				min_orientation_angle = 135
+				max_orientation_angle = 135
+				hyperlane = no
+				initializer = nep_arena_init
+			}
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_arena_office_system
+			}
+			spawn_megastructure = {
+				type = "nep_caravaneer_gate_mega"
+				random_pos = yes
+				orbit_angle = 360		# range of the randomization
+			}
+			spawn_megastructure = {
+				type = "nep_arena_gate_mega"
+				planet = star
+				#coords_from = planet
+				orbit_distance = 38
+				orbit_angle = 182
+			}
+		}
+		random_system = {
+			limit = { 
+				has_star_flag = nep_arena
+			}
+			spawn_megastructure = {
+				type = "nep_arena_gate_mega"
+				planet = star
+				#coords_from = planet
+				orbit_distance = 125
+				orbit_angle = 180
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.1000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_country_flag = caravaneer_home_country
+			from = { has_country_flag = caravaneer_home_country }
+		}
+	}
+	
+	immediate = {		
+		establish_communications_no_message = event_target:nep_arena_office_country
+		from = { establish_communications_no_message = event_target:nep_arena_office_country }
+	}
+}
+
+event = {
+	id = nep_ar.1001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:caravaneer_home_country
+		exists = event_target:nep_arena_office_country
+	}
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = nep_arena}			
+			if = { 
+				limit = { 
+					any_fleet_in_system = { 
+						NOR = {
+							is_same_value = event_target:nep_arena_target_1
+							is_same_value = event_target:nep_arena_target_2
+							is_same_value = event_target:nep_arena_target_3
+							is_same_value = event_target:nep_arena_target_4
+						}
+					}
+				}
+				event_target:caravaneer_home_country = { country_event = { id = nep_ar.1002 days = 180 } }
+			}
+			else = {
+				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+				nep_create_enemy_1 = yes
+				nep_create_enemy_2 = yes
+				nep_create_enemy_3 = yes
+				nep_create_enemy_4 = yes
+				every_country = {
+					limit = { has_country_flag = nep_arena_registered }
+					country_event = { id = nep_ar.1003 } 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.1002
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:caravaneer_home_country
+		exists = event_target:nep_arena_office_country
+	}
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = nep_arena }			
+			if = { 
+				limit = { 
+					any_fleet_in_system = { 
+						NOR = {
+							is_same_value = event_target:nep_arena_target_1
+							is_same_value = event_target:nep_arena_target_2
+							is_same_value = event_target:nep_arena_target_3
+							is_same_value = event_target:nep_arena_target_4
+						}
+					}
+				}
+				event_target:caravaneer_home_country = { country_event = { id = nep_ar.1002 days = 180 } }
+			}
+			else = {
+				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+				nep_create_enemy_1 = yes
+				nep_create_enemy_2 = yes
+				nep_create_enemy_3 = yes
+				nep_create_enemy_4 = yes
+				every_country = {
+					limit = { has_country_flag = nep_arena_registered }
+					country_event = { id = nep_ar.1003 } 
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.1003
+	title = cara_home_main.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = nep_ar.1003.desc
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	immediate = { remove_country_flag = nep_arena_registered }
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_ar.2
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = { has_global_flag = nep_arena_battleing }
+		text = nep_ar.2.desc.a
+	}
+	desc = {
+		trigger = { NOT = { has_global_flag = nep_arena_battleing } }
+		text = nep_ar.2.desc.b
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		exists = event_target:nep_arena_office_country
+		from = { is_same_value = event_target:nep_arena_office_country }
+		has_communications = event_target:caravaneer_home_country
+		exists = event_target:caravaneer_home_country
+	}
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
+	option = {
+		name = nep_ar.2.1
+		trigger = { 
+			NOT = { has_global_flag = nep_arena_battleing } 
+			exists = event_target:nep_arena_target_1 
+		}		
+		hidden_effect = {
+			event_target:nep_arena_target_1 = { nep_fleet_rating_arena = yes }
+			country_event = { id = nep_ar.2001 }
+		}
+	}
+	option = {
+		name = nep_ar.2.2
+		trigger = { 
+			NOT = { has_global_flag = nep_arena_battleing } 
+			exists = event_target:nep_arena_target_2 
+		}		
+		hidden_effect = {
+			event_target:nep_arena_target_2 = { nep_fleet_rating_arena = yes }
+			country_event = { id = nep_ar.2002 }
+		}
+	}
+	option = {
+		name = nep_ar.2.3
+		trigger = { 
+			NOT = { has_global_flag = nep_arena_battleing } 
+			exists = event_target:nep_arena_target_3 
+		} 	
+		hidden_effect = {
+			event_target:nep_arena_target_3 = { nep_fleet_rating_arena = yes }
+			country_event = { id = nep_ar.2003 }
+		}
+	}
+	option = {
+		name = nep_ar.2.4
+		trigger = { 
+			NOT = { has_global_flag = nep_arena_battleing } 
+			exists = event_target:nep_arena_target_4 
+		}	
+		hidden_effect = {
+			event_target:nep_arena_target_4 = { nep_fleet_rating_arena = yes }
+			country_event = { id = nep_ar.2004 }
+		}
+	}
+	
+	option = {
+		name = nep_ar.2.5
+		trigger = { has_global_flag = nep_arena_battleing }
+		response_text = nep_ar.2.5.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = fedel.501.e
+	}
+}
+
+country_event = {
+	id = nep_ar.2001
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_G }
+		}
+		text = nep_ar.2001.desc.g
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_F }
+		}
+		text = nep_ar.2001.desc.f
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_E }
+		}
+		text = nep_ar.2001.desc.e
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_D }
+		}
+		text = nep_ar.2001.desc.d
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_C }
+		}
+		text = nep_ar.2001.desc.c
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_B }
+		}
+		text = nep_ar.2001.desc.b
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_A }
+		}
+		text = nep_ar.2001.desc.a
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_1 = { has_fleet_flag = nep_rank_S }
+		}
+		text = nep_ar.2001.desc.s
+	}	
+	
+	diplomatic = yes
+	is_triggered_only = yes
+
+	option = {
+		name = nep_ar.2.a
+		hidden_effect = {
+			set_country_flag = nep_arena_registered
+			if = {
+				limit = { exists = event_target:nep_arena_target_2 }
+				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_3 }
+				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_4 }
+				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+			}
+		}
+	}
+	
+	option = {
+		name = fedel.501.e
+	}
+}
+
+country_event = {
+	id = nep_ar.2002
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_G }
+		}
+		text = nep_ar.2002.desc.g
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_F }
+		}
+		text = nep_ar.2002.desc.f
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_E }
+		}
+		text = nep_ar.2002.desc.e
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_D }
+		}
+		text = nep_ar.2002.desc.d
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_C }
+		}
+		text = nep_ar.2002.desc.c
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_B }
+		}
+		text = nep_ar.2002.desc.b
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_A }
+		}
+		text = nep_ar.2002.desc.a
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_2 = { has_fleet_flag = nep_rank_S }
+		}
+		text = nep_ar.2002.desc.s
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+
+	option = {
+		name = nep_ar.2.a
+		hidden_effect = {
+			set_country_flag = nep_arena_registered
+			if = {
+				limit = { exists = event_target:nep_arena_target_1 }
+				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_3 }
+				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_4 }
+				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+			}
+		}
+	}
+	
+	option = {
+		name = fedel.501.e
+	}
+}
+
+country_event = {
+	id = nep_ar.2003
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_G }
+		}
+		text = nep_ar.2003.desc.g
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_F }
+		}
+		text = nep_ar.2003.desc.f
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_E }
+		}
+		text = nep_ar.2003.desc.e
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_D }
+		}
+		text = nep_ar.2003.desc.d
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_C }
+		}
+		text = nep_ar.2003.desc.c
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_B }
+		}
+		text = nep_ar.2003.desc.b
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_A }
+		}
+		text = nep_ar.2003.desc.a
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_3 = { has_fleet_flag = nep_rank_S }
+		}
+		text = nep_ar.2003.desc.s
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+
+	option = {
+		name = nep_ar.2.a
+		hidden_effect = {
+			set_country_flag = nep_arena_registered
+			if = {
+				limit = { exists = event_target:nep_arena_target_1 }
+				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_2 }
+				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_4 }
+				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+			}
+		}
+	}
+	
+	option = {
+		name = fedel.501.e
+	}
+}
+
+country_event = {
+	id = nep_ar.2004
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_G }
+		}
+		text = nep_ar.2004.desc.g
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_F }
+		}
+		text = nep_ar.2004.desc.f
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_E }
+		}
+		text = nep_ar.2004.desc.e
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_D }
+		}
+		text = nep_ar.2004.desc.d
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_C }
+		}
+		text = nep_ar.2004.desc.c
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_B }
+		}
+		text = nep_ar.2004.desc.b
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_A }
+		}
+		text = nep_ar.2004.desc.a
+	}
+	desc = {
+		trigger = {
+			event_target:nep_arena_target_4 = { has_fleet_flag = nep_rank_S }
+		}
+		text = nep_ar.2004.desc.s
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+
+	option = {
+		name = nep_ar.2.a
+		hidden_effect = {			
+			set_country_flag = nep_arena_registered
+			if = {
+				limit = { exists = event_target:nep_arena_target_1 }
+				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_2 }
+				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+			}
+			if = {
+				limit = { exists = event_target:nep_arena_target_3 }
+				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+			}
+		}
+	}
+	
+	option = {
+		name = fedel.501.e
+	}
+}
+
+fleet_event = {
+	id = nep_ar.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = { 
+			remove_country_flag = nep_arena_registered
+			save_event_target_as = nep_ar_3_temp
+			set_country_flag = nep_arena_entered
+		}
+		create_country = {
+			name = "NAME_nep_arena_challenger"
+			type = nep_arena_challenger
+			effect = {
+				root = { 
+					set_owner = prev 
+					save_global_event_target_as = nep_arena_challenger_fleet
+					set_variable = { which = nep_challenger_fleet_power value = trigger:fleet_power }
+				}
+			}
+		}
+		solar_system = {
+			random_fleet_in_system = {
+				limit = { owner = { NOT = { is_country_type = nep_arena_challenger } } }
+				create_country = {
+					name = "NAME_nep_arena_target"
+					type = nep_arena_target
+					effect = {
+						prev = { 
+							set_owner = prev 
+							save_global_event_target_as = nep_arena_target_fleet
+							#set_variable = { which = nep_target_fleet_power value = trigger:fleet_power }
+						}
+					}
+				}
+			}
+		}
+		set_global_flag = nep_arena_battleing
+		event_target:nep_target_fleet_power = {
+			switch = {
+				trigger = has_fleet_flag
+				nep_rank_G = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_G }					
+				}
+				nep_rank_F = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_F }					
+				}
+				nep_rank_E = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_E }					
+				}
+				nep_rank_D = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_D }					
+				}
+				nep_rank_C = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_C }					
+				}
+				nep_rank_B = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_B }					
+				}
+				nep_rank_A = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_A }					
+				}
+				nep_rank_S = {
+					event_target:nep_ar_3_temp = { set_country_flag = nep_rank_S }					
+				}
+			}
+		}
+		fleet_event = { id = nep_ar.3001 days = 90 }
+	}
+}
+
+
+country_event = {
+	id = nep_ar.3000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = { 
+		has_global_flag = nep_arena_battleing 
+		OR = {
+			is_country_type = nep_arena_challenger
+			is_country_type = nep_arena_target
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { any_country = { is_country_type = nep_arena_challenger } }
+			random_country = {
+				limit = { has_country_flag = nep_arena_entered }
+				country_event = { id = nep_ar.3002 }
+			}
+		}
+		if = {
+			limit = { any_country = { is_country_type = nep_arena_target } }
+			random_country = {
+				limit = { has_country_flag = nep_arena_entered }
+				country_event = { id = nep_ar.3003 }
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_ar.3001
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = { 
+		has_global_flag = nep_arena_battleing
+	}
+	
+	immediate = {
+		event_target:nep_arena_challenger_fleet = {
+			subtract_variable = { which = nep_challenger_fleet_power value = trigger:fleet_power }
+		}
+		event_target:nep_arena_target_fleet = {
+			subtract_variable = { which = nep_target_fleet_power value = trigger:fleet_power }
+		}
+		if = {
+			limit = {
+				check_variable = { which = nep_challenger_fleet_power value >= event_target:nep_arena_target_fleet.nep_target_fleet_power }
+			}
+			random_country = {
+				limit = { has_country_flag = nep_arena_entered } 
+				country_event = { id = nep_ar.3002 }
+			}
+		}
+		else = {			
+			random_country = {
+				limit = { has_country_flag = nep_arena_entered } 
+				country_event = { id = nep_ar.3003 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.3002
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc =  {
+		trigger = { 
+			hidden:from = {
+				switch = {
+					trigger = is_scope_type
+					fleet = { text = nep_ar.3002.desc.a }
+					country = { text = nep_ar.3002.desc.b }
+				}
+			}
+		}
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	immediate = { 
+		remove_global_flag = nep_arena_battleing 
+		remove_country_flag = nep_arena_entered
+		if = {
+			limit = { exists = event_target:nep_arena_challenger_fleet }
+			event_target:nep_arena_challenger_fleet = { set_owner = root }
+		}
+	}
+
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_G }
+		add_resource = {
+			energy = 1000
+			influence = 5
+			unity = 1000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_G
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_F }
+		add_resource = {
+			energy = 2000
+			influence = 10
+			unity = 2000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_F
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_E }
+		add_resource = {
+			energy = 3000
+			influence = 20
+			unity = 4000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_F
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_D }
+		add_resource = {
+			energy = 4000
+			influence = 30
+			unity = 8000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_D
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_C }
+		add_resource = {
+			energy = 5000
+			influence = 50
+			unity = 16000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_C
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_B }
+		add_resource = {
+			energy = 6000
+			influence = 80
+			unity = 32000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_B
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_A }
+		add_resource = {
+			energy = 7000
+			influence = 130
+			unity = 64000
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_A
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { has_country_flag = nep_rank_S }
+		add_resource = {
+			energy = 10000
+			influence = 210
+			unity = 99999
+		}
+		hidden_effect = {
+			remove_country_flag = nep_rank_S
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.3003
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = {
+		trigger = { 
+			hidden:from = {
+				switch = {
+					trigger = is_scope_type
+					fleet = { text = nep_ar.3003.desc.a }
+					country = { text = nep_ar.3003.desc.b }
+				}
+			}
+		}
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = nep_arena_battleing 
+		remove_country_flag = nep_arena_entered
+		if = {
+			limit = { exists = event_target:nep_arena_challenger_fleet }
+			event_target:nep_arena_challenger_fleet = { set_owner = root }
+		}
+	}
+	
+	option = {
+		name = OK
+		hidden_effect = {
+			remove_country_flag = nep_rank_S
+			remove_country_flag = nep_rank_A
+			remove_country_flag = nep_rank_B
+			remove_country_flag = nep_rank_C
+			remove_country_flag = nep_rank_D
+			remove_country_flag = nep_rank_E
+			remove_country_flag = nep_rank_F
+			remove_country_flag = nep_rank_G
+		}
 	}
 }

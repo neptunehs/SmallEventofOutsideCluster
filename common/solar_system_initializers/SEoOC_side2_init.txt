@@ -263,3 +263,367 @@ nep_gpc_init_03 = {
 		}
 	}
 }
+
+#Bounty office
+nep_bounty_office_init = {
+	class = "rl_starting_stars"	
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	spawn_chance = 0	
+	
+	flags = { nep_bounty_office_system }
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+		init_effect = {
+			create_country = {
+				name = "NAME_Caravaneer_Home"
+				type = nep_bounty_office
+				authority = auth_corporate
+				civics = {
+					civic = civic_free_traders
+				}
+				origin = "origin_default"
+				species = event_target:caravaneer_home_country
+				flag = {
+					icon = {
+						category = "special"
+						file = "caravaneer_00.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "triangle_split.dds"
+					}
+					colors={
+						"green"
+						"dark_green"
+						"null"
+						"null"
+					}
+				}
+				ethos = {
+					ethic = ethic_egalitarian
+					ethic = ethic_pacifist
+					ethic = ethic_xenophile
+				}
+				ignore_initial_colony_error = yes
+				
+				effect = {
+					save_global_event_target_as = nep_bounty_office_country
+					create_fleet = {
+						name = "NAME_Caravaneer_Coalition_Base"
+						settings = { spawn_debris = no }
+						effect = {
+							set_owner = prev
+							create_ship = {
+								name = NAME_Tradestation_Tungle
+								design = "NAME_Tradestation_Tungle"
+								graphical_culture = prev
+							}
+							set_location = {
+								target = prevprev
+								angle = random
+								distance = 40
+							}
+							save_global_event_target_as = nep_bounty_office_station
+							prev = {
+								set_custom_capital_location = event_target:nep_bounty_office_station
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+		
+	change_orbit = 32
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 16
+		class = random_non_colonizable
+		orbit_angle = { min = 80 max = 280 }
+	}
+		
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 25
+		class = random_non_colonizable
+		orbit_angle = { min = 0 max = 180 }
+	}
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 1 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 34
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		moon = {
+			count = { min = 0 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	init_effect = {
+		save_global_event_target_as = nep_bounty_office_system	
+		create_starbase = {
+			size = "starbase_caravaneer"
+			owner = event_target:nep_bounty_office_country
+		}
+	}
+}
+
+#Arena
+nep_arena_office_init = {
+	class = "rl_starting_stars"	
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	spawn_chance = 0	
+	
+	flags = { nep_arena_office_system }
+	
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+		init_effect = {
+			create_country = {
+				name = "NAME_Caravaneer_Home"
+				type = nep_arena_office
+				authority = auth_corporate
+				civics = {
+					civic = civic_free_traders
+				}
+				origin = "origin_default"
+				species = event_target:caravaneer_home_country
+				flag = {
+					icon = {
+						category = "special"
+						file = "caravaneer_00.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "triangle_split.dds"
+					}
+					colors={
+						"green"
+						"dark_green"
+						"null"
+						"null"
+					}
+				}
+				ethos = {
+					ethic = ethic_egalitarian
+					ethic = ethic_pacifist
+					ethic = ethic_xenophile
+				}
+				ignore_initial_colony_error = yes
+				
+				effect = {
+					save_global_event_target_as = nep_arena_office_country
+					create_fleet = {
+						name = "NAME_Caravaneer_Coalition_Base"
+						settings = { spawn_debris = no }
+						effect = {
+							set_owner = prev
+							create_ship = {
+								name = NAME_Tradestation_Tungle
+								design = "NAME_Tradestation_Tungle"
+								graphical_culture = prev
+							}
+							set_location = {
+								target = prevprev
+								angle = 180
+								distance = 40
+							}
+							save_global_event_target_as = nep_arena_office_station
+							prev = {
+								set_custom_capital_location = event_target:nep_arena_office_station
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+		
+	change_orbit = 32
+	
+	planet = {
+		count = { min = 1 max = 3 }
+		orbit_distance = 16
+		class = random_non_colonizable
+		orbit_angle = { min = 80 max = 280 }
+	}
+		
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 25
+		class = random_non_colonizable
+		orbit_angle = { min = 0 max = 180 }
+	}
+	
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 1 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		count = { min = 0 max = 1 }
+		orbit_distance = 34
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		moon = {
+			count = { min = 0 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	init_effect = {
+		save_global_event_target_as = nep_arena_office_system	
+		create_starbase = {
+			size = "starbase_caravaneer"
+			owner = event_target:nep_arena_office_country
+		}
+	}
+}
+
+nep_arena_init = {
+	class = "rl_starting_stars"	
+	usage = misc_system_init
+	usage_odds = 0
+	max_instances = 1
+	spawn_chance = 0
+	class = "sc_arena"
+	flags = { nep_arena }
+	
+	planet = {
+		class = "pc_star_void_dummy_01"
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}
+
+	planet = {
+		class = "pc_pos_void_dummy"
+		orbit_distance = 125
+		orbit_angle = 0
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_arena_target_pos
+		}
+	}
+
+	change_orbit = -125
+
+	planet = {
+		class = "pc_pos_void_dummy"
+		orbit_distance = 125
+		orbit_angle = 60
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_arena_target_pos_1
+		}
+	}
+
+	change_orbit = -125
+
+	planet = {
+		class = "pc_pos_void_dummy"
+		orbit_distance = 125
+		orbit_angle = 75
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_arena_target_pos_2
+		}
+	}
+
+	change_orbit = -125
+
+	planet = {
+		class = "pc_pos_void_dummy"
+		orbit_distance = 125
+		orbit_angle = 90
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_arena_target_pos_3
+		}
+	}
+change_orbit = -125
+
+	planet = {
+		class = "pc_pos_void_dummy"
+		orbit_distance = 125
+		orbit_angle = 105
+		size = 1
+		has_ring = no
+		
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			save_global_event_target_as = nep_arena_target_pos_4
+		}
+	}
+}

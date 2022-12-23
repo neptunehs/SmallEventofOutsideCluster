@@ -196,7 +196,7 @@
  nep_deuspi.6.c:0 "Blast the entire area to ensuring communicator not be used by primitives."
  
  nep_deuspi.7.name:0 "[event_target:nep_deus_country.GetName]"
- nep_deuspi.7.desc:0 "Here is [event_target:nep_deus_country.GetName]. Your people left a communicator while "observing" my people. I should have protested... But now I have to thank this accident. My people need your help. My people are faced with a strange virus threat, which has been analyzed by me, up to §Y85.73%§! chance will cause large rate of my people to die,and cause they can't maintain enough genetic diversity to make the population proliferate. I don't have the knowledge of viruses in my memory, and my people have no research efforts. I have been trying to contact you who are observing in the sky, but I have been unable to do it until I get the communicator."
+ nep_deuspi.7.desc:0 "Here is [event_target:nep_deus_country.GetName]. Your people left a communicator while "observing" my people. I should have protested... But now I have to thank this accident. My people need your help. My people are faced with a strange virus threat, which has been analyzed by me, up to §Y85.73%§! chance will cause large rate of my people to die,and cause they can't maintain enough genetic diversity to make the population proliferate. I don't have the knowledge of viruses in my database, and my people have no research efforts. I have been trying to contact you who are observing in the sky, but I have been unable to do it until I get the communicator."
  nep_deuspi.7.a:0 "Our scientists will collect samples for research immediately."
  nep_deuspi.7.b:0 "We are not interested in interfering with you."
  

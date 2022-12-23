@@ -8,7 +8,9 @@ country_event = {
 	picture = GFX_evt_wormhole
 	
 	fire_only_once = yes
-		
+	
+	mean_time_to_happen = { days = 46 }
+	
 	trigger = {
 		has_country_flag = nep_Krahen_orb_get
 		has_country_flag = nep_first_orb_get
@@ -42,17 +44,20 @@ country_event = {
 	}
 }
 
-country_event = {
+fleet_event = {
 	id = nep_finalweapon.2
 	title = "nep_finalweapon.2.name"
 	desc = "nep_finalweapon.2.desc"
 	picture = GFX_evt_black_hole
 
 	fire_only_once = yes
+	
+	is_triggered_only = yes
 		
 	trigger = {
-		has_event_chain = nep_finalweapon_chain
-		any_system = {
+		exists = owner
+		owner = { has_event_chain = nep_finalweapon_chain }
+		from = {
 			has_star_flag = nep_seal_system
 			any_ship_in_system = {
 				OR = {
@@ -69,8 +74,12 @@ country_event = {
 	
 	option = {
 		name = nep_finalweapon.2.a
-		hidden_effect = { OWNER = { remove_point_of_interest = nep_finalweapon_poi } }
-		set_country_flag = nep_orb_3_can_active
+		hidden_effect = { 
+			OWNER = { 
+				remove_point_of_interest = nep_finalweapon_poi 
+				set_country_flag = nep_orb_3_can_active 
+			}
+		}
 	}
 }
 
@@ -503,7 +512,23 @@ fleet_event = {
 		}
 		else = {
 			solar_system = {
+				set_star_flag = star_cracked
+				set_star_class = sc_black_hole
 				every_system_planet = {	remove_planet = yes }
+				star = {
+					create_ambient_object = {
+						type = "destroyed_system"
+						location = this
+					}
+					last_created_ambient_object = {
+						set_ambient_object_flag = destroyed_system_effect
+						set_location = {
+							target = prev
+							distance = 0
+							angle = random
+						}
+					}
+				}
 				every_fleet_in_system = { 
 					limit = { 
 						NOR = { 
@@ -513,7 +538,9 @@ fleet_event = {
 					}
 					destroy_fleet = this
 				}
-				every_system_megastructure = { remove_megastructure = this }
+				every_system_megastructure = {
+					set_ruined_megastructure = yes
+				}
 				add_asteroid_belt = {
 					type = crystal_asteroid_belt
 					radius = 10
@@ -1088,14 +1115,17 @@ country_event = {
 	id = nep_finalweapon.82
 	hide_window = yes
 	
+	is_triggered_only = yes
 	fire_only_once = yes
 	
 	trigger = {
 		has_global_flag = nep_corrupted_finalweapons_begin
-		has_country_flag = nep_dragon_summoner
-		any_country = {
+		from = { 
 			is_country_type = nep_finalweapon_country
-			num_fleets < 1
+			or = {
+				num_fleets < 1
+				num_fleets = 1
+			}
 		}
 	}
 	

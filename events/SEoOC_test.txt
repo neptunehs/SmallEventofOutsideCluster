@@ -339,14 +339,14 @@ country_event = {
 				hyperlane = no
 				initializer = nep_Persei_init
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 40
-				min_orientation_angle = 0
-				max_orientation_angle = 360
-				hyperlane = no
-				initializer = nep_Trantor_init
-			}
+			#spawn_system = {
+			#	min_distance >= 20
+			#	max_distance <= 40
+			#	min_orientation_angle = 0
+			#	max_orientation_angle = 360
+			#	hyperlane = no
+			#	initializer = nep_Trantor_init
+			#}
 			spawn_system = {
 				min_distance >= 30
 				max_distance <= 50

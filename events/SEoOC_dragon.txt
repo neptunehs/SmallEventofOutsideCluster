@@ -13,165 +13,168 @@ country_event = {
 	
 	immediate = {
 		#cluster
-		set_spawn_system_batch = begin
-		no_scope = {
-			spawn_system = {
-				min_distance >= 540
-				max_distance <= 550
-				min_orientation_angle = 133
-				max_orientation_angle = 135
-				hyperlane = no
-				initializer = nep_Aemethms_init
+		if = {
+			limit = { NOT = { has_global_flag = nep_heptagram_system_spawn } }
+			set_spawn_system_batch = begin
+			no_scope = {
+				spawn_system = {
+					min_distance >= 540
+					max_distance <= 550
+					min_orientation_angle = 133
+					max_orientation_angle = 135
+					hyperlane = no
+					initializer = nep_Aemethms_init
+				}
 			}
-		}
-		random_system = {
-			limit = {
-				has_star_flag = nep_dragon_system
+			random_system = {
+				limit = {
+					has_star_flag = nep_dragon_system
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					hyperlane = no
+					initializer = nep_Auriel_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -51.42
+					max_orientation_angle = -51.42
+					hyperlane = no
+					initializer = nep_Gabriel_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -102.85
+					max_orientation_angle = -102.85
+					hyperlane = no
+					initializer = nep_Sabriel_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -154.28
+					max_orientation_angle = -154.28
+					hyperlane = no
+					initializer = nep_Samuel_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -205.71
+					max_orientation_angle = -205.71
+					hyperlane = no
+					initializer = nep_Michael_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -257.14
+					max_orientation_angle = -257.14
+					hyperlane = no
+					initializer = nep_Jauiel_init
+				}
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 20
+					min_orientation_angle = -308.57
+					max_orientation_angle = -308.57
+					hyperlane = no
+					initializer = nep_Anael_init
+				}
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = 0
-				max_orientation_angle = 0
-				hyperlane = no
-				initializer = nep_Auriel_init
+			random_system = {
+				limit = { has_star_flag = nep_Auriel_system }
+				save_event_target_as = nep_heptagram_system_1
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -51.42
-				max_orientation_angle = -51.42
-				hyperlane = no
-				initializer = nep_Gabriel_init
+			random_system = {
+				limit = { has_star_flag = nep_Gabriel_system }
+				save_event_target_as = nep_heptagram_system_2
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -102.85
-				max_orientation_angle = -102.85
-				hyperlane = no
-				initializer = nep_Sabriel_init
+			random_system = {
+				limit = { has_star_flag = nep_Sabriel_system }
+				save_event_target_as = nep_heptagram_system_3
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -154.28
-				max_orientation_angle = -154.28
-				hyperlane = no
-				initializer = nep_Samuel_init
+			random_system = {
+				limit = { has_star_flag = nep_Samuel_system }
+				save_event_target_as = nep_heptagram_system_4
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -205.71
-				max_orientation_angle = -205.71
-				hyperlane = no
-				initializer = nep_Michael_init
+			random_system = {
+				limit = { has_star_flag = nep_Michael_system }
+				save_global_event_target_as = nep_heptagram_system_5
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -257.14
-				max_orientation_angle = -257.14
-				hyperlane = no
-				initializer = nep_Jauiel_init
+			random_system = {
+				limit = { has_star_flag = nep_Jauiel_system }
+				save_event_target_as = nep_heptagram_system_6
 			}
-			spawn_system = {
-				min_distance >= 20
-				max_distance <= 20
-				min_orientation_angle = -308.57
-				max_orientation_angle = -308.57
-				hyperlane = no
-				initializer = nep_Anael_init
+			random_system = {
+				limit = { has_star_flag = nep_Anael_system }
+				save_event_target_as = nep_heptagram_system_7
 			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_1
+				to = event_target:nep_heptagram_system_2
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_2
+				to = event_target:nep_heptagram_system_3
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_3
+				to = event_target:nep_heptagram_system_4
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_4
+				to = event_target:nep_heptagram_system_5
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_6
+				to = event_target:nep_heptagram_system_5
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_6
+				to = event_target:nep_heptagram_system_7
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_1
+				to = event_target:nep_heptagram_system_7
+			}
+			
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_1
+				to = event_target:nep_heptagram_system_3
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_3
+				to = event_target:nep_heptagram_system_5
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_5
+				to = event_target:nep_heptagram_system_7
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_7
+				to = event_target:nep_heptagram_system_2
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_2
+				to = event_target:nep_heptagram_system_4
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_4
+				to = event_target:nep_heptagram_system_6
+			}
+			add_hyperlane = {
+				from = event_target:nep_heptagram_system_1
+				to = event_target:nep_heptagram_system_6
+			}
+			set_spawn_system_batch = end
+			set_global_flag = nep_heptagram_system_spawn
 		}
-		random_system = {
-			limit = { has_star_flag = nep_Auriel_system }
-			save_event_target_as = nep_heptagram_system_1
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Gabriel_system }
-			save_event_target_as = nep_heptagram_system_2
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Sabriel_system }
-			save_event_target_as = nep_heptagram_system_3
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Samuel_system }
-			save_event_target_as = nep_heptagram_system_4
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Michael_system }
-			save_global_event_target_as = nep_heptagram_system_5
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Jauiel_system }
-			save_event_target_as = nep_heptagram_system_6
-		}
-		random_system = {
-			limit = { has_star_flag = nep_Anael_system }
-			save_event_target_as = nep_heptagram_system_7
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_1
-			to = event_target:nep_heptagram_system_2
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_2
-			to = event_target:nep_heptagram_system_3
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_3
-			to = event_target:nep_heptagram_system_4
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_4
-			to = event_target:nep_heptagram_system_5
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_6
-			to = event_target:nep_heptagram_system_5
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_6
-			to = event_target:nep_heptagram_system_7
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_1
-			to = event_target:nep_heptagram_system_7
-		}
-		
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_1
-			to = event_target:nep_heptagram_system_3
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_3
-			to = event_target:nep_heptagram_system_5
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_5
-			to = event_target:nep_heptagram_system_7
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_7
-			to = event_target:nep_heptagram_system_2
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_2
-			to = event_target:nep_heptagram_system_4
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_4
-			to = event_target:nep_heptagram_system_6
-		}
-		add_hyperlane = {
-			from = event_target:nep_heptagram_system_1
-			to = event_target:nep_heptagram_system_6
-		}
-		set_spawn_system_batch = end
-		
 		#portal		
 		random_galaxy_planet = {
 			limit = { has_planet_flag = nep_seal_1 }
@@ -193,8 +196,16 @@ country_event = {
 	option = {
 		name = nep_dragon.1.a
 		add_research_option = tech_sealportal_dive
-		set_global_flag = nep_dragon_begin
-		set_country_flag = nep_dragon_founder #...in future
+		hidden_effect = {
+			set_global_flag = nep_dragon_begin
+			set_country_flag = nep_dragon_founder #...in future
+			if = { 
+				limit = { 
+					event_target:nep_Auriel_planet = { is_planet_class = pc_gaia }
+				}
+				country_event = { id = nep_dragon.2000 }
+			}
+		}
 	}
 	
 	option = {
@@ -207,6 +218,74 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = nep_dragon.2000
+	title = "nep_dragon.2000.name"
+	desc = "nep_dragon.2000.desc"	
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_not_pass_sealportal
+	}
+	
+	immediate = {
+		remove_global_flag = nep_not_pass_sealportal
+		event_target:nep_Auriel_planet = {
+			add_modifier = {
+				modifier = "nep_Auriel_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Gabriel_planet = {
+			add_modifier = {
+				modifier = "nep_Gabriel_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Sabriel_planet = {
+			add_modifier = {
+				modifier = "nep_Sabriel_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Samuel_planet = {
+			add_modifier = {
+				modifier = "nep_Samuel_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Michael_planet = {
+			add_modifier = {
+				modifier = "nep_Michael_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Jauiel_planet = {
+			add_modifier = {
+				modifier = "nep_Jauiel_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+		event_target:nep_Anael_planet = {
+			add_modifier = {
+				modifier = "nep_Anael_modifier"
+				days = -1
+			}
+			add_deposit = "d_nep_unknown_vortex"
+		}
+	}
+	option = {
+		name = nep_dragon.2.a
+	}
+}
 
 fleet_event = {
 	id = nep_dragon.2
@@ -225,6 +304,7 @@ fleet_event = {
 			has_technology = tech_sealportal_dive
 		}
 		has_global_flag = nep_not_pass_sealportal
+		NOT = { event_target:nep_Auriel_planet = { is_planet_class = pc_gaia } }
 	}
 
 	immediate = {
@@ -887,6 +967,13 @@ country_event = {
 			location = fromfrom
 		}
 	}
+	
+	after = {
+		random_country = {
+			limit = { has_country_flag = nep_dragon_founder }
+			country_event = { id = nep_dragon.5 days = 3 }
+		}
+	}
 }
 #research
 country_event = {
@@ -894,9 +981,8 @@ country_event = {
 	title = "nep_dragon.5.name"
 	desc = "nep_dragon.5.desc"
 	picture = GFX_evt_victorious_army
-	
-	fire_only_once = yes
-	
+	is_triggered_only = yes
+		
 	trigger = {
 		has_global_flag = nep_Legnahcras_begin
 		is_ai = no
@@ -1243,28 +1329,46 @@ country_event = {
 	id = nep_dragon.7
 	hide_window = yes
 	fire_only_once = yes
+	is_triggered_only = yes
 	
 	trigger = {
-		is_ai = no
 		has_global_flag = nep_dragon_begin
-		has_country_flag = nep_dragon_founder
-		any_country = {
+		from = {
 			has_country_flag = nep_dragon_country
-			num_fleets < 1
+			or = {
+				num_fleets < 1
+				num_fleets = 1
+			}
 		}
 	}
 	
 	immediate = {
-		set_global_flag = nep_dragon_end
-		set_country_flag = nep_dragon_summoner
 		remove_global_flag = nep_dragon_begin
-		remove_country_flag = nep_dragon_founder
+		set_global_flag = nep_dragon_end
 		event_target:nep_dragon_country = {
 			every_owned_fleet = {
 				delete_fleet = this
 			}
 			destroy_country = yes
 		}
+		random_country = {
+			limit = {
+				is_ai = no
+				has_country_flag = nep_dragon_founder
+			}
+			country_event = { id = nep_dragon.71 }
+		}
+	}
+}
+country_event = {
+	id = nep_dragon.71
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = nep_dragon_summoner
+		remove_country_flag = nep_dragon_founder
 		remove_point_of_interest = nep_dragon_system_poi.1
 		country_event = { id = nep_dragon.8 }
 		country_event = { id = nep_inva.1 days = 180 random = 180 }
@@ -2133,5 +2237,456 @@ country_event = {
 				destroy_ship = this
 			}
 		}
+	}
+}
+
+namespace = nep_dragon_origin
+event = {
+	id = nep_dragon_origin.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_country = { 
+			has_origin = nep_heptagram_origin 
+		}
+	}
+	
+	immediate = {
+		every_country = {
+			limit = { has_origin = nep_heptagram_origin }
+			if = {
+				limit = { is_ai = yes }
+				set_origin = origin_default
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_global_flag = nep_heptagram_system_spawn } }
+					set_spawn_system_batch = begin
+					no_scope = {
+						spawn_system = {
+							min_distance >= 540
+							max_distance <= 550
+							min_orientation_angle = 133
+							max_orientation_angle = 135
+							hyperlane = no
+							initializer = nep_Aemethms_init
+						}
+					}
+					random_system = {
+						limit = {
+							has_star_flag = nep_dragon_system
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = 0
+							max_orientation_angle = 0
+							hyperlane = no
+							initializer = nep_Auriel_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -51.42
+							max_orientation_angle = -51.42
+							hyperlane = no
+							initializer = nep_Gabriel_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -102.85
+							max_orientation_angle = -102.85
+							hyperlane = no
+							initializer = nep_Sabriel_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -154.28
+							max_orientation_angle = -154.28
+							hyperlane = no
+							initializer = nep_Samuel_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -205.71
+							max_orientation_angle = -205.71
+							hyperlane = no
+							initializer = nep_Michael_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -257.14
+							max_orientation_angle = -257.14
+							hyperlane = no
+							initializer = nep_Jauiel_init
+						}
+						spawn_system = {
+							min_distance >= 20
+							max_distance <= 20
+							min_orientation_angle = -308.57
+							max_orientation_angle = -308.57
+							hyperlane = no
+							initializer = nep_Anael_init
+						}
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Auriel_system }
+						save_event_target_as = nep_heptagram_system_1
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Gabriel_system }
+						save_event_target_as = nep_heptagram_system_2
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Sabriel_system }
+						save_event_target_as = nep_heptagram_system_3
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Samuel_system }
+						save_event_target_as = nep_heptagram_system_4
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Michael_system }
+						save_global_event_target_as = nep_heptagram_system_5
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Jauiel_system }
+						save_event_target_as = nep_heptagram_system_6
+					}
+					random_system = {
+						limit = { has_star_flag = nep_Anael_system }
+						save_event_target_as = nep_heptagram_system_7
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_1
+						to = event_target:nep_heptagram_system_2
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_2
+						to = event_target:nep_heptagram_system_3
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_3
+						to = event_target:nep_heptagram_system_4
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_4
+						to = event_target:nep_heptagram_system_5
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_6
+						to = event_target:nep_heptagram_system_5
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_6
+						to = event_target:nep_heptagram_system_7
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_1
+						to = event_target:nep_heptagram_system_7
+					}
+					
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_1
+						to = event_target:nep_heptagram_system_3
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_3
+						to = event_target:nep_heptagram_system_5
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_5
+						to = event_target:nep_heptagram_system_7
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_7
+						to = event_target:nep_heptagram_system_2
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_2
+						to = event_target:nep_heptagram_system_4
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_4
+						to = event_target:nep_heptagram_system_6
+					}
+					add_hyperlane = {
+						from = event_target:nep_heptagram_system_1
+						to = event_target:nep_heptagram_system_6
+					}
+					set_spawn_system_batch = end
+					set_global_flag = nep_heptagram_system_spawn
+					
+					event_target:nep_Auriel_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Auriel_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+					}
+					event_target:nep_Gabriel_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Gabriel_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+						add_deposit = d_rich_mountain
+						add_deposit = d_rich_mountain
+					}
+					event_target:nep_Sabriel_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Sabriel_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+						add_deposit = d_underwater_vent
+						add_deposit = d_underwater_vent
+					}
+					event_target:nep_Samuel_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Samuel_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+					}
+					event_target:nep_Michael_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Michael_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+					}
+					event_target:nep_Jauiel_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Jauiel_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+					}
+					event_target:nep_Anael_planet = {
+						change_pc = pc_gaia
+						set_planet_entity = {
+							entity = "gaia_planet_01_entity"
+						}
+						reroll_planet = yes
+						# add_modifier = {
+							# modifier = "nep_Anael_modifier"
+							# days = -1
+						# }
+						# add_deposit = "d_nep_unknown_vortex"
+					}
+					random_galaxy_planet = {
+						limit = { 
+							is_star = yes
+							is_planet_class = pc_black_hole
+							solar_system = {
+								nep_st_is_not_outer_or_fe_system = yes 
+								has_special_star_flag_trigger = no
+								NOT = { exists = starbase }
+							} 
+						}
+						solar_system = {
+							spawn_megastructure = {
+								name = "NAME_Sub_Seal_1"
+								type = "nep_sealportal_node"
+								orbit_angle = 0
+								orbit_distance = 0
+								planet = prev
+							}
+							set_star_flag = nep_dragon_origin_system
+						}
+						remove_planet = yes
+					}
+				}
+				if = {
+					limit = {
+						any_galaxy_planet = {
+							OR = {
+								has_planet_flag = nep_Auriel_planet
+								has_planet_flag = nep_Gabriel_planet
+								has_planet_flag = nep_Sabriel_planet
+								has_planet_flag = nep_Samuel_planet
+								has_planet_flag = nep_Michael_planet
+								has_planet_flag = nep_Jauiel_planet
+								has_planet_flag = nep_Anael_planet
+							}
+							is_colony = no
+						}
+					}
+					random_owned_leader = {
+						limit = {
+							leader_class = governor
+						}
+						unassign_leader = this
+						save_global_event_target_as = nep_governor_temp
+					}
+					random_galaxy_planet = {
+						limit = {
+							OR = {
+								has_planet_flag = nep_Auriel_planet
+								has_planet_flag = nep_Gabriel_planet
+								has_planet_flag = nep_Sabriel_planet
+								has_planet_flag = nep_Samuel_planet
+								has_planet_flag = nep_Michael_planet
+								has_planet_flag = nep_Jauiel_planet
+								has_planet_flag = nep_Anael_planet
+							}
+							is_colony = no
+						}
+						create_colony = { owner = prev }
+						save_event_target_as = nep_dragon_origin_world
+						generate_start_deposits_and_blockers = yes
+						generate_start_buildings_and_districts = yes
+						generate_start_pops = yes
+						solar_system = { 
+							create_starbase = {
+								size = "starbase_starport"
+								module = "shipyard"
+								building = "crew_quarters"
+								owner = prev
+							}
+						}
+						prev.capital_scope = {
+							event_target:nep_dragon_origin_world = {
+								set_capital = yes
+								sector = {
+									assign_leader = event_target:nep_governor_temp
+								}
+							}
+							destroy_colony = yes
+							clear_deposits = yes
+							remove_all_buildings = yes
+							remove_all_districts = yes
+							change_pc = pc_barren_cold
+							solar_system = {
+								starbase = {
+									fleet = {
+										destroy_fleet = this
+									}
+								}
+							}
+						}
+						prev = {
+							every_owned_fleet = {
+								limit = {
+									any_owned_ship = {
+										OR = {
+											is_ship_size = constructor
+											is_ship_size = science
+											is_ship_size = corvette
+										}
+									}
+								}
+								if = {
+									limit = {
+										exists = leader
+									}
+									leader = {
+										unassign_leader = this
+										save_event_target_as = nep_scientist_temp
+									}
+								}
+								destroy_fleet = this
+							}
+							add_research_option = tech_sealportal_dive
+							add_tech_progress = {
+								tech = tech_sealportal_dive
+								progress = 0.80
+							}
+						}
+						create_fleet = {
+							effect = {
+								set_owner = prev
+								create_ship = {
+									name = random
+									random_existing_design = science
+								}
+								set_fleet_stance = evasive
+								set_location = event_target:nep_dragon_origin_world
+								set_leader = event_target:nep_scientist_temp
+							}
+						}
+						create_fleet = {
+							effect = {
+								set_owner = prev
+								create_ship = {
+									name = random
+									random_existing_design = constructor
+								}
+								set_fleet_stance = evasive
+								set_location = event_target:nep_dragon_origin_world
+							}
+						}
+						create_fleet = {
+							set_take_point = yes
+							effect = {
+								set_owner = prev
+								while = {
+									count = 3
+									create_ship = {
+										name = random
+										random_existing_design = corvette
+									}
+								}
+								set_location = event_target:nep_dragon_origin_world
+							}
+						}
+					}
+				}
+				else = {
+					set_origin = origin_default
+					country_event = { id = nep_dragon_origin.1000 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_dragon_origin.1000
+	title = "nep_dragon_origin.1000.name"
+	desc = "nep_dragon_origin.1000.desc"
+	picture = GFX_evt_black_hole
+
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
 	}
 }

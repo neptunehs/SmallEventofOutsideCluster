@@ -123,3 +123,28 @@ nep_sc_trinary_B = { # Trinary System
     spawn_odds         = 0
     num_planets     = 0
 }
+
+#Arena
+#Thanks to LEX - Leviathan Events Xtended staff
+sc_Arena = {
+	class 			= void_domain
+	planet			= { key = pc_star_void_dummy_01 }
+	spawn_odds 		= 0
+	num_planets 	= 0
+
+	pc_continental 	= { spawn_odds = 0 }
+	pc_desert		= { spawn_odds = 0 }
+	pc_tropical		= { spawn_odds = 0 }
+	pc_arid 		= { spawn_odds = 0 }
+	pc_ocean		= { spawn_odds = 0 }
+	pc_tundra		= { spawn_odds = 0 }
+	pc_arctic		= { spawn_odds = 0 }
+	pc_alpine		= { spawn_odds = 0 }
+	pc_savannah		= { spawn_odds = 0 }
+
+	is_environmental_hazard = yes
+	modifier = {
+		ship_emergency_ftl_mult = 100
+		ship_disengage_chance_reduction = 100
+	}
+}

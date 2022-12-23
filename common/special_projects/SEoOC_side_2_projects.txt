@@ -27,7 +27,7 @@ special_project = {
 
 special_project = {
 	key = "nep_escort_assignment"
-	days_to_research = 5
+	days_to_research = 10
 	tech_department = society_technology
 	picture = GFX_evt_caravaneers
 	icon = "gfx/interface/icons/situation_log/situation_log_ship.dds"
@@ -41,6 +41,7 @@ special_project = {
 	}
 	
 	on_success = {
+		log = "escort_assignment root:[Root.GetName] this:[this.GetName] this.owner:[this.owner.GetName]"
 		ship_event = { id = nep_gpc.2000 }
 	}
 	

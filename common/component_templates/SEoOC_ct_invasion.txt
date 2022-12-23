@@ -272,6 +272,9 @@ utility_component_template = {
 			ship_weapon_range_mult = -0.20
 			ship_accuracy_add = -20
 			ship_tracking_add = -20
+			ship_shield_regen_add_perc = -1
+			ship_hull_regen_add_perc = -1
+			ship_armor_regen_add_perc = -1
 		}
 		
 		graphics = {
@@ -468,10 +471,11 @@ weapon_component_template = {
 	
 	damage = { min = 23000.0 max = 64000.0 }
 	windup = { min = 180.0 max = 210.0 }
-
+	firing_arc =10.0
 	total_fire_time = 440
 
 	range = 250.0
+	min_range = 25
 	accuracy = 1
 	tracking = 0.05
 	
@@ -504,6 +508,7 @@ strike_craft_component_template = {
 	damage = { min = 16 max = 24 }
 	cooldown = 1.5
 	range = 40
+	engagement_range = 40
 	accuracy = 1.00
 	tracking = 0.50
 	
@@ -539,6 +544,7 @@ utility_component_template = {
 	modifier = {
 		ship_shield_add = 4320
 		ship_shield_regen_add_static = 432 #Regeneration per day
+		ship_shield_hardening_add = 0.5
 	}
 	prerequisites = { "tech_nep_Krahen_tech" }
 	hidden = yes
@@ -555,6 +561,7 @@ utility_component_template = {
 	modifier = {
 		ship_shield_add = 19440
 		ship_shield_regen_add_static = 1944 #Regeneration per day
+		ship_shield_hardening_add = 0.5
 	}
 	prerequisites = { "tech_nep_Krahen_tech" }
 	hidden = yes

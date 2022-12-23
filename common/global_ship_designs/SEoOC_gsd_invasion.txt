@@ -401,7 +401,6 @@ ship_design = {
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
-	#required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
 ship_design = {
@@ -582,7 +581,6 @@ ship_design = {
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
 ship_design = {
@@ -758,7 +756,6 @@ ship_design = {
 	required_component="nep_COMPUTER_JAMMER"
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
@@ -940,7 +937,6 @@ ship_design = {
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
 ship_design = {
@@ -1116,7 +1112,6 @@ ship_design = {
 	required_component="nep_COMPUTER_JAMMER"
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
@@ -1297,7 +1292,6 @@ ship_design = {
 	required_component="nep_COMPUTER_JAMMER"
 	required_component="nep_HYPERDRIVEMK5_BATTLESHIP_THRUSTER"
 	required_component="nep_ADVANCE_ECM"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
 }
 
@@ -1632,9 +1626,7 @@ ship_design = {
 	required_component="EMPTY_DRIVE"
 	required_component="nep_BATTLE_COMPUTER_LINE"
 	required_component="nep_ADVANCE_ECM"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
-	required_component="BATTLESHIP_DARK_MATTER_REACTOR"
+	required_component="STARBASE_DARK_MATTER_REACTOR"
 }
 
 ship_design = {

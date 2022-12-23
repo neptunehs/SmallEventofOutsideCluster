@@ -30,63 +30,17 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 	}
 	owner = {
 		save_event_target_as = RefugeeEscapedFrom
-		# Good habitability and some housing and jobs
-		if = {
+
+		# Set flag to not have to check the same thing again and again
+		every_relation = {
 			limit = {
-				any_relation = { nep_has_good_habitability_and_housing_and_jobs = yes }
+				has_any_habitability = yes #bare minimum for being a refugee destination
 			}
-			random_relation = {
-				limit = { nep_has_good_habitability_and_housing_and_jobs = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.7 }
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no
-						free_jobs >= 2
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = { 
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
+			set_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
 		}
+
 		# Good habitability and some housing
-		else_if = {
+		if = {
 			limit = {
 				any_relation = { has_good_habitability_and_housing = yes }
 			}
@@ -98,13 +52,13 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						free_housing >= 1
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
 						planet = this
 					}
-					event_target:refugee_pop = { 
+					event_target:refugee_pop = {
 						clear_pop_category = yes
 						if = { # refresh modifier if already refugee
 							limit = { has_modifier = recent_refugee }
@@ -112,10 +66,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -129,10 +80,10 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
@@ -152,7 +103,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						habitability = { who = event_target:refugee_pop value >= 0.7 }
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -166,10 +117,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -183,17 +131,17 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
 				}
 			}
 		}
-		
+
 		# Decent habitability and free housing
 		else_if = {
 			limit = {
@@ -207,7 +155,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						free_housing >= 1
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -221,10 +169,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -238,17 +183,17 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
 				}
 			}
 		}
-	
+
 		# Decent habitability
 		else_if = {
 			limit = {
@@ -261,7 +206,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						habitability = { who = event_target:refugee_pop value >= 0.5 }
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -275,10 +220,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -292,10 +234,10 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
@@ -316,7 +258,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						free_housing >= 1
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -330,10 +272,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -347,10 +286,10 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
@@ -370,7 +309,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						habitability = { who = event_target:refugee_pop value >= 0.2 }
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -384,10 +323,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -401,10 +337,10 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
@@ -424,7 +360,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 						free_housing >= 1
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -438,10 +374,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -455,10 +388,10 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
@@ -477,7 +410,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 					limit = {
 						is_under_colonization = no
 						is_controlled_by = owner
-						has_orbital_bombardment = no					
+						has_orbital_bombardment = no
 					}
 					resettle_pop = {
 						pop = event_target:refugee_pop
@@ -491,10 +424,7 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
+							add_modifier = { modifier = recent_refugee days = 3600 }
 						}
 					}
 					if = {
@@ -508,17 +438,25 @@ refugee_pop_effect_Krahen = {  #Must save event_target:refugee_pop before this e
 										}
 									}
 								}
-							}				
-						}		
+							}
+						}
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
+					}
 					else = {
 						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
 					}
 				}
 			}
-		}	
-	}		
+		}
+
+		# Clear flag at the end
+		every_relation = {
+			limit = {
+				has_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
+			}
+			remove_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
+		}
+	}
 }
 
 refugee_pop_effect_phantom = {  #Must save event_target:refugee_pop before this effect is run on intended pop
@@ -564,501 +502,441 @@ refugee_pop_effect_phantom = {  #Must save event_target:refugee_pop before this 
 		}
 		
 		else_if = {
-			limit = {
-				any_relation = { nep_has_good_habitability_and_housing_and_jobs = yes }
-			}
-			random_relation = {
-				limit = { nep_has_good_habitability_and_housing_and_jobs = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.7 }
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no
-						NOT = { has_planet_flag = nep_phantom_orbit }	
-						free_jobs >= 2		
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = { 
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-		
-		# Good habitability and some housing
-		else_if = {
-			limit = {
-				any_relation = { has_good_habitability_and_housing_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_good_habitability_and_housing_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.7 }
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no		
-						NOT = { has_planet_flag = nep_phantom_orbit }			
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = { 
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-		
-		# Good habitability
-		else_if = {
-			limit = {
-				any_relation = { has_good_habitability_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_good_habitability_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.7 }
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no	
-						NOT = { has_planet_flag = nep_phantom_orbit }				
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-		
-		# Decent habitability and free housing
-		else_if = {
-			limit = {
-				any_relation = { has_decent_habitability_and_housing_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_decent_habitability_and_housing_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.5 }
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no
-						NOT = { has_planet_flag = nep_phantom_orbit }					
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-	
-		# Decent habitability
-		else_if = {
-			limit = {
-				any_relation = { has_decent_habitability_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_decent_habitability_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.5 }
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no	
-						NOT = { has_planet_flag = nep_phantom_orbit }				
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
+			save_event_target_as = RefugeeEscapedFrom
 
-		# Some habitability and free housing
-		else_if = {
-			limit = {
-				any_relation = { has_some_habitability_and_housing_phantom = yes }
+			# Set flag to not have to check the same thing again and again
+			every_relation = {
+				limit = {
+					nep_has_any_habitability = yes #bare minimum for being a refugee destination
+				}
+				set_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
 			}
-			random_relation = {
-				limit = { has_some_habitability_and_housing_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.2 }
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no	
-						NOT = { has_planet_flag = nep_phantom_orbit }				
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
+
+			# Good habitability and some housing
+			if = {
+				limit = {
+					any_relation = { nep_has_good_habitability_and_housing = yes }
+				}
+				random_relation = {
+					limit = { nep_has_good_habitability_and_housing = yes }
+					random_owned_planet = {
 						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
+							habitability = { who = event_target:refugee_pop value >= 0.7 }
+							free_housing >= 1
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
 										}
 									}
 								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
 					}
 				}
+			}
+
+			# Good habitability
+			else_if = {
+				limit = {
+					any_relation = { nep_has_good_habitability = yes }
+				}
+				random_relation = {
+					limit = { nep_has_good_habitability = yes }
+					random_owned_planet = {
+						limit = {
+							habitability = { who = event_target:refugee_pop value >= 0.7 }
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Decent habitability and free housing
+			else_if = {
+				limit = {
+					any_relation = { nep_has_decent_habitability_and_housing = yes }
+				}
+				random_relation = {
+					limit = { nep_has_decent_habitability_and_housing = yes }
+					random_owned_planet = {
+						limit = {
+							habitability = { who = event_target:refugee_pop value >= 0.5 }
+							free_housing >= 1
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Decent habitability
+			else_if = {
+				limit = {
+					any_relation = { nep_has_decent_habitability = yes }
+				}
+				random_relation = {
+					limit = { nep_has_decent_habitability = yes }
+					random_owned_planet = {
+						limit = {
+							habitability = { who = event_target:refugee_pop value >= 0.5 }
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Some habitability and free housing
+			else_if = {
+				limit = {
+					any_relation = { nep_has_some_habitability_and_housing = yes }
+				}
+				random_relation = {
+					limit = { nep_has_some_habitability_and_housing = yes }
+					random_owned_planet = {
+						limit = {
+							habitability = { who = event_target:refugee_pop value >= 0.2 }
+							free_housing >= 1
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Some habitability
+			else_if = {
+				limit = {
+					any_relation = { nep_has_some_habitability = yes }
+				}
+				random_relation = {
+					limit = { nep_has_some_habitability = yes }
+					random_owned_planet = {
+						limit = {
+							habitability = { who = event_target:refugee_pop value >= 0.2 }
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Any habitability and free housing
+			else_if = {
+				limit = {
+					any_relation = { nep_has_any_habitability_and_housing = yes }
+				}
+				random_relation = {
+					limit = { nep_has_any_habitability_and_housing = yes }
+					random_owned_planet = {
+						limit = {
+							free_housing >= 1
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no							
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Any habitability
+			else_if = {
+				limit = {
+					any_relation = { nep_has_any_habitability = yes }
+				}
+				random_relation = {
+					limit = { nep_has_any_habitability = yes }
+					random_owned_planet = {
+						limit = {
+							is_under_colonization = no
+							is_controlled_by = owner
+							has_orbital_bombardment = no
+							NOT = { has_planet_flag = nep_phantom_orbit }
+						}
+						resettle_pop = {
+							pop = event_target:refugee_pop
+							planet = this
+						}
+						event_target:refugee_pop = {
+							clear_pop_category = yes
+							if = { # refresh modifier if already refugee
+								limit = { has_modifier = recent_refugee }
+								remove_modifier = recent_refugee
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+							else = {
+								add_modifier = { modifier = recent_refugee days = 3600 }
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									owner = {
+										any_owned_planet = {
+											any_owned_pop = {
+												NOT = { is_same_value = event_target:refugee_pop }
+												is_same_species = event_target:refugee_pop
+											}
+										}
+									}
+								}
+							}
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
+						}
+						else = {
+							event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
+						}
+					}
+				}
+			}
+
+			# Clear flag at the end
+			every_relation = {
+				limit = {
+					has_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
+				}
+				remove_country_flag = valid_refugee_destination_for_@event_target:refugee_pop
 			}
 		}
-
-		# Some habitability
-		else_if = {
-			limit = {
-				any_relation = { has_some_habitability_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_some_habitability_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						habitability = { who = event_target:refugee_pop value >= 0.2 }
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no	
-						NOT = { has_planet_flag = nep_phantom_orbit }				
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-
-		# Any habitability and free housing
-		else_if = {
-			limit = {
-				any_relation = { has_any_habitability_and_housing_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_any_habitability_and_housing_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						free_housing >= 1
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no		
-						NOT = { has_planet_flag = nep_phantom_orbit }			
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}
-
-		# Any habitability
-		else_if = {
-			limit = {
-				any_relation = { has_any_habitability_phantom = yes }
-			}
-			random_relation = {
-				limit = { has_any_habitability_phantom = yes }
-				random_owned_planet = {
-					limit = {
-						is_under_colonization = no
-						is_controlled_by = owner
-						has_orbital_bombardment = no	
-						NOT = { has_planet_flag = nep_phantom_orbit }				
-					}
-					resettle_pop = {
-						pop = event_target:refugee_pop
-						planet = this
-					}
-					event_target:refugee_pop = {
-						clear_pop_category = yes
-						if = { # refresh modifier if already refugee
-							limit = { has_modifier = recent_refugee }
-							remove_modifier = recent_refugee
-							add_modifier = { modifier = recent_refugee days = 3600 }
-						}
-						else = {
-							add_modifier = { modifier = recent_refugee days = 3600 } 
-						}
-						planet = {
-							check_planet_employment = yes
-						}
-					}
-					if = {
-						limit = {
-							NOT = {
-								owner = {
-									any_owned_planet = {
-										any_owned_pop = {
-											NOT = { is_same_value = event_target:refugee_pop }
-											is_same_species = event_target:refugee_pop
-										}
-									}
-								}
-							}				
-						}		
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.1 } }
-					}	
-					else = {
-						event_target:refugee_pop = { pop_event = { id = nep_refugees.2 } }
-					}
-				}
-			}
-		}	
-	}		
+	}
 }

@@ -773,7 +773,7 @@ create_Krahen_buildings = {
 	while = {
 		count = 5 
 		create_pop = {
-			species = owner
+			species = event_target:nep_Krahen_country
 		}
 	}
 	if = {

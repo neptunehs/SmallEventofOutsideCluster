@@ -726,9 +726,7 @@ country_event = {
 					angle = random
 					direction = in_system
 				}
-				random_owned_ship = {
-					ship_event = { id = nep_highway.5000 }
-				}
+				fleet_event = { id = nep_highway.5000 }
 			}
 		}
 	}
@@ -859,7 +857,7 @@ country_event = {
 					set_owner = root
 					create_ship = {
 						name = "NAME_Heptagram_Dragon"
-						design = "Heptagram Dragon Rebirth"
+						design = "NAME_Heptagram_Dragon_design"
 						effect = {
 							nep_easy_mod_reward = yes
 						}
@@ -903,7 +901,7 @@ country_event = {
 					set_owner = root
 					create_ship = {
 						name = "NAME_Heptagram_Dragon"
-						design = "Heptagram Dragon Rebirth"
+						design = "NAME_Heptagram_Dragon_design"
 						effect = {
 							nep_easy_mod_reward = yes
 							add_modifier = {

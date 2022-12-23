@@ -889,25 +889,31 @@ nep_Legnahcras_hard = {
 }
 
 nep_dragon_hard = {
-	ship_weapon_damage = 1.5
-	ship_hull_mult = 1.5
-	ship_armor_mult = 1.5
-	ship_shield_mult = 1.5
-	ship_weapon_range_mult = 1.5
+	ship_weapon_damage = 1.7
+	ship_hull_mult = 1.7
+	ship_armor_mult = 1.7
+	ship_shield_mult = 1.7
+	ship_weapon_range_mult = 1.7
 }
 
 nep_Krahen_hard = {
-	ship_weapon_damage = 2.2
-	ship_hull_mult = 2.2
-	ship_armor_mult = 2.2
-	ship_shield_mult = 2.2
+	ship_weapon_damage = 2.3
+	ship_hull_mult = 2.3
+	ship_armor_mult = 2.3
+	ship_shield_mult = 2.3
 	ship_weapon_range_mult = 1.7
-	army_health = 2.2
-	army_morale = 2.2
-	army_damage_mult = 2.2
-	army_morale_damage_mult = 2.2
+	army_health = 2.3
+	army_morale = 2.3
+	army_damage_mult = 2.3
+	army_morale_damage_mult = 2.3
 	ship_speed_mult = 1
 	ship_evasion_add = 0.2
+	ship_hull_regen_add_static = 1000
+	ship_shield_regen_add_perc = 1.0
+	ship_armor_regen_add_static = 1000
+	ship_shield_regen_add_static = 1000
+	ship_shield_regen_add_perc = 1.0
+	ship_armor_regen_add_perc = 1.0
 }
 
 nep_finalweapon_hard = {
@@ -918,12 +924,73 @@ nep_finalweapon_hard = {
 	ship_weapon_range_mult = 2.5
 	ship_speed_mult = 1.2
 	ship_evasion_add = 2
+	ship_hull_regen_add_static = 2000
+	ship_shield_regen_add_perc = 1.0
+	ship_armor_regen_add_static = 2000
+	ship_shield_regen_add_static = 2000
+	ship_shield_regen_add_perc = 1.0
+	ship_armor_regen_add_perc = 1.0
 }
 
 nep_phantom_hard = {
-	ship_weapon_damage = 2.4
-	ship_hull_mult = 2.4
-	ship_armor_mult = 2.4
-	ship_shield_mult = 2.4
+	ship_weapon_damage = 3
+	ship_hull_mult = 3
+	ship_armor_mult = 3
+	ship_shield_mult = 3
 	ship_weapon_range_mult = 1
+}
+
+nep_arena_rank_F = {
+	ship_hull_add = 100
+	ship_hull_regen_add_perc = 0.1
+	ship_hull_mult = 0.1
+	ship_armor_mult = 0.1
+	ship_shield_mult = 0.1
+}
+
+nep_arena_rank_E = {
+	ship_hull_add = 200
+	ship_hull_regen_add_perc = 0.15
+	ship_hull_mult = 0.15
+	ship_armor_mult = 0.15
+	ship_shield_mult = 0.15
+}
+
+nep_arena_rank_D = {
+	ship_hull_add = 200
+	ship_hull_regen_add_perc = 0.15
+	ship_hull_mult = 0.15
+	ship_armor_mult = 0.15
+	ship_shield_mult = 0.15
+}
+
+nep_arena_rank_C = {
+	ship_hull_add = 400
+	ship_hull_regen_add_perc = 0.2
+	ship_hull_mult = 0.2
+	ship_armor_mult = 0.2
+	ship_shield_mult = 0.2
+}
+
+nep_arena_rank_B = {
+	ship_hull_add = 800
+	ship_hull_regen_add_perc = 0.2
+	ship_hull_mult = 0.25
+	ship_armor_mult = 0.25
+	ship_shield_mult = 0.25
+}
+
+nep_arena_rank_A = {
+	ship_hull_add = 4000
+	ship_hull_regen_add_perc = 0.15
+	ship_hull_mult = 0.25
+	ship_armor_mult = 0.25
+	ship_shield_mult = 0.25
+}
+
+nep_arena_rank_S = {
+	ship_hull_add = 16000
+	ship_hull_mult = 0.3
+	ship_armor_mult = 0.3
+	ship_shield_mult = 0.3
 }

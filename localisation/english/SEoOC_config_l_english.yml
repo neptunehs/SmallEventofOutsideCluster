@@ -13,9 +13,11 @@
  
  nep_config.2.desc.a:0 "Now difficulty is:§YDefault§!"
  nep_config.2.desc.b:0 "Now difficulty is:§GEasy§!\n §YDon't choose §RDefault§! if your mods don't support you make a fleet with 1 million fire power!§!"
+ nep_config.2.desc.c:0 "Now difficulty is:§RHard§!"
  
  nep_config.2.easy:0 "Easy"
  nep_config.2.default:0 "Default"
+ nep_config.2.hard:0 "Hard"
  
  nep_config.3.desc.y:0 "Now White Goo event can be spawn:§GYes§!,you can choose what time it will spawn."
  nep_config.3.desc.n:0 "Now White Goo event can be spawn:§RNo§!"

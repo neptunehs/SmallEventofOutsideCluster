@@ -986,7 +986,7 @@ ship_event = {
 
 #For debug
 
-ship_event = {
+fleet_event = {
 	id = nep_highway.5000
 	hide_window = yes
 	
@@ -995,7 +995,7 @@ ship_event = {
 	is_triggered_only = yes		
 	
 	immediate = {
-		ship_event = { id = nep_highway.5 }
+		random_owned_ship = { ship_event = { id = nep_highway.5 } }
 	}
 }
 
@@ -2214,6 +2214,7 @@ country_event = {
 				from = event_target:highway_station_N
 				to = event_target:highway_note_N
 			}
+			set_global_flag = nep_highway_station_N_closed
 		}
 	}
 	option = {
@@ -2229,6 +2230,7 @@ country_event = {
 				from = event_target:highway_station_N
 				to = event_target:highway_note_N
 			}
+			remove_global_flag = nep_highway_station_N_closed
 		}
 	}	
 	option = {
@@ -2244,6 +2246,7 @@ country_event = {
 				from = event_target:highway_station_NNE
 				to = event_target:highway_note_NNE
 			}
+			set_global_flag = nep_highway_station_NNE_closed
 		}
 	}
 	option = {
@@ -2259,6 +2262,7 @@ country_event = {
 				from = event_target:highway_station_NNE
 				to = event_target:highway_note_NNE
 			}
+			remove_global_flag = nep_highway_station_NNE_closed
 		}
 	}
 	option = {
@@ -2274,6 +2278,7 @@ country_event = {
 				from = event_target:highway_station_NE
 				to = event_target:highway_note_NE
 			}
+			set_global_flag = nep_highway_station_NE_closed
 		}
 	}
 	option = {
@@ -2289,6 +2294,7 @@ country_event = {
 				from = event_target:highway_station_NE
 				to = event_target:highway_note_NE
 			}
+			remove_global_flag = nep_highway_station_NE_closed
 		}
 	}
 	option = {
@@ -2304,6 +2310,7 @@ country_event = {
 				from = event_target:highway_station_ENE
 				to = event_target:highway_note_ENE
 			}
+			set_global_flag = nep_highway_station_ENE_closed
 		}
 	}
 	option = {
@@ -2319,6 +2326,7 @@ country_event = {
 				from = event_target:highway_station_ENE
 				to = event_target:highway_note_ENE
 			}
+			remove_global_flag = nep_highway_station_ENE_closed
 		}
 	}
 	option = {
@@ -2334,6 +2342,7 @@ country_event = {
 				from = event_target:highway_station_E
 				to = event_target:highway_note_E
 			}
+			set_global_flag = nep_highway_station_E_closed
 		}
 	}
 	option = {
@@ -2349,6 +2358,7 @@ country_event = {
 				from = event_target:highway_station_E
 				to = event_target:highway_note_E
 			}
+			remove_global_flag = nep_highway_station_E_closed
 		}
 	}
 	option = {
@@ -2364,6 +2374,7 @@ country_event = {
 				from = event_target:highway_station_ESE
 				to = event_target:highway_note_ESE
 			}
+			set_global_flag = nep_highway_station_ESE_closed
 		}
 	}
 	option = {
@@ -2379,6 +2390,7 @@ country_event = {
 				from = event_target:highway_station_ESE
 				to = event_target:highway_note_ESE
 			}
+			remove_global_flag = nep_highway_station_ESE_closed
 		}
 	}
 	option = {
@@ -2394,6 +2406,7 @@ country_event = {
 				from = event_target:highway_station_SE
 				to = event_target:highway_note_SE
 			}
+			set_global_flag = nep_highway_station_SE_closed
 		}
 	}
 	option = {
@@ -2409,6 +2422,7 @@ country_event = {
 				from = event_target:highway_station_SE
 				to = event_target:highway_note_SE
 			}
+			remove_global_flag = nep_highway_station_SE_closed
 		}
 	}
 	option = {
@@ -2424,6 +2438,7 @@ country_event = {
 				from = event_target:highway_station_SSE
 				to = event_target:highway_note_SSE
 			}
+			set_global_flag = nep_highway_station_SSE_closed
 		}
 	}
 	option = {
@@ -2439,6 +2454,7 @@ country_event = {
 				from = event_target:highway_station_SSE
 				to = event_target:highway_note_SSE
 			}
+			remove_global_flag = nep_highway_station_SSE_closed
 		}
 	}
 	option = {
@@ -2454,6 +2470,7 @@ country_event = {
 				from = event_target:highway_station_S
 				to = event_target:highway_note_S
 			}
+			set_global_flag = nep_highway_station_S_closed
 		}
 	}
 	option = {
@@ -2469,6 +2486,7 @@ country_event = {
 				from = event_target:highway_station_S
 				to = event_target:highway_note_S
 			}
+			remove_global_flag = nep_highway_station_S_closed
 		}
 	}
 	option = {
@@ -2484,6 +2502,7 @@ country_event = {
 				from = event_target:highway_station_SSW
 				to = event_target:highway_note_SSW
 			}
+			set_global_flag = nep_highway_station_SSW_closed
 		}
 	}
 	option = {
@@ -2499,6 +2518,7 @@ country_event = {
 				from = event_target:highway_station_SSW
 				to = event_target:highway_note_SSW
 			}
+			remove_global_flag = nep_highway_station_SSW_closed
 		}
 	}
 	option = {
@@ -2514,6 +2534,7 @@ country_event = {
 				from = event_target:highway_station_SW
 				to = event_target:highway_note_SW
 			}
+			set_global_flag = nep_highway_station_SW_closed
 		}
 	}
 	option = {
@@ -2529,6 +2550,7 @@ country_event = {
 				from = event_target:highway_station_SW
 				to = event_target:highway_note_SW
 			}
+			remove_global_flag = nep_highway_station_SW_closed
 		}
 	}
 	option = {
@@ -2544,6 +2566,7 @@ country_event = {
 				from = event_target:highway_station_WSW
 				to = event_target:highway_note_WSW
 			}
+			set_global_flag = nep_highway_station_WSW_closed
 		}
 	}
 	option = {
@@ -2559,6 +2582,7 @@ country_event = {
 				from = event_target:highway_station_WSW
 				to = event_target:highway_note_WSW
 			}
+			remove_global_flag = nep_highway_station_WSW_closed
 		}
 	}
 	option = {
@@ -2574,6 +2598,7 @@ country_event = {
 				from = event_target:highway_station_W
 				to = event_target:highway_note_W
 			}
+			set_global_flag = nep_highway_station_W_closed
 		}
 	}
 	option = {
@@ -2589,6 +2614,7 @@ country_event = {
 				from = event_target:highway_station_W
 				to = event_target:highway_note_W
 			}
+			remove_global_flag = nep_highway_station_W_closed
 		}
 	}
 	option = {
@@ -2604,6 +2630,7 @@ country_event = {
 				from = event_target:highway_station_WNW
 				to = event_target:highway_note_WNW
 			}
+			set_global_flag = nep_highway_station_WNW_closed
 		}
 	}
 	option = {
@@ -2619,6 +2646,7 @@ country_event = {
 				from = event_target:highway_station_WNW
 				to = event_target:highway_note_WNW
 			}
+			remove_global_flag = nep_highway_station_WNW_closed
 		}
 	}
 	option = {
@@ -2634,6 +2662,7 @@ country_event = {
 				from = event_target:highway_station_NW
 				to = event_target:highway_note_NW
 			}
+			set_global_flag = nep_highway_station_NW_closed
 		}
 	}
 	option = {
@@ -2649,6 +2678,7 @@ country_event = {
 				from = event_target:highway_station_NW
 				to = event_target:highway_note_NW
 			}
+			remove_global_flag = nep_highway_station_NW_closed
 		}
 	}
 	option = {
@@ -2664,6 +2694,7 @@ country_event = {
 				from = event_target:highway_station_NNW
 				to = event_target:highway_note_NNW
 			}
+			set_global_flag = nep_highway_station_NNW_closed
 		}
 	}
 	option = {
@@ -2679,6 +2710,7 @@ country_event = {
 				from = event_target:highway_station_NNW
 				to = event_target:highway_note_NNW
 			}
+			remove_global_flag = nep_highway_station_NNW_closed
 		}
 	}
 }

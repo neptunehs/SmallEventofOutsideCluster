@@ -8,7 +8,7 @@ nep_sealgate_ruined = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -21,18 +21,16 @@ nep_sealgate_restored = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	show_galactic_map_icon = no
-	
+	show_in_outliner = no
 	potential = {
 		has_technology = tech_gateway_activation
-		has_technology = tech_gateway_construction
 	}
 	
 	possible = {
 		custom_tooltip = {
-			fail_text = "requires_technologys_sealgate"
+			fail_text = "requires_technology_gateway_activation"
 			from = { 
 				has_technology = tech_gateway_activation
-				has_technology = tech_gateway_construction
 			}
 		}
 		custom_tooltip = {
@@ -53,7 +51,7 @@ nep_sealgate_restored = {
 			energy = 10000
 		}
 	}
-	#construction_blocks_others = no
+	construction_blocks_and_blocked_by = none
 	bypass_type = nep_sealgate
 }
 
@@ -64,7 +62,7 @@ nep_station_whitegoo_mega = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 200
-
+	show_in_outliner = no
 	resources = {
 		category = megastructures
 		cost = {
@@ -78,8 +76,7 @@ nep_station_whitegoo_mega = {
 
 	prerequisites = { "tech_nep_whitegoo_4" }
 
-	#construction_blocks_others = no
-	#construction_blocked_by_others = no
+	construction_blocks_and_blocked_by = none
 
 	possible = {
 		exists = starbase
@@ -247,6 +244,14 @@ nep_station_whitegoo_mega = {
 			}
 		}
 		remove_megastructure = fromfrom
+		FROM = {  
+			if = {
+				limit = {
+					NOT = { has_country_flag = nep_whitegoo_8000_temp }
+				}
+				country_event = { id = nep_whitegoo.8000 }
+			}
+		}			
 		if = {
 			limit = { 
 				has_global_flag = nep_whitegoo_begin
@@ -270,7 +275,7 @@ nep_wormhole_wohp_mega = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -285,7 +290,7 @@ nep_wormhole_deus_mega = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -300,7 +305,7 @@ nep_wormhole_ugo_mega = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -315,7 +320,7 @@ nep_sealportal_node_ruined = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -329,7 +334,7 @@ nep_sealportal_node = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -351,7 +356,7 @@ nep_sealportal_nexus = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -367,7 +372,7 @@ nep_sealphantom_node_ruined = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -381,6 +386,7 @@ nep_sealphantom_node = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
@@ -402,9 +408,39 @@ nep_sealphantom_nexus = {
 	show_galactic_map_icon = no
 	#construction_blocks_others = no
 	#construction_blocked_by_others = no
-
+	show_in_outliner = no
 	potential = {
 		always = no
 	}
 	bypass_type = nep_sealphantom
+}
+
+nep_caravaneer_gate_mega = {
+	entity = "reactivated_gateway_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes
+	show_galactic_map_icon = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
+	show_in_outliner = no
+	potential = {
+		always = no
+	}
+	bypass_type = nep_caravaneer_gate
+}
+
+nep_arena_gate_mega = {
+	entity = "natural_wormhole_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = no
+	show_galactic_map_icon = no
+	#construction_blocks_others = no
+	#construction_blocked_by_others = no
+	show_in_outliner = no
+	potential = {
+		always = no
+	}
+	bypass_type = nep_arena_gate
 }

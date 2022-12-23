@@ -5308,7 +5308,7 @@ country_event = {
 			set_leader = last_created_leader
 		}
 		else = {
-			
+			set_origin = origin_default
 		}
 	}
 
@@ -8213,17 +8213,19 @@ country_event = {
 	
 	fire_only_once = yes
 	
+	mean_time_to_happen = { days = 3600 }
+	
 	trigger = {
 		has_global_flag = nep_ugo_dangerous_creature_removed
 		any_country = {
 			has_country_flag = nep_ugo_target
 		}
 		is_same_value = event_target:global_event_country
-		mid_game_years_passed >= 15
+		mid_game_years_passed >= 16
 	}
 	
 	immediate = {
-		country_event = { id = nep_ugo.2001 days = 360 random = 7200 }
+		country_event = { id = nep_ugo.2001 }
 	}
 }
 

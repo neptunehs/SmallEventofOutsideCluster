@@ -694,7 +694,7 @@ planet_event = {
 							owner = event_target:nep_Krahen_country
 							type = nep_Krahen_anti_grav
 						}
-					}					
+					}
 				}
 			}
 		}
@@ -1725,7 +1725,7 @@ fleet_event = {
 				}
 				root = {
 					clear_fleet_actions = this
-					fleet_event = { id = nep_kai.20000 days = 3 }
+					fleet_event = { id = nep_kai.20000 }
 				}
 			}
 		}
@@ -2038,7 +2038,7 @@ event = {
 								solar_system = {
 									random_system_planet = {
 										limit = { is_star = yes }
-										root = {
+										prevprev = {
 											auto_move_to_planet = {
 												target = prev
 												clear_auto_move_on_arrival = yes
