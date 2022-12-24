@@ -1,0 +1,119 @@
+﻿l_english:
+ nep_dragon.2000.desc:0 "After the break of the Great Seal, a powerful energy reaction occurred in the heptagonal system, and strange vortexs were said to have appeared on various Gaia planets in the heptagonal system. I wonder what is directly related to the unraveling of the Great Seal?"
+ nep_dragon.2.a:0 "If we have these planets, let's find a way to disarm these tornadoes."
+ 
+ nep_dragon_origin.1000.desc:0 "Unfortunately heptagonal system are full, so you were switched to one of the most common origins. It's a bit meta, but the mod author suggests:Don't choose this origin in multiplayer in the future, thanks."
+ 
+ nep_ar.1003.desc:0 "We are starting a new season. Therefore your registration has been cancelled, please re-register."
+ 
+ nep_ar.1004.desc:0 "We are starting a new season. Welcome to the challenge."
+  
+ cara_nep_arena_office.title:0 "Arena Reception"
+ 
+ nep_ar.2.desc.a:0 "Sorry, the arena is in the middle of a battle, you cannot enter. Moreover, you are not a member of our Arena Association and cannot participate in the betting. Please wait until the current battle is over, thank you."
+ nep_ar.2.desc.b:0 "Welcome to the Arena. Here you can participate in battles in the arena, and if you win, we will give you a small reward and broadcast your victory to the whole universe. Want to try your fleet's fighting power?"
+ nep_ar.2.1:0 "OPPONENT:§Y[event_target:nep_arena_target_1.GetName]§!"
+ nep_ar.2.2:0 "OPPONENT:§Y[event_target:nep_arena_target_2.GetName]§!"
+ nep_ar.2.3:0 "OPPONENT:§Y[event_target:nep_arena_target_3.GetName]§!"
+ nep_ar.2.4:0 "OPPONENT:§Y[event_target:nep_arena_target_4.GetName]§!"
+ nep_ar.2.5:0 "Can I become a member of the Arena Association?"
+ nep_ar.2.5.response:0 "Sorry, I don't have that authority. If you need to become a member, according to the rules, you need 7 councilors to pass. But all 7 councilors are currently bored with the arena, and although the arena has not been abolished, the councilors have gone off to find their own fun, and no one knows where they are at the moment. You don't want to go to the councilors who don't even know where they are now for such a boring thing, do you?"
+ 
+ nep_ar.2.a:0 "Yes,register me."
+ nep_ar.2001.desc.g:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:RANK G,Winning Rewards:1000 $energy$,Announcement Universe will Gain:5 $influence$,1000 $unity$"
+ nep_ar.2001.desc.f:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§GRANK F§!,Winning Rewards:2000 $energy$,Announcement Universe will Gain:10 $influence$,2000 $unity$"
+ nep_ar.2001.desc.e:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§GRANK E§!,Winning Rewards:3000 $energy$,Announcement Universe will Gain:20 $influence$,4000 $unity$"
+ nep_ar.2001.desc.d:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§GRANK D§!,Winning Rewards:4000 $energy$,Announcement Universe will Gain:30 $influence$,8000 $unity$"
+ nep_ar.2001.desc.c:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§YRANK C§!,Winning Rewards:5000 $energy$,Announcement Universe will Gain:50 $influence$,16000 $unity$"
+ nep_ar.2001.desc.b:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§YRANK B§!,Winning Rewards:6000 $energy$,Announcement Universe will Gain:80 $influence$,32000 $unity$"
+ nep_ar.2001.desc.a:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§YRANK A§!,Winning Rewards:7000 $energy$,Announcement Universe will Gain:130 $influence$,64000 $unity$"
+ nep_ar.2001.desc.s:0 "Your chosen opponent:§Y[event_target:nep_arena_target_1.GetName]§!,Rating:§RRANK S§!,Winning Rewards:10000 $energy$,Announcement Universe will Gain:210 $influence$,99999 $unity$"
+ 
+ nep_ar.2002.desc.g:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:RANK G,Winning Rewards:1000 $energy$,Announcement Universe will Gain:5 $influence$,1000 $unity$"
+ nep_ar.2002.desc.f:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§GRANK F§!,Winning Rewards:2000 $energy$,Announcement Universe will Gain:10 $influence$,2000 $unity$"
+ nep_ar.2002.desc.e:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§GRANK E§!,Winning Rewards:3000 $energy$,Announcement Universe will Gain:20 $influence$,4000 $unity$"
+ nep_ar.2002.desc.d:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§GRANK D§!,Winning Rewards:4000 $energy$,Announcement Universe will Gain:30 $influence$,8000 $unity$"
+ nep_ar.2002.desc.c:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§YRANK C§!,Winning Rewards:5000 $energy$,Announcement Universe will Gain:50 $influence$,16000 $unity$"
+ nep_ar.2002.desc.b:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§YRANK B§!,Winning Rewards:6000 $energy$,Announcement Universe will Gain:80 $influence$,32000 $unity$"
+ nep_ar.2002.desc.a:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§YRANK A§!,Winning Rewards:7000 $energy$,Announcement Universe will Gain:130 $influence$,64000 $unity$"
+ nep_ar.2002.desc.s:0 "Your chosen opponent:§Y[event_target:nep_arena_target_2.GetName]§!,Rating:§RRANK S§!,Winning Rewards:10000 $energy$,Announcement Universe will Gain:210 $influence$,99999 $unity$"
+ 
+ nep_ar.2003.desc.g:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:RANK G,Winning Rewards:1000 $energy$,Announcement Universe will Gain:5 $influence$,1000 $unity$"
+ nep_ar.2003.desc.f:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§GRANK F§!,Winning Rewards:2000 $energy$,Announcement Universe will Gain:10 $influence$,2000 $unity$"
+ nep_ar.2003.desc.e:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§GRANK E§!,Winning Rewards:3000 $energy$,Announcement Universe will Gain:20 $influence$,4000 $unity$"
+ nep_ar.2003.desc.d:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§GRANK D§!,Winning Rewards:4000 $energy$,Announcement Universe will Gain:30 $influence$,8000 $unity$"
+ nep_ar.2003.desc.c:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§YRANK C§!,Winning Rewards:5000 $energy$,Announcement Universe will Gain:50 $influence$,16000 $unity$"
+ nep_ar.2003.desc.b:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§YRANK B§!,Winning Rewards:6000 $energy$,Announcement Universe will Gain:80 $influence$,32000 $unity$"
+ nep_ar.2003.desc.a:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§YRANK A§!,Winning Rewards:7000 $energy$,Announcement Universe will Gain:130 $influence$,64000 $unity$"
+ nep_ar.2003.desc.s:0 "Your chosen opponent:§Y[event_target:nep_arena_target_3.GetName]§!,Rating:§RRANK S§!,Winning Rewards:10000 $energy$,Announcement Universe will Gain:210 $influence$,99999 $unity$"
+ 
+ nep_ar.2004.desc.g:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:RANK G,Winning Rewards:1000 $energy$,Announcement Universe will Gain:5 $influence$,1000 $unity$"
+ nep_ar.2004.desc.f:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§GRANK F§!,Winning Rewards:2000 $energy$,Announcement Universe will Gain:10 $influence$,2000 $unity$"
+ nep_ar.2004.desc.e:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§GRANK E§!,Winning Rewards:3000 $energy$,Announcement Universe will Gain:20 $influence$,4000 $unity$"
+ nep_ar.2004.desc.d:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§GRANK D§!,Winning Rewards:4000 $energy$,Announcement Universe will Gain:30 $influence$,8000 $unity$"
+ nep_ar.2004.desc.c:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§YRANK C§!,Winning Rewards:5000 $energy$,Announcement Universe will Gain:50 $influence$,16000 $unity$"
+ nep_ar.2004.desc.b:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§YRANK B§!,Winning Rewards:6000 $energy$,Announcement Universe will Gain:80 $influence$,32000 $unity$"
+ nep_ar.2004.desc.a:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§YRANK A§!,Winning Rewards:7000 $energy$,Announcement Universe will Gain:130 $influence$,64000 $unity$"
+ nep_ar.2004.desc.s:0 "Your chosen opponent:§Y[event_target:nep_arena_target_4.GetName]§!,Rating:§RRANK S§!,Winning Rewards:10000 $energy$,Announcement Universe will Gain:210 $influence$,99999 $unity$"
+ 
+ nep_ar.300.desc:0 "Ladies and Gentlemen!Boys and Girls!Rocks and Plants!This season's match is brought to you by...§Y[event_target:caravaneer_home_country.GetName]§!!If you want to buy something,anything,everything...choose §Y[event_target:caravaneer_home_country.GetName]§!!In this corner, the challenger,§Y[event_target:nep_arena_challenger_fleet.GetName]§!,with fleet power §Y[event_target:nep_arena_challenger_fleet.nep_challenger_fleet_power]§!,fresh from the galaxy and new to Arena!And in this corner...with fleet power §Y[event_target:nep_arena_target_fleet.nep_target_fleet_power]§!,you KNOW him, you LOVE him...§Y[event_target:nep_arena_target_fleet.GetName]§!!So, without further ado...Let's get reeeeeeeady to BURST SOME BEAM!"
+ nep_ar.300.a:0 "Let's Rock!"
+ 
+ nep_ar.3002.desc.a:0 "And the wiiiiinnnner is...by means of destroy all fleets...§Y[event_target:nep_arena_challenger_fleet.GetName]§!!Here's your reward!"
+ nep_ar.3002.desc.b:0 "And the wiiiiinnnner is...with a high score of shot down...§Y[event_target:nep_arena_challenger_fleet.GetName]§!!Here's your reward!"
+ nep_ar.3003.desc.a:0 "And the wiiiiinnnner is...by means of destroy all fleets...§Y[event_target:nep_arena_target_fleet.GetName]§!!Welcome back next time!"
+ nep_ar.3003.desc.b:0 "And the wiiiiinnnner is...with a high score of shot down...§Y[event_target:nep_arena_target_fleet.GetName]§!!Welcome back next time!"
+ 
+ d_nep_Auriel_moon_1:0 "Auriel Moon"
+ d_nep_Auriel_moon_2:0 "Auriel Moon" 
+ d_nep_Gabriel_moon_1:0 "Gabriel Moon"
+ d_nep_Gabriel_moon_2:0 "Gabriel Moon" 
+ d_nep_Sabriel_moon_1:0 "Sabriel Moon"
+ d_nep_Sabriel_moon_2:0 "Sabriel Moon"
+ d_nep_Samuel_moon_2:0 "Samuel Moon"
+ d_nep_Samuel_moon_1:0 "Samuel Moon"
+ d_nep_Michael_moon_2:0 "Michael Moon"
+ d_nep_Michael_moon_1:0 "Michael Moon"
+ d_nep_Jauial_moon_2:0 "Jauial Moon"
+ d_nep_Jauial_moon_1:0 "Jauial Moon"
+ d_nep_Anael_moon_1:0 "Anael Moon"
+ d_nep_Anael_moon_2:0 "Anael Moon"
+ 
+ d_nep_broken_seal_1:0 "Broken Seal 1"
+ d_nep_broken_seal_2:0 "Broken Seal 2"
+ d_nep_broken_seal_3:0 "Broken Seal 3"
+ 
+ nep_caravaneer_gate_mega:0 "Access to Caravaneers Affiliated Office"
+ nep_caravaneer_gate_mega_DESC:0 "Access to the affiliated offices of the Caravaneers. An office occupies a galaxy plus a stargate, money is capricious!"
+ nep_caravaneer_gate_mega_MEGASTRUCTURE_DETAILS:0 "Access to the affiliated offices of the Caravaneers. An office occupies a galaxy plus a stargate, money is capricious!"
+ 
+ nep_arena_gate_mega:0 "Gate to the Arena"
+ nep_arena_gate_mega_DESC:0 "Gate to the arena。It says it is a gate, but it is actually a stargate."
+ nep_arena_gate_mega_MEGASTRUCTURE_DETAILS:0 "Gate to the arena。It says it is a gate, but it is actually a stargate."
+ 
+ nep_heptagram_origin:0 "Heptagonal Worship"
+ nep_heptagram_origin_desc:0 "However, it is said that the worship of the heptagon, but will not have any substantial impact on the game. "
+ civic_tooltip_nep_heptagram_origin_effects:0 "Will originate in the heptagonal system.Because of the long-term observation of a special object in the system that only they can observe, they will get £physics£§Y$tech_sealportal_dive$§! technology in the opening, in order to travel through the object to other systems."
+ 
+ CAN_TAKE_HOSTILE_ACTION_NEP_HOLOGRAM:0 "Why do you want to attack a hologram?"
+
+ NAME_nep_bounty_office:0 "Bounty Office"
+ 
+ NAME_nep_arena_hologram:0 "Holograms:Challengable"
+ NAME_nep_arena_target:0 "Arena defender"
+ NAME_nep_arena_challenger:0 "Arena Challenger"
+ 
+ NAME_nep_arena_office:0 "Arena Office"
+ NAME_nep_arena:0 "The Arena"
+ 
+ NAME_nep_your_eyes:0 "Your Eyes"
+ 
+ NEP_CARAVANEER_GATE:0 "Access to Caravaneers Affiliated Office"
+ NEP_CARAVANEER_GATE_DESC:0 "Access to Caravaneers Affiliated Office"
+ 
+ NEP_CARAVANEER_GATE:0 "Access to Caravaneers Affiliated Office"
+ NEP_CARAVANEER_GATE_DESC:0 "Access to Caravaneers Affiliated Office"
+ 
+ NEP_ARENA_NOT_REGISTERED:0 "Please register in the arena office first."
+ 
+ 

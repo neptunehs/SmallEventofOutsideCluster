@@ -1,0 +1,118 @@
+﻿l_japanese:
+ nep_dragon.2000.desc:0 "大封印が解けた後、七角形星系は強力なエネルギー反応を起こし、その後、各ガイア星に奇妙な竜巻が発生したという。大封印を解くことに何の直接関係があるのか分からない。"
+ nep_dragon.2.a:0 "もし私たちがこれらの星を持っていたら、竜巻を解消する方法を考えましょう。"
+ 
+ nep_dragon_origin.1000.desc:0 "残念ながらすべての七角形銀河が満員になっているので、あなたは最も一般的な起源に変えられました。ちょっとメタ発言ですが、これからはマルチプレイでこの起源を選ぶない、ありがとう。"
+ 
+ nep_ar.1003.desc:0 "新しいシーズンを始めた。そのため、あなたの入場登録はキャンセルされました。再登録してください。"
+ 
+ nep_ar.1004.desc:0 "新しいシーズンを始めた。ようこそ。"
+  
+ cara_nep_arena_office.title:0 "闘技場受付"
+ 
+ nep_ar.2.desc.a:0 "すみません、闘技場は開戦中ですから、むやみに参戦してはいけません。そしてあなたは私たち闘技場協会の会員ではありません。賭けに参加することはできません。今の戦いが終わってから来てください、ありがとうございます。"
+ nep_ar.2.desc.b:0 "闘技場へようこそ。ここでは闘技場の戦いに参加することができます。もしあなたが勝利したら、私たちは少量の奨励金を与え、全宇宙にあなたの勝利を伝えることができます。自分の艦隊の戦力を試してみませんか。"
+ nep_ar.2.1:0 "相手：§Y[event_target:nep_arena_target_1.GetName]§!"
+ nep_ar.2.2:0 "相手：§Y[event_target:nep_arena_target_2.GetName]§!"
+ nep_ar.2.3:0 "相手：§Y[event_target:nep_arena_target_3.GetName]§!"
+ nep_ar.2.4:0 "相手：§Y[event_target:nep_arena_target_4.GetName]§!"
+ nep_ar.2.5:0 "闘技場協会の会員になってもいいですか。"
+ nep_ar.2.5.response:0 "申し訳ありませんが、私にはこの権利はありません。会員になる必要がある場合は、規定に従って、7人の理事が通過する必要があります。しかし、7人の理事は現在、闘技場に飽きており、闘技場を廃止することはないが、理事たちはそれぞれ自分の楽しみを探しに行っており、どこにいるのかは誰も知らない。そんなつまらないことのために、今の人がどこにいるかわからない理事たちを探しに行かないでしょうか。"
+  
+ nep_ar.2.a:0 "はい、登録おねがい。"
+ nep_ar.2001.desc.g:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：ランク G，戦勝奨励：1000 $energy$,アナウンス収益：5 $influence$,1000 $unity$"
+ nep_ar.2001.desc.f:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Gランク F§!，戦勝奨励：2000 $energy$,アナウンス収益：10 $influence$,2000 $unity$"
+ nep_ar.2001.desc.e:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Gランク E§!，戦勝奨励：3000 $energy$,アナウンス収益：20 $influence$,4000 $unity$"
+ nep_ar.2001.desc.d:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Gランク D§!，戦勝奨励：4000 $energy$,アナウンス収益：30 $influence$,8000 $unity$"
+ nep_ar.2001.desc.c:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Yランク C§!，戦勝奨励：5000 $energy$,アナウンス収益：50 $influence$,16000 $unity$"
+ nep_ar.2001.desc.b:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Yランク B§!，戦勝奨励：6000 $energy$,アナウンス収益：80 $influence$,32000 $unity$"
+ nep_ar.2001.desc.a:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Yランク A§!，戦勝奨励：7000 $energy$,アナウンス収益：130 $influence$,64000 $unity$"
+ nep_ar.2001.desc.s:0 "選択した相手：§Y[event_target:nep_arena_target_1.GetName]§!，評価：§Rランク S§!，戦勝奨励：10000 $energy$,アナウンス収益：210 $influence$,99999 $unity$"
+ 
+ nep_ar.2002.desc.g:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：ランク G，戦勝奨励：1000 $energy$,アナウンス収益：5 $influence$,1000 $unity$"
+ nep_ar.2002.desc.f:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Gランク F§!，戦勝奨励：2000 $energy$,アナウンス収益：10 $influence$,2000 $unity$"
+ nep_ar.2002.desc.e:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Gランク E§!，戦勝奨励：3000 $energy$,アナウンス収益：20 $influence$,4000 $unity$"
+ nep_ar.2002.desc.d:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Gランク D§!，戦勝奨励：4000 $energy$,アナウンス収益：30 $influence$,8000 $unity$"
+ nep_ar.2002.desc.c:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Yランク C§!，戦勝奨励：5000 $energy$,アナウンス収益：50 $influence$,16000 $unity$"
+ nep_ar.2002.desc.b:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Yランク B§!，戦勝奨励：6000 $energy$,アナウンス収益：80 $influence$,32000 $unity$"
+ nep_ar.2002.desc.a:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Yランク A§!，戦勝奨励：7000 $energy$,アナウンス収益：130 $influence$,64000 $unity$"
+ nep_ar.2002.desc.s:0 "選択した相手：§Y[event_target:nep_arena_target_2.GetName]§!，評価：§Rランク S§!，戦勝奨励：10000 $energy$,アナウンス収益：210 $influence$,99999 $unity$"
+ 
+ nep_ar.2003.desc.g:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：ランク G，戦勝奨励：1000 $energy$,アナウンス収益：5 $influence$,1000 $unity$"
+ nep_ar.2003.desc.f:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク F§!，戦勝奨励：2000 $energy$,アナウンス収益：10 $influence$,2000 $unity$"
+ nep_ar.2003.desc.e:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク E§!，戦勝奨励：3000 $energy$,アナウンス収益：20 $influence$,4000 $unity$"
+ nep_ar.2003.desc.d:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク D§!，戦勝奨励：4000 $energy$,アナウンス収益：30 $influence$,8000 $unity$"
+ nep_ar.2003.desc.c:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク C§!，戦勝奨励：5000 $energy$,アナウンス収益：50 $influence$,16000 $unity$"
+ nep_ar.2003.desc.b:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク B§!，戦勝奨励：6000 $energy$,アナウンス収益：80 $influence$,32000 $unity$"
+ nep_ar.2003.desc.a:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク A§!，戦勝奨励：7000 $energy$,アナウンス収益：130 $influence$,64000 $unity$"
+ nep_ar.2003.desc.s:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Rランク S§!，戦勝奨励：10000 $energy$,アナウンス収益：210 $influence$,99999 $unity$"
+ 
+ nep_ar.2004.desc.g:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：ランク G，戦勝奨励：1000 $energy$,アナウンス収益：5 $influence$,1000 $unity$"
+ nep_ar.2004.desc.f:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク F§!，戦勝奨励：2000 $energy$,アナウンス収益：10 $influence$,2000 $unity$"
+ nep_ar.2004.desc.e:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク E§!，戦勝奨励：3000 $energy$,アナウンス収益：20 $influence$,4000 $unity$"
+ nep_ar.2004.desc.d:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Gランク D§!，戦勝奨励：4000 $energy$,アナウンス収益：30 $influence$,8000 $unity$"
+ nep_ar.2004.desc.c:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク C§!，戦勝奨励：5000 $energy$,アナウンス収益：50 $influence$,16000 $unity$"
+ nep_ar.2004.desc.b:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク B§!，戦勝奨励：6000 $energy$,アナウンス収益：80 $influence$,32000 $unity$"
+ nep_ar.2004.desc.a:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Yランク A§!，戦勝奨励：7000 $energy$,アナウンス収益：130 $influence$,64000 $unity$"
+ nep_ar.2004.desc.s:0 "選択した相手：§Y[event_target:nep_arena_target_4.GetName]§!，評価：§Rランク S§!，戦勝奨励：10000 $energy$,アナウンス収益：210 $influence$,99999 $unity$"
+ 
+ nep_ar.300.desc:0 "紳士淑女の皆さん！男の子と女の子！岩と植物！このシーズンの試合は...§Y[event_target:caravaneer_home_country.GetName]§!によってもたらされます！何か、何でも買いたいなら、§Y[event_target:caravaneer_home_country.GetName]§!を選んでください！このコーナーでは、挑戦者の§Y[event_target:nep_arena_challenger_fleet.GetName]§!,艦隊パワー §Y[event_target:nep_arena_challenger_fleet.nep_challenger_fleet_power]§!で、銀河系から闘技場に来たばかり！そしてこのコーナーには...艦隊パワー§Y[event_target:nep_arena_target_fleet.nep_target_fleet_power]§!、あなたは彼を知っている、あなたは彼を愛している...§Y[event_target:nep_arena_target_fleet.GetName]§!!では、早速ですが......ビームをはじく準備をしよう!"
+ nep_ar.300.a:0 "レッツロック！"
+ 
+ nep_ar.3002.desc.a:0 "そして、ウィィィィンナーは...全艦隊の撃破により...§Y[event_target:nep_arena_challenger_fleet.GetName]§!!これは賞品です!"
+ nep_ar.3002.desc.b:0 "そして、ウィィィィンナーは...高撃墜得点で...§Y[event_target:nep_arena_challenger_fleet.GetName]§!!これは賞品です!"
+ nep_ar.3003.desc.a:0 "そして、ウィィィィンナーとは...全艦隊の撃破により...§Y[event_target:nep_arena_target_fleet.GetName]§!!残念でした、次回もよろしくお願いします!"
+ nep_ar.3003.desc.b:0 "そして、ウィィィィンナーは...高撃墜得点で...§Y[event_target:nep_arena_target_fleet.GetName]§!!残念でした、次回もよろしくお願いします!"
+  
+ d_nep_Auriel_moon_1:0 "Auriel Moon"
+ d_nep_Auriel_moon_2:0 "Auriel Moon" 
+ d_nep_Gabriel_moon_1:0 "Gabriel Moon"
+ d_nep_Gabriel_moon_2:0 "Gabriel Moon" 
+ d_nep_Sabriel_moon_1:0 "Sabriel Moon"
+ d_nep_Sabriel_moon_2:0 "Sabriel Moon"
+ d_nep_Samuel_moon_2:0 "Samuel Moon"
+ d_nep_Samuel_moon_1:0 "Samuel Moon"
+ d_nep_Michael_moon_2:0 "Michael Moon"
+ d_nep_Michael_moon_1:0 "Michael Moon"
+ d_nep_Jauial_moon_2:0 "Jauial Moon"
+ d_nep_Jauial_moon_1:0 "Jauial Moon"
+ d_nep_Anael_moon_1:0 "Anael Moon"
+ d_nep_Anael_moon_2:0 "Anael Moon"
+ 
+ d_nep_broken_seal_1:0 "Broken Seal 1"
+ d_nep_broken_seal_2:0 "Broken Seal 2"
+ d_nep_broken_seal_3:0 "Broken Seal 3"
+ 
+ nep_caravaneer_gate_mega:0 "行商人付属オフィス通路"
+ nep_caravaneer_gate_mega_DESC:0 "行商人組織の付属事務室への通路、1つの事務室が1つの銀河と1つの星門を占有して、お金があればわがままだ！"
+ nep_caravaneer_gate_mega_MEGASTRUCTURE_DETAILS:0 "行商人組織の付属事務室への通路、1つの事務室が1つの銀河と1つの星門を占有して、お金があればわがままだ！"
+ 
+ nep_arena_gate_mega:0 "闘技場ゲート"
+ nep_arena_gate_mega_DESC:0 "闘技場ゲート。ゲートといっても、実際には星門だ。"
+ nep_arena_gate_mega_MEGASTRUCTURE_DETAILS:0 "闘技場ゲート。ゲートといっても、実際には星門だ。"
+ 
+ nep_heptagram_origin:0 "七角形崇拝"
+ nep_heptagram_origin_desc:0 "七角形を崇拝するといっても、ゲームに実質的な影響はありません。"
+ civic_tooltip_nep_heptagram_origin_effects:0 "七角形星団にゲームを開始する。宇宙全体で観測できるのは彼らだけの特殊な天体の長期的な観測のため、テクノロジー£physics£§Y$tech_sealportal_dive§!を研究可能です、他の星系に移動するために。"
+ 
+ CAN_TAKE_HOSTILE_ACTION_NEP_HOLOGRAM:0 "なぜ立体映像を攻撃するのですか。"
+ 
+ NAME_nep_bounty_office:0 "懸賞事務所"
+ 
+ NAME_nep_arena_hologram:0 "立体映像"
+ NAME_nep_arena_target:0 "ガード"
+ NAME_nep_arena_challenger:0 "チャレンジャー"
+ 
+ NAME_nep_arena_office:0 "闘技場事務所"
+ NAME_nep_arena:0 "闘技場"
+ 
+ NAME_nep_your_eyes:0 "あなたの目"
+ 
+ NEP_CARAVANEER_GATE:0 "行商人付属オフィス通路"
+ NEP_CARAVANEER_GATE_DESC:0 "行商人付属オフィス通路"
+ 
+ NEP_CARAVANEER_GATE:0 "闘技場ゲート"
+ NEP_CARAVANEER_GATE_DESC:0 "闘技場ゲート"
+ 
+ NEP_ARENA_NOT_REGISTERED:0 "まず闘技場受付で登録してください。"
+ 

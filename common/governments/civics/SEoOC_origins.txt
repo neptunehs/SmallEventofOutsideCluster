@@ -42,8 +42,8 @@ origin_nep_deus_ex_machina = {
 nep_heptagram_origin = {
 
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/origin_nep_deus_ex_machina.dds"
-	picture = GFX_origin_nep_deus_ex_machina
+	icon = "gfx/interface/icons/origins/unused/origins_eldest_sibling.dds"
+	picture = GFX_origin_nep_heptagram_origin
 
 	advanced_start = yes
 

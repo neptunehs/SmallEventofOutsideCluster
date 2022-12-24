@@ -901,10 +901,7 @@ nep_bounty_hologram = {
 	modules = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
-		tiered_technology_module = {
-			tier = 3
-			rare = no
-		}
+		all_technology_module = {}
 		standard_event_module = {}
 	}
 }
@@ -969,10 +966,7 @@ nep_arena_hologram = {
 	modules = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
-		tiered_technology_module = {
-			tier = 3
-			rare = no
-		}
+		all_technology_module = {}
 		standard_event_module = {}
 	}
 }
@@ -1001,10 +995,7 @@ nep_arena_challenger = {
 	modules = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
-		tiered_technology_module = {
-			tier = 3
-			rare = no
-		}
+		all_technology_module = {}
 		standard_event_module = {}
 	}
 }
@@ -1033,10 +1024,7 @@ nep_arena_target = {
 	modules = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
-		tiered_technology_module = {
-			tier = 3
-			rare = no
-		}
+		all_technology_module = {}
 		standard_event_module = {}
 	}
 }

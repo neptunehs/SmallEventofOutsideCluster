@@ -463,6 +463,11 @@ country_event = {
 	immediate = {
 		create_fleet = {
 			name = "Krah'en Invader"
+			settings = {
+				spawn_debris = no 
+				can_change_leader = no
+				uses_naval_capacity = no
+			}
 			effect = {		
 				set_owner = root
 				while = {
@@ -474,6 +479,45 @@ country_event = {
 				}
 				set_location = {
 					target = root.capital_scope
+					distance = 150
+					angle = random
+				}
+				set_formation_scale = 2.0
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+				set_fleet_bombardment_stance = armageddon
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_test.9000
+    hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+		create_fleet = {
+			name = "Krah'en Invader"
+			settings = {
+				spawn_debris = no 
+				can_change_leader = no
+				uses_naval_capacity = no
+			}
+			effect = {		
+				set_owner = root.owner
+				while = {
+					count = 60
+					create_ship = {
+						name = "Krah'en Invader"
+						design = "NAME_Krahen_Battleship"
+					}
+				}
+				set_location = {
+					target = root
 					distance = 150
 					angle = random
 				}

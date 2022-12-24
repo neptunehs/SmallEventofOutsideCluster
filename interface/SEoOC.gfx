@@ -165,5 +165,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/origins/origin_nep_deus_ex_machina.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_origin_nep_heptagram_origin"
+		texturefile = "gfx/event_pictures/origins/origin_nep_heptagram_origin.dds"
+		alwaystransparent = yes
+	}
 }
 

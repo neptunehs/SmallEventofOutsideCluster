@@ -283,7 +283,7 @@ nep_bounty_office_init = {
 		has_ring = no
 		init_effect = {
 			create_country = {
-				name = "NAME_Caravaneer_Home"
+				name = "NAME_nep_bounty_office"
 				type = nep_bounty_office
 				authority = auth_corporate
 				civics = {
@@ -301,7 +301,7 @@ nep_bounty_office_init = {
 						file = "triangle_split.dds"
 					}
 					colors={
-						"green"
+						"blue"
 						"dark_green"
 						"null"
 						"null"
@@ -316,6 +316,8 @@ nep_bounty_office_init = {
 				
 				effect = {
 					save_global_event_target_as = nep_bounty_office_country
+					create_ship_design = { design = "NAME_Caravaneer_Starbase" }
+					add_ship_design = last_created_design
 					create_fleet = {
 						name = "NAME_Caravaneer_Coalition_Base"
 						settings = { spawn_debris = no }
@@ -415,7 +417,7 @@ nep_arena_office_init = {
 		has_ring = no
 		init_effect = {
 			create_country = {
-				name = "NAME_Caravaneer_Home"
+				name = "NAME_nep_arena_office"
 				type = nep_arena_office
 				authority = auth_corporate
 				civics = {
@@ -433,7 +435,7 @@ nep_arena_office_init = {
 						file = "triangle_split.dds"
 					}
 					colors={
-						"green"
+						"red"
 						"dark_green"
 						"null"
 						"null"
@@ -448,6 +450,8 @@ nep_arena_office_init = {
 				
 				effect = {
 					save_global_event_target_as = nep_arena_office_country
+					create_ship_design = { design = "NAME_Caravaneer_Starbase" }
+					add_ship_design = last_created_design
 					create_fleet = {
 						name = "NAME_Caravaneer_Coalition_Base"
 						settings = { spawn_debris = no }
@@ -529,15 +533,15 @@ nep_arena_office_init = {
 }
 
 nep_arena_init = {
-	class = "rl_starting_stars"	
-	usage = misc_system_init
+	name = "NAME_nep_arena"
+	class = sc_black_hole
+	flags = { nep_arena }
 	usage_odds = 0
 	max_instances = 1
-	spawn_chance = 0
-	class = "sc_arena"
-	flags = { nep_arena }
+	spawn_chance = 0	
 	
 	planet = {
+		name = " "
 		class = "pc_star_void_dummy_01"
 		orbit_distance = 0
 		orbit_angle = 0
@@ -551,6 +555,7 @@ nep_arena_init = {
 	}
 
 	planet = {
+		name = " "
 		class = "pc_pos_void_dummy"
 		orbit_distance = 125
 		orbit_angle = 0
@@ -567,6 +572,7 @@ nep_arena_init = {
 	change_orbit = -125
 
 	planet = {
+		name = " "
 		class = "pc_pos_void_dummy"
 		orbit_distance = 125
 		orbit_angle = 60
@@ -583,6 +589,7 @@ nep_arena_init = {
 	change_orbit = -125
 
 	planet = {
+		name = " "
 		class = "pc_pos_void_dummy"
 		orbit_distance = 125
 		orbit_angle = 75
@@ -599,6 +606,7 @@ nep_arena_init = {
 	change_orbit = -125
 
 	planet = {
+		name = " "
 		class = "pc_pos_void_dummy"
 		orbit_distance = 125
 		orbit_angle = 90
@@ -611,9 +619,10 @@ nep_arena_init = {
 			save_global_event_target_as = nep_arena_target_pos_3
 		}
 	}
-change_orbit = -125
+	change_orbit = -125
 
 	planet = {
+		name = " "
 		class = "pc_pos_void_dummy"
 		orbit_distance = 125
 		orbit_angle = 105
@@ -625,5 +634,9 @@ change_orbit = -125
 			clear_deposits = yes
 			save_global_event_target_as = nep_arena_target_pos_4
 		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = nep_arena_system
 	}
 }

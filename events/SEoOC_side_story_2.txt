@@ -3949,7 +3949,11 @@ country_event = {
 	fire_only_once = yes
 	
 	immediate = {
-		country_event = { id = nep_bo.1 days = 5 }
+		if = { 
+			limit = { is_multiplayer = no } 
+			#country_event = { id = nep_bo.1 days = 5 }
+			country_event = { id = nep_ar.1 days = 5 }
+		}
 	}
 }
 
@@ -3992,7 +3996,6 @@ country_event = {
 				orbit_angle = 360		# range of the randomization
 			}
 		}
-		country_event = { id = nep_ar.1 }
 	}
 }
 
@@ -4103,6 +4106,11 @@ country_event = {
 	immediate = {		
 		establish_communications_no_message = event_target:nep_arena_office_country
 		from = { establish_communications_no_message = event_target:nep_arena_office_country }
+		if = {
+			limit = { exists = event_target:nep_arena_hologram }
+			establish_communications_no_message = event_target:nep_arena_hologram
+			from = { establish_communications_no_message = event_target:nep_arena_hologram }
+		}
 	}
 }
 
@@ -4119,32 +4127,62 @@ event = {
 	
 	immediate = {
 		random_system = {
-			limit = { has_star_flag = nep_arena}			
+			limit = { has_star_flag = nep_arena }			
 			if = { 
 				limit = { 
 					any_fleet_in_system = { 
 						NOR = {
-							is_same_value = event_target:nep_arena_target_1
-							is_same_value = event_target:nep_arena_target_2
-							is_same_value = event_target:nep_arena_target_3
-							is_same_value = event_target:nep_arena_target_4
+							has_fleet_flag = nep_arena_target_1
+							has_fleet_flag = nep_arena_target_2
+							has_fleet_flag = nep_arena_target_3
+							has_fleet_flag = nep_arena_target_4
 						}
 					}
 				}
 				event_target:caravaneer_home_country = { country_event = { id = nep_ar.1002 days = 180 } }
 			}
 			else = {
-				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
-				nep_create_enemy_1 = yes
-				nep_create_enemy_2 = yes
-				nep_create_enemy_3 = yes
-				nep_create_enemy_4 = yes
+				if = {
+					limit = { NOT = { exists = event_target:nep_arena_hologram } }
+					create_country = {
+						name = "NAME_nep_arena_hologram"
+						type = nep_arena_hologram
+						effect = {
+							save_global_event_target_as = nep_arena_hologram
+							every_country = {
+								limit = { has_communications = event_target:caravaneer_home_country }
+								establish_communications_no_message = event_target:caravaneer_home_country
+							}
+						}
+					}
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_1 }
+					delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_2 }
+					delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_3 }
+					delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_4 }
+					delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+				}
+				system_event = { id = nep_ar.4001 } #nep_create_enemy_1 = yes
+				system_event = { id = nep_ar.4002 } #nep_create_enemy_2 = yes
+				system_event = { id = nep_ar.4003 } #nep_create_enemy_3 = yes
+				system_event = { id = nep_ar.4004 } #nep_create_enemy_4 = yes
 				every_country = {
 					limit = { has_country_flag = nep_arena_registered }
 					country_event = { id = nep_ar.1003 } 
+				}
+				every_country = {
+					limit = { has_country_flag = nep_arena_challenged }
+					country_event = { id = nep_ar.1004 } 
 				}
 			}
 		}
@@ -4169,27 +4207,57 @@ country_event = {
 				limit = { 
 					any_fleet_in_system = { 
 						NOR = {
-							is_same_value = event_target:nep_arena_target_1
-							is_same_value = event_target:nep_arena_target_2
-							is_same_value = event_target:nep_arena_target_3
-							is_same_value = event_target:nep_arena_target_4
+							has_fleet_flag = nep_arena_target_1
+							has_fleet_flag = nep_arena_target_2
+							has_fleet_flag = nep_arena_target_3
+							has_fleet_flag = nep_arena_target_4
 						}
 					}
 				}
 				event_target:caravaneer_home_country = { country_event = { id = nep_ar.1002 days = 180 } }
 			}
 			else = {
-				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
-				delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
-				nep_create_enemy_1 = yes
-				nep_create_enemy_2 = yes
-				nep_create_enemy_3 = yes
-				nep_create_enemy_4 = yes
+				if = {
+					limit = { NOT = { exists = event_target:nep_arena_hologram } }
+					create_country = {
+						name = "NAME_nep_arena_hologram"
+						type = nep_arena_hologram
+						effect = {
+							save_global_event_target_as = nep_arena_hologram
+							every_country = {
+								limit = { has_communications = event_target:caravaneer_home_country }
+								establish_communications_no_message = event_target:caravaneer_home_country
+							}
+						}
+					}
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_1 }
+					delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_2 }
+					delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_3 }
+					delete_fleet = { target = event_target:nep_arena_target_3 destroy_template = yes }
+				}
+				if = { 
+					limit = { exists = event_target:nep_arena_target_4 }
+					delete_fleet = { target = event_target:nep_arena_target_4 destroy_template = yes }
+				}
+				system_event = { id = nep_ar.4001 } #nep_create_enemy_1 = yes
+				system_event = { id = nep_ar.4002 } #nep_create_enemy_2 = yes
+				system_event = { id = nep_ar.4003 } #nep_create_enemy_3 = yes
+				system_event = { id = nep_ar.4004 } #nep_create_enemy_4 = yes
 				every_country = {
 					limit = { has_country_flag = nep_arena_registered }
 					country_event = { id = nep_ar.1003 } 
+				}
+				every_country = {
+					limit = { has_country_flag = nep_arena_challenged }
+					country_event = { id = nep_ar.1004 } 
 				}
 			}
 		}
@@ -4198,14 +4266,42 @@ country_event = {
 
 country_event = {
 	id = nep_ar.1003
-	title = cara_home_main.title
+	title = cara_nep_arena_office.title
 	custom_gui = "enclave_caravaneer_window"
 	desc = nep_ar.1003.desc
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
 	
 	diplomatic = yes
 	is_triggered_only = yes
 	
 	immediate = { remove_country_flag = nep_arena_registered }
+	
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
+	id = nep_ar.1004
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = nep_ar.1004.desc
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	immediate = { remove_country_flag = nep_arena_challenged }
 	
 	option = {
 		name = OK
@@ -4223,6 +4319,12 @@ country_event = {
 	desc = {
 		trigger = { NOT = { has_global_flag = nep_arena_battleing } }
 		text = nep_ar.2.desc.b
+	}
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
 	}
 	
 	diplomatic = yes
@@ -4296,6 +4398,7 @@ country_event = {
 	
 	option = {
 		name = fedel.501.e
+		default_hide_option = yes
 	}
 }
 
@@ -4352,6 +4455,12 @@ country_event = {
 		text = nep_ar.2001.desc.s
 	}	
 	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
 	diplomatic = yes
 	is_triggered_only = yes
 
@@ -4359,6 +4468,7 @@ country_event = {
 		name = nep_ar.2.a
 		hidden_effect = {
 			set_country_flag = nep_arena_registered
+			set_visited = event_target:nep_arena_system
 			if = {
 				limit = { exists = event_target:nep_arena_target_2 }
 				delete_fleet = { target = event_target:nep_arena_target_2 destroy_template = yes }
@@ -4376,6 +4486,7 @@ country_event = {
 	
 	option = {
 		name = fedel.501.e
+		default_hide_option = yes
 	}
 }
 
@@ -4432,6 +4543,12 @@ country_event = {
 		text = nep_ar.2002.desc.s
 	}
 	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
 	diplomatic = yes
 	is_triggered_only = yes
 
@@ -4439,6 +4556,7 @@ country_event = {
 		name = nep_ar.2.a
 		hidden_effect = {
 			set_country_flag = nep_arena_registered
+			set_visited = event_target:nep_arena_system
 			if = {
 				limit = { exists = event_target:nep_arena_target_1 }
 				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
@@ -4456,6 +4574,7 @@ country_event = {
 	
 	option = {
 		name = fedel.501.e
+		default_hide_option = yes
 	}
 }
 
@@ -4512,6 +4631,12 @@ country_event = {
 		text = nep_ar.2003.desc.s
 	}
 	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
 	diplomatic = yes
 	is_triggered_only = yes
 
@@ -4519,6 +4644,7 @@ country_event = {
 		name = nep_ar.2.a
 		hidden_effect = {
 			set_country_flag = nep_arena_registered
+			set_visited = event_target:nep_arena_system
 			if = {
 				limit = { exists = event_target:nep_arena_target_1 }
 				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
@@ -4536,6 +4662,7 @@ country_event = {
 	
 	option = {
 		name = fedel.501.e
+		default_hide_option = yes
 	}
 }
 
@@ -4592,6 +4719,12 @@ country_event = {
 		text = nep_ar.2004.desc.s
 	}
 	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
 	diplomatic = yes
 	is_triggered_only = yes
 
@@ -4599,6 +4732,7 @@ country_event = {
 		name = nep_ar.2.a
 		hidden_effect = {			
 			set_country_flag = nep_arena_registered
+			set_visited = event_target:nep_arena_system
 			if = {
 				limit = { exists = event_target:nep_arena_target_1 }
 				delete_fleet = { target = event_target:nep_arena_target_1 destroy_template = yes }
@@ -4616,6 +4750,7 @@ country_event = {
 	
 	option = {
 		name = fedel.501.e
+		default_hide_option = yes
 	}
 }
 
@@ -4628,6 +4763,7 @@ fleet_event = {
 	immediate = {
 		owner = { 
 			remove_country_flag = nep_arena_registered
+			set_country_flag = nep_arena_challenged
 			save_event_target_as = nep_ar_3_temp
 			set_country_flag = nep_arena_entered
 		}
@@ -4640,26 +4776,45 @@ fleet_event = {
 					save_global_event_target_as = nep_arena_challenger_fleet
 					set_variable = { which = nep_challenger_fleet_power value = trigger:fleet_power }
 				}
+				every_playable_country = {
+					establish_communications_no_message = prev
+				}
 			}
 		}
-		solar_system = {
-			random_fleet_in_system = {
-				limit = { owner = { NOT = { is_country_type = nep_arena_challenger } } }
-				create_country = {
-					name = "NAME_nep_arena_target"
-					type = nep_arena_target
-					effect = {
-						prev = { 
-							set_owner = prev 
-							save_global_event_target_as = nep_arena_target_fleet
-							#set_variable = { which = nep_target_fleet_power value = trigger:fleet_power }
-						}
+		random_galaxy_fleet = {
+			limit = { owner = { is_country_type = nep_arena_hologram } }
+			create_fleet = {
+				name = "NAME_nep_your_eyes"
+				effect = {
+					set_owner = event_target:nep_ar_3_temp
+					create_ship = {
+						name = "NAME_nep_your_eyes"
+						random_existing_design = science
+						graphical_culture = event_target:caravaneer_home_country
+					}
+					save_global_event_target_as = nep_your_eyes
+					set_location = event_target:nep_arena_target_pos_1
+					set_event_locked = yes
+				}
+			}
+			create_country = {
+				name = "NAME_nep_arena_target"
+				type = nep_arena_target
+				effect = {
+					prev = { 
+						set_owner = prev 
+						save_global_event_target_as = nep_arena_target_fleet
+						set_variable = { which = nep_target_fleet_power value = trigger:fleet_power }
+					}					
+					every_playable_country = {
+						establish_communications_no_message = prev
 					}
 				}
 			}
 		}
 		set_global_flag = nep_arena_battleing
-		event_target:nep_target_fleet_power = {
+		fleet_event = { id = nep_ar.30 days = 5 }
+		event_target:nep_arena_target_fleet = {
 			switch = {
 				trigger = has_fleet_flag
 				nep_rank_G = {
@@ -4688,10 +4843,51 @@ fleet_event = {
 				}
 			}
 		}
+		event_target:nep_ar_3_temp = { country_event = { id = nep_ar.300 } }
 		fleet_event = { id = nep_ar.3001 days = 90 }
 	}
 }
 
+fleet_event = {
+	id = nep_ar.30
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:nep_arena_challenger_fleet = {
+			auto_follow_fleet = {
+				target = event_target:nep_arena_target_fleet
+				attack_fleet = yes
+			}
+		}
+		event_target:nep_arena_target_fleet = {
+			auto_follow_fleet = {
+				target = event_target:nep_arena_challenger_fleet
+				attack_fleet = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nep_ar.300
+	title = cara_nep_arena_office.title
+	custom_gui = "enclave_caravaneer_window"
+	desc = nep_ar.300.desc
+	location = event_target:nep_arena_system
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
+	}
+	
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	option = { name = nep_ar.300.a }
+}
 
 country_event = {
 	id = nep_ar.3000
@@ -4769,11 +4965,17 @@ country_event = {
 			hidden:from = {
 				switch = {
 					trigger = is_scope_type
-					fleet = { text = nep_ar.3002.desc.a }
-					country = { text = nep_ar.3002.desc.b }
+					country = { text = nep_ar.3002.desc.a }
+					fleet = { text = nep_ar.3002.desc.b }
 				}
 			}
 		}
+	}
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
 	}
 	
 	diplomatic = yes
@@ -4784,7 +4986,18 @@ country_event = {
 		remove_country_flag = nep_arena_entered
 		if = {
 			limit = { exists = event_target:nep_arena_challenger_fleet }
-			event_target:nep_arena_challenger_fleet = { set_owner = root }
+			event_target:nep_arena_challenger_fleet = { 
+				set_owner = root 
+				set_location = event_target:nep_arena_office_station
+			}
+		}
+		if = {
+			limit = { exists = event_target:nep_arena_target_fleet }
+			event_target:nep_arena_target_fleet = { delete_fleet = { target = this destroy_template = yes } }
+		}
+		if = {
+			limit = { exists = event_target:nep_your_eyes }
+			event_target:nep_your_eyes = { delete_fleet = { target = this destroy_template = yes } }
 		}
 	}
 
@@ -4902,11 +5115,17 @@ country_event = {
 			hidden:from = {
 				switch = {
 					trigger = is_scope_type
-					fleet = { text = nep_ar.3003.desc.a }
-					country = { text = nep_ar.3003.desc.b }
+					country = { text = nep_ar.3003.desc.a }
+					fleet = { text = nep_ar.3003.desc.b }
 				}
 			}
 		}
+	}
+	
+	picture_event_data = {
+		portrait = event_target:caravaneer_home_country
+		room = caravaneer_home_room
+		planet_background = pc_city
 	}
 	
 	diplomatic = yes
@@ -4917,7 +5136,18 @@ country_event = {
 		remove_country_flag = nep_arena_entered
 		if = {
 			limit = { exists = event_target:nep_arena_challenger_fleet }
-			event_target:nep_arena_challenger_fleet = { set_owner = root }
+			event_target:nep_arena_challenger_fleet = { 
+				set_owner = root 
+				set_location = event_target:nep_arena_office_station
+			}
+		}
+		if = {
+			limit = { exists = event_target:nep_arena_target_fleet }
+			event_target:nep_arena_target_fleet = { delete_fleet = { target = this destroy_template = yes } }
+		}
+		if = {
+			limit = { exists = event_target:nep_your_eyes }
+			event_target:nep_your_eyes = { delete_fleet = { target = this destroy_template = yes } }
 		}
 	}
 	
@@ -4933,5 +5163,1884 @@ country_event = {
 			remove_country_flag = nep_rank_F
 			remove_country_flag = nep_rank_G
 		}
+	}
+}
+
+#Fxxk you scripted effect,move enemy create effect to events
+system_event = {
+	id = nep_ar.4001 #nep_create_enemy_1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40012 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40012 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed }									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40012 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40012 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40012 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40012 } } }
+			} 
+			1 = {#double and not delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 3 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40012 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40012 } } }
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = {
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_1
+					save_global_event_target_as = nep_arena_target_1 
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40012 #nep_create_enemy_1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40013 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40013 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed }									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40013 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40013 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40013 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40013 } } }
+			} 
+			1 = {#double and not delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40013 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40013 } } }
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_1
+					save_global_event_target_as = nep_arena_target_1 
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40013 #nep_create_enemy_1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40014 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40014 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed }									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40014 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40014 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40014 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40014 } } }
+			} 
+			1 = {#double and not delete some ship
+				if = {
+					limit = {
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 3
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_1
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40014 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40014 } } }
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_1
+					save_global_event_target_as = nep_arena_target_1 
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40014 #nep_create_enemy_4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_1
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40014 } } }
+					}
+				}
+			}
+			3 = {  #not delete
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_1
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40014 } } }
+					}
+				}
+			}
+			2 = { #double and delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_1
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40014 } } }
+					}
+				}
+			} 
+			1 = {#double and not delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes					
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_1
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40014 } } }
+					}
+				}
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_1
+					save_global_event_target_as = nep_arena_target_1
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.4002 #nep_create_enemy_2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 2
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40023 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40023 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 2
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40023 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40023 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 2
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40023 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40023 } } }
+			} 
+			1 = {#double and not delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 2
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40023 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40023 } } }
+			} 
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_2
+					save_global_event_target_as = nep_arena_target_2
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40023 #nep_create_enemy_3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40024 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40024 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40024 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40024 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+									else = { root = { system_event = { id = nep_ar.40024 } } }
+								}
+							}
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40024 } } }
+			}
+			1 = {#double and not delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_2
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40024 } }  }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40024 } }  }
+			} 
+		}
+		if = {
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_2
+					save_global_event_target_as = nep_arena_target_2
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40024 #nep_create_enemy_4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_2
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40024 } } }
+					}
+				}
+			}
+			3 = {  #not delete
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_2
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40024 } } }
+					}
+				}
+			}
+			2 = { #double and delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_2
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40024 } } }
+					}
+				}
+			} 
+			1 = {#double and not delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes					
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_2
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40024 } } }
+					}
+				}
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_2
+					save_global_event_target_as = nep_arena_target_2
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.4003 #nep_create_enemy_3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_3
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40034 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40034 } } }
+			}
+			3 = {  #not delete
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_3
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40034 } } }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40034 } } }
+			}
+			2 = { #double and delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_3
+									if = {
+										limit = {
+											num_ships > 1
+										}
+										every_owned_ship = {
+											random_list = {
+												10 = { delete_ship = this }
+												35 = { }
+											}
+										}
+									}
+									else = { root = { system_event = { id = nep_ar.40034 } } }
+								}
+							}
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40034 } } }
+			}
+			1 = {#double and not delete some ship
+				if = {
+					limit = { 
+						any_country = {
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 1 }
+						}
+					}
+					random_country = {
+						limit = { 
+							fleet_power > 1 
+							count_owned_fleet = { limit = { is_ship_class = shipclass_military } count > 2 }
+						}
+						ordered_controlled_fleet = {
+							limit = {
+								is_ship_class = shipclass_military
+							}
+							position = 1
+							order_by = trigger:fleet_power
+							fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+							if = { 
+								limit = { 
+									NOT = { has_global_flag = nep_copy_fleet_failed } 									
+									exists = event_target:nep_copy_fleet_temp_fleet
+								}
+								event_target:nep_copy_fleet_temp_fleet = {
+									set_owner = event_target:nep_arena_hologram
+									set_location = event_target:nep_arena_target_pos_3
+								}
+							}
+							else = { root = { system_event = { id = nep_ar.40034 } }  }
+						}
+					}
+				}
+				else = { root = { system_event = { id = nep_ar.40034 } }  }
+			} 
+		}
+		if = {
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_3
+					save_global_event_target_as = nep_arena_target_3
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.40034 #nep_create_enemy_4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_3
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40034 } } }
+					}
+				}
+			}
+			3 = {  #not delete
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_3
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40034 } } }
+					}
+				}
+			}
+			2 = { #double and delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_3
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40034 } } }
+					}
+				}
+			} 
+			1 = {#double and not delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes					
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_3
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.40034 } } }
+					}
+				}
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_3
+					save_global_event_target_as = nep_arena_target_3
+				}
+			}
+		}
+	}
+}
+
+system_event = {
+	id = nep_ar.4004 #nep_create_enemy_4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		random_list = {
+			4 = { #delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_4
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.4004 } } }
+					}
+				}
+			}
+			3 = {  #not delete
+				random_country = {
+					limit = { 
+						fleet_power > 1 
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4011 } #nep_copy_fleet = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_4
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.4004 } } }
+					}
+				}
+			}
+			2 = { #double and delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_4
+								if = {
+									limit = {
+										num_ships > 1
+									}
+									every_owned_ship = {
+										random_list = {
+											10 = { delete_ship = this }
+											35 = { }
+										}
+									}
+								}
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.4004 } } }
+					}
+				}
+			} 
+			1 = {#double and not delete some ship
+				random_country = {
+					limit = { 
+						fleet_power > 1
+					}
+					ordered_controlled_fleet = {
+						limit = {
+							is_ship_class = shipclass_military
+						}
+						position = 0
+						order_by = trigger:fleet_power
+						fleet_event = { id = nep_ar.4012 } #nep_copy_fleet_2 = yes					
+						if = { 
+							limit = { 
+								NOT = { has_global_flag = nep_copy_fleet_failed } 									
+								exists = event_target:nep_copy_fleet_temp_fleet
+							}
+							event_target:nep_copy_fleet_temp_fleet = {
+								set_owner = event_target:nep_arena_hologram
+								set_location = event_target:nep_arena_target_pos_4
+							}
+						}
+						else = { root = { system_event = { id = nep_ar.4004 } } }
+					}
+				}
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = nep_copy_fleet_failed } }
+			event_target:nep_copy_fleet_temp_fleet = { 
+				if = {
+					limit = { fleet_power < 200 }
+					destroy_fleet = this
+				}
+				else_if = {
+					limit = { exists = this }
+					set_fleet_flag = nep_arena_target_4
+					save_global_event_target_as = nep_arena_target_4
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = nep_ar.4011 #nep_copy_fleet
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes	
+		if = { 
+			limit = { has_global_flag = nep_copy_fleet_failed }
+			remove_global_flag = nep_copy_fleet_failed
+		}
+		if = {
+			limit = {		
+				exists = root
+				is_scope_valid = yes
+			}
+			create_fleet = {
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					uses_naval_capacity = no
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = root.owner
+					prev = {
+						every_owned_ship = {
+							save_event_target_as = nep_copy_fleet_temp
+							prevprev = {					
+								create_ship = {
+									name = random
+									design = event_target:nep_copy_fleet_temp
+								}
+							}
+						}
+					}
+					save_event_target_as = nep_copy_fleet_temp_fleet
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:nep_copy_fleet_temp_fleet }
+				}
+				set_global_flag = nep_copy_fleet_failed
+			}
+		}
+		else = { set_global_flag = nep_copy_fleet_failed }
+	}
+}
+
+fleet_event = {
+	id = nep_ar.4012 #nep_copy_fleet_2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# print_scope_effect = yes
+		if = { 
+			limit = { has_global_flag = nep_copy_fleet_failed }
+			remove_global_flag = nep_copy_fleet_failed
+		}
+		if = {
+			limit = {		
+				exists = root
+				is_scope_valid = yes
+			}
+			create_fleet = {
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					uses_naval_capacity = no
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = root.owner
+					prev = {
+						every_owned_ship = {
+							save_event_target_as = nep_copy_fleet_temp
+							prevprev = {
+								create_ship = {
+									name = random
+									design = event_target:nep_copy_fleet_temp
+								}
+								create_ship = {
+									name = random
+									design = event_target:nep_copy_fleet_temp
+								}
+							}
+						}
+					}			
+					save_event_target_as = nep_copy_fleet_temp_fleet
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:nep_copy_fleet_temp_fleet }
+				}
+				set_global_flag = nep_copy_fleet_failed
+			}
+		}
+		else = { set_global_flag = nep_copy_fleet_failed }
 	}
 }

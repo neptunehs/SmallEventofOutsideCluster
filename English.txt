@@ -14,13 +14,14 @@ events:
 Side story:
 anomaly:
 1.War of Heaven(Primitive)
-3.UVO
-4.Deus Ex Machina
-6.Whitegoo
-8.Grand Pirate Centrary
+2.Deus Ex Machina
+3.Whitegoo
+5.UVO
+6.Grand Pirate Centrary
+7.Arena
 
 Note:
-1.This mod has easy mode and default mode,you can change it in policies before first event begin,or auto turn to easy mode if you don't use NSC(newshipclasses) mod.
+1.This mod has easy mode and default mode,you can change it in policies before first event begin,or auto turn to easy mode if you don't use NSC(newshipclasses) mod.If you use ACOT mod,it will turn to hard mode.
 2.May suffer performance in late-game(like L-gate events,all outside cluster will do).
 4.I never try it in multiplayer game,may cause unknown problems.
 5.Of course,No achievements support.
@@ -28,4 +29,4 @@ Note:
 
 In addition, this mod has changed game_rules. If you use other mods on a large scale, please refer to the following game_rules compatible patch (just choose one):
 ! Universial Game Rules Patch
-https://steamcommunity.com/sharedfiles/filedetails/?id=2187470106
+https://steamcommunity.com/sharedfiles/filedetails/?id=2409276081

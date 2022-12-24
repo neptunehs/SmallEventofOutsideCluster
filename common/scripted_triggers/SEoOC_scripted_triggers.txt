@@ -110,6 +110,10 @@ is_nep_country = {
 		is_country_type = nep_ugo_first_ship 
 		is_country_type = nep_Scrus_cluster_territorys 
 		#is_country_type = nep_caravaneer_fleet
+		is_country_type = nep_arena_hologram
+		is_country_type = nep_arena_challenger
+		is_country_type = nep_arena_target
+		
 	}
 }
 
