@@ -18,6 +18,9 @@
  nep_dragon.2.desc:0 "なんとか§Y第一の封印§!を突破しました。 出口は、七角形を形成する非常に奇妙な星団です。 どう考えても、過去に観測できなかった場所に、人工的に形成され、配置されているのです。 船団の前にはシールドに包まれた惑星があり、センサーには他の銀河もいくつか映っている。 シールドを解除して、中に何があるのかを確認すべきです。"
  nep_dragon.2.a:0 "よし" 
  
+ nep_dragon.2000.desc:0 "大封印が解けた後、七角形星系は強力なエネルギー反応を起こし、その後、各ガイア星に奇妙な竜巻が発生したという。大封印を解くことに何の直接関係があるのか分からない。"
+ nep_dragon.2000.a:0 "もし私たちがこれらの星を持っていたら、竜巻を解消する方法を考えましょう。"
+ 
  nep_dragon.3.name:0 "シールドの内側"
  nep_dragon.3.desc:0 "シールドは特に複雑ではないようです、我々の科学者はそれを解除する方法を見つけました。 シールドの内側にはガイアの惑星がいくつかあるはずで、それらは私たちの新しいコロニーになるのに適しているかもしれません。 また、各惑星の内部にはレーダーでは探知できない不思議な竜巻があり、その竜巻が終わることはありません。"
  nep_dragon.3.a:0 "シールドを解除せよ、惑星ガイアは無駄にしてはならない"
@@ -81,6 +84,8 @@
  nep_dragon.941.name:0 "失敗"
  nep_dragon.941.desc:0 "我々の吸収計画は失敗したが、いつでも再実行できる。 7つの星系すべての星の力が回復していることを確認してください。また、竜は中央の星系にいることを確認してください。"
  nep_dragon.941.a:0 "理解した"
+ 
+ nep_dragon_origin.1000.desc:0 "残念ながらすべての七角形銀河が満員になっているので、あなたは最も一般的な起源に変えられました。ちょっとメタ発言ですが、これからはマルチプレイでこの起源を選ぶない、ありがとう。"
  
  nep_dragon_shielded_planet:0 " "シールドの中の世界"
  nep_dragon_shielded_planet_DESC:0 "科学者たちは、シールドを解除するかどうかを決める前に、中身を探索するつもりだ。"
@@ -187,3 +192,8 @@
  mod_job_nep_dragon_administrator_add:0 "$job_nep_dragon_administrator$の職業枠"
  mod_job_nep_dragon_administrator_drone_hive_add:0 "$job_nep_dragon_administrator_drone_hive$の職業枠"
  mod_job_nep_dragon_administrator_drone_machine_add:0 "$job_nep_dragon_administrator_drone_hive$の職業枠"
+ 
+ nep_heptagram_origin:0 "七角形崇拝"
+ nep_heptagram_origin_desc:0 "七角形を崇拝するといっても、ゲームに実質的な影響はありません。"
+ civic_tooltip_nep_heptagram_origin_effects:0 "七角形星団にゲームを開始する。宇宙全体で観測できるのは彼らだけの特殊な天体の長期的な観測のため、テクノロジー£physics£§Y$tech_sealportal_dive§!を研究可能です、他の星系に移動するために。"
+ 

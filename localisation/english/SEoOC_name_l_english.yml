@@ -35,6 +35,13 @@
  NAME_nep_Highlander_Kingdom:0 "Highlander Kingdom"
  NAME_nep_Country_of_Machina:0 "Machina"
  NAME_nep_machina:0 "Machina"
+ 
+ NAME_nep_bounty_office:0 "Bounty Office"
+ 
+ NAME_nep_arena_hologram:0 "Holograms:Challengable"
+ NAME_nep_arena_target:0 "Arena defender"
+ NAME_nep_arena_challenger:0 "Arena Challenger" 
+ NAME_nep_arena_office:0 "Arena Office"
  #############################
  #fleet&army
  #############################
@@ -82,6 +89,7 @@
  NAME_nep_Captain_Swift:0 "Captain Swift"
  NAME_nep_Cyrca:0 "Cyrca"
  NAME_nep_Balfour_Family_Machine_Guard:0 "Automatic Guard of Balfour Family"
+ NAME_nep_your_eyes:0 "Your Eyes"
  ###########################
  #design
  ###########################
@@ -229,6 +237,9 @@
  NAME_US_388:0 "US 388"
  NAME_US_465:0 "US 465"
  NAME_US_578:0 "US 578"
+ 
+ NAME_nep_arena:0 "The Arena"
+ 
  ###############################
  #misc
  ###############################

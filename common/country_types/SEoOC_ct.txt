@@ -996,6 +996,7 @@ nep_arena_challenger = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
 		all_technology_module = {}
+		standard_leader_module = {}
 		standard_event_module = {}
 	}
 }
@@ -1025,6 +1026,7 @@ nep_arena_target = {
 		exclusive_diplomacy_module = {
 		}# Nothing is allowed, but we need this for relationships.
 		all_technology_module = {}
+		standard_leader_module = {}
 		standard_event_module = {}
 	}
 }

@@ -18,6 +18,9 @@
  nep_dragon.2.desc:0 "We successfully passed §YSub Seal 1§!, the exit is a very strange cluster forming a heptagon. It seems that it's artificial, and it's still in places that we couldn't observe in the past. In front of our fleet is a planet wrapped in a protective shield, and our sensors show that there are several in other galaxies in the cluster. We should unlock the shield to see what is inside and what kind of existence build this "Heptagon"."
  nep_dragon.2.a:0 "Good." 
  
+ nep_dragon.2000.desc:0 "After the break of the Great Seal, a powerful energy reaction occurred in the heptagonal system, and strange vortexs were said to have appeared on various Gaia planets in the heptagonal system. I wonder what is directly related to the unraveling of the Great Seal?"
+ nep_dragon.2000.a:0 "If we have these planets, let's find a way to disarm these tornadoes."
+ 
  nep_dragon.3.name:0 "Inside the Shield"
  nep_dragon.3.desc:0 "This shield does not seem to be particularly complicated, and our scientists have found a way to unlock it. There should be some Gaia planets in the shield, maybe it would be a good place to be our new colony. In addition, each planet has a strange, never-stop vortex that the radar cannot detect inside."
  nep_dragon.3.a:0 "Unlock the shield,gaia planet should not be wasted."
@@ -77,6 +80,8 @@
  nep_dragon.941.name:0 "Perfection Failed"
  nep_dragon.941.desc:0 "Our Perfection plan has failed, but we can try again at any time. Please ensure that the star force is restored, and that our dragon must be in Aemethms system."
  nep_dragon.941.a:0 "Acknowledged." 
+
+ nep_dragon_origin.1000.desc:0 "Unfortunately heptagonal system are full, so you were switched to one of the most common origins. It's a bit meta, but the mod author suggests:Don't choose this origin in multiplayer in the future, thanks."
  
  nep_dragon_shielded_planet:0 "World in the shield"
  nep_dragon_shielded_planet_DESC:0 "The scientist intends to first explore what is inside and decide whether to unlock it."
@@ -182,3 +187,8 @@
  mod_job_nep_dragon_administrator_add:0 "Dragon Temple Administrator job"
  mod_job_nep_dragon_administrator_drone_hive_add:0 "Dragon Temple Administrator Drone job"
  mod_job_nep_dragon_administrator_drone_machine_add:0 "Dragon Temple Administrator Drone job"
+ 
+ nep_heptagram_origin:0 "Heptagonal Worship"
+ nep_heptagram_origin_desc:0 "However, it is said that the worship of the heptagon, but will not have any substantial impact on the game. "
+ civic_tooltip_nep_heptagram_origin_effects:0 "Will originate in the heptagonal system.Because of the long-term observation of a special object in the system that only they can observe, they will get £physics£§Y$tech_sealportal_dive$§! technology in the opening, in order to travel through the object to other systems."
+ 

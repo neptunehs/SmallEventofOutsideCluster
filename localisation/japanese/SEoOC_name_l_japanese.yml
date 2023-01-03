@@ -36,6 +36,13 @@
  NAME_nep_Country_of_Machina:0 "機神国"
  NAME_nep_machina:0 "機神"
 
+ NAME_nep_bounty_office:0 "懸賞事務所"
+ 
+ NAME_nep_arena_hologram:0 "立体映像"
+ NAME_nep_arena_target:0 "ガード"
+ NAME_nep_arena_challenger:0 "チャレンジャー"
+ 
+ NAME_nep_arena_office:0 "闘技場事務所"
  #############################
  #fleet&army
  #############################
@@ -112,6 +119,8 @@
  NAME_nep_star_bomb_design:0 "スターバースト爆弾"
 
  NAME_nep_station_whitegoo:0 "ホワイトミスト吸収ステーション"
+ 
+ NAME_nep_your_eyes:0 "あなたの目"
  #################################
  #Systems and planets
  #################################
@@ -230,6 +239,8 @@
  NAME_US_388:0 "US 388"
  NAME_US_465:0 "US 465"
  NAME_US_578:0 "US 578"
+ 
+ NAME_nep_arena:0 "闘技場"
  ###############################
  #misc
  ###############################

@@ -35,6 +35,14 @@
  #NAME_nep_Highlander_Kingdom:0 "天上人王国"
  NAME_nep_Country_of_Machina:0 "机神国"
  NAME_nep_machina:0 "机械神"
+ 
+ NAME_nep_bounty_office:0 "悬赏办公室"
+ 
+ NAME_nep_arena_hologram:0 "立体影像：可被挑战者"
+ NAME_nep_arena_target:0 "被挑战者"
+ NAME_nep_arena_challenger:0 "挑战者"
+ 
+ NAME_nep_arena_office:0 "斗技场办公室"
 
  #############################
  #fleet&army
@@ -83,6 +91,8 @@
  NAME_nep_Captain_Swift:0 "斯威伏特"
  NAME_nep_Cyrca:0 "塞尔卡"
  NAME_nep_Balfour_Family_Machine_Guard:0 "巴尔弗一家的自动守卫"
+ 
+ NAME_nep_your_eyes:0 "您的眼睛"
  ###########################
  #design
  ###########################
@@ -230,6 +240,8 @@
  NAME_US_388:0 "US 388"
  NAME_US_465:0 "US 465"
  NAME_US_578:0 "US 578"
+ 
+ NAME_nep_arena:0 "斗技场"
  ###############################
  #misc
  ###############################

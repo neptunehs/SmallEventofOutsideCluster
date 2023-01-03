@@ -33,7 +33,7 @@
  policy_orbital_bombardment_Krahen:0 "$policy_orbital_bombardment$"
  policy_orbital_bombardment_Krahen_desc:0 "$policy_orbital_bombardment_desc$"
  
-  ############New added in 20220521#####################
+ ############New added in 20220521#####################
  nep_no_benefit_to_us:0 "We will lost systems,no benefit to us."
  requires_nep_whitegoo:0 "This system isn't polluted by White Goo."
  nep_requires_dont_have_colossus:0 "Your empire has Colossus already."
@@ -90,3 +90,22 @@
  nep_whitegoo_system_1:0 ""
  nep_whitegoo_system_2:0 ""
  nep_whitegoo_system_3:0 ""
+ 
+ d_nep_Auriel_moon_1:0 "Auriel Moon"
+ d_nep_Auriel_moon_2:0 "Auriel Moon" 
+ d_nep_Gabriel_moon_1:0 "Gabriel Moon"
+ d_nep_Gabriel_moon_2:0 "Gabriel Moon" 
+ d_nep_Sabriel_moon_1:0 "Sabriel Moon"
+ d_nep_Sabriel_moon_2:0 "Sabriel Moon"
+ d_nep_Samuel_moon_2:0 "Samuel Moon"
+ d_nep_Samuel_moon_1:0 "Samuel Moon"
+ d_nep_Michael_moon_2:0 "Michael Moon"
+ d_nep_Michael_moon_1:0 "Michael Moon"
+ d_nep_Jauial_moon_2:0 "Jauial Moon"
+ d_nep_Jauial_moon_1:0 "Jauial Moon"
+ d_nep_Anael_moon_1:0 "Anael Moon"
+ d_nep_Anael_moon_2:0 "Anael Moon"
+ 
+ d_nep_broken_seal_1:0 "Broken Seal 1"
+ d_nep_broken_seal_2:0 "Broken Seal 2"
+ d_nep_broken_seal_3:0 "Broken Seal 3"

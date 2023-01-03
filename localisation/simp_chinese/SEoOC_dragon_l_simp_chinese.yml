@@ -18,6 +18,9 @@
  nep_dragon.2.desc:0 "我们成功的通过了§Y第一封印§!，出口是一个很奇怪的构成七边形的星团。不管怎么看，这都是人工形成的，而且还位于过去根本无法观测的地方。在我们的船队面前，是一个被防护罩裹住的星球，而且我们的传感器显示其他的几个星系也有。我们应该解开防护罩看看里面究竟是什么，又是什么样的存在造的。"
  nep_dragon.2.a:0 "很好" 
  
+ nep_dragon.2000.desc:0 "在大封印解开之后，七边形星系发生了强大的能量反应，之后据说各个盖亚星球均出现了奇怪的龙卷风。不知道跟大封印解开有什么直接关系？"
+ nep_dragon.2000.a:0 "如果我们拥有这些星球，就想办法解除这些龙卷风吧。"
+ 
  nep_dragon.3.name:0 "防护罩的内部"
  nep_dragon.3.desc:0 "这个防护罩似乎不是特别复杂，我们的科学家们已经找到了解开的办法了。防护罩内应该是一些盖亚星球————说不定很适合成为我们的新殖民地。另外，每个星球都有一个奇怪的、永不停止的龙卷风，雷达无法对其内部进行探测。"
  nep_dragon.3.a:0 "解开防护罩，盖亚星球不应该被浪费。"
@@ -81,6 +84,8 @@
  nep_dragon.941.name:0 "吸收失败"
  nep_dragon.941.desc:0 "我们的吸收计划失败了，不过您可以随时再执行。请确保我们的7个星系的星之力都恢复了，同时我们的龙必须在中心星系。"
  nep_dragon.941.a:0 "明白了"
+ 
+ nep_dragon_origin.1000.desc:0 "很遗憾所有七边形星系满员了，因此你被转为了最普通的一个起源。虽然有点meta，但作者建议:以后别在多人游戏里选择这个起源，谢谢。"
  
  nep_dragon_shielded_planet:0 "防护罩中的世界"
  nep_dragon_shielded_planet_DESC:0 "科学家打算先探一下里面有什么，再决定是否解开它。"
@@ -183,7 +188,11 @@
  nep_Legnahcras_assault_army:0 "使天众"
  nep_Legnahcras_defensive_army:0 "使天众扫荡者"
  
- 
  mod_job_nep_dragon_administrator_add:0 "奉龙殿管理者职业"
  mod_job_nep_dragon_administrator_drone_hive_add:0 "奉龙殿管理子人口职业"
  mod_job_nep_dragon_administrator_drone_machine_add:0 "奉龙殿管理子人口职业"
+ 
+ nep_heptagram_origin:0 "七边形崇拜"
+ nep_heptagram_origin_desc:0 "不过说是说崇拜七边形，但这事儿并不会对游戏有什么实质影响。"
+ civic_tooltip_nep_heptagram_origin_effects:0 "将出生于七边形星系。因为长期对全宇宙只有他们能观测的特殊天体的长期观测，他们开局将得到£physics£§Y$tech_sealportal_dive§!科技,以便通过该天体前往其他星系。"
+ 

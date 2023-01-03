@@ -283,7 +283,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = nep_dragon.2.a
+		name = nep_dragon.2000.a
 	}
 }
 
