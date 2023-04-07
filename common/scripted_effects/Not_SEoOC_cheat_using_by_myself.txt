@@ -17,3 +17,7 @@ cheat_nep_sofe = {
 	remove_global_flag = xenophobe_second_riddle_randomed
 	set_global_flag = materialist_second_riddle_randomed
 }
+
+cheat_nep_ssr_get = {
+	leader = { set_variable = { which = sop_select_leader_skill_super_rare value = 4 } }
+}

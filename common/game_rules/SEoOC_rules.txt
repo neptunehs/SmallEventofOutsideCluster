@@ -150,6 +150,18 @@ can_take_hostile_actions = {
 	}
 	else_if = {
 		limit = {
+			has_country_flag = fotd_seperatist_country@ROOT
+			ROOT = {
+				has_origin = origin_fear_of_the_dark
+			}
+		}
+		custom_tooltip = {
+			text = "CAN_TAKE_HOSTILE_ACTION_FOTD"
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
 			AND = {
 				NOT = { has_country_flag = hostile_to_nomads }
 				ROOT = {
@@ -167,9 +179,8 @@ can_take_hostile_actions = {
 		limit = {
 			ROOT = {
 				is_country_type = default
-				OR = {
-					has_policy_flag = interference_passive
-					has_policy_flag = interference_active
+				NOT = {
+					has_policy_flag = interference_aggressive
 				}
 			}
 			is_primitive = yes
@@ -218,6 +229,7 @@ can_take_hostile_actions = {
 	}
 	else_if = {
 		limit = {
+			exists = overlord
 			ROOT = { any_agreement = { agreement_preset = preset_satrapy } }
 		}
 		custom_tooltip = {

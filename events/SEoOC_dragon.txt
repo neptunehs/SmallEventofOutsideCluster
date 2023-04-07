@@ -1324,20 +1324,32 @@ ship_event = {
 	}
 }
 
-#Get reward.ready(HIDDEN)
 country_event = {
 	id = nep_dragon.7
 	hide_window = yes
-	fire_only_once = yes
 	is_triggered_only = yes
-	
 	trigger = {
 		has_global_flag = nep_dragon_begin
 		from = {
 			has_country_flag = nep_dragon_country
+		}
+	}
+
+	immediate = { country_event = { id = nep_dragon.7000 days = 1} }
+	
+}
+#Get reward.ready(HIDDEN)
+country_event = {
+	id = nep_dragon.7000
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_dragon_begin
+		fromfrom = {
 			or = {
+				NOT = { exists = this }
 				num_fleets < 1
-				num_fleets = 1
 			}
 		}
 	}

@@ -141,6 +141,13 @@ country_event = {
 					orbit_angle = 1
 					orbit_distance = 1
 				}
+				if = {
+					limit = { exists = space_owner }
+					random_system_megastructure = {
+						limit = { is_megastructure_type = nep_sealgate_ruined }
+						set_owner = space_owner
+					}
+				}
 			}
 		}
 		set_global_flag = nep_sealgate_appeared
@@ -210,6 +217,7 @@ country_event = {
 				limit = { is_star = yes }
 				save_event_target_as = nep_gate_temp_poi
 				solar_system = {
+					#root = { set_visited = prev }
 					spawn_megastructure = {
 						name = "NAME_nep_Seal_Gate"
 						type = nep_sealgate_restored

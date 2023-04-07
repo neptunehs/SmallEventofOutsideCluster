@@ -151,7 +151,7 @@ nep_sealportal = {
 	windup_time = 15
 	winddown_time = 0
 	ftl_multiplier = 0
-	extends_sensors = no
+	extends_sensors = yes
 	icon_frame = 12
 	remember_instances = no
 	animation_time = 1
@@ -250,7 +250,7 @@ nep_sealphantom = {
 	windup_time = 15
 	winddown_time = 3
 	ftl_multiplier = 0
-	extends_sensors = no
+	extends_sensors = yes
 	icon_frame = 12
 	remember_instances = no
 	animation_time = 1
@@ -322,7 +322,10 @@ nep_caravaneer_gate = {
 		# defines endpoints that can only reach the "nexus"
 		node = {
 			# system scope
-			has_star_flag = caravaneer_home
+			OR = {
+				is_same_value = event_target:caravaneer_home_system
+				has_star_flag = caravaneer_home
+			}
 		}
 	
 		# defines endpoint(s) that can reach all "nodes" (but not other nexuses)

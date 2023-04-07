@@ -1173,6 +1173,10 @@ country_event = {
 	
 	option = {
 		name = nep_whitegoo.83.a
+		if = {
+			limit = { NOT = { has_event_chain = nep_whitegoo_chain } }
+			begin_event_chain = { event_chain = nep_whitegoo_chain target = root }
+		}
 		create_point_of_interest = {
 			id = nep_whitegoo_poi.0.1
 			name = "nep_whitegoo_poi_name"
@@ -1349,6 +1353,48 @@ country_event = {
 	}
 }
 
+event = {
+	id = nep_whitegoo.9998
+	hide_window = yes
+	
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = nep_whitegoo_end
+		event_target:nep_whitegoo_origin = {
+			exists = owner
+			NOT = { any_ship_in_system = { is_ship_size = nep_station_whitegoo }}
+		}
+	}
+	
+	immediate = {
+		event_target:nep_whitegoo_origin = {
+			random_system_planet_as = (
+				limit = { is_star = no }
+				save_event_target_as = nep_whitegoo_9998_temp
+				create_fleet = {
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+						spawn_debris = no
+					}
+					effect = {
+						set_owner = event_target:nep_whitegoo_origin.owner
+						create_ship = {
+							design = "NAME_nep_station_whitegoo"
+						}
+						set_location = {
+							target = event_target:nep_whitegoo_9998_temp
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+			}
+		}
+	}
+}
 country_event = {
 	id = nep_whitegoo.9999
 	title = nep_whitegoo.9999.name
@@ -7059,5 +7105,55 @@ fleet_event = {
 			}
 		}
 		else = { set_global_flag = nep_copy_fleet_failed }
+	}
+}
+
+# Tradestation destroyed and Caravan asks to establish a new one, cara.900
+country_event = {
+	id = nep_ar.5 #aka.nep_bo.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_multiplayer = no
+		is_country_type = caravaneer_home
+		fromfrom = { has_ship_flag = cara_home_tradestation }
+	}
+	
+	immediate = {
+		random_megastructure = {
+			limit = { 
+				is_megastructure_type = nep_caravaneer_gate_mega 
+				solar_system = {
+					NOR = {
+						has_star_flag = nep_bounty_office_system
+						has_star_flag = nep_arena_office_system
+					}
+				}
+			}
+			remove_megastructure = this
+		}
+		country_event = { id = nep_ar.51 days = 62 } #2 days after cara.930
+	}
+}
+
+country_event = {
+	id = nep_ar.51 #aka.nep_bo.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { exists = event_target:caravaneer_home_system }
+			event_target:caravaneer_home_system = {
+				spawn_megastructure = {
+					type = "nep_caravaneer_gate_mega"
+					random_pos = yes
+					orbit_angle = 360		# range of the randomization
+				}
+			}
+		}
+		else = {		
+			country_event = { id = nep_ar.51 days = 20 } #2 days after cara.930
+		}
 	}
 }

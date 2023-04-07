@@ -906,9 +906,112 @@ country_event = {
 			set_planet_entity = { entity = pc_gaia }
 		}
 		event_target:primitive_country = {
+			set_awareness = 100
 			remove_country_flag = recently_advanced
 			set_country_flag = early_space_age
-			country_event = { id = primitive.16 }
+			set_country_flag = primitives_can_into_space
+			set_country_type = default
+			set_species_graphical_culture = yes
+			add_resource = { minerals = 10000 }
+			add_resource = { energy = 10000 }
+			add_resource = { food = 3000 }
+			add_resource = { consumer_goods = 3000 }
+			add_resource = { alloys = 7000 }
+			add_resource = { influence = 1000 }
+			add_resource = { unity = 27000 }
+			if = {
+				limit = {
+					has_technology = tech_destroyers
+				}
+				create_fleet = {
+					effect = {
+						set_owner = prev
+						while = {
+							count = 8
+							create_ship = {
+								name = random
+								random_existing_design = destroyer
+								graphical_culture = prev
+							}
+						}
+						set_location = {
+							target = prev.capital_scope
+							distance = 10
+							angle = random
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_technology = tech_cruisers
+				}
+				create_fleet = {
+					effect = {
+						set_owner = prev
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								random_existing_design = cruiser
+								graphical_culture = prev
+							}
+						}
+						set_location = {
+							target = prev.capital_scope
+							distance = 10
+							angle = random
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_technology = tech_battleships
+				}
+				create_fleet = {
+					effect = {
+						set_owner = prev
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								random_existing_design = battleship
+								graphical_culture = prev
+							}
+						}
+						set_location = {
+							target = prev.capital_scope
+							distance = 10
+							angle = random
+						}
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = prev
+					while = {
+						count = 10
+						create_ship = {
+							name = random
+							random_existing_design = corvette
+							graphical_culture = prev
+						}
+					}
+				}
+			}
+			capital_scope = {
+				observation_outpost = {
+					dismantle = yes
+				}
+				clear_blockers = yes
+				remove_all_buildings = yes
+				generate_start_buildings_and_districts = yes
+				solar_system.starbase = {
+					set_owner = root.from
+				}
+			}
 			change_government = {
 				authority = auth_democratic
 				civics = {
@@ -1439,9 +1542,7 @@ country_event = {
 			set_planet_size = 25
 		}
 		event_target:primitive_country = {
-			set_country_flag = early_space_age
 			remove_country_flag = recently_advanced
-			remove_country_flag = early_space_age
 			set_country_flag = primitives_can_into_space
 			set_country_type = default
 			change_country_flag = random
@@ -1552,7 +1653,7 @@ country_event = {
 							}
 						}	
 						starbase = {
-							owner = { country_event = { id = primitive.180 days = 10 } }
+							set_owner = event_target:primitive_country
 						}
 					}
 				}				
@@ -1903,18 +2004,7 @@ event = {
 					if = {
 						limit = {
 							has_observation_outpost = yes
-							observation_outpost = { 
-								OR = {
-									has_mission = technological_enlightenment_1
-									has_mission = technological_enlightenment_2
-									has_mission = technological_enlightenment_3
-									has_mission = technological_enlightenment_4
-									has_mission = technological_enlightenment_5
-									has_mission = technological_enlightenment_6
-									has_mission = technological_enlightenment_7
-									has_mission = technological_enlightenment_8
-									has_mission = technological_enlightenment_9
-								}
+							observation_outpost = { 							
 								mission_progress > 0.2
 							}
 						}
@@ -1939,7 +2029,14 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		event_target:nep_highlander_country = { capital_scope = { observation_outpost = { add_mission_progress = -1 } } }
+		event_target:nep_highlander_country = { 
+			capital_scope = { 
+				observation_outpost = { 
+					add_mission_progress = -1
+					set_mission = no_observation
+				 } 
+			} 	
+		}
 	}
 	
 	option = {
@@ -3157,14 +3254,12 @@ ship_event = {
 						}
 					}
 					last_created_country = {
-						set_primitive_age = late_medieval_age
+						set_pre_ftl_age_effect = { PRE_FTL_AGE = late_medieval_age }
 						save_global_event_target_as = nep_deus_country
-						set_country_flag = nep_deus_country
-						set_country_flag = late_medieval_age
-						set_country_flag = recently_advanced						
+						set_country_flag = nep_deus_country					
 					}
 				}
-				setup_primitive_planet = yes
+				setup_pre_ftl_planet = yes
 				add_modifier = { modifier = "planet_population_control" days = -1 }
 				add_building = building_nep_palace_of_machina
 				add_building = building_primitive_farm				
@@ -3469,8 +3564,14 @@ country_event = {
 					}
 				}
 				home_planet = {
+					observation_outpost = {
+						dismantle = yes
+					}
 					observation_outpost_owner = {
-						country_event = { id = primitive.17 }
+						add_intel = {
+							who = prevprev
+							amount = 100
+						}
 					}
 				}
 			}

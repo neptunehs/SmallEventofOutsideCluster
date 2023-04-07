@@ -109,20 +109,68 @@ entity = {
 	game_data = { size = 30 }
 
 	default_state = "no_state"
-	state = { name = "idle" state_time = 5 animation = "closed" animation_blend_time = 0 looping = no next_state = "idle"
-	start_event = { trigger_once = yes sound = { soundeffect = "technosphere_idle" } }
+	state = { name = "idle"		animation = "closed" animation_blend_time = 0 looping = no next_state = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "technosphere_idle" } }
+		
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"combat_idle" = 0
+				"combat_moving" = 0
+			}
+			default = 1
+		}
 	}
-	state = { name = "death" animation = "death" state_time = 11 looping = no
-	event = { time = 10.9 node = "part1" particle = "technosphere_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+	state = { name = "idle"		animation = "closing" animation_blend_time = 0 looping = no next_state = "idle"
+		event = { trigger_once = yes sound = { soundeffect = "technosphere_closing" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_technosphere_closing" } }
+		
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"combat_idle" = 100
+				"combat_moving" = 100
+			}
+			default = 0
+		}
 	}
+	state = { name = "combat_idle"		animation = "opening" animation_blend_time = 0 looping = no next_state = "combat_idle"
+		event = { trigger_once = yes sound = { soundeffect = "technosphere_opens" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_technosphere_opens" } }
+		
+		event = { time = 0 node = "ship_main" particle = "technosphere_opening_particle" keep_particle = yes }
+		
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"combat_idle" = 0
+				"combat_moving" = 0
+			}
+			default = 0
+		}
 	}
+	state = { name = "combat_idle"		animation = "opened" animation_blend_time = 0 looping = no next_state = "combat_idle"
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"combat_idle" = 100
+				"combat_moving" = 100
+			}
+			default = 1
+		}
+	}
+}
 
-	animation = {
+animation = {
 	name = "nep_star_bomb_closed_animation"
 	file = "technosphere_closed.anim"
-	}
+}
 
-	animation = {
+animation = {
 	name = "nep_star_bomb_death_animation"
 	file = "technosphere_death.anim"
 	}

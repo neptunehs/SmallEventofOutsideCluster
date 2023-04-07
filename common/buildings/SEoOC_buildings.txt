@@ -119,7 +119,7 @@ building_nep_palace_of_machina = {
 	can_demolish = no
 	can_be_ruined = no
 	can_be_disabled = no
-
+	category = government
 	icon = building_institute
 
 	potential = {

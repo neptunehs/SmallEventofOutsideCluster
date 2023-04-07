@@ -1113,18 +1113,32 @@ country_event = {
 #final fleet crashed
 country_event = {
 	id = nep_finalweapon.82
-	hide_window = yes
-	
+	hide_window = yes	
 	is_triggered_only = yes
-	fire_only_once = yes
-	
 	trigger = {
 		has_global_flag = nep_corrupted_finalweapons_begin
 		from = { 
 			is_country_type = nep_finalweapon_country
+		}
+	}
+
+	
+	immediate = {
+		country_event = { id = nep_finalweapon.8200 days =1  }
+	}
+}
+country_event = {
+	id = nep_finalweapon.8200
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_corrupted_finalweapons_begin
+		fromfrom = { 
 			or = {
+				NOT = { exists = this }
 				num_fleets < 1
-				num_fleets = 1
 			}
 		}
 	}

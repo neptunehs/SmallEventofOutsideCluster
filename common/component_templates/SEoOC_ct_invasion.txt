@@ -418,7 +418,7 @@ utility_component_template = {
 	
 	hostile_aura = {
 		name = "aura_advance_ecm"
-		radius = 300
+		radius = 600
 		apply_on = ships
 		
 		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
@@ -427,6 +427,9 @@ utility_component_template = {
 		}
 		modifier = {
 			weapon_type_explosive_weapon_damage_mult = -1.2
+			ship_hull_regen_add_perc = -0.9
+			ship_shield_regen_add_perc = -0.9
+			ship_armor_regen_add_perc = -0.9
 		}
 		
 		graphics = {

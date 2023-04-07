@@ -58,7 +58,8 @@ nep_station_whitegoo = {
 	class = shipclass_mining_station
 	is_designable = no
 	valid_target_aggressive_stance = no
-
+	uses_name_prefix = no
+	takes_name_from_ship_design = yes
 	resources = {
 		category = station_gatherers
 		produces = {
