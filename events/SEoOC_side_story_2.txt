@@ -600,7 +600,10 @@ country_event = {
 				last_increased_tech = tech_nep_whitegoo_3_3
 			}
 			every_owned_fleet = {
-				limit = { solar_system = { has_star_flag = nep_whitegoo_1 } }
+				limit = { 
+					exists = solar_system 
+					solar_system = { has_star_flag = nep_whitegoo_1 } 
+				}
 				add_modifier = { modifier = nep_whitegoo_fleet days = -1 }
 			}
 		}
@@ -920,6 +923,7 @@ country_event = {
 
 	trigger = {
 		has_global_flag = nep_whitegoo_begin
+		NOT = { has_global_flag = nep_whitegoo_end }
 		NOT = { has_country_flag = nep_whitegoo_8000_temp }
 		count_owned_ship = {
 			count >=3
@@ -941,6 +945,11 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		NOT = { has_global_flag = nep_whitegoo_end }
+	}
+	
 	immediate = {
 		#log = "fire wg.8001 root:[Root.GetName]"
 		random_list = {
@@ -957,6 +966,11 @@ country_event = {
 	picture = GFX_evt_gray_gooed_planet
 	
 	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = nep_whitegoo_begin
+		NOT = { has_global_flag = nep_whitegoo_end }
+	}
 	
 	immediate = {
 		#log = "fire wg.8 root:[Root.GetName]"
@@ -981,6 +995,7 @@ country_event = {
 		has_global_flag = nep_whitegoo_begin
 		NOT = { has_global_flag = nep_whitegoo_82_triggered }
 		last_increased_tech = tech_nep_whitegoo_5
+		NOT = { has_global_flag = nep_whitegoo_end }
 	}
 	
 	immediate = {
@@ -1368,7 +1383,7 @@ event = {
 	
 	immediate = {
 		event_target:nep_whitegoo_origin = {
-			random_system_planet_as = (
+			random_system_planet = {
 				limit = { is_star = no }
 				save_event_target_as = nep_whitegoo_9998_temp
 				create_fleet = {
@@ -1498,7 +1513,10 @@ country_event = {
 					is_colony = yes
 					is_capital = no
 					owner = {
-						is_country_type = default
+						OR = {
+							is_country_type = default 
+							is_playable_country = yes
+						}
 					}
 				}
 				distance = {
@@ -1673,7 +1691,7 @@ country_event = {
 					}
 				}
 				create_leader = {
-					class = ruler
+					class = governor
 					species = prev
 					name = random
 					skill = 5
@@ -1953,7 +1971,6 @@ fleet_event = {
 				traits = {
 					trait = trait_very_strong
 					trait = trait_nomadic
-					trait = random_traits
 				}
 			}
 			last_created_species = {
@@ -1993,10 +2010,7 @@ fleet_event = {
 				species = owner_main_species
 				name = random
 				skill = 1
-				traits = {
-					trait = random_trait
-					trait = random_trait
-				}
+				randomize_traits = yes
 			}
 			create_fleet = {
 				name = "NAME_Pirate_Fleet"
@@ -2027,7 +2041,10 @@ country_event = {
 	
 	trigger = {
 		NOT = { has_global_flag = nep_gpc_end }
-		is_country_type = default
+		OR = {
+			is_country_type = default 
+			is_playable_country = yes
+		}
 		from = { has_country_flag = nep_gpc_pirate1 }
 	}
 	
@@ -2182,7 +2199,10 @@ country_event = {
 		trigger = {
 			fromfrom = { 
 				OR = {
-					is_country_type = default
+					OR = {
+						is_country_type = default 
+						is_playable_country = yes
+					}
 					is_country_type = dormant_marauders
 					is_country_type = awakened_marauders
 					is_country_type = fallen_empire
@@ -2201,7 +2221,10 @@ country_event = {
 		trigger = {
 			fromfrom = { 
 				NOR = {
-					is_country_type = default
+					OR = {
+						is_country_type = default 
+						is_playable_country = yes
+					}
 					is_country_type = dormant_marauders
 					is_country_type = awakened_marauders
 					is_country_type = fallen_empire
@@ -2270,7 +2293,6 @@ country_event = {
 				traits = {
 					trait = trait_very_strong
 					trait = trait_nomadic
-					trait = random_traits
 				}
 			}
 			last_created_species = {
@@ -2308,10 +2330,7 @@ country_event = {
 						species = owner_main_species
 						name = "NAME_nep_Grand_Captain_Balfour"
 						skill = 10
-						traits = {
-							trait = random_trait
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					create_fleet = {
 						name = "NAME_nep_Grand_Captain_Balfour"
@@ -2630,10 +2649,7 @@ country_event = {
 						species = owner_main_species
 						name = "NAME_nep_Tawni_Balfour"
 						skill = 3
-						traits = {
-							trait = random_trait
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					create_fleet = {
 						name = "NAME_nep_Tawni_Balfour"
@@ -2747,10 +2763,7 @@ country_event = {
 						species = owner_main_species
 						name = "NAME_nep_Pete_Girly"
 						skill = 4
-						traits = {
-							trait = random_trait							
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					create_fleet = {
 						name = "NAME_nep_Pete_Girly"
@@ -2844,7 +2857,6 @@ country_event = {
 					traits = {
 						trait = trait_very_strong
 						trait = trait_nomadic
-						trait = random_traits
 					}
 				}
 				last_created_species = {
@@ -2877,10 +2889,7 @@ country_event = {
 						species = owner_main_species
 						name = "NAME_nep_Captain_Swift"
 						skill = 6
-						traits = {
-							trait = random_trait
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					create_fleet = {
 						name = "NAME_nep_Captain_Swift"
@@ -2975,7 +2984,6 @@ country_event = {
 					traits = {
 						trait = trait_very_strong
 						trait = trait_nomadic
-						trait = random_traits
 					}
 				}
 				last_created_species = {
@@ -3008,10 +3016,7 @@ country_event = {
 						species = owner_main_species
 						name = "NAME_nep_Cyrca"
 						skill = 3
-						traits = {
-							trait = random_trait
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					create_fleet = {
 						name = "NAME_nep_Cyrca"
@@ -3598,10 +3603,7 @@ country_event = {
 						species = owner_main_species
 						name = random
 						skill = 1
-						traits = {
-							trait = random_trait
-							trait = random_trait
-						}
+						randomize_traits = yes
 					}
 					random_list = {
 						1 = {

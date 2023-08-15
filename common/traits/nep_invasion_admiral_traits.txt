@@ -20,7 +20,7 @@ leader_trait_Krahen_admiral = {
 		ship_armor_regen_add_perc = 0.2
 		ship_weapon_range_mult = 0.2
 	}
-	leader_trait = { admiral }
+	#leader_trait = { admiral }
 	leader_class = { admiral }
 	initial = no
 	randomized = no

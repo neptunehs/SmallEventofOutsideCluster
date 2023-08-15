@@ -51,13 +51,13 @@ tech_nep_destructor_ray = {
 			factor = 1.5
 			has_ethic = ethic_fanatic_militarist
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = physics
+		# 		has_trait = "leader_trait_expertise_particles"
+		# 	}
+		# }
 	}
 }
 

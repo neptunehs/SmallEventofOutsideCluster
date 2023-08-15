@@ -55,8 +55,6 @@ on_monthly_pulse = {
 		nep_inva.473
 		nep_inva.475
 		nep_wohp.9
-		nep_deus.6
-		nep_deus.7
 	}
 }
 
@@ -134,6 +132,7 @@ on_planet_attackers_win = {
 		nep_wohp.7
 		nep_wohp.8
 		nep_deus.5
+		nep_deus.7
 		nep_deuspl.8
 	}
 }
@@ -474,5 +473,12 @@ on_post_communications_established = {
 on_entering_nep_arena_gate = {
 	events = {
 		nep_ar.3
+	}
+}
+
+
+on_ship_disabled = {
+	events = {
+		#nep_deus.6
 	}
 }

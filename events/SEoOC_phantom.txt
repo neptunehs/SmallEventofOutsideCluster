@@ -282,7 +282,10 @@ country_event = {
 									is_colony = yes
 									exists = owner
 									owner = {
-										is_country_type = default
+										OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				}
 										is_primitive = no
 									}
 									if = {
@@ -298,7 +301,10 @@ country_event = {
 									is_colony = yes
 									exists = owner
 									owner = {
-										is_country_type = default
+										OR = {
+											is_country_type = default 
+											is_playable_country = yes
+										}
 										is_primitive = no
 									}
 									if = {
@@ -1155,7 +1161,10 @@ event = {
 			limit = { has_star_flag = nep_Scrus_cluster }
 			if = {
 				limit = {
-					any_fleet_in_system = { owner = { is_country_type = default } }
+					any_fleet_in_system = { owner = { OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				} } }
 				}
 			}
 			else = {
@@ -1449,7 +1458,10 @@ fleet_event = {
 		has_fleet_flag = nep_phantom_fleet_passive
 		fromfrom = {
 			exists = space_owner
-			space_owner = { is_country_type = default }
+			space_owner = { OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				} }
 		}
 		from = {
 			OR = {
@@ -1567,7 +1579,10 @@ fleet_event = {
 							is_colony = yes
 							exists = owner
 							owner = {
-								is_country_type = default
+								OR = {
+									is_country_type = default 
+									is_playable_country = yes
+								}
 								is_primitive = no
 							}
 							if = {
@@ -1584,7 +1599,10 @@ fleet_event = {
 							is_colony = yes
 							exists = owner
 							owner = {
-								is_country_type = default
+								OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				}
 								is_primitive = no
 							}
 							if = {
@@ -1612,7 +1630,10 @@ fleet_event = {
 							is_colony = yes
 							exists = owner
 							owner = {
-								is_country_type = default
+								OR = {
+									is_country_type = default 
+									is_playable_country = yes
+								}
 								is_primitive = no
 							}
 							if = {
@@ -1630,7 +1651,10 @@ fleet_event = {
 							is_colony = yes
 							exists = owner
 							owner = {
-								is_country_type = default
+								OR = {
+									is_country_type = default 
+									is_playable_country = yes
+								}
 								is_primitive = no
 							}
 							if = {

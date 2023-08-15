@@ -43,8 +43,9 @@
  nep_no_sapient_pops:0 "知的生命体は存在しない"
  nep_extravagant_orgy:0 "乱痴気騒"
  nep_bombard_by_highlander:0 "天からの爆撃を受ける"
- ############UNUSED LOCALS#####################
- 
+ ############New added in 20230807#####################
+ heart_of_resistance:0 "抵抗の意思"
+ ############UNUSED LOCALS##################### 
  gov_Krahen_gov_desc:0 ""
  tech_nep_sealevil_tech:0 ""
  tech_nep_sealevil_tech_desc:0 ""

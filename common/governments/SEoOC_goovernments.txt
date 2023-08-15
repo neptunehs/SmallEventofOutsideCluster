@@ -2,16 +2,16 @@ gov_nep_servent_of_machina = {
 	ruler_title = RT_nep_machina
 	ruler_title_female = RT_nep_machina
 
-	election_candidates = {
-		modifier = {
-			add = 1000
-			gender = female
-		}
-		modifier = {
-			add = 100
-			leader_class = ruler
-		}
-	}
+	#election_candidates = {
+	#	modifier = {
+	#		add = 1000
+	#		gender = female
+	#	}
+	#	modifier = {
+	#		add = 100
+	#		leader_class = ruler
+	#	}
+	#}
 
 	possible = {
 		has_authority = auth_dictatorial

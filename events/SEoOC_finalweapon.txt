@@ -675,7 +675,10 @@ country_event = {
 				NOT = {
 					has_special_project = nep_research_project_starbomb
 				}
-				is_country_type = default
+				OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				}
 			}
 			enable_special_project = {
 				name = "nep_research_project_starbomb"

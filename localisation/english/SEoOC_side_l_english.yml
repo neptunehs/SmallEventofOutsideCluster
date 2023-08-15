@@ -140,6 +140,11 @@
  nep_wormhole_wohp_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
  nep_wormhole_wohp_mega_DESC:0 "This system contains a §YNatural Wormhole§!"
  nep_wormhole_wohp_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_wohp_mega_DESC$"
+
+ nep_age_gaia:0 "$machine_age$"
+ nep_age_gaia_desc:0 "$machine_age_desc$"
+ nep_age_highlander:0 "$atomic_age$"
+ nep_age_highlander_desc:0 "$atomic_age_desc$"
  
  #########################################
  # deus
@@ -164,6 +169,10 @@
  nep_deus.5.name:0 "Self-destruction"
  nep_deus.5.desc:0 "We captured [event_target:nep_deus_country.Capital_scope.GetName]. When we tried to enter the place where the "God" that ruled the country was located, it blew itself. Now we have no chance to fix its logical problem and end this war. The remaining forces of the country that lost the "God" will also resist the end because there is no order to stop the resistance."
  nep_deus.5.a:0 "No choice.Continue attacking!"
+ 
+ nep_deus.7.name:0 "Self-destruction"
+ nep_deus.7.desc:0 "We captured [FromFrom.GetName]. The remaining forces blew themself.Nothing left now."
+ nep_deus.7.a:0 "Curses."
  
  nep_deuspi.2000.name:0 "$nep_wohp.2000.name$"
  nep_deuspi.2000.desc:0 "[From.GetName] has entered a system that we have never explored. This system have a strange country:main species are biological,but leader is a supercomputer,and no other robots. It seems that they have sealed this computer as a god and formed a very distinctive theocratic state."
@@ -353,6 +362,9 @@
  nep_wormhole_deus_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
  nep_wormhole_deus_mega_DESC:0 "This system contains a §YNatural Wormhole§!"
  nep_wormhole_deus_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_deus_mega_DESC$"
+
+ nep_age_machina_primitive:0 "$late_medieval_age$"
+ nep_age_machina_primitive_desc:0 "$late_medieval_age_desc$Though, the center of this civilization is a futuristic building completely out of place in this era..."
  
  #############################################
  # Guide a Girl to the Galaxy

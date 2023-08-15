@@ -302,13 +302,10 @@ fleet_event = {
 		}
 		last_created_country = {
 			create_leader = {
-				class = ruler
+				class = governor
 				species = owner_main_species
 				name = "NAME_nep_Imperator"
-				traits = {
-					trait = random_trait
-					trait = random_trait
-				}
+				randomize_traits = yes
 				skill = 10
 			}
 			set_leader = last_created_leader
@@ -1135,6 +1132,7 @@ country_event = {
 					owner = event_target:nep_Krahen_country
 					species = event_target:nep_Krahen_country
 					type = nep_Krahen_heavy_fortress
+					land_army = yes
 				}
 			}
 			while = {
@@ -1149,6 +1147,7 @@ country_event = {
 					owner = event_target:nep_Krahen_country
 					species = event_target:nep_Krahen_country
 					type = nep_Krahen_heavy_fortress_2
+					land_army = yes
 				}
 			}
 			save_event_target_as = nep_inva_temp_planet
@@ -1188,7 +1187,10 @@ country_event = {
 			if = {			
 				limit = {
 					OR = {
-						is_country_type = default
+						OR = {
+							is_country_type = default 
+							is_playable_country = yes
+						}
 						is_country_type = fallen_empire
 						is_country_type = awakened_fallen_empire
 					}
@@ -2051,6 +2053,7 @@ event = {
 							owner = event_target:nep_Krahen_country
 							species = event_target:nep_Krahen_country
 							type = nep_Krahen_heavy_fortress
+							land_army = yes
 						}
 					}
 				}
@@ -2074,6 +2077,7 @@ event = {
 							owner = event_target:nep_Krahen_country
 							species = event_target:nep_Krahen_country
 							type = nep_Krahen_heavy_fortress_2
+							land_army = yes
 						}
 					}
 				}
@@ -2759,18 +2763,15 @@ country_event = {
 	option = {
 		name = nep_inva.71.a
 		event_target:nep_Krahen_country	= {
-			kill_leader = { type = ruler }
+			leader = { kill_leader = { show_notification = no } }
 			create_leader = {
-				class = ruler
+				class = governor
 				species = owner_main_species
 				name = "NAME_nep_Imperator"
-				traits = {
-					trait = random_trait
-					trait = random_trait
-				}
+				randomize_traits = yes
 				skill = 10
 			}
-			assign_leader = last_created_leader
+			set_leader = last_created_leader
 			declare_war = {
 				target = prev
 				name = "NAME_nep_Krahen_invasion_war"
@@ -2791,7 +2792,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default 
+			is_playable_country = yes
+		}
 		exists = capital_scope
 		FROM = {
 			has_country_flag = nep_Krahen_country

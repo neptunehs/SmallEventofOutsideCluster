@@ -49,6 +49,12 @@ nep_st_is_not_outer_system = {
 		has_star_flag = mem_vazuran_nexus
 		has_star_flag = fatalf_new_colony
 		has_star_flag = cohesive_system
+		has_star_flag = urmazin_system
+		has_star_flag = mem_rebel_yell_boss_system
+		has_star_flag = crisis_spawn_exclude
+		has_star_flag = mem_severance_relic_system
+		has_star_flag = mem_food_constuctor_recluse_system
+		has_star_flag = Myon_system_1
 	}
 }
 

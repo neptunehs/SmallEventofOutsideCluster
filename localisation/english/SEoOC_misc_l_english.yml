@@ -43,6 +43,8 @@
  nep_no_sapient_pops:0 "No sapients here."
  nep_extravagant_orgy:0 "Extravagant Orgy"
  nep_bombard_by_highlander:0 "Bombarding by Highlander"
+ ############New added in 20230807#####################
+ heart_of_resistance:0 "Heart of Resistance"
  ############UNUSED LOCALS#####################
  
  gov_Krahen_gov_desc:0 ""

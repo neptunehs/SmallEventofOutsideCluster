@@ -109,13 +109,15 @@ nep_wohp_init = {
 				}
 				last_created_country = {
 					set_pre_ftl_age_effect = { PRE_FTL_AGE = machine_age }
+					remove_pre_ftl_flags = yes					
+					set_pre_ftl_age = nep_age_gaia 
+					set_country_flag = nep_age_gaia 
+					set_country_flag = recently_advanced
 					save_global_event_target_as = nep_gaia_country
-					set_country_flag = nep_gaia_country
+					set_country_flag = nep_gaia_country					
 				}
 			}
 			setup_pre_ftl_planet = yes
-			add_modifier = { modifier = "planet_population_control" days = -1 }
-			add_modifier = { modifier = "nep_bombard_by_highlander" days = -1 }
 			set_planet_flag = has_megastructure
 		}
 		
@@ -194,6 +196,9 @@ nep_wohp_init = {
 					}
 					last_created_country = {
 						set_pre_ftl_age_effect = { PRE_FTL_AGE = atomic_age }
+						remove_pre_ftl_flags = yes
+						set_pre_ftl_age = nep_age_highlander
+						set_country_flag = nep_age_highlander				
 						save_global_event_target_as = nep_highlander_country
 						set_country_flag = nep_highlander_country
 					}
@@ -201,8 +206,6 @@ nep_wohp_init = {
 				setup_pre_ftl_planet = yes
 				add_building = building_urban_dwellings
 				add_building = building_primitive_farm
-				add_modifier = { modifier = "nep_extravagant_orgy" days = -1 }
-				add_modifier = { modifier = "planet_population_control" days = -1 }
 				while = {
 					count = 16
 					random_owned_pop = {

@@ -199,9 +199,7 @@ nep_gpc_init_03 = {
 					species = owner_main_species
 					name = "NAME_nep_Balfour_Family_Machine_Guard"
 					skill = 10
-					traits = {
-						trait = random_trait
-					}
+					randomize_traits = yes
 				}
 				create_fleet = {
 					name = "NAME_nep_Balfour_Family_Machine_Guard"

@@ -1278,7 +1278,10 @@ country_event = {
 				is_colony = yes
 				is_capital = no
 				owner = {
-					is_country_type = default
+					OR = {
+						is_country_type = default 
+						is_playable_country = yes
+					}
 				}
 			}
 			distance = {
@@ -1298,7 +1301,10 @@ country_event = {
 					is_colony = yes
 					is_capital = no
 					owner = {
-						is_country_type = default
+						OR = {
+							is_country_type = default 
+							is_playable_country = yes
+						}
 					}
 				}
 				distance = {

@@ -43,6 +43,8 @@
  nep_no_sapient_pops:0 "没有智能生物。"
  nep_extravagant_orgy:0 "酒池肉林"
  nep_bombard_by_highlander:0 "正在被天上人轰炸"
+ ############New added in 20230807#####################
+ heart_of_resistance:0 "抵抗的意志"
  ############UNUSED LOCALS#####################
  gov_Krahen_gov_desc:0 ""
  tech_nep_sealevil_tech:0 ""

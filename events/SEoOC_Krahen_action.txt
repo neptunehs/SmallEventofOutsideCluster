@@ -686,6 +686,7 @@ planet_event = {
 							name = "NAME_Krahen_Invader"
 							owner = event_target:nep_Krahen_country
 							type = nep_Krahen_anti_grav_2
+							land_army = yes
 						}
 					}
 					else = {
@@ -693,6 +694,7 @@ planet_event = {
 							name = "NAME_Krahen_Invader"
 							owner = event_target:nep_Krahen_country
 							type = nep_Krahen_anti_grav
+							land_army = yes
 						}
 					}
 				}

@@ -142,6 +142,11 @@
  nep_wormhole_wohp_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
  nep_wormhole_wohp_mega_DESC:0 "この星系には§Y自然ワームホール§!があります"
  nep_wormhole_wohp_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_wohp_mega_DESC$"
+
+ nep_age_gaia:0 "$machine_age$"
+ nep_age_gaia_desc:0 "$machine_age_desc$"
+ nep_age_highlander:0 "$atomic_age$"
+ nep_age_highlander_desc:0 "$atomic_age_desc$"
  
  #########################################
  # deus
@@ -166,6 +171,10 @@
  nep_deus.5.name:0 "自己破壊"
  nep_deus.5.desc:0 "私たちは[event_target:nep_deus_country.Capital_scope.GetName]を占領した。 国を支配する「神」がいる場所に入ろうとしたところ、自爆してしまったのです。 今はロジック修復の機会もなく、そうなると、「神」を失った国の残存勢力は、抵抗を止める命令もないので、最後まで抵抗するでしょう。"
  nep_deus.5.a:0 "もうどうしようもない。 攻撃を続けろ！"
+
+ nep_deus.7.name:0 "自己破壊"
+ nep_deus.7.desc:0 "私たちは[FromFrom.GetName]を占領した。でもコロニーもろとも自爆してしまった、もう何にも残らない。"
+ nep_deus.7.a:0 "クソ！"
  
  nep_deuspi.2000.name:0 "$nep_wohp.2000.name$"
  nep_deuspi.2000.desc:0 "[From.GetName]は、これまで探索したことのない星系に入った。そこは、巨大なコンピュータに率いられた国家が存在し、主な民族は生物であり、巨大コンピュータのアバター以外には人工知能存在しない、という奇妙な星系であった。 原始時代からこのコンピュータを神聖化し、非常に特徴的な神権政治を形成していたようです。"
@@ -357,7 +366,9 @@
  nep_wormhole_deus_mega_DESC:0 "这この星系には§Y自然ワームホール§!があります"
  nep_wormhole_deus_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_deus_mega_DESC$"
  
- 
+ nep_age_machina_primitive:0 "$late_medieval_age$"
+ nep_age_machina_primitive_desc:0 "$late_medieval_age_desc$とはいえ、この文明の中心は、この時代にはまったくそぐわない未来的な建物だ。"
+  
  #############################################
  # Guide a Girl to the Galaxy
  #############################################

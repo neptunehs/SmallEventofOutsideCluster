@@ -101,7 +101,10 @@ planet_event = {
 	
 	trigger = {
 		exists = owner
-		owner = { is_country_type = default }
+		owner = { OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				} }
 		is_controlled_by = owner
 		AND = {
 			has_orbital_bombardment = yes
@@ -168,7 +171,10 @@ planet_event = {
 	
 	trigger = {
 		exists = owner
-		owner = { is_country_type = default }
+		owner = { OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				} }
 		is_controlled_by = owner
 		OR = { 
 			has_modifier = nep_phantom_orbit_stage2
@@ -232,7 +238,10 @@ planet_event = {
 	
 	trigger = {
 		exists = owner
-		owner = { is_country_type = default }
+		owner = { OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				} }
 		is_controlled_by = owner
 		has_modifier = nep_phantom_orbit_stage3
 	}

@@ -9,7 +9,10 @@ country_event = {
 			is_nep_country = yes
 		}
 		OR = {
-			is_country_type = default
+			OR = {
+					is_country_type = default 
+					is_playable_country = yes
+				}
 			is_country_type = fallen_empire
 			is_country_type = awakened_fallen_empire
 		}

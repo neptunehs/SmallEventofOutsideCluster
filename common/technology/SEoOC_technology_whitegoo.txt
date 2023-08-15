@@ -59,13 +59,13 @@ tech_nep_whitegoo_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_biology"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -91,13 +91,13 @@ tech_nep_whitegoo_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_biology"
+		# 	}
+		# }
 	}
 }
 
@@ -162,13 +162,13 @@ tech_nep_whitegoo_2_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_particles"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -194,13 +194,13 @@ tech_nep_whitegoo_2_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_particles"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_particles"
+		# 	}
+		# }
 	}
 }
 
@@ -264,13 +264,13 @@ tech_nep_whitegoo_2_2 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_psionics"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -296,13 +296,13 @@ tech_nep_whitegoo_2_2 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_psionics"
+		# 	}
+		# }
 	}
 }
 
@@ -366,13 +366,13 @@ tech_nep_whitegoo_2_3 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_materials"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -398,13 +398,13 @@ tech_nep_whitegoo_2_3 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_materials"
+		# 	}
+		# }
 	}
 }
 
@@ -472,13 +472,13 @@ tech_nep_whitegoo_3_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_field_manipulation"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_field_manipulation"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -504,13 +504,13 @@ tech_nep_whitegoo_3_1 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_field_manipulation"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_field_manipulation"
+		# 	}
+		# }
 	}
 }
 
@@ -578,13 +578,13 @@ tech_nep_whitegoo_3_2 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_statecraft"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -610,13 +610,13 @@ tech_nep_whitegoo_3_2 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_statecraft"
+		# 	}
+		# }
 	}
 }
 
@@ -683,13 +683,13 @@ tech_nep_whitegoo_3_3 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_propulsion"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_propulsion"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -715,13 +715,13 @@ tech_nep_whitegoo_3_3 = {
 			factor = 1.5
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_propulsion"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_propulsion"
+		# 	}
+		# }
 	}
 }
 
@@ -770,13 +770,13 @@ tech_nep_whitegoo_4 = {
 			factor = 1.25
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_voidcraft"
+		# 	}
+		# }
 	}
 	
 	ai_weight = {
@@ -796,13 +796,13 @@ tech_nep_whitegoo_4 = {
 			factor = 1.25
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_voidcraft"
+		# 	}
+		# }
 	}
 }
 
@@ -847,12 +847,12 @@ tech_nep_whitegoo_5 = {
 			factor = 1.25
 			has_country_flag = nep_whitegoo_3_noti
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
+		# modifier = {
+		# 	factor = 1.25
+		# 	research_leader = {
+		# 		area = society
+		# 		has_trait = "leader_trait_expertise_voidcraft"
+		# 	}
+		# }
 	}
 }

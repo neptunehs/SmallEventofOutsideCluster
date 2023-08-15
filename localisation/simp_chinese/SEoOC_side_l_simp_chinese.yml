@@ -141,7 +141,12 @@
  BYPASS_DESC_UNKNOWN_NEP_WORMHOLE_WOHP:0 "$BYPASS_DESC_UNKNOWN_WORMHOLE$"
  nep_wormhole_wohp_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
  nep_wormhole_wohp_mega_DESC:0 "这个星系拥有一个§Y天然虫洞§!"
- nep_wormhole_wohp_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_wohp_mega_DESC$"
+ nep_wormhole_wohp_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_wohp_mega_DESC$" 
+
+ nep_age_gaia:0 "$machine_age$"
+ nep_age_gaia_desc:0 "$machine_age_desc$"
+ nep_age_highlander:0 "$atomic_age$"
+ nep_age_highlander_desc:0 "$atomic_age_desc$"
  
  #########################################
  # deus
@@ -166,6 +171,10 @@
  nep_deus.5.name:0 "自毁"
  nep_deus.5.desc:0 "我们攻下了[event_target:nep_deus_country.Capital_scope.GetName]。当我们试图进入统治这个国家的“神”的所在之处时，它自爆了。现在我们没有机会修复它了，然后失去了“神”的该国剩余势力也会因为没有停止抵抗的命令而抵抗到底。"
  nep_deus.5.a:0 "没办法了。继续攻击！"
+
+ nep_deus.7.name:0 "自毁"
+ nep_deus.7.desc:0 "我们攻下了[FromFrom.GetName]。剩余势力将一切都毁了，没什么剩下给我们的了。"
+ nep_deus.7.a:0 "可恶！"
  
  nep_deuspi.2000.name:0 "$nep_wohp.2000.name$"
  nep_deuspi.2000.desc:0 "[From.GetName]进入了一个我们从未探索过的星系，这个星系存在着一个奇怪的国家：一个巨型计算机领导的，主体民族是生物，且没有巨型计算机的端末以外的其他机器人的国家。貌似它们将这个计算机封为神，形成了一个很有特色的神权国家。"
@@ -356,6 +365,9 @@
  nep_wormhole_deus_mega:0 "$NATURAL_WORMHOLE_GALACTIC$"
  nep_wormhole_deus_mega_DESC:0 "这个星系拥有一个§Y天然虫洞§!"
  nep_wormhole_deus_mega_MEGASTRUCTURE_DETAILS:0 "$nep_wormhole_deus_mega_DESC$"
+
+ nep_age_machina_primitive:0 "$late_medieval_age$"
+ nep_age_machina_primitive_desc:0 "$late_medieval_age_desc$虽然，这个文明的中心是一座完全与这个时代不符的未来建筑。。。"
  
  
  #############################################

@@ -582,15 +582,18 @@ nep_machina_broken = { #fork by default,for not being subject or join fedaration
 	playable = no
 	piracy_risk = yes
 	enforces_borders = no
+	government = no
 	needs_survey = no
 	diplomatic_wars = no
 	ship_disengagement = yes
 	army_disengagement = yes
 	has_complete_sensor = yes
-	can_have_their_comms_shared = yes
-	observable = yes
+	can_have_their_comms_shared = no
+	observable = no
 	can_use_invalid_technology = no
 	can_receive_envoys = no
+	can_planets_be_attacked = yes
+	orbital_bombardment = yes
 
 	ai = {
 		enabled = yes
@@ -609,22 +612,20 @@ nep_machina_broken = { #fork by default,for not being subject or join fedaration
 		can_use_market = no
 		modules = {
 			player_crisis_foreign_minister_module
-			player_crisis_military_minister_module
+			berserk_military_minister_module
 			interior_minister_module
 		}
 	}
 	
 	faction = {
 		hostile = yes
+		pirate = no
 		needs_border_access = no
-		generate_borders = yes
+		generate_borders = no
 		needs_colony = yes
+		auto_delete = no
 	}
 	
-	trade_routes_available = {
-		is_gestalt = no
-	}
-
 	modules = {
 		standard_event_module = {}
 		standard_economy_module = {}
